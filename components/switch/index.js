@@ -1,5 +1,5 @@
-import fSwitch from './f-switch.vue'
+import wSwitch from './w-switch.vue'
 import { installer } from '#util'
 
-export const Switch = { install: installer([fSwitch]) }
-export { fSwitch }
+export const Switch = { install: installer([wSwitch]) }
+export { wSwitch }

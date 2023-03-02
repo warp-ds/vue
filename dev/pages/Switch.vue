@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { fField, fSwitch } from '#components'
+import { wField, wSwitch } from '#components'
 
 const model = ref(false)
 </script>
@@ -10,9 +10,9 @@ const model = ref(false)
     <component-title title="Switch" />
 
     <token :state="model">
-      <f-field label="Switch it up!" #default="{ labelFor }">
-        <f-switch v-model="model" :id="labelFor" />
-      </f-field>
+      <w-field label="Switch it up!" #default="{ labelFor }">
+        <w-switch v-model="model" :id="labelFor" />
+      </w-field>
     </token>
   </div>
 </template>

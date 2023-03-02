@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { checkbox, buildCheckboxState } from '#dev-util'
-import { fExpandable } from '#components'
+import { wExpandable } from '#components'
 
 const expanded = ref(false)
 const modifierControls = [
@@ -18,9 +18,9 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
     <component-title title="Expandable" />
 
     <token :state="[modifiers, expanded]">
-      <f-expandable :box="modifiers.Box" :bleed="modifiers.Bleed" :info="modifiers.Info" :animated="modifiers.Animated" :title="`Click to ${expanded ? 'collapse' : 'expand'}`" v-model="expanded">
-        <h4>Hello Fabric!</h4>
-      </f-expandable>
+      <w-expandable :box="modifiers.Box" :bleed="modifiers.Bleed" :info="modifiers.Info" :animated="modifiers.Animated" :title="`Click to ${expanded ? 'collapse' : 'expand'}`" v-model="expanded">
+        <h4>Hello Warp!</h4>
+      </w-expandable>
     </token>
 
     <demo-controls>

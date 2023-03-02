@@ -12,8 +12,8 @@ const expanded = ref(false)
 <template>
   <div>
     <nav class="mobile-menu fixed top-0 left-0 right-0 bg-gray-100 border-b border-gray-200">
-      <f-box class="flex justify-between">
-        <h1 class="h4 mb-0">Fabric Vue</h1>
+      <w-box class="flex justify-between">
+        <h1 class="h4 mb-0">Warp Vue</h1>
         <button @click="expanded = !expanded" class="flex justify-center items-center w-24 transparent-tap" type="button" aria-label="show mobile navigation" :aria-expanded="expanded" aria-controls="sidebar">
           <span class="relative overflow-hidden w-16 h-14" :class="{ active: expanded }">
             <span class="top-bar absolute w-16 h-2 bg-gray-700 top-0 left-0" />
@@ -21,10 +21,10 @@ const expanded = ref(false)
             <span class="bottom-bar absolute w-16 h-2 bg-gray-700 top-12 left-0" />
           </span>
         </button>
-      </f-box>
+      </w-box>
     </nav>
     <aside id="sidebar" :class="{ expanded, modalShowing }" class="sidebar z-50 fixed inset-0 bg-gray-100 border-r border-gray-200 divide-y divide-gray-200">
-      <f-box><h1 class="h4">Fabric Vue</h1></f-box>
+      <w-box><h1 class="h4">Warp Vue</h1></w-box>
       <sidebar-links v-for="group in sidebarConfig" :start-open="group.startOpen" :title="group.title">
         <router-link v-for="link in group.links" :to="link.to">{{ link.title }}</router-link>
       </sidebar-links>

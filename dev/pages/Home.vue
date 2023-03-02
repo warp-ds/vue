@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>Fabric Vue</h1>
+    <h1>Warp Vue</h1>
   </div>
 </template>
