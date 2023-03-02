@@ -1,5 +1,5 @@
 <script setup>
-import { fAlert, fButton } from '#components'
+import { wAlert, wButton } from '#components'
 import { radio, checkbox } from '#dev-util'
 import { reactive } from 'vue'
 
@@ -45,13 +45,13 @@ const variantControls = [
     <component-title title="Alert" />
 
     <token :state="[showState, current]">
-      <f-alert v-model="showState.Show" v-bind="variants[current.active]">
+      <w-alert v-model="showState.Show" v-bind="variants[current.active]">
         <p>This is the message text that can be short or a little bit long</p>
         <div class="space-x-8">
-          <f-button small>Primary CTA</f-button>
-          <f-button small quiet>Secondary CTA</f-button>
+          <w-button small>Primary CTA</w-button>
+          <w-button small quiet>Secondary CTA</w-button>
         </div>
-      </f-alert>
+      </w-alert>
     </token>
 
     <demo-controls class="flex" x>

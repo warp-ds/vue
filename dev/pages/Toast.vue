@@ -5,9 +5,9 @@
 
     <section-header label="Example" />
 
-    <f-toast class="sm:mt-0" v-bind="toastOptions" text="This is how a toast looks! You can bring in the toast component manually for broadcast messages." :can-close="false" />
+    <w-toast class="sm:mt-0" v-bind="toastOptions" text="This is how a toast looks! You can bring in the toast component manually for broadcast messages." :can-close="false" />
 
-    <f-toggle class="mt-32 bg-gray-100 p-16 inline-block rounded-4" radio label="Toast type" :toggles="exampleToasts" v-model="activeExample" />
+    <w-toggle class="mt-32 bg-gray-100 p-16 inline-block rounded-4" radio label="Toast type" :toggles="exampleToasts" v-model="activeExample" />
 
     <button @click="make" class="mt-32 block button button--utility">Make some toast</button>
 
@@ -102,7 +102,7 @@
 
 <script>
 import { ref, computed } from 'vue'
-import { fToggle } from '@fabric-ds/vue-forms'
+import { wToggle } from '@fabric-ds/vue-forms'
 import { fToast, makeToast } from '@fabric-ds/vue-toast'
 
 const sleep = n => new Promise(r => setTimeout(r, n))
@@ -139,6 +139,6 @@ const make = async () => {
     toast.value.text = `Whoa, things went bad. I'm outta here!`
   }
 }
-const token = `<f-toast positive text="This is a toast" />`
+const token = `<w-toast positive text="This is a toast" />`
 const makeToastToken = `makeToast({ positive: true, text: 'Hello' })`
 </script>

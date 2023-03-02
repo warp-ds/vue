@@ -3,7 +3,7 @@ export default { inheritAttrs: false }
 </script>
 
 <script setup>
-import { fButtonGroupItem, fClickable } from '#components'
+import { wButtonGroupItem, wClickable } from '#components'
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -23,8 +23,8 @@ const selected = props.button ? null : computed(() => props.radio ? model.value 
 </script>
 
 <template>
-  <f-button-group-item :selected="selected">
-    <f-clickable v-if="button" label v-bind="$attrs">{{ name }}</f-clickable>
-    <f-clickable v-else label v-bind="$props" v-model="model" :value="name">{{ name }}</f-clickable>
-  </f-button-group-item>
+  <w-button-group-item :selected="selected">
+    <w-clickable v-if="button" label v-bind="$attrs">{{ name }}</w-clickable>
+    <w-clickable v-else label v-bind="$props" v-model="model" :value="name">{{ name }}</w-clickable>
+  </w-button-group-item>
 </template>

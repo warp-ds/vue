@@ -1,5 +1,5 @@
 <script setup>
-import { fButton } from '#components'
+import { wButton } from '#components'
 import { checkbox, radio, useIsActive, buildCheckboxState } from '#dev-util'
 import { reactive } from 'vue'
 
@@ -27,7 +27,7 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
     <component-title title="Button" />
 
     <token :state="[variants, modifiers]">
-      <f-button
+      <w-button
         :primary="active('Primary')"
         :secondary="active('Secondary')"
         :negative="modifiers.Negative"
@@ -37,7 +37,7 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
         :quiet="modifiers.Quiet"
         :small="modifiers.Small"
         :loading="modifiers.Loading"
-        label="Hello Fabric" />
+        label="Hello Warp" />
     </token>
 
     <demo-controls y>

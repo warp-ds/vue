@@ -1,5 +1,5 @@
-import fModal from './f-modal.vue'
+import wModal from './w-modal.vue'
 import { installer } from '#util'
 
-export const Modal = { install: installer([fModal]) }
-export { fModal }
+export const Modal = { install: installer([wModal]) }
+export { wModal }

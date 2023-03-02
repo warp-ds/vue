@@ -1,4 +1,4 @@
-import fAttention from './f-attention.vue'
+import wAttention from './w-attention.vue'
 
-export const Attention = { install: (app) => app.component(fAttention.name, fAttention) }
-export { fAttention }
+export const Attention = { install: (app) => app.component(wAttention.name, wAttention) }
+export { wAttention }

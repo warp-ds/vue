@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { fTextarea } from '#components'
+import { wTextarea } from '#components'
 
 const model = ref('')
 </script>
@@ -10,7 +10,7 @@ const model = ref('')
     <component-title title="Textarea" />
 
     <token :state="model">
-      <f-textarea v-model="model" label="Such area, much text" />
+      <w-textarea v-model="model" label="Such area, much text" />
     </token>
   </div>
 </template>

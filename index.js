@@ -1,4 +1,4 @@
-// order matters here - fClickable in 'generic' needs to come early
+// order matters here - wClickable in 'generic' needs to come early
 export * from './components/generic'
 export * from './components/forms'
 export * from './components/box'

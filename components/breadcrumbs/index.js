@@ -1,5 +1,5 @@
-import fBreadcrumbs, { fBreadcrumbSeparator } from './f-breadcrumbs.vue'
+import wBreadcrumbs, { wBreadcrumbSeparator } from './w-breadcrumbs.vue'
 import { installer } from '#util'
 
-export const Breadcrumbs = { install: installer([fBreadcrumbs]) }
-export { fBreadcrumbs, fBreadcrumbSeparator }
+export const Breadcrumbs = { install: installer([wBreadcrumbs]) }
+export { wBreadcrumbs, wBreadcrumbSeparator }

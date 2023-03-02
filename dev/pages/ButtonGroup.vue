@@ -1,10 +1,10 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { checkbox, radio, useIsActive, buildCheckboxState } from '#dev-util'
-import { fButtonGroup, fButtonGroupItem, fClickable } from '#components'
+import { wButtonGroup, wButtonGroupItem, wClickable } from '#components'
 
 const radioModel = ref('foo')
-const alert = () => window.alert('Hello Fabric!')
+const alert = () => window.alert('Hello Warp!')
 
 const type = reactive({ active: 'Radio' })
 const active = useIsActive(type)
@@ -26,20 +26,20 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
     <component-title title="Button Group" />
 
     <token :state="[type, radioModel, modifiers]">
-      <f-button-group :outlined="modifiers.Outlined" :raised="modifiers.Raised" :vertical="modifiers.Vertical">
-        <f-button-group-item :selected="active('Radio') && radioModel === 'foo'">
-          <f-clickable v-if="active('Radio')" label radio v-model="radioModel" value="foo">Foo</f-clickable>
-          <f-clickable v-else label @click="alert">Foo</f-clickable>
-        </f-button-group-item>
-        <f-button-group-item :selected="active('Radio') && radioModel === 'bar'">
-          <f-clickable v-if="active('Radio')" label radio v-model="radioModel" value="bar">Bar</f-clickable>
-          <f-clickable v-else label @click="alert">Bar</f-clickable>
-        </f-button-group-item>
-        <f-button-group-item :selected="active('Radio') && radioModel === 'baz'">
-          <f-clickable v-if="active('Radio')" label radio v-model="radioModel" value="baz">Baz</f-clickable>
-          <f-clickable v-else label @click="alert">Baz</f-clickable>
-        </f-button-group-item>
-      </f-button-group>
+      <w-button-group :outlined="modifiers.Outlined" :raised="modifiers.Raised" :vertical="modifiers.Vertical">
+        <w-button-group-item :selected="active('Radio') && radioModel === 'foo'">
+          <w-clickable v-if="active('Radio')" label radio v-model="radioModel" value="foo">Foo</w-clickable>
+          <w-clickable v-else label @click="alert">Foo</w-clickable>
+        </w-button-group-item>
+        <w-button-group-item :selected="active('Radio') && radioModel === 'bar'">
+          <w-clickable v-if="active('Radio')" label radio v-model="radioModel" value="bar">Bar</w-clickable>
+          <w-clickable v-else label @click="alert">Bar</w-clickable>
+        </w-button-group-item>
+        <w-button-group-item :selected="active('Radio') && radioModel === 'baz'">
+          <w-clickable v-if="active('Radio')" label radio v-model="radioModel" value="baz">Baz</w-clickable>
+          <w-clickable v-else label @click="alert">Baz</w-clickable>
+        </w-button-group-item>
+      </w-button-group>
     </token>
 
     <demo-controls y>

@@ -1,13 +1,13 @@
-import fField from './f-field.vue'
-import fInput from './f-input.vue'
-import fSelect from './f-select.vue'
-import fTextarea from './f-textarea.vue'
-import fToggle from './f-toggle.vue'
-import fForm from './f-form.vue'
-import fSuffix from './f-suffix.vue'
-import fAffix from './f-affix.vue'
+import wField from './w-field.vue'
+import wInput from './w-input.vue'
+import wSelect from './w-select.vue'
+import wTextarea from './w-textarea.vue'
+import wToggle from './w-toggle.vue'
+import wForm from './w-form.vue'
+import wSuffix from './w-suffix.vue'
+import wAffix from './w-affix.vue'
 import { installer } from '#util'
 
-export const Forms = { install: installer([fField, fInput, fSelect, fTextarea, fToggle, fForm, fSuffix, fAffix]) }
+export const Forms = { install: installer([wField, wInput, wSelect, wTextarea, wToggle, wForm, wSuffix, wAffix]) }
 export * from './validation'
-export { fInput, fSelect, fTextarea, fToggle, fField, fForm, fSuffix, fAffix }
+export { wInput, wSelect, wTextarea, wToggle, wField, wForm, wSuffix, wAffix }

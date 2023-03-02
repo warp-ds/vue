@@ -1,6 +1,6 @@
-import fTag from './f-tag.vue'
+import wTag from './w-tag.vue'
 import { installer } from '#util'
 
-export const Tag = { install: installer([fTag]) }
-export { fTag }
+export const Tag = { install: installer([wTag]) }
+export { wTag }
 
