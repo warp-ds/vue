@@ -1,5 +1,5 @@
-import fAlert from './f-alert.vue'
+import wAlert from './w-alert.vue'
 import { installer } from '#util'
 
-export const Alert = { install: installer([fAlert]) }
-export { fAlert }
+export const Alert = { install: installer([wAlert]) }
+export { wAlert }

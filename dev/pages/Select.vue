@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { fSelect } from '#components'
+import { wSelect } from '#components'
 
 const selectModel = ref('')
 </script>
@@ -10,11 +10,11 @@ const selectModel = ref('')
     <component-title title="Select" />
 
     <token :state="selectModel">
-      <f-select v-model="selectModel" label="A useful and informative label">
+      <w-select v-model="selectModel" label="A useful and informative label">
         <option disabled selected value="">Pick something</option>
         <option value="foo">Foo</option>
         <option value="bar">Bar</option>
-      </f-select>
+      </w-select>
     </token>
   </div>
 </template>

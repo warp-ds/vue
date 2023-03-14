@@ -2,7 +2,7 @@
 import Fuse from 'fuse.js'
 import { sidebarConfig } from '../src/sidebar-config.js'
 import { ref, computed, watch } from 'vue'
-import { fInput, fModal, fBox } from '#components'
+import { wInput, wModal, fBox } from '#components'
 import { modalShowing } from '../src/store.js'
 
 const inputEl = ref(null)
@@ -31,14 +31,14 @@ watch(showSearch, (showing) => modalShowing.value = showing)
 
 <template>
   <div>
-    <f-modal title="Search" v-model="showSearch" @dismiss="hide" @right="hide" @shown="focusInput">
-      <f-input label="Search term" v-model="searchTerm" ref="inputEl" />
-      <f-box neutral class="mt-24">
+    <w-modal title="Search" v-model="showSearch" @dismiss="hide" @right="hide" @shown="focusInput">
+      <w-input label="Search term" v-model="searchTerm" ref="inputEl" />
+      <w-box neutral class="mt-24">
         <h5>Results</h5>
         <p v-for="m in matches">
           <router-link :to="m.to" @click="hide">{{ m.title }}</router-link>
         </p>
-      </f-box>
-    </f-modal>
+      </w-box>
+    </w-modal>
   </div>
 </template>

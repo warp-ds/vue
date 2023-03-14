@@ -1,6 +1,6 @@
-import fCard from './f-card.vue'
-import { fClickable } from '#generics'
+import wCard from './w-card.vue'
+import { wClickable } from '#generics'
 import { installer } from '#util'
 
-export const Card = { install: installer([fClickable, fCard]) }
-export { fCard }
+export const Card = { install: installer([wClickable, wCard]) }
+export { wCard }

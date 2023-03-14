@@ -15,7 +15,7 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
     <component-title title="Pill" />
 
     <token :state="modifiers">
-      <f-pill label="Hello Fabric" :suggestion="modifiers.Suggestion" :canClose="modifiers.Closeable" />
+      <w-pill label="Hello Warp" :suggestion="modifiers.Suggestion" :canClose="modifiers.Closeable" />
     </token>
 
     <demo-controls>

@@ -1,7 +1,7 @@
-import fExpandable from './f-expandable.vue'
-import fWillExpand from './f-will-expand.vue'
-import { fExpandTransition } from '#generics'
+import wExpandable from './w-expandable.vue'
+import wWillExpand from './w-will-expand.vue'
+import { wExpandTransition } from '#generics'
 import { installer } from '#util'
 
-export const Expandable = { install: installer([fExpandable, fExpandTransition, fWillExpand]) }
-export { fExpandable, fWillExpand }
+export const Expandable = { install: installer([wExpandable, wExpandTransition, wWillExpand]) }
+export { wExpandable, wWillExpand }

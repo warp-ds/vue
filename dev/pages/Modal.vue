@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
-import { fModal } from '#components'
+import { wModal } from '#components'
 import { modalShowing } from '../src/store.js'
 import ModalContent from './helpers/ModalContent.vue'
 
@@ -26,7 +26,7 @@ watch(showModal, (showing) => modalShowing.value = showing)
     <component-title title="Modal" />
 
     <token>
-      <f-modal title="Hello Fabric!" :style="demoStyles" :left="showLeft" :right="{ 'aria-label': 'Close' }" @dismiss="showModal = false" v-model="showModal" @right="showModal = false">
+      <w-modal title="Hello Warp!" :style="demoStyles" :left="showLeft" :right="{ 'aria-label': 'Close' }" @dismiss="showModal = false" v-model="showModal" @right="showModal = false">
         <div class="space-x-8">
           <button @click="changeHeight" class="button button--utility button--small mb-32">Modify height</button>
           <button @click="showLeft = !showLeft" class="button button--utility button--small mb-32">Toggle the back-button</button>
@@ -35,7 +35,7 @@ watch(showModal, (showing) => modalShowing.value = showing)
         <template #footer>
           <button class="button button--cta" @click="showModal = false">Click me</button>
         </template>
-      </f-modal>
+      </w-modal>
     </token>
     <demo-controls>
       <demo-control label="Show modal" :controls="showControl" />

@@ -1,6 +1,6 @@
-import fStep from './f-step.vue'
-import fSteps from './f-steps.vue'
+import wStep from './w-step.vue'
+import wSteps from './w-steps.vue'
 import { installer } from '#util'
 
-export const Steps = { install: installer([fStep, fSteps]) }
-export { fStep, fSteps }
+export const Steps = { install: installer([wStep, wSteps]) }
+export { wStep, wSteps }

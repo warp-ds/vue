@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { checkbox, buildCheckboxState } from '#dev-util'
-import { fStep, fSteps } from '#components'
+import { wStep, wSteps } from '#components'
 
 const modifierControls = [
   { name: 'Horizontal', checkbox },
@@ -25,20 +25,20 @@ const stepControl = [
     <component-title title="Steps" />
 
     <token :state="[modifiers, current]">
-      <f-steps :right="modifiers.Right" :horizontal="modifiers.Horizontal">
-        <f-step :active="current === 1" :complete="current > 1">
+      <w-steps :right="modifiers.Right" :horizontal="modifiers.Horizontal">
+        <w-step :active="current === 1" :complete="current > 1">
           <p class="font-bold">Step 1</p>
           <p>Text describing step 1.</p>
-        </f-step>
-        <f-step :active="current === 2" :complete="current > 2">
+        </w-step>
+        <w-step :active="current === 2" :complete="current > 2">
           <p class="font-bold">Step 2</p>
           <p>Something amazing probably happens during step 2.</p>
-        </f-step>
-        <f-step :active="current === 3" :complete="current > 3">
+        </w-step>
+        <w-step :active="current === 3" :complete="current > 3">
           <p class="font-bold">Step 3</p>
           <p>There is no step 3.</p>
-        </f-step>
-      </f-steps>
+        </w-step>
+      </w-steps>
     </token>
     <demo-controls x class="flex items-center">
       <demo-control label="Modifiers" :controls="modifierControls" :state="modifiers" />

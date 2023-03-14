@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive, watch } from 'vue'
 import { radio, useIsActive } from '#dev-util'
-import { fToggle } from '#components'
+import { wToggle } from '#components'
 
 const toggleModel = ref([])
 
@@ -29,7 +29,7 @@ watch(() => variants.active, changeToggleModel)
     <component-title title="Toggle" />
 
     <token :state="[variants, toggleModel]">
-      <f-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" v-model="toggleModel" label="A very toggly label" :toggles="toggles" />
+      <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" v-model="toggleModel" label="A very toggly label" :toggles="toggles" />
     </token>
 
     <demo-controls>

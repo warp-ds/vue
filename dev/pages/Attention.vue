@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { radio, useIsActive } from '#dev-util'
-import { fAttention, fBox } from '#components'
+import { wAttention, fBox } from '#components'
 
 const target = ref(null)
 const showing = ref(false)
@@ -20,16 +20,16 @@ const variantControls = [
 
     <token :state="[variant]">
       <div v-if="active('Tooltip')">
-        <f-box neutral class="h4" ref="target" @mouseenter="showing = true" @mouseleave="showing = false">Hover over me</f-box>
-        <f-attention tooltip bottom :target-el="target?.$el" v-model="showing">
-          <p>Hello Fabric!</p>
-        </f-attention>
+        <w-box neutral class="h4" ref="target" @mouseenter="showing = true" @mouseleave="showing = false">Hover over me</w-box>
+        <w-attention tooltip bottom :target-el="target?.$el" v-model="showing">
+          <p>Hello Warp!</p>
+        </w-attention>
       </div>
       <div class="flex items-center" v-else-if="active('Callout')">
-        <f-box neutral class="h4">Don't hover over me</f-box>
-        <f-attention callout right class="ml-8">
-          <p>Hello Fabric! This thing is new!</p>
-        </f-attention>
+        <w-box neutral class="h4">Don't hover over me</w-box>
+        <w-attention callout right class="ml-8">
+          <p>Hello Warp! This thing is new!</p>
+        </w-attention>
       </div>
     </token>
 

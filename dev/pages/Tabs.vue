@@ -1,5 +1,5 @@
 <script setup>
-import { fTabs, fTab, fTabPanel } from '#components'
+import { wTabs, wTab, wTabPanel } from '#components'
 import { radio, useIsActive } from '#dev-util'
 import { ref, reactive, h } from 'vue'
 
@@ -24,21 +24,21 @@ const typeControls = [
     <component-title title="Tabs" />
 
     <token :state="[model, type]">
-      <f-tabs v-model="model" :contained="active('Contained')">
-        <f-tab label="Home" name="home">
+      <w-tabs v-model="model" :contained="active('Contained')">
+        <w-tab label="Home" name="home">
           <stars />
-        </f-tab>
-        <f-tab label="Car" name="car">
+        </w-tab>
+        <w-tab label="Car" name="car">
           <stars />
-        </f-tab>
-        <f-tab label="Motorcycle" name="motorcycle">
+        </w-tab>
+        <w-tab label="Motorcycle" name="motorcycle">
           <stars />
-        </f-tab>
-      </f-tabs>
+        </w-tab>
+      </w-tabs>
       <div :class="{ 'bg-aqua-50 p-24 last-child:mb-0': active('Contained'), 'mb-16': !active('Contained') }">
-        <f-tab-panel name="home" v-if="model === 'home'"><h3 class="mb-0">Welcome home!</h3></f-tab-panel>
-        <f-tab-panel name="car" v-if="model === 'car'"><h3 class="mb-0">I am a car page</h3></f-tab-panel>
-        <f-tab-panel name="motorcycle" v-if="model === 'motorcycle'"><h3 class="mb-0">Something something two wheels</h3></f-tab-panel>
+        <w-tab-panel name="home" v-if="model === 'home'"><h3 class="mb-0">Welcome home!</h3></w-tab-panel>
+        <w-tab-panel name="car" v-if="model === 'car'"><h3 class="mb-0">I am a car page</h3></w-tab-panel>
+        <w-tab-panel name="motorcycle" v-if="model === 'motorcycle'"><h3 class="mb-0">Something something two wheels</h3></w-tab-panel>
       </div>
     </token>
     <demo-controls>

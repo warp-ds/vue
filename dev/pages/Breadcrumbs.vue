@@ -1,5 +1,5 @@
 <script setup>
-import { fBreadcrumbs } from '#components'
+import { wBreadcrumbs } from '#components'
 
 // const crumbs = ['foo', 'bar', null]
 </script>
@@ -9,18 +9,18 @@ import { fBreadcrumbs } from '#components'
     <component-title title="Breadcrumbs" />
 
     <token>
-      <f-breadcrumbs>
+      <w-breadcrumbs>
         <a href="#/foo">Foo</a>
         <a href="#/bar">Bar</a>
         <span aria-current="page">Baz</span>
-      </f-breadcrumbs>
+      </w-breadcrumbs>
     </token>
 
-    <!-- <f-breadcrumbs>
+    <!-- <w-breadcrumbs>
       <template v-for="crumb in crumbs">
         <a v-if="crumb" :href="`#/${crumb}`">{{ crumb }}</a>
         <span v-else aria-current="page">Baz</span>
       </template>
-    </f-breadcrumbs> -->
+    </w-breadcrumbs> -->
   </div>
 </template>
