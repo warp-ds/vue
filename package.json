@@ -1,5 +1,6 @@
 {
   "name": "@warp-ds/vue",
+  "repository": "git@github.com:warp-ds/vue.git",
   "version": "0.0.1",
   "description": "Warp components for Vue 3",
   "type": "module",
@@ -14,9 +15,12 @@
     "#dev-util": "./dev/src/util.js"
   },
   "scripts": {
+    "commit": "cz",
     "cp": "mkdir -p ./dev/public/shiki && cp -r ./node_modules/shiki/{dist,languages,samples,themes} ./dev/public/shiki",
     "cp:shikifix": "cp node_modules/.pnpm/vscode-oniguruma@1.7.0/node_modules/vscode-oniguruma/release/onig.wasm ./dev/public/shiki/dist/",
     "dev": "vite dev dev --config ./vite.config.js",
+    "eik:login": "npx @eik/cli login",
+    "eik:publish": "npx @eik/cli publish",
     "test": "vitest run",
     "watch": "vitest watch",
     "build": "rm -rf dist && rollup -c",
@@ -28,18 +32,21 @@
     "postversion": "npm run publish:eik && git push --follow-tags"
   },
   "keywords": [],
-  "author": "Dave Honneffer <pearofducks@gmail.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@eik/rollup-plugin": "^4.0.29",
     "@fabric-ds/core": "^0.0.15",
     "@fabric-ds/css": "^1.1.6",
     "@finn-no/dom-focus-lock-fixed": "^1.0.6",
     "@floating-ui/dom": "^0.5.4",
+    "@semantic-release/changelog": "github:semantic-release/changelog",
+    "@semantic-release/git": "github:semantic-release/git",
     "create-v-model": "^2.1.2",
+    "cz-conventional-changelog": "^3.3.0",
     "element-collapse": "^1.1.0",
     "femtobounce": "^1.0.0",
-    "scroll-doctor": "^1.0.1"
+    "scroll-doctor": "^1.0.1",
+    "semantic-release": "^20.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
@@ -73,5 +80,14 @@
   },
   "files": [
     "dist/"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "eik": {
+    "server": "https://assets.finn.no",
+    "files": "./dist"
+  }
 }
