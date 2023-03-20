@@ -22,12 +22,8 @@
     "test": "vitest run",
     "watch": "vitest watch",
     "build": "rm -rf dist && rollup -c",
-    "publish:eik": "eik publish && eik pkg-alias",
     "site": "vite build dev --config ./vite.config.js",
-    "postsite": "cd dev/dist && cp index.html 200.html && cp index.html 404.html && cp ../CNAME .",
-    "preversion": "pnpm run test && eik login && pnpm run build",
-    "version": "npm publish",
-    "postversion": "pnpm run publish:eik && git push --follow-tags"
+    "postsite": "cd dev/dist && cp index.html 200.html && cp index.html 404.html && cp ../CNAME ."
   },
   "keywords": [],
   "license": "Apache-2.0",
