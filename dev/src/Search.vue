@@ -2,7 +2,7 @@
 import Fuse from 'fuse.js'
 import { sidebarConfig } from '../src/sidebar-config.js'
 import { ref, computed, watch } from 'vue'
-import { wInput, wModal, fBox } from '#components'
+import { wInput, wModal, wBox } from '#components'
 import { modalShowing } from '../src/store.js'
 
 const inputEl = ref(null)

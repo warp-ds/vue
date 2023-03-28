@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { radio, useIsActive } from '#dev-util'
-import { wAttention, fBox } from '#components'
+import { wAttention, wBox } from '#components'
 
 const target = ref(null)
 const showing = ref(false)

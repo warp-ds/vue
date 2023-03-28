@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { fBox } from '#components'
+import { wBox } from '#components'
 import { modalShowing } from './store.js'
 import SidebarLinks from './SidebarLinks.vue'
 import { sidebarConfig } from './sidebar-config.js'
