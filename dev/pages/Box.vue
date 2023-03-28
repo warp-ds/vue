@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from 'vue'
-import { fBox, wClickable } from '#components'
+import { wBox, wClickable } from '#components'
 import { checkbox, buildCheckboxState } from '#dev-util'
 
 const controls = [

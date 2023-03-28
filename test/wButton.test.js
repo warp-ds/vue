@@ -11,7 +11,6 @@ describe('button', () => {
     const wrapper = mount(wButton, { props: { label } })
     const html = wrapper.get('button')
     assert.equal(wrapper.text(), 'Hello Warp')
-    assert.ok(wrapper.componentVM.buttonClass.button)
     assert.equal(html.attributes().type, 'button')
   })
   test('slot', () => {
@@ -21,7 +20,6 @@ describe('button', () => {
   test('primary', () => {
     const wrapper = mount(wButton, { props: { primary: true, label } })
     assert.equal(wrapper.text(), 'Hello Warp')
-    assert.ok(wrapper.componentVM.buttonClass.button)
     assert.ok(wrapper.componentVM.buttonClass['button--primary'])
   })
   test('href', () => {

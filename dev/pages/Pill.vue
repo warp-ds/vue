@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { checkbox, buildCheckboxState } from '#dev-util'
-import { fPill } from '#components'
+import { wPill } from '#components'
 
 const modifierControls = [
   { name: 'Suggestion', checkbox },
