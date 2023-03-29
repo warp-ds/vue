@@ -4,6 +4,10 @@
 
 - Run `pnpm dev`, this causes Vite (from the `example` folder) to start a server on port 3003
 
+## Production
+
+- Running `pnpm build` will produce both a build to be published to NPM and an Eik build - both will be placed in the `dist` folder.
+
 ## Contributing
 
 We use [commitizen](https://github.com/commitizen/cz-cli) to ensure coherent commit message structure, used by [semantic release](#releases) to generate change logs and handle versioning.
