@@ -1,34 +1,56 @@
-# Warp Vue
+# Warp-ds Vue
 
-## Development
+Welcome to [@warp-ds/vue](https://github.com/warp-ds/vue),
+a collection of Vue3 components for building user interfaces based on the [Warp Design System](https://github.com/warp-ds/).
+This repository is maintained by the [Warp Core Team](https://github.com/orgs/warp-ds/teams/warp-core-team)
+and is home to the [@warp-ds/vue](https://www.npmjs.com/package/@warp-ds/vue) library.
 
-- Run `pnpm dev`, this causes Vite (from the `example` folder) to start a server on port 3003
 
-## Production
+## How to contribute
 
-- Running `pnpm build` will produce both a build to be published to NPM and an Eik build - both will be placed in the `dist` folder.
+If you'd like to contribute to `@warp-ds/vue`,
+start by reviewing the [contributing guidelines](CONTRIBUTING.md).
 
-## Contributing
 
-We use [commitizen](https://github.com/commitizen/cz-cli) to ensure coherent commit message structure, used by [semantic release](#releases) to generate change logs and handle versioning.
+## How to use
 
+### Installation
+
+Install by using npm/pnpm or by adding a script link:
+
+#### Install using npm
+```sh
+npm i -S @warp-ds/vue
 ```
-npm install -g commitizen
+
+#### Install using pnpm
+```sh
+pnpm add @warp-ds/vue
 ```
 
-When installed, you should be able to type `cz` or `git cz` in your terminal to commit your changes (replacing
-`git commit`).
+#### Using a direct link to Eik
+```html
+<script src="https://assets.finn.no/pkg/@warp-ds/vue/v1"></script>
+```
 
-[![Add and commit with Commitizen](https://github.com/commitizen/cz-cli/raw/master/meta/screenshots/add-commit.png)](https://github.com/commitizen/cz-cli/raw/master/meta/screenshots/add-commit.png)
+### Documentation
+
+For information on the components available in the package and how to use them,
+see the [Warp Design System documentation](https://warp-ds.github.io/tech-docs/).
 
 
 ## Releases
 
-This project uses [Semantic Release](https://github.com/semantic-release/semantic-release) to automate package
-publishing when making changes to the `main` or `alpha` branch.
+This project is currently in alpha.
+Continuously published to [NPM](https://www.npmjs.com/package/@warp-ds/vue) and [Eik](https://assets.finn.no/pkg/@warp-ds/vue) using an `alpha` tag (e.g. `1.0.0-alpha.1`).
+Anyone needing to start using the package before the first major release can install the `alpha` version while waiting for the first stable version.
 
-It is recommended to branch off the `alpha` branch and follow
-[conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) when making changes. When your
-changes are ready for pull request, this should be opened against the `alpha` branch.
 
-Please note that the version published will depend on your commit message structure. Make sure to use commitizen (see [Development section](#Contributing)).
+## Changelog
+
+Detailed changes for each release can be found in the [CHANGELOG](CHANGELOG.md) file.
+
+
+## License
+
+@warp-ds/vue is available under the [Apache-2.0 software license](https://github.com/warp-ds/vue/blob/main/LICENSE).
