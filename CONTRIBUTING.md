@@ -62,15 +62,6 @@ pnpm build
 ```
 
 
-### Documentation
-
-To start a local dev server for the documentation site, run the following command:
-
-```sh
-pnpm docs:dev
-```
-
-
 ## Contributing
 
 ### Branching
