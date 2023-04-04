@@ -11,6 +11,16 @@ export default { name: 'wButton' }
 
 <script setup>
 import { computed, useAttrs } from 'vue'
+import { button } from '@warp-ds/component-classes';
+
+const buttonTypes = [    
+  'primary',
+  'secondary',
+  'negative',
+  'utility',
+  'pill',
+  'link',
+];
 
 const attrs = useAttrs()
 const props = defineProps({
@@ -26,22 +36,26 @@ const props = defineProps({
   href: String,
   label: String
 })
+
 const buttonClass = computed(() => ({
-  'inline-flex rounded-8 max-w-max focusable justify-center cursor-pointer py-8 px-12 i-text-$button-color-text-primary i-bg-$button-color-background-primary': true,
+  [button.buttonSecondary]: props.secondary && !props.quiet || !buttonTypes.find(b => !!props[b]),
   // primary buttons
-  'button--primary': props.primary && !props.negative,
-  'button--destructive': props.primary && props.negative,
+  [button.buttonPrimary]: props.primary && !props.negative,
+  [button.buttonDestructive]: props.primary && props.negative,
   // quiet
-  'button--flat': (props.secondary || (!props.negative && !props.utility)) && props.quiet,
-  'button--destructive-flat': props.negative && props.quiet,
-  'button--utility-flat': props.utility && props.quiet,
+  [button.buttonFlat]: (props.secondary || (!props.negative && !props.utility)) && props.quiet,
+  [button.buttonDestructiveFlat]: props.negative && props.quiet,
+  [button.buttonUtilityFlat]: props.utility && props.quiet,
   // others
-  'button--small': props.small,
-  'button--utility': props.utility && !props.quiet,
-  'button--link': props.link,
-  'button--pill': props.pill,
-  'button--in-progress': props.loading,
+  [button.buttonSmall]: props.small,
+  [button.buttonUtility]: props.utility && !props.quiet,
+  [button.buttonLink]: props.link,
+  [button.buttonPill]: props.pill,
+  [button.buttonInProgress]: props.loading,
+  [button.buttonIsDisabled]: props.disabled,
+  ['inline-block']: !!props.href
 }))
+
 const saneDefaults = computed(() => ({
   type: props.href ? undefined : (attrs.type || 'button'),
   rel: attrs.target === '_blank' ? (attrs.rel || 'noopener') : undefined
