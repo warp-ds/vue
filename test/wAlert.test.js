@@ -18,7 +18,7 @@ describe('alert', () => {
     assert.equal(titleHtml.text(), title)
     assert.include(html.html(), defaultSlot)
     assert.include(wrapper.html(), '<svg ')
-    assert.include(wrapperHtml.classes().join(' '), 'bg-green')
+    assert.include(wrapperHtml.classes().join(' '), 'flex p-16 border border-l-4 rounded-4 i-border-$color-alert-positive-subtle-border i-bg-$color-alert-positive-background i-text-$color-alert-positive-text i-border-l-$color-alert-positive-border')
   })
   test('show/hide', async () => {
     const model = ref(false)
