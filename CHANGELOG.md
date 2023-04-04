@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2023-04-04)
+
+
+### Bug Fixes
+
+* add button classes ([#7](https://github.com/warp-ds/vue/issues/7)) ([192f983](https://github.com/warp-ds/vue/commit/192f983a8d5feda1cab6b8c38f86a9b566b95f5e))
+
 # 1.0.0-alpha.1 (2023-04-04)
 
 
