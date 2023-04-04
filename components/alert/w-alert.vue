@@ -97,20 +97,7 @@ export default { name: 'wAlert' }
 import { computed } from 'vue'
 import { wExpandTransition } from '#generics'
 import { createModel, modelProps } from 'create-v-model'
-
-const wrapperClassNamesMap = {
-  negative:  "i-border-$color-alert-negative-subtle-border i-bg-$color-alert-negative-background i-text-$color-alert-negative-text i-border-l-$color-alert-negative-border",
-  positive:  "i-border-$color-alert-positive-subtle-border i-bg-$color-alert-positive-background i-text-$color-alert-positive-text i-border-l-$color-alert-positive-border",
-  warning:  "i-border-$color-alert-warning-subtle-border i-bg-$color-alert-warning-background i-text-$color-alert-warning-text i-border-l-$color-alert-warning-border",
-  info:  "i-border-$color-alert-info-subtle-border i-bg-$color-alert-info-background i-text-$color-alert-info-text i-border-l-$color-alert-info-border"
-}
-
-const iconClassNamesMap = {
-  negative: "i-text-$color-alert-negative-icon",
-  positive: "i-text-$color-alert-positive-icon",
-  warning: "i-text-$color-alert-warning-icon",
-  info: "i-text-$color-alert-info-icon"
-}
+import { alert } from '@warp-ds/component-classes';
 
 const props = defineProps({
   title: String,
@@ -129,14 +116,15 @@ const possibleTypeProps = ['negative', 'positive', 'warning', 'info'];
 
 const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props, emit });
-const activeWrapperClassNames = computed(() => wrapperClassNamesMap[possibleTypeProps.find(e => props[e])]);
-const activeIconClassNames = computed(() => iconClassNamesMap[possibleTypeProps.find(e => props[e])]);
+const alertColorType = possibleTypeProps.find(e => props[e])
+const activeWrapperClassNames = computed(() => alert[alertColorType]);
+const activeIconClassNames = computed(() => alert[`${alertColorType}Icon`]);
 const wrapperClass = computed(() => [
-  'flex p-16 border border-l-4 rounded-4',
+  alert.alert,
   activeWrapperClassNames.value
 ]);
 const iconClass = computed(() => [
-  'w-16 mr-8 pt-4',
+  alert.icon,
   activeIconClassNames.value
 ]);
 </script>
