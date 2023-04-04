@@ -116,9 +116,9 @@ const possibleTypeProps = ['negative', 'positive', 'warning', 'info'];
 
 const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props, emit });
-const alertColorType = possibleTypeProps.find(e => props[e])
-const activeWrapperClassNames = computed(() => alert[alertColorType]);
-const activeIconClassNames = computed(() => alert[`${alertColorType}Icon`]);
+const alertColorType = computed(() => possibleTypeProps.find(e => props[e]));
+const activeWrapperClassNames = computed(() => alert[alertColorType.value]);
+const activeIconClassNames = computed(() => alert[`${alertColorType.value}Icon`]);
 const wrapperClass = computed(() => [
   alert.alert,
   activeWrapperClassNames.value
