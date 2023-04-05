@@ -1,3 +1,10 @@
+# [1.0.0-alpha.3](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2023-04-05)
+
+
+### Bug Fixes
+
+* use updated component-classes in alert ([#8](https://github.com/warp-ds/vue/issues/8)) ([59227cf](https://github.com/warp-ds/vue/commit/59227cfcfa0b93354e6529b8f6d1455f029b28fe))
+
 # [1.0.0-alpha.2](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2023-04-04)
 
 
