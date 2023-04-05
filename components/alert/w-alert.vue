@@ -23,7 +23,8 @@
               <path d="M7.25 12a.75.75 0 0 0 1.5 0V8a.75.75 0 0 0-1.5 0v4ZM8 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" fill="#fff" />
             </svg>
           </div>
-          <div class="last-child:mb-0 text-14" data-test="content">
+          <!-- TODO: replace text-14 with a token -->
+          <div class="last:mb-0 text-14" data-test="content">
             <p class="font-bold" v-if="title">{{ title }}</p>
             <slot />
           </div>
