@@ -1,3 +1,10 @@
+# [1.0.0-alpha.4](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-04-11)
+
+
+### Bug Fixes
+
+* bump component-classes ([60940a4](https://github.com/warp-ds/vue/commit/60940a47c8143b9c77f5bad72aa771994f2b5c5b))
+
 # [1.0.0-alpha.3](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2023-04-05)
 
 
