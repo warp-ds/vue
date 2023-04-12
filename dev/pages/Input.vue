@@ -2,7 +2,10 @@
 import { ref } from 'vue'
 import { wInput, wAffix } from '#components'
 
-const inputModel = ref('')
+const inputModel = ref('');
+
+const placeholderModel = ref("some text");
+
 const handleClear = (el) => {
   inputModel.value = ''
   el.focus()
@@ -25,8 +28,26 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
-      <w-input #prefix v-model="inputModel" label="I have a prefix" class="mb-16" input-wrapper-class="w-1/2">
+      <w-input #prefix v-model="inputModel" label="I have a prefix">
         <w-affix prefix label="+47" />
+      </w-input>
+    </token>
+
+    <token :state="inputModel">
+      <w-input #suffix v-model="inputModel" label="I have a suffix">
+        <w-affix suffix label="NOK" />
+      </w-input>
+    </token>
+
+    <token :state="inputModel">
+      <w-input #suffix :disabled="true" v-model="inputModel" label="I am disabled">
+        <w-affix suffix label="NOK" />
+      </w-input>
+    </token>
+
+    <token :state="inputModel">
+      <w-input :readOnly="true"  v-model="placeholderModel" label="I am read only">
+        <w-affix suffix label="NOK" />
       </w-input>
     </token>
 

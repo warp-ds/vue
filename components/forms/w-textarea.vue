@@ -7,16 +7,16 @@
 </template>
 
 <script>
-import { createModel } from 'create-v-model'
-import { default as wField, fieldProps } from './w-field.vue'
+  export default { 
+    inheritAttrs: false,
+    name: 'wTextarea',
+  }
+</script>
 
-export default {
-  name: 'wTextarea',
-  components: { wField },
-  inheritAttrs: false,
-  props: fieldProps,
-  setup: (props, { emit }) => ({
-    model: createModel({ props, emit })
-  })
-}
+<script setup>
+import { createModel } from 'create-v-model'
+import { default as wField, fieldProps } from './w-field.vue';
+
+const props = defineProps(fieldProps);
+const model = createModel({ props, emit });
 </script>
