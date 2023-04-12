@@ -15,7 +15,7 @@
 
 <script>
 import { computed } from 'vue'
-import { default as wField, fieldProps } from './w-field.vue';
+import { default as wField, fieldProps } from './w-field.vue'
 import { wToggleItem } from '#generics'
 import { createModel } from 'create-v-model'
 

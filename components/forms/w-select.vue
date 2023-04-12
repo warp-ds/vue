@@ -12,7 +12,7 @@
 
 <script>
 import { createModel } from 'create-v-model'
-import { default as wField, fieldProps } from './w-field.vue';
+import { default as wField, fieldProps } from './w-field.vue'
 
 export default {
   name: 'wSelect',

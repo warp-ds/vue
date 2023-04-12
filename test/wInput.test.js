@@ -20,7 +20,7 @@ describe('input', () => {
         suffix: '<h2>Warp</h2>'
       }
     })
-    const content = wrapper.get('div.input')
+    const content = wrapper.get('div')
     assert.equal(content.text(), 'HelloWarp')
     assert.include(content.html(), '<h1>Hello</h1>')
   })

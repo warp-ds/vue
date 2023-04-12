@@ -35,7 +35,7 @@
 </script>
 
 <script setup>
-  import { computed, ref } from 'vue'
+  import { computed, useSlots } from 'vue'
   import { createValidation } from './validation'
   import { modelProps } from 'create-v-model'
   import { input, label as l, helpText as h} from '@warp-ds/component-classes';
@@ -50,11 +50,13 @@
       required: [Boolean, Function],
       disabled: Boolean,
   });
+  
+  const slots = useSlots();
 
   const valueOrUndefined = (test, value) => test ? value : undefined;
-
+  
   const { triggerValidation, valid, validationMsg, hasErrorMessage, collector } = createValidation(props);
-      
+
   const isFieldset = computed(() => props.as === 'fieldset');
   const labelType = computed(() => isFieldset.value ? 'legend' : 'label');
   const labelFor = computed(() => isFieldset.value ? undefined : props.id);

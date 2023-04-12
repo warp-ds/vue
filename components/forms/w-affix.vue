@@ -7,26 +7,27 @@
 </template>
 
 <script>
-export default { name: 'wAffix' }
-</script>
-
-<script setup>
 import { suffix, prefix } from '@warp-ds/component-classes'
 import { computed } from 'vue'
 
-const props = defineProps({
-  prefix: Boolean,
-  suffix: Boolean,
-  clear: Boolean,
-  search: Boolean,
-  label: String
-});
+export default {
+  name: 'wAffix',
+  props: {
+    prefix: Boolean,
+    suffix: Boolean,
+    clear: Boolean,
+    search: Boolean,
+    label: String
+  },
+  setup(props) {
+    const classBase = computed(() => props.prefix ? prefix : suffix)
+    const wrapperClass = computed(() => ({
+      [classBase.value.wrapper]: true,
+      [props.label ? classBase.value.wrapperWithLabel : classBase.value.wrapperWithIcon]: true
+    }))
+    const labelClass = computed(() => classBase.value.label)
 
-const classBase = computed(() => props.prefix ? prefix : suffix)
-const wrapperClass = computed(() => ({
-  [classBase.value.wrapper]: true,
-  [props.label ? classBase.value.wrapperWithLabel : classBase.value.wrapperWithIcon]: true
-}))
-const labelClass = computed(() => classBase.value.label)
-
+    return { wrapperClass, labelClass }
+  }
+}
 </script>
