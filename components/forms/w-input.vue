@@ -1,14 +1,14 @@
 <template>
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria }">
-      <div :class="[inputWrapperClass, wrapperClass]">
+      <div :class="[input.wrapper, inputWrapperClass]">
       <slot name="prefix" :inputElement="inputEl" />
       <input v-if="mask" :class="inputClasses" v-bind="{ ...aria, ...$attrs, class: '' }" @blur="triggerValidation" ref="inputEl" :autocomplete="autocomplete" :id="id" :type="type">
       <input v-else 
       :class="[
         inputClasses,
         {
-          'pr-40': $slots.suffix,
-          'pl-40': $slots.prefix,    
+          [input.suffix]: $slots.suffix,
+          [input.prefix]: $slots.prefix,    
         }
       ]"
       v-bind="{ ...aria, ...$attrs, class: '' }" @blur="triggerValidation" ref="inputEl" :autocomplete="autocomplete" :id="id" :type="type" v-model="model">
@@ -42,7 +42,6 @@ export default {
     const model = createModel({ props, emit })
     const inputEl = ref(null)
     if (props.mask) setupMask({ props, emit, inputEl });
-    const wrapperClass = input.wrapper;
     const inputClasses = computed(() => ({
       [input.default]: true,
       [input.invalid]: props.invalid,
@@ -50,7 +49,7 @@ export default {
       [input.readOnly]: props.readOnly,
       [input.placeholder]: !!props.placeholder,
     }));
-    return { model, inputEl, inputClasses, wrapperClass }
+    return { model, inputEl, inputClasses, input }
   }
 }
 </script>
