@@ -1,9 +1,9 @@
 <template>
-  <component :is="as" class="field" :class="{ 'is-invalid': hasErrorMessage, 'is-disabled': disabled, [$attrs.class || '']: true }" :role="role" v-bind="wrapperAria">
-    <component :is="labelType" v-if="label" class="field-label" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" class="pl-8 font-normal text-14 text-gray-500"> (valgfritt)</span></component>
+  <component :is="as" :class="{[input.wrapper]: true, [input.invalid]: hasErrorMessage, [$attrs.class || '']: true}" :role="role" v-bind="wrapperAria">
+    <component :is="labelType" v-if="label" :class="{[l.label]: true, [l.labelValid]: !hasErrorMessage, [l.labelInvalid]: hasErrorMessage}" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="l.optional"> (valgfritt)</span></component>
     <slot :triggerValidation="triggerValidation" :labelFor="id" :labelId="labelId" :aria="aria" />
     <slot name="control" :form="collector" />
-    <div class="field-hint" v-if="hint || hasErrorMessage">
+    <div :class="{[h.helpText]: true, [h.helpTextInvalid]: hasErrorMessage}" v-if="hint || hasErrorMessage">
       <span :id="hintId" v-if="hint" v-html="hint" />
       <span v-if="hint && hasErrorMessage">, </span>
       <span :id="errorId" v-if="hasErrorMessage">{{ validationMsg }}</span>
@@ -12,10 +12,11 @@
 </template>
 
 <script>
-import { computed } from 'vue'
-import { createValidation } from './validation'
-import { id } from '#util'
-import { modelProps } from 'create-v-model'
+import { computed } from 'vue';
+import { input, label as l, helpText as h} from '@warp-ds/component-classes';
+import { createValidation } from './validation';
+import { id } from '#util';
+import { modelProps } from 'create-v-model';
 
 export const fieldProps = {
   id,
@@ -65,7 +66,7 @@ export default {
     }))
     const wrapperAria = computed(() => valueOrUndefined(isFieldset.value, aria.value))
 
-    return { triggerValidation, validationMsg, hasErrorMessage, labelType, labelFor, labelId, hintId, errorId, aria, wrapperAria, collector, valueOrUndefined }
+    return { triggerValidation, validationMsg, hasErrorMessage, labelType, labelFor, labelId, hintId, errorId, aria, wrapperAria, collector, valueOrUndefined, input, l, h }
   }
 }
 </script>
