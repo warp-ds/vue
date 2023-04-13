@@ -1,3 +1,10 @@
+# [1.0.0-alpha.6](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2023-04-13)
+
+
+### Bug Fixes
+
+* add classes to textfield and textarea ([#13](https://github.com/warp-ds/vue/issues/13)) ([d07be64](https://github.com/warp-ds/vue/commit/d07be64677dd396bbc61d686aeb3f47b6f0e0cda))
+
 # [1.0.0-alpha.5](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2023-04-13)
 
 
