@@ -1,3 +1,10 @@
+# [1.0.0-alpha.5](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2023-04-13)
+
+
+### Features
+
+* **workflows:** add eik aliasing script to release.yml ([#10](https://github.com/warp-ds/vue/issues/10)) ([a0de9d6](https://github.com/warp-ds/vue/commit/a0de9d6720edcbfd51d733d233f464d295b63ed9))
+
 # [1.0.0-alpha.4](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2023-04-11)
 
 
