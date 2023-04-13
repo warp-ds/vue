@@ -1,13 +1,15 @@
 <template>
-  <div class="f-step" :class="{
+  <div :class="{
+      [c.step]: true,
       [c.stepVertical]: vertical,
       [c.stepVerticalLeft]: vertical && left,
       [c.stepVerticalRight]: vertical && !left,
       [c.stepHorizontal]: !vertical
   }">
-    <div v-if="!vertical" class="step-line-h-l" :class="{
+    <div v-if="!vertical" :class="{
       [c.stepLine]: true,
       [c.stepLineHorizontal]: !vertical,
+      [c.stepLineHorizontalLeft]: true,
       [c.stepLineIncomplete]: !active && !complete,
       [c.stepLineComplete]: active || complete
     }" />
@@ -25,12 +27,13 @@
         <path fill="currentColor" d="M13.007 4.447a.75.75 0 01.046 1.06l-5.5 6a.75.75 0 01-1.083.023l-3-3a.75.75 0 011.06-1.06l2.446 2.446 4.971-5.423a.75.75 0 011.06-.046z" />
       </svg>
     </div>
-    <div class="step-line-h-r" :class="{
+    <div :class="{
       [c.stepLine]: true,
       [c.stepLineVertical]: vertical,
       [c.stepLineVerticalLeft]: vertical && left,
       [c.stepLineVerticalRight]: vertical && !left,
       [c.stepLineHorizontal]: !vertical,
+      [c.stepLineHorizontalRight]: true,
       [c.stepLineIncomplete]: !complete,
       [c.stepLineComplete]: complete
     }" />
