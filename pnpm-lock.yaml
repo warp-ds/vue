@@ -13,7 +13,7 @@ specifiers:
   '@vitejs/plugin-vue': ^4.1.0
   '@vue/compiler-sfc': ^3.2.37
   '@vue/test-utils': ^2.0.2
-  '@warp-ds/component-classes': ^1.0.0-alpha.30
+  '@warp-ds/component-classes': ^1.0.0-alpha.31
   '@warp-ds/uno': 1.0.0-alpha.5
   cleave-lite: ^1.0.0
   create-v-model: ^2.1.2
@@ -55,7 +55,7 @@ devDependencies:
   '@vitejs/plugin-vue': 4.1.0_vite@4.2.1+vue@3.2.47
   '@vue/compiler-sfc': 3.2.47
   '@vue/test-utils': 2.3.0_vue@3.2.47
-  '@warp-ds/component-classes': 1.0.0-alpha.30
+  '@warp-ds/component-classes': 1.0.0-alpha.31
   '@warp-ds/uno': 1.0.0-alpha.5
   cleave-lite: 1.0.0
   cz-conventional-changelog: 3.3.0
@@ -1271,8 +1271,8 @@ packages:
       '@vue/server-renderer': 3.2.47_vue@3.2.47
     dev: true
 
-  /@warp-ds/component-classes/1.0.0-alpha.30:
-    resolution: {integrity: sha512-DoB6b81LSyayoQ65th6Qt/igvjZ52V0GQJe33ZtEtqmgFKz40rgzaiPj5Vng9dJN7qztcExvPQOmTET+TSmXzg==}
+  /@warp-ds/component-classes/1.0.0-alpha.31:
+    resolution: {integrity: sha512-gqoxHbj1YA4d8E6+9DAvPX1w0BwcJfx/P99IeBG9u/QXoHDsV9zl90B74qFCmw8Uei1n2pG25m2sOf/J5hRzXg==}
     dev: true
 
   /@warp-ds/uno/1.0.0-alpha.5:

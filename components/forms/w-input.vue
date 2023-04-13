@@ -1,6 +1,6 @@
 <template>
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria }">
-      <div :class="[inputWrapperClass, wrapperClass ]">
+      <div :class="[inputWrapperClass, wrapperClass]">
       <slot name="prefix" :inputElement="inputEl" />
       <input v-if="mask" :class="inputClasses" v-bind="{ ...aria, ...$attrs, class: '' }" @blur="triggerValidation" ref="inputEl" :autocomplete="autocomplete" :id="id" :type="type">
       <input v-else 
