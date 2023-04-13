@@ -48,6 +48,7 @@ export default {
       [input.invalid]: props.invalid,
       [input.disabled]: props.disabled,
       [input.readOnly]: props.readOnly,
+      [input.placeholder]: !!props.placeholder,
     }));
     return { model, inputEl, inputClasses, wrapperClass }
   }

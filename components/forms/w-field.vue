@@ -1,6 +1,7 @@
 <template>
-  <component :is="as" class="relative" :class="{[input.invalid]: hasErrorMessage, [$attrs.class || '']: true}" :role="role" v-bind="wrapperAria">
-    <component :is="labelType" v-if="label" :class="{[l.label]: true, [l.labelValid]: !hasErrorMessage, [l.labelInvalid]: hasErrorMessage}" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="input.optional"> (valgfritt)</span></component>    <slot :triggerValidation="triggerValidation" :labelFor="id" :labelId="labelId" :aria="aria" />
+  <component :is="as" :class="{[input.wrapper]: true, [input.invalid]: hasErrorMessage, [$attrs.class || '']: true}" :role="role" v-bind="wrapperAria">
+    <component :is="labelType" v-if="label" :class="{[l.label]: true, [l.labelValid]: !hasErrorMessage, [l.labelInvalid]: hasErrorMessage}" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="input.optional"> (valgfritt)</span></component>
+    <slot :triggerValidation="triggerValidation" :labelFor="id" :labelId="labelId" :aria="aria" />
     <slot name="control" :form="collector" />
     <div :class="{[h.helpText]: true, [h.helpTextValid]: !hasErrorMessage, [h.helpTextInvalid]: hasErrorMessage}" v-if="hint || hasErrorMessage">
       <span :id="hintId" v-if="hint" v-html="hint" />

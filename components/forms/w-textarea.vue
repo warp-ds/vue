@@ -24,6 +24,7 @@ export default {
     [input.invalid]: props.invalid,
     [input.disabled]: props.disabled,
     [input.readOnly]: props.readOnly,
+    [input.placeholder]: !!props.placeholder,
     }));
     const model = createModel({ props, emit });
     return { model, inputClasses, wrapperClass }
