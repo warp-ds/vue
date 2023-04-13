@@ -37,6 +37,10 @@ export default {
     inputWrapperClass: String,
     autocomplete: { type: String, default: 'off' },
     mask: Object,
+    invalid: Boolean,
+    disabled: Boolean,
+    readOnly: Boolean,
+    placeholder: String
   },
   setup(props, { emit }) {
     const model = createModel({ props, emit })

@@ -40,7 +40,7 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
-      <w-input #suffix :disabled="true" v-model="inputModel" label="I am disabled">
+      <w-input #suffix :disabled=true v-model="inputModel" label="I am disabled">
         <w-affix suffix label="NOK" />
       </w-input>
     </token>

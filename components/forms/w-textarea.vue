@@ -16,7 +16,13 @@ export default {
   name: 'wTextarea',
   components: { wField },
   inheritAttrs: false,
-  props: fieldProps,
+  props: {
+    ...fieldProps,
+    invalid: Boolean,
+    disabled: Boolean,
+    readOnly: Boolean,
+    placeholder: String
+  },
   setup: (props, { emit }) => {
     const wrapperClass = input.wrapper;
     const inputClasses = computed(() => ({
