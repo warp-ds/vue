@@ -19,12 +19,12 @@ const boxClasses = computed(() => [
   ccBox.box,
   {
     [ccBox.bleed]: props.bleed,
-    'i-bg-$color-box-info-background': props.info,
-    'i-bg-$color-box-neutral-background': props.neutral,
-    'border-2 i-border-$color-box-bordered-border i-bg-$color-box-bordered-background': props.bordered,
-    'hover:active:i-bg-$color-box-info-background-hover': props.clickable && props.info,
-    'hover:active:i-bg-$color-box-neutral-background-hover': props.clickable && props.neutral,
-    'hover:i-bg-$color-box-bordered-background-hover active:i-bg-$color-box-bordered-background-hover hover:i-border-$color-box-bordered-border-hover active:i-border-$color-box-bordered-border-hover': props.clickable && props.bordered
+    [ccBox.info]: props.info,
+    [ccBox.neutral]: props.neutral,
+    [ccBox.bordered]: props.bordered,
+    [ccBox.infoClickable]: props.clickable && props.info,
+    [ccBox.neutralClickable]: props.clickable && props.neutral,
+    [ccBox.borderedClickable]: props.clickable && props.bordered
   }
 ]);
 </script>
