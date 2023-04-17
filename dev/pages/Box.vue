@@ -33,8 +33,9 @@ const handleClick = () => alert('Hello Warp!');
         <w-clickable v-else @click="handleClick"><h3 class="h4 mb-0">I am some clickable content</h3></w-clickable>
       </w-box>
     </token>
-    <demo-controls>
-      <demo-control label="Variants" :controls="variants" :state="state" class="mb-8" />
+
+    <demo-controls y>
+      <demo-control label="Variants" :controls="variants" :state="state" />
       <demo-control label="Options" :controls="options" :state="state" />
     </demo-controls>
   </div>
