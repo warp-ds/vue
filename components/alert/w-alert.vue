@@ -1,5 +1,42 @@
+<script setup>
+import { computed } from 'vue';
+import { wExpandTransition } from '#generics';
+import { createModel, modelProps } from 'create-v-model';
+import { alert as ccAlert } from '@warp-ds/component-classes';
+
+const props = defineProps({
+  title: String,
+  role: {
+    type: String,
+    default: 'alert'
+  },
+  negative: Boolean,
+  positive: Boolean,
+  warning: Boolean,
+  info: Boolean,
+  ...modelProps(),
+});
+
+const possibleTypeProps = ['negative', 'positive', 'warning', 'info'];
+
+const emit = defineEmits(['update:modelValue']);
+const model = createModel({ props, emit });
+const alertColorType = computed(() => possibleTypeProps.find(e => props[e]));
+const activeWrapperClassNames = computed(() => ccAlert[alertColorType.value]);
+const activeIconClassNames = computed(() => ccAlert[`${alertColorType.value}Icon`]);
+const wrapperClass = computed(() => [
+  ccAlert.alert,
+  activeWrapperClassNames.value
+]);
+const iconClass = computed(() => [
+  ccAlert.icon,
+  activeIconClassNames.value
+]);
+</script>
+
 <template>
-  <div class="f-expandable">
+  <div class="will-change-height">
+    <!-- TODO: Investigate if "will-change-height" is needed and compare the use of it with the other component repos -->
     <w-expand-transition>
       <div v-if="model" :role="role">
         <div :class="wrapperClass" data-test="wrapper">
@@ -35,41 +72,5 @@
 </template>
 
 <script>
-export default { name: 'wAlert' }
-</script>
-
-<script setup>
-import { computed } from 'vue'
-import { wExpandTransition } from '#generics'
-import { createModel, modelProps } from 'create-v-model'
-import { alert } from '@warp-ds/component-classes';
-
-const props = defineProps({
-  title: String,
-  role: {
-    type: String,
-    default: 'alert'
-  },
-  negative: Boolean,
-  positive: Boolean,
-  warning: Boolean,
-  info: Boolean,
-  ...modelProps(),
-});
-
-const possibleTypeProps = ['negative', 'positive', 'warning', 'info'];
-
-const emit = defineEmits(['update:modelValue']);
-const model = createModel({ props, emit });
-const alertColorType = computed(() => possibleTypeProps.find(e => props[e]));
-const activeWrapperClassNames = computed(() => alert[alertColorType.value]);
-const activeIconClassNames = computed(() => alert[`${alertColorType.value}Icon`]);
-const wrapperClass = computed(() => [
-  alert.alert,
-  activeWrapperClassNames.value
-]);
-const iconClass = computed(() => [
-  alert.icon,
-  activeIconClassNames.value
-]);
+export default { name: 'wAlert' };
 </script>

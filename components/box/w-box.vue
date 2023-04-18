@@ -1,3 +1,34 @@
+<script setup>
+import { box as ccBox } from '@warp-ds/component-classes';
+import { computed } from 'vue';
+
+const props = defineProps({
+  as: { type: String, default: 'div' },
+  bleed: Boolean,
+  // TODO: clickable should be marked as deprecated in the docs (and refer to use card instead) and then be removed.
+  clickable: Boolean,
+  // TODO: According to the Figma design info, neutral and bordered are variants and shouldn't be combinable.
+  //       It might be better to have a type/variant prop and have info or bordered as possible values?
+  //       ...and then treat neutral as the default when type is not set?
+  info: Boolean,
+  neutral: Boolean,
+  bordered: Boolean
+});
+
+const boxClasses = computed(() => [
+  ccBox.box,
+  {
+    [ccBox.bleed]: props.bleed,
+    [ccBox.info]: props.info,
+    [ccBox.neutral]: props.neutral,
+    [ccBox.bordered]: props.bordered,
+    [ccBox.infoClickable]: props.clickable && props.info,
+    [ccBox.neutralClickable]: props.clickable && props.neutral,
+    [ccBox.borderedClickable]: props.clickable && props.bordered
+  }
+]);
+</script>
+
 <template>
   <component :is="as" :class="boxClasses">
     <slot />
@@ -5,28 +36,5 @@
 </template>
 
 <script>
-export default { name: 'wBox' }
-</script>
-
-<script setup>
-import { box as c } from '@fabric-ds/css/component-classes'
-import { computed } from 'vue'
-
-const props = defineProps({
-  bleed: Boolean,
-  as: { type: String, default: 'div' },
-  clickable: Boolean,
-  info: Boolean,
-  neutral: Boolean,
-  bordered: Boolean
-})
-const boxClasses = computed(() => ({
-  [c.box]: true,
-  [c.bleed]: props.bleed,
-  'bg-aqua-50': props.info,
-  'hover:bg-aqua-100 active:bg-aqua-200': props.info && props.clickable,
-  'bg-bluegray-50': props.neutral,
-  'hover:bg-bluegray-100 active:bg-bluegray-200': props.neutral && props.clickable,
-  'border-2 border-bluegray-300': props.bordered
-}))
+export default { name: 'wBox' };
 </script>
