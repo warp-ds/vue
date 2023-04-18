@@ -1,3 +1,10 @@
+# [1.0.0-alpha.7](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2023-04-18)
+
+
+### Bug Fixes
+
+* Update the box component to Warp using component-classes ([#14](https://github.com/warp-ds/vue/issues/14)) ([eab3eb1](https://github.com/warp-ds/vue/commit/eab3eb19a36eceaaa3d1a35d710a937d9d78287a))
+
 # [1.0.0-alpha.6](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2023-04-13)
 
 
