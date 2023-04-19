@@ -1,3 +1,10 @@
+# [1.0.0-alpha.8](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-04-19)
+
+
+### Bug Fixes
+
+* **package.json:** update version for component-classes in package.json ([658c232](https://github.com/warp-ds/vue/commit/658c232a74b08ff595121e8bd716ed720a0af489))
+
 # [1.0.0-alpha.7](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2023-04-18)
 
 
