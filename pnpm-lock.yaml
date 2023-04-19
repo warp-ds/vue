@@ -13,8 +13,8 @@ specifiers:
   '@vitejs/plugin-vue': ^4.1.0
   '@vue/compiler-sfc': ^3.2.37
   '@vue/test-utils': ^2.0.2
-  '@warp-ds/component-classes': ^1.0.0-alpha.35
-  '@warp-ds/uno': 1.0.0-alpha.5
+  '@warp-ds/component-classes': ^1.0.0-alpha.39
+  '@warp-ds/uno': 1.0.0-alpha.8
   cleave-lite: ^1.0.0
   create-v-model: ^2.1.2
   cz-conventional-changelog: ^3.3.0
@@ -55,8 +55,8 @@ devDependencies:
   '@vitejs/plugin-vue': 4.1.0_vite@4.2.1+vue@3.2.47
   '@vue/compiler-sfc': 3.2.47
   '@vue/test-utils': 2.3.0_vue@3.2.47
-  '@warp-ds/component-classes': 1.0.0-alpha.35
-  '@warp-ds/uno': 1.0.0-alpha.5
+  '@warp-ds/component-classes': 1.0.0-alpha.39
+  '@warp-ds/uno': 1.0.0-alpha.8
   cleave-lite: 1.0.0
   cz-conventional-changelog: 3.3.0
   drnm: 0.9.0
@@ -1271,12 +1271,12 @@ packages:
       '@vue/server-renderer': 3.2.47_vue@3.2.47
     dev: true
 
-  /@warp-ds/component-classes/1.0.0-alpha.35:
-    resolution: {integrity: sha512-4EpnQxSHU6GoeDFx7omBqVxxC/NnYq5w1Iq1Cyhgwya4Cs1m/RyTP0gby8hRNUr1GdFGsxv7NMCoLiPkLuXcLg==}
+  /@warp-ds/component-classes/1.0.0-alpha.39:
+    resolution: {integrity: sha512-OtwQ+q/fsjRJIOjUSIe36d9rEwzSJ2E7vHLQaWodT4Y2uYpKR6YZpdd1vhMKLeJKQ5mvMjnEldww9+3XOAPSyA==}
     dev: true
 
-  /@warp-ds/uno/1.0.0-alpha.5:
-    resolution: {integrity: sha512-8V6VuRmYujceUfYkbRkkQsu1EuLLQyRWfbLn9ehz962DXA+oJ4kSnjK12tdc2tNI/8EKs14Tl4c3X4e/d+1S/w==}
+  /@warp-ds/uno/1.0.0-alpha.8:
+    resolution: {integrity: sha512-OcrvcdtzlDtV+v1qTb6nLdK5xFdZNJDL3txYOvnNBXrmr7Jx7cmiMIRctZxkLsjSLA4HGVo5NlNWakHeWawSmw==}
     dependencies:
       '@unocss/core': 0.50.6
       '@unocss/preset-mini': 0.50.6
