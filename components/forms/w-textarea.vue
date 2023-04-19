@@ -8,7 +8,7 @@
 
 <script>
 import { computed } from 'vue';
-import { input } from '@warp-ds/component-classes';
+import { input as ccInput } from '@warp-ds/component-classes';
 import { createModel } from 'create-v-model';
 import { default as wField, fieldProps } from './w-field.vue';
 
@@ -24,13 +24,13 @@ export default {
     placeholder: String
   },
   setup: (props, { emit }) => {
-    const wrapperClass = input.wrapper;
+    const wrapperClass = ccInput.wrapper;
     const inputClasses = computed(() => ({
-    [input.default]: true,
-    [input.invalid]: props.invalid,
-    [input.disabled]: props.disabled,
-    [input.readOnly]: props.readOnly,
-    [input.placeholder]: !!props.placeholder,
+    [`${ccInput.default} ${ccInput.textArea}`]: true,
+    [ccInput.invalid]: props.invalid,
+    [ccInput.disabled]: props.disabled,
+    [ccInput.readOnly]: props.readOnly,
+    [ccInput.placeholder]: !!props.placeholder,
     }));
     const model = createModel({ props, emit });
     return { model, inputClasses, wrapperClass }

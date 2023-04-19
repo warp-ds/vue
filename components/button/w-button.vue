@@ -11,7 +11,7 @@ export default { name: 'wButton' }
 
 <script setup>
 import { computed, useAttrs } from 'vue'
-import { button } from '@warp-ds/component-classes';
+import { button as ccButton } from '@warp-ds/component-classes';
 
 const buttonTypes = [    
   'primary',
@@ -38,21 +38,21 @@ const props = defineProps({
 })
 
 const buttonClass = computed(() => ({
-  [button.buttonSecondary]: props.secondary && !props.quiet || !buttonTypes.find(b => !!props[b]),
+  [ccButton.buttonSecondary]: props.secondary && !props.quiet || !buttonTypes.find(b => !!props[b]),
   // primary buttons
-  [button.buttonPrimary]: props.primary && !props.negative,
-  [button.buttonDestructive]: props.primary && props.negative,
+  [ccButton.buttonPrimary]: props.primary && !props.negative,
+  [ccButton.buttonDestructive]: props.primary && props.negative,
   // quiet
-  [button.buttonFlat]: (props.secondary || (!props.negative && !props.utility)) && props.quiet,
-  [button.buttonDestructiveFlat]: props.negative && props.quiet,
-  [button.buttonUtilityFlat]: props.utility && props.quiet,
+  [ccButton.buttonFlat]: (props.secondary || (!props.negative && !props.utility)) && props.quiet,
+  [ccButton.buttonDestructiveFlat]: props.negative && props.quiet,
+  [ccButton.buttonUtilityFlat]: props.utility && props.quiet,
   // others
-  [button.buttonSmall]: props.small,
-  [button.buttonUtility]: props.utility && !props.quiet,
-  [button.buttonLink]: props.link,
-  [button.buttonPill]: props.pill,
-  [button.buttonInProgress]: props.loading,
-  [button.buttonIsDisabled]: props.disabled,
+  [ccButton.buttonSmall]: props.small,
+  [ccButton.buttonUtility]: props.utility && !props.quiet,
+  [ccButton.buttonLink]: props.link,
+  [ccButton.buttonPill]: props.pill,
+  [ccButton.buttonInProgress]: props.loading,
+  [ccButton.buttonIsDisabled]: props.disabled,
   ['inline-block']: !!props.href
 }))
 
