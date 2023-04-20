@@ -1,39 +1,41 @@
 <template>
-  <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation }">
+  <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, hasValidationErrors }">
     <div :class="wrapperClass">
-      <textarea :class="inputClasses" v-bind="{ ...$attrs, class: '' }" v-model="model" :id="id" @blur="triggerValidation" />
+      <textarea         
+        :class="[
+          inputClasses,
+          {
+            [ccInput.invalid]: hasValidationErrors,
+          }
+        ]"
+        v-bind="{ ...$attrs, class: '' }" v-model="model" :id="id" @blur="triggerValidation" 
+      />
     </div>
   </w-field>
 </template>
 
-<script>
-import { computed } from 'vue';
+<script setup>
+import { computed, useAttrs } from 'vue';
 import { input as ccInput } from '@warp-ds/component-classes';
 import { createModel } from 'create-v-model';
 import { default as wField, fieldProps } from './w-field.vue';
 
-export default {
-  name: 'wTextarea',
-  components: { wField },
-  inheritAttrs: false,
-  props: {
+const props = defineProps({
     ...fieldProps,
-    invalid: Boolean,
-    disabled: Boolean,
-    readOnly: Boolean,
-    placeholder: String
-  },
-  setup: (props, { emit }) => {
-    const wrapperClass = ccInput.wrapper;
-    const inputClasses = computed(() => ({
+  });
+  const {disabled, placeholder, readOnly} = useAttrs();
+  const emit = defineEmits(['update:modelValue']);
+  const model = createModel({ props, emit });
+
+  const wrapperClass = ccInput.wrapper;
+  const inputClasses = computed(() => ({
     [`${ccInput.default} ${ccInput.textArea}`]: true,
-    [ccInput.invalid]: props.invalid,
-    [ccInput.disabled]: props.disabled,
-    [ccInput.readOnly]: props.readOnly,
-    [ccInput.placeholder]: !!props.placeholder,
-    }));
-    const model = createModel({ props, emit });
-    return { model, inputClasses, wrapperClass }
-  }
-}
+    [ccInput.disabled]: disabled,
+    [ccInput.readOnly]: readOnly !== undefined,
+    [ccInput.placeholder]: !!placeholder,
+  }));
+</script>
+
+<script>
+export default { name: 'wTextarea', inheritAttrs: false };
 </script>
