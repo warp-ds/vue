@@ -1,3 +1,10 @@
+# [1.0.0-alpha.9](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2023-04-20)
+
+
+### Bug Fixes
+
+* **expandable:** add the same settings for info as for box prop + rename import of component classes ([1c85e36](https://github.com/warp-ds/vue/commit/1c85e36b130ad114b62462c594dce172e69708cc))
+
 # [1.0.0-alpha.8](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-04-19)
 
 
