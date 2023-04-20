@@ -1,6 +1,6 @@
 <template>
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
-      <div :class="[inputWrapperClass, ccInput.wrapper]">
+      <div :class="[ccInput.wrapper, inputWrapperClass]">
       <slot name="prefix" :inputElement="inputEl" />
       <input 
         v-if="mask"
