@@ -4,7 +4,7 @@ import { wInput, wAffix } from '#components'
 
 const inputModel = ref('');
 
-const placeholderModel = ref("some text");
+const placeholderModel = ref('');
 
 const handleClear = (el) => {
   inputModel.value = ''
@@ -28,8 +28,15 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
-      <w-input #prefix v-model="inputModel" label="I have a prefix">
+      <w-input placeholder="I am placeholder"  #prefix v-model="inputModel" label="I have a prefix">
         <w-affix prefix label="+47" />
+      </w-input>
+    </token>
+
+    <token :state="inputModel">
+      <w-input #prefix #suffix v-model="inputModel" label="I have a prefix">
+        <w-affix prefix label="+47" />
+        <w-affix suffix clear />
       </w-input>
     </token>
 
@@ -46,13 +53,13 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
-      <w-input :readOnly="true"  v-model="placeholderModel" label="I am read only">
+      <w-input readOnly value="I'm read only" v-model="placeholderModel" label="I am read only">
         <w-affix suffix label="NOK" />
       </w-input>
     </token>
 
     <token :state="numericInputModel">
-      <w-input v-model.number="numericInputModel" optional number type="text" inputmode="numeric" :mask="moneyMask" label="A masked (money) input" />
+      <w-input placeholder="I am placeholder"  v-model.number="numericInputModel" optional number type="text" inputmode="numeric" :mask="moneyMask" label="A masked (money) input" />
     </token>
   </div>
 </template>

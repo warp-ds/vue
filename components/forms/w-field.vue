@@ -1,7 +1,7 @@
 <template>
-  <component :is="as" :class="{[ccInput.wrapper]: true, [ccInput.invalid]: hasErrorMessage, [$attrs.class || '']: true}" :role="role" v-bind="wrapperAria">
+  <component :is="as" :class="{[ccInput.wrapper]: true, [$attrs.class || '']: true}" :role="role" v-bind="wrapperAria">
     <component :is="labelType" v-if="label" :class="{[ccLabel.label]: true, [ccLabel.labelValid]: !hasErrorMessage, [ccLabel.labelInvalid]: hasErrorMessage}" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="ccLabel.optional"> (valgfritt)</span></component>
-    <slot :triggerValidation="triggerValidation" :labelFor="id" :labelId="labelId" :aria="aria" />
+    <slot :triggerValidation="triggerValidation" :labelFor="id" :labelId="labelId" :aria="aria" :hasValidationErrors="hasValidationErrors" />
     <slot name="control" :form="collector" />
     <div :class="{[ccHelpText.helpText]: true, [ccHelpText.helpTextInvalid]: hasErrorMessage}" v-if="hint || hasErrorMessage">
       <span :id="hintId" v-if="hint" v-html="hint" />
@@ -65,8 +65,8 @@ export default {
       'aria-required': props.required && true
     }))
     const wrapperAria = computed(() => valueOrUndefined(isFieldset.value, aria.value))
-
-    return { triggerValidation, validationMsg, hasErrorMessage, labelType, labelFor, labelId, hintId, errorId, aria, wrapperAria, collector, valueOrUndefined, ccInput, ccLabel, ccHelpText }
+    const hasValidationErrors = computed(() => !!hasErrorMessage.value);
+    return { triggerValidation, validationMsg, hasErrorMessage, labelType, labelFor, labelId, hintId, errorId, aria, wrapperAria, collector, valueOrUndefined, ccInput, ccLabel, ccHelpText, hasValidationErrors }
   }
 }
 </script>
