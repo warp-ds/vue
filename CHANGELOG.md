@@ -1,3 +1,10 @@
+# [1.0.0-alpha.11](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2023-04-20)
+
+
+### Bug Fixes
+
+* do not override props and attrs in input and textarea ([#17](https://github.com/warp-ds/vue/issues/17)) ([e549203](https://github.com/warp-ds/vue/commit/e54920361eb1a6dff660777151875e4b58fb3662))
+
 # [1.0.0-alpha.10](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-04-20)
 
 
