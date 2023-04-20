@@ -1,3 +1,10 @@
+# [1.0.0-alpha.10](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-04-20)
+
+
+### Bug Fixes
+
+* textarea default class and refactor ([#15](https://github.com/warp-ds/vue/issues/15)) ([e64455d](https://github.com/warp-ds/vue/commit/e64455d4973e990f0445b95494fd21c100d322df))
+
 # [1.0.0-alpha.9](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2023-04-20)
 
 
