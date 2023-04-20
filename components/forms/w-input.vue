@@ -1,14 +1,14 @@
 <template>
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria }">
-      <div :class="[input.wrapper, inputWrapperClass]">
+      <div :class="[ccInput.wrapper, inputWrapperClass]">
       <slot name="prefix" :inputElement="inputEl" />
       <input v-if="mask" :class="inputClasses" v-bind="{ ...aria, ...$attrs, class: '' }" @blur="triggerValidation" ref="inputEl" :autocomplete="autocomplete" :id="id" :type="type">
       <input v-else 
       :class="[
         inputClasses,
         {
-          [input.suffix]: $slots.suffix,
-          [input.prefix]: $slots.prefix,    
+          [ccInput.suffix]: $slots.suffix,
+          [ccInput.prefix]: $slots.prefix,    
         }
       ]"
       v-bind="{ ...aria, ...$attrs, class: '' }" @blur="triggerValidation" ref="inputEl" :autocomplete="autocomplete" :id="id" :type="type" v-model="model">
@@ -19,7 +19,7 @@
 
 <script>
 import { ref, computed } from 'vue';
-import { input } from '@warp-ds/component-classes';
+import { input as ccInput } from '@warp-ds/component-classes';
 import { createModel } from 'create-v-model';
 import { setupMask } from './w-input-mask.js';
 import { default as wField, fieldProps } from './w-field.vue';
@@ -47,13 +47,13 @@ export default {
     const inputEl = ref(null)
     if (props.mask) setupMask({ props, emit, inputEl });
     const inputClasses = computed(() => ({
-      [input.default]: true,
-      [input.invalid]: props.invalid,
-      [input.disabled]: props.disabled,
-      [input.readOnly]: props.readOnly,
-      [input.placeholder]: !!props.placeholder,
+      [ccInput.default]: true,
+      [ccInput.invalid]: props.invalid,
+      [ccInput.disabled]: props.disabled,
+      [ccInput.readOnly]: props.readOnly,
+      [ccInput.placeholder]: !!props.placeholder,
     }));
-    return { model, inputEl, inputClasses, input }
+    return { model, inputEl, inputClasses, ccInput }
   }
 }
 </script>
