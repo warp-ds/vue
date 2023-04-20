@@ -2,7 +2,7 @@
   <component :is="as" :class="wrapperClasses">
     <button v-if="hasTitle" type="button" :aria-expanded="expanded" :class="buttonClasses" @click="expanded = !expanded">
       <slot name="title" :expanded="expanded" />
-      <span :class="c.expandableTitle" v-if="title">{{ title }}</span>
+      <span :class="ccExpandable.expandableTitle" v-if="title">{{ title }}</span>
       <div :class="chevronClasses" v-if="chevron">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 5.5L8 11l5.5-5.5"/></svg>
       </div>
@@ -26,7 +26,7 @@ import { ref, computed, watch, nextTick, useSlots } from 'vue'
 import { modelProps, createModel } from 'create-v-model'
 import { absentProp } from '#util'
 import { wExpandTransition as expandTransition } from '#generics'
-import { expandable as c, box } from '@warp-ds/component-classes'
+import { expandable as ccExpandable, box as ccBox } from '@warp-ds/component-classes'
 
 const props = defineProps({
   title: String,
@@ -56,25 +56,25 @@ if (!props.animated) {
 const hasTitle = computed(() => props.title || slots.title)
 
 const wrapperClasses = computed(() => ({
-  [c.expandable]: true,
-  [c.expandableBox]: props.box || props.info,
-  [c.expandableBleed]: props.bleed
+  [ccExpandable.expandable]: true,
+  [ccExpandable.expandableBox]: props.box || props.info,
+  [ccExpandable.expandableBleed]: props.bleed
 }))
 
 const buttonClasses = computed(() => ({
   [props.buttonClass || '']: true,
-  [c.button]: true,
-  [c.buttonBox]: props.box || props.info,
+  [ccExpandable.button]: true,
+  [ccExpandable.buttonBox]: props.box || props.info,
 }))
 
 const chevronClasses = computed(() => ({
-  [c.chevron]: true,
-  [props.box ? c.chevronBox : c.chevronNonBox]: true,
-  [c.chevronExpanded]: expanded.value,
+  [ccExpandable.chevron]: true,
+  [(props.box || props.info) ? ccExpandable.chevronBox : ccExpandable.chevronNonBox]: true,
+  [ccExpandable.chevronExpanded]: expanded.value,
 }))
 
 const contentClasses = computed(() => ({
   [props.contentClass || '']: true,
-  [box.box + (hasTitle.value ? ' pt-0' : '')]: props.box,
+  [ccBox.box + (hasTitle.value ? ' pt-0' : '')]: props.box || props.info,
 }))
 </script>
