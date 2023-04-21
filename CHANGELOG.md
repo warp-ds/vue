@@ -1,3 +1,10 @@
+# [1.0.0-alpha.13](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2023-04-21)
+
+
+### Bug Fixes
+
+* add component classes to breadcrumbs ([#19](https://github.com/warp-ds/vue/issues/19)) ([0a44566](https://github.com/warp-ds/vue/commit/0a44566ab9f02597be8f4c2cea7ad65beb550ace))
+
 # [1.0.0-alpha.12](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2023-04-21)
 
 
