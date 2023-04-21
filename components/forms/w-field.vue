@@ -1,6 +1,6 @@
 <template>
   <component :is="as" :class="{[ccInput.wrapper]: true, [$attrs.class || '']: true}" :role="role" v-bind="wrapperAria">
-    <component :is="labelType" v-if="label" :class="{[ccLabel.label]: true, [ccLabel.labelValid]: !hasErrorMessage, [ccLabel.labelInvalid]: hasErrorMessage}" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="ccLabel.optional"> (valgfritt)</span></component>
+    <component :is="labelType" v-if="label" :class="{[ccLabel.label]: true, [ccLabel.labelInvalid]: hasErrorMessage}" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="ccLabel.optional"> (valgfritt)</span></component>
     <slot :triggerValidation="triggerValidation" :labelFor="id" :labelId="labelId" :aria="aria" :hasValidationErrors="hasValidationErrors" />
     <slot name="control" :form="collector" />
     <div :class="{[ccHelpText.helpText]: true, [ccHelpText.helpTextInvalid]: hasErrorMessage}" v-if="hint || hasErrorMessage">
