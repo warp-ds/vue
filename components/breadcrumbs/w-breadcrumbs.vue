@@ -24,7 +24,13 @@ const Breadcrumbify = (_, context) => {
   const slot = context.slots.default()
   const vnodes = slot[0].children
   const elements = collectElements(vnodes).flat(Infinity)
-  return interleave(elements, wBreadcrumbSeparator)
+  const styledElements = elements.map(el => {
+    const ccClasses = el.type === "a" ? ccBreadcrumbs.link : ccBreadcrumbs.text
+    el.props.class = el.props.class ? `${el.props.class} ${ccClasses}` : ccClasses
+
+    return el
+  })
+  return interleave(styledElements, wBreadcrumbSeparator)
 }
 </script>
 
