@@ -1,3 +1,38 @@
+# [1.0.0-alpha.12](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2023-04-21)
+
+
+### Bug Fixes
+
+* add component classes to select ([#18](https://github.com/warp-ds/vue/issues/18)) ([99f5691](https://github.com/warp-ds/vue/commit/99f56911aa156727221d81ffcf7f5f5620193a7e))
+
+# [1.0.0-alpha.11](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2023-04-20)
+
+
+### Bug Fixes
+
+* do not override props and attrs in input and textarea ([#17](https://github.com/warp-ds/vue/issues/17)) ([e549203](https://github.com/warp-ds/vue/commit/e54920361eb1a6dff660777151875e4b58fb3662))
+
+# [1.0.0-alpha.10](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-04-20)
+
+
+### Bug Fixes
+
+* textarea default class and refactor ([#15](https://github.com/warp-ds/vue/issues/15)) ([e64455d](https://github.com/warp-ds/vue/commit/e64455d4973e990f0445b95494fd21c100d322df))
+
+# [1.0.0-alpha.9](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2023-04-20)
+
+
+### Bug Fixes
+
+* **expandable:** add the same settings for info as for box prop + rename import of component classes ([1c85e36](https://github.com/warp-ds/vue/commit/1c85e36b130ad114b62462c594dce172e69708cc))
+
+# [1.0.0-alpha.8](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2023-04-19)
+
+
+### Bug Fixes
+
+* **package.json:** update version for component-classes in package.json ([658c232](https://github.com/warp-ds/vue/commit/658c232a74b08ff595121e8bd716ed720a0af489))
+
 # [1.0.0-alpha.7](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2023-04-18)
 
 
