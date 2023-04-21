@@ -1,3 +1,10 @@
+# [1.0.0-alpha.12](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2023-04-21)
+
+
+### Bug Fixes
+
+* add component classes to select ([#18](https://github.com/warp-ds/vue/issues/18)) ([99f5691](https://github.com/warp-ds/vue/commit/99f56911aa156727221d81ffcf7f5f5620193a7e))
+
 # [1.0.0-alpha.11](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2023-04-20)
 
 
