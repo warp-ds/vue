@@ -1,7 +1,7 @@
 <template>
   <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClass" v-bind="saneDefaults">
     <slot>{{ label }}</slot>
-    <span v-if="loading" role="progressbar" aria-valuenow="0" aria-valuetext="Laster..." class="sr-only" />
+    <span v-if="loading" role="progressbar" aria-valuenow="0" aria-valuetext="Laster..." :class="ccButton.a11y" />
   </component>
 </template>
 

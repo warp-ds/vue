@@ -1,6 +1,6 @@
 <template>
   <nav :aria-label="ariaLabel">
-    <h2 class="sr-only">{{ ariaLabel }} </h2>
+    <h2 :class="ccBreadcrumbs.a11y">{{ ariaLabel }}</h2>
     <div :class="ccBreadcrumbs.wrapper">
       <breadcrumbify>
         <slot />
