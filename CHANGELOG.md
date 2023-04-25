@@ -1,3 +1,10 @@
+# [1.0.0-alpha.14](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2023-04-25)
+
+
+### Bug Fixes
+
+* import sr-only class from component-classes to Button and Breadcrumbs ([#20](https://github.com/warp-ds/vue/issues/20)) ([45e67a6](https://github.com/warp-ds/vue/commit/45e67a6a1e035b5c238bd00f7ee42179bdeb82b2))
+
 # [1.0.0-alpha.13](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2023-04-21)
 
 
