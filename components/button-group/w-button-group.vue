@@ -1,5 +1,5 @@
 <template>
-  <div class="f-button-group inline-flex rounded-4 divide-gray-300 overflow-hidden" :class="classes">
+  <div class="inline-flex rounded-4 overflow-hidden" :class="classes">
     <slot />
   </div>
 </template>
@@ -18,11 +18,11 @@ const props = defineProps({
 })
 
 provide('outlined', toRef(props, 'outlined'))
+provide('vertical', toRef(props, 'vertical'))
 
 const classes = computed(() => ({
-  ['border border-gray-300']: props.outlined,
   ['filter drop-shadow-10']: props.raised,
-  [props.vertical ? 'divide-y' : 'divide-x']: true,
+  [props.vertical ? 'divide-y' : 'divide-x']: !props.outlined,
   ['flex-col']: props.vertical
 }))
 </script>
