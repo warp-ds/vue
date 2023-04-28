@@ -21,7 +21,7 @@ provide('outlined', toRef(props, 'outlined'))
 provide('vertical', toRef(props, 'vertical'))
 
 const classes = computed(() => ({
-  ['filter drop-shadow-10']: props.raised,
+  ['shadow-small']: props.raised,
   [props.vertical ? 'divide-y' : 'divide-x']: !props.outlined,
   ['flex-col']: props.vertical
 }))
