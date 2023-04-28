@@ -55,8 +55,8 @@ devDependencies:
     specifier: ^2.0.2
     version: 2.3.0(vue@3.2.47)
   '@warp-ds/component-classes':
-    specifier: ^1.0.0-alpha.45
-    version: 1.0.0-alpha.45
+    specifier: ^1.0.0-alpha.46
+    version: 1.0.0-alpha.46
   '@warp-ds/core':
     specifier: ^1.0.0
     version: 1.0.0
@@ -1303,8 +1303,8 @@ packages:
       '@vue/server-renderer': 3.2.47(vue@3.2.47)
     dev: true
 
-  /@warp-ds/component-classes@1.0.0-alpha.45:
-    resolution: {integrity: sha512-pZe+b+SHVSo1n0cW6Y3cBCnKxlEvVqqTw5nDz7zwrfTajZPF6EbBdjV5wy+yI7L+MtH3PeK0ixqmF4N71aAKXw==}
+  /@warp-ds/component-classes@1.0.0-alpha.46:
+    resolution: {integrity: sha512-CqlPORtneM/eijcGXObwiVxav2Nkp8PdHeNmtXYe4ojcFYEqDGSlWz5U2/je242OggpOrhLrSjIHHxNhICjxZA==}
     dev: true
 
   /@warp-ds/core@1.0.0:
