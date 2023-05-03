@@ -1,3 +1,17 @@
+# [1.0.0-alpha.15](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2023-05-03)
+
+
+### Bug Fixes
+
+* **stepindicator:** update version of @warp-ds/component-classes ([7914c87](https://github.com/warp-ds/vue/commit/7914c87f6700f4870f51586fe67fd0430f5ff2fd))
+* **steps:** small fix ([836eef8](https://github.com/warp-ds/vue/commit/836eef823152877358b05fd20a1429b76bce452d))
+* **steps:** update to computed classes ([97f3b4d](https://github.com/warp-ds/vue/commit/97f3b4dddc417d11a829705777a46cdf03a03950))
+
+
+### Features
+
+* **stepindicator:** add component classes to step indicator ([de3474d](https://github.com/warp-ds/vue/commit/de3474de60dd76d04350c6b49f6695c73b48bafc))
+
 # [1.0.0-alpha.14](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2023-04-25)
 
 
