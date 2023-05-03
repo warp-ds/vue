@@ -1,41 +1,79 @@
+<script setup>
+import { computed, inject } from 'vue';
+import { step as ccStep } from '@warp-ds/component-classes';
+
+const vertical = inject('steps-vertical', true);
+const left = inject('steps-left', true);
+
+const props = defineProps({
+  active: Boolean,
+  complete: Boolean,
+});
+
+const stepClasses = computed(() => [
+  ccStep.step,
+  {
+    [ccStep.stepVertical]: vertical.value,
+    [ccStep.stepVerticalLeft]: vertical.value && left.value,
+    [ccStep.stepVerticalRight]: vertical.value && !left.value,
+    [ccStep.stepHorizontal]: !vertical.value,
+  },
+]);
+
+const horizontalClasses = computed(() => [
+  ccStep.stepLine,
+  ccStep.stepLineHorizontalLeft,
+  {
+    [ccStep.stepLineHorizontal]: !vertical.value,
+    [ccStep.stepLineIncomplete]: !props.active && !props.complete,
+    [ccStep.stepLineComplete]: props.active || props.complete,
+  },
+]);
+
+const stepDotClasses = computed(() => [
+  ccStep.stepDot,
+  {
+    [ccStep.stepDotVertical]: vertical.value,
+    [ccStep.stepDotVerticalLeft]: vertical.value && left.value,
+    [ccStep.stepDotVerticalRight]: vertical.value && !left.value,
+    [ccStep.stepDotHorizontal]: !vertical.value,
+    [ccStep.stepDotIncomplete]: !(props.active || props.complete),
+    [ccStep.stepDotActive]: props.active,
+    [ccStep.stepDotComplete]: props.complete,
+  },
+]);
+
+const stepLineClasses = computed(() => [
+  ccStep.stepLine,
+  ccStep.stepLineHorizontalRight,
+  {
+    [ccStep.stepLineVertical]: vertical.value,
+    [ccStep.stepLineVerticalLeft]: vertical.value && left.value,
+    [ccStep.stepLineVerticalRight]: vertical.value && !left.value,
+    [ccStep.stepLineHorizontal]: !vertical.value,
+    [ccStep.stepLineIncomplete]: !props.complete,
+    [ccStep.stepLineComplete]: props.complete,
+  },
+]);
+
+const contentClasses = computed(() => [
+  ccStep.content,
+  {
+    [ccStep.contentVertical]: vertical.value,
+    [ccStep.contentHorizontal]: !vertical.value,
+  },
+]);
+</script>
+
 <template>
-  <div
-    :class="{
-      [ccStep.step]: true,
-      [ccStep.stepVertical]: vertical,
-      [ccStep.stepVerticalLeft]: vertical && left,
-      [ccStep.stepVerticalRight]: vertical && !left,
-      [ccStep.stepHorizontal]: !vertical,
-    }"
-  >
-    <div
-      v-if="!vertical"
-      :class="{
-        [ccStep.stepLine]: true,
-        [ccStep.stepLineHorizontal]: !vertical,
-        [ccStep.stepLineHorizontalLeft]: true,
-        [ccStep.stepLineIncomplete]: !active && !complete,
-        [ccStep.stepLineComplete]: active || complete,
-      }"
-    />
-    <div
-      :aria-current="active ? 'step' : undefined"
-      :class="{
-        [ccStep.stepDot]: true,
-        [ccStep.stepDotVertical]: vertical,
-        [ccStep.stepDotVerticalLeft]: vertical && left,
-        [ccStep.stepDotVerticalRight]: vertical && !left,
-        [ccStep.stepDotHorizontal]: !vertical,
-        [ccStep.stepDotIncomplete]: !(active || complete),
-        [ccStep.stepDotActive]: active,
-        [ccStep.stepDotComplete]: complete,
-      }"
-    >
+  <div :class="stepClasses">
+    <div v-if="!vertical" :class="horizontalClasses" />
+    <div :aria-current="active ? 'step' : undefined" :class="stepDotClasses">
       <svg
         v-if="complete"
         role="img"
         :aria-label="'✓'"
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="http:www.w3.org/2000/svg"
         width="16"
         height="16"
         viewBox="0 0 16 16"
@@ -46,44 +84,13 @@
         />
       </svg>
     </div>
-    <div
-      :class="{
-        [ccStep.stepLine]: true,
-        [ccStep.stepLineVertical]: vertical,
-        [ccStep.stepLineVerticalLeft]: vertical && left,
-        [ccStep.stepLineVerticalRight]: vertical && !left,
-        [ccStep.stepLineHorizontal]: !vertical,
-        [ccStep.stepLineHorizontalRight]: true,
-        [ccStep.stepLineIncomplete]: !complete,
-        [ccStep.stepLineComplete]: complete,
-      }"
-    />
-    <div
-      :class="{
-        [ccStep.content]: true,
-        [ccStep.contentVertical]: vertical,
-        [ccStep.contentHorizontal]: !vertical,
-      }"
-    >
+    <div :class="stepLineClasses" />
+    <div :class="contentClasses">
       <slot />
     </div>
   </div>
 </template>
 
 <script>
-import { inject } from 'vue';
-import { step as ccStep } from '@warp-ds/component-classes';
-
-export default {
-  name: 'wStep',
-  props: {
-    active: Boolean,
-    complete: Boolean,
-  },
-  setup: () => ({
-    vertical: inject('steps-vertical', true),
-    left: inject('steps-left', true),
-    ccStep,
-  }),
-};
+export default { name: 'wStep' };
 </script>
