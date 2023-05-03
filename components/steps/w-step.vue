@@ -72,7 +72,7 @@ const contentClasses = computed(() => [
       <svg
         v-if="complete"
         role="img"
-        :aria-label="'✓'"
+        aria-label="✓"
         xmlns="http:www.w3.org/2000/svg"
         width="16"
         height="16"
