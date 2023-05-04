@@ -1,3 +1,10 @@
+# [1.0.0-alpha.16](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) (2023-05-04)
+
+
+### Bug Fixes
+
+* Warpified and refactored the Pill component, adding component-classes ([#22](https://github.com/warp-ds/vue/issues/22)) ([3e888ae](https://github.com/warp-ds/vue/commit/3e888ae09bf515c1fead3349d36980af39065c17))
+
 # [1.0.0-alpha.15](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2023-05-03)
 
 
