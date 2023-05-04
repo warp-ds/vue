@@ -55,14 +55,14 @@ devDependencies:
     specifier: ^2.0.2
     version: 2.3.0(vue@3.2.47)
   '@warp-ds/component-classes':
-    specifier: ^1.0.0-alpha.46
-    version: 1.0.0-alpha.46
+    specifier: ^1.0.0-alpha.47
+    version: 1.0.0-alpha.47
   '@warp-ds/core':
     specifier: ^1.0.0
     version: 1.0.0
   '@warp-ds/uno':
-    specifier: 1.0.0-alpha.8
-    version: 1.0.0-alpha.8
+    specifier: 1.0.0-alpha.19
+    version: 1.0.0-alpha.19
   cleave-lite:
     specifier: ^1.0.0
     version: 1.0.0
@@ -89,10 +89,10 @@ devDependencies:
     version: 0.10.1
   unocss:
     specifier: ^0.50.1
-    version: 0.50.2(vite@4.2.1)
+    version: 0.50.2(postcss@8.4.21)(vite@4.2.1)
   vite:
     specifier: ^4.2.1
-    version: 4.2.1
+    version: 4.2.1(@types/node@18.15.10)
   viteik:
     specifier: ^1.0.3
     version: 1.0.3(@eik/rollup-plugin@4.0.45)
@@ -284,7 +284,7 @@ packages:
     resolution: {integrity: sha512-h9z1jyz0ueOwNfAPnwjJk3JGCMdm/3TFqGiGi3KqLgx3fhHgKOLmZa9fqGgX0E8arCgN2YavJwHiBCsIKTqEdQ==}
     dependencies:
       ajv: 8.12.0
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1(ajv@8.12.0)
       glob: 8.1.0
       is-glob: 4.0.3
       mime-types: 2.1.35
@@ -1034,9 +1034,11 @@ packages:
       sirv: 2.0.2
     dev: true
 
-  /@unocss/postcss@0.50.2:
+  /@unocss/postcss@0.50.2(postcss@8.4.21):
     resolution: {integrity: sha512-S/3ccT/paDejRCD8t+/kOUSfLhJUT3UcUslrvEqPd7D3HmPMM3ykBV4Pm6Orkr7KdoFPPuR4BCxSuD0Sc9Z4/g==}
     engines: {node: '>=14'}
+    peerDependencies:
+      postcss: ^8.4.21
     dependencies:
       '@unocss/config': 0.50.2
       '@unocss/core': 0.50.2
@@ -1157,7 +1159,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.2.12
       magic-string: 0.30.0
-      vite: 4.2.1
+      vite: 4.2.1(@types/node@18.15.10)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -1169,7 +1171,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.2.1
+      vite: 4.2.1(@types/node@18.15.10)
       vue: 3.2.47
     dev: true
 
@@ -1303,8 +1305,8 @@ packages:
       '@vue/server-renderer': 3.2.47(vue@3.2.47)
     dev: true
 
-  /@warp-ds/component-classes@1.0.0-alpha.46:
-    resolution: {integrity: sha512-CqlPORtneM/eijcGXObwiVxav2Nkp8PdHeNmtXYe4ojcFYEqDGSlWz5U2/je242OggpOrhLrSjIHHxNhICjxZA==}
+  /@warp-ds/component-classes@1.0.0-alpha.47:
+    resolution: {integrity: sha512-JpbwUpZk8QoIa9059fu1q07BEADEHL4DtLr3X5Ud5lY/0Dbr/nm0kHXt8b44Q4xEurEDWRU7598/5kZgVkGWjg==}
     dev: true
 
   /@warp-ds/core@1.0.0:
@@ -1313,8 +1315,8 @@ packages:
       '@floating-ui/dom': 0.5.4
     dev: true
 
-  /@warp-ds/uno@1.0.0-alpha.8:
-    resolution: {integrity: sha512-OcrvcdtzlDtV+v1qTb6nLdK5xFdZNJDL3txYOvnNBXrmr7Jx7cmiMIRctZxkLsjSLA4HGVo5NlNWakHeWawSmw==}
+  /@warp-ds/uno@1.0.0-alpha.19:
+    resolution: {integrity: sha512-wUbsj+y5TroA09csPAvGYzEGXzIljLNnp4fBIgGnnXKYsPyZOxHsZYG4CV48zeK934M1E7IdmkJWRn49L0PxCA==}
     dependencies:
       '@unocss/core': 0.50.6
       '@unocss/preset-mini': 0.50.6
@@ -1374,8 +1376,10 @@ packages:
       indent-string: 5.0.0
     dev: true
 
-  /ajv-formats@2.1.1:
+  /ajv-formats@2.1.1(ajv@8.12.0):
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
+    peerDependencies:
+      ajv: ^8.0.0
     peerDependenciesMeta:
       ajv:
         optional: true
@@ -5148,7 +5152,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.50.2(vite@4.2.1):
+  /unocss@0.50.2(postcss@8.4.21)(vite@4.2.1):
     resolution: {integrity: sha512-G1ZC0Qayt/HmSgC/T7XEEOgbxmgsxNKGjQCx4+tN3uIMJ8fsZv7HH+tKKiO2xHmvtsdfrU0xc6gkO9xi+8ExkA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -5160,7 +5164,7 @@ packages:
       '@unocss/astro': 0.50.2(vite@4.2.1)
       '@unocss/cli': 0.50.2
       '@unocss/core': 0.50.2
-      '@unocss/postcss': 0.50.2
+      '@unocss/postcss': 0.50.2(postcss@8.4.21)
       '@unocss/preset-attributify': 0.50.2
       '@unocss/preset-icons': 0.50.2
       '@unocss/preset-mini': 0.50.2
@@ -5176,6 +5180,7 @@ packages:
       '@unocss/transformer-variant-group': 0.50.2
       '@unocss/vite': 0.50.2(vite@4.2.1)
     transitivePeerDependencies:
+      - postcss
       - rollup
       - supports-color
       - vite
@@ -5242,39 +5247,6 @@ packages:
       - sugarss
       - supports-color
       - terser
-    dev: true
-
-  /vite@4.2.1:
-    resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.17.14
-      postcss: 8.4.21
-      resolve: 1.22.1
-      rollup: 3.20.2
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
 
   /vite@4.2.1(@types/node@18.15.10):
