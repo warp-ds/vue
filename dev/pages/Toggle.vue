@@ -27,7 +27,11 @@ const changeToggleModel = () => {
     invalidToggleModel.value = '1';
     disabledToggleModel.value = '2';
   }
-  else toggleModel.value = []
+  else {
+    toggleModel.value = [];
+    invalidToggleModel.value = [1];
+    disabledToggleModel.value = [2];
+  }
 }
 watch(() => variants.active, changeToggleModel)
 </script>
@@ -40,10 +44,10 @@ watch(() => variants.active, changeToggleModel)
       <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" v-model="toggleModel" label="A very toggly label" :toggles="toggles" />
     </token>
     <token :state="[variants, toggleModel]">
-      <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" disabled v-model="disabledToggleModel" label="A very toggly label" :toggles="toggles" />
+      <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" disabled v-model="disabledToggleModel" label="A very DISABLED non-toggly label" :toggles="toggles" />
     </token>
     <token :state="[variants, toggleModel]">
-      <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" invalid v-model="invalidToggleModel" label="A very toggly label" :toggles="toggles" />
+      <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" invalid v-model="invalidToggleModel" label="A very INVALID toggly label" :toggles="toggles" />
     </token>
     <div>
     <token :state="[variants, toggleModel]">
