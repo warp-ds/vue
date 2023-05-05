@@ -4,9 +4,11 @@ import { radio, useIsActive } from '#dev-util'
 import { wToggle } from '#components'
 
 const toggleModel = ref([])
+const invalidToggleModel = ref([1])
+const disabledToggleModel = ref([2])
 
 const toggles = [
-  { label: 'One', value: 1, 'data-test': 'toggle:1' },
+  { label: 'One', value: 1, 'data-test': 'toggle:1', checked: true },
   { label: 'Two', value: 2, 'data-test': 'toggle:2' },
 ]
 
@@ -31,7 +33,13 @@ watch(() => variants.active, changeToggleModel)
     <token :state="[variants, toggleModel]">
       <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" v-model="toggleModel" label="A very toggly label" :toggles="toggles" />
     </token>
-
+    <token :state="[variants, toggleModel]">
+      <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" disabled v-model="disabledToggleModel" label="A very toggly label" :toggles="toggles" />
+    </token>
+    <token :state="[variants, toggleModel]">
+      <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" invalid v-model="invalidToggleModel" label="A very toggly label" :toggles="toggles" />
+    </token>
+    
     <demo-controls>
       <demo-control label="Variants" :controls="variantControls" :state="variants" />
     </demo-controls>
