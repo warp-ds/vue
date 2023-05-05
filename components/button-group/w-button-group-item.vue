@@ -11,11 +11,11 @@ const outlinedClass = computed(() => [
   vertical.value ? ccButtonGroupItem.outlinedVertical : ccButtonGroupItem.outlinedHorizontal
 ]);
 
-const outlineResetClass = vertical.value ? ccButtonGroupItem.outlinedVerticalResets : ccButtonGroupItem.outlinedHorizontalResets
+const outlineResetClass = computed(() => [vertical.value ? ccButtonGroupItem.outlinedVerticalResets : ccButtonGroupItem.outlinedHorizontalResets])
 
 const wrapperClass = computed(() => [
   ccButtonGroupItem.wrapper,
-  outlined.value ? outlinedClass.value : outlineResetClass,
+  outlined.value ? outlinedClass.value : outlineResetClass.value,
   props.selected ? ccButtonGroupItem.selected : '',
 ]);
 </script>

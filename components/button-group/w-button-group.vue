@@ -21,12 +21,12 @@ const props = defineProps({
 provide('outlined', toRef(props, 'outlined'))
 provide('vertical', toRef(props, 'vertical'))
 
-const nonOutlinedClass = props.vertical ? ccButtonGroup.nonOutlinedVertical : ccButtonGroup.nonOutlinedHorizontal
+const nonOutlinedClass = computed(() => [props.vertical ? ccButtonGroup.nonOutlinedVertical : ccButtonGroup.nonOutlinedHorizontal])
 
 const classes = computed(() => [
   ccButtonGroup.wrapper,
   props.raised ? ccButtonGroup.raised : '',
   props.vertical ? ccButtonGroup.vertical : '',
-  props.outlined ? '' : nonOutlinedClass
+  props.outlined ? '' : nonOutlinedClass.value
 ])
 </script>
