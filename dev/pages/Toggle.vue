@@ -1,14 +1,16 @@
 <script setup>
 import { ref, reactive, watch } from 'vue'
 import { radio, useIsActive } from '#dev-util'
-import { wToggle } from '#components'
+import { wToggle, wButton } from '#components'
 
 const toggleModel = ref([])
 const invalidToggleModel = ref([1])
 const disabledToggleModel = ref([2])
+const isJustified = ref(false)
+const multiToggleModel = ref('')
 
 const toggles = [
-  { label: 'One', value: 1, 'data-test': 'toggle:1', checked: true },
+  { label: 'One', value: 1, 'data-test': 'toggle:1' },
   { label: 'Two', value: 2, 'data-test': 'toggle:2' },
 ]
 
@@ -20,7 +22,11 @@ const variantControls = [
 const active = useIsActive(variants)
 
 const changeToggleModel = () => {
-  if (active('Radio')) toggleModel.value = ''
+  if (active('Radio')) {
+    toggleModel.value = '';
+    invalidToggleModel.value = '1';
+    disabledToggleModel.value = '2';
+  }
   else toggleModel.value = []
 }
 watch(() => variants.active, changeToggleModel)
@@ -39,7 +45,12 @@ watch(() => variants.active, changeToggleModel)
     <token :state="[variants, toggleModel]">
       <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" invalid v-model="invalidToggleModel" label="A very toggly label" :toggles="toggles" />
     </token>
-    
+    <div>
+    <token :state="[variants, toggleModel]">
+      <w-toggle radio-button :equal-width="isJustified" v-model="multiToggleModel" label="A very toggly label" :toggles="toggles" />
+      <w-button class="mt-16" small utility @click="isJustified = !isJustified">{{ isJustified ? 'Unjustify' : 'Justify' }}</w-button>
+    </token>
+  </div>
     <demo-controls>
       <demo-control label="Variants" :controls="variantControls" :state="variants" />
     </demo-controls>

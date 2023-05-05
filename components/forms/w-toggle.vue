@@ -1,18 +1,20 @@
 <template>
   <w-field as="fieldset" v-bind="{ ...$attrs, ...$props }" :role="role" #default="{ triggerValidation }">
     <div :class="wrapperClasses">
-      <div v-for="(toggle, i) in toggles">
+      <div class="group" v-for="(toggle, i) in toggles">
         <w-toggle-item
           v-model="model"
           :type="type"
+          :radioButton="isRadioButton"
           :disabled="disabled"
           :invalid="invalid"
+          :equalWidth="equalWidth"
           :name="id + ':toggles'"
           :key="id + i + type"
           v-bind="toggle"
           @blur="triggerValidation" />
       </div>
-      </div>
+    </div>
   </w-field>
 </template>
 
@@ -40,30 +42,15 @@ const props = defineProps({
 });
 const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props, emit });
-const isInvalid = props.invalid;
 const isRadioButton = props.radioButton;
-const isRadio = props.radio;
-const isCheckbox = props.checkbox;
-const type = computed(() => props.radio ? 'radio' : props.radioButton ? 'radio-button' : 'checkbox');
+const type = computed(() => (props.radio || props.radioButton) ? 'radio' : 'checkbox');
 const role = computed(() => props.toggles.length > 1 ? ((props.radio || props.radioButton) ? 'radiogroup' : 'group') : undefined);
-
 const wrapperClasses = computed(() => ({
   [ccToggle.wrapper]: true,
   [`${ccToggle.segmentControl} ${ccToggle.focusableWithin}`]: isRadioButton,
   [ccToggle.scJustified]: props.equalWidth,
 }));
 
-// const wrapperClasses = computed(() => ({
-//   'input-toggle--is-disabled': props.disabled && !props.radioButton,
-//   'segment-control': props.radioButton,
-//   'segment-control--justified': props.equalWidth,
-//   'segment-control--small': props.small,
-//   'segment-control--is-disabled': props.disabled && props.radioButton,
-//   'input-toggle': props.radio || props.checkbox
-// }));
-const optionsClasses = computed(() => ({
-  'flex flex-row segment-control-options': props.radioButton,
-}));
 </script>
 
 <script>
