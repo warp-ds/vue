@@ -1,5 +1,11 @@
 <template>
-  <input :id="id" v-model="model" v-bind="{ ...$attrs, ...$props }" :class="inputClasses" />
+  <input 
+    :id="id" 
+    v-model="model" 
+    :type="type"
+    v-bind="$attrs" 
+    :class="inputClasses" 
+  />
   <label v-if="label" :for="id" v-html="label" :class="[labelClass, labelComponentClasses]" />
   <label v-else :for="id" :class="[labelClass, labelComponentClasses]"><slot /></label>
 </template>
@@ -9,7 +15,7 @@ import { computed } from 'vue';
 import { id as uniqueId } from '#util';
 import { modelProps, createModel } from 'create-v-model';
 import { toggle as ccToggle } from '@warp-ds/component-classes';
-const props = defineProps({
+const p = defineProps({
   id: { ...uniqueId },
   label: String,
   type: String,
@@ -22,31 +28,28 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue']);
-const model = createModel({ props, emit });
+const model = createModel({ props: p, emit });
 
-const isRadio = computed(() => props.type === 'radio');
-const isCheckbox = computed(() => props.type === 'checkbox');
-const isInvalid = props.invalid;
-const isDisabled = props.disabled;
-const isRadioButton = props.radioButton;
+const isRadio = computed(() => p.type === 'radio');
+const isCheckbox = computed(() => p.type === 'checkbox');
 const labelComponentClasses = computed(() => ({
-  [ccToggle.label]: !isRadioButton,
-  [`${ccToggle.labelDisabled} ${isCheckbox.value ? ccToggle.checkboxDisabled : ccToggle.radioDisabled}`] : isDisabled,
-  [ccToggle.focusable]: !isRadioButton,
-  [ccToggle.noContent]: !isRadioButton,
-  [ccToggle.radioDisabled]: isRadio.value && isDisabled,
-  [ccToggle.labelRadioColors] : isRadio.value && !isRadioButton,
+  [ccToggle.label]: !p.radioButton,
+  [`${ccToggle.labelDisabled} ${isCheckbox.value ? ccToggle.checkboxDisabled : ccToggle.radioDisabled}`] : p.disabled,
+  [ccToggle.focusable]: !p.radioButton,
+  [ccToggle.noContent]: !p.radioButton,
+  [ccToggle.radioDisabled]: isRadio.value && p.disabled,
+  [ccToggle.labelRadioColors] : isRadio.value && !p.radioButton,
   [ccToggle.radio]: isRadio.value,
-  [ccToggle.radioInvalid]: isRadio.value && isInvalid,
-  [ccToggle.checkboxInvalid]: isCheckbox.value && isInvalid,
-  [`${ccToggle.checkbox} ${ccToggle.labelCheckboxColors} ${ccToggle.icon} ${isDisabled ? '' : ccToggle.checkboxChecked}`]: isCheckbox.value,
-  [ccToggle.scLabel]: isRadioButton,
-  [ccToggle.scLabelJustified]: props.equalWidth,
-  [ccToggle.scLabelSmall]: props.small,
+  [ccToggle.radioInvalid]: isRadio.value && p.invalid,
+  [ccToggle.checkboxInvalid]: isCheckbox.value && p.invalid,
+  [`${ccToggle.checkbox} ${ccToggle.labelCheckboxColors} ${ccToggle.icon} ${p.disabled ? '' : ccToggle.checkboxChecked}`]: isCheckbox.value,
+  [ccToggle.scLabel]: p.radioButton,
+  [ccToggle.scLabelJustified]: p.equalWidth,
+  [ccToggle.scLabelSmall]: p.small,
 }));
-const inputClasses = computed(() => ({
+const inputClasses = {
   [ccToggle.input]: true,
-}));
+};
 
 </script>
 

@@ -5,7 +5,7 @@
         <w-toggle-item
           v-model="model"
           :type="type"
-          :radioButton="isRadioButton"
+          :radioButton="radioButton"
           :disabled="disabled"
           :invalid="invalid"
           :equalWidth="equalWidth"
@@ -42,12 +42,11 @@ const props = defineProps({
 });
 const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props, emit });
-const isRadioButton = props.radioButton;
 const type = computed(() => (props.radio || props.radioButton) ? 'radio' : 'checkbox');
 const role = computed(() => props.toggles.length > 1 ? ((props.radio || props.radioButton) ? 'radiogroup' : 'group') : undefined);
 const wrapperClasses = computed(() => ({
   [ccToggle.wrapper]: true,
-  [`${ccToggle.segmentControl} ${ccToggle.focusableWithin}`]: isRadioButton,
+  [`${ccToggle.segmentControl} ${ccToggle.focusableWithin}`]: props.radioButton,
   [ccToggle.scJustified]: props.equalWidth,
 }));
 
