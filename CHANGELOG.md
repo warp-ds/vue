@@ -1,3 +1,10 @@
+# [1.0.0-alpha.17](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) (2023-05-08)
+
+
+### Features
+
+* **button-group:** add component classes to ButtonGroup ([#23](https://github.com/warp-ds/vue/issues/23)) ([c9e29a9](https://github.com/warp-ds/vue/commit/c9e29a97b98484059b3d6311f01536963a375e9d))
+
 # [1.0.0-alpha.16](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) (2023-05-04)
 
 

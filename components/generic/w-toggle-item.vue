@@ -3,11 +3,15 @@
     :id="id" 
     v-model="model" 
     :type="type"
+    :radioButton="radioButton"
+    :disabled="disabled"
+    :invalid="invalid"
+    :equalWidth="equalWidth"
     v-bind="$attrs" 
-    :class="inputClasses" 
+    :class="[inputClasses]" 
   />
-  <label v-if="label" :for="id" v-html="label" :class="[labelClass, labelComponentClasses]" />
-  <label v-else :for="id" :class="[labelClass, labelComponentClasses]"><slot /></label>
+  <label v-if="label" :for="id" v-html="label" :class="labelClasses" />
+  <label v-else :for="id" :class="labelClasses"><slot /></label>
 </template>
 
 <script setup>
@@ -19,6 +23,7 @@ const p = defineProps({
   id: { ...uniqueId },
   label: String,
   type: String,
+  class: String,
   disabled: Boolean,
   equalWidth: Boolean,
   invalid: Boolean,
@@ -32,7 +37,7 @@ const model = createModel({ props: p, emit });
 
 const isRadio = computed(() => p.type === 'radio');
 const isCheckbox = computed(() => p.type === 'checkbox');
-const labelComponentClasses = computed(() => ({
+const labelClasses = computed(() => (p.labelClass || {
   [ccToggle.label]: !p.radioButton,
   [`${ccToggle.labelDisabled} ${isCheckbox.value ? ccToggle.checkboxDisabled : ccToggle.radioDisabled}`] : p.disabled,
   [ccToggle.focusable]: !p.radioButton,
@@ -48,7 +53,7 @@ const labelComponentClasses = computed(() => ({
   [ccToggle.scLabelSmall]: p.small,
 }));
 const inputClasses = {
-  [ccToggle.input]: true,
+  [p.class || ccToggle.input]: true,
 };
 
 </script>

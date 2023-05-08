@@ -9,11 +9,12 @@
 </template>
 
 <script>
-import wToggleItem from './w-toggle-item.vue'
-import { computed } from 'vue'
+import { computed } from 'vue';
+import { label as ccLabel } from '@warp-ds/component-classes';
+import wToggleItem from './w-toggle-item.vue';
 
-const clickableClasses = 'absolute inset-0 h-full w-full appearance-none cursor-pointer'
-const labelClasses = 'px-12 py-8 field-label cursor-pointer'
+const clickableClasses = 'absolute inset-0 h-full w-full appearance-none cursor-pointer';
+const labelClasses = `px-12 py-8 ${ccLabel.label} cursor-pointer`
 
 export default {
   name: 'wClickable',

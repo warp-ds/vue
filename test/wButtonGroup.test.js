@@ -25,6 +25,6 @@ describe('button group', () => {
     assert.include(anchor.attributes().href, '#/foo')
     assert.equal(anchor.text(), 'Foo')
     const groupItem = wrapper.getComponent(wButtonGroupItem)
-    assert.include(groupItem.classes(), 'i-border-$gray-300') // providing the outlined prop succeeded
+    assert.include(groupItem.classes(), 'i-border-$color-buttongroup-border') // providing the outlined prop succeeded
   })
 })

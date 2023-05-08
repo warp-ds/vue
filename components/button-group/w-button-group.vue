@@ -1,5 +1,5 @@
 <template>
-  <div class="f-button-group inline-flex rounded-4 divide-gray-300 overflow-hidden" :class="classes">
+  <div :class="classes">
     <slot />
   </div>
 </template>
@@ -9,7 +9,8 @@ export default { name: 'wButtonGroup' }
 </script>
 
 <script setup>
-import { provide, computed, toRef } from 'vue'
+import { provide, computed, toRef } from 'vue';
+import { buttonGroup as ccButtonGroup } from '@warp-ds/component-classes';
 
 const props = defineProps({
   outlined: Boolean,
@@ -18,11 +19,14 @@ const props = defineProps({
 })
 
 provide('outlined', toRef(props, 'outlined'))
+provide('vertical', toRef(props, 'vertical'))
 
-const classes = computed(() => ({
-  ['border border-gray-300']: props.outlined,
-  ['filter drop-shadow-10']: props.raised,
-  [props.vertical ? 'divide-y' : 'divide-x']: true,
-  ['flex-col']: props.vertical
-}))
+const nonOutlinedClass = computed(() => [props.vertical ? ccButtonGroup.nonOutlinedVertical : ccButtonGroup.nonOutlinedHorizontal])
+
+const classes = computed(() => [
+  ccButtonGroup.wrapper,
+  props.raised ? ccButtonGroup.raised : '',
+  props.vertical ? ccButtonGroup.vertical : '',
+  props.outlined ? '' : nonOutlinedClass.value
+])
 </script>
