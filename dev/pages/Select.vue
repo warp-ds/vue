@@ -17,14 +17,14 @@ const selectModel = ref('')
       </w-select>
     </token>
     <token :state="selectModel">
-      <w-select :optional="true" v-model="selectModel" label="A useful and informative label">
+      <w-select optional v-model="selectModel" label="A useful and informative label">
         <option disabled selected value="">Pick something</option>
         <option value="foo">Foo</option>
         <option value="bar">Bar</option>
       </w-select>
     </token>
     <token :state="selectModel">
-      <w-select :disabled=true v-model="selectModel" label="Disabled select">
+      <w-select disabled v-model="selectModel" label="Disabled select">
         <option disabled selected value="">Pick something</option>
         <option value="foo">Foo</option>
         <option value="bar">Bar</option>

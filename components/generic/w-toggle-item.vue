@@ -52,7 +52,7 @@ const labelClasses = computed(() => (p.labelClass || {
   [ccToggle.scLabelSmall]: p.small,
 }));
 const inputClasses = {
-  [p.class + ' ' +  ccToggle.input]: true,
+  [p.class ? `${p.class} ${ccToggle.input}` : ccToggle.input]: true,
 };
 
 </script>
