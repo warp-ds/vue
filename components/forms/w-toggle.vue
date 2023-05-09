@@ -1,7 +1,7 @@
 <template>
   <w-field as="fieldset" v-bind="{ ...$attrs, ...$props }" :role="role" #default="{ triggerValidation }">
     <div :class="wrapperClasses">
-      <div class="group" v-for="(toggle, i) in toggles">
+      <div :class="groupClasses" v-for="(toggle, i) in toggles">
         <w-toggle-item
           v-model="model"
           :type="type"
@@ -46,8 +46,13 @@ const type = computed(() => (props.radio || props.radioButton) ? 'radio' : 'chec
 const role = computed(() => props.toggles.length > 1 ? ((props.radio || props.radioButton) ? 'radiogroup' : 'group') : undefined);
 const wrapperClasses = computed(() => ({
   [ccToggle.wrapper]: true,
-  [`${ccToggle.segmentControl} ${ccToggle.focusableWithin}`]: props.radioButton,
-  [ccToggle.scJustified]: props.equalWidth,
+  [`${ccToggle.radioButtons} ${ccToggle.focusableWithin}`]: props.radioButton,
+  [ccToggle.radioButtonsJustified]: props.equalWidth,
+}));
+
+const groupClasses = computed(() => ({
+  [ccToggle.radioButtonsGroup]: true,
+  [ccToggle.radioButtonsGroupJustified]: props.equalWidth,
 }));
 
 </script>
