@@ -1,3 +1,10 @@
+# [1.0.0-alpha.19](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2023-05-09)
+
+
+### Bug Fixes
+
+* add component classes to the toggle component ([#24](https://github.com/warp-ds/vue/issues/24)) ([4526148](https://github.com/warp-ds/vue/commit/4526148123a9d4b8240b2086ea757e066ad2dad9))
+
 # [1.0.0-alpha.18](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) (2023-05-09)
 
 
