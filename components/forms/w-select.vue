@@ -9,6 +9,8 @@
               [ccSelect.invalid]: hasValidationErrors,
             }
           ]"
+          :disabled="disabled"
+          :readOnly="readOnly"
           v-bind="{ ...$attrs, class: '' }" v-model="model" :id="id" @blur="triggerValidation">
           <slot />
         </select>
@@ -35,16 +37,14 @@
 </template>
 
 <script setup>
-import { computed, useAttrs } from 'vue';
+import { computed } from 'vue';
 import { select as ccSelect } from '@warp-ds/component-classes';
 import { createModel } from 'create-v-model'
 import { default as wField, fieldProps } from './w-field.vue'
 
-const props = defineProps(fieldProps);
+const p = defineProps(fieldProps);
 const emit = defineEmits(['update:modelValue']);
-const model = createModel({ props, emit });
-
-const {disabled, readOnly} = useAttrs();
+const model = createModel({ props: p, emit });
 
 const wrapperClasses = computed(() => ({
   [ccSelect.wrapper]: true
@@ -56,13 +56,13 @@ const selectWrapperClasses = computed(() => ({
 
 const selectClasses = computed(() => ({
   [ccSelect.default]: true,
-  [ccSelect.disabled]: disabled,
-  [ccSelect.readOnly]: readOnly
+  [ccSelect.disabled]: p.disabled,
+  [ccSelect.readOnly]: p.readOnly
 }));
 
 const chevronClasses = computed(() => ({
   [ccSelect.chevron]: true,
-  [ccSelect.chevronDisabled]: disabled,
+  [ccSelect.chevronDisabled]: p.disabled,
 }));
 
 </script>
