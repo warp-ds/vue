@@ -1,3 +1,10 @@
+# [1.0.0-alpha.18](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) (2023-05-09)
+
+
+### Bug Fixes
+
+* use props for inputs and not attrs ([#26](https://github.com/warp-ds/vue/issues/26)) ([ec08a63](https://github.com/warp-ds/vue/commit/ec08a63fe125c3a45beb3dad6ac36517af0f536c))
+
 # [1.0.0-alpha.17](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) (2023-05-08)
 
 
