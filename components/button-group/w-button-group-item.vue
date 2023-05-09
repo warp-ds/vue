@@ -8,7 +8,8 @@ const vertical = inject('vertical', false);
 
 const outlinedClass = computed(() => [
   ccButtonGroupItem.outlined,
-  vertical.value ? ccButtonGroupItem.outlinedVertical : ccButtonGroupItem.outlinedHorizontal
+  vertical.value ? ccButtonGroupItem.outlinedVertical : ccButtonGroupItem.outlinedHorizontal,
+  props.selected ? ccButtonGroupItem.outlinedSelected : ''
 ]);
 
 const outlineResetClass = computed(() => [vertical.value ? ccButtonGroupItem.outlinedVerticalResets : ccButtonGroupItem.outlinedHorizontalResets])

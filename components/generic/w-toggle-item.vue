@@ -42,7 +42,6 @@ const labelClasses = computed(() => (p.labelClass || {
   [`${ccToggle.labelDisabled} ${isCheckbox.value ? ccToggle.checkboxDisabled : ccToggle.radioDisabled}`] : p.disabled,
   [ccToggle.focusable]: !p.radioButton,
   [ccToggle.noContent]: !p.radioButton,
-  [ccToggle.radioDisabled]: isRadio.value && p.disabled,
   [ccToggle.labelRadioColors] : isRadio.value && !p.radioButton,
   [ccToggle.radio]: isRadio.value,
   [ccToggle.radioInvalid]: isRadio.value && p.invalid,
@@ -53,7 +52,7 @@ const labelClasses = computed(() => (p.labelClass || {
   [ccToggle.scLabelSmall]: p.small,
 }));
 const inputClasses = {
-  [p.class || ccToggle.input]: true,
+  [p.class + ' ' +  ccToggle.input]: true,
 };
 
 </script>
