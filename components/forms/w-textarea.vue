@@ -15,22 +15,21 @@
 </template>
 
 <script setup>
-import { computed, useAttrs } from 'vue';
+import { computed } from 'vue';
 import { input as ccInput } from '@warp-ds/component-classes';
 import { createModel } from 'create-v-model';
 import { default as wField, fieldProps } from './w-field.vue';
 
-const props = defineProps(fieldProps);
-const {disabled, placeholder, readOnly} = useAttrs();
+const p = defineProps(fieldProps);
 const emit = defineEmits(['update:modelValue']);
-const model = createModel({ props, emit });
+const model = createModel({ props: p, emit });
 
 const wrapperClass = ccInput.wrapper;
 const inputClasses = computed(() => ({
   [`${ccInput.default} ${ccInput.textArea}`]: true,
-  [ccInput.disabled]: disabled,
-  [ccInput.readOnly]: readOnly !== undefined,
-  [ccInput.placeholder]: !!placeholder,
+  [ccInput.disabled]: p.disabled,
+  [ccInput.readOnly]: p.readOnly,
+  [ccInput.placeholder]: !!p.placeholder,
 }));
 </script>
 

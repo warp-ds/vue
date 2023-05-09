@@ -10,6 +10,8 @@
             [ccInput.invalid]: hasValidationErrors,
           }
         ]"
+        :disabled="disabled"
+        :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
         @blur="triggerValidation" ref="inputEl" :autocomplete="autocomplete" :id="id" :type="type">
       <input 
@@ -20,6 +22,8 @@
             [ccInput.invalid]: hasValidationErrors,
           }
         ]"
+        :disabled="disabled"
+        :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }" @blur="triggerValidation" ref="inputEl" :autocomplete="autocomplete" :id="id" :type="type" v-model="model"
         >
       <slot name="suffix" :inputElement="inputEl" />
@@ -28,13 +32,13 @@
 </template>
 
 <script setup>
-  import { ref, computed, useAttrs, useSlots } from 'vue';
+  import { ref, computed, useSlots } from 'vue';
   import { input as ccInput } from '@warp-ds/component-classes';
   import { createModel } from 'create-v-model';
   import { setupMask } from './w-input-mask.js';
   import { default as wField, fieldProps } from './w-field.vue';
 
-  const props = defineProps({
+  const p = defineProps({
     ...fieldProps,
     type: {
       type: String,
@@ -44,17 +48,16 @@
     autocomplete: { type: String, default: 'off' },
     mask: Object,
   });
-  const {disabled, placeholder, readOnly} = useAttrs();
   const slots = useSlots();
   const emit = defineEmits(['update:modelValue']);
-  const model = createModel({ props, emit });
+  const model = createModel({ props: p, emit });
   const inputEl = ref(null);
-  if (props.mask) setupMask({ props, emit, inputEl });
+  if (p.mask) setupMask({ props: p, emit, inputEl });
   const inputClasses = computed(() => ({
     [ccInput.default]: true,
-    [ccInput.disabled]: disabled,
-    [ccInput.readOnly]: readOnly !== undefined,
-    [ccInput.placeholder]: !!placeholder,
+    [ccInput.disabled]: p.disabled,
+    [ccInput.readOnly]: p.readOnly,
+    [ccInput.placeholder]: !!p.placeholder,
     [ccInput.suffix]: slots.suffix,
     [ccInput.prefix]: slots.prefix,
   }));
