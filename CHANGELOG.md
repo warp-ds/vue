@@ -1,3 +1,10 @@
+# [1.0.0-alpha.21](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2023-05-10)
+
+
+### Bug Fixes
+
+* use radioChecked class ([#28](https://github.com/warp-ds/vue/issues/28)) ([e0e7200](https://github.com/warp-ds/vue/commit/e0e7200b5069a7587c0d7301f328ba96aadbce90))
+
 # [1.0.0-alpha.20](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2023-05-10)
 
 
