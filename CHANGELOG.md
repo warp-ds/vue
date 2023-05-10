@@ -1,3 +1,10 @@
+# [1.0.0-alpha.20](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2023-05-10)
+
+
+### Bug Fixes
+
+* add classes to radiobuttons component ([#27](https://github.com/warp-ds/vue/issues/27)) ([1520b7a](https://github.com/warp-ds/vue/commit/1520b7a2ad3d195ff87be01aeeef94ffdd64e4ba))
+
 # [1.0.0-alpha.19](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2023-05-09)
 
 
