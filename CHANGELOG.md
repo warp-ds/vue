@@ -1,3 +1,10 @@
+# [1.0.0-alpha.23](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) (2023-05-11)
+
+
+### Features
+
+* **slider:** warpify slider component ([#30](https://github.com/warp-ds/vue/issues/30)) ([67efc75](https://github.com/warp-ds/vue/commit/67efc752469cd1f5908be9c2301ba031f0f0d366))
+
 # [1.0.0-alpha.22](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) (2023-05-11)
 
 

@@ -61,8 +61,8 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@warp-ds/uno':
-    specifier: 1.0.0-alpha.22
-    version: 1.0.0-alpha.22
+    specifier: 1.0.0-alpha.23
+    version: 1.0.0-alpha.23
   cleave-lite:
     specifier: ^1.0.0
     version: 1.0.0
@@ -1315,8 +1315,8 @@ packages:
       '@floating-ui/dom': 0.5.4
     dev: true
 
-  /@warp-ds/uno@1.0.0-alpha.22:
-    resolution: {integrity: sha512-HJWK9rUGIfpaRPDgY9khgPEHlHvdEJHIpHJ4662krNoQ2YP5sllHObYZc/xHQmAKjTwfS2D0wxNVndLrX8LVGQ==}
+  /@warp-ds/uno@1.0.0-alpha.23:
+    resolution: {integrity: sha512-9x00PeEn8qi5XWZRgLqrZKssx7YGaODTKB36WuACWm7h6n0oA9P22YWzjZiHZRLADCbR0uenjHEcqhonhN65tg==}
     dependencies:
       '@unocss/core': 0.50.6
       '@unocss/preset-mini': 0.50.6
