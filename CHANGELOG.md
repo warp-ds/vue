@@ -1,3 +1,10 @@
+# [1.0.0-alpha.22](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) (2023-05-11)
+
+
+### Bug Fixes
+
+* add classes to clickable ([#29](https://github.com/warp-ds/vue/issues/29)) ([c220593](https://github.com/warp-ds/vue/commit/c2205937b67289c7b96a4ca972cc76e6492c90ed))
+
 # [1.0.0-alpha.21](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2023-05-10)
 
 
