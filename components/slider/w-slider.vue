@@ -110,7 +110,6 @@ const aria = computed(() => ({
   'aria-valuenow': v.value,
   'aria-valuetext': attrs['aria-valuetext'],
 }));
-const wrapperClasses = computed(() => [ccSlider.wrapper]);
 const trackClasses = computed(() => [
   ccSlider.track,
   {
@@ -154,7 +153,7 @@ watch(
 );
 </script>
 <template>
-  <div :class="wrapperClasses">
+  <div :class="ccSlider.wrapper">
     <div :class="trackClasses" ref="sliderLine" @click="handleClick" />
     <div
       :class="activeTrackClasses"
