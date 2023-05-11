@@ -1,7 +1,7 @@
 {
   "name": "@warp-ds/vue",
   "repository": "git@github.com:warp-ds/vue.git",
-  "version": "1.0.0-alpha.22",
+  "version": "1.0.0-alpha.23",
   "description": "Warp components for Vue 3",
   "type": "module",
   "exports": {
@@ -49,7 +49,7 @@
     "@vue/test-utils": "^2.0.2",
     "@warp-ds/core": "^1.0.0",
     "@warp-ds/component-classes": "^1.0.0-alpha.66",
-    "@warp-ds/uno": "1.0.0-alpha.22",
+    "@warp-ds/uno": "1.0.0-alpha.23",
     "cleave-lite": "^1.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "drnm": "^0.9.0",
