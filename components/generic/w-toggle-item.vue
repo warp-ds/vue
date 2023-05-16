@@ -1,19 +1,3 @@
-<template>
-  <input 
-    :id="id" 
-    v-model="model" 
-    :type="type"
-    :radioButton="radioButton"
-    :disabled="disabled"
-    :invalid="invalid"
-    :equalWidth="equalWidth"
-    v-bind="$attrs" 
-    :class="[inputClasses]" 
-  />
-  <label v-if="label" :for="id" v-html="label" :class="labelClasses" />
-  <label v-else :for="id" :class="labelClasses"><slot /></label>
-</template>
-
 <script setup>
 import { computed } from 'vue';
 import { id as uniqueId } from '#util';
@@ -51,12 +35,28 @@ const labelClasses = computed(() => (p.labelClass || {
   [ccToggle.radioButtonsLabelSmall]: p.small,
 }));
 const inputClasses = {
-  [p.class ? `${p.class} ${ccToggle.input}` : ccToggle.input]: true,
+  [ccToggle.input]: true,
+  [p.class || ccToggle.a11y]: true,
 };
 
 </script>
 
+<template>
+  <input 
+    :id="id" 
+    v-model="model" 
+    :type="type"
+    :radioButton="radioButton"
+    :disabled="disabled"
+    :invalid="invalid"
+    :equalWidth="equalWidth"
+    v-bind="$attrs" 
+    :class="[inputClasses]" 
+  />
+  <label v-if="label" :for="id" v-html="label" :class="labelClasses" />
+  <label v-else :for="id" :class="labelClasses"><slot /></label>
+</template>
+
 <script>
 export default { name: 'wToggleItem' };
-
 </script>
