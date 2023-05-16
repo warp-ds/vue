@@ -1,3 +1,10 @@
+# [1.0.0-alpha.24](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.23...v1.0.0-alpha.24) (2023-05-16)
+
+
+### Bug Fixes
+
+* add classes to card component ([#31](https://github.com/warp-ds/vue/issues/31)) ([acebdc3](https://github.com/warp-ds/vue/commit/acebdc381d66ec212462e0c1c7789bb3a98515b8))
+
 # [1.0.0-alpha.23](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) (2023-05-11)
 
 
