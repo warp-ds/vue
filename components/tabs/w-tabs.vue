@@ -28,7 +28,7 @@ const getChildren = (slot) =>
   slot[0].type === Fragment ? slot[0].children : slot;
 
 // Temporary solution for handling the number of grid columns. Adding classes dynamically causes issues as it prevents the CSS class to load properly from the drive
-// Todo: Handle dynamic classnames
+// Todo: Handle dynamic classnames based on number of children
 const colsClassName = [
   'grid-cols-1',
   'grid-cols-2',
