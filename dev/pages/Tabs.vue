@@ -13,19 +13,12 @@ const Stars = {
 };
 
 const model = ref('home');
-
-const type = reactive({ active: 'Open' });
-const active = useIsActive(type);
-const typeControls = [
-  { name: 'Open', radio },
-  { name: 'Contained', radio },
-];
 </script>
 
 <template>
   <div>
     <component-title title="Tabs" />
-    <token :state="[model, type]">
+    <token :state="[model]">
       <w-tabs v-model="model">
         <w-tab label="Home" name="home">
           <stars />
@@ -37,12 +30,7 @@ const typeControls = [
           <stars />
         </w-tab>
       </w-tabs>
-      <div
-        :class="{
-          'bg-aqua-50 p-24 last-child:mb-0': active('Contained'),
-          'mb-16': !active('Contained'),
-        }"
-      >
+      <div>
         <w-tab-panel name="home" v-if="model === 'home'"
           ><h3 class="mb-0">Welcome home!</h3></w-tab-panel
         >
