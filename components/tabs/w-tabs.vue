@@ -1,5 +1,7 @@
 <script setup>
-import { tabs as ccTabs } from '@warp-ds/component-classes';
+import {
+  gridLayout, tabs as ccTabs,
+} from '@warp-ds/component-classes';
 import {
   provide,
   computed,
@@ -27,20 +29,6 @@ const useGetActiveTab = (tabContainer) => () =>
 const getChildren = (slot) =>
   slot[0].type === Fragment ? slot[0].children : slot;
 
-// Temporary solution for handling the number of grid columns. Adding classes dynamically causes issues as it prevents the CSS class to load properly from the drive
-// Todo: Handle dynamic classnames based on number of children
-const colsClassName = [
-  'grid-cols-1',
-  'grid-cols-2',
-  'grid-cols-3',
-  'grid-cols-4',
-  'grid-cols-5',
-  'grid-cols-6',
-  'grid-cols-7',
-  'grid-cols-8',
-  'grid-cols-9',
-];
-
 const activeTab = createModel({ props });
 const tabContainer = ref(null);
 const wunderbar = ref(null);
@@ -50,10 +38,12 @@ const unregisterTab = (tab) => {
   const idx = tabs.value.indexOf(tab);
   if (idx !== -1) tabs.value.splice(idx, 1);
 };
-const gridsClassname = computed(() => colsClassName[tabs.value.length - 1]);
+const gridsClassname = computed(
+  () => gridLayout[`cols${tabs.value.length}`]
+);
 // SSR doesn't complete the tab-registry lifecycle before render, so we just count children and use that when numberOfTabs is 0
 const slotFallback = computed(
-  () => colsClassName[getChildren(slots.default()).length - 1]
+  () => gridLayout[`cols${getChildren(slots.default()).length}`]
 );
 const getActiveTab = useGetActiveTab(tabContainer);
 const focusActive = () => getActiveTab()?.focus();
