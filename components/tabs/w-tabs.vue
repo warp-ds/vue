@@ -1,7 +1,5 @@
 <script setup>
-import {
-  gridLayout, tabs as ccTabs,
-} from '@warp-ds/component-classes';
+import { gridLayout, tabs as ccTabs } from '@warp-ds/component-classes';
 import {
   provide,
   computed,
@@ -38,9 +36,7 @@ const unregisterTab = (tab) => {
   const idx = tabs.value.indexOf(tab);
   if (idx !== -1) tabs.value.splice(idx, 1);
 };
-const gridsClassname = computed(
-  () => gridLayout[`cols${tabs.value.length}`]
-);
+const gridsClassname = computed(() => gridLayout[`cols${tabs.value.length}`]);
 // SSR doesn't complete the tab-registry lifecycle before render, so we just count children and use that when numberOfTabs is 0
 const slotFallback = computed(
   () => gridLayout[`cols${getChildren(slots.default()).length}`]
@@ -79,16 +75,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav
-    :class="{
-      [ccTabs.wrapperUnderlined]: true,
-    }"
-  >
+  <nav :class="ccTabs.wrapperUnderlined">
     <div
-      :class="{
-        [ccTabs.tabContainer]: true,
-        [gridsClassname || slotFallback]: true,
-      }"
+      :class="[ccTabs.tabContainer, gridsClassname || slotFallback]"
       ref="tabContainer"
       role="tablist"
     >

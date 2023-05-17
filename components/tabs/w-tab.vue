@@ -37,9 +37,7 @@ const iconClasses = computed(() => ({
 
 const contentClasses = computed(() => ({
   [ccTab.contentUnderlined]: true,
-  [isActive.value
-    ? ccTab.contentUnderlinedActive
-    : ccTab.contentUnderlinedInactive]: true,
+  [ccTab.contentUnderlinedActive]: isActive.value,
 }));
 </script>
 
