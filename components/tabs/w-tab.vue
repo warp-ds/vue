@@ -12,7 +12,6 @@ const props = defineProps({
 
 const controller = inject('tab-controller');
 const activeTab = inject('activeTab');
-const contained = inject('contained');
 
 const isActive = computed(() => props.name === activeTab.value);
 const setActive = () => (activeTab.value = props.name);
@@ -40,7 +39,7 @@ const contentClasses = computed(() => ({
   [ccTab.contentUnderlined]: true,
   [isActive.value
     ? ccTab.contentUnderlinedActive
-    : ccTab.contentUnderlinedInactive]: !contained.value,
+    : ccTab.contentUnderlinedInactive]: true,
 }));
 </script>
 

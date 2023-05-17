@@ -10,13 +10,13 @@ import {
   onMounted,
   Fragment,
   useSlots,
+  watchEffect,
 } from 'vue';
 import { modelProps, createModel } from 'create-v-model';
 import debounce from 'femtobounce';
 import { useKeydownHandler } from './util';
 
 const props = defineProps({
-  contained: Boolean,
   ...modelProps(),
 });
 
@@ -27,7 +27,8 @@ const useGetActiveTab = (tabContainer) => () =>
 const getChildren = (slot) =>
   slot[0].type === Fragment ? slot[0].children : slot;
 
-// Todo: Make a better solution
+// Temporary solution for handling the number of grid columns. Adding classes dynamically causes issues as it prevents the CSS class to load properly from the drive
+// Todo: Handle dynamic classnames
 const colsClassName = [
   'grid-cols-1',
   'grid-cols-2',
@@ -57,16 +58,14 @@ const slotFallback = computed(
 const getActiveTab = useGetActiveTab(tabContainer);
 const focusActive = () => getActiveTab()?.focus();
 
+provide('activeTab', activeTab);
 provide('tab-controller', {
   registerTab,
   unregisterTab,
   onKeydown: useKeydownHandler({ tabs, activeTab, focusActive }),
 });
-provide('activeTab', activeTab);
-provide('contained', toRef(props, 'contained'));
 
 const updateWunderbar = async () => {
-  if (props.contained) return;
   await nextTick();
   try {
     const activeEl = getActiveTab();
@@ -81,7 +80,9 @@ const updateWunderbar = async () => {
 
 onMounted(() => {
   watch(activeTab, updateWunderbar, { immediate: true });
-  watch(() => props.contained, updateWunderbar);
+  watchEffect(() => {
+    updateWunderbar();
+  });
   const resizeHandler = new ResizeObserver(debounce(updateWunderbar, 100));
   resizeHandler.observe(tabContainer.value);
 });
@@ -102,7 +103,7 @@ onMounted(() => {
       role="tablist"
     >
       <slot />
-      <span v-if="!contained" :class="ccTabs.wunderbar" ref="wunderbar" />
+      <span :class="ccTabs.wunderbar" ref="wunderbar" />
     </div>
   </nav>
 </template>
