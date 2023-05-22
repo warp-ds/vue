@@ -27,13 +27,11 @@ const tabClasses = computed(() => ({
   [ccTab.tabActive]: isActive.value,
 }));
 
-const iconClasses = computed(() => ({
-  [ccTab.icon]: true,
-  [ccTab.iconUnderlined]: true,
-  [isActive.value
-    ? ccTab.iconUnderlinedActive
-    : ccTab.iconUnderlinedInactive]: true,
-}));
+const iconClasses = computed(() => [
+  ccTab.icon,
+  ccTab.iconUnderlined,
+  isActive.value ? ccTab.iconUnderlinedActive : ccTab.iconUnderlinedInactive,
+]);
 
 const contentClasses = computed(() => ({
   [ccTab.contentUnderlined]: true,
