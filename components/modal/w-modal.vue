@@ -31,9 +31,9 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
   const emitIfEscape = e => {
     if (e.key === 'Escape') emitDismiss()
   }
-  const titleLeftClasses = computed(() => (transitions, titleShouldTransition.value ? 'duration-300' : 'duration-1', ccModal.titleButton, ccModal.titleButtonLeft));
-  const titleCenterClasses = computed(() => (transitions, titleShouldTransition.value ? 'duration-300' : 'duration-0', props.left ? ccModal.transitionTitleCenter : ccModal.transitionTitleColSpan))
-  const titleRightClasses = computed(() => (transitions, titleShouldTransition.value ? 'duration-300' : 'duration-0', ccModal.titleButton, ccModal.titleButtonRight))
+  const titleLeftClasses = computed(() => ([transitions, titleShouldTransition.value ? 'duration-300' : 'duration-1', ccModal.titleButton, ccModal.titleButtonLeft]));
+  const titleCenterClasses = computed(() => ([transitions, titleShouldTransition.value ? 'duration-300' : 'duration-0', props.left ? ccModal.transitionTitleCenter : ccModal.transitionTitleColSpan]));
+  const titleRightClasses = computed(() => ([transitions, titleShouldTransition.value ? 'duration-300' : 'duration-0', ccModal.titleButton, ccModal.titleButtonRight]));
 
   // when the content area reflows the title area transitions because of v-move in the transition-group
   // this limits the effects
@@ -91,12 +91,28 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
 
 </script>
 <template>
-  <transition name="fade">
+  <transition 
+    name="fade"
+    leave-active-class="transition-opacity-200 ease-in-out"
+    enter-active-class="transition-opacity-200 ease-in-out"
+    enter-from-class="opacity-0"
+    leave-to-class="opacity-0"
+    >
     <div :class="[ccModal.backdrop, ccModal.transparentBg]" v-if="showModal" @click.self="emitDismiss" ref="backdropEl" data-test="backdrop">
-      <transition name="slide">
+      <transition 
+        name="slide"
+        enter-from-class="translate-y-full"
+        leave-to-class="translate-y-full sm:translate-y-2/4"
+        leave-active-class="transition-transform-300 ease-in-out"
+        enter-active-class="transition-transform-300 ease-in-out"
+        >
         <div v-if="showContent" :class="ccModal.modal" tabindex="-1" aria-modal="true" aria-labelledby="w-modal-title" role="dialog" ref="modalEl">
           <div :class="[ccModal.title, headerClasses]">
-            <transition-group name="w-modal-title">
+            <transition-group 
+              enter-from-class="opacity-0 backface-hidden"
+              leave-to-class="opacity-0 backface-hidden"
+              leave-active-class="absolute"
+              >
               <button v-if="left" aria-label="Tilbake" @click="$emit('left')" :class="titleLeftClasses" key="left" v-bind="left">
                 <slot name="left">
                   <svg aria-hidden="true" :class="[ccModal.titleButtonIcon, ccModal.titleButtonIconRotated]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="nonzero" d="M8 2.25a.75.75 0 01.743.648L8.75 3v8.189l3.72-3.72a.75.75 0 011.133.977l-.073.084-5 5a.747.747 0 01-.374.204l-.104.014h-.104a.747.747 0 01-.478-.218l-5-5a.75.75 0 01.976-1.133l.084.073 3.72 3.719V3A.75.75 0 018 2.25z"></path></svg>

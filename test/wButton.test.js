@@ -1,4 +1,5 @@
 import { describe, test, assert } from 'vitest'
+import { button as ccButton } from '@warp-ds/component-classes';
 import { mount } from '@vue/test-utils'
 import { wButton } from '#components'
 
@@ -20,7 +21,7 @@ describe('button', () => {
   test('primary', () => {
     const wrapper = mount(wButton, { props: { primary: true, label } })
     assert.equal(wrapper.text(), 'Hello Warp')
-    assert.include(wrapper.classes().join(' '), 'py-12 px-16 border-0 font-bold rounded-8 leading-24 max-w-max focusable justify-center transition-colors ease-in-out i-text-$color-button-primary-text i-bg-$color-button-primary-background hover:i-bg-$color-button-primary-background-hover! active:i-bg-$color-button-primary-background-active')
+    assert.include(wrapper.classes().join(' '), ccButton.buttonPrimary)
   })
   test('href', () => {
     const href = 'https://finn.no'

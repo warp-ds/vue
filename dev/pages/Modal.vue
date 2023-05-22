@@ -6,8 +6,8 @@ import ModalContent from './helpers/ModalContent.vue'
 
 const heightToggle = ref(false)
 const demoStyles = computed(() => ({
-  '--f-modal-min-height': heightToggle.value ? '100%' : '64%',
-  '--f-modal-max-height': '72%',
+  '--w-modal-min-height': heightToggle.value ? '100%' : '64%',
+  '--w-modal-max-height': '72%',
   // '--f-modal-height': '100%'
 }))
 const changeHeight = () => heightToggle.value = !heightToggle.value
