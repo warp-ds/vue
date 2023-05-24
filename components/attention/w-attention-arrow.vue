@@ -8,6 +8,12 @@
     direction: String
   })
 
+  const arrowDirectionClassname = (dir) => {
+    const direction = dir.charAt(0).toUpperCase() + dir.slice(1);
+
+    return `arrowDirection${direction}`;
+  }
+
   const arrowType = () => {
     if (props.tooltip) return 'arrowTooltip';
     else if (props.callout) return 'arrowCallout';
@@ -18,7 +24,8 @@
   const arrowDirection = computed(() => opposites[props.direction])
   const arrowClasses = computed(() => [
     ccAttention.arrowBase,
-    ccAttention.arrowDirection[arrowDirection.value],
+    // ccAttention.arrowDirection[arrowDirection.value],
+    ccAttention[arrowDirectionClassname(arrowDirection.value)],
     ccAttention[arrowType()],
   ])
   const arrowStyle = computed(() => ({
@@ -26,7 +33,7 @@
     borderTopLeftRadius: '4px',
     // border alignment is off by a fraction of a pixel, this fixes it
     [`margin-${arrowDirection.value}`]: '-0.5px',
-    transform: `rotate(${rotation[arrowDirection.value]}deg)`
+    transform: `rotate(${rotation[arrowDirection.value]}deg)`,
   }))
 </script>
 
