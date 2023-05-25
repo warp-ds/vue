@@ -24,7 +24,6 @@
   const arrowDirection = computed(() => opposites[props.direction])
   const arrowClasses = computed(() => [
     ccAttention.arrowBase,
-    // ccAttention.arrowDirection[arrowDirection.value],
     ccAttention[arrowDirectionClassname(arrowDirection.value)],
     ccAttention[arrowType()],
   ])

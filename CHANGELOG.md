@@ -1,3 +1,17 @@
+# [1.0.0-alpha.26](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.25...v1.0.0-alpha.26) (2023-05-24)
+
+
+### Bug Fixes
+
+* add component classes to modal ([#33](https://github.com/warp-ds/vue/issues/33)) ([a2dfc25](https://github.com/warp-ds/vue/commit/a2dfc255f7fe36613baab708488c9c4a5c2dc14b))
+
+# [1.0.0-alpha.25](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.24...v1.0.0-alpha.25) (2023-05-22)
+
+
+### Features
+
+* **tabs:** Warpify tabs ([#32](https://github.com/warp-ds/vue/issues/32)) ([2e996aa](https://github.com/warp-ds/vue/commit/2e996aaa9c51964d9de3ad80895db7e935e4c688))
+
 # [1.0.0-alpha.24](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.23...v1.0.0-alpha.24) (2023-05-16)
 
 
