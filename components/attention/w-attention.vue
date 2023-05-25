@@ -72,7 +72,7 @@
   <div :class="[{ 'absolute z-50': !callout }, attentionClass]" ref="attentionRef" v-show="model">
     <div :class="wrapperClasses" data-test="wrapper">
       <w-attention-arrow v-bind="$props" v-if="!noArrow" ref="arrowEl" :direction="actualDirection" />
-      <div class="last-child:mb-0"><slot /></div>
+      <div class="last:mb-0"><slot /></div>
     </div>
   </div>
 </template>
