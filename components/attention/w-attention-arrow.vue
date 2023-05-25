@@ -14,19 +14,16 @@
     return `arrowDirection${direction}`;
   }
 
-  const arrowType = () => {
-    if (props.tooltip) return 'arrowTooltip';
-    else if (props.callout) return 'arrowCallout';
-    else if (props.popover) return 'arrowPopover';
-    return '';
-  }
-
   const arrowDirection = computed(() => opposites[props.direction])
-  const arrowClasses = computed(() => [
-    ccAttention.arrowBase,
-    ccAttention[arrowDirectionClassname(arrowDirection.value)],
-    ccAttention[arrowType()],
-  ])
+
+  const arrowClasses = computed(() => ({
+    [ccAttention.arrowBase]: true,
+    [ccAttention[arrowDirectionClassname(arrowDirection.value)]]: true,  
+    [ccAttention.arrowTooltip]: props.tooltip,
+    [ccAttention.arrowCallout]: props.callout,
+    [ccAttention.arrowPopover]: props.popover
+}));
+
   const arrowStyle = computed(() => ({
     // TW doesn't let us specify exactly one corner, only whole sides
     borderTopLeftRadius: '4px',
