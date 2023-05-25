@@ -9,7 +9,7 @@
   })
 
   const arrowDirectionClassname = (dir) => {
-    const direction = dir.charAt(0).toUpperCase() + dir.slice(1);
+    const direction = dir?.charAt(0).toUpperCase() + dir?.slice(1);
 
     return `arrowDirection${direction}`;
   }

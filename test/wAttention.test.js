@@ -16,7 +16,7 @@ describe('attention', () => {
       slots: { default: defaultSlot } })
     assert.include(wrapper.text(), 'Hello Warp')
     const html = wrapper.get('[data-test="wrapper"]')
-    assert.include(html.classes().join(' '), 'bg-green')
+    assert.include(html.classes().join(' '), 'i-bg-$color-callout-background')
   })
   test('show/hide callout', async () => {
     const model = ref(false)
