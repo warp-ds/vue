@@ -38,9 +38,9 @@
   const recompute = async () => {
     if (!model.value) return
     await nextTick()
-    if(!props.attentionEl.value) return
     if (props.callout) return computeCalloutArrow({ directionName, arrowEl, actualDirection })
-    
+    if(!props.attentionEl.value) return
+
     const position = await computePosition(props.targetEl, props.attentionEl.value, {
       placement: directionName.value,
       middleware: [
