@@ -1,3 +1,10 @@
+# [1.0.0-alpha.27](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.26...v1.0.0-alpha.27) (2023-05-26)
+
+
+### Features
+
+* **attention:** warpify attention ([#34](https://github.com/warp-ds/vue/issues/34)) ([6aedb69](https://github.com/warp-ds/vue/commit/6aedb6936855fe3e2d254572cbee54938535acba))
+
 # [1.0.0-alpha.26](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.25...v1.0.0-alpha.26) (2023-05-24)
 
 
