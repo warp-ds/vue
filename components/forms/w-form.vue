@@ -31,6 +31,6 @@
 </template>
 
 <script>
-export default { name: 'wAttentionArrow' };
+export default { name: 'wForm' };
 </script>
 
