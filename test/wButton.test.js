@@ -1,6 +1,6 @@
 import { describe, test, assert } from 'vitest'
-import { button as ccButton } from '@warp-ds/component-classes';
 import { mount } from '@vue/test-utils'
+import { button as ccButton } from '@warp-ds/component-classes';
 import { wButton } from '#components'
 
 const label =  'Hello Warp'
