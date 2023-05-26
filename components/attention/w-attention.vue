@@ -25,10 +25,7 @@
     [ccAttention.base]: true,
     [ccAttention.tooltip]: props.tooltip,
     [ccAttention.callout]: props.callout,
-    [ccAttention.popover]: props.popover,
-    [ccAttention.arrowTooltip]: props.tooltip,
-    [ccAttention.arrowCallout]: props.callout,
-    [ccAttention.arrowPopover]: props.popover,
+    [ccAttention.popover]: props.popover
   }))
 
   const model = (props.modelValue === absentProp) ? ref(true) : createModel({ props, emit })
