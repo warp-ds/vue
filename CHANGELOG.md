@@ -1,3 +1,10 @@
+# [1.0.0-alpha.28](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.27...v1.0.0-alpha.28) (2023-05-29)
+
+
+### Features
+
+* Warpify Switch component ([#35](https://github.com/warp-ds/vue/issues/35)) ([26c03fa](https://github.com/warp-ds/vue/commit/26c03fab279313a4c9ef5248d1e44da120b91dab))
+
 # [1.0.0-alpha.27](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.26...v1.0.0-alpha.27) (2023-05-26)
 
 
