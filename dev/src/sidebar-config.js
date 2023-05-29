@@ -27,6 +27,7 @@ export const sidebarConfig = [
       { to: 'input', title: 'Input' },
       { to: 'select', title: 'Select' },
       { to: 'slider', title: 'Slider' },
+      { to: 'switch', title: 'Switch' },
       { to: 'textarea', title: 'Textarea' },
       { to: 'toggle', title: 'Toggle' }
     ]
