@@ -41,7 +41,7 @@ const simulateClick = () => inputEl.value.click();
 </script>
 
 <template>
-  <div class="tap-highlight-transparent">
+  <div :class="ccSwitch.switch">
     <input ref="inputEl" type="checkbox" :id="p.id" v-model="model" :class="ccSwitch.a11y" :disabled="p.disabled" />
     <div @click="simulateClick" :class="switchClasses">
       <div :class="trackClasses" />
