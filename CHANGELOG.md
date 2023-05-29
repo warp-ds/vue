@@ -1,3 +1,10 @@
+# [1.0.0-alpha.29](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) (2023-05-29)
+
+
+### Features
+
+* **Form:** warpify forms ([#36](https://github.com/warp-ds/vue/issues/36)) ([f712528](https://github.com/warp-ds/vue/commit/f7125288b7d87866fee41e4c73ca44841210065d))
+
 # [1.0.0-alpha.28](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.27...v1.0.0-alpha.28) (2023-05-29)
 
 
