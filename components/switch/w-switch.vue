@@ -23,8 +23,8 @@ const switchClasses = computed(() => [
 const trackClasses = computed(() => [
   ccSwitch.track,
   {
-    [ccSwitch.trackActive]: model && !p.disabled,
-    [ccSwitch.trackInactive]: !model && !p.disabled,
+    [ccSwitch.trackActive]: model.value && !p.disabled,
+    [ccSwitch.trackInactive]: !model.value && !p.disabled,
     [ccSwitch.trackDisabled]: p.disabled,
   }
 ]);
