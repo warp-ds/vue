@@ -1,3 +1,10 @@
+# [1.0.0-alpha.30](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2023-05-29)
+
+
+### Bug Fixes
+
+* Fixed bug with Switch always showing selected state ([#37](https://github.com/warp-ds/vue/issues/37)) ([0fab7b3](https://github.com/warp-ds/vue/commit/0fab7b36fa536071cd0cafda3def73a217d0cad4))
+
 # [1.0.0-alpha.29](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) (2023-05-29)
 
 
