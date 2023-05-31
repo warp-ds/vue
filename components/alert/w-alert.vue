@@ -35,7 +35,7 @@ const iconClass = computed(() => [
 </script>
 
 <template>
-  <div class="will-change-height">
+  <div :class="ccAlert.willChangeHeight">
     <!-- TODO: Investigate if "will-change-height" is needed and compare the use of it with the other component repos -->
     <w-expand-transition>
       <div v-if="model" :role="role">
@@ -60,9 +60,8 @@ const iconClass = computed(() => [
               <path d="M7.25 12a.75.75 0 0 0 1.5 0V8a.75.75 0 0 0-1.5 0v4ZM8 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" fill="#fff" />
             </svg>
           </div>
-          <!-- TODO: replace text-14 with a token -->
-          <div class="last:mb-0 text-14" data-test="content">
-            <p class="font-bold" v-if="title">{{ title }}</p>
+          <div :class="ccAlert.textWrapper" data-test="content">
+            <p :class="ccAlert.title" v-if="title">{{ title }}</p>
             <slot />
           </div>
         </div>
