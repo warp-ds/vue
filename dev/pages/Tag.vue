@@ -10,6 +10,7 @@ const colorControls = [
   { name: 'Error', radio },
   { name: 'Disabled', radio },
   { name: 'Sponsored', radio },
+  { name: 'Neutral', radio },
 ]
 const color = reactive({ active: 'Info' })
 const activeColor = useIsActive(color)
