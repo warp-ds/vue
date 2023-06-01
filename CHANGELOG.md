@@ -1,3 +1,10 @@
+# [1.0.0-alpha.31](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2023-06-01)
+
+
+### Bug Fixes
+
+* **alert:** use imported instead of inline classes ([#39](https://github.com/warp-ds/vue/issues/39)) ([832521b](https://github.com/warp-ds/vue/commit/832521b90a7cd50d07b2d5d377cde59428223ec3))
+
 # [1.0.0-alpha.30](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2023-05-29)
 
 
