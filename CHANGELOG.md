@@ -1,3 +1,10 @@
+# [1.0.0-alpha.33](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.32...v1.0.0-alpha.33) (2023-06-07)
+
+
+### Bug Fixes
+
+* bump packages ([#40](https://github.com/warp-ds/vue/issues/40)) ([cd4b4ae](https://github.com/warp-ds/vue/commit/cd4b4aee84fa9fa9f822cfe6c6933ee684e43e9a))
+
 # [1.0.0-alpha.32](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2023-06-07)
 
 
