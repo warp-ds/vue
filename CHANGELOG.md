@@ -1,3 +1,10 @@
+# [1.0.0-alpha.32](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2023-06-07)
+
+
+### Bug Fixes
+
+* focusable is added to the component classes ([#38](https://github.com/warp-ds/vue/issues/38)) ([02e5df2](https://github.com/warp-ds/vue/commit/02e5df250abf206c2c53334e04eab2d9d1050b5b))
+
 # [1.0.0-alpha.31](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2023-06-01)
 
 
