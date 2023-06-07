@@ -1,3 +1,10 @@
+# [1.0.0-alpha.34](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.33...v1.0.0-alpha.34) (2023-06-07)
+
+
+### Bug Fixes
+
+* provide props to textarea ([#41](https://github.com/warp-ds/vue/issues/41)) ([f5a37f1](https://github.com/warp-ds/vue/commit/f5a37f10672a9bb52c7e61e40e755a6a2f91db2c))
+
 # [1.0.0-alpha.33](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.32...v1.0.0-alpha.33) (2023-06-07)
 
 
