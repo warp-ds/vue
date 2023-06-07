@@ -8,6 +8,8 @@
             [ccInput.invalid]: hasValidationErrors,
           }
         ]"
+        :disabled="disabled"
+        :readOnly="readOnly"
         v-bind="{ ...$attrs, class: '' }" v-model="model" :id="id" @blur="triggerValidation" 
       />
     </div>
