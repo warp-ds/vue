@@ -1,3 +1,10 @@
+# [1.0.0-alpha.36](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.35...v1.0.0-alpha.36) (2023-06-12)
+
+
+### Bug Fixes
+
+* **workflows:** set node v to lts/* and pnpm to 8 ([#44](https://github.com/warp-ds/vue/issues/44)) ([c4ea6ba](https://github.com/warp-ds/vue/commit/c4ea6baa36b7a4bc91c49f973cb37c4c5984fb6f))
+
 # [1.0.0-alpha.35](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.34...v1.0.0-alpha.35) (2023-06-09)
 
 
