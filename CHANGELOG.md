@@ -1,3 +1,10 @@
+# [1.0.0-alpha.37](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.36...v1.0.0-alpha.37) (2023-06-13)
+
+
+### Bug Fixes
+
+* **steps:** fix background color issue for active step ([#42](https://github.com/warp-ds/vue/issues/42)) ([1e6c7b2](https://github.com/warp-ds/vue/commit/1e6c7b227c1d487f736d1489df80c7698f01aca9))
+
 # [1.0.0-alpha.36](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.35...v1.0.0-alpha.36) (2023-06-12)
 
 
