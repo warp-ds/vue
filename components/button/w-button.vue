@@ -53,7 +53,7 @@ const buttonClass = computed(() => ({
   [ccButton.buttonPill]: props.pill,
   [ccButton.buttonInProgress]: props.loading,
   [ccButton.buttonIsDisabled]: props.disabled,
-  ['inline-block']: !!props.href
+  [ccButton.linkAsButton]: !!props.href,
 }))
 
 const saneDefaults = computed(() => ({
