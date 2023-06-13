@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 dependencies:
   '@fabric-ds/core':
@@ -55,8 +59,8 @@ devDependencies:
     specifier: ^2.0.2
     version: 2.3.0(vue@3.2.47)
   '@warp-ds/component-classes':
-    specifier: ^1.0.0-alpha.93
-    version: 1.0.0-alpha.93
+    specifier: ^1.0.0-alpha.94
+    version: 1.0.0-alpha.94
   '@warp-ds/core':
     specifier: ^1.0.0
     version: 1.0.0
@@ -1305,8 +1309,8 @@ packages:
       '@vue/server-renderer': 3.2.47(vue@3.2.47)
     dev: true
 
-  /@warp-ds/component-classes@1.0.0-alpha.93:
-    resolution: {integrity: sha512-W1/KmDTpE8Zy2wBlpWLIQNj8HQtegNL25NSXI2X03y/XGqGUKHldtEoLbuAaRvrM1Mn9wOfz+AoQJtfIoIYt4g==}
+  /@warp-ds/component-classes@1.0.0-alpha.94:
+    resolution: {integrity: sha512-x65l1AF/1SI/fNZPtE6QuuQ8G1e+fCUqn49CRbv/dh4GJ8lsSaB2sT9JFY22dOC6cZ/X0Wn2DB/zfJCo+UOQoA==}
     dev: true
 
   /@warp-ds/core@1.0.0:
