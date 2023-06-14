@@ -38,8 +38,7 @@ const stepDotClasses = computed(() => [
     [ccStep.stepDotVerticalRight]: vertical.value && !left.value,
     [ccStep.stepDotHorizontal]: !vertical.value,
     [ccStep.stepDotIncomplete]: !(props.active || props.complete),
-    [ccStep.stepDotActive]: props.active,
-    [ccStep.stepDotComplete]: props.complete,
+    [ccStep.stepDotActive]: props.active || props.complete,
   },
 ]);
 
