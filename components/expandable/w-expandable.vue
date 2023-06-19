@@ -75,6 +75,7 @@ const chevronClasses = computed(() => ({
 
 const contentClasses = computed(() => ({
   [props.contentClass || '']: true,
-  [ccBox.box + (hasTitle.value ? ' pt-0' : '')]: props.box || props.info,
+  [ccBox.box]: props.box || props.info,
+  [ccExpandable.paddingTop]: hasTitle.value && (props.box || props.info),
 }))
 </script>

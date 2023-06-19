@@ -21,6 +21,11 @@
   const emit = defineEmits(['update:modelValue']);
   const directionName = computed(() => directions.find(e => props[e]));
 
+  const attentionClasses = computed(() => ({
+    [props.attentionClass]: true,
+    [ccAttention.notCallout]: !props.callout
+  }))
+  
   const wrapperClasses = computed(() => ({
     [ccAttention.base]: true,
     [ccAttention.tooltip]: props.tooltip,
@@ -66,7 +71,7 @@
 </script>
 
 <template>
-  <div :class="[{ 'absolute z-50': !callout }, attentionClass]" ref="attentionRef" v-show="model">
+  <div :class="attentionClasses" ref="attentionRef" v-show="model">
     <div :class="wrapperClasses" data-test="wrapper">
       <w-attention-arrow v-bind="$props" v-if="!noArrow" ref="arrowEl" :direction="actualDirection" />
       <div :class="ccAttention.content"><slot /></div>

@@ -1,5 +1,6 @@
 <script setup>
-import { ref, provide, watchEffect } from 'vue';
+import { computed, ref, provide, watchEffect } from 'vue';
+import { steps as ccSteps } from '@warp-ds/component-classes';
 
 const props = defineProps({
   horizontal: Boolean,
@@ -12,14 +13,20 @@ const left = ref(!props.right);
 provide('steps-vertical', vertical);
 provide('steps-left', left);
 
+const stepsClasses = computed(() => ({
+    [ccSteps.steps]: true,
+    [ccSteps.stepsHorizontal]: props.horizontal 
+  }));
+
 watchEffect(() => {
   vertical.value = !props.horizontal;
   left.value = !props.right;
 });
+
 </script>
 
 <template>
-  <div class="w-full" :class="{ flex: horizontal }">
+  <div :class="stepsClasses">
     <slot />
   </div>
 </template>
