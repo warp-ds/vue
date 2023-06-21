@@ -1,3 +1,10 @@
+# [1.0.0-alpha.39](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.38...v1.0.0-alpha.39) (2023-06-21)
+
+
+### Bug Fixes
+
+* **inline classes:** update inline classes for tag, tabs, steps, expandable, attention ([#46](https://github.com/warp-ds/vue/issues/46)) ([71feb82](https://github.com/warp-ds/vue/commit/71feb82d16e4258f70b82bea014b67c6e09ff821))
+
 # [1.0.0-alpha.38](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.37...v1.0.0-alpha.38) (2023-06-14)
 
 
