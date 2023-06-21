@@ -1,7 +1,6 @@
 <script setup>
 import { wTabs, wTab, wTabPanel } from '#components';
-import { radio, useIsActive } from '#dev-util';
-import { ref, reactive, h } from 'vue';
+import { ref, h } from 'vue';
 
 const Stars = {
   name: 'stars-svg',
@@ -12,7 +11,7 @@ const Stars = {
     }),
 };
 
-const model = ref('home');
+const model = ref('one');
 </script>
 
 <template>
@@ -20,26 +19,26 @@ const model = ref('home');
     <component-title title="Tabs" />
     <token :state="[model]">
       <w-tabs v-model="model">
-        <w-tab label="Home" name="home">
+        <w-tab label="Tab 1" name="one">
           <stars />
         </w-tab>
-        <w-tab label="Car" name="car">
+        <w-tab label="Tab 2" name="two">
           <stars />
         </w-tab>
-        <w-tab label="Motorcycle" name="motorcycle">
+        <w-tab label="Tab 3" name="three">
           <stars />
         </w-tab>
       </w-tabs>
       <div>
-        <w-tab-panel name="home" v-if="model === 'home'"
-          ><h3 class="mb-0">Welcome home!</h3></w-tab-panel
-        >
-        <w-tab-panel name="car" v-if="model === 'car'"
-          ><h3 class="mb-0">I am a car page</h3></w-tab-panel
-        >
-        <w-tab-panel name="motorcycle" v-if="model === 'motorcycle'"
-          ><h3 class="mb-0">Something something two wheels</h3></w-tab-panel
-        >
+        <w-tab-panel name="one" v-if="model === 'one'">
+          <p class="mb-0">First tab content</p>
+        </w-tab-panel>
+        <w-tab-panel name="two" v-if="model === 'two'">
+          <p class="mb-0">Second tab content</p>
+        </w-tab-panel>
+        <w-tab-panel name="three" v-if="model === 'three'">
+          <p class="mb-0">Third tab content</p>
+          </w-tab-panel>
       </div>
     </token>
   </div>
