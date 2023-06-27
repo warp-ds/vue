@@ -1,3 +1,10 @@
+# [1.0.0-alpha.41](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.40...v1.0.0-alpha.41) (2023-06-27)
+
+
+### Bug Fixes
+
+* **package.json:** update package versions ([#48](https://github.com/warp-ds/vue/issues/48)) ([d5ae45c](https://github.com/warp-ds/vue/commit/d5ae45c4e60aabacd50cc57b257765dfcd887e18))
+
 # [1.0.0-alpha.40](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.39...v1.0.0-alpha.40) (2023-06-21)
 
 
