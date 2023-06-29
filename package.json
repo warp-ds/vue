@@ -48,7 +48,7 @@
     "@vue/compiler-sfc": "^3.3.4",
     "@vue/test-utils": "^2.4.0",
     "@warp-ds/core": "^1.0.0",
-    "@warp-ds/css": "^1.0.0-alpha.11",
+    "@warp-ds/css": "^1.0.0-alpha.14",
     "@warp-ds/uno": "1.0.0-alpha.50",
     "cleave-lite": "^1.0.0",
     "cz-conventional-changelog": "^3.3.0",
