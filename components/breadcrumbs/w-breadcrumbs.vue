@@ -12,7 +12,7 @@
 <script setup>
 import { h, Fragment } from 'vue'
 import { interleave } from '@warp-ds/core/breadcrumbs'
-import { breadcrumbs as ccBreadcrumbs } from "@warp-ds/component-classes"
+import { breadcrumbs as ccBreadcrumbs } from '@warp-ds/css/component-classes'
 
 const props = defineProps({
   ariaLabel: { type: String, default: 'Her er du' }

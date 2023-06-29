@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref, provide, watchEffect } from 'vue';
-import { steps as ccSteps } from '@warp-ds/component-classes';
+import { steps as ccSteps } from '@warp-ds/css/component-classes';
 
 const props = defineProps({
   horizontal: Boolean,

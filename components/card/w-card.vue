@@ -1,5 +1,5 @@
 <script setup>
-import { card as ccCard } from '@warp-ds/component-classes';
+import { card as ccCard } from '@warp-ds/css/component-classes';
 import { computed } from 'vue';
 
 const props = defineProps({

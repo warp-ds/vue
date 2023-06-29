@@ -11,7 +11,7 @@ export default { name: 'wButton' }
 
 <script setup>
 import { computed, useAttrs } from 'vue'
-import { button as ccButton } from '@warp-ds/component-classes';
+import { button as ccButton } from '@warp-ds/css/component-classes';
 
 const buttonTypes = [    
   'primary',

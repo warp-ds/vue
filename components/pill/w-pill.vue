@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import { pill as ccPill } from '@warp-ds/component-classes';
+import { pill as ccPill } from '@warp-ds/css/component-classes';
 
 const p = defineProps({
   label: String,

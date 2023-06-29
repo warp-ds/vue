@@ -1,6 +1,6 @@
 <script setup>
 import { inject, computed } from 'vue';
-import { buttonGroupItem as ccButtonGroupItem } from '@warp-ds/component-classes';
+import { buttonGroupItem as ccButtonGroupItem } from '@warp-ds/css/component-classes';
 
 const props = defineProps({ selected: Boolean });
 const outlined = inject('outlined', false);

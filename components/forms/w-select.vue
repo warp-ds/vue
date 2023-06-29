@@ -38,7 +38,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { select as ccSelect } from '@warp-ds/component-classes';
+import { select as ccSelect } from '@warp-ds/css/component-classes';
 import { createModel } from 'create-v-model'
 import { default as wField, fieldProps } from './w-field.vue'
 

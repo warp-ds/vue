@@ -1,5 +1,5 @@
 <script setup>
-import { ribbon as ccRibbon } from '@warp-ds/component-classes'
+import { ribbon as ccRibbon } from '@warp-ds/css/component-classes'
 import { computed } from 'vue'
 
 const props = defineProps({

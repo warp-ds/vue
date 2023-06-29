@@ -1,5 +1,5 @@
 <script setup>
-import { box as ccBox } from '@warp-ds/component-classes';
+import { box as ccBox } from '@warp-ds/css/component-classes';
 import { computed } from 'vue';
 
 const props = defineProps({

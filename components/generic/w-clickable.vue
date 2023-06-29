@@ -1,7 +1,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { clickable as ccClickable } from '@warp-ds/component-classes';
+import { clickable as ccClickable } from '@warp-ds/css/component-classes';
 import wToggleItem from './w-toggle-item.vue';
 
 const props = defineProps({

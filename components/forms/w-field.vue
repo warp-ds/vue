@@ -13,7 +13,7 @@
 
 <script>
 import { computed } from 'vue';
-import { input as ccInput, label as ccLabel, helpText as ccHelpText} from '@warp-ds/component-classes';
+import { input as ccInput, label as ccLabel, helpText as ccHelpText} from '@warp-ds/css/component-classes';
 import { createValidation } from './validation';
 import { id } from '#util';
 import { modelProps } from 'create-v-model';
