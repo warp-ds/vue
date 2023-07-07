@@ -1,7 +1,7 @@
 {
   "name": "@warp-ds/vue",
   "repository": "git@github.com:warp-ds/vue.git",
-  "version": "1.0.0-alpha.41",
+  "version": "1.0.0-alpha.42",
   "description": "Warp components for Vue 3",
   "type": "module",
   "exports": {
@@ -28,8 +28,9 @@
   "keywords": [],
   "license": "Apache-2.0",
   "dependencies": {
-    "@fabric-ds/core": "^0.0.15",
-    "@fabric-ds/css": "^1.2.0",
+    "@warp-ds/core": "^1.0.0",
+    "@warp-ds/css": "^1.0.0-alpha.14",
+    "@warp-ds/uno": "^1.0.0-alpha.57",
     "@floating-ui/dom": "^1.4.2",
     "create-v-model": "^2.2.0",
     "dom-focus-lock": "^1.1.0",
@@ -47,9 +48,6 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/compiler-sfc": "^3.3.4",
     "@vue/test-utils": "^2.4.0",
-    "@warp-ds/core": "^1.0.0",
-    "@warp-ds/css": "^1.0.0-alpha.14",
-    "@warp-ds/uno": "1.0.0-alpha.50",
     "cleave-lite": "^1.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "drnm": "^0.9.0",
