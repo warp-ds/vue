@@ -29,7 +29,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@warp-ds/core": "^1.0.0",
-    "@warp-ds/component-classes": "^1.0.0-alpha.113",
+    "@warp-ds/component-classes": "^1.0.0-alpha.115",
     "@warp-ds/uno": "1.0.0-alpha.49",
     "@floating-ui/dom": "^1.4.2",
     "create-v-model": "^2.2.0",

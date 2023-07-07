@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.4.2
     version: 1.4.2
   '@warp-ds/component-classes':
-    specifier: ^1.0.0-alpha.113
-    version: 1.0.0-alpha.113
+    specifier: ^1.0.0-alpha.115
+    version: 1.0.0-alpha.115
   '@warp-ds/core':
     specifier: ^1.0.0
     version: 1.0.0
@@ -1547,8 +1547,8 @@ packages:
       vue-component-type-helpers: 1.6.5
     dev: true
 
-  /@warp-ds/component-classes@1.0.0-alpha.113:
-    resolution: {integrity: sha512-+pDmfOtE25cQxs3PzbWjfIqaElVl6W0tYE5svQVjx8D6gtlmkhIZSZrF8MY1tXuUdDUIiB5X5ZF+G4ID0AWOVA==}
+  /@warp-ds/component-classes@1.0.0-alpha.115:
+    resolution: {integrity: sha512-+Gvds1oLj2Jj5WW5hwFCPts2K0L3/yQCCMg6io49QnZ0qDwd6whof3TkDg7emhqF+xEVh87r67bqLewZbOsnyg==}
     dev: false
 
   /@warp-ds/core@1.0.0:
