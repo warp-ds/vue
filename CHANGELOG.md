@@ -1,3 +1,10 @@
+# [1.0.0-alpha.42](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.41...v1.0.0-alpha.42) (2023-07-07)
+
+
+### Bug Fixes
+
+* stable FINN prod alpha-release ([#50](https://github.com/warp-ds/vue/issues/50)) ([73b9d6d](https://github.com/warp-ds/vue/commit/73b9d6d277ce012f5dcf00eb74b7cb72b73495cc))
+
 # [1.0.0-alpha.41](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.40...v1.0.0-alpha.41) (2023-06-27)
 
 
