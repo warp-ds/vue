@@ -1,19 +1,22 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@fabric-ds/core':
-    specifier: ^0.0.15
-    version: 0.0.15
-  '@fabric-ds/css':
-    specifier: ^1.2.0
-    version: 1.2.0
   '@floating-ui/dom':
     specifier: ^1.4.2
     version: 1.4.2
+  '@warp-ds/component-classes':
+    specifier: ^1.0.0-alpha.115
+    version: 1.0.0-alpha.115
+  '@warp-ds/core':
+    specifier: ^1.0.0
+    version: 1.0.0
+  '@warp-ds/uno':
+    specifier: 1.0.0-alpha.49
+    version: 1.0.0-alpha.49
   create-v-model:
     specifier: ^2.2.0
     version: 2.2.0
@@ -58,15 +61,6 @@ devDependencies:
   '@vue/test-utils':
     specifier: ^2.4.0
     version: 2.4.0(vue@3.3.4)
-  '@warp-ds/component-classes':
-    specifier: ^1.0.0-alpha.109
-    version: 1.0.0-alpha.109
-  '@warp-ds/core':
-    specifier: ^1.0.0
-    version: 1.0.0
-  '@warp-ds/uno':
-    specifier: 1.0.0-alpha.47
-    version: 1.0.0-alpha.47
   cleave-lite:
     specifier: ^1.0.0
     version: 1.0.0
@@ -734,20 +728,9 @@ packages:
     dev: true
     optional: true
 
-  /@fabric-ds/core@0.0.15:
-    resolution: {integrity: sha512-PUr5/bAunIO+o5X8D3uDGiApX8+4p9yUvXCija457bfw/lh43dkPMjlPtSltC02KK74/v3eVFt0x1oJs9n0uZA==}
-    dependencies:
-      '@floating-ui/dom': 0.5.4
-    dev: false
-
-  /@fabric-ds/css@1.2.0:
-    resolution: {integrity: sha512-2qtju85xQRxaHmuc6nEmWaQUUYLNZGR/nQAYTvONNv7InJYHfLmKc/LTG6V0E/BPxGT3BBnBuuHBoxBghAqDVw==}
-    dependencies:
-      lit-html: 2.6.1
-    dev: false
-
   /@floating-ui/core@0.7.3:
     resolution: {integrity: sha512-buc8BXHmG9l82+OQXOFU3Kr2XQx9ys01U/Q9HMIrZ300iLc8HLMgh7dcCqgYzAzf4BkoQvDcXf5Y+CuEZ5JBYg==}
+    dev: false
 
   /@floating-ui/core@1.3.1:
     resolution: {integrity: sha512-Bu+AMaXNjrpjh41znzHqaz3r2Nr8hHuHZT6V2LBKMhyMl0FgKA62PNYbqnfgmzOhoWZj70Zecisbo4H1rotP5g==}
@@ -757,6 +740,7 @@ packages:
     resolution: {integrity: sha512-419BMceRLq0RrmTSDxn8hf9R3VCJv2K9PUfugh5JyEFmdjzDo+e8U5EdR8nzKq8Yj1htzLm3b6eQEEam3/rrtg==}
     dependencies:
       '@floating-ui/core': 0.7.3
+    dev: false
 
   /@floating-ui/dom@1.4.2:
     resolution: {integrity: sha512-VKmvHVatWnewmGGy+7Mdy4cTJX71Pli6v/Wjb5RQBuq5wjUYx+Ef+kRThi8qggZqDgD8CogCpqhRoVp3+yQk+g==}
@@ -1210,10 +1194,6 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
-  /@types/trusted-types@2.0.3:
-    resolution: {integrity: sha512-NfQ4gyz38SL8sDNrSixxU2Os1a5xcdFxipAFxYEuLUlvU2uDwS4NUpsImcf1//SlWItCVMMLiylsxbmNMToV/g==}
-    dev: false
-
   /@unocss/astro@0.53.1(vite@4.3.9):
     resolution: {integrity: sha512-dvPH2buCL0qvWXFfQFUeB8kbbJsliN0ib2Am5/1r4XyOwCiCvfwc3UuQpsi0xJs/WO9QgIxLWxakxVj3DeAuAQ==}
     dependencies:
@@ -1257,7 +1237,7 @@ packages:
 
   /@unocss/core@0.50.6:
     resolution: {integrity: sha512-WMIp8xr7YSlID2whqfRGLwagp59e6u4ckPACEpoDOW8sTeSPRZm54hxPhuWXD1SQuqcwHPMtM9nzGD8UOnqQxA==}
-    dev: true
+    dev: false
 
   /@unocss/core@0.53.1:
     resolution: {integrity: sha512-6CUaOMeQyoPIgMuSboX9yGywiCumhoYTPk6uMFhgD3vZmIRCZMwN9RFDLB+s2+NOlnBU6aQsJLONcUapZb/49g==}
@@ -1310,7 +1290,7 @@ packages:
     resolution: {integrity: sha512-Ejgib688uvzCVgT/DHAOyXxKcM8vX55mxh8m3GAEx1H1pxg0IBfJO4QCKa3uAnasxj27XescBbvqv04dWi+jEQ==}
     dependencies:
       '@unocss/core': 0.50.6
-    dev: true
+    dev: false
 
   /@unocss/preset-mini@0.53.1:
     resolution: {integrity: sha512-tHfsAXmu82/0BMktgqaq6WLOU5FdLdK/iJvS38eQLZqZlQ2VtCtNybf+bqlNNr0cr8J4ju2iwp7n61pqIvcmOw==}
@@ -1567,22 +1547,22 @@ packages:
       vue-component-type-helpers: 1.6.5
     dev: true
 
-  /@warp-ds/component-classes@1.0.0-alpha.109:
-    resolution: {integrity: sha512-TD+i+ipZN5hMoacqABqGLUk0512EYQsXtKo5khcCaNghQ9rYmHYMLmrNYqeldZLe18xf0ZTdk9JNkByBdkDGEQ==}
-    dev: true
+  /@warp-ds/component-classes@1.0.0-alpha.115:
+    resolution: {integrity: sha512-+Gvds1oLj2Jj5WW5hwFCPts2K0L3/yQCCMg6io49QnZ0qDwd6whof3TkDg7emhqF+xEVh87r67bqLewZbOsnyg==}
+    dev: false
 
   /@warp-ds/core@1.0.0:
     resolution: {integrity: sha512-HCzgWm6wHR2Wh/rvNu9I4Qe1HdUj/i3v5amjioW38ZPh/Ve/y/0imX//ZXMLjshDVK+ZKU34Xd0TC56z/Yg36g==}
     dependencies:
       '@floating-ui/dom': 0.5.4
-    dev: true
+    dev: false
 
-  /@warp-ds/uno@1.0.0-alpha.47:
-    resolution: {integrity: sha512-+8RGDnthKD5/FDGx+7/WdY0NsmGenTCfrPeHA+VoyFDrVgFxz+DiWn6SldayaeYVgjlmvXyKTVAn0leGZROXdQ==}
+  /@warp-ds/uno@1.0.0-alpha.49:
+    resolution: {integrity: sha512-72c5dT6QAy7GFmL+SN2gRlOsJWBWYM4uJpyw8WA9gCQHNENHXtoWu+D24+c47T9K908M3ZG+2+U1M/FXEZ7ojA==}
     dependencies:
       '@unocss/core': 0.50.6
       '@unocss/preset-mini': 0.50.6
-    dev: true
+    dev: false
 
   /JSONStream@1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
@@ -3533,12 +3513,6 @@ packages:
     resolution: {integrity: sha512-cNOjgCnLB+FnvWWtyRTzmB3POJ+cXxTA81LoW7u8JdmhfXzriropYwpjShnz1QLLWsQwY7nIxoDmcPTwphDK9w==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
-
-  /lit-html@2.6.1:
-    resolution: {integrity: sha512-Z3iw+E+3KKFn9t2YKNjsXNEu/LRLI98mtH/C6lnFg7kvaqPIzPn124Yd4eT/43lyqrejpc5Wb6BHq3fdv4S8Rw==}
-    dependencies:
-      '@types/trusted-types': 2.0.3
-    dev: false
 
   /load-json-file@4.0.0:
     resolution: {integrity: sha512-Kx8hMakjX03tiGTLAIdJ+lL0htKnXjEZN6hk/tozf/WOuYGdZBJrZ+rCJRbVCugsjB3jMLn9746NsQIf5VjBMw==}

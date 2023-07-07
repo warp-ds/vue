@@ -9,7 +9,7 @@ import {
 } from 'vue';
 import { modelProps, createModel } from 'create-v-model';
 import { slider as ccSlider } from '@warp-ds/component-classes';
-import { useDimensions, createHandlers } from '@fabric-ds/core/slider';
+import { useDimensions, createHandlers } from '@warp-ds/core/slider';
 
 const attrs = useAttrs();
 const props = defineProps({
