@@ -1,3 +1,10 @@
+# [1.0.0-alpha.43](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.42...v1.0.0-alpha.43) (2023-07-10)
+
+
+### Bug Fixes
+
+* **buttons:** bump component-classes to 1.0.0-alpha.116 ([#51](https://github.com/warp-ds/vue/issues/51)) ([6f077c4](https://github.com/warp-ds/vue/commit/6f077c4fad658770c82a7e704f598e6067e25761))
+
 # [1.0.0-alpha.42](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.41...v1.0.0-alpha.42) (2023-07-07)
 
 
