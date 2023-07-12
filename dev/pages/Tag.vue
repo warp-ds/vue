@@ -10,6 +10,7 @@ const colorControls = [
   { name: 'Error', radio },
   { name: 'Disabled', radio },
   { name: 'Sponsored', radio },
+  { name: 'Neutral', radio },
 ]
 const color = reactive({ active: 'Info' })
 const activeColor = useIsActive(color)
@@ -28,7 +29,7 @@ const side = reactive(buildCheckboxState({ controls: sideControls }))
     <component-title title="Tag" />
 
     <token :state="[side, color]">
-      <w-tag class="text-14" primary :topLeft="side['Top-left']" :topRight="side['Top-right']" :bottomLeft="side['Bottom-left']" :bottomRight="side['Bottom-right']" :info="activeColor('Info')" :success="activeColor('Success')" :warning="activeColor('Warning')" :error="activeColor('Error')" :disabled="activeColor('Disabled')" :sponsored="activeColor('Sponsored')">
+      <w-tag class="text-14" primary :topLeft="side['Top-left']" :topRight="side['Top-right']" :bottomLeft="side['Bottom-left']" :bottomRight="side['Bottom-right']" :info="activeColor('Info')" :success="activeColor('Success')" :warning="activeColor('Warning')" :error="activeColor('Error')" :disabled="activeColor('Disabled')" :sponsored="activeColor('Sponsored')" :neutral="activeColor('Neutral')">
         Hello Warp
       </w-tag>
     </token>
