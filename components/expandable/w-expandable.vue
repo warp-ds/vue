@@ -26,7 +26,7 @@ import { ref, computed, watch, nextTick, useSlots } from 'vue'
 import { modelProps, createModel } from 'create-v-model'
 import { absentProp } from '#util'
 import { wExpandTransition as expandTransition } from '#generics'
-import { expandable as ccExpandable, box as ccBox } from '@warp-ds/component-classes'
+import { expandable as ccExpandable, box as ccBox } from '@warp-ds/css/component-classes'
 
 const props = defineProps({
   title: String,

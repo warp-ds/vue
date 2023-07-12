@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, watch, nextTick, onBeforeUnmount } from 'vue'
-import { modal as ccModal } from '@warp-ds/component-classes'
+import { modal as ccModal } from '@warp-ds/css/component-classes'
 import focusLock from 'dom-focus-lock'
 import { id } from '#util'
 import { setup as setupScrollLock, teardown as teardownScrollLock } from 'scroll-doctor'

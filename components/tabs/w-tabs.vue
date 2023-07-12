@@ -1,5 +1,5 @@
 <script setup>
-import { gridLayout, tabs as ccTabs } from '@warp-ds/component-classes';
+import { gridLayout, tabs as ccTabs } from '@warp-ds/css/component-classes';
 import {
   provide,
   computed,

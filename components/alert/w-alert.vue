@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { wExpandTransition } from '#generics';
 import { createModel, modelProps } from 'create-v-model';
-import { alert as ccAlert } from '@warp-ds/component-classes';
+import { alert as ccAlert } from '@warp-ds/css/component-classes';
 
 const props = defineProps({
   title: String,

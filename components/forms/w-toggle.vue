@@ -20,7 +20,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { toggle as ccToggle } from '@warp-ds/component-classes';
+import { toggle as ccToggle } from '@warp-ds/css/component-classes';
 import { default as wField, fieldProps } from './w-field.vue';
 import { wToggleItem } from '#generics';
 import { createModel } from 'create-v-model';
