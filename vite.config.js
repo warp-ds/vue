@@ -4,13 +4,13 @@ import { presetWarp } from '@warp-ds/uno'
 import uno from 'unocss/vite'
 import { MinifyWarpLib } from './.minifier-plugin.js'
 import VitEik from 'viteik'
-import { classes } from '@warp-ds/component-classes/classes';
+import { classes } from '@warp-ds/css/component-classes/classes';
 
 export default defineConfig((env) => ({
   plugins: [
     vue(),
     uno({
-      presets: [presetWarp({ development: true })],
+      presets: [presetWarp({ skipResets: true })],
       safelist: classes,
     }),
     env.mode !== 'lib' && VitEik(),
