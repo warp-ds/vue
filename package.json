@@ -29,8 +29,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@warp-ds/core": "^1.0.0",
-    "@warp-ds/css": "1.0.0-alpha.33",
-    "@warp-ds/uno": "^1.0.0-alpha.58",
+    "@warp-ds/css": "^1.0.0-alpha.33",
+    "@warp-ds/uno": "^1.0.0-alpha.60",
     "@floating-ui/dom": "^1.4.2",
     "create-v-model": "^2.2.0",
     "dom-focus-lock": "^1.1.0",
