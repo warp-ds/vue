@@ -1,3 +1,11 @@
+# [1.0.0-alpha.44](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.43...v1.0.0-alpha.44) (2023-07-14)
+
+
+### Bug Fixes
+
+* revert "chore(release): 1.0.0-alpha.44 [skip ci]" ([d03b908](https://github.com/warp-ds/vue/commit/d03b9085140a83830b0ca1736ef1df0af53eff67))
+* use css package instead of component-classes ([#52](https://github.com/warp-ds/vue/issues/52)) ([625d061](https://github.com/warp-ds/vue/commit/625d061f61abd823fae28400a9d1b3e81f0e9f5c))
+
 # [1.0.0-alpha.43](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.42...v1.0.0-alpha.43) (2023-07-10)
 
 
