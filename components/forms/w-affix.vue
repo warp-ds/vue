@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { suffix, prefix } from '@warp-ds/component-classes'
+import { suffix, prefix } from '@warp-ds/css/component-classes'
 import { computed } from 'vue'
 
 export default {

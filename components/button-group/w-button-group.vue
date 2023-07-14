@@ -10,7 +10,7 @@ export default { name: 'wButtonGroup' }
 
 <script setup>
 import { provide, computed, toRef } from 'vue';
-import { buttonGroup as ccButtonGroup } from '@warp-ds/component-classes';
+import { buttonGroup as ccButtonGroup } from '@warp-ds/css/component-classes';
 
 const props = defineProps({
   outlined: Boolean,

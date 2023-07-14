@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue'
-import { switchToggle as ccSwitch } from '@warp-ds/component-classes'
+import { switchToggle as ccSwitch } from '@warp-ds/css/component-classes'
 import { createModel, modelProps } from 'create-v-model'
 import { id } from '#util'
 

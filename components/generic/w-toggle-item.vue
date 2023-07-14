@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { id as uniqueId } from '#util';
 import { modelProps, createModel } from 'create-v-model';
-import { toggle as ccToggle } from '@warp-ds/component-classes';
+import { toggle as ccToggle } from '@warp-ds/css/component-classes';
 const p = defineProps({
   id: { ...uniqueId },
   label: String,

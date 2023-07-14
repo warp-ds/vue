@@ -1,5 +1,5 @@
 <script setup>
-import { tab as ccTab } from '@warp-ds/component-classes';
+import { tab as ccTab } from '@warp-ds/css/component-classes';
 import { inject, computed, onBeforeUnmount } from 'vue';
 
 const props = defineProps({

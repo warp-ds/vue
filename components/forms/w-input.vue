@@ -33,7 +33,7 @@
 
 <script setup>
   import { ref, computed, useSlots } from 'vue';
-  import { input as ccInput } from '@warp-ds/component-classes';
+  import { input as ccInput } from '@warp-ds/css/component-classes';
   import { createModel } from 'create-v-model';
   import { setupMask } from './w-input-mask.js';
   import { default as wField, fieldProps } from './w-field.vue';

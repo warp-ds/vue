@@ -1,6 +1,6 @@
 <script setup>
 import { computed, inject } from 'vue';
-import { step as ccStep } from '@warp-ds/component-classes';
+import { step as ccStep } from '@warp-ds/css/component-classes';
 
 const vertical = inject('steps-vertical', true);
 const left = inject('steps-left', true);

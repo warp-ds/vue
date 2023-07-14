@@ -1,7 +1,7 @@
 <script setup>
   import { computed } from 'vue'
   import { props as attentionProps, opposites, rotation } from './attentionUtil.js'
-  import { attention as ccAttention } from '@warp-ds/component-classes'
+  import { attention as ccAttention } from '@warp-ds/css/component-classes'
   
   const props = defineProps({
     ...attentionProps,

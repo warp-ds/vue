@@ -1,5 +1,5 @@
 <script setup>
-import { toggle as ccToggle } from '@warp-ds/component-classes';
+import { toggle as ccToggle } from '@warp-ds/css/component-classes';
 import wToggleItem from './w-toggle-item.vue';
 import { computed } from 'vue';
 

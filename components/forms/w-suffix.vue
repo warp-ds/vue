@@ -8,7 +8,7 @@
 
 <script>
 import { onMounted } from 'vue'
-import { suffix as c } from '@warp-ds/component-classes'
+import { suffix as c } from '@warp-ds/css/component-classes'
 
 export default {
   name: 'wSuffix',
