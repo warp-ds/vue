@@ -30,7 +30,6 @@
   "keywords": [],
   "license": "Apache-2.0",
   "dependencies": {
-    "@floating-ui/dom": "^1.4.2",
     "@lingui/core": "^4.3.0",
     "@warp-ds/core": "^1.0.0",
     "@warp-ds/css": "^1.0.0",

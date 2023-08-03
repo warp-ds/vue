@@ -1,6 +1,7 @@
 import type { LinguiConfig } from '@lingui/conf';
 import { vueExtractor } from '@lingui/extractor-vue';
-
+// @ts-expect-error issue in typings
+import { extractor as defaultExtractor } from '@lingui/cli/api';
 const config: LinguiConfig = {
   locales: ['en', 'nb'],
   catalogs: [
@@ -27,7 +28,7 @@ const config: LinguiConfig = {
   ],
   sourceLocale: 'en',
   compileNamespace: 'es',
-  extractors: [vueExtractor],
+  extractors: [defaultExtractor, vueExtractor],
 };
 
 export default config;

@@ -24,3 +24,9 @@ msgstr "(optional)"
 #: components/forms/w-affix.vue:27
 msgid "forms.affix.searchIconSvgTitle"
 msgstr "Magnifying glass"
+
+#. Text visible below input field if validation fails
+#. js-lingui-explicit-id
+#: components/forms/validation.js:5
+msgid "forms.validation.mandatoryField"
+msgstr "Mandatory field"

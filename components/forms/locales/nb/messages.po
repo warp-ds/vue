@@ -24,3 +24,9 @@ msgstr "(valgfritt)"
 #: components/forms/w-affix.vue:27
 msgid "forms.affix.searchIconSvgTitle"
 msgstr "Forstørrelsesglass"
+
+#. Text visible below input field if validation fails
+#. js-lingui-explicit-id
+#: components/forms/validation.js:5
+msgid "forms.validation.mandatoryField"
+msgstr "Må fylles ut"
