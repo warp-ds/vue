@@ -13,9 +13,15 @@
 import { h, Fragment } from 'vue'
 import { interleave } from '@warp-ds/core/breadcrumbs'
 import { breadcrumbs as ccBreadcrumbs } from "@warp-ds/css/component-classes"
+import { i18n } from '@lingui/core';
 
 const props = defineProps({
-  ariaLabel: { type: String, default: 'Her er du' }
+  ariaLabel: { type: String, default: i18n._(
+    /*i18n*/ {
+      id: 'breadcrumbs.ariaLabel',
+      message: 'You are here',
+      comment: 'Default screenreader message for the breadcrumb component',
+    }) }
 });
 
 const isFragment = vnode => vnode.type === Fragment
@@ -37,4 +43,6 @@ const Breadcrumbify = (_, context) => {
 <script>
   export const wBreadcrumbSeparator = h('span', { ariaHidden: true, class: ccBreadcrumbs.separator }, '/')
   export default { name: 'wBreadcrumbs' }
+  import { activateI18n } from '../util/i18n';
+  await activateI18n('breadcrumbs');
 </script>

@@ -23,11 +23,15 @@
     "watch": "vitest watch",
     "build": "vite build --mode lib && vite build --mode eik",
     "site": "vite build dev --config ./vite.config.js",
-    "postsite": "cd dev/dist && cp index.html 200.html && cp index.html 404.html"
+    "postsite": "cd dev/dist && cp index.html 200.html && cp index.html 404.html",
+    "messages:extract": "lingui extract",
+    "messages:compile": "lingui compile"
   },
   "keywords": [],
   "license": "Apache-2.0",
   "dependencies": {
+    "@floating-ui/dom": "^1.4.2",
+    "@lingui/core": "^4.3.0",
     "@warp-ds/core": "^1.0.0",
     "@warp-ds/css": "^1.0.0",
     "@warp-ds/uno": "^1.0.0",
@@ -42,6 +46,9 @@
     "@eik/cli": "^2.0.22",
     "@eik/rollup-plugin": "^4.0.50",
     "@itsy/token": "^1.0.4",
+    "@lingui/cli": "^4.3.0",
+    "@lingui/conf": "^4.3.0",
+    "@lingui/extractor-vue": "^4.3.0",
     "@lukeed/uuid": "^2.0.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
