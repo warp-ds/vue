@@ -12,3 +12,15 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: \n"
 "Plural-Forms: \n"
+
+#. Fallback screenreader message for open filter
+#. js-lingui-explicit-id
+#: components/pill/w-pill.vue:28
+msgid "pill.aria.openFilter"
+msgstr "Åpne filter"
+
+#. Fallback screenreader message for removal of filter
+#. js-lingui-explicit-id
+#: components/pill/w-pill.vue:33
+msgid "pill.aria.removeFilter"
+msgstr "Fjern filter {label}"

@@ -27,6 +27,6 @@ msgstr "Magnifying glass"
 
 #. Text visible below input field if validation fails
 #. js-lingui-explicit-id
-#: components/forms/validation.js:5
+#: components/forms/validation.js:7
 msgid "forms.validation.mandatoryField"
 msgstr "Mandatory field"
