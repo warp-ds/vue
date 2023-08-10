@@ -1,7 +1,7 @@
 import { i18n } from '@lingui/core';
 
 function detectLocale() {
-  const supportedLocales = ['en', 'nb'];
+  const supportedLocales = ['en', 'nb', 'fi'];
   const defaultLocale = 'en';
   try {
     const htmlLocale = document.documentElement.lang;

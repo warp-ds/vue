@@ -4,7 +4,7 @@ import { vueExtractor } from '@lingui/extractor-vue';
 import { extractor as defaultExtractor } from '@lingui/cli/api';
 
 const config: LinguiConfig = {
-  locales: ['en', 'nb'],
+  locales: ['en', 'nb', 'fi'],
   catalogs: [
     {
       path: '<rootDir>/components/breadcrumbs/locales/{locale}/messages',

@@ -1,0 +1,26 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-08-10 15:49+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: fi\n"
+
+#. Shown after label when marked as optional
+#. js-lingui-explicit-id
+#: components/forms/w-field.vue:75
+msgid "forms.field.label.optional"
+msgstr "(valinnainen)"
+
+#. SVG title for search icon
+#. js-lingui-explicit-id
+#: components/forms/w-affix.vue:27
+msgid "forms.affix.searchIconSvgTitle"
+msgstr "Suurennuslasi"
+
+#. Text visible below input field if validation fails
+#. js-lingui-explicit-id
+#: components/forms/validation.js:7
+msgid "forms.validation.mandatoryField"
+msgstr "Pakollinen"
