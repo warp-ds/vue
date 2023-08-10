@@ -1,3 +1,10 @@
+# [1.0.0-alpha.45](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.44...v1.0.0-alpha.45) (2023-08-10)
+
+
+### Bug Fixes
+
+* bump @warp-ds/css package to get fix for select chevron ([675f07c](https://github.com/warp-ds/vue/commit/675f07c81cac680542f1cf29a8a960f74d290bc5))
+
 # [1.0.0-alpha.44](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.43...v1.0.0-alpha.44) (2023-07-14)
 
 
