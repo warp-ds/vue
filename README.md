@@ -20,7 +20,7 @@ Install by using npm/pnpm or by adding a script link:
 
 #### Install using npm
 ```sh
-npm i -S @warp-ds/vue
+npm install @warp-ds/vue
 ```
 
 #### Install using pnpm
