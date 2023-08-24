@@ -1,9 +1,9 @@
 <script setup>
 import Fuse from 'fuse.js'
-import { sidebarConfig } from '../src/sidebar-config.js'
+import { sidebarConfig } from './sidebar-config.js'
 import { ref, computed, watch } from 'vue'
-import { wInput, wModal, wBox } from '#components'
-import { modalShowing } from '../src/store.js'
+import { wTextfield, wModal, wBox } from '#components'
+import { modalShowing } from './store.js'
 
 const inputEl = ref(null)
 const showSearch = ref(false)
@@ -32,7 +32,7 @@ watch(showSearch, (showing) => modalShowing.value = showing)
 <template>
   <div>
     <w-modal title="Search" v-model="showSearch" @dismiss="hide" @right="hide" @shown="focusInput">
-      <w-input label="Search term" v-model="searchTerm" ref="inputEl" />
+      <w-textfield label="Search term" v-model="searchTerm" ref="inputEl" />
       <w-box neutral class="mt-24">
         <h5>Results</h5>
         <p v-for="m in matches">

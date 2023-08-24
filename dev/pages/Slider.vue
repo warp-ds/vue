@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { wSlider, wInput } from '#components'
+import { wSlider, wTextfield } from '#components'
 
 const largeNumber = ref(30_000_000)
 </script>
@@ -15,6 +15,6 @@ const largeNumber = ref(30_000_000)
 
     <!-- used for testing that outside-model-updates also update the slider value -->
     <!-- <w-slider v-model="largeNumber" :min="1000" :max="10_000_000" :step="1000" label="a large number slider" /> -->
-    <!-- <w-input label="Slider value" v-model="largeNumber" /> -->
+    <!-- <w-textfield label="Slider value" v-model="largeNumber" /> -->
   </div>
 </template>
