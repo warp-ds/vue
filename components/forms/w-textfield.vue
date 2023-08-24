@@ -5,11 +5,14 @@ import { createModel } from 'create-v-model';
 import { setupMask } from './w-input-mask.js';
 import { default as wField, fieldProps } from './w-field.vue';
 
+const validInputTypes = ['text', 'search', 'email', 'password', 'url', 'tel', 'number'];
+
 const p = defineProps({
   ...fieldProps,
   type: {
     type: String,
-    default: 'text'
+    default: 'text',
+    validator: (v) => validInputTypes.includes(v)
   },
   inputWrapperClass: String,
   autocomplete: {
