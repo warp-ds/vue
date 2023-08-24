@@ -1,3 +1,15 @@
+# [1.0.0-alpha.46](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.45...v1.0.0-alpha.46) (2023-08-24)
+
+
+### Bug Fixes
+
+* Rename wInput to wTextfield and add prop validator for input types ([#58](https://github.com/warp-ds/vue/issues/58)) ([9d667e2](https://github.com/warp-ds/vue/commit/9d667e225c567a1d39d8c9cf47faa86b27bfa001))
+
+
+### BREAKING CHANGES
+
+* wInput has been renamed to wTextfield. This change is made to align with the other frameworks in Warp and to clarify what type of inputs the component produces.
+
 # [1.0.0-alpha.45](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.44...v1.0.0-alpha.45) (2023-08-10)
 
 
