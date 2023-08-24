@@ -22,7 +22,7 @@ export const sidebarConfig = [
   },
   {
     title: 'Forms',
-    startOpen: false,
+    startOpen: true,
     links: [
       { to: 'select', title: 'Select' },
       { to: 'slider', title: 'Slider' },

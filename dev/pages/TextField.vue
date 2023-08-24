@@ -28,7 +28,7 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
-      <w-textfield placeholder="I am placeholder"  #prefix v-model="inputModel" label="I have a prefix">
+      <w-textfield placeholder="I am placeholder" type="tel" #prefix v-model="inputModel" label="I have a prefix" inputmode="numeric">
         <w-affix prefix label="+47" />
       </w-textfield>
     </token>
@@ -37,20 +37,20 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     suffix and prefix are treated as one slot in this example, making button(suffix) render before input in DOM and "destroy" the tabbing order.
     So the support for multiple slots need to be added here -->
     <token :state="inputModel">
-      <w-textfield #prefix #suffix v-model="inputModel" label="I have a prefix">
+      <w-textfield #prefix #suffix v-model="inputModel" label="I have a prefix" inputmode="numeric">
         <w-affix prefix label="+47" />
         <w-affix suffix clear />
       </w-textfield>
     </token>
 
     <token :state="inputModel">
-      <w-textfield #suffix v-model="inputModel" label="I have a suffix">
+      <w-textfield #suffix v-model="inputModel" label="I have a suffix" inputmode="decimal">
         <w-affix suffix label="NOK" />
       </w-textfield>
     </token>
 
     <token :state="inputModel">
-      <w-textfield #suffix disabled v-model="inputModel" label="I am disabled">
+      <w-textfield #suffix disabled v-model="inputModel" label="I am disabled" inputmode="decimal">
         <w-affix suffix label="NOK" />
       </w-textfield>
     </token>
