@@ -22,12 +22,12 @@ export const sidebarConfig = [
   },
   {
     title: 'Forms',
-    startOpen: false,
+    startOpen: true,
     links: [
-      { to: 'input', title: 'Input' },
       { to: 'select', title: 'Select' },
       { to: 'slider', title: 'Slider' },
       { to: 'switch', title: 'Switch' },
+      { to: 'textfield', title: 'Text Field' },
       { to: 'textarea', title: 'Textarea' },
       { to: 'toggle', title: 'Toggle' }
     ]
