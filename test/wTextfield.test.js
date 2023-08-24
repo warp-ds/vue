@@ -2,7 +2,7 @@ import { describe, test, assert } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { wTextfield } from '#components'
 
-describe('input', () => {
+describe('textfield', () => {
   assert.ok(wTextfield.name)
 
   test('renders', () => {
