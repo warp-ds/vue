@@ -7,14 +7,24 @@
 
 <script>
 export default { name: 'wButton' }
-import { activateI18n } from '../util/i18n';
-await activateI18n('button');
 </script>
 
 <script setup>
 import { computed, useAttrs } from 'vue'
 import { button as ccButton } from '@warp-ds/css/component-classes';
 import { i18n } from '@lingui/core';
+import { activateI18n } from '../util/i18n';
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
+
+activateI18n(enMessages, nbMessages, fiMessages);
+
+const ariaValueText = i18n._({
+  id: 'button.aria.loading',
+  message: 'Loading...',
+  comment: 'Screenreader message for buttons that are loading'
+});
 
 const buttonTypes = [    
   'primary',
@@ -38,14 +48,6 @@ const props = defineProps({
   loading: Boolean,
   href: String,
   label: String,
-  ariaValueText: {
-    type: String,
-    default: i18n._({
-      id: 'button.aria.loading',
-      message: 'Loading...',
-      comment: 'Screenreader message for buttons that are loading'
-    })
-  },
 })
 
 const buttonClass = computed(() => ({

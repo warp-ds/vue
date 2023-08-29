@@ -11,8 +11,10 @@ import { suffix, prefix } from '@warp-ds/css/component-classes'
 import { computed } from 'vue'
 import { activateI18n } from '../util/i18n';
 import { i18n } from '@lingui/core';
-
-await activateI18n('forms');
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
+activateI18n(enMessages, nbMessages, fiMessages);
 
 export default {
   name: 'wAffix',

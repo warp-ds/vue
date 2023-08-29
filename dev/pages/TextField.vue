@@ -62,6 +62,12 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
+      <w-textfield #suffix v-model="inputModel" label="I have a search suffix">
+        <w-affix suffix search />
+      </w-textfield>
+    </token>
+
+    <token :state="inputModel">
       <w-textfield readOnly value="I'm read only" v-model="placeholderModel" label="I am read only">
         <w-affix suffix label="NOK" />
       </w-textfield>

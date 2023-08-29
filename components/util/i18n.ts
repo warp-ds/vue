@@ -1,39 +1,58 @@
-import { i18n } from '@lingui/core';
+import { Messages, i18n } from '@lingui/core';
 
-function detectLocale() {
-  const supportedLocales = ['en', 'nb', 'fi'];
-  const defaultLocale = 'en';
+export const supportedLocales = ['en', 'nb', 'fi'] as const;
+type SupportedLocale = (typeof supportedLocales)[number];
 
+export const defaultLocale = 'en';
+
+export const getSupportedLocale = (usedLocale: string) => {
+  return (
+    supportedLocales.find(
+      (locale) =>
+        usedLocale === locale || usedLocale.toLowerCase().includes(locale)
+    ) || defaultLocale
+  );
+};
+
+function detectLocale(): SupportedLocale {
   if (typeof window === 'undefined') {
     /**
      * Server locale detection. This requires e.g LANG environment variable to be set on the server.
      */
-    return (
-      process.env.NMP_LANGUAGE || Intl.DateTimeFormat().resolvedOptions().locale
-    );
+    const serverLocale =
+      process.env.NMP_LANGUAGE ||
+      Intl.DateTimeFormat().resolvedOptions().locale;
+    return getSupportedLocale(serverLocale);
   }
 
   try {
     const htmlLocale = document.documentElement.lang;
-
-    return (
-      supportedLocales.find(
-        (locale) =>
-          htmlLocale === locale || htmlLocale.toLowerCase().includes(locale)
-      ) || defaultLocale
-    );
+    return getSupportedLocale(htmlLocale);
   } catch (e) {
     console.warn('could not detect locale, falling back to source locale', e);
     return defaultLocale;
   }
 }
 
-export async function activateI18n(pkg: string, locale?: string) {
-  const resolvedLocale = locale ?? detectLocale();
-  const { messages } = await import(
-    `../${pkg}/locales/${resolvedLocale}/messages.mjs`
-  );
+export const getMessages = (
+  locale: SupportedLocale,
+  enMsg: Messages,
+  nbMsg: Messages,
+  fiMsg: Messages
+) => {
+  if (locale === 'nb') return nbMsg;
+  if (locale === 'fi') return fiMsg;
+  // Default to English
+  return enMsg;
+};
 
-  i18n.load(resolvedLocale, messages);
-  i18n.activate(resolvedLocale);
-}
+export const activateI18n = (
+  enMessages: Messages,
+  nbMessages: Messages,
+  fiMessages: Messages
+) => {
+  const locale = detectLocale();
+  const messages = getMessages(locale, enMessages, nbMessages, fiMessages);
+  i18n.load(locale, messages);
+  i18n.activate(locale);
+};

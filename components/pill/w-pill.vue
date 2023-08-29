@@ -54,7 +54,10 @@ const removeFilterSrText = i18n._({
 
 <script>
 import { activateI18n } from '../util/i18n';
-await activateI18n('pill');
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
+activateI18n(enMessages, nbMessages, fiMessages);
 
 export default {
   name: 'wPill',

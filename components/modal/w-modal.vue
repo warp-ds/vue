@@ -4,6 +4,16 @@ import { modal as ccModal } from '@warp-ds/css/component-classes'
 import focusLock from 'dom-focus-lock'
 import { id } from '#util'
 import { setup as setupScrollLock, teardown as teardownScrollLock } from 'scroll-doctor'
+import { activateI18n } from '../util/i18n';
+import { i18n } from '@lingui/core';
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
+
+activateI18n(enMessages, nbMessages, fiMessages);
+
+const ariaBack = i18n._({ id: 'modal.aria.back', message: 'Back', comment: 'Aria label for the back button in modal' });
+const ariaClose = i18n._({ id: 'modal.aria.close', message: 'Close test', comment: 'Aria label for the close button in modal' });
 
 const transitions = 'transform-gpu transition-transform'
 const windowExists = typeof window !== 'undefined'
@@ -16,8 +26,7 @@ const props = defineProps({
     headerClasses: [String, Object],
     contentClasses: [String, Object],
     modelValue: Boolean,
-    contentId: id,
-    ariaBack
+    contentId: id
   })
 
 const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
@@ -143,14 +152,6 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
 </template>
 
 <script>
-import { activateI18n } from '../util/i18n';
-import { i18n } from '@lingui/core';
-
-await activateI18n('modal');
-
-const ariaBack = i18n._({ id: 'modal.aria.back', message: 'Back', comment: 'Aria label for the back button in modal' });
-const ariaClose = i18n._({ id: 'modal.aria.close', message: 'Close test', comment: 'Aria label for the close button in modal' });
-
 export default {
   name: 'wModal'
 };

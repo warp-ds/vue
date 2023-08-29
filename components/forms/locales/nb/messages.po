@@ -15,13 +15,13 @@ msgstr ""
 
 #. Shown after label when marked as optional
 #. js-lingui-explicit-id
-#: components/forms/w-field.vue:75
+#: components/forms/w-field.vue:78
 msgid "forms.field.label.optional"
 msgstr "(valgfritt)"
 
 #. SVG title for search icon
 #. js-lingui-explicit-id
-#: components/forms/w-affix.vue:27
+#: components/forms/w-affix.vue:29
 msgid "forms.affix.searchIconSvgTitle"
 msgstr "Forstørrelsesglass"
 

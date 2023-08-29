@@ -19,8 +19,11 @@ import { id } from '#util';
 import { modelProps } from 'create-v-model';
 import { i18n } from '@lingui/core';
 import { activateI18n } from '../util/i18n';
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
 
-await activateI18n('forms');
+activateI18n(enMessages, nbMessages, fiMessages);
 
 export const fieldProps = {
   id,
