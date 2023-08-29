@@ -34,7 +34,7 @@ const expanded = ref(false)
 
 <style scoped>
 a {
-  color: var(--f-gray-500);
+  color: var(--w-gray-500);
 }
 .sidebar, .mobile-menu {
   transition: 0.3s ease;
