@@ -35,8 +35,8 @@ import Search from './Search.vue'
   padding: 16px;
   border-radius: 8px;
   overflow: scroll;
-  background-color: var(--f-gray-100) !important;
-  border: 1px solid var(--f-gray-200);
+  background-color: var(--w-gray-100) !important;
+  border: 1px solid var(--w-gray-200);
   position: relative;
 }
 .itsy-token {
@@ -51,6 +51,6 @@ import Search from './Search.vue'
   }
 }
 code {
-  color: var(--f-aqua-800);
+  color: var(--w-aqua-800);
 }
 </style>
