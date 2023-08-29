@@ -1,3 +1,10 @@
+# [1.0.0-alpha.47](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.46...v1.0.0-alpha.47) (2023-08-29)
+
+
+### Bug Fixes
+
+* Update to use first major versions of the css and uno warp packages ([#59](https://github.com/warp-ds/vue/issues/59)) ([69bd395](https://github.com/warp-ds/vue/commit/69bd395006ea6379c6e298f3b205eb3759574169))
+
 # [1.0.0-alpha.46](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.45...v1.0.0-alpha.46) (2023-08-24)
 
 
