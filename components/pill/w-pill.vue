@@ -2,6 +2,11 @@
 import { i18n } from '@lingui/core';
 import { computed } from 'vue';
 import { pill as ccPill } from '@warp-ds/css/component-classes';
+import { activateI18n } from '../util/i18n';
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
+activateI18n(enMessages, nbMessages, fiMessages);
 
 const p = defineProps({
   label: String,
@@ -26,12 +31,12 @@ const closeClasses = computed(() => [
 
 const openFilterSrText = i18n._({
   id: 'pill.aria.openFilter',
-  message: 'Open filter CCC',
+  message: 'Open filter',
   comment: 'Fallback screenreader message for open filter'
 });
 const removeFilterSrText = i18n._({
   id: 'pill.aria.removeFilter',
-  message: 'Remove filter {label} CC',
+  message: 'Remove filter {label}',
   comment: 'Fallback screenreader message for removal of filter',
   values: { label: p.label }
 });
@@ -53,12 +58,6 @@ const removeFilterSrText = i18n._({
 </template>
 
 <script>
-import { activateI18n } from '../util/i18n';
-import { messages as enMessages} from './locales/en/messages.mjs';
-import { messages as nbMessages} from './locales/nb/messages.mjs';
-import { messages as fiMessages} from './locales/fi/messages.mjs';
-activateI18n(enMessages, nbMessages, fiMessages);
-
 export default {
   name: 'wPill',
   inheritAttrs: false
