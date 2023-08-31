@@ -1,6 +1,6 @@
 <template>
   <component :is="as" :class="{[ccInput.wrapper]: true, [$attrs.class || '']: true}" :role="role" v-bind="wrapperAria">
-    <component :is="labelType" v-if="label" :class="{[ccLabel.label]: true, [ccLabel.labelInvalid]: hasErrorMessage}" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="ccLabel.optional"> (valgfritt)</span></component>
+    <component :is="labelType" v-if="label" :class="{[ccLabel.label]: true, [ccLabel.labelInvalid]: hasErrorMessage}" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="ccLabel.optional">{{ optionalHelperText }}</span></component>
     <slot :triggerValidation="triggerValidation" :labelFor="id" :labelId="labelId" :aria="aria" :hasValidationErrors="hasValidationErrors" />
     <slot name="control" :form="collector" />
     <div :class="{[ccHelpText.helpText]: true, [ccHelpText.helpTextInvalid]: hasErrorMessage}" v-if="hint || hasErrorMessage">
@@ -17,6 +17,13 @@ import { input as ccInput, label as ccLabel, helpText as ccHelpText} from '@warp
 import { createValidation } from './validation';
 import { id } from '#util';
 import { modelProps } from 'create-v-model';
+import { i18n } from '@lingui/core';
+import { activateI18n } from '../util/i18n';
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
+
+activateI18n(enMessages, nbMessages, fiMessages);
 
 export const fieldProps = {
   id,
@@ -68,8 +75,9 @@ export default {
       'aria-required': props.required && true
     }))
     const wrapperAria = computed(() => valueOrUndefined(isFieldset.value, aria.value))
+    const optionalHelperText = i18n._({ id: 'forms.field.label.optional', message: '(optional)', comment: 'Shown after label when marked as optional'});
     const hasValidationErrors = computed(() => !!hasErrorMessage.value);
-    return { triggerValidation, validationMsg, hasErrorMessage, labelType, labelFor, labelId, hintId, errorId, aria, wrapperAria, collector, valueOrUndefined, ccInput, ccLabel, ccHelpText, hasValidationErrors }
+    return { triggerValidation, validationMsg, hasErrorMessage, labelType, labelFor, labelId, hintId, errorId, aria, wrapperAria, collector, valueOrUndefined, ccInput, ccLabel, ccHelpText, hasValidationErrors, optionalHelperText }
   }
 }
 </script>

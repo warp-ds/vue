@@ -1,7 +1,7 @@
 <template>
   <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClass" v-bind="saneDefaults">
     <slot>{{ label }}</slot>
-    <span v-if="loading" role="progressbar" aria-valuenow="0" aria-valuetext="Laster..." :class="ccButton.a11y" />
+    <span v-if="loading" role="progressbar" aria-valuenow="0" :aria-valuetext="ariaValueText" :class="ccButton.a11y" />
   </component>
 </template>
 
@@ -12,6 +12,19 @@ export default { name: 'wButton' }
 <script setup>
 import { computed, useAttrs } from 'vue'
 import { button as ccButton } from '@warp-ds/css/component-classes';
+import { i18n } from '@lingui/core';
+import { activateI18n } from '../util/i18n';
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
+
+activateI18n(enMessages, nbMessages, fiMessages);
+
+const ariaValueText = i18n._({
+  id: 'button.aria.loading',
+  message: 'Loading...',
+  comment: 'Screenreader message for buttons that are loading'
+});
 
 const buttonTypes = [    
   'primary',
@@ -34,7 +47,7 @@ const props = defineProps({
   pill: Boolean,
   loading: Boolean,
   href: String,
-  label: String
+  label: String,
 })
 
 const buttonClass = computed(() => ({

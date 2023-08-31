@@ -4,6 +4,16 @@ import { modal as ccModal } from '@warp-ds/css/component-classes'
 import focusLock from 'dom-focus-lock'
 import { id } from '#util'
 import { setup as setupScrollLock, teardown as teardownScrollLock } from 'scroll-doctor'
+import { activateI18n } from '../util/i18n';
+import { i18n } from '@lingui/core';
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
+
+activateI18n(enMessages, nbMessages, fiMessages);
+
+const ariaBack = i18n._({ id: 'modal.aria.back', message: 'Back', comment: 'Aria label for the back button in modal' });
+const ariaClose = i18n._({ id: 'modal.aria.close', message: 'Close test', comment: 'Aria label for the close button in modal' });
 
 const transitions = 'transform-gpu transition-transform'
 const windowExists = typeof window !== 'undefined'
@@ -113,7 +123,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
               leave-to-class="opacity-0 backface-hidden"
               leave-active-class="absolute"
               >
-              <button v-if="left" aria-label="Tilbake" @click="$emit('left')" :class="titleLeftClasses" key="left" v-bind="left">
+              <button v-if="left" :aria-label="ariaBack" @click="$emit('left')" :class="titleLeftClasses" key="left" v-bind="left">
                 <slot name="left">
                   <svg aria-hidden="true" :class="[ccModal.titleButtonIcon, ccModal.titleButtonIconRotated]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="nonzero" d="M8 2.25a.75.75 0 01.743.648L8.75 3v8.189l3.72-3.72a.75.75 0 011.133.977l-.073.084-5 5a.747.747 0 01-.374.204l-.104.014h-.104a.747.747 0 01-.478-.218l-5-5a.75.75 0 01.976-1.133l.084.073 3.72 3.719V3A.75.75 0 018 2.25z"></path></svg>
                 </slot>
@@ -122,7 +132,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
                 <p id="w-modal-title" :class="ccModal.titleText" v-if="title">{{ title }}</p>
                 <slot name="title" />
               </div>
-              <button v-if="right" aria-label="Lukk" @click="$emit('right')" :class="titleRightClasses" key="right" v-bind="right">
+              <button v-if="right" :aria-label="ariaClose" @click="$emit('right')" :class="titleRightClasses" key="right" v-bind="right">
                 <slot name="right">
                   <svg aria-hidden="true" :class="ccModal.titleButtonIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 12l6 6-6-6-6 6 6-6zm0 0L6 6l6 6 6-6-6 6z"/></svg>
                 </slot>
@@ -142,5 +152,8 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
 </template>
 
 <script>
-export default { name: 'wModal' };
+export default {
+  name: 'wModal'
+};
+
 </script>

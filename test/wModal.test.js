@@ -51,19 +51,19 @@ describe('modal', () => {
     const defaultSlot = '<h1>Hello Warp</h1>'
     const wrapper = mount(wModal, { props: { modelValue: true }, slots: { default: defaultSlot } })
     await nextTick()
-    const left = wrapper.find('button[aria-label="Tilbake"]').exists()
+    const left = wrapper.find('button[aria-label="Back"]').exists()
     assert.notOk(left)
-    const right = wrapper.find('button[aria-label="Lukk"]').exists()
+    const right = wrapper.find('button[aria-label="Close"]').exists()
     assert.notOk(right)
   })
   test('has sane defaults for left and right', async () => {
     const defaultSlot = '<h1>Hello Warp</h1>'
     const wrapper = mount(wModal, { props: { modelValue: true, left: true, right: true }, slots: { default: defaultSlot } })
     await nextTick()
-    const left = wrapper.find('button[aria-label="Tilbake"]')
+    const left = wrapper.find('button[aria-label="Back"]')
     assert.ok(left.exists())
     assert.include(left.html(), '<svg ')
-    const right = wrapper.find('button[aria-label="Lukk"]')
+    const right = wrapper.find('button[aria-label="Close"]')
     assert.ok(right.exists())
     assert.include(right.html(), '<svg ')
   })

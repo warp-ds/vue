@@ -1,7 +1,15 @@
 import { ref, reactive, computed, watch, provide, inject, onBeforeUnmount } from 'vue'
+import { i18n } from '@lingui/core';
 
 export const defaultValid = { valid: true }
-export const defaultInvalid = { valid: false, hint: 'Må fylles ut' }
+export const defaultInvalid = {
+  valid: false,
+  hint: i18n._({
+    id:'forms.validation.mandatoryField', 
+    message: 'Mandatory field',
+    comment: 'Text visible below input field if validation fails'
+  })
+}
 
 export function defaultRequiredRule(v) {
   if (v == null) return defaultInvalid // check for null or undefined

@@ -33,6 +33,12 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
       </w-textfield>
     </token>
 
+    <token :state="inputModel">
+      <w-input placeholder="I am placeholder"  #prefix v-model="inputModel" label="I have a search icon">
+        <w-affix search />
+      </w-input>
+    </token>
+
     <!-- TODO tabbing through the input and suffix is off for now. We do not have support for adding multiple slots as of now. So both
     suffix and prefix are treated as one slot in this example, making button(suffix) render before input in DOM and "destroy" the tabbing order.
     So the support for multiple slots need to be added here -->
@@ -52,6 +58,12 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     <token :state="inputModel">
       <w-textfield #suffix disabled v-model="inputModel" label="I am disabled" inputmode="decimal">
         <w-affix suffix label="NOK" />
+      </w-textfield>
+    </token>
+
+    <token :state="inputModel">
+      <w-textfield #suffix v-model="inputModel" label="I have a search suffix">
+        <w-affix suffix search />
       </w-textfield>
     </token>
 
