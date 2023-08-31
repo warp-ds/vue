@@ -4,12 +4,76 @@ import { wCard, wDeadToggle, wClickable, wTag } from '#components'
 
 const selected = ref(false)
 const foo = ref('')
+
+const checkModel = ref(false)
+const radioModel = ref('')
+
 </script>
 
 <template>
   <div>
     <component-title title="Card" />
 
+    <token>
+      <div class="space-y-32 md:space-y-0 md:grid grid-cols-3 gap-32">
+        <w-card :selected="selected">
+          <img class="h-128 w-full object-cover" src="https://source.unsplash.com/random/400x400" />
+          <p class="absolute top-12 left-12 bg-aqua-200 text-aqua-900 p-4 rounded-4 text-12">Ukens bolig</p>
+          <div class="p-16">
+            <p class="text-12 text-gray-300">DNB Eiendom</p>
+            <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
+            <p class="text-14 text-gray-400 mb-4">Bøgata 25C, 0655 Oslo</p>
+            <p class="font-bold my-8">52 m<span style="font-size: 10px; vertical-align: super;">2</span> Totalpris: 4 869 039 kr</p>
+            <p class="text-14 text-gray-400 mb-0">Eier (Selveier) <span class="text-gray-200">•</span> Leilighet <span class="text-gray-200">•</span> 2 soverom</p>
+          </div>
+        </w-card>
+        <w-card :selected="selected">
+          <img class="h-128 w-full object-cover" src="https://source.unsplash.com/random/400x402" />
+          <p class="absolute top-12 left-12 bg-aqua-200 text-aqua-900 p-4 rounded-4 text-12">Ukens bolig</p>
+          <div class="p-16">
+            <p class="text-12 text-gray-300">DNB Eiendom</p>
+            <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
+            <p class="text-14 text-gray-400 mb-4">Bøgata 25C, 0655 Oslo</p>
+            <p class="font-bold my-8">52 m<span style="font-size: 10px; vertical-align: super;">2</span> Totalpris: 4 869 039 kr</p>
+            <p class="text-14 text-gray-400 mb-0">Eier (Selveier) <span class="text-gray-200">•</span> Leilighet <span class="text-gray-200">•</span> 2 soverom</p>
+          </div>
+        </w-card>
+        <w-card :selected="selected">
+          <img class="h-128 w-full object-cover" src="https://source.unsplash.com/random/400x404" />
+          <p class="absolute top-12 left-12 bg-aqua-200 text-aqua-900 p-4 rounded-4 text-12">Ukens bolig</p>
+          <div class="p-16">
+            <p class="text-12 text-gray-300">DNB Eiendom</p>
+            <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
+            <p class="text-14 text-gray-400 mb-4">Bøgata 25C, 0655 Oslo</p>
+            <p class="font-bold my-8">52 m<span style="font-size: 10px; vertical-align: super;">2</span> Totalpris: 4 869 039 kr</p>
+            <p class="text-14 text-gray-400 mb-0">Eier (Selveier) <span class="text-gray-200">•</span> Leilighet <span class="text-gray-200">•</span> 2 soverom</p>
+          </div>
+        
+        </w-card>
+      </div>
+
+      <w-card :selected="checkModel" class="mt-32 w-max">
+        <div class="p-24 flex">
+          <w-dead-toggle checkbox v-model="checkModel" :value="true" />
+          <w-clickable checkbox :value="true" v-model="checkModel" label-class="ml-12 text-16">Check in a card</w-clickable>
+        </div>
+      </w-card>
+
+      <div class="flex gap-32 mt-32">
+        <w-card :selected="radioModel === 'foo'" class="w-max">
+          <div class="p-24 flex">
+            <w-dead-toggle radio v-model="radioModel" value="foo" />
+            <w-clickable radio value="foo" v-model="radioModel" label-class="ml-12" name="radio-group">Radio in a card - A</w-clickable>
+          </div>
+        </w-card>
+        <w-card :selected="radioModel === 'bar'" class="w-max">
+          <div class="p-24 flex">
+            <w-dead-toggle radio v-model="radioModel" value="bar" />
+            <w-clickable radio value="bar" v-model="radioModel" label-class="ml-12" name="radio-group">Radio in a card - B</w-clickable>
+          </div>
+        </w-card>
+      </div>
+    </token>
     <token>
       <div class="w-1/2">
         <w-card :selected="selected">

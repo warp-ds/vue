@@ -1,22 +1,37 @@
+<script setup>
+import { toggle as ccToggle } from '@warp-ds/css/component-classes';
+import wToggleItem from './w-toggle-item.vue';
+import { computed } from 'vue';
+
+const props = defineProps({
+  radio: Boolean,
+  checkbox: Boolean,
+})
+const type = computed(() => props.radio ? 'radio' : 'checkbox');
+
+const labelClasses = computed(() => ({
+    [ccToggle.label]: true,
+    [ccToggle.focusable]: true,
+    [ccToggle.noContent]: true,
+    [ccToggle.deadToggleLabel]: true,
+    [`${ccToggle.radio} ${ccToggle.labelRadioBorder} ${ccToggle.radioChecked}`]: props.radio,
+    [`${ccToggle.checkbox} ${ccToggle.labelCheckboxBorder} ${ccToggle.checkboxChecked}`]: props.checkbox,
+    [ccToggle.icon]: props.checkbox,
+  }));
+
+  const wrapperClasses = {
+    [ccToggle.wrapper]: true,
+    [ccToggle.deadToggleWrapper]: true,
+  };
+
+</script>
+
 <template>
-  <div class="input-toggle h-20 w-20 pointer-events-none" aria-hidden="true">
-    <w-toggle-item class="hidden" label-class="-mt-2" :type="type" v-bind="$attrs" />
+  <div :class="wrapperClasses" aria-hidden="true">
+    <w-toggle-item :class="ccToggle.deadToggleInput" :label-class="labelClasses" :type="type" v-bind="$attrs" />
   </div>
 </template>
 
 <script>
-import wToggleItem from './w-toggle-item.vue'
-import { computed } from 'vue'
-
-export default {
-  name: 'wDeadToggle',
-  components: { wToggleItem },
-  props: {
-    radio: Boolean,
-    checkbox: Boolean,
-  },
-  setup: (props) => ({
-    type: computed(() => props.radio ? 'radio' : 'checkbox')
-  })
-}
+export default { name: 'wDeadToggle' };
 </script>

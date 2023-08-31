@@ -1,5 +1,55 @@
+<script setup>
+import { tab as ccTab } from '@warp-ds/css/component-classes';
+import { inject, computed, onBeforeUnmount } from 'vue';
+
+const props = defineProps({
+  label: String,
+  name: {
+    type: String,
+    required: true,
+  },
+});
+
+const controller = inject('tab-controller');
+const activeTab = inject('activeTab');
+
+const isActive = computed(() => props.name === activeTab.value);
+const setActive = () => (activeTab.value = props.name);
+
+controller.registerTab(props.name);
+onBeforeUnmount(() => {
+  controller?.unregisterTab?.(props.name);
+});
+
+const tabClasses = computed(() => ({
+  [ccTab.tab]: true,
+  ['active-tab']: isActive.value,
+  [ccTab.tabActive]: isActive.value,
+}));
+
+const iconClasses = computed(() => [
+  ccTab.icon,
+  ccTab.iconUnderlined,
+  isActive.value ? ccTab.iconUnderlinedActive : ccTab.iconUnderlinedInactive,
+]);
+
+const contentClasses = computed(() => ({
+  [ccTab.contentUnderlined]: true,
+  [ccTab.contentUnderlinedActive]: isActive.value,
+}));
+</script>
+
 <template>
-  <button :class="tabClasses" @click="setActive" role="tab" :id="`warp-tab-${name}`" :aria-selected="isActive" :aria-controls="isActive ? `warp-tabpanel-${name}` : undefined" :tabindex="isActive ? 0 : -1" @keydown="onKeydown">
+  <button
+    :class="tabClasses"
+    @click="setActive"
+    role="tab"
+    :id="`warp-tab-${name}`"
+    :aria-selected="isActive"
+    :aria-controls="isActive ? `warp-tabpanel-${name}` : undefined"
+    :tabindex="isActive ? 0 : -1"
+    @keydown="onKeydown"
+  >
     <span v-if="$slots.default" :class="iconClasses">
       <slot />
     </span>
@@ -11,50 +61,5 @@
 </template>
 
 <script>
-import { tab as c } from '@fabric-ds/css/component-classes'
-import { inject, computed, onBeforeUnmount } from 'vue'
-
-export default {
-  name: 'wTab',
-  props: {
-    label: String,
-    name: {
-      type: String,
-      required: true
-    }
-  },
-  setup(props) {
-    const controller = inject('tab-controller')
-    const activeTab = inject('activeTab')
-    const contained = inject('contained')
-    const isActive = computed(() => props.name === activeTab.value)
-    const setActive = () => activeTab.value = props.name
-
-    controller.registerTab(props.name)
-    onBeforeUnmount(() => {
-      controller?.unregisterTab?.(props.name)
-    })
-
-    const contentClasses = computed(() => ({
-      [c.contentUnderlined]: !contained.value,
-      [isActive.value ? c.contentUnderlinedActive : c.contentUnderlinedInactive]: !contained.value,
-      [c.contentContainedActive]: contained.value && isActive.value,
-    }))
-
-    const iconClasses = computed(() => ({
-      [c.icon]: true,
-      [c.iconUnderlined]: !contained.value,
-      [isActive.value ? c.iconUnderlinedActive : c.iconUnderlinedInactive]: !contained.value
-    }))
-
-    const tabClasses = computed(() => ({
-      [c.tab]: true,
-      [c.tabActive]: isActive.value,
-      [c.tabContained]: contained.value,
-      [c.tabContainedActive]: contained.value && isActive.value
-    }))
-
-    return { isActive, setActive, contentClasses, iconClasses, tabClasses, onKeydown: controller.onKeydown }
-  }
-}
+export default { name: 'wTab' };
 </script>

@@ -15,7 +15,7 @@ describe('toggle', () => {
     })
     const inputElements = wrapper.findAll('input')
     for (const el of inputElements) {
-      if (el.element.value === 'foo') assert.include(el.attributes(), { checked: '' })
+      if (el.element.value === 'foo') assert.strictEqual(el.element.checked, true) 
     }
   })
   test('renders - checkbox', () => {
@@ -28,9 +28,7 @@ describe('toggle', () => {
     })
     const inputElements = wrapper.findAll('input')
     for (const el of inputElements) {
-      if (el.element.value === 'foo') assert.include(el.attributes(), { checked: '' })
+      if (el.element.value === 'foo') assert.strictEqual(el.element.checked, true)
     }
   })
 })
-
-

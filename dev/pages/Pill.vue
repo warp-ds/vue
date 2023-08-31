@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { checkbox, buildCheckboxState } from '#dev-util'
-import { fPill } from '#components'
+import { wPill } from '#components'
 
 const modifierControls = [
   { name: 'Suggestion', checkbox },
@@ -15,7 +15,7 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
     <component-title title="Pill" />
 
     <token :state="modifiers">
-      <w-pill label="Hello Warp" :suggestion="modifiers.Suggestion" :canClose="modifiers.Closeable" />
+      <w-pill label="Hello Warp" :suggestion="modifiers.Suggestion" :can-close="modifiers.Closeable" />
     </token>
 
     <demo-controls>

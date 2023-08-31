@@ -23,6 +23,7 @@ export const props = {
 
 const middlePosition = 'calc(50% - 7px)'
 const isDirectionVertical = (name) => [TOP, BOTTOM].includes(name)
+
 export const computeCalloutArrow = ({ actualDirection, directionName, arrowEl }) => {
   actualDirection.value = directionName.value
   const directionIsVertical = isDirectionVertical(directionName.value)

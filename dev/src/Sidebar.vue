@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { fBox } from '#components'
+import { wBox } from '#components'
 import { modalShowing } from './store.js'
 import SidebarLinks from './SidebarLinks.vue'
 import { sidebarConfig } from './sidebar-config.js'
@@ -34,7 +34,7 @@ const expanded = ref(false)
 
 <style scoped>
 a {
-  color: var(--f-gray-500);
+  color: var(--w-gray-500);
 }
 .sidebar, .mobile-menu {
   transition: 0.3s ease;

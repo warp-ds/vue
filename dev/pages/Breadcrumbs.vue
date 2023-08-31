@@ -1,7 +1,5 @@
 <script setup>
-import { wBreadcrumbs } from '#components'
-
-// const crumbs = ['foo', 'bar', null]
+  import { wBreadcrumbs } from '#components'
 </script>
 
 <template>
@@ -10,17 +8,10 @@ import { wBreadcrumbs } from '#components'
 
     <token>
       <w-breadcrumbs>
-        <a href="#/foo">Foo</a>
-        <a href="#/bar">Bar</a>
-        <span aria-current="page">Baz</span>
+        <a href="#/foo">Page 1</a>
+        <a href="#/bar">Page 2</a>
+        <span aria-current="page">Current Page</span>
       </w-breadcrumbs>
     </token>
-
-    <!-- <w-breadcrumbs>
-      <template v-for="crumb in crumbs">
-        <a v-if="crumb" :href="`#/${crumb}`">{{ crumb }}</a>
-        <span v-else aria-current="page">Baz</span>
-      </template>
-    </w-breadcrumbs> -->
   </div>
 </template>

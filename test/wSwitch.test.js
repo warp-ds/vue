@@ -15,12 +15,18 @@ describe('switch', () => {
       components: { wSwitch },
       setup: () => ({ model })
     }
-    const wrapper = mount(SwitchFixture)
-    assert.ok(wrapper.get('input').classes().includes('sr-only'))
-    assert.equal(wrapper.get('input').attributes('id'), 'my-id')
-    assert.notExists(wrapper.get('input').attributes('checked'))
-    model.value = true
-    await nextTick()
-    assert.exists(wrapper.get('input').attributes('checked'))
+
+    const wrapper = mount(SwitchFixture);
+    const switchInput = wrapper.find('input[type="checkbox"]');
+    
+    assert.ok(switchInput.exists())
+    assert.ok(switchInput.classes().includes('sr-only'))
+    assert.equal(switchInput.element.id, 'my-id')
+    assert.strictEqual(switchInput.element.checked, false)
+    
+    model.value = true;
+    await nextTick();
+
+    assert.strictEqual(switchInput.element.checked, true)
   })
 })

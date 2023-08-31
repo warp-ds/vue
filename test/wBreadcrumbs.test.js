@@ -14,7 +14,7 @@ describe('breadcrumbs', () => {
     const wrapper = mount(wBreadcrumbs, { slots: { default: defaultSlot } })
     const html = wrapper.get('nav')
     assert.include(wrapper.text(), 'Foo/Bar/Baz')
-    assert.include(wrapper.html(), 'class="select-none"')
+    assert.include(wrapper.html(), 'class="select-none i-text-$color-breadcrumbs-icon"')
     assert.ok(html.attributes()['aria-label'])
   })
   test('v-for', () => {

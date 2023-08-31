@@ -1,7 +1,7 @@
 <template>
   <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClass" v-bind="saneDefaults">
     <slot>{{ label }}</slot>
-    <span v-if="loading" role="progressbar" aria-valuenow="0" aria-valuetext="Laster..." class="sr-only" />
+    <span v-if="loading" role="progressbar" aria-valuenow="0" :aria-valuetext="ariaValueText" :class="ccButton.a11y" />
   </component>
 </template>
 
@@ -11,6 +11,29 @@ export default { name: 'wButton' }
 
 <script setup>
 import { computed, useAttrs } from 'vue'
+import { button as ccButton } from '@warp-ds/css/component-classes';
+import { i18n } from '@lingui/core';
+import { activateI18n } from '../util/i18n';
+import { messages as enMessages} from './locales/en/messages.mjs';
+import { messages as nbMessages} from './locales/nb/messages.mjs';
+import { messages as fiMessages} from './locales/fi/messages.mjs';
+
+activateI18n(enMessages, nbMessages, fiMessages);
+
+const ariaValueText = i18n._({
+  id: 'button.aria.loading',
+  message: 'Loading...',
+  comment: 'Screenreader message for buttons that are loading'
+});
+
+const buttonTypes = [    
+  'primary',
+  'secondary',
+  'negative',
+  'utility',
+  'pill',
+  'link',
+];
 
 const attrs = useAttrs()
 const props = defineProps({
@@ -24,24 +47,28 @@ const props = defineProps({
   pill: Boolean,
   loading: Boolean,
   href: String,
-  label: String
+  label: String,
 })
+
 const buttonClass = computed(() => ({
-  'inline-flex rounded-8 max-w-max focusable justify-center cursor-pointer py-8 px-12 i-text-$button-color-text-primary i-bg-$button-color-background-primary': true,
+  [ccButton.buttonSecondary]: props.secondary && !props.quiet || !buttonTypes.find(b => !!props[b]),
   // primary buttons
-  'button--primary': props.primary && !props.negative,
-  'button--destructive': props.primary && props.negative,
+  [ccButton.buttonPrimary]: props.primary && !props.negative,
+  [ccButton.buttonDestructive]: props.primary && props.negative,
   // quiet
-  'button--flat': (props.secondary || (!props.negative && !props.utility)) && props.quiet,
-  'button--destructive-flat': props.negative && props.quiet,
-  'button--utility-flat': props.utility && props.quiet,
+  [ccButton.buttonFlat]: (props.secondary || (!props.negative && !props.utility)) && props.quiet,
+  [ccButton.buttonDestructiveFlat]: props.negative && props.quiet,
+  [ccButton.buttonUtilityFlat]: props.utility && props.quiet,
   // others
-  'button--small': props.small,
-  'button--utility': props.utility && !props.quiet,
-  'button--link': props.link,
-  'button--pill': props.pill,
-  'button--in-progress': props.loading,
+  [ccButton.buttonSmall]: props.small,
+  [ccButton.buttonUtility]: props.utility && !props.quiet,
+  [ccButton.buttonLink]: props.link,
+  [ccButton.buttonPill]: props.pill,
+  [ccButton.buttonInProgress]: props.loading,
+  [ccButton.buttonIsDisabled]: props.disabled,
+  [ccButton.linkAsButton]: !!props.href,
 }))
+
 const saneDefaults = computed(() => ({
   type: props.href ? undefined : (attrs.type || 'button'),
   rel: attrs.target === '_blank' ? (attrs.rel || 'noopener') : undefined

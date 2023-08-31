@@ -1,40 +1,43 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import { radio, useIsActive } from '#dev-util'
-import { wAttention, fBox } from '#components'
+import { wAttention, wBox } from '#components'
 
-const target = ref(null)
-const showing = ref(false)
+const tooltipTarget = ref(null)
+const calloutTarget = ref(null)
+const popoverTarget = ref(null)
 
-const variant = reactive({ active: 'Tooltip' })
-const active = useIsActive(variant)
-const variantControls = [
-  { name: 'Tooltip', radio },
-  { name: 'Callout', radio },
-]
+const tooltipShowing = ref(false)
+const calloutShowing = ref(false)
+const popoverShowing = ref(false)
 </script>
 
 <template>
   <div>
     <component-title title="Attention" />
 
-    <token :state="[variant]">
-      <div v-if="active('Tooltip')">
-        <w-box neutral class="h4" ref="target" @mouseenter="showing = true" @mouseleave="showing = false">Hover over me</w-box>
-        <w-attention tooltip bottom :target-el="target?.$el" v-model="showing">
+    <token>
+      <div>
+        <h2>Tooltip</h2>
+        <w-box neutral class="h4" ref="tooltipTarget" @mouseenter="tooltipShowing = true; target = $refs.tooltipTarget" @mouseleave="tooltipShowing = false">Hover over me</w-box>
+        <w-attention tooltip bottom :target-el="tooltipTarget ? tooltipTarget.$el : null" v-model="tooltipShowing">
           <p>Hello Warp!</p>
         </w-attention>
       </div>
-      <div class="flex items-center" v-else-if="active('Callout')">
-        <w-box neutral class="h4">Don't hover over me</w-box>
-        <w-attention callout right class="ml-8">
+      <div class="flex items-center">
+        <h2>Callout</h2>
+        <w-box neutral class="h4" ref="calloutTarget" @mouseenter="calloutShowing = true; target = $refs.calloutTarget" @mouseleave="calloutShowing = false">Don't hover over me</w-box>
+        <w-attention callout right :target-el="calloutTarget ? calloutTarget.$el : null" v-model="calloutShowing" class="ml-8">
           <p>Hello Warp! This thing is new!</p>
         </w-attention>
       </div>
+      <div>
+        <h2>Popover</h2>
+        <w-box neutral class="h4" ref="popoverTarget" @mouseenter="popoverShowing = true; target = $refs.popoverTarget" @mouseleave="popoverShowing = false">Hover over me</w-box>
+        <w-attention popover bottom :target-el="popoverTarget ? popoverTarget.$el : null" v-model="popoverShowing">
+          <p>Hello Warp!</p>
+        </w-attention>
+      </div>
     </token>
-
-    <demo-controls>
-      <demo-control label="Variant" :controls="variantControls" :state="variant" />
-    </demo-controls>
   </div>
 </template>

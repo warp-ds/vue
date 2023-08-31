@@ -1,48 +1,45 @@
 <script setup>
-import { wTabs, wTab, wTabPanel } from '#components'
-import { radio, useIsActive } from '#dev-util'
-import { ref, reactive, h } from 'vue'
+import { wTabs, wTab, wTabPanel } from '#components';
+import { ref, h } from 'vue';
 
 const Stars = {
   name: 'stars-svg',
-  render: () => h('div', { innerHTML: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.322 10.1l-.863-.45a.49.49 0 00-.453 0L2.991 10.7a.491.491 0 01-.51-.034.474.474 0 01-.193-.466l.387-2.246a.471.471 0 00-.137-.419L.894 5.944a.472.472 0 01.029-.704.48.48 0 01.24-.106l2.263-.327a.483.483 0 00.364-.262L4.8 2.511a.484.484 0 01.434-.267M17.678 10.1l.863-.451a.49.49 0 01.453 0L21.01 10.7a.491.491 0 00.51-.034.474.474 0 00.193-.466l-.387-2.246a.472.472 0 01.137-.419l1.644-1.595a.471.471 0 00-.028-.704.48.48 0 00-.24-.106l-2.264-.327a.483.483 0 01-.364-.262l-1.01-2.03a.483.483 0 00-.434-.267M3 14h18M3 22h18M3 18h14M11.566 1.017a.486.486 0 01.868 0l1.01 2.034a.483.483 0 00.362.262l2.264.327a.48.48 0 01.39.323.47.47 0 01-.122.487L14.7 6.044a.473.473 0 00-.138.419l.388 2.247a.473.473 0 01-.194.465.487.487 0 01-.509.035l-2.02-1.054a.482.482 0 00-.453 0L9.758 9.21a.487.487 0 01-.673-.24.474.474 0 01-.03-.26l.388-2.247a.473.473 0 00-.138-.419L7.662 4.45a.47.47 0 01.028-.704.481.481 0 01.24-.106l2.264-.327a.483.483 0 00.363-.262l1.01-2.034z"></path></svg>' })
-}
+  render: () =>
+    h('div', {
+      innerHTML:
+        '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.322 10.1l-.863-.45a.49.49 0 00-.453 0L2.991 10.7a.491.491 0 01-.51-.034.474.474 0 01-.193-.466l.387-2.246a.471.471 0 00-.137-.419L.894 5.944a.472.472 0 01.029-.704.48.48 0 01.24-.106l2.263-.327a.483.483 0 00.364-.262L4.8 2.511a.484.484 0 01.434-.267M17.678 10.1l.863-.451a.49.49 0 01.453 0L21.01 10.7a.491.491 0 00.51-.034.474.474 0 00.193-.466l-.387-2.246a.472.472 0 01.137-.419l1.644-1.595a.471.471 0 00-.028-.704.48.48 0 00-.24-.106l-2.264-.327a.483.483 0 01-.364-.262l-1.01-2.03a.483.483 0 00-.434-.267M3 14h18M3 22h18M3 18h14M11.566 1.017a.486.486 0 01.868 0l1.01 2.034a.483.483 0 00.362.262l2.264.327a.48.48 0 01.39.323.47.47 0 01-.122.487L14.7 6.044a.473.473 0 00-.138.419l.388 2.247a.473.473 0 01-.194.465.487.487 0 01-.509.035l-2.02-1.054a.482.482 0 00-.453 0L9.758 9.21a.487.487 0 01-.673-.24.474.474 0 01-.03-.26l.388-2.247a.473.473 0 00-.138-.419L7.662 4.45a.47.47 0 01.028-.704.481.481 0 01.24-.106l2.264-.327a.483.483 0 00.363-.262l1.01-2.034z"></path></svg>',
+    }),
+};
 
-const model = ref('home')
-
-const type = reactive({ active: 'Open' })
-const active = useIsActive(type)
-const typeControls = [
-  { name: 'Open', radio },
-  { name: 'Contained', radio },
-]
-
+const model = ref('one');
 </script>
 
 <template>
   <div>
     <component-title title="Tabs" />
-
-    <token :state="[model, type]">
-      <w-tabs v-model="model" :contained="active('Contained')">
-        <w-tab label="Home" name="home">
+    <token :state="[model]">
+      <w-tabs v-model="model">
+        <w-tab label="Tab 1" name="one">
           <stars />
         </w-tab>
-        <w-tab label="Car" name="car">
+        <w-tab label="Tab 2" name="two">
           <stars />
         </w-tab>
-        <w-tab label="Motorcycle" name="motorcycle">
+        <w-tab label="Tab 3" name="three">
           <stars />
         </w-tab>
       </w-tabs>
-      <div :class="{ 'bg-aqua-50 p-24 last-child:mb-0': active('Contained'), 'mb-16': !active('Contained') }">
-        <w-tab-panel name="home" v-if="model === 'home'"><h3 class="mb-0">Welcome home!</h3></w-tab-panel>
-        <w-tab-panel name="car" v-if="model === 'car'"><h3 class="mb-0">I am a car page</h3></w-tab-panel>
-        <w-tab-panel name="motorcycle" v-if="model === 'motorcycle'"><h3 class="mb-0">Something something two wheels</h3></w-tab-panel>
+      <div>
+        <w-tab-panel name="one" v-if="model === 'one'">
+          <p class="mb-0">First tab content</p>
+        </w-tab-panel>
+        <w-tab-panel name="two" v-if="model === 'two'">
+          <p class="mb-0">Second tab content</p>
+        </w-tab-panel>
+        <w-tab-panel name="three" v-if="model === 'three'">
+          <p class="mb-0">Third tab content</p>
+          </w-tab-panel>
       </div>
     </token>
-    <demo-controls>
-      <demo-control label="Type" :controls="typeControls" :state="type" />
-    </demo-controls>
   </div>
 </template>

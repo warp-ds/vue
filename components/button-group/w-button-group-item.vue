@@ -1,3 +1,26 @@
+<script setup>
+import { inject, computed } from 'vue';
+import { buttonGroupItem as ccButtonGroupItem } from '@warp-ds/css/component-classes';
+
+const props = defineProps({ selected: Boolean });
+const outlined = inject('outlined', false);
+const vertical = inject('vertical', false);
+
+const outlinedClass = computed(() => [
+  ccButtonGroupItem.outlined,
+  vertical.value ? ccButtonGroupItem.outlinedVertical : ccButtonGroupItem.outlinedHorizontal,
+  props.selected ? ccButtonGroupItem.outlinedSelected : ''
+]);
+
+const outlineResetClass = computed(() => [vertical.value ? ccButtonGroupItem.outlinedVerticalResets : ccButtonGroupItem.outlinedHorizontalResets])
+
+const wrapperClass = computed(() => [
+  ccButtonGroupItem.wrapper,
+  outlined.value ? outlinedClass.value : outlineResetClass.value,
+  props.selected ? ccButtonGroupItem.selected : '',
+]);
+</script>
+
 <template>
   <div :class="wrapperClass">
     <slot />
@@ -6,18 +29,4 @@
 
 <script>
 export default { name: 'wButtonGroupItem' }
-</script>
-
-<script setup>
-import { inject, computed } from 'vue'
-
-const props = defineProps({ selected: Boolean })
-const outlined = inject('outlined', false)
-
-const wrapperClass = computed(() => ({
-  ['relative last-child:mb-0 hover:bg-gray-50 active:bg-gray-100']: true,
-  [outlined.value ? 'border-gray-300' : 'border-transparent']: true,
-  [props.selected ? 'bg-gray-200' : 'bg-white']: true,
-  ['bg-gray-200 hover:bg-gray-300 active:bg-gray-400']: props.selected
-}))
 </script>
