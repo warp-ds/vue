@@ -1,3 +1,21 @@
+# [1.0.0-alpha.48](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.47...v1.0.0-alpha.48) (2023-08-31)
+
+
+### Bug Fixes
+
+* add default extractor (handles .js files) + add translation for validation ([4b32bbb](https://github.com/warp-ds/vue/commit/4b32bbb6542065ad3b30048d60aee03ff91b8288))
+* add Finnish language ([431c62b](https://github.com/warp-ds/vue/commit/431c62b71221d242ef87bc9b85fcec7a941a9d8c))
+* add more translations ([2f06c7e](https://github.com/warp-ds/vue/commit/2f06c7ee430528fe14c62b21e0c4164eb804f637))
+* detect locale on server ([68ceedc](https://github.com/warp-ds/vue/commit/68ceedca25553aaaffef87a699347f47bda1aec8))
+* load messages correctly ([b0cbf19](https://github.com/warp-ds/vue/commit/b0cbf196f381feb487b6abd42b107839f3dbf0fb))
+* modify test because of changed default aria label ([ec7579f](https://github.com/warp-ds/vue/commit/ec7579f5f19d7512e9e47a059ea57432fafc527d))
+* **w-pill:** minor changes to clean it up ([2181a74](https://github.com/warp-ds/vue/commit/2181a74e8fc86f585b3d55aea0024b5850cd4186))
+
+
+### Features
+
+* add internationalization (i18n) ([5cb0387](https://github.com/warp-ds/vue/commit/5cb038772bda52fd90911271b97093e91479bf17))
+
 # [1.0.0-alpha.47](https://github.com/warp-ds/vue/compare/v1.0.0-alpha.46...v1.0.0-alpha.47) (2023-08-29)
 
 
