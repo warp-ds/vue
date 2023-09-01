@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@warp-ds/css':
-    specifier: ^1.0.0
-    version: 1.0.0
+    specifier: ^1.0.1
+    version: 1.0.1
   '@warp-ds/uno':
     specifier: ^1.0.0
     version: 1.0.0
@@ -99,7 +99,7 @@ devDependencies:
     version: 0.14.3
   unocss:
     specifier: ^0.55.3
-    version: 0.55.3(postcss@8.4.26)(vite@4.4.9)
+    version: 0.55.3(postcss@8.4.29)(vite@4.4.9)
   vite:
     specifier: ^4.4.9
     version: 4.4.9(@types/node@20.4.2)
@@ -1756,7 +1756,7 @@ packages:
       sirv: 2.0.3
     dev: true
 
-  /@unocss/postcss@0.55.3(postcss@8.4.26):
+  /@unocss/postcss@0.55.3(postcss@8.4.29):
     resolution: {integrity: sha512-JWfjtSLGuYFWcZwP3eUT2ItdRwehnpmry36cMSuuPNLXG0SPtklP2LRFahvgH85YhASNDAL2OIHP4jGTlG2Jfw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1767,7 +1767,7 @@ packages:
       css-tree: 2.3.1
       fast-glob: 3.3.1
       magic-string: 0.30.3
-      postcss: 8.4.26
+      postcss: 8.4.29
     dev: true
 
   /@unocss/preset-attributify@0.55.3:
@@ -2050,8 +2050,8 @@ packages:
       '@floating-ui/dom': 0.5.4
     dev: false
 
-  /@warp-ds/css@1.0.0:
-    resolution: {integrity: sha512-rxzEBKl5g7RP+5S27+gwhceO6clMHiYfRbbaDmJVJMyUNU8JwfYoMovoeVlJLLK0yh/v7yOdmUpP8/tJqqcB5w==}
+  /@warp-ds/css@1.0.1:
+    resolution: {integrity: sha512-FeLaYSe6G5wcI1SENkbGrArEMPGmewwwCMgWQh1944iC3NgLXGWEx3ZRHcBNfiMJImpuZeaHSUOM3yozYbZvbw==}
     dependencies:
       '@warp-ds/fonts': 1.1.0
       '@warp-ds/tokenizer': 0.0.2
@@ -4363,15 +4363,9 @@ packages:
       get-func-name: 2.0.0
     dev: true
 
-  /lru-cache@10.0.0:
-    resolution: {integrity: sha512-svTf/fzsKHffP42sujkO/Rjs37BCIsQVRCeNYIm9WN8rgT7ffoUnRtZCqU+6BqcSBdv8gwJeTz8knJpgACeQMw==}
-    engines: {node: 14 || >=16.14}
-    dev: false
-
   /lru-cache@10.0.1:
     resolution: {integrity: sha512-IJ4uwUTi2qCccrioU6g9g/5rvvVl13bsdczUUcqbciD9iLr095yj8DQKdObriEvuNSx325N1rV1O0sJFszx75g==}
     engines: {node: 14 || >=16.14}
-    dev: true
 
   /lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
@@ -5087,7 +5081,7 @@ packages:
     resolution: {integrity: sha512-MkhCqzzBEpPvxxQ71Md0b1Kk51W01lrYvlMzSUaIzNsODdd7mqhiimSZlr+VegAz5Z6Vzt9Xg2ttE//XBhH3EQ==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
-      lru-cache: 10.0.0
+      lru-cache: 10.0.1
       minipass: 7.0.2
     dev: false
 
@@ -6091,7 +6085,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.55.3(postcss@8.4.26)(vite@4.4.9):
+  /unocss@0.55.3(postcss@8.4.29)(vite@4.4.9):
     resolution: {integrity: sha512-laHtypsgqXQ8798h8cYO1fkxPumSQG8Y7GDvvSY1TWmha+mbl1YzbHqakxiJvoThJrMFLiwmpZ2vD7KFbzfGfg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -6107,7 +6101,7 @@ packages:
       '@unocss/cli': 0.55.3
       '@unocss/core': 0.55.3
       '@unocss/extractor-arbitrary-variants': 0.55.3
-      '@unocss/postcss': 0.55.3(postcss@8.4.26)
+      '@unocss/postcss': 0.55.3(postcss@8.4.29)
       '@unocss/preset-attributify': 0.55.3
       '@unocss/preset-icons': 0.55.3
       '@unocss/preset-mini': 0.55.3

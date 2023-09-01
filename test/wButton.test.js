@@ -21,7 +21,7 @@ describe('button', () => {
   test('primary', () => {
     const wrapper = mount(wButton, { props: { primary: true, label } })
     assert.equal(wrapper.text(), 'Hello Warp')
-    assert.include(wrapper.classes().join(' '), ccButton.buttonPrimary)
+    assert.include(wrapper.classes().join(' '), ccButton.primary)
   })
   test('href', () => {
     const href = 'https://finn.no'
