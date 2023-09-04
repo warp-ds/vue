@@ -23,6 +23,11 @@ describe('button', () => {
     assert.equal(wrapper.text(), 'Hello Warp')
     assert.include(wrapper.classes().join(' '), ccButton.primary)
   })
+  test('negative', () => {
+    const wrapper = mount(wButton, { props: { negative: true, label } })
+    assert.equal(wrapper.text(), 'Hello Warp')
+    assert.include(wrapper.classes().join(' '), ccButton.negative)
+  })
   test('href', () => {
     const href = 'https://finn.no'
     const wrapper = mount(wButton, { props: { label, href } })
