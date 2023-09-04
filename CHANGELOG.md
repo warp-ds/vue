@@ -1,3 +1,11 @@
+## [1.0.1-next.1](https://github.com/warp-ds/vue/compare/v1.0.0...v1.0.1-next.1) (2023-09-04)
+
+
+### Bug Fixes
+
+* add test case for negative button as it is not just modifier anymore but it is own button type ([#63](https://github.com/warp-ds/vue/issues/63)) ([c9d4950](https://github.com/warp-ds/vue/commit/c9d4950278ee7bbddc80709b3a2161009c15aa2a))
+* use new button classes and improve conditions ([#62](https://github.com/warp-ds/vue/issues/62)) ([1c9fa6c](https://github.com/warp-ds/vue/commit/1c9fa6c4326d2527f1db58f6d94c19ab3e215031))
+
 ## [1.0.1-next.1](https://github.com/warp-ds/vue/compare/v1.0.0...v1.0.1-next.1) (2023-09-01)
 
 
