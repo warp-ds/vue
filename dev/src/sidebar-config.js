@@ -36,6 +36,7 @@ export const sidebarConfig = [
     title: 'Layout',
     startOpen: true,
     links: [
+      { to: 'badge', title: 'Badge' },
       { to: 'box', title: 'Box' },
       { to: 'card', title: 'Card' },
       { to: 'expandable', title: 'Expandable' },
