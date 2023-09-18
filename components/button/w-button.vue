@@ -26,7 +26,7 @@ const ariaValueText = i18n._({
   comment: 'Screenreader message for buttons that are loading'
 });
 
-const buttonTypes = [    
+const buttonVariants = [
   'primary',
   'secondary',
   'negative',
@@ -50,17 +50,17 @@ const props = defineProps({
   label: String,
 })
 
-const buttonType = buttonTypes.find(b => !!props[b]);
+const defaultVariant = props.secondary || !buttonVariants.find(b => !!props[b]);
 
 const buttonClass = computed(() => ({
-  [ccButton.secondary]: (props.secondary || !buttonType) && !props.small && !props.quiet && !props.loading,
-  [ccButton.secondarySmall]: props.secondary && props.small && !props.quiet && !props.loading,
-  [ccButton.secondarySmallLoading]: props.secondary && props.small && !props.quiet && props.loading,
-  [ccButton.secondarySmallQuiet]: props.secondary && props.small && props.quiet && !props.loading,
-  [ccButton.secondarySmallQuietLoading]: props.secondary && props.small && props.quiet && props.loading,
-  [ccButton.secondaryQuiet]: props.secondary && !props.small && props.quiet && !props.loading,
-  [ccButton.secondaryQuietLoading]: props.secondary && !props.small && props.quiet && props.loading,
-  [ccButton.secondaryLoading]: props.secondary && !props.small && !props.quiet && props.loading,
+  [ccButton.secondary]: defaultVariant && !props.small && !props.quiet && !props.loading,
+  [ccButton.secondarySmall]: defaultVariant && props.small && !props.quiet && !props.loading,
+  [ccButton.secondarySmallLoading]: defaultVariant && props.small && !props.quiet && props.loading,
+  [ccButton.secondarySmallQuiet]: defaultVariant && props.small && props.quiet && !props.loading,
+  [ccButton.secondarySmallQuietLoading]: defaultVariant && props.small && props.quiet && props.loading,
+  [ccButton.secondaryQuiet]: defaultVariant && !props.small && props.quiet && !props.loading,
+  [ccButton.secondaryQuietLoading]: defaultVariant && !props.small && props.quiet && props.loading,
+  [ccButton.secondaryLoading]: defaultVariant && !props.small && !props.quiet && props.loading,
   
   [ccButton.primary]: props.primary && !props.small && !props.quiet && !props.loading,
   [ccButton.primarySmall]: props.primary && props.small && !props.quiet && !props.loading,

@@ -28,6 +28,18 @@ describe('button', () => {
     assert.equal(wrapper.text(), 'Hello Warp')
     assert.include(wrapper.classes().join(' '), ccButton.negative)
   })
+  test('no variant should default to secondary', () => {
+    const wrapper = mount(wButton)
+    assert.include(wrapper.classes().join(' '), ccButton.secondary)
+  })
+  test('small with no variant should default to secondary small', () => {
+    const wrapper = mount(wButton, { props: { small: true } })
+    assert.include(wrapper.classes().join(' '), ccButton.secondarySmall)
+  })
+  test('small & quiet with no variant should default to secondary small quiet', () => {
+    const wrapper = mount(wButton, { props: { small: true, quiet: true } })
+    assert.include(wrapper.classes().join(' '), ccButton.secondarySmallQuiet)
+  })
   test('href', () => {
     const href = 'https://finn.no'
     const wrapper = mount(wButton, { props: { label, href } })
