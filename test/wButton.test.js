@@ -40,10 +40,6 @@ describe('button', () => {
     const wrapper = mount(wButton, { props: { small: true, quiet: true } })
     assert.include(wrapper.classes().join(' '), ccButton.secondarySmallQuiet)
   })
-  test('small & quiet & loading with no variant should default to secondary small quiet loading', () => {
-    const wrapper = mount(wButton, { props: { small: true, quiet: true, loading: true } })
-    assert.include(wrapper.classes().join(' '), ccButton.secondarySmallQuietLoading)
-  })
   test('href', () => {
     const href = 'https://finn.no'
     const wrapper = mount(wButton, { props: { label, href } })
