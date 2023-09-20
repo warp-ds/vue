@@ -16,10 +16,10 @@ const badgeVariants = [
 ];
 const badgePositions = [
   { name: 'Undefined', radio },
-  { name: 'tl', radio },
-  { name: 'tr', radio },
-  { name: 'bl', radio },
-  { name: 'br', radio },
+  { name: 'top-left', radio },
+  { name: 'top-right', radio },
+  { name: 'bottom-left', radio },
+  { name: 'bottom-right', radio },
 ];
 
 const currentVariant = reactive({active: 'Undefined'});
