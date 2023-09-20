@@ -48,7 +48,7 @@ const contentClasses = computed(() => ({
     :aria-selected="isActive"
     :aria-controls="isActive ? `warp-tabpanel-${name}` : undefined"
     :tabindex="isActive ? 0 : -1"
-    @keydown="onKeydown"
+    @keydown="controller.onKeydown"
   >
     <span v-if="$slots.default" :class="iconClasses">
       <slot />
