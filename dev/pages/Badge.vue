@@ -3,7 +3,7 @@ import {computed, reactive, ref} from 'vue';
 import { wBadge } from '#components';
 import { radio } from '#dev-util';
 
-const badgeTypes = [
+const badgeVariants = [
   { name: 'Undefined', radio },
   { name: 'neutral', radio },
   { name: 'info', radio },
@@ -22,10 +22,10 @@ const badgePositions = [
   { name: 'br', radio },
 ];
 
-const currentType = reactive({active: 'Undefined'});
+const currentVariant = reactive({active: 'Undefined'});
 const currentPosition = reactive({active: 'Undefined'});
 
-const hasType = computed(() => currentType.active !== 'Undefined');
+const hasVariant = computed(() => currentVariant.active !== 'Undefined');
 const hasPosition = computed(() => currentPosition.active !== 'Undefined');
 </script>
 
@@ -33,10 +33,10 @@ const hasPosition = computed(() => currentPosition.active !== 'Undefined');
   <div>
     <component-title title="Badge" />
 
-    <token v-if="hasType && hasPosition" :state="[currentType, currentPosition]">
+    <token v-if="hasVariant && hasPosition" :state="[currentVariant, currentPosition]">
       <div class="relative border border-0 rounded-8 overflow-hidden h-96">
         <img class="w-full h-96 object-cover" src="https://source.unsplash.com/random/768x96" />
-        <w-badge :type="currentType.active" :position="currentPosition.active">{{currentType.active}}</w-badge>
+        <w-badge :variant="currentVariant.active" :position="currentPosition.active">{{currentVariant.active}}</w-badge>
       </div>
     </token>
     <token v-else-if="hasPosition" :state="currentPosition">
@@ -45,15 +45,15 @@ const hasPosition = computed(() => currentPosition.active !== 'Undefined');
         <w-badge :position="currentPosition.active">default (rendered as neutral)</w-badge>
       </div>
     </token>
-    <token v-else-if="hasType" :state="currentType">
-      <w-badge :type="currentType.active">{{currentType.active}}</w-badge>
+    <token v-else-if="hasVariant" :state="currentVariant">
+      <w-badge :variant="currentVariant.active">{{currentVariant.active}}</w-badge>
     </token>
     <token v-else>
       <w-badge>default (rendered as neutral)</w-badge>
     </token>
 
     <demo-controls y>
-      <demo-control label="Type" :controls="badgeTypes" :state="currentType" />
+      <demo-control label="Type" :controls="badgeVariants" :state="currentVariant" />
       <demo-control label="Position" :controls="badgePositions" :state="currentPosition" />
     </demo-controls>
   </div>

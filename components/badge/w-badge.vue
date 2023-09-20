@@ -7,8 +7,11 @@ import { badge as ccBadge } from '@warp-ds/css/component-classes';
 import { computed } from 'vue';
 
 const props = defineProps({
-  as: { type: String, default: 'div' },
-  type: {
+  as: {
+    type: String,
+    default: 'div'
+  },
+  variant: {
     type: String,
     default: 'neutral',
     validator: (value) => ['neutral', 'info', 'positive', 'warning', 'negative', 'disabled', 'notification', 'price'].includes(value)
@@ -21,7 +24,7 @@ const props = defineProps({
 
 const badgeClasses = computed(() => [
   ccBadge.base,
-  ccBadge[props.type],
+  ccBadge[props.variant],
   {
     [ccBadge.positionBase]: props.position,
     [ccBadge.positionTL]: props.position === 'top-left',
