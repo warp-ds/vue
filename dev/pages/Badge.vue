@@ -53,7 +53,7 @@ const hasPosition = computed(() => currentPosition.active !== 'Undefined');
     </token>
 
     <demo-controls y>
-      <demo-control label="Type" :controls="badgeVariants" :state="currentVariant" />
+      <demo-control label="Variant" :controls="badgeVariants" :state="currentVariant" />
       <demo-control label="Position" :controls="badgePositions" :state="currentPosition" />
     </demo-controls>
   </div>
