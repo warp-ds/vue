@@ -1,7 +1,6 @@
 <script setup>
 import { ribbon as ccRibbon } from '@warp-ds/css/component-classes'
-import {computed, onMounted, watch, watchEffect} from 'vue'
-import debounce from "femtobounce";
+import { computed, onMounted } from 'vue'
 
 const props = defineProps({
   primary: {
