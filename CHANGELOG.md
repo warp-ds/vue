@@ -1,3 +1,10 @@
+## [1.0.1-next.3](https://github.com/warp-ds/vue/compare/v1.0.1-next.2...v1.0.1-next.3) (2023-09-20)
+
+
+### Bug Fixes
+
+* make tabs accessible for using keyboard keys again ([#71](https://github.com/warp-ds/vue/issues/71)) ([14129cc](https://github.com/warp-ds/vue/commit/14129ccae39b8b3c55a1cb4e0033c3e46441c9be))
+
 ## [1.0.1-next.2](https://github.com/warp-ds/vue/compare/v1.0.1-next.1...v1.0.1-next.2) (2023-09-19)
 
 
