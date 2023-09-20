@@ -15,7 +15,7 @@ const props = defineProps({
   },
   position: {
     type: String,
-    validator: (value) => ['tl', 'tr', 'br', 'bl'].includes(value)
+    validator: (value) => ['top-left', 'top-right', 'bottom-right', 'bottom-left'].includes(value)
   },
 });
 
@@ -24,10 +24,10 @@ const badgeClasses = computed(() => [
   ccBadge[props.type],
   {
     [ccBadge.positionBase]: props.position,
-    [ccBadge.positionTL]: props.position === 'tl',
-    [ccBadge.positionTR]: props.position === 'tr',
-    [ccBadge.positionBR]: props.position === 'br',
-    [ccBadge.positionBL]: props.position === 'bl',
+    [ccBadge.positionTL]: props.position === 'top-left',
+    [ccBadge.positionTR]: props.position === 'top-right',
+    [ccBadge.positionBR]: props.position === 'bottom-right',
+    [ccBadge.positionBL]: props.position === 'bottom-left',
   }
 ]);
 </script>
