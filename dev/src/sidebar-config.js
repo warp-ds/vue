@@ -14,6 +14,7 @@ export const sidebarConfig = [
     links: [
       { to: 'alert', title: 'Alert' },
       { to: 'attention', title: 'Attention' },
+      { to: 'badge', title: 'Badge' },
       { to: 'breadcrumbs', title: 'Breadcrumbs' },
       { to: 'modal', title: 'Modal' },
       { to: 'steps', title: 'Steps' },
@@ -36,7 +37,6 @@ export const sidebarConfig = [
     title: 'Layout',
     startOpen: true,
     links: [
-      { to: 'badge', title: 'Badge' },
       { to: 'box', title: 'Box' },
       { to: 'card', title: 'Card' },
       { to: 'expandable', title: 'Expandable' },
