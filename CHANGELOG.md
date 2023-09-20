@@ -1,3 +1,10 @@
+## [1.0.1-next.4](https://github.com/warp-ds/vue/compare/v1.0.1-next.3...v1.0.1-next.4) (2023-09-20)
+
+
+### Bug Fixes
+
+* Add fullWidth button prop ([#72](https://github.com/warp-ds/vue/issues/72)) ([f0e76e8](https://github.com/warp-ds/vue/commit/f0e76e89b9d2a1f955b4aea21faca39f9eb48175))
+
 ## [1.0.1-next.3](https://github.com/warp-ds/vue/compare/v1.0.1-next.2...v1.0.1-next.3) (2023-09-20)
 
 
