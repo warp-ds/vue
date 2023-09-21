@@ -17,8 +17,7 @@ export const sidebarConfig = [
       { to: 'badge', title: 'Badge' },
       { to: 'breadcrumbs', title: 'Breadcrumbs' },
       { to: 'modal', title: 'Modal' },
-      { to: 'steps', title: 'Steps' },
-      { to: 'tag', title: 'Tag' }
+      { to: 'steps', title: 'Steps' }
   ]
   },
   {
