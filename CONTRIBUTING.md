@@ -44,6 +44,14 @@ Install dependencies by running:
 pnpm install
 ```
 
+### Shiki
+
+Run following to prepare for visualizing the examples and corresponding code:
+
+```sh
+pnpm run cp && pnpm run cp:shikifix
+```
+
 
 ### Start dev server
 

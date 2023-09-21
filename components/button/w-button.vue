@@ -48,6 +48,7 @@ const props = defineProps({
   loading: Boolean,
   href: String,
   label: String,
+  fullWidth: Boolean,
 })
 
 const defaultVariant = props.secondary || !buttonVariants.find(b => !!props[b]);
@@ -96,6 +97,8 @@ const buttonClass = computed(() => ({
   [ccButton.link]: props.link && !props.small,
   [ccButton.linkSmall]: props.link && props.small,
   [ccButton.linkAsButton]: !!props.href,
+  [ccButton.fullWidth]: props.fullWidth,
+  [ccButton.contentWidth]: !props.fullWidth,
 }))
 
 const saneDefaults = computed(() => ({

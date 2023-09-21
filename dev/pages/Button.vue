@@ -17,7 +17,8 @@ const variantControls = [
 const modifierControls = [
   { name: 'Quiet', checkbox },
   { name: 'Small', checkbox },
-  { name: 'Loading', checkbox }
+  { name: 'Loading', checkbox },
+  { name: 'FullWidth', checkbox }
 ]
 const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
 </script>
@@ -37,6 +38,7 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
         :quiet="modifiers.Quiet"
         :small="modifiers.Small"
         :loading="modifiers.Loading"
+        :full-width="modifiers.FullWidth"
         label="Hello Warp" />
     </token>
 
