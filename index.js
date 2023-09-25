@@ -1,6 +1,7 @@
 // order matters here - wClickable in 'generic' needs to come early
 export * from './components/generic'
 export * from './components/forms'
+export * from './components/badge'
 export * from './components/box'
 export * from './components/breadcrumbs'
 export * from './components/button'
