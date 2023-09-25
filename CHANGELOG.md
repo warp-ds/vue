@@ -1,3 +1,17 @@
+## [1.0.1](https://github.com/warp-ds/vue/compare/v1.0.0...v1.0.1) (2023-09-25)
+
+
+### Bug Fixes
+
+* Add fullWidth button prop ([#72](https://github.com/warp-ds/vue/issues/72)) ([f0e76e8](https://github.com/warp-ds/vue/commit/f0e76e89b9d2a1f955b4aea21faca39f9eb48175))
+* add test case for negative button as it is not just modifier anymore but it is own button type ([#63](https://github.com/warp-ds/vue/issues/63)) ([c9d4950](https://github.com/warp-ds/vue/commit/c9d4950278ee7bbddc80709b3a2161009c15aa2a))
+* **buttons:** set secondary variant styles by default ([#67](https://github.com/warp-ds/vue/issues/67)) ([cde4077](https://github.com/warp-ds/vue/commit/cde407790650b8b694b2cd5d26ede774719a8ae3))
+* **changelog:** remove changes related to unreleased commits ([#68](https://github.com/warp-ds/vue/issues/68)) ([364a355](https://github.com/warp-ds/vue/commit/364a355e45c4c32ce39458e00f86da797000c8e6))
+* make tabs accessible for using keyboard keys again ([#71](https://github.com/warp-ds/vue/issues/71)) ([14129cc](https://github.com/warp-ds/vue/commit/14129ccae39b8b3c55a1cb4e0033c3e46441c9be))
+* remove useless test and update changelog ([#70](https://github.com/warp-ds/vue/issues/70)) ([4ea3fdc](https://github.com/warp-ds/vue/commit/4ea3fdc42bf063b2eff2b1a89708800088c81926))
+* update test for a button and changelog ([#69](https://github.com/warp-ds/vue/issues/69)) ([4eb675e](https://github.com/warp-ds/vue/commit/4eb675e6eb0f6ad065e43bee3b4400d3aae2b373))
+* use new button classes and improve conditions ([#62](https://github.com/warp-ds/vue/issues/62)) ([1c9fa6c](https://github.com/warp-ds/vue/commit/1c9fa6c4326d2527f1db58f6d94c19ab3e215031))
+
 ## [1.0.1-next.4](https://github.com/warp-ds/vue/compare/v1.0.1-next.3...v1.0.1-next.4) (2023-09-20)
 
 
