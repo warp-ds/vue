@@ -8,16 +8,17 @@ const active = useIsActive(variants)
 const variantControls = [
   { name: 'Primary', radio },
   { name: 'Secondary', radio },
+  { name: 'Negative', radio },
   { name: 'Link', radio },
   { name: 'Utility', radio },
   { name: 'Pill', radio },
 ]
 
 const modifierControls = [
-  { name: 'Negative', checkbox },
   { name: 'Quiet', checkbox },
   { name: 'Small', checkbox },
-  { name: 'Loading', checkbox }
+  { name: 'Loading', checkbox },
+  { name: 'FullWidth', checkbox }
 ]
 const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
 </script>
@@ -30,13 +31,14 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
       <w-button
         :primary="active('Primary')"
         :secondary="active('Secondary')"
-        :negative="modifiers.Negative"
+        :negative="active('Negative')"
         :link="active('Link')"
         :utility="active('Utility')"
         :pill="active('Pill')"
         :quiet="modifiers.Quiet"
         :small="modifiers.Small"
         :loading="modifiers.Loading"
+        :full-width="modifiers.FullWidth"
         label="Hello Warp" />
     </token>
 

@@ -26,7 +26,7 @@ const ariaValueText = i18n._({
   comment: 'Screenreader message for buttons that are loading'
 });
 
-const buttonTypes = [    
+const buttonVariants = [
   'primary',
   'secondary',
   'negative',
@@ -48,25 +48,57 @@ const props = defineProps({
   loading: Boolean,
   href: String,
   label: String,
+  fullWidth: Boolean,
 })
 
+const defaultVariant = props.secondary || !buttonVariants.find(b => !!props[b]);
+
 const buttonClass = computed(() => ({
-  [ccButton.buttonSecondary]: props.secondary && !props.quiet || !buttonTypes.find(b => !!props[b]),
-  // primary buttons
-  [ccButton.buttonPrimary]: props.primary && !props.negative,
-  [ccButton.buttonDestructive]: props.primary && props.negative,
-  // quiet
-  [ccButton.buttonFlat]: (props.secondary || (!props.negative && !props.utility)) && props.quiet,
-  [ccButton.buttonDestructiveFlat]: props.negative && props.quiet,
-  [ccButton.buttonUtilityFlat]: props.utility && props.quiet,
-  // others
-  [ccButton.buttonSmall]: props.small,
-  [ccButton.buttonUtility]: props.utility && !props.quiet,
-  [ccButton.buttonLink]: props.link,
-  [ccButton.buttonPill]: props.pill,
-  [ccButton.buttonInProgress]: props.loading,
-  [ccButton.buttonIsDisabled]: props.disabled,
+  [ccButton.secondary]: defaultVariant && !props.small && !props.quiet && !props.loading,
+  [ccButton.secondarySmall]: defaultVariant && props.small && !props.quiet && !props.loading,
+  [ccButton.secondarySmallLoading]: defaultVariant && props.small && !props.quiet && props.loading,
+  [ccButton.secondarySmallQuiet]: defaultVariant && props.small && props.quiet && !props.loading,
+  [ccButton.secondarySmallQuietLoading]: defaultVariant && props.small && props.quiet && props.loading,
+  [ccButton.secondaryQuiet]: defaultVariant && !props.small && props.quiet && !props.loading,
+  [ccButton.secondaryQuietLoading]: defaultVariant && !props.small && props.quiet && props.loading,
+  [ccButton.secondaryLoading]: defaultVariant && !props.small && !props.quiet && props.loading,
+  
+  [ccButton.primary]: props.primary && !props.small && !props.quiet && !props.loading,
+  [ccButton.primarySmall]: props.primary && props.small && !props.quiet && !props.loading,
+  [ccButton.primarySmallQuiet]: props.primary && props.small && props.quiet && !props.loading,
+  [ccButton.primarySmallLoading]: props.primary && props.small && !props.quiet && props.loading,
+  [ccButton.primarySmallQuietLoading]: props.primary && props.small && props.quiet && props.loading,
+  [ccButton.primaryQuiet]: props.primary && !props.small && props.quiet && !props.loading,
+  [ccButton.primaryQuietLoading]: props.primary && !props.small && props.quiet && props.loading,
+  [ccButton.primaryLoading]: props.primary && !props.small && !props.quiet && props.loading,
+
+  [ccButton.utility]: props.utility && !props.small && !props.quiet && !props.loading,
+  [ccButton.utilitySmall]: props.utility && props.small && !props.quiet && !props.loading,
+  [ccButton.utilitySmallQuiet]: props.utility && props.small && props.quiet && !props.loading,
+  [ccButton.utilitySmallLoading]: props.utility && props.small && !props.quiet && props.loading,
+  [ccButton.utilitySmallQuietLoading]: props.utility && props.small && props.quiet && props.loading,
+  [ccButton.utilityQuiet]: props.utility && !props.small && props.quiet && !props.loading,
+  [ccButton.utilityQuietLoading]: props.utility && !props.small && props.quiet && props.loading,
+  [ccButton.utilityLoading]: props.utility && !props.small && !props.quiet && props.loading,
+
+  [ccButton.negative]: props.negative && !props.small && !props.quiet && !props.loading,
+  [ccButton.negativeSmall]: props.negative && props.small && !props.quiet && !props.loading,
+  [ccButton.negativeSmallQuiet]: props.negative && props.small && props.quiet && !props.loading,
+  [ccButton.negativeSmallLoading]: props.negative && props.small && !props.quiet && props.loading,
+  [ccButton.negativeSmallQuietLoading]: props.negative && props.small && props.quiet && props.loading,
+  [ccButton.negativeQuiet]: props.negative && !props.small && props.quiet && !props.loading,
+  [ccButton.negativeQuietLoading]: props.negative && !props.small && props.quiet && props.loading,
+  [ccButton.negativeLoading]: props.negative && !props.small && !props.quiet && props.loading,
+
+  [ccButton.pill]: props.pill && !props.small && !props.loading,
+  [ccButton.pillSmall]: props.pill && props.small && !props.loading,
+  [ccButton.pillLoading]: props.pill && !props.small && props.loading,
+  [ccButton.pillSmallLoading]: props.pill && props.small && props.loading,
+  [ccButton.link]: props.link && !props.small,
+  [ccButton.linkSmall]: props.link && props.small,
   [ccButton.linkAsButton]: !!props.href,
+  [ccButton.fullWidth]: props.fullWidth,
+  [ccButton.contentWidth]: !props.fullWidth,
 }))
 
 const saneDefaults = computed(() => ({
