@@ -1,0 +1,35 @@
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_API_TOKEN
+base_url_env: CROWDIN_BASE_URL
+base_path: "."
+
+preserve_hierarchy: true
+
+files:
+  [
+    {
+      "source": "/components/breadcrumbs/locales/en/messages.po",
+      "dest": "vue/components/breadcrumbs/messages.po",
+      "translation": "/components/breadcrumbs/locales/%two_letters_code%/messages.po",
+    },
+    {
+      "source": "/components/button/locales/en/messages.po",
+      "dest": "vue/components/button/messages.po",
+      "translation": "/components/button/locales/%two_letters_code%/messages.po",
+    },
+    {
+      "source": "/components/forms/locales/en/messages.po",
+      "dest": "vue/components/forms/messages.po",
+      "translation": "/components/forms/locales/%two_letters_code%/messages.po",
+    },
+    {
+      "source": "/components/modal/locales/en/messages.po",
+      "dest": "vue/components/modal/messages.po",
+      "translation": "/components/modal/locales/%two_letters_code%/messages.po",
+    },
+    {
+      "source": "/components/pill/locales/en/messages.po",
+      "dest": "vue/components/pill/messages.po",
+      "translation": "/components/pill/locales/%two_letters_code%/messages.po",
+    },
+  ]
