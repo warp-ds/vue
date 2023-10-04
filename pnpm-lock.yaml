@@ -17,6 +17,9 @@ dependencies:
   '@warp-ds/css':
     specifier: ^1.1.0
     version: 1.1.0
+  '@warp-ds/icons':
+    specifier: 1.1.0-alpha.3
+    version: 1.1.0-alpha.3
   '@warp-ds/uno':
     specifier: ^1.1.0
     version: 1.1.0
@@ -1246,6 +1249,15 @@ packages:
       '@lingui/message-utils': 4.3.0
       unraw: 2.0.1
 
+  /@lingui/core@4.5.0:
+    resolution: {integrity: sha512-8zTuIXJo5Qvjato7LWE6Q4RHiO4LjTBVOoRlqfOGYDp8VZ9w9P7Z7IJgxI7UP5Z1wiuEvnMdVF9I1C4acqXGlQ==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@lingui/message-utils': 4.5.0
+      unraw: 3.0.0
+    dev: false
+
   /@lingui/extractor-vue@4.3.0:
     resolution: {integrity: sha512-7akLGuV//Gk6ITJ/4JE+irTpqshePW1xzqN6jTh7fMnjAEMMfA4RGnMqCr6JugfjEvOo64/3hi/D1IsQm4oaAw==}
     engines: {node: '>=16.0.0'}
@@ -1272,6 +1284,13 @@ packages:
     engines: {node: '>=16.0.0'}
     dependencies:
       '@messageformat/parser': 5.1.0
+
+  /@lingui/message-utils@4.5.0:
+    resolution: {integrity: sha512-iRqh2wvNtzJO3NStB77nEXEfeI53aVVjzD7/mBrEm/P0lC7sqPHk0WBQCfzE0N9xm6a+XHmHu3J+x2nnQ2OjcA==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@messageformat/parser': 5.1.0
+    dev: false
 
   /@lukeed/csprng@1.1.0:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
@@ -2108,6 +2127,12 @@ packages:
 
   /@warp-ds/fonts@1.1.0:
     resolution: {integrity: sha512-kLNZzK3o0rMJApm7/YT3K7rYoFKgH5PyJMTVwv34O4Dx6ikfN7appc4f2DFYkE2XY6gifpD5F2r1ftcJtdW4+w==}
+    dev: false
+
+  /@warp-ds/icons@1.1.0-alpha.3:
+    resolution: {integrity: sha512-ItdMSPYvUNuB+hXEq+ODI4xM9FlG7ebiE6vuTIDVM3fmRmOoCqoY+DIHdwroYUS+nyUKYZ0hLrMT9SiwbIJ+cw==}
+    dependencies:
+      '@lingui/core': 4.5.0
     dev: false
 
   /@warp-ds/tokenizer@0.0.2:
@@ -6387,6 +6412,10 @@ packages:
 
   /unraw@2.0.1:
     resolution: {integrity: sha512-tdOvLfRzHolwYcHS6HIX860MkK9LQ4+oLuNwFYL7bpgTEO64PZrcQxkisgwJYCfF8sKiWLwwu1c83DvMkbefIQ==}
+
+  /unraw@3.0.0:
+    resolution: {integrity: sha512-08/DA66UF65OlpUDIQtbJyrqTR0jTAlJ+jsnkQ4jxR7+K5g5YG1APZKQSMCE1vqqmD+2pv6+IdEjmopFatacvg==}
+    dev: false
 
   /update-browserslist-db@1.0.11(browserslist@4.21.10):
     resolution: {integrity: sha512-dCwEFf0/oT85M1fHBg4F0jtLwJrutGoHSQXCh7u4o2t1drG+c0a9Flnqww6XUKSfQMPpJBRjU8d4RXB09qtvaA==}
