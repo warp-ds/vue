@@ -15,21 +15,7 @@
           <slot />
         </select>
         <div :class="chevronClasses">
-          <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="none"
-              viewBox="0 0 16 16"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="M2.5 5.5L8 11L13.5 5.5"
-            />
-          </svg>
+          <icon-chevron-down16 />
         </div>
       </div>
     </div>
@@ -41,6 +27,8 @@ import { computed } from 'vue';
 import { select as ccSelect } from '@warp-ds/css/component-classes';
 import { createModel } from 'create-v-model'
 import { default as wField, fieldProps } from './w-field.vue'
+import { IconChevronDown16 } from "@warp-ds/icons/vue";
+
 
 const p = defineProps(fieldProps);
 const emit = defineEmits(['update:modelValue']);
