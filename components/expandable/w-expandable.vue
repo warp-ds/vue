@@ -1,26 +1,3 @@
-<template>
-  <component :is="as" :class="wrapperClasses">
-    <button v-if="hasTitle" type="button" :aria-expanded="expanded" :class="buttonClasses" @click="expanded = !expanded">
-      <slot name="title" :expanded="expanded" />
-      <span :class="ccExpandable.expandableTitle" v-if="title">{{ title }}</span>
-      <div :class="chevronClasses" v-if="chevron">
-        <icon-chevron-down16 />
-      </div>
-    </button>
-    <component :is="contentComponent" @expand="emit('expand')" @collapse="emit('collapse')">
-      <div v-if="expanded">
-        <div :class="contentClasses">
-          <slot />
-        </div>
-      </div>
-    </component>
-  </component>
-</template>
-
-<script>
-export default { name: 'wExpandable' }
-</script>
-
 <script setup>
 import { ref, computed, watch, nextTick, useSlots } from 'vue'
 import { modelProps, createModel } from 'create-v-model'
@@ -79,4 +56,27 @@ const contentClasses = computed(() => ({
   [ccBox.box]: props.box || props.info,
   [ccExpandable.paddingTop]: hasTitle.value && (props.box || props.info),
 }))
+</script>
+
+<template>
+  <component :is="as" :class="wrapperClasses">
+    <button v-if="hasTitle" type="button" :aria-expanded="expanded" :class="buttonClasses" @click="expanded = !expanded">
+      <slot name="title" :expanded="expanded" />
+      <span :class="ccExpandable.expandableTitle" v-if="title">{{ title }}</span>
+      <div :class="chevronClasses" v-if="chevron">
+        <icon-chevron-down16 />
+      </div>
+    </button>
+    <component :is="contentComponent" @expand="emit('expand')" @collapse="emit('collapse')">
+      <div v-if="expanded">
+        <div :class="contentClasses">
+          <slot />
+        </div>
+      </div>
+    </component>
+  </component>
+</template>
+
+<script>
+export default { name: 'wExpandable' }
 </script>

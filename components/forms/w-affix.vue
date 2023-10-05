@@ -1,11 +1,3 @@
-<template>
-  <component :is="label ? 'div' : 'button'" :class="wrapperClass">
-    <icon-close16 v-if="clear" />
-    <icon-search16 v-else-if="search" />
-    <span :class="labelClass" v-else-if="label">{{ label }}</span>
-  </component>
-</template>
-
 <script setup>
 import { suffix, prefix } from "@warp-ds/css/component-classes";
 import { computed } from "vue";
@@ -30,6 +22,14 @@ const wrapperClass = computed(() => ({
 
 const labelClass = computed(() => classBase.value.label);
 </script>
+
+<template>
+  <component :is="label ? 'div' : 'button'" :class="wrapperClass">
+    <icon-close16 v-if="clear" />
+    <icon-search16 v-else-if="search" />
+    <span :class="labelClass" v-else-if="label">{{ label }}</span>
+  </component>
+</template>
 
 <script>
 export default { name: "wAffix" };

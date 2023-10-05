@@ -1,27 +1,3 @@
-<template>
-  <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, hasValidationErrors }">
-    <div :class="wrapperClasses">
-      <div :class="selectWrapperClasses">
-        <select
-          :class="[
-            selectClasses,
-            {
-              [ccSelect.invalid]: hasValidationErrors,
-            }
-          ]"
-          :disabled="disabled"
-          :readOnly="readOnly"
-          v-bind="{ ...$attrs, class: '' }" v-model="model" :id="id" @blur="triggerValidation">
-          <slot />
-        </select>
-        <div :class="chevronClasses">
-          <icon-chevron-down16 />
-        </div>
-      </div>
-    </div>
-  </w-field>
-</template>
-
 <script setup>
 import { computed } from 'vue';
 import { select as ccSelect } from '@warp-ds/css/component-classes';
@@ -54,6 +30,30 @@ const chevronClasses = computed(() => ({
 }));
 
 </script>
+
+<template>
+  <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, hasValidationErrors }">
+    <div :class="wrapperClasses">
+      <div :class="selectWrapperClasses">
+        <select
+          :class="[
+            selectClasses,
+            {
+              [ccSelect.invalid]: hasValidationErrors,
+            }
+          ]"
+          :disabled="disabled"
+          :readOnly="readOnly"
+          v-bind="{ ...$attrs, class: '' }" v-model="model" :id="id" @blur="triggerValidation">
+          <slot />
+        </select>
+        <div :class="chevronClasses">
+          <icon-chevron-down16 />
+        </div>
+      </div>
+    </div>
+  </w-field>
+</template>
 
 <script>
 export default { name: 'wSelect', inheritAttrs: false };

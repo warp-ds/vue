@@ -1,22 +1,3 @@
-<template>
-  <div :class="ccAlert.willChangeHeight">
-    <!-- TODO: Investigate if "will-change-height" is needed and compare the use of it with the other component repos -->
-    <w-expand-transition>
-      <div v-if="model" :role="role">
-        <div :class="wrapperClass" data-test="wrapper">
-          <div :class="iconClass">
-            <component :is="iconComponent" />
-          </div>
-          <div :class="ccAlert.textWrapper" data-test="content">
-            <p :class="ccAlert.title" v-if="title">{{ title }}</p>
-            <slot />
-          </div>
-        </div>
-      </div>
-    </w-expand-transition>
-  </div>
-</template>
-
 <script setup>
 import { computed } from "vue";
 import { wExpandTransition } from "#generics";
@@ -67,6 +48,25 @@ const iconComponent = computed(() =>
     : IconAlertInfo16
 );
 </script>
+
+<template>
+  <div :class="ccAlert.willChangeHeight">
+    <!-- TODO: Investigate if "will-change-height" is needed and compare the use of it with the other component repos -->
+    <w-expand-transition>
+      <div v-if="model" :role="role">
+        <div :class="wrapperClass" data-test="wrapper">
+          <div :class="iconClass">
+            <component :is="iconComponent" />
+          </div>
+          <div :class="ccAlert.textWrapper" data-test="content">
+            <p :class="ccAlert.title" v-if="title">{{ title }}</p>
+            <slot />
+          </div>
+        </div>
+      </div>
+    </w-expand-transition>
+  </div>
+</template>
 
 <script>
 export default { name: "wAlert" };
