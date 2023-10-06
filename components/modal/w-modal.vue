@@ -127,7 +127,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
               >
               <button v-if="left" :aria-label="ariaBack" @click="$emit('left')" :class="titleLeftClasses" key="left" v-bind="left">
                 <slot name="left">
-                    <icon-table-sort-down16 :class="[ccModal.titleButtonIcon, ccModal.titleButtonIconRotated]" />
+                    <icon-table-sort-down-16 :class="[ccModal.titleButtonIcon, ccModal.titleButtonIconRotated]" />
                 </slot>
               </button>
               <div :class="titleCenterClasses" key="title" v-bind="titleAttrs">
@@ -136,7 +136,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
               </div>
               <button v-if="right" :aria-label="ariaClose" @click="$emit('right')" :class="titleRightClasses" key="right" v-bind="right">
                 <slot name="right">
-                  <icon-close16 :class="ccModal.titleButtonIcon" />
+                  <icon-close-16 :class="ccModal.titleButtonIcon" />
                 </slot>
               </button>
             </transition-group>

@@ -25,8 +25,8 @@ const labelClass = computed(() => classBase.value.label);
 
 <template>
   <component :is="label ? 'div' : 'button'" :class="wrapperClass">
-    <icon-close16 v-if="clear" />
-    <icon-search16 v-else-if="search" />
+    <icon-close-16 v-if="clear" />
+    <icon-search-16 v-else-if="search" />
     <span :class="labelClass" v-else-if="label">{{ label }}</span>
   </component>
 </template>

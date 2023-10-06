@@ -48,7 +48,7 @@ const chevronClasses = computed(() => ({
           <slot />
         </select>
         <div :class="chevronClasses">
-          <icon-chevron-down16 />
+          <icon-chevron-down-16 />
         </div>
       </div>
     </div>

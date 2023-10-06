@@ -64,7 +64,7 @@ const contentClasses = computed(() => ({
       <slot name="title" :expanded="expanded" />
       <span :class="ccExpandable.expandableTitle" v-if="title">{{ title }}</span>
       <div :class="chevronClasses" v-if="chevron">
-        <icon-chevron-down16 />
+        <icon-chevron-down-16 />
       </div>
     </button>
     <component :is="contentComponent" @expand="emit('expand')" @collapse="emit('collapse')">

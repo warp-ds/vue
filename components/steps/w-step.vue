@@ -69,7 +69,7 @@ const contentClasses = computed(() => [
   <div :class="stepClasses">
     <div v-if="!vertical" :class="horizontalClasses" />
     <div :aria-current="active ? 'step' : undefined" :class="stepDotClasses">
-      <icon-check16 v-if="complete" />
+      <icon-check-16 v-if="complete" />
     </div>
     <div :class="stepLineClasses" />
     <div :class="contentClasses">
