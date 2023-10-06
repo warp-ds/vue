@@ -25,7 +25,7 @@ const labelClasses = computed(() => [
 
 const closeClasses = computed(() => [
   ccPill.button,
-  ccPill.close,
+  ccPill.closeX,
   p.suggestion ? ccPill.suggestion : ccPill.filter
 ]);
 
