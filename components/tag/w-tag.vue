@@ -1,6 +1,6 @@
 <script setup>
 import { ribbon as ccRibbon } from '@warp-ds/css/component-classes'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 
 const props = defineProps({
   primary: {
@@ -32,6 +32,10 @@ const baseClasses = computed(() => ({
   [ccRibbon.sponsored]: props.sponsored,
   [ccRibbon.neutral]: props.neutral
 }))
+
+onMounted(() => {
+  console.warn('w-tag is deprecated and will be removed in a future version, please switch to w-badge')
+});
 </script>
 
 <template>

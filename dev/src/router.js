@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 import Alert from '../pages/Alert.vue'
 import Attention from '../pages/Attention.vue'
+import Badge from '../pages/Badge.vue'
 import Box from '../pages/Box.vue'
 import Breadcrumbs from '../pages/Breadcrumbs.vue'
 import Button from '../pages/Button.vue'
@@ -25,6 +26,7 @@ export const routes = [
   { path: '/', component: Home, name: 'home' },
   { path: '/alert', component: Alert, name: 'alert' },
   { path: '/attention', component: Attention, name: 'attention' },
+  { path: '/badge', component: Badge, name: 'badge' },
   { path: '/box', component: Box, name: 'box' },
   { path: '/button', component: Button, name: 'button' },
   { path: '/breadcrumbs', component: Breadcrumbs, name: 'breadcrumbs' },
