@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/warp-ds/vue/compare/v1.0.1...v1.1.0) (2023-10-09)
+
+
+### Features
+
+* Add Badge component ([#66](https://github.com/warp-ds/vue/issues/66)) ([cd1a28c](https://github.com/warp-ds/vue/commit/cd1a28ca7a922701a4d03229427c330273cf06ca))
+
 # [1.1.0-next.1](https://github.com/warp-ds/vue/compare/v1.0.1...v1.1.0-next.1) (2023-09-25)
 
 
