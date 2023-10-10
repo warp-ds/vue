@@ -17,26 +17,30 @@ const popoverShowing = ref(false)
     <component-title title="Attention" />
 
     <token>
-      <div>
-        <h2>Tooltip</h2>
-        <w-box neutral class="h4" ref="tooltipTarget" @mouseenter="tooltipShowing = true; target = $refs.tooltipTarget" @mouseleave="tooltipShowing = false">Hover over me</w-box>
-        <w-attention tooltip bottom :target-el="tooltipTarget ? tooltipTarget.$el : null" v-model="tooltipShowing">
-          <p>Hello Warp!</p>
-        </w-attention>
-      </div>
-      <div class="flex items-center">
-        <h2>Callout</h2>
-        <w-box neutral class="h4" ref="calloutTarget" @mouseenter="calloutShowing = true; target = $refs.calloutTarget" @mouseleave="calloutShowing = false">Don't hover over me</w-box>
-        <w-attention callout right :target-el="calloutTarget ? calloutTarget.$el : null" v-model="calloutShowing" class="ml-8">
-          <p>Hello Warp! This thing is new!</p>
-        </w-attention>
-      </div>
-      <div>
-        <h2>Popover</h2>
-        <w-box neutral class="h4" ref="popoverTarget" @mouseenter="popoverShowing = true; target = $refs.popoverTarget" @mouseleave="popoverShowing = false">Hover over me</w-box>
-        <w-attention popover bottom :target-el="popoverTarget ? popoverTarget.$el : null" v-model="popoverShowing">
-          <p>Hello Warp!</p>
-        </w-attention>
+      <div class="space-y-16">
+        <div>
+          <h2>Tooltip</h2>
+          <w-box neutral class="h4" ref="tooltipTarget" @mouseenter="tooltipShowing = true;" @mouseleave="tooltipShowing = false">Hover over me</w-box>
+          <w-attention tooltip bottom :target-el="tooltipTarget ? tooltipTarget.$el : null" v-model="tooltipShowing">
+            Hello Warp!
+          </w-attention>
+        </div>
+        <div>
+          <h2>Callout</h2>
+          <div class="flex items-center">
+            <w-box neutral class="h4" ref="calloutTarget" @mouseenter="calloutShowing = true;" @mouseleave="calloutShowing = false">Don't hover over me</w-box>
+            <w-attention callout right :target-el="calloutTarget ? calloutTarget.$el : null" v-model="calloutShowing" class="ml-8">
+              Hello Warp! This thing is new!
+            </w-attention>
+          </div>
+        </div>
+        <div>
+          <h2>Popover</h2>
+          <w-box neutral class="h4" ref="popoverTarget" @mouseenter="popoverShowing = true;" @mouseleave="popoverShowing = false">Hover over me</w-box>
+          <w-attention popover bottom :target-el="popoverTarget ? popoverTarget.$el : null" v-model="popoverShowing">
+            Hello Warp!
+          </w-attention>
+        </div>
       </div>
     </token>
   </div>
