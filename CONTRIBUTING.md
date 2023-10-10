@@ -44,15 +44,6 @@ Install dependencies by running:
 pnpm install
 ```
 
-### Shiki
-
-Run following to prepare for visualizing the examples and corresponding code:
-
-```sh
-pnpm run cp && pnpm run cp:shikifix
-```
-
-
 ### Start dev server
 
 Start a Vite server (from the `dev` folder) on port 3003:
