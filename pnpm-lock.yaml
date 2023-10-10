@@ -18,8 +18,8 @@ dependencies:
     specifier: ^1.1.0
     version: 1.1.0
   '@warp-ds/icons':
-    specifier: 1.1.0-alpha.3
-    version: 1.1.0-alpha.3
+    specifier: 1.1.0-next.10
+    version: 1.1.0-next.10
   '@warp-ds/uno':
     specifier: ^1.1.0
     version: 1.1.0
@@ -2129,8 +2129,8 @@ packages:
     resolution: {integrity: sha512-kLNZzK3o0rMJApm7/YT3K7rYoFKgH5PyJMTVwv34O4Dx6ikfN7appc4f2DFYkE2XY6gifpD5F2r1ftcJtdW4+w==}
     dev: false
 
-  /@warp-ds/icons@1.1.0-alpha.3:
-    resolution: {integrity: sha512-ItdMSPYvUNuB+hXEq+ODI4xM9FlG7ebiE6vuTIDVM3fmRmOoCqoY+DIHdwroYUS+nyUKYZ0hLrMT9SiwbIJ+cw==}
+  /@warp-ds/icons@1.1.0-next.10:
+    resolution: {integrity: sha512-lMhn6tKtOUr+0u/vUaH3L/Dl1nJGjGLnpzWuVD6k/K26brlLJXcOcs0b5e6zg+Ekg/lfrI7dtVh0b7g+jgBIgQ==}
     dependencies:
       '@lingui/core': 4.5.0
     dev: false
@@ -2139,7 +2139,7 @@ packages:
     resolution: {integrity: sha512-pEtBvP6my14f1kOmYSoDNhofGK/L2yNqnZkEotvY6boVs3jcIncHpgo9Nt4AHOiAvzDrPP0t8b36jwqGaWzNPg==}
     dependencies:
       glob: 9.3.5
-      yaml: 2.3.1
+      yaml: 2.3.2
     dev: false
 
   /@warp-ds/uno@1.1.0:
@@ -4632,7 +4632,7 @@ packages:
       async-array-reduce: 0.2.1
       extend-shallow: 2.0.1
       fs-exists-sync: 0.1.0
-      glob: 7.2.0
+      glob: 7.2.3
       has-glob: 0.1.1
       is-valid-glob: 0.3.0
       lazy-cache: 2.0.2
@@ -4818,8 +4818,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /minipass@7.0.2:
-    resolution: {integrity: sha512-eL79dXrE1q9dBbDCLg7xfn/vl7MS4F1gvJAgjJrQli/jbQWdUttuVawphqpffoIYfRdq78LHx6GP4bU/EQ2ATA==}
+  /minipass@7.0.4:
+    resolution: {integrity: sha512-jYofLM5Dam9279rdkWzqHozUo4ybjdZmCsDHePy5V/PbBcVMiSZR97gmAy45aqi8CK1lG2ECd356FU86avfwUQ==}
     engines: {node: '>=16 || 14 >=14.17'}
     dev: false
 
@@ -5310,7 +5310,7 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       lru-cache: 10.0.1
-      minipass: 7.0.2
+      minipass: 7.0.4
     dev: false
 
   /path-type@4.0.0:
@@ -6776,8 +6776,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /yaml@2.3.1:
-    resolution: {integrity: sha512-2eHWfjaoXgTBC2jNM1LRef62VQa0umtvRiDSk6HSzW7RvS5YtkabJrwYLLEKWBc8a5U2PTSCs+dJjUTJdlHsWQ==}
+  /yaml@2.3.2:
+    resolution: {integrity: sha512-N/lyzTPaJasoDmfV7YTrYCI0G/3ivm/9wdG0aHuheKowWQwGTsK0Eoiw6utmzAnI6pkJa0DUVygvp3spqqEKXg==}
     engines: {node: '>= 14'}
     dev: false
 
