@@ -20,9 +20,6 @@ const props = defineProps({
   attentionEl: {
     default: () => ref(null),
   },
-  ariaLabel: { type: String, default: undefined },
-  ariaRole: { type: String, default: undefined },
-  ariaDescribedby: { type: String, default: undefined },
 });
 
 const emit = defineEmits(["update:modelValue"]);
