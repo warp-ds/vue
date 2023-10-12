@@ -19,17 +19,21 @@ const popoverShowing = ref(false);
     <token>
       <div class="space-y-16">
         <div>
-          <h2 aria-describedby="tooltip-example">Tooltip</h2>
+          <h2>Tooltip</h2>
           <w-box
             neutral
             class="h4"
             ref="tooltipTarget"
+            aria-describedby="tooltip-example"
             @mouseenter="tooltipShowing = true"
             @mouseleave="tooltipShowing = false"
+            @focus="tooltipShowing = true"
+            @blur="tooltipShowing = false"
+            tabindex="0"
             >Hover over me</w-box
           >
           <w-attention
-            role="img"
+            role="tooltip"
             aria-label="Black speech bubble pointing up"
             tabindex="0"
             aria-describedby="tooltip-example"
@@ -37,6 +41,8 @@ const popoverShowing = ref(false);
             bottom
             :target-el="tooltipTarget ? tooltipTarget.$el : null"
             v-model="tooltipShowing"
+            @focus="tooltipShowing = true"
+            @blur="tooltipShowing = false"
           >
             Hello Warp!
           </w-attention>
