@@ -1,6 +1,6 @@
 <script setup>
   import { computed } from 'vue'
-  import { props as attentionProps, opposites, rotation } from './attentionUtil.js'
+  import { props as attentionProps, opposites, rotation, arrowLabels } from './attentionUtil.js'
   import { attention as ccAttention } from '@warp-ds/css/component-classes'
   
   const props = defineProps({
@@ -32,7 +32,7 @@
 </script>
 
 <template>
-  <div :class="arrowClasses" :style="arrowStyle" />
+  <div :aria-label="arrowLabels[opposites[props.direction]]" :class="arrowClasses" :style="arrowStyle" />
 </template>
 
 <script>
