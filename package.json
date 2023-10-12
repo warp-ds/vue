@@ -1,7 +1,7 @@
 {
   "name": "@warp-ds/vue",
   "repository": "git@github.com:warp-ds/vue.git",
-  "version": "1.1.0-next.1",
+  "version": "1.1.0",
   "description": "Warp components for Vue 3",
   "type": "module",
   "exports": {
@@ -58,7 +58,7 @@
     "drnm": "^0.9.0",
     "esbuild": "^0.19.2",
     "fuse.js": "^6.6.2",
-    "happy-dom": "^9.20.3",
+    "happy-dom": "^12.0.0",
     "semantic-release": "^21.1.1",
     "shikiji": "^0.6.8",
     "unocss": "^0.56.0",
