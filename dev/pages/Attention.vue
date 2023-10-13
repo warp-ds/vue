@@ -34,12 +34,9 @@ const popoverShowing = ref(false);
             >Hover over me</w-box
           >
           <w-attention
-            role="tooltip"
-            aria-label="Black speech bubble pointing up"
-            tabindex="0"
-            aria-describedby="tooltip-example"
             tooltip
             bottom
+            aria-describedby="tooltip-example"
             :target-el="tooltipTarget ? tooltipTarget.$el : null"
             v-model="tooltipShowing"
             @focus="tooltipShowing = true"
@@ -65,12 +62,9 @@ const popoverShowing = ref(false);
               >I am a box full of info! <br> Hover over me for more info.</w-box
             >
             <w-attention
-              role="img"
-              aria-label="Green speech bubble pointing left"
-              tabindex="0"
-              aria-describedby="callout-example"
               callout
               right
+              aria-describedby="callout-example"
               :target-el="calloutTarget ? calloutTarget.$el : null"
               v-model="calloutShowing"
               @focus="calloutShowing = true"
@@ -97,12 +91,9 @@ const popoverShowing = ref(false);
             >Hover over me</w-box
           >
           <w-attention
-            role="img"
-            aria-label="White speech bubble pointing up"
-            tabindex="0"
-            aria-describedby="popover-example"
             popover
             bottom
+            aria-describedby="popover-example"
             :target-el="popoverTarget ? popoverTarget.$el : null"
             v-model="popoverShowing"
             @focus="popoverShowing = true"
