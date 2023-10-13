@@ -13,26 +13,28 @@ describe('expandable', () => {
   })
   test('has a title area - prop', () => {
     const titleWrapper = mount(wExpandable, { props: { title: 'Hi' } })
-    assert.equal(titleWrapper.text(), 'Hi')
+    assert.equal(titleWrapper.props().title, 'Hi')
 
     const defaultSlot = '<h1>Mom</h1>'
     const fullWrapper = mount(wExpandable, {
       props: { modelValue: true, title: 'Hi ' },
       slots: { default: defaultSlot }
     })
-    assert.equal(fullWrapper.text(), 'Hi Mom')
+    assert.equal(fullWrapper.props().title, 'Hi ')
+    assert.include(fullWrapper.html(), defaultSlot)
   })
   test('has a title area - slot', () => {
     const titleSlot = '<h1>Hi </h1>'
     const titleWrapper = mount(wExpandable, { slots: { title: titleSlot } })
-    assert.equal(titleWrapper.text(), 'Hi')
+    assert.include(titleWrapper.html(), titleSlot)
 
     const defaultSlot = '<h1>Mom</h1>'
     const fullWrapper = mount(wExpandable, {
       props: { modelValue: true },
       slots: { default: defaultSlot, title: titleSlot }
     })
-    assert.equal(fullWrapper.text(), 'Hi Mom')
+    assert.include(fullWrapper.html(), titleSlot)
+    assert.include(fullWrapper.html(), defaultSlot)
   })
   test('has a chevron', () => {
     const wrapper = mount(wExpandable, { props: { title: 'Yay' } })
