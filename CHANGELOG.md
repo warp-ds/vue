@@ -1,3 +1,10 @@
+## [1.1.1-next.1](https://github.com/warp-ds/vue/compare/v1.1.0...v1.1.1-next.1) (2023-10-13)
+
+
+### Bug Fixes
+
+* replace inline svgs with warp icons ([#78](https://github.com/warp-ds/vue/issues/78)) ([b94cbc1](https://github.com/warp-ds/vue/commit/b94cbc1d1133a0d7d30c1834d4cab0be04828da7))
+
 # [1.1.0](https://github.com/warp-ds/vue/compare/v1.0.1...v1.1.0) (2023-10-09)
 
 

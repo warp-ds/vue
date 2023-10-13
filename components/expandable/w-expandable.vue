@@ -1,32 +1,10 @@
-<template>
-  <component :is="as" :class="wrapperClasses">
-    <button v-if="hasTitle" type="button" :aria-expanded="expanded" :class="buttonClasses" @click="expanded = !expanded">
-      <slot name="title" :expanded="expanded" />
-      <span :class="ccExpandable.expandableTitle" v-if="title">{{ title }}</span>
-      <div :class="chevronClasses" v-if="chevron">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.5 5.5L8 11l5.5-5.5"/></svg>
-      </div>
-    </button>
-    <component :is="contentComponent" @expand="emit('expand')" @collapse="emit('collapse')">
-      <div v-if="expanded">
-        <div :class="contentClasses">
-          <slot />
-        </div>
-      </div>
-    </component>
-  </component>
-</template>
-
-<script>
-export default { name: 'wExpandable' }
-</script>
-
 <script setup>
 import { ref, computed, watch, nextTick, useSlots } from 'vue'
 import { modelProps, createModel } from 'create-v-model'
 import { absentProp } from '#util'
 import { wExpandTransition as expandTransition } from '#generics'
 import { expandable as ccExpandable, box as ccBox } from '@warp-ds/css/component-classes'
+import { IconChevronDown16 } from "@warp-ds/icons/vue";
 
 const props = defineProps({
   title: String,
@@ -78,4 +56,27 @@ const contentClasses = computed(() => ({
   [ccBox.box]: props.box || props.info,
   [ccExpandable.paddingTop]: hasTitle.value && (props.box || props.info),
 }))
+</script>
+
+<template>
+  <component :is="as" :class="wrapperClasses">
+    <button v-if="hasTitle" type="button" :aria-expanded="expanded" :class="buttonClasses" @click="expanded = !expanded">
+      <slot name="title" :expanded="expanded" />
+      <span :class="ccExpandable.expandableTitle" v-if="title">{{ title }}</span>
+      <div :class="chevronClasses" v-if="chevron">
+        <icon-chevron-down-16 />
+      </div>
+    </button>
+    <component :is="contentComponent" @expand="emit('expand')" @collapse="emit('collapse')">
+      <div v-if="expanded">
+        <div :class="contentClasses">
+          <slot />
+        </div>
+      </div>
+    </component>
+  </component>
+</template>
+
+<script>
+export default { name: 'wExpandable' }
 </script>

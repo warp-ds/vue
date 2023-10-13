@@ -9,6 +9,7 @@ import { i18n } from '@lingui/core';
 import { messages as enMessages} from './locales/en/messages.mjs';
 import { messages as nbMessages} from './locales/nb/messages.mjs';
 import { messages as fiMessages} from './locales/fi/messages.mjs';
+import { IconClose16, IconTableSortDown16 } from "@warp-ds/icons/vue";
 
 activateI18n(enMessages, nbMessages, fiMessages);
 
@@ -100,6 +101,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
   onBeforeUnmount(handleShow)
 
 </script>
+
 <template>
   <transition 
     name="fade"
@@ -125,7 +127,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
               >
               <button v-if="left" :aria-label="ariaBack" @click="$emit('left')" :class="titleLeftClasses" key="left" v-bind="left">
                 <slot name="left">
-                  <svg aria-hidden="true" :class="[ccModal.titleButtonIcon, ccModal.titleButtonIconRotated]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="nonzero" d="M8 2.25a.75.75 0 01.743.648L8.75 3v8.189l3.72-3.72a.75.75 0 011.133.977l-.073.084-5 5a.747.747 0 01-.374.204l-.104.014h-.104a.747.747 0 01-.478-.218l-5-5a.75.75 0 01.976-1.133l.084.073 3.72 3.719V3A.75.75 0 018 2.25z"></path></svg>
+                    <icon-table-sort-down-16 :class="[ccModal.titleButtonIcon, ccModal.titleButtonIconRotated]" />
                 </slot>
               </button>
               <div :class="titleCenterClasses" key="title" v-bind="titleAttrs">
@@ -134,7 +136,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
               </div>
               <button v-if="right" :aria-label="ariaClose" @click="$emit('right')" :class="titleRightClasses" key="right" v-bind="right">
                 <slot name="right">
-                  <svg aria-hidden="true" :class="ccModal.titleButtonIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 12l6 6-6-6-6 6 6-6zm0 0L6 6l6 6 6-6-6 6z"/></svg>
+                  <icon-close-16 :class="ccModal.titleButtonIcon" />
                 </slot>
               </button>
             </transition-group>

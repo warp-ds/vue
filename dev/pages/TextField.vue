@@ -34,9 +34,9 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
-      <w-input placeholder="I am placeholder"  #prefix v-model="inputModel" label="I have a search icon">
+      <w-textfield placeholder="I am placeholder"  #prefix v-model="inputModel" label="I have a search icon">
         <w-affix search />
-      </w-input>
+      </w-textfield>
     </token>
 
     <!-- TODO tabbing through the input and suffix is off for now. We do not have support for adding multiple slots as of now. So both

@@ -15,8 +15,11 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@warp-ds/css':
-    specifier: ^1.1.0
-    version: 1.1.0
+    specifier: ^1.1.1
+    version: 1.1.1
+  '@warp-ds/icons':
+    specifier: 1.1.0-next.12
+    version: 1.1.0-next.12
   '@warp-ds/uno':
     specifier: ^1.1.0
     version: 1.1.0
@@ -1246,6 +1249,15 @@ packages:
       '@lingui/message-utils': 4.3.0
       unraw: 2.0.1
 
+  /@lingui/core@4.5.0:
+    resolution: {integrity: sha512-8zTuIXJo5Qvjato7LWE6Q4RHiO4LjTBVOoRlqfOGYDp8VZ9w9P7Z7IJgxI7UP5Z1wiuEvnMdVF9I1C4acqXGlQ==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@lingui/message-utils': 4.5.0
+      unraw: 3.0.0
+    dev: false
+
   /@lingui/extractor-vue@4.3.0:
     resolution: {integrity: sha512-7akLGuV//Gk6ITJ/4JE+irTpqshePW1xzqN6jTh7fMnjAEMMfA4RGnMqCr6JugfjEvOo64/3hi/D1IsQm4oaAw==}
     engines: {node: '>=16.0.0'}
@@ -1272,6 +1284,13 @@ packages:
     engines: {node: '>=16.0.0'}
     dependencies:
       '@messageformat/parser': 5.1.0
+
+  /@lingui/message-utils@4.5.0:
+    resolution: {integrity: sha512-iRqh2wvNtzJO3NStB77nEXEfeI53aVVjzD7/mBrEm/P0lC7sqPHk0WBQCfzE0N9xm6a+XHmHu3J+x2nnQ2OjcA==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@messageformat/parser': 5.1.0
+    dev: false
 
   /@lukeed/csprng@1.1.0:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
@@ -2098,8 +2117,8 @@ packages:
       '@floating-ui/dom': 0.5.4
     dev: false
 
-  /@warp-ds/css@1.1.0:
-    resolution: {integrity: sha512-ehDN05LnQ2RnhKfpatxQ2e0u++YH2yoXoVqN6NHaexF6j6kS6yosumqOZo0NHpbYGRhXwy0Hor0yntdrT8XNGg==}
+  /@warp-ds/css@1.1.1:
+    resolution: {integrity: sha512-xki6RMW9tO1jknPSkBNsWNlU/ADcGUOj4rlMfTBgOm7phwsI9kHd64zxI/29Xuh3dVE+ah7x9BIB0TxoZonSKA==}
     dependencies:
       '@warp-ds/fonts': 1.1.0
       '@warp-ds/tokenizer': 0.0.2
@@ -2110,11 +2129,17 @@ packages:
     resolution: {integrity: sha512-kLNZzK3o0rMJApm7/YT3K7rYoFKgH5PyJMTVwv34O4Dx6ikfN7appc4f2DFYkE2XY6gifpD5F2r1ftcJtdW4+w==}
     dev: false
 
+  /@warp-ds/icons@1.1.0-next.12:
+    resolution: {integrity: sha512-wj0lStq1j5yqlK3G5AZUS5R9uFZVo01rdk3mwilYVsQRoa/xu10L7eQZJluY6pG5jItPmXal/wswZTrWNnpB0A==}
+    dependencies:
+      '@lingui/core': 4.5.0
+    dev: false
+
   /@warp-ds/tokenizer@0.0.2:
     resolution: {integrity: sha512-pEtBvP6my14f1kOmYSoDNhofGK/L2yNqnZkEotvY6boVs3jcIncHpgo9Nt4AHOiAvzDrPP0t8b36jwqGaWzNPg==}
     dependencies:
       glob: 9.3.5
-      yaml: 2.3.1
+      yaml: 2.3.2
     dev: false
 
   /@warp-ds/uno@1.1.0:
@@ -4607,7 +4632,7 @@ packages:
       async-array-reduce: 0.2.1
       extend-shallow: 2.0.1
       fs-exists-sync: 0.1.0
-      glob: 7.2.0
+      glob: 7.2.3
       has-glob: 0.1.1
       is-valid-glob: 0.3.0
       lazy-cache: 2.0.2
@@ -4793,8 +4818,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /minipass@7.0.2:
-    resolution: {integrity: sha512-eL79dXrE1q9dBbDCLg7xfn/vl7MS4F1gvJAgjJrQli/jbQWdUttuVawphqpffoIYfRdq78LHx6GP4bU/EQ2ATA==}
+  /minipass@7.0.4:
+    resolution: {integrity: sha512-jYofLM5Dam9279rdkWzqHozUo4ybjdZmCsDHePy5V/PbBcVMiSZR97gmAy45aqi8CK1lG2ECd356FU86avfwUQ==}
     engines: {node: '>=16 || 14 >=14.17'}
     dev: false
 
@@ -5285,7 +5310,7 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       lru-cache: 10.0.1
-      minipass: 7.0.2
+      minipass: 7.0.4
     dev: false
 
   /path-type@4.0.0:
@@ -6388,6 +6413,10 @@ packages:
   /unraw@2.0.1:
     resolution: {integrity: sha512-tdOvLfRzHolwYcHS6HIX860MkK9LQ4+oLuNwFYL7bpgTEO64PZrcQxkisgwJYCfF8sKiWLwwu1c83DvMkbefIQ==}
 
+  /unraw@3.0.0:
+    resolution: {integrity: sha512-08/DA66UF65OlpUDIQtbJyrqTR0jTAlJ+jsnkQ4jxR7+K5g5YG1APZKQSMCE1vqqmD+2pv6+IdEjmopFatacvg==}
+    dev: false
+
   /update-browserslist-db@1.0.11(browserslist@4.21.10):
     resolution: {integrity: sha512-dCwEFf0/oT85M1fHBg4F0jtLwJrutGoHSQXCh7u4o2t1drG+c0a9Flnqww6XUKSfQMPpJBRjU8d4RXB09qtvaA==}
     hasBin: true
@@ -6747,8 +6776,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /yaml@2.3.1:
-    resolution: {integrity: sha512-2eHWfjaoXgTBC2jNM1LRef62VQa0umtvRiDSk6HSzW7RvS5YtkabJrwYLLEKWBc8a5U2PTSCs+dJjUTJdlHsWQ==}
+  /yaml@2.3.2:
+    resolution: {integrity: sha512-N/lyzTPaJasoDmfV7YTrYCI0G/3ivm/9wdG0aHuheKowWQwGTsK0Eoiw6utmzAnI6pkJa0DUVygvp3spqqEKXg==}
     engines: {node: '>= 14'}
     dev: false
 
