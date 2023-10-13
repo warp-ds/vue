@@ -20,7 +20,8 @@ const variants = {
   },
   Positive: {
     positive: true,
-    title: `Hooray ${sentence}!`
+    title: `Hooray ${sentence}!`,
+    role: 'status'
   },
   Warning: {
     warning: true,
@@ -28,7 +29,8 @@ const variants = {
   },
   Info: {
     info: true,
-    title: `Just so you know, ${sentence}.`
+    title: `Just so you know, ${sentence}.`,
+    role: 'status'
   }
 }
 const current = reactive({ active: 'Negative' })
@@ -44,6 +46,11 @@ const variantControls = [
   <div>
     <component-title title="Alert" />
 
+    <demo-controls class="flex" x>
+      <demo-control label="Visibility" :controls="showControls" :state="showState" />
+      <demo-control label="Variants" :controls="variantControls" :state="current" />
+    </demo-controls>
+
     <token :state="[showState, current]">
       <w-alert v-model="showState.Show" v-bind="variants[current.active]">
         <p>This is the message text that can be short or a little bit long</p>
@@ -53,10 +60,5 @@ const variantControls = [
         </div>
       </w-alert>
     </token>
-
-    <demo-controls class="flex" x>
-      <demo-control label="Visibility" :controls="showControls" :state="showState" />
-      <demo-control label="Variants" :controls="variantControls" :state="current" />
-    </demo-controls>
   </div>
 </template>
