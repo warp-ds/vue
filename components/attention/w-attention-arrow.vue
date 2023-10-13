@@ -32,7 +32,7 @@
 </script>
 
 <template>
-  <div :aria-label="arrowLabels[opposites[props.direction]]" :class="arrowClasses" :style="arrowStyle" />
+  <div :class="arrowClasses" :style="arrowStyle" />
 </template>
 
 <script>
