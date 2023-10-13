@@ -106,7 +106,6 @@ onMounted(async () => {
   watch(() => [props.top, props.bottom, props.left, props.right], recompute);
   watch(model, recompute, { immediate: props.callout });
 });
-console.log("what is this? ", activeAttentionProp.value);
 </script>
 
 <template>
