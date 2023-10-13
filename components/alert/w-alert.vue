@@ -59,7 +59,7 @@ const iconComponent = computed(() =>
             <component :is="iconComponent" />
           </div>
           <div :class="ccAlert.textWrapper" data-test="content">
-            <p :class="ccAlert.title" v-if="title">{{ title }}</p>
+            <h3 :class="ccAlert.title" v-if="title">{{ title }}</h3>
             <slot />
           </div>
         </div>

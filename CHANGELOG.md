@@ -1,3 +1,10 @@
+## [1.1.1-next.2](https://github.com/warp-ds/vue/compare/v1.1.1-next.1...v1.1.1-next.2) (2023-10-13)
+
+
+### Bug Fixes
+
+* **alert:** use h3 for title in Alert to fix accessibility issues ([#86](https://github.com/warp-ds/vue/issues/86)) ([7ec4647](https://github.com/warp-ds/vue/commit/7ec4647d0827ae07430fbb63aa66245ff681ab57))
+
 ## [1.1.1-next.1](https://github.com/warp-ds/vue/compare/v1.1.0...v1.1.1-next.1) (2023-10-13)
 
 
