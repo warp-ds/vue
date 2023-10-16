@@ -34,7 +34,7 @@
     [ccAttention.popover]: props.popover
   }))
 
-  const model = props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
+  const model = (props.modelValue === absentProp) ? ref(true) : createModel({ props, emit })
   const arrowEl = ref(null)
   const actualDirection = ref(directionName.value)
 
@@ -42,7 +42,7 @@
     if (!model.value) return
     await nextTick()
     if (props.callout) return computeCalloutArrow({ directionName, arrowEl, actualDirection })
-    if (!props.attentionEl.value) return
+    if(!props.attentionEl.value) return
 
     const position = await computePosition(props.targetEl, props.attentionEl.value, {
       placement: directionName.value,
@@ -58,7 +58,7 @@
     Object.assign(props.attentionEl.value.style, {
       left: '0',
       top: '0',
-      transform: `translate3d(${Math.round(position.x)}px, ${Math.round(position.y)}px, 0)`,
+      transform: `translate3d(${Math.round(position.x)}px, ${Math.round(position.y)}px, 0)`
     })
     let { x, y } = position.middlewareData.arrow
     arrowEl.value.$el.style.left = x ? (x + 'px') : null
