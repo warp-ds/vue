@@ -9,9 +9,7 @@ import {
   directions,
   computeCalloutArrow,
 } from "./attentionUtil.js";
-import {
-  opposites,
-} from "@warp-ds/core/attention";
+import { opposites } from "@warp-ds/core/attention";
 import wAttentionArrow from "./w-attention-arrow.vue";
 import { createModel, modelProps } from "create-v-model";
 
@@ -91,13 +89,9 @@ const activeAttentionProp = computed(() => {
   }
 });
 
-const pointingAt = computed(() => {
-    if (!props.noArrow) {
-      return `pointing to the ${opposites[actualDirection.value]}`;
-    } else {
-      return "";
-    }
-  });
+const pointingAt = computed(() =>
+  !props.noArrow ? `pointing to the ${opposites[actualDirection.value]}` : ""
+);
 
 onMounted(async () => {
   watch(() => [props.top, props.bottom, props.left, props.right], recompute);
