@@ -77,17 +77,15 @@ const recompute = async () => {
   arrowEl.value.$el.style.top = y ? y + "px" : null;
 };
 
-const activeAttentionProp = computed(() => {
-  if (props.tooltip) {
-    return "tooltip";
-  } else if (props.callout) {
-    return "callout";
-  } else if (props.popover) {
-    return "popover";
-  } else {
-    return "";
-  }
-});
+const activeAttentionProp = computed(() =>
+  props.tooltip
+    ? "tooltip"
+    : props.callout
+    ? "callout"
+    : props.popover
+    ? "popover"
+    : ""
+);
 
 const pointingAt = computed(() =>
   !props.noArrow ? `pointing to the ${opposites[actualDirection.value]}` : ""
