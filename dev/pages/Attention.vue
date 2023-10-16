@@ -1,7 +1,7 @@
 <script setup>
-import { ref, reactive } from "vue";
-import { radio, useIsActive } from "#dev-util";
-import { wAttention, wBox } from "#components";
+import { ref, reactive } from 'vue';
+import { radio, useIsActive } from '#dev-util';
+import { wAttention, wBox } from '#components';
 
 const tooltipTarget = ref(null);
 const calloutTarget = ref(null);
@@ -59,7 +59,8 @@ const popoverShowing = ref(false);
               @focus="calloutShowing = true"
               @blur="calloutShowing = false"
               tabindex="0"
-              >I am a box full of info! <br> Hover over me for more info.</w-box
+              >I am a box full of info! <br />
+              Hover over me for more info.</w-box
             >
             <w-attention
               callout

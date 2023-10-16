@@ -1,17 +1,17 @@
 <script setup>
-import { watch, computed, ref, onMounted, nextTick } from "vue";
-import { attention as ccAttention } from "@warp-ds/css/component-classes";
-import { computePosition, flip, offset, shift, arrow } from "@floating-ui/dom";
+import { watch, computed, ref, onMounted, nextTick } from 'vue';
+import { attention as ccAttention } from '@warp-ds/css/component-classes';
+import { computePosition, flip, offset, shift, arrow } from '@floating-ui/dom';
 
-import { absentProp } from "#util";
+import { absentProp } from '#util';
 import {
   props as attentionProps,
   directions,
   computeCalloutArrow,
-} from "./attentionUtil.js";
-import { opposites } from "@warp-ds/core/attention";
-import wAttentionArrow from "./w-attention-arrow.vue";
-import { createModel, modelProps } from "create-v-model";
+} from './attentionUtil.js';
+import { opposites } from '@warp-ds/core/attention';
+import wAttentionArrow from './w-attention-arrow.vue';
+import { createModel, modelProps } from 'create-v-model';
 
 const props = defineProps({
   ...attentionProps,
@@ -23,7 +23,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 const directionName = computed(() => directions.find((e) => props[e]));
 
 const attentionClasses = computed(() => ({
@@ -66,29 +66,29 @@ const recompute = async () => {
 
   actualDirection.value = position.placement;
   Object.assign(props.attentionEl.value.style, {
-    left: "0",
-    top: "0",
+    left: '0',
+    top: '0',
     transform: `translate3d(${Math.round(position.x)}px, ${Math.round(
       position.y
     )}px, 0)`,
   });
   let { x, y } = position.middlewareData.arrow;
-  arrowEl.value.$el.style.left = x ? x + "px" : null;
-  arrowEl.value.$el.style.top = y ? y + "px" : null;
+  arrowEl.value.$el.style.left = x ? x + 'px' : null;
+  arrowEl.value.$el.style.top = y ? y + 'px' : null;
 };
 
 const activeAttentionProp = computed(() =>
   props.tooltip
-    ? "tooltip"
+    ? 'tooltip'
     : props.callout
-    ? "callout"
+    ? 'callout'
     : props.popover
-    ? "popover"
-    : ""
+    ? 'popover'
+    : ''
 );
 
 const pointingAt = computed(() =>
-  !props.noArrow ? `pointing to the ${opposites[actualDirection.value]}` : ""
+  !props.noArrow ? `pointing to the ${opposites[actualDirection.value]}` : ''
 );
 
 onMounted(async () => {
@@ -119,5 +119,5 @@ onMounted(async () => {
 </template>
 
 <script>
-export default { name: "wAttention" };
+export default { name: 'wAttention' };
 </script>
