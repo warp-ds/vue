@@ -34,8 +34,7 @@
     [ccAttention.popover]: props.popover
   }))
 
-  const model =
-    props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
+  const model = props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
   const arrowEl = ref(null)
   const actualDirection = ref(directionName.value)
 
@@ -76,9 +75,7 @@
       : ''
   )
 
-  const pointingAt = computed(() =>
-    !props.noArrow ? `pointing to the ${opposites[actualDirection.value]}` : ''
-  )
+  const pointingAt = computed(() => !props.noArrow ? `pointing to the ${opposites[actualDirection.value]}` : '')
 
   onMounted(async () => {
     watch(() => [props.top, props.bottom, props.left, props.right], recompute)
