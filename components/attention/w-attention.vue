@@ -19,7 +19,6 @@
     },
   })
 
-
   const emit = defineEmits(['update:modelValue'])
   const directionName = computed(() => directions.find((e) => props[e]))
 
