@@ -18,9 +18,9 @@
       default: () => ref(null)
     },
   })
-
+  
   const emit = defineEmits(['update:modelValue'])
-  const directionName = computed(() => directions.find((e) => props[e]))
+  const directionName = computed(() => directions.find(e => props[e]))
 
   const attentionClasses = computed(() => ({
     [props.attentionClass]: true,
