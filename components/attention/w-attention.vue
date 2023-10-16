@@ -9,6 +9,9 @@ import {
   directions,
   computeCalloutArrow,
 } from "./attentionUtil.js";
+import {
+  opposites,
+} from "@warp-ds/core/attention";
 import wAttentionArrow from "./w-attention-arrow.vue";
 import { createModel, modelProps } from "create-v-model";
 
@@ -89,18 +92,12 @@ const activeAttentionProp = computed(() => {
 });
 
 const pointingAt = computed(() => {
-  if (actualDirection.value === "bottom") {
-    return "up";
-  } else if (actualDirection.value === "top") {
-    return "down";
-  } else if (actualDirection.value === "right") {
-    return "left";
-  } else if (actualDirection.value === "left") {
-    return "right";
-  } else {
-    return "";
-  }
-});
+    if (!props.noArrow) {
+      return `pointing to the ${opposites[actualDirection.value]}`;
+    } else {
+      return "";
+    }
+  });
 
 onMounted(async () => {
   watch(() => [props.top, props.bottom, props.left, props.right], recompute);
@@ -111,7 +108,7 @@ onMounted(async () => {
 <template>
   <div
     :role="props.tooltip ? 'tooltip' : 'img'"
-    :aria-label="`${activeAttentionProp} speech bubble pointing ${pointingAt}`"
+    :aria-label="`${activeAttentionProp} speech bubble ${pointingAt}`"
     tabindex="0"
     :class="attentionClasses"
     ref="attentionRef"
