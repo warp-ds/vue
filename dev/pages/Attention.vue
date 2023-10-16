@@ -22,7 +22,7 @@ const popoverShowing = ref(false);
           <h2>Tooltip</h2>
           <w-box
             neutral
-            class="h4"
+            as="h4"
             ref="tooltipTarget"
             aria-describedby="tooltip-example"
             @mouseenter="tooltipShowing = true"
@@ -50,7 +50,7 @@ const popoverShowing = ref(false);
           <div class="flex items-center">
             <w-box
               neutral
-              class="h4"
+              as="h4"
               ref="calloutTarget"
               aria-describedby="callout-example"
               @mouseenter="calloutShowing = true"
@@ -79,7 +79,7 @@ const popoverShowing = ref(false);
           <h2>Popover</h2>
           <w-box
             neutral
-            class="h4"
+            as="h4"
             ref="popoverTarget"
             aria-describedby="popover-example"
             @mouseenter="popoverShowing = true"
