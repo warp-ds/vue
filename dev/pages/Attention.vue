@@ -1,15 +1,15 @@
 <script setup>
-import { ref, reactive } from 'vue';
-import { radio, useIsActive } from '#dev-util';
-import { wAttention, wBox } from '#components';
+import { ref, reactive } from 'vue'
+import { radio, useIsActive } from '#dev-util'
+import { wAttention, wBox } from '#components'
 
-const tooltipTarget = ref(null);
-const calloutTarget = ref(null);
-const popoverTarget = ref(null);
+const tooltipTarget = ref(null)
+const calloutTarget = ref(null)
+const popoverTarget = ref(null)
 
-const tooltipShowing = ref(false);
-const calloutShowing = ref(false);
-const popoverShowing = ref(false);
+const tooltipShowing = ref(false)
+const calloutShowing = ref(false)
+const popoverShowing = ref(false)
 </script>
 
 <template>
