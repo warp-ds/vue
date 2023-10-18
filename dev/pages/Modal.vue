@@ -27,7 +27,7 @@ watch(showModal, (showing) => modalShowing.value = showing)
 
     <token>
       <w-modal title="Hello Warp!" :style="demoStyles" :left="showLeft" right @dismiss="showModal = false" v-model="showModal" @right="showModal = false">
-        <div class="space-x-8">
+        <div class="space-x-8 pt-4">
           <w-button utility @click="changeHeight" small class="mb-32">Modify height</w-button>
           <w-button utility @click="showLeft = !showLeft" small class="mb-32">Toggle the back-button</w-button>
         </div>
