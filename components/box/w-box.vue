@@ -1,4 +1,8 @@
 <script setup>
+defineOptions({
+  name: 'wBox',
+});
+
 import { box as ccBox } from '@warp-ds/css/component-classes';
 import { computed } from 'vue';
 
@@ -34,7 +38,3 @@ const boxClasses = computed(() => [
     <slot />
   </component>
 </template>
-
-<script>
-export default { name: 'wBox' };
-</script>
