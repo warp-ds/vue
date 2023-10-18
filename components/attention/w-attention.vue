@@ -73,7 +73,7 @@
   }
 
   // TODO: See if we can move this function to the core repo:
-const translatedDirection = computed(() => {
+const pointingAtDirection = computed(() => {
   switch (opposites[actualDirection.value]) {
     case 'top':
       return i18n._({
@@ -139,7 +139,7 @@ const activeAttentionType = computed(() => {
 
 // TODO: See if we can move this function to the core repo:
 const defaultAriaLabel = computed(() => {
-  return `${activeAttentionType.value} ${!props.noArrow ? translatedDirection.value : ''}`
+  return `${activeAttentionType.value} ${!props.noArrow ? pointingAtDirection.value : ''}`
 })
 
   onMounted(async () => {

@@ -1,13 +1,14 @@
 <script setup>
-import { ref, reactive } from 'vue'
-import { radio, useIsActive } from '#dev-util'
+import { ref } from 'vue'
 import { wAttention, wBox } from '#components'
 
 const tooltipTarget = ref(null)
+const tooltipResetTarget = ref(null)
 const calloutTarget = ref(null)
 const popoverTarget = ref(null)
 
 const tooltipShowing = ref(false)
+const tooltipResetShowing = ref(false)
 const calloutShowing = ref(false)
 const popoverShowing = ref(false)
 </script>
@@ -41,6 +42,35 @@ const popoverShowing = ref(false)
             v-model="tooltipShowing"
             @focus="tooltipShowing = true"
             @blur="tooltipShowing = false"
+          >
+            Hello Warp!
+          </w-attention>
+        </div>
+        <div>
+          <h2>Tooltip with resetted role and aria-label attributes</h2>
+          <w-box
+            neutral
+            as="h4"
+            ref="tooltipResetTarget"
+            aria-describedby="tooltip-reset-example"
+            @mouseenter="tooltipResetShowing = true"
+            @mouseleave="tooltipResetShowing = false"
+            @keydown.escape="tooltipResetShowing = false"
+            @focus="tooltipResetShowing = true"
+            @blur="tooltipResetShowing = false"
+            tabindex="0"
+            >Hover over me</w-box
+            >
+            <w-attention
+            tooltip
+            bottom
+            role=""
+            aria-label=""
+            aria-describedby="tooltip-reset-example"
+            :target-el="tooltipResetTarget ? tooltipResetTarget.$el : null"
+            v-model="tooltipResetShowing"
+            @focus="tooltipResetShowing = true"
+            @blur="tooltipResetShowing = false"
           >
             Hello Warp!
           </w-attention>
