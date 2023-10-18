@@ -27,6 +27,10 @@ const config: LinguiConfig = {
       path: '<rootDir>/components/pill/locales/{locale}/messages',
       include: ['<rootDir>/components/pill/**/*.{js,vue}'],
     },
+    {
+      path: '<rootDir>/components/attention/locales/{locale}/messages',
+      include: ['<rootDir>/components/attention/**/*.{js,vue}'],
+    },
   ],
   sourceLocale: 'en',
   compileNamespace: 'es',

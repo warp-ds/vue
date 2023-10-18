@@ -8,6 +8,13 @@
   import { opposites } from '@warp-ds/core/attention'
   import wAttentionArrow from './w-attention-arrow.vue'
   import { createModel, modelProps } from 'create-v-model'
+  import { i18n } from '@lingui/core';
+  import { activateI18n } from '../util/i18n';
+  import { messages as enMessages} from './locales/en/messages.mjs';
+  import { messages as nbMessages} from './locales/nb/messages.mjs';
+  import { messages as fiMessages} from './locales/fi/messages.mjs';
+  
+  activateI18n(enMessages, nbMessages, fiMessages);
 
   const props = defineProps({
     ...attentionProps,
@@ -65,17 +72,75 @@
     arrowEl.value.$el.style.top = y ? (y + 'px') : null
   }
 
-  const activeAttentionProp = computed(() =>
-    props.tooltip
-      ? 'tooltip'
-      : props.callout
-      ? 'callout'
-      : props.popover
-      ? 'popover'
-      : ''
-  )
+  // TODO: See if we can move this function to the core repo:
+const translatedDirection = computed(() => {
+  switch (opposites[actualDirection.value]) {
+    case 'top':
+      return i18n._({
+					id: 'attention.direction.top',
+					message: 'pointing up',
+					comment:
+						'Default screenreader message for top direction in the attention component',
+				})
+    case 'right':
+      return  i18n._({
+					id: 'attention.direction.right',
+					message: 'pointing right',
+					comment:
+						'Default screenreader message for right direction in the attention component',
+				})
+    case 'bottom':
+      return i18n._({
+					id: 'attention.direction.bottom',
+					message: 'pointing down',
+					comment:
+						'Default screenreader message for bottom direction in the attention component',
+				})
+    case 'left':
+      return i18n._({
+					id: 'attention.direction.left',
+					message: 'pointing left',
+					comment:
+						'Default screenreader message for left direction in the attention component',
+				})
+    default:
+      return ''
+  }
+})
 
-  const pointingAt = computed(() => !props.noArrow ? `pointing to the ${opposites[actualDirection.value]}` : '')
+// TODO: See if we can move this function to the core repo:
+const activeAttentionType = computed(() => {
+  switch (true) {
+    case props.tooltip:
+      return i18n._({
+					id: 'attention.tooltip',
+					message: 'tooltip speech bubble',
+					comment:
+						'Default screenreader message for tooltip speech bubble in the attention component',
+				})
+    case props.callout:
+      return i18n._({
+					id: 'attention.callout',
+					message: 'callout speech bubble',
+					comment:
+						'Default screenreader message for callout speech bubble in the attention component',
+				})
+    case props.popover:
+      return i18n._({
+					id: 'attention.popover',
+					message: 'popover speech bubble',
+					comment:
+						'Default screenreader message for popover speech bubble in the attention component',
+				})
+    default:
+      return ''
+  }
+})
+
+// TODO: See if we can move this function to the core repo:
+const defaultAriaLabel = computed(() => {
+  return `${activeAttentionType.value} ${!props.noArrow ? translatedDirection.value : ''}`
+})
 
   onMounted(async () => {
     watch(() => [props.top, props.bottom, props.left, props.right], recompute)
@@ -86,7 +151,7 @@
 <template>
   <div
     :role="props.tooltip ? 'tooltip' : 'img'"
-    :aria-label="`${activeAttentionProp} speech bubble ${pointingAt}`"
+    :aria-label="`${defaultAriaLabel}`"
     tabindex="0"
     :class="attentionClasses"
     ref="attentionRef"

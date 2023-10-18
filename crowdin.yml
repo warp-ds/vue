@@ -32,4 +32,9 @@ files:
       "dest": "vue/components/pill/messages.po",
       "translation": "/components/pill/locales/%two_letters_code%/messages.po",
     },
+    {
+      "source": "/components/attention/locales/en/messages.po",
+      "dest": "vue/components/attention/messages.po",
+      "translation": "/components/attention/locales/%two_letters_code%/messages.po",
+    },
   ]
