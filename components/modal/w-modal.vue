@@ -131,7 +131,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
                 </slot>
               </button>
               <div :class="titleCenterClasses" key="title" v-bind="titleAttrs">
-                <p id="w-modal-title" :class="ccModal.titleText" v-if="title">{{ title }}</p>
+                <h1 id="w-modal-title" :class="ccModal.titleText" v-if="title">{{ title }}</h1>
                 <slot name="title" />
               </div>
               <button v-if="right" :aria-label="ariaClose" @click="$emit('right')" :class="titleRightClasses" key="right" v-bind="right">
