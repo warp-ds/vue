@@ -1,3 +1,10 @@
+## [1.1.1-next.4](https://github.com/warp-ds/vue/compare/v1.1.1-next.3...v1.1.1-next.4) (2023-10-20)
+
+
+### Bug Fixes
+
+* anchor text alignment & icon translations  ([#90](https://github.com/warp-ds/vue/issues/90)) ([b82c0fe](https://github.com/warp-ds/vue/commit/b82c0fe6bb48ad26018c613bb7d408628da6b8e6))
+
 ## [1.1.1-next.3](https://github.com/warp-ds/vue/compare/v1.1.1-next.2...v1.1.1-next.3) (2023-10-20)
 
 
