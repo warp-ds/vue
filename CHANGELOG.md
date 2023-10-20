@@ -1,3 +1,10 @@
+## [1.1.1-next.3](https://github.com/warp-ds/vue/compare/v1.1.1-next.2...v1.1.1-next.3) (2023-10-20)
+
+
+### Bug Fixes
+
+* modal ay11 fixes ([#88](https://github.com/warp-ds/vue/issues/88)) ([ecd8683](https://github.com/warp-ds/vue/commit/ecd86830caf22259d662fa3e09e2569d27f4f6b3))
+
 ## [1.1.1-next.2](https://github.com/warp-ds/vue/compare/v1.1.1-next.1...v1.1.1-next.2) (2023-10-13)
 
 
