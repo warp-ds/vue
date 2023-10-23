@@ -1,3 +1,12 @@
+## [1.1.1-next.5](https://github.com/warp-ds/vue/compare/v1.1.1-next.4...v1.1.1-next.5) (2023-10-23)
+
+
+### Bug Fixes
+
+* **breadcrumbs:** removed double aria label  ([fce5997](https://github.com/warp-ds/vue/commit/fce5997fb6756fe55188c16f31c84dcb07b77cd0))
+* **breadcrumbs:** removed double aria label and removed aria-hidden from seperators ([9b8f6c6](https://github.com/warp-ds/vue/commit/9b8f6c66a0e4a3c80593ed5759a8ca4b7e1606c5))
+* **wbreadcrumbs.test.js:** fix broken test ([405a4d0](https://github.com/warp-ds/vue/commit/405a4d056ffb41988f0a25b550165a6aff7e92bb))
+
 ## [1.1.1-next.4](https://github.com/warp-ds/vue/compare/v1.1.1-next.3...v1.1.1-next.4) (2023-10-20)
 
 
