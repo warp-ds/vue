@@ -1,3 +1,16 @@
+## [1.1.1](https://github.com/warp-ds/vue/compare/v1.1.0...v1.1.1) (2023-10-23)
+
+
+### Bug Fixes
+
+* **alert:** use h3 for title in Alert to fix accessibility issues ([#86](https://github.com/warp-ds/vue/issues/86)) ([7ec4647](https://github.com/warp-ds/vue/commit/7ec4647d0827ae07430fbb63aa66245ff681ab57))
+* anchor text alignment & icon translations  ([#90](https://github.com/warp-ds/vue/issues/90)) ([b82c0fe](https://github.com/warp-ds/vue/commit/b82c0fe6bb48ad26018c613bb7d408628da6b8e6))
+* **breadcrumbs:** removed double aria label  ([fce5997](https://github.com/warp-ds/vue/commit/fce5997fb6756fe55188c16f31c84dcb07b77cd0))
+* **breadcrumbs:** removed double aria label and removed aria-hidden from seperators ([9b8f6c6](https://github.com/warp-ds/vue/commit/9b8f6c66a0e4a3c80593ed5759a8ca4b7e1606c5))
+* modal ay11 fixes ([#88](https://github.com/warp-ds/vue/issues/88)) ([ecd8683](https://github.com/warp-ds/vue/commit/ecd86830caf22259d662fa3e09e2569d27f4f6b3))
+* replace inline svgs with warp icons ([#78](https://github.com/warp-ds/vue/issues/78)) ([b94cbc1](https://github.com/warp-ds/vue/commit/b94cbc1d1133a0d7d30c1834d4cab0be04828da7))
+* **wbreadcrumbs.test.js:** fix broken test ([405a4d0](https://github.com/warp-ds/vue/commit/405a4d056ffb41988f0a25b550165a6aff7e92bb))
+
 ## [1.1.1-next.5](https://github.com/warp-ds/vue/compare/v1.1.1-next.4...v1.1.1-next.5) (2023-10-23)
 
 
