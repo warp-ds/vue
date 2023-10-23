@@ -25,7 +25,7 @@ const popoverShowing = ref(false)
             neutral
             as="h4"
             ref="tooltipTarget"
-            aria-describedby="tooltip-example"
+            aria-details="tooltip-bubbletext"
             @mouseenter="tooltipShowing = true"
             @mouseleave="tooltipShowing = false"
             @keydown.escape="tooltipShowing = false"
@@ -37,13 +37,14 @@ const popoverShowing = ref(false)
           <w-attention
             tooltip
             bottom
-            aria-describedby="tooltip-example"
             :target-el="tooltipTarget ? tooltipTarget.$el : null"
             v-model="tooltipShowing"
             @focus="tooltipShowing = true"
             @blur="tooltipShowing = false"
           >
-            Hello Warp!
+            <p id="tooltip-bubbletext">
+              Hello Warp!
+            </p>
           </w-attention>
         </div>
         <div>
@@ -52,7 +53,7 @@ const popoverShowing = ref(false)
             neutral
             as="h4"
             ref="tooltipResetTarget"
-            aria-describedby="tooltip-reset-example"
+            aria-details="tooltip-reset-bubbletext"
             @mouseenter="tooltipResetShowing = true"
             @mouseleave="tooltipResetShowing = false"
             @keydown.escape="tooltipResetShowing = false"
@@ -66,13 +67,14 @@ const popoverShowing = ref(false)
             bottom
             role=""
             aria-label=""
-            aria-describedby="tooltip-reset-example"
             :target-el="tooltipResetTarget ? tooltipResetTarget.$el : null"
             v-model="tooltipResetShowing"
             @focus="tooltipResetShowing = true"
             @blur="tooltipResetShowing = false"
           >
-            Hello Warp!
+          <p id="tooltip-reset-bubbletext">
+              Hello Warp!
+            </p>
           </w-attention>
         </div>
         <div>
@@ -82,7 +84,7 @@ const popoverShowing = ref(false)
               neutral
               as="h4"
               ref="calloutTarget"
-              aria-describedby="callout-example"
+              aria-details="callout-bubbletext"
               @mouseenter="calloutShowing = true"
               @mouseleave="calloutShowing = false"
               @keydown.escape="calloutShowing = false"
@@ -95,14 +97,15 @@ const popoverShowing = ref(false)
             <w-attention
               callout
               right
-              aria-describedby="callout-example"
               :target-el="calloutTarget ? calloutTarget.$el : null"
               v-model="calloutShowing"
               @focus="calloutShowing = true"
               @blur="calloutShowing = false"
               class="ml-8"
             >
-              Hello Warp! This thing is new!
+              <p id="callout-bubbletext">
+                Hello Warp! This thing is new!
+              </p>
             </w-attention>
           </div>
         </div>
@@ -112,7 +115,7 @@ const popoverShowing = ref(false)
             neutral
             as="h4"
             ref="popoverTarget"
-            aria-describedby="popover-example"
+            aria-details="popover-bubbletext"
             @mouseenter="popoverShowing = true"
             @mouseleave="popoverShowing = false"
             @keydown.escape="popoverShowing = false"
@@ -124,13 +127,14 @@ const popoverShowing = ref(false)
           <w-attention
             popover
             bottom
-            aria-describedby="popover-example"
             :target-el="popoverTarget ? popoverTarget.$el : null"
             v-model="popoverShowing"
             @focus="popoverShowing = true"
             @blur="popoverShowing = false"
           >
+          <p id="popover-bubbletext">
             Hello Warp!
+          </p>
           </w-attention>
         </div>
       </div>

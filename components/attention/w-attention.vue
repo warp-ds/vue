@@ -163,15 +163,13 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div
-    :role="props.tooltip ? 'tooltip' : 'img'"
-    :aria-label="`${defaultAriaLabel}`"
-    tabindex="0"
-    :class="attentionClasses"
-    ref="attentionRef"
-    v-show="model"
-  >
-    <div :class="wrapperClasses" data-test="wrapper">
+  <div tabindex="0" :class="attentionClasses" ref="attentionRef" v-show="model">
+    <div
+      :role="props.tooltip ? 'tooltip' : 'img'"
+      :aria-label="`${defaultAriaLabel}`"
+      :class="wrapperClasses"
+      data-test="wrapper"
+    >
       <w-attention-arrow
         v-bind="$props"
         v-if="!noArrow"
