@@ -29,14 +29,13 @@ import Search from './Search.vue'
 
 <style>
 .shiki {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   white-space: pre;
   font-size: 14px;
   padding: 16px;
   border-radius: 8px;
-  overflow: scroll;
-  background-color: var(--w-gray-100) !important;
-  border: 1px solid var(--w-gray-200);
+  overflow: auto;
+  background-color: var(--w-s-color-background-subtle) !important;
+  border: 1px solid var(--w-s-color-border);
   position: relative;
 }
 .itsy-token {
@@ -49,8 +48,5 @@ import Search from './Search.vue'
   .controls label {
     font-size: 12px;
   }
-}
-code {
-  color: var(--w-aqua-800);
 }
 </style>
