@@ -19,7 +19,7 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
 
     <token :state="[modifiers, expanded]">
       <w-expandable :box="modifiers.Box" :bleed="modifiers.Bleed" :info="modifiers.Info" :animated="modifiers.Animated" :title="`Click to ${expanded ? 'collapse' : 'expand'}`" v-model="expanded">
-        <h4>Hello Warp!</h4>
+        <h2>Hello Warp!</h2>
       </w-expandable>
     </token>
 
