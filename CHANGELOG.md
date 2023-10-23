@@ -1,3 +1,10 @@
+## [1.1.2-next.1](https://github.com/warp-ds/vue/compare/v1.1.1...v1.1.2-next.1) (2023-10-23)
+
+
+### Bug Fixes
+
+* Add role property to Box component ([#92](https://github.com/warp-ds/vue/issues/92)) ([6e1fa01](https://github.com/warp-ds/vue/commit/6e1fa01423b174f2b0c2fe6acbea4a62d934bba5))
+
 ## [1.1.1](https://github.com/warp-ds/vue/compare/v1.1.0...v1.1.1) (2023-10-23)
 
 
