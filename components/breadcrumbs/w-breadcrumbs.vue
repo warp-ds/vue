@@ -1,6 +1,6 @@
 <template>
-  <nav :aria-label="ariaLabel">
-    <h2 :class="ccBreadcrumbs.a11y">{{ ariaLabel }}</h2>
+  <nav aria-labelledby="breadCrumbLabel">
+    <h2 id="breadCrumbLabel" :class="ccBreadcrumbs.a11y">{{ ariaLabel }}</h2>
     <div :class="ccBreadcrumbs.wrapper">
       <breadcrumbify>
         <slot />
@@ -44,6 +44,6 @@ const Breadcrumbify = (_, context) => {
 </script>
 
 <script>
-  export const wBreadcrumbSeparator = h('span', { ariaHidden: true, class: ccBreadcrumbs.separator }, '/')
+  export const wBreadcrumbSeparator = h('span', { class: ccBreadcrumbs.separator }, '/')
   export default { name: 'wBreadcrumbs' }
 </script>
