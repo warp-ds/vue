@@ -25,14 +25,17 @@ const popoverShowing = ref(false)
             neutral
             as="h4"
             ref="tooltipTarget"
-            aria-details="tooltip-bubbletext"
+            aria-describedby="tooltip-bubbletext"
+            :aria-hidden="!tooltipShowing"
             @mouseenter="tooltipShowing = true"
             @mouseleave="tooltipShowing = false"
             @keydown.escape="tooltipShowing = false"
             @focus="tooltipShowing = true"
             @blur="tooltipShowing = false"
             tabindex="0"
-            >Hover over me</w-box
+            >
+            <button>Hover over me</button>
+            </w-box
           >
           <w-attention
             tooltip
@@ -42,9 +45,7 @@ const popoverShowing = ref(false)
             @focus="tooltipShowing = true"
             @blur="tooltipShowing = false"
           >
-            <p id="tooltip-bubbletext">
-              Hello Warp!
-            </p>
+            <p id="tooltip-bubbletext" role="tooltip">Hello Warp!</p>
           </w-attention>
         </div>
         <div>
@@ -53,14 +54,17 @@ const popoverShowing = ref(false)
             neutral
             as="h4"
             ref="tooltipResetTarget"
-            aria-details="tooltip-reset-bubbletext"
+            aria-describedby="tooltip-reset-bubbletext"
+            :aria-hidden="!tooltipShowing"
             @mouseenter="tooltipResetShowing = true"
             @mouseleave="tooltipResetShowing = false"
             @keydown.escape="tooltipResetShowing = false"
             @focus="tooltipResetShowing = true"
             @blur="tooltipResetShowing = false"
             tabindex="0"
-            >Hover over me</w-box
+            >
+            <button>Hover over me</button>
+            </w-box
           >
           <w-attention
             tooltip
@@ -72,7 +76,7 @@ const popoverShowing = ref(false)
             @focus="tooltipResetShowing = true"
             @blur="tooltipResetShowing = false"
           >
-          <p id="tooltip-reset-bubbletext" role="img">
+            <p id="tooltip-reset-bubbletext" role="tooltip">
               Tooltip with the message Hello Warp! pointing up
             </p>
           </w-attention>
@@ -91,8 +95,10 @@ const popoverShowing = ref(false)
               @focus="calloutShowing = true"
               @blur="calloutShowing = false"
               tabindex="0"
-              >I am a box full of info! <br />
-              Hover over me for more info.</w-box
+              >
+              <button>I am a box full of info! <br />
+              Hover over me for more info.</button>
+              </w-box
             >
             <w-attention
               callout
@@ -103,9 +109,7 @@ const popoverShowing = ref(false)
               @blur="calloutShowing = false"
               class="ml-8"
             >
-              <p id="callout-bubbletext">
-                Hello Warp! This thing is new!
-              </p>
+              <p id="callout-bubbletext" role="img">Hello Warp! This thing is new!</p>
             </w-attention>
           </div>
         </div>
@@ -115,6 +119,8 @@ const popoverShowing = ref(false)
             neutral
             as="h4"
             ref="popoverTarget"
+            :aria-expanded="popoverShowing"
+            aria-controls="pop-over-attention-example"
             aria-details="popover-bubbletext"
             @mouseenter="popoverShowing = true"
             @mouseleave="popoverShowing = false"
@@ -122,7 +128,9 @@ const popoverShowing = ref(false)
             @focus="popoverShowing = true"
             @blur="popoverShowing = false"
             tabindex="0"
-            >Hover over me</w-box
+            >
+            <button>Hover over me</button>
+            </w-box
           >
           <w-attention
             popover
@@ -132,9 +140,7 @@ const popoverShowing = ref(false)
             @focus="popoverShowing = true"
             @blur="popoverShowing = false"
           >
-          <p id="popover-bubbletext">
-            Hello Warp!
-          </p>
+            <p id="popover-bubbletext" role="img">Hello Warp!</p>
           </w-attention>
         </div>
       </div>
