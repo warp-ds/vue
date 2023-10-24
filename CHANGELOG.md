@@ -1,3 +1,10 @@
+## [1.1.2-next.2](https://github.com/warp-ds/vue/compare/v1.1.2-next.1...v1.1.2-next.2) (2023-10-24)
+
+
+### Bug Fixes
+
+* a11y issues attention ([#85](https://github.com/warp-ds/vue/issues/85)) ([37b6165](https://github.com/warp-ds/vue/commit/37b6165ad1e9b7dfc71f75772fdaff2de84b5409))
+
 ## [1.1.2-next.1](https://github.com/warp-ds/vue/compare/v1.1.1...v1.1.2-next.1) (2023-10-23)
 
 
