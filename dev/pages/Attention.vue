@@ -66,7 +66,7 @@ const popoverShowing = ref(false)
             tooltip
             bottom
             role=""
-            aria-label=""
+            ariaLabel=""
             :target-el="tooltipResetTarget ? tooltipResetTarget.$el : null"
             v-model="tooltipResetShowing"
             @focus="tooltipResetShowing = true"

@@ -28,6 +28,8 @@ const props = defineProps({
   attentionEl: {
     default: () => ref(null),
   },
+  role: String,
+  ariaLabel: String,
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -165,8 +167,8 @@ onMounted(async () => {
 <template>
   <div tabindex="0" :class="attentionClasses" ref="attentionRef" v-show="model">
     <div
-      :role="props.tooltip ? 'tooltip' : 'img'"
-      :aria-label="`${defaultAriaLabel}`"
+      :role="props.role === '' ? null : (props.tooltip ? 'tooltip' : 'img')"
+      :aria-label="props.ariaLabel === '' ? null : defaultAriaLabel"
       :class="wrapperClasses"
       data-test="wrapper"
     >
