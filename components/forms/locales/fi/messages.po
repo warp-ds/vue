@@ -13,12 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#. SVG title for search icon
-#. js-lingui-explicit-id
-#: components/forms/w-affix.vue:29
-#~ msgid "forms.affix.searchIconSvgTitle"
-#~ msgstr "Suurennuslasi"
-
 #. Shown after label when marked as optional
 #. js-lingui-explicit-id
 #: components/forms/w-field.vue:78
