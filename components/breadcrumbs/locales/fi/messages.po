@@ -15,6 +15,6 @@ msgstr ""
 
 #. Default screenreader message for the breadcrumb component
 #. js-lingui-explicit-id
-#: components/breadcrumbs/w-breadcrumbs.vue:14
+#: components/breadcrumbs/w-breadcrumbs.vue:13
 msgid "breadcrumbs.ariaLabel"
 msgstr "Olet tässä"
