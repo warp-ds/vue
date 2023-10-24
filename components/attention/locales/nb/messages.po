@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2023-10-19 13:41+0200\n"
+"POT-Creation-Date: 2023-10-24 09:42+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -9,42 +9,42 @@ msgstr ""
 
 #. Default screenreader message for callout speech bubble in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:122
+#: components/attention/w-attention.vue:134
 msgid "attention.callout"
 msgstr ""
 
 #. Default screenreader message for bottom direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:93
+#: components/attention/w-attention.vue:105
 msgid "attention.pointingDown"
 msgstr ""
 
 #. Default screenreader message for left direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:100
+#: components/attention/w-attention.vue:112
 msgid "attention.pointingLeft"
 msgstr ""
 
 #. Default screenreader message for right direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:86
+#: components/attention/w-attention.vue:98
 msgid "attention.pointingRight"
 msgstr ""
 
 #. Default screenreader message for top direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:79
+#: components/attention/w-attention.vue:91
 msgid "attention.pointingUp"
 msgstr ""
 
 #. Default screenreader message for popover speech bubble in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:129
+#: components/attention/w-attention.vue:141
 msgid "attention.popover"
 msgstr ""
 
-#. Default screenreader message for tooltip speech bubble in the attention component
+#. Default screenreader message for tooltip in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:115
+#: components/attention/w-attention.vue:127
 msgid "attention.tooltip"
 msgstr ""
