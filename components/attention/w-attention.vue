@@ -167,8 +167,10 @@ onMounted(async () => {
 <template>
   <div tabindex="0" :class="attentionClasses" ref="attentionRef" v-show="model">
     <div
-      :role="props.role === '' ? null : (props.tooltip ? 'tooltip' : 'img')"
-      :aria-label="props.ariaLabel === '' ? null : defaultAriaLabel"
+      :role="props.role === '' ? null : props.tooltip ? 'tooltip' : 'img'"
+      :aria-label="
+        props.ariaLabel === '' ? null : props.ariaLabel ?? defaultAriaLabel
+      "
       :class="wrapperClasses"
       data-test="wrapper"
     >

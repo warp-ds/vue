@@ -72,8 +72,8 @@ const popoverShowing = ref(false)
             @focus="tooltipResetShowing = true"
             @blur="tooltipResetShowing = false"
           >
-          <p id="tooltip-reset-bubbletext">
-              Hello Warp!
+          <p id="tooltip-reset-bubbletext" role="img">
+              Tooltip with the message Hello Warp! pointing up
             </p>
           </w-attention>
         </div>
