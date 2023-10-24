@@ -34,7 +34,7 @@ const popoverShowing = ref(false)
             @blur="tooltipShowing = false"
             tabindex="0"
             >
-            <button>Hover over me</button>
+            <button class="bg-transparent">Hover over me</button>
             </w-box
           >
           <w-attention
@@ -63,7 +63,7 @@ const popoverShowing = ref(false)
             @blur="tooltipResetShowing = false"
             tabindex="0"
             >
-            <button>Hover over me</button>
+            <button class="bg-transparent">Hover over me</button>
             </w-box
           >
           <w-attention
@@ -96,7 +96,7 @@ const popoverShowing = ref(false)
               @blur="calloutShowing = false"
               tabindex="0"
               >
-              <button>I am a box full of info! <br />
+              <button class="bg-transparent">I am a box full of info! <br />
               Hover over me for more info.</button>
               </w-box
             >
@@ -129,7 +129,7 @@ const popoverShowing = ref(false)
             @blur="popoverShowing = false"
             tabindex="0"
             >
-            <button>Hover over me</button>
+            <button class="bg-transparent">Hover over me</button>
             </w-box
           >
           <w-attention
