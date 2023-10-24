@@ -1,4 +1,8 @@
 <script setup>
+defineOptions({
+  name: 'wBox',
+});
+
 import { box as ccBox } from '@warp-ds/css/component-classes';
 import { computed } from 'vue';
 
@@ -12,7 +16,8 @@ const props = defineProps({
   //       ...and then treat neutral as the default when type is not set?
   info: Boolean,
   neutral: Boolean,
-  bordered: Boolean
+  bordered: Boolean,
+  role: String,
 });
 
 const boxClasses = computed(() => [
@@ -27,14 +32,12 @@ const boxClasses = computed(() => [
     [ccBox.borderedClickable]: props.clickable && props.bordered
   }
 ]);
+
+const optOutRoleWithDefault = computed(() => props.role === '' ? null : props.role ?? 'region');
 </script>
 
 <template>
-  <component :is="as" :class="boxClasses">
+  <component :is="as" :role="optOutRoleWithDefault" :class="boxClasses">
     <slot />
   </component>
 </template>
-
-<script>
-export default { name: 'wBox' };
-</script>
