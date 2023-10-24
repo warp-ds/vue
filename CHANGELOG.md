@@ -1,3 +1,10 @@
+## [1.1.2-next.3](https://github.com/warp-ds/vue/compare/v1.1.2-next.2...v1.1.2-next.3) (2023-10-24)
+
+
+### Bug Fixes
+
+* crowdin sync build ([#94](https://github.com/warp-ds/vue/issues/94)) ([520203c](https://github.com/warp-ds/vue/commit/520203c974f18559ea8fbc18634c8912fe379585))
+
 ## [1.1.2-next.2](https://github.com/warp-ds/vue/compare/v1.1.2-next.1...v1.1.2-next.2) (2023-10-24)
 
 
