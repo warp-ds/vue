@@ -18,6 +18,16 @@ describe('attention', () => {
     const html = wrapper.get('[data-test="wrapper"]')
     assert.include(html.classes().join(' '), 'i-bg-$color-callout-background')
   })
+  test('highlight', () => {
+    const defaultSlot = '<h5>Hello Warp</h5>'
+    const wrapper = mount(wAttention, {
+      props: { highlight: true, modelValue: true },
+      slots: { default: defaultSlot } })
+    assert.include(wrapper.text(), 'Hello Warp')
+    const html = wrapper.get('[data-test="wrapper"]')
+    assert.include(html.classes().join(' '), 'i-bg-$color-callout-background')
+    assert.include(html.classes().join(' '), 'drop-shadow-m')
+  })
   test('show/hide callout', async () => {
     const model = ref(false)
     const CalloutFixture = {
