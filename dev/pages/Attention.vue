@@ -32,7 +32,7 @@ const popoverShowing = ref(false)
             @blur="tooltipShowing = false"
             tabindex="0"
             >
-            <button aria-describedby="tooltip-bubbletext" :aria-expanded="true" type="button" class="bg-transparent">Hover over me</button>
+            <button aria-describedby="tooltip-bubbletext" aria-expanded="true" type="button" class="bg-transparent">Hover over me</button>
             </w-box
           >
           <w-attention
@@ -59,7 +59,7 @@ const popoverShowing = ref(false)
             @blur="tooltipResetShowing = false"
             tabindex="0"
             >
-            <button aria-describedby="tooltip-reset-bubbletext" :aria-expanded="true" type="button" class="bg-transparent">Hover over me</button>
+            <button aria-describedby="tooltip-reset-bubbletext" aria-expanded="true" type="button" class="bg-transparent">Hover over me</button>
             </w-box
           >
           <w-attention
@@ -91,7 +91,7 @@ const popoverShowing = ref(false)
               @blur="calloutShowing = false"
               tabindex="0"
               >
-              <button aria-describedby="callout-bubbletext" :aria-expanded="true" type="button" class="bg-transparent">I am a box full of info! <br />
+              <button aria-describedby="callout-bubbletext" aria-expanded="true" type="button" class="bg-transparent">I am a box full of info! <br />
               Hover over me for more info.</button>
               </w-box
             >
@@ -123,7 +123,7 @@ const popoverShowing = ref(false)
             @blur="popoverShowing = false"
             tabindex="0"
             >
-            <button aria-describedby="popover-bubbletext" :aria-expanded="true" type="button" class="bg-transparent">Hover over me</button>
+            <button aria-describedby="popover-bubbletext" aria-expanded="true" type="button" class="bg-transparent">Hover over me</button>
             </w-box
           >
           <w-attention
