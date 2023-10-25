@@ -115,7 +115,7 @@ const popoverShowing = ref(false)
             as="h4"
             ref="popoverTarget"
             :aria-expanded="popoverShowing"
-            aria-controls="popover-attention-example"
+            aria-controls="popover-example"
             @mouseenter="popoverShowing = true"
             @mouseleave="popoverShowing = false"
             @keydown.escape="popoverShowing = false"
