@@ -1,6 +1,6 @@
 <script setup>
   import { computed } from 'vue'
-  import { props as attentionProps, opposites, rotation } from './attentionUtil.js'
+  import { props as attentionProps, opposites, rotation, getVariantClasses } from './attentionUtil.js'
   import { attention as ccAttention } from '@warp-ds/css/component-classes'
   
   const props = defineProps({
@@ -19,9 +19,7 @@
   const arrowClasses = computed(() => ({
     [ccAttention.arrowBase]: true,
     [ccAttention[arrowDirectionClassname.value]]: true,  
-    [ccAttention.arrowTooltip]: props.tooltip,
-    [ccAttention.arrowCallout]: props.callout,
-    [ccAttention.arrowPopover]: props.popover
+    [getVariantClasses(props).arrow]: true
 }));
 
   const arrowStyle = computed(() => ({

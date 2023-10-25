@@ -6,11 +6,13 @@ const tooltipTarget = ref(null)
 const tooltipResetTarget = ref(null)
 const calloutTarget = ref(null)
 const popoverTarget = ref(null)
+const highlightTarget = ref(null)
 
 const tooltipShowing = ref(false)
 const tooltipResetShowing = ref(false)
 const calloutShowing = ref(false)
 const popoverShowing = ref(false)
+const highlightShowing = ref(false)
 </script>
 
 <template>
@@ -135,6 +137,13 @@ const popoverShowing = ref(false)
           <p id="popover-bubbletext">
             Hello Warp!
           </p>
+          </w-attention>
+        </div>
+        <div>
+          <h2>Highlight</h2>
+          <w-box neutral class="h4" ref="highlightTarget" @mouseenter="highlightShowing = true;" @mouseleave="highlightShowing = false">Hover over me</w-box>
+          <w-attention highlight bottom :target-el="highlightTarget ? highlightTarget.$el : null" v-model="highlightShowing">
+            Hello Warp!
           </w-attention>
         </div>
       </div>
