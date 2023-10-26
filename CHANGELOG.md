@@ -1,3 +1,31 @@
+## [1.1.2-next.5](https://github.com/warp-ds/vue/compare/v1.1.2-next.4...v1.1.2-next.5) (2023-10-26)
+
+
+### Bug Fixes
+
+* changed css for expandable ([#97](https://github.com/warp-ds/vue/issues/97)) ([533016e](https://github.com/warp-ds/vue/commit/533016eaa38e6758b4599d6a13cc3981f7f7b903))
+
+## [1.1.2-next.4](https://github.com/warp-ds/vue/compare/v1.1.2-next.3...v1.1.2-next.4) (2023-10-26)
+
+
+### Bug Fixes
+
+* a11y fixes for steps ([#95](https://github.com/warp-ds/vue/issues/95)) ([194650a](https://github.com/warp-ds/vue/commit/194650a4dba84f40edbd9017da9c9b9356d34b63))
+
+## [1.1.2-next.3](https://github.com/warp-ds/vue/compare/v1.1.2-next.2...v1.1.2-next.3) (2023-10-24)
+
+
+### Bug Fixes
+
+* crowdin sync build ([#94](https://github.com/warp-ds/vue/issues/94)) ([520203c](https://github.com/warp-ds/vue/commit/520203c974f18559ea8fbc18634c8912fe379585))
+
+## [1.1.2-next.2](https://github.com/warp-ds/vue/compare/v1.1.2-next.1...v1.1.2-next.2) (2023-10-24)
+
+
+### Bug Fixes
+
+* a11y issues attention ([#85](https://github.com/warp-ds/vue/issues/85)) ([37b6165](https://github.com/warp-ds/vue/commit/37b6165ad1e9b7dfc71f75772fdaff2de84b5409))
+
 ## [1.1.2-next.1](https://github.com/warp-ds/vue/compare/v1.1.1...v1.1.2-next.1) (2023-10-23)
 
 

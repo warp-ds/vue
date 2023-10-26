@@ -19,12 +19,6 @@ msgstr ""
 msgid "forms.field.label.optional"
 msgstr "(optional)"
 
-#. SVG title for search icon
-#. js-lingui-explicit-id
-#: components/forms/w-affix.vue:29
-msgid "forms.affix.searchIconSvgTitle"
-msgstr "Magnifying glass"
-
 #. Text visible below input field if validation fails
 #. js-lingui-explicit-id
 #: components/forms/validation.js:7
