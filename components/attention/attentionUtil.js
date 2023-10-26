@@ -18,16 +18,8 @@ const CALLOUT = "callout"
 const HIGHLIGHT = "highlight"
 export const variants = [CALLOUT, POPOVER, TOOLTIP, HIGHLIGHT];
 
-const filterVariantProps = (props) => Object.keys(props)
-  .filter(prop => variants.indexOf(prop) >= 0)
-  .reduce((obj, key) => {
-    obj[key] = props[key];
-    return obj;
-  }, {});
-
 export const getVariantClasses = (props) => {
-  const variantProps = filterVariantProps(props);
-  const activeVariant = variants.find(b => !!variantProps[b]) || '';
+  const activeVariant = variants.find(b => !!props[b]) || '';
 
   return {
     wrapper: ccAttention[activeVariant],
