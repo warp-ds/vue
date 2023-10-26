@@ -17,7 +17,6 @@ const props = defineProps({
   buttonClass: String,
   contentClass: String,
   chevron: { type: Boolean, default: true },
-  showChevronUpIcon: { type: Boolean, default: false },
   as: { type: String, default: 'div' },
   animated: Boolean,
   ...modelProps({ modelDefault: absentProp }),
@@ -30,17 +29,20 @@ const expanded =
 const contentComponent = computed(() =>
   props.animated ? expandTransition : 'div'
 )
-const showChevronUpIcon = ref(props.showChevronUpIcon)
+const showChevronUp = ref(expanded.value)
 // wExpandTransition emits its own events and we just bubble them, but for a normal DOM element we need to create them
 if (!props.animated) {
   watch(expanded, async (isExpanded) => {
     await nextTick()
     emit(isExpanded ? 'expand' : 'collapse')
-    setTimeout(() => {
-      showChevronUpIcon.value = isExpanded
-    }, 200)
   })
 }
+
+watch(expanded, (state) => {
+  setTimeout(() => {
+    showChevronUp.value = state
+  }, 200)
+})
 
 const hasTitle = computed(() => props.title || slots.title)
 
@@ -62,8 +64,16 @@ const chevronClasses = computed(() => ({
     ? ccExpandable.chevronBox
     : ccExpandable.chevronNonBox]: true,
   [ccExpandable.chevronTransform]: true,
-  [ccExpandable.chevronExpand]: expanded.value && !showChevronUpIcon.value,
-  [ccExpandable.chevronCollapse]: !expanded.value && showChevronUpIcon.value,
+}))
+
+const chevronUpClasses = computed(() => ({
+  [ccExpandable.chevronTransform]: true,
+  [ccExpandable.chevronCollapse]: !expanded.value && showChevronUp.value,
+}))
+
+const chevronDownClasses = computed(() => ({
+  [ccExpandable.chevronTransform]: true,
+  [ccExpandable.chevronExpand]: expanded.value && !showChevronUp.value,
 }))
 
 const contentClasses = computed(() => ({
@@ -87,8 +97,8 @@ const contentClasses = computed(() => ({
         title
       }}</span>
       <div :class="chevronClasses" v-if="chevron">
-        <icon-chevron-up-16 v-if="showChevronUpIcon" />
-        <icon-chevron-down-16 v-else />
+        <icon-chevron-up-16 v-if="showChevronUp" :class="chevronUpClasses"/>
+        <icon-chevron-down-16 v-else :class="chevronDownClasses" />
       </div>
     </button>
     <component
