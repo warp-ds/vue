@@ -1,3 +1,10 @@
+## [1.1.2-next.5](https://github.com/warp-ds/vue/compare/v1.1.2-next.4...v1.1.2-next.5) (2023-10-26)
+
+
+### Bug Fixes
+
+* changed css for expandable ([#97](https://github.com/warp-ds/vue/issues/97)) ([533016e](https://github.com/warp-ds/vue/commit/533016eaa38e6758b4599d6a13cc3981f7f7b903))
+
 ## [1.1.2-next.4](https://github.com/warp-ds/vue/compare/v1.1.2-next.3...v1.1.2-next.4) (2023-10-26)
 
 
