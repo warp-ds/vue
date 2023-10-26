@@ -11,16 +11,37 @@ export const opposites = {
   [RIGHT]: LEFT
 }
 export const directions = [TOP, BOTTOM, LEFT, RIGHT]
+
+const TOOLTIP = "tooltip"
+const POPOVER = "popover"
+const CALLOUT = "callout"
+const HIGHLIGHT = "highlight"
+export const variants = [CALLOUT, POPOVER, TOOLTIP, HIGHLIGHT];
+
+const filterVariantProps = (props) => Object.keys(props)
+  .filter(prop => variants.indexOf(prop) >= 0)
+  .reduce((obj, key) => {
+    obj[key] = props[key];
+    return obj;
+  }, {});
+
+export const getVariantClasses = (props) => {
+  const variantProps = filterVariantProps(props);
+  const activeVariant = variants.find(b => !!variantProps[b]) || '';
+
+  return {
+    wrapper: ccAttention[activeVariant],
+    arrow: ccAttention[`arrow${activeVariant.charAt(0).toUpperCase() + activeVariant.slice(1)}`]
+  }
+};
+
 export const rotation = { [LEFT]: -45, [TOP]: 45, [RIGHT]: 135, [BOTTOM]: -135 }
 
 export const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export const props = {
-  tooltip: Boolean,
-  popover: Boolean,
-  callout: Boolean,
-  highlight: Boolean,
   noArrow: Boolean,
+  ...variants.reduce((acc, e) => (acc[e] = Boolean, acc), {}),
   ...directions.reduce((acc, e) => (acc[e] = Boolean, acc), {})
 }
 
@@ -33,28 +54,3 @@ export const computeCalloutArrow = ({ actualDirection, directionName, arrowEl })
   arrowEl.value.$el.style.left = directionIsVertical ? middlePosition : null
   arrowEl.value.$el.style.top = !directionIsVertical ? middlePosition : null
 }
-
-const variantClasses = {
-  callout: {
-    wrapper: ccAttention.callout,
-    arrow: ccAttention.arrowCallout
-  }, 
-  highlight: {
-    wrapper: ccAttention.highlight,
-    arrow: ccAttention.arrowHighlight
-  }, 
-  tooltip: {
-    wrapper: ccAttention.tooltip,
-    arrow: ccAttention.arrowTooltip
-  },
-  popover: {
-    wrapper: ccAttention.popover,
-    arrow: ccAttention.arrowPopover
-  }, 
-}
-
-export const getVariantClasses = (variantProps) => {
-  const variant = Object.keys(variantClasses).find(b => !!variantProps[b]) || '';
-
-  return variantClasses[variant];
-};
