@@ -37,4 +37,9 @@ files:
       "dest": "vue/components/attention/messages.po",
       "translation": "/components/attention/locales/%two_letters_code%/messages.po",
     },
+    {
+      "source": "/components/steps/locales/en/messages.po",
+      "dest": "vue/components/steps/messages.po",
+      "translation": "/components/steps/locales/%two_letters_code%/messages.po",
+    },
   ]
