@@ -48,7 +48,8 @@ const buttonClasses = computed(() => ({
 const chevronClasses = computed(() => ({
   [ccExpandable.chevron]: true,
   [(props.box || props.info) ? ccExpandable.chevronBox : ccExpandable.chevronNonBox]: true,
-  [ccExpandable.chevronExpanded]: expanded.value,
+  [ccExpandable.chevronExpand]: expanded.value,
+  [ccExpandable.chevronTransform]: true,
 }))
 
 const contentClasses = computed(() => ({
