@@ -26,9 +26,9 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div :class="stepsClasses">
+  <ul :class="stepsClasses">
     <slot />
-  </div>
+  </ul>
 </template>
 
 <script>
