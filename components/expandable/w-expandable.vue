@@ -63,7 +63,6 @@ const chevronClasses = computed(() => ({
   [props.box || props.info
     ? ccExpandable.chevronBox
     : ccExpandable.chevronNonBox]: true,
-  [ccExpandable.chevronTransform]: true,
 }))
 
 const chevronUpClasses = computed(() => ({
