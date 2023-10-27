@@ -3,8 +3,11 @@ import { ref, computed, watch, nextTick, useSlots } from 'vue'
 import { modelProps, createModel } from 'create-v-model'
 import { absentProp } from '#util'
 import { wExpandTransition as expandTransition } from '#generics'
-import { expandable as ccExpandable, box as ccBox } from '@warp-ds/css/component-classes'
-import { IconChevronDown16 } from "@warp-ds/icons/vue";
+import {
+  expandable as ccExpandable,
+  box as ccBox,
+} from '@warp-ds/css/component-classes'
+import { IconChevronDown16, IconChevronUp16 } from '@warp-ds/icons/vue'
 
 const props = defineProps({
   title: String,
@@ -16,13 +19,17 @@ const props = defineProps({
   chevron: { type: Boolean, default: true },
   as: { type: String, default: 'div' },
   animated: Boolean,
-  ...modelProps({ modelDefault: absentProp })
+  ...modelProps({ modelDefault: absentProp }),
 })
 const emit = defineEmits(['expand', 'collapse'])
 const slots = useSlots()
 
-const expanded = (props.modelValue === absentProp) ? ref(false) : createModel({ props, emit })
-const contentComponent = computed(() => props.animated ? expandTransition : 'div')
+const expanded =
+  props.modelValue === absentProp ? ref(false) : createModel({ props, emit })
+const contentComponent = computed(() =>
+  props.animated ? expandTransition : 'div'
+)
+const showChevronUp = ref(expanded.value)
 // wExpandTransition emits its own events and we just bubble them, but for a normal DOM element we need to create them
 if (!props.animated) {
   watch(expanded, async (isExpanded) => {
@@ -31,12 +38,19 @@ if (!props.animated) {
   })
 }
 
+// We need a slight delay for the animation since it has a transition-duration of 150ms:
+watch(expanded, (state) => {
+  setTimeout(() => {
+    showChevronUp.value = state
+  }, 200)
+})
+
 const hasTitle = computed(() => props.title || slots.title)
 
 const wrapperClasses = computed(() => ({
   [ccExpandable.expandable]: true,
   [ccExpandable.expandableBox]: props.box || props.info,
-  [ccExpandable.expandableBleed]: props.bleed
+  [ccExpandable.expandableBleed]: props.bleed,
 }))
 
 const buttonClasses = computed(() => ({
@@ -47,9 +61,19 @@ const buttonClasses = computed(() => ({
 
 const chevronClasses = computed(() => ({
   [ccExpandable.chevron]: true,
-  [(props.box || props.info) ? ccExpandable.chevronBox : ccExpandable.chevronNonBox]: true,
-  [ccExpandable.chevronExpand]: expanded.value,
+  [props.box || props.info
+    ? ccExpandable.chevronBox
+    : ccExpandable.chevronNonBox]: true,
+}))
+
+const chevronUpClasses = computed(() => ({
   [ccExpandable.chevronTransform]: true,
+  [ccExpandable.chevronCollapse]: !expanded.value && showChevronUp.value,
+}))
+
+const chevronDownClasses = computed(() => ({
+  [ccExpandable.chevronTransform]: true,
+  [ccExpandable.chevronExpand]: expanded.value && !showChevronUp.value,
 }))
 
 const contentClasses = computed(() => ({
@@ -61,14 +85,27 @@ const contentClasses = computed(() => ({
 
 <template>
   <component :is="as" :class="wrapperClasses">
-    <button v-if="hasTitle" type="button" :aria-expanded="expanded" :class="buttonClasses" @click="expanded = !expanded">
+    <button
+      v-if="hasTitle"
+      type="button"
+      :aria-expanded="expanded"
+      :class="buttonClasses"
+      @click="expanded = !expanded"
+    >
       <slot name="title" :expanded="expanded" />
-      <span :class="ccExpandable.expandableTitle" v-if="title">{{ title }}</span>
+      <span :class="ccExpandable.expandableTitle" v-if="title">{{
+        title
+      }}</span>
       <div :class="chevronClasses" v-if="chevron">
-        <icon-chevron-down-16 />
+        <icon-chevron-up-16 v-if="showChevronUp" :class="chevronUpClasses"/>
+        <icon-chevron-down-16 v-else :class="chevronDownClasses" />
       </div>
     </button>
-    <component :is="contentComponent" @expand="emit('expand')" @collapse="emit('collapse')">
+    <component
+      :is="contentComponent"
+      @expand="emit('expand')"
+      @collapse="emit('collapse')"
+    >
       <div v-if="expanded">
         <div :class="contentClasses">
           <slot />
