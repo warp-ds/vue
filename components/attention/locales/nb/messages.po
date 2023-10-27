@@ -15,48 +15,54 @@ msgstr ""
 
 #. Default screenreader message for callout speech bubble in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:135
+#: components/attention/w-attention.vue:138
 msgid "attention.aria.callout"
 msgstr ""
 
+#. Aria label for the close button in attention
+#. js-lingui-explicit-id
+#: components/attention/w-attention.vue:89
+msgid "attention.aria.close"
+msgstr "Lukk"
+
 #. Default screenreader message for highlighted speech bubble in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:149
+#: components/attention/w-attention.vue:152
 msgid "attention.aria.highlight"
 msgstr ""
 
 #. Default screenreader message for bottom direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:106
+#: components/attention/w-attention.vue:109
 msgid "attention.aria.pointingDown"
 msgstr ""
 
 #. Default screenreader message for left direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:113
+#: components/attention/w-attention.vue:116
 msgid "attention.aria.pointingLeft"
 msgstr ""
 
 #. Default screenreader message for right direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:99
+#: components/attention/w-attention.vue:102
 msgid "attention.aria.pointingRight"
 msgstr ""
 
 #. Default screenreader message for top direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:92
+#: components/attention/w-attention.vue:95
 msgid "attention.aria.pointingUp"
 msgstr ""
 
 #. Default screenreader message for popover speech bubble in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:142
+#: components/attention/w-attention.vue:145
 msgid "attention.aria.popover"
 msgstr ""
 
 #. Default screenreader message for tooltip in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:128
+#: components/attention/w-attention.vue:131
 msgid "attention.aria.tooltip"
 msgstr ""

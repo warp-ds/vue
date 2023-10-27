@@ -192,7 +192,7 @@ onMounted(async () => {
       <div :class="ccAttention.content">
         <slot />
       </div>
-      <button v-if="close" :aria-label="ariaClose" @click="$emit('dismiss')" @keydown.esc="$emit('dismiss')" :class="ccAttention.closeBtn">
+      <button v-if="canClose" :aria-label="ariaClose" @click="$emit('dismiss')" @keydown.esc="$emit('dismiss')" :class="ccAttention.closeBtn">
         <icon-close-16 />
       </button>
     </div>
