@@ -1,18 +1,22 @@
 <script setup>
 import { ref } from 'vue'
-import { wAttention, wBox } from '#components'
+import { wAttention, wBox, wButton } from '#components'
 
 const tooltipTarget = ref(null)
 const tooltipResetTarget = ref(null)
 const calloutTarget = ref(null)
 const popoverTarget = ref(null)
+const dismissiblePopoverTarget = ref(null)
 const highlightTarget = ref(null)
+const dismissibleHighlightTarget = ref(null)
 
 const tooltipShowing = ref(false)
 const tooltipResetShowing = ref(false)
 const calloutShowing = ref(true)
 const popoverShowing = ref(false)
+const dismissiblePopoverShowing = ref(false)
 const highlightShowing = ref(false)
+const dismissibleHighlightShowing = ref(false)
 </script>
 
 <template>
@@ -136,34 +140,66 @@ const highlightShowing = ref(false)
           </w-attention>
         </div>
         <div>
-          <h2>Highlight</h2>
-          <w-box
-            neutral
-            class="h4"
-            :ref="highlightTarget ? highlightTarget.$el : null"
-            @mouseenter="highlightShowing = true"
-            @mouseleave="highlightShowing = false"
-            @keydown.escape="highlightShowing = false"
-            @focus="highlightShowing = true"
-            @blur="highlightShowing = false"
-            tabindex="0"
-          >
-            <button
-              aria-describedby="highlight-bubbletext"
-              aria-expanded="true"
-              type="button"
-              class="bg-transparent"
-            >
-              Hover over me
-            </button>
-          </w-box>
+          <h2>Dismissible Popover</h2>
+          <w-button
+            :aria-expanded="dismissiblePopoverShowing"
+            aria-controls="dismissiblePopoverAttentionExample"
+            aria-details="dismissiblePopoverContent"
+            ref="dismissiblePopoverTarget"
+            @click="dismissiblePopoverShowing = !dismissiblePopoverShowing"
+          >Click me</w-button>
           <w-attention
+            id="dismissiblePopoverAttentionExample"
+            popover
+            bottom
+            canClose
+            @dismiss="dismissiblePopoverShowing = false"
+            :target-el="dismissiblePopoverTarget ? dismissiblePopoverTarget.$el : null"
+            v-model="dismissiblePopoverShowing"
+          >
+            <p id="dismissiblePopoverContent">I'm a dismissible popover</p>
+          </w-attention>
+        </div>
+        <div>
+          <h2>Highlight</h2>
+          <w-button
+            :aria-expanded="highlightShowing"
+            aria-controls="highlightAttentionExample"
+            aria-details="highlightedContent"
+            ref="highlightTarget"
+            @click="highlightShowing = !highlightShowing"
+          >Click me</w-button>
+          <w-attention
+            id="highlightAttentionExample"
             highlight
             bottom
             :target-el="highlightTarget ? highlightTarget.$el : null"
             v-model="highlightShowing"
           >
-            <p id="highlight-bubbletext">Hello Warp!</p>
+            <p id="highlightedContent">
+              Hello Warp!
+            </p>
+          </w-attention>
+        </div>
+        <div>
+          <h2>Dismissible Highlight</h2>
+          <w-button
+            :aria-expanded="dismissibleHighlightShowing"
+            aria-controls="dismissibleHighlightAttentionExample"
+            aria-details="dismissibleHighlightedContent"
+            ref="dismissibleHighlightTarget"
+            @click="dismissibleHighlightShowing = !dismissibleHighlightShowing"
+          >Click me</w-button>
+          <w-attention
+            id="dismissibleHighlightAttentionExample"
+            highlight
+            bottom
+            canClose
+            @dismiss="dismissibleHighlightShowing = false"
+            :target-el="dismissibleHighlightTarget ? dismissibleHighlightTarget.$el : null"
+            v-model="dismissibleHighlightShowing"
+          >
+          <p id="dismissibleHighlightedContent">I'm a dismissible highlight</p>
           </w-attention>
         </div>
       </div>
