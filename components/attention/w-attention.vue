@@ -2,6 +2,7 @@
 import { watch, computed, ref, onMounted, nextTick } from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import { computePosition, flip, offset, shift, arrow } from '@floating-ui/dom'
+import { IconClose16 } from "@warp-ds/icons/vue";
 
 import { absentProp } from '#util'
 import {
@@ -33,7 +34,7 @@ const props = defineProps({
   ariaLabel: String,
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'dismiss'])
 const directionName = computed(() => directions.find((e) => props[e]))
 
 const attentionClasses = computed(() => ({
@@ -84,6 +85,8 @@ const recompute = async () => {
   arrowEl.value.$el.style.left = x ? x + 'px' : null
   arrowEl.value.$el.style.top = y ? y + 'px' : null
 }
+
+const ariaClose = i18n._({ id: 'attention.aria.close', message: 'Close', comment: 'Aria label for the close button in attention' });
 
 // TODO: See if we can move this function to the core repo:
 const pointingAtDirection = computed(() => {
@@ -171,7 +174,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div tabindex="0" :class="attentionClasses" ref="attentionRef" v-show="model">
+  <div :class="attentionClasses" ref="attentionRef" v-show="model">
     <div
       :role="props.role === '' ? undefined : props.tooltip ? 'tooltip' : 'img'"
       :aria-label="
@@ -186,7 +189,12 @@ onMounted(async () => {
         ref="arrowEl"
         :direction="actualDirection"
       />
-      <div :class="ccAttention.content"><slot /></div>
+      <div :class="ccAttention.content">
+        <slot />
+      </div>
+      <button v-if="close" :aria-label="ariaClose" @click="$emit('dismiss')" @keydown.esc="$emit('dismiss')" :class="ccAttention.closeBtn">
+        <icon-close-16 />
+      </button>
     </div>
   </div>
 </template>
