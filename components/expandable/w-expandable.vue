@@ -38,6 +38,7 @@ if (!props.animated) {
   })
 }
 
+// We need a slight delay for the animation since it has a transition-duration of 150ms:
 watch(expanded, (state) => {
   setTimeout(() => {
     showChevronUp.value = state
