@@ -4,7 +4,6 @@ import { wAttention, wBox } from '#components'
 
 const tooltipTarget = ref(null)
 const tooltipResetTarget = ref(null)
-const calloutTarget = ref(null)
 const popoverTarget = ref(null)
 const highlightTarget = ref(null)
 
