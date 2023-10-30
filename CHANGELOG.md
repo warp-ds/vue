@@ -1,3 +1,24 @@
+# [1.2.0-next.1](https://github.com/warp-ds/vue/compare/v1.1.2-next.6...v1.2.0-next.1) (2023-10-30)
+
+
+### Features
+
+* **attention:** add highlight variant ([#96](https://github.com/warp-ds/vue/issues/96)) ([b4d1a73](https://github.com/warp-ds/vue/commit/b4d1a73a7d4ac648537714c9a73280b3c8a6d086))
+
+## [1.1.2-next.6](https://github.com/warp-ds/vue/compare/v1.1.2-next.5...v1.1.2-next.6) (2023-10-27)
+
+
+### Bug Fixes
+
+* a11y for expandable ([#98](https://github.com/warp-ds/vue/issues/98)) ([61769b5](https://github.com/warp-ds/vue/commit/61769b528e8f0cc3f50a39b7943584e155779fd5))
+
+## [1.1.2-next.5](https://github.com/warp-ds/vue/compare/v1.1.2-next.4...v1.1.2-next.5) (2023-10-26)
+
+
+### Bug Fixes
+
+* changed css for expandable ([#97](https://github.com/warp-ds/vue/issues/97)) ([533016e](https://github.com/warp-ds/vue/commit/533016eaa38e6758b4599d6a13cc3981f7f7b903))
+
 ## [1.1.2-next.4](https://github.com/warp-ds/vue/compare/v1.1.2-next.3...v1.1.2-next.4) (2023-10-26)
 
 

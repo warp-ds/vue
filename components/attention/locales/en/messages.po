@@ -15,42 +15,48 @@ msgstr ""
 
 #. Default screenreader message for callout speech bubble in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:136
-msgid "attention.aria.callout"
+#: components/attention/w-attention.vue:135
+msgid "attention.callout"
 msgstr "callout speech bubble"
+
+#. Default screenreader message for highlighted speech bubble in the attention component
+#. js-lingui-explicit-id
+#: components/attention/w-attention.vue:149
+msgid "attention.aria.highlight"
+msgstr "highlighted speech bubble"
 
 #. Default screenreader message for bottom direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:107
-msgid "attention.aria.pointingDown"
+#: components/attention/w-attention.vue:106
+msgid "attention.pointingDown"
 msgstr "pointing down"
 
 #. Default screenreader message for left direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:114
-msgid "attention.aria.pointingLeft"
+#: components/attention/w-attention.vue:113
+msgid "attention.pointingLeft"
 msgstr "pointing left"
 
 #. Default screenreader message for right direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:100
-msgid "attention.aria.pointingRight"
+#: components/attention/w-attention.vue:99
+msgid "attention.pointingRight"
 msgstr "pointing right"
 
 #. Default screenreader message for top direction in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:93
-msgid "attention.aria.pointingUp"
+#: components/attention/w-attention.vue:92
+msgid "attention.pointingUp"
 msgstr "pointing up"
 
 #. Default screenreader message for popover speech bubble in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:143
-msgid "attention.aria.popover"
+#: components/attention/w-attention.vue:142
+msgid "attention.popover"
 msgstr "popover speech bubble"
 
 #. Default screenreader message for tooltip in the attention component
 #. js-lingui-explicit-id
-#: components/attention/w-attention.vue:129
-msgid "attention.aria.tooltip"
+#: components/attention/w-attention.vue:128
+msgid "attention.tooltip"
 msgstr "tooltip"
