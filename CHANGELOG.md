@@ -1,3 +1,10 @@
+# [1.2.0-next.1](https://github.com/warp-ds/vue/compare/v1.1.2-next.6...v1.2.0-next.1) (2023-10-30)
+
+
+### Features
+
+* **attention:** add highlight variant ([#96](https://github.com/warp-ds/vue/issues/96)) ([b4d1a73](https://github.com/warp-ds/vue/commit/b4d1a73a7d4ac648537714c9a73280b3c8a6d086))
+
 ## [1.1.2-next.6](https://github.com/warp-ds/vue/compare/v1.1.2-next.5...v1.1.2-next.6) (2023-10-27)
 
 
