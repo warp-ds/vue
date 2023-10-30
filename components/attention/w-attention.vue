@@ -8,6 +8,7 @@ import {
   props as attentionProps,
   directions,
   computeCalloutArrow,
+  getVariantClasses
 } from './attentionUtil.js'
 import { opposites } from '@warp-ds/core/attention'
 import wAttentionArrow from './w-attention-arrow.vue'
@@ -37,15 +38,13 @@ const directionName = computed(() => directions.find((e) => props[e]))
 
 const attentionClasses = computed(() => ({
   [props.attentionClass]: true,
-  [ccAttention.notCallout]: !props.callout,
+  [ccAttention.notCallout]: !props.callout
 }))
 
-const wrapperClasses = computed(() => ({
-  [ccAttention.base]: true,
-  [ccAttention.tooltip]: props.tooltip,
-  [ccAttention.callout]: props.callout,
-  [ccAttention.popover]: props.popover,
-}))
+const wrapperClasses = computed(() => [
+  ccAttention.base,
+  getVariantClasses(props).wrapper
+])
 
 const model =
   props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
@@ -145,6 +144,13 @@ const activeAttentionType = computed(() => {
         message: 'popover speech bubble',
         comment:
           'Default screenreader message for popover speech bubble in the attention component',
+      })
+    case props.highlight:
+      return i18n._({
+        id: 'attention.aria.highlight',
+        message: 'highlighted speech bubble',
+        comment:
+          'Default screenreader message for highlighted speech bubble in the attention component',
       })
     default:
       return ''
