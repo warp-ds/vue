@@ -97,7 +97,6 @@ const highlightShowing = ref(false)
             <w-box
               neutral
               as="h4"
-              :ref="calloutTarget ? calloutTarget.$el : null"
               aria-details="callout-bubbletext"
               tabindex="0"
             >
@@ -108,7 +107,6 @@ const highlightShowing = ref(false)
               right
               v-model="calloutShowing"
               class="ml-8"
-              :target-el="calloutTarget ? calloutTarget.$el : null"
             >
               <p id="callout-bubbletext">Hello Warp! This thing is new!</p>
             </w-attention>
