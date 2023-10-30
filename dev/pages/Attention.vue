@@ -10,7 +10,7 @@ const highlightTarget = ref(null)
 
 const tooltipShowing = ref(false)
 const tooltipResetShowing = ref(false)
-const calloutShowing = ref(false)
+const calloutShowing = ref(true)
 const popoverShowing = ref(false)
 const highlightShowing = ref(false)
 </script>
@@ -26,17 +26,23 @@ const highlightShowing = ref(false)
           <w-box
             neutral
             as="h4"
-            ref="tooltipTarget"
+            :ref="tooltipTarget ? tooltipTarget.$el : null"
             @mouseenter="tooltipShowing = true"
             @mouseleave="tooltipShowing = false"
             @keydown.escape="tooltipShowing = false"
             @focus="tooltipShowing = true"
             @blur="tooltipShowing = false"
             tabindex="0"
-            >
-            <button aria-describedby="tooltip-bubbletext" aria-expanded="true" type="button" class="bg-transparent">Hover over me</button>
-            </w-box
           >
+            <button
+              aria-describedby="tooltip-bubbletext"
+              aria-expanded="true"
+              type="button"
+              class="bg-transparent"
+            >
+              Hover over me
+            </button>
+          </w-box>
           <w-attention
             tooltip
             bottom
@@ -53,17 +59,23 @@ const highlightShowing = ref(false)
           <w-box
             neutral
             as="h4"
-            ref="tooltipResetTarget"
+            :ref="tooltipResetTarget ? tooltipResetTarget.$el : null"
             @mouseenter="tooltipResetShowing = true"
             @mouseleave="tooltipResetShowing = false"
             @keydown.escape="tooltipResetShowing = false"
             @focus="tooltipResetShowing = true"
             @blur="tooltipResetShowing = false"
             tabindex="0"
-            >
-            <button aria-describedby="tooltip-reset-bubbletext" aria-expanded="true" type="button" class="bg-transparent">Hover over me</button>
-            </w-box
           >
+            <button
+              aria-describedby="tooltip-reset-bubbletext"
+              aria-expanded="true"
+              type="button"
+              class="bg-transparent"
+            >
+              Hover over me
+            </button>
+          </w-box>
           <w-attention
             tooltip
             bottom
@@ -85,26 +97,18 @@ const highlightShowing = ref(false)
             <w-box
               neutral
               as="h4"
-              ref="calloutTarget"
-              @mouseenter="calloutShowing = true"
-              @mouseleave="calloutShowing = false"
-              @keydown.escape="calloutShowing = false"
-              @focus="calloutShowing = true"
-              @blur="calloutShowing = false"
+              :ref="calloutTarget ? calloutTarget.$el : null"
+              aria-details="callout-bubbletext"
               tabindex="0"
-              >
-              <button aria-describedby="callout-bubbletext" aria-expanded="true" type="button" class="bg-transparent">I am a box full of info! <br />
-              Hover over me for more info.</button>
-              </w-box
             >
+              I am a box full of info
+            </w-box>
             <w-attention
               callout
               right
-              :target-el="calloutTarget ? calloutTarget.$el : null"
               v-model="calloutShowing"
-              @focus="calloutShowing = true"
-              @blur="calloutShowing = false"
               class="ml-8"
+              :target-el="calloutTarget ? calloutTarget.$el : null"
             >
               <p id="callout-bubbletext">Hello Warp! This thing is new!</p>
             </w-attention>
@@ -112,38 +116,56 @@ const highlightShowing = ref(false)
         </div>
         <div>
           <h2>Popover</h2>
-          <w-box
-            neutral
-            as="h4"
-            ref="popoverTarget"
+          <button
             :aria-expanded="popoverShowing"
             aria-controls="popover-example"
-            @mouseenter="popoverShowing = true"
-            @mouseleave="popoverShowing = false"
-            @keydown.escape="popoverShowing = false"
-            @focus="popoverShowing = true"
-            @blur="popoverShowing = false"
-            tabindex="0"
-            >
-            <button aria-describedby="popover-bubbletext" aria-expanded="true" type="button" class="bg-transparent">Hover over me</button>
-            </w-box
+            aria-details="popover-bubbletext"
+            type="button"
+            :ref="popoverTarget ? popoverTarget.$el : null"
+            @click="() => (popoverShowing = !popoverShowing)"
+            class="p-4 border rounded bg-transparent"
           >
+            Open popover
+          </button>
           <w-attention
             popover
             bottom
             :target-el="popoverTarget ? popoverTarget.$el : null"
             v-model="popoverShowing"
-            @focus="popoverShowing = true"
-            @blur="popoverShowing = false"
+            id="popover-bubbletext"
           >
-            <p id="popover-bubbletext">Hello Warp!</p>
+            <p>Hello Warp!</p>
           </w-attention>
         </div>
         <div>
           <h2>Highlight</h2>
-          <w-box neutral class="h4" ref="highlightTarget" @mouseenter="highlightShowing = true;" @mouseleave="highlightShowing = false">Hover over me</w-box>
-          <w-attention highlight bottom :target-el="highlightTarget ? highlightTarget.$el : null" v-model="highlightShowing">
-            Hello Warp!
+          <w-box
+            neutral
+            class="h4"
+            :ref="highlightTarget ? highlightTarget.$el : null"
+            @mouseenter="highlightShowing = true"
+            @mouseleave="highlightShowing = false"
+            @keydown.escape="highlightShowing = false"
+            @focus="highlightShowing = true"
+            @blur="highlightShowing = false"
+            tabindex="0"
+          >
+            <button
+              aria-describedby="highlight-bubbletext"
+              aria-expanded="true"
+              type="button"
+              class="bg-transparent"
+            >
+              Hover over me
+            </button>
+          </w-box>
+          <w-attention
+            highlight
+            bottom
+            :target-el="highlightTarget ? highlightTarget.$el : null"
+            v-model="highlightShowing"
+          >
+            <p id="highlight-bubbletext">Hello Warp!</p>
           </w-attention>
         </div>
       </div>
