@@ -119,7 +119,6 @@ const highlightShowing = ref(false)
           <button
             :aria-expanded="popoverShowing"
             aria-controls="popover-example"
-            aria-details="popover-bubbletext"
             type="button"
             :ref="popoverTarget ? popoverTarget.$el : null"
             @click="() => (popoverShowing = !popoverShowing)"
@@ -132,7 +131,6 @@ const highlightShowing = ref(false)
             bottom
             :target-el="popoverTarget ? popoverTarget.$el : null"
             v-model="popoverShowing"
-            id="popover-bubbletext"
           >
             <p>Hello Warp!</p>
           </w-attention>
