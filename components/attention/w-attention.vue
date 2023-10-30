@@ -41,7 +41,10 @@ const attentionClasses = computed(() => ({
   [ccAttention.notCallout]: !props.callout
 }))
 
-const wrapperClasses = computed(() => [ccAttention.base, [getVariantClasses(props).wrapper]])
+const wrapperClasses = computed(() => [
+  ccAttention.base,
+  getVariantClasses(props).wrapper
+])
 
 const model =
   props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
