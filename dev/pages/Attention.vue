@@ -25,7 +25,7 @@ const highlightShowing = ref(false)
           <w-box
             neutral
             as="h4"
-            :ref="tooltipTarget ? tooltipTarget.$el : null"
+            ref="tooltipTarget"
             @mouseenter="tooltipShowing = true"
             @mouseleave="tooltipShowing = false"
             @keydown.escape="tooltipShowing = false"
@@ -58,7 +58,7 @@ const highlightShowing = ref(false)
           <w-box
             neutral
             as="h4"
-            :ref="tooltipResetTarget ? tooltipResetTarget.$el : null"
+            ref="tooltipResetTarget"
             @mouseenter="tooltipResetShowing = true"
             @mouseleave="tooltipResetShowing = false"
             @keydown.escape="tooltipResetShowing = false"
@@ -117,7 +117,7 @@ const highlightShowing = ref(false)
             :aria-expanded="popoverShowing"
             aria-controls="popover-example"
             type="button"
-            :ref="popoverTarget ? popoverTarget.$el : null"
+            ref="popoverTarget"
             @click="() => (popoverShowing = !popoverShowing)"
             class="p-4 border rounded bg-transparent"
           >
@@ -137,7 +137,7 @@ const highlightShowing = ref(false)
           <w-box
             neutral
             class="h4"
-            :ref="highlightTarget ? highlightTarget.$el : null"
+            ref="highlightTarget"
             @mouseenter="highlightShowing = true"
             @mouseleave="highlightShowing = false"
             @keydown.escape="highlightShowing = false"
