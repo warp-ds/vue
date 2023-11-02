@@ -1,3 +1,10 @@
+# [1.2.0-next.4](https://github.com/warp-ds/vue/compare/v1.2.0-next.3...v1.2.0-next.4) (2023-11-02)
+
+
+### Bug Fixes
+
+* remove target from non-interactive elements ([#102](https://github.com/warp-ds/vue/issues/102)) ([6e8267f](https://github.com/warp-ds/vue/commit/6e8267fc73e90052a1638589b89800eb4f471880))
+
 # [1.2.0-next.3](https://github.com/warp-ds/vue/compare/v1.2.0-next.2...v1.2.0-next.3) (2023-11-02)
 
 
