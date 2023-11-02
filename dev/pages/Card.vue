@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { wCard, wDeadToggle, wClickable, wTag } from '#components'
+import { wCard, wDeadToggle, wClickable, wBadge } from '#components'
 
 const selected = ref(false)
 const foo = ref('')
@@ -18,7 +18,7 @@ const radioModel = ref('')
       <div class="space-y-32 md:space-y-0 md:grid grid-cols-3 gap-32">
         <w-card :selected="selected">
           <img class="h-128 w-full object-cover" src="https://source.unsplash.com/random/400x400" />
-          <p class="absolute top-12 left-12 bg-aqua-200 text-aqua-900 p-4 rounded-4 text-12">Ukens bolig</p>
+          <w-badge variant="info" position="top-left">Ukens bolig</w-badge>
           <div class="p-16">
             <p class="text-12 text-gray-300">DNB Eiendom</p>
             <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
@@ -29,7 +29,7 @@ const radioModel = ref('')
         </w-card>
         <w-card :selected="selected">
           <img class="h-128 w-full object-cover" src="https://source.unsplash.com/random/400x402" />
-          <p class="absolute top-12 left-12 bg-aqua-200 text-aqua-900 p-4 rounded-4 text-12">Ukens bolig</p>
+          <w-badge variant="info" position="top-left">Ukens bolig</w-badge>
           <div class="p-16">
             <p class="text-12 text-gray-300">DNB Eiendom</p>
             <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
@@ -40,7 +40,7 @@ const radioModel = ref('')
         </w-card>
         <w-card :selected="selected">
           <img class="h-128 w-full object-cover" src="https://source.unsplash.com/random/400x404" />
-          <p class="absolute top-12 left-12 bg-aqua-200 text-aqua-900 p-4 rounded-4 text-12">Ukens bolig</p>
+          <w-badge variant="info" position="top-left">Ukens bolig</w-badge>
           <div class="p-16">
             <p class="text-12 text-gray-300">DNB Eiendom</p>
             <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
@@ -78,7 +78,7 @@ const radioModel = ref('')
       <div class="w-1/2">
         <w-card :selected="selected">
           <img class="h-144 w-full object-cover" src="https://source.unsplash.com/random/600x600" />
-          <w-tag top-left primary sponsored class="absolute top-0 left-0 text-14">Ukens bolig</w-tag>
+          <w-badge variant="info" position="top-left">Ukens bolig</w-badge>
           <div class="p-16">
             <p class="text-12 text-gray-300">DNB Eiendom</p>
             <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
