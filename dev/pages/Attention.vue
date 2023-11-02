@@ -30,7 +30,7 @@ const dismissibleHighlightShowing = ref(false)
           <w-box
             neutral
             as="h4"
-            :ref="tooltipTarget ? tooltipTarget.$el : null"
+            ref="tooltipTarget"
             @mouseenter="tooltipShowing = true"
             @mouseleave="tooltipShowing = false"
             @keydown.escape="tooltipShowing = false"
@@ -63,7 +63,7 @@ const dismissibleHighlightShowing = ref(false)
           <w-box
             neutral
             as="h4"
-            :ref="tooltipResetTarget ? tooltipResetTarget.$el : null"
+            ref="tooltipResetTarget"
             @mouseenter="tooltipResetShowing = true"
             @mouseleave="tooltipResetShowing = false"
             @keydown.escape="tooltipResetShowing = false"
@@ -101,7 +101,7 @@ const dismissibleHighlightShowing = ref(false)
             <w-box
               neutral
               as="h4"
-              :ref="calloutTarget ? calloutTarget.$el : null"
+              ref="calloutTarget"
               aria-details="callout-bubbletext"
               tabindex="0"
             >
@@ -120,16 +120,15 @@ const dismissibleHighlightShowing = ref(false)
         </div>
         <div>
           <h2>Popover</h2>
-          <button
+          <w-button
             :aria-expanded="popoverShowing"
             aria-controls="popover-example"
             type="button"
-            :ref="popoverTarget ? popoverTarget.$el : null"
+            ref="popoverTarget"
             @click="() => (popoverShowing = !popoverShowing)"
-            class="p-4 border rounded bg-transparent"
           >
             Open popover
-          </button>
+          </w-button>
           <w-attention
             popover
             bottom
