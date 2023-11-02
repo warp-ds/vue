@@ -1,3 +1,10 @@
+# [1.2.0-next.3](https://github.com/warp-ds/vue/compare/v1.2.0-next.2...v1.2.0-next.3) (2023-11-02)
+
+
+### Features
+
+* **attention:** add close button ([#104](https://github.com/warp-ds/vue/issues/104)) ([081bf50](https://github.com/warp-ds/vue/commit/081bf502462c35a19688366e1ab62781375afd18))
+
 # [1.2.0-next.2](https://github.com/warp-ds/vue/compare/v1.2.0-next.1...v1.2.0-next.2) (2023-10-30)
 
 
