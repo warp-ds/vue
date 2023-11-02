@@ -33,6 +33,7 @@ export const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export const props = {
   noArrow: Boolean,
+  canClose: Boolean,
   ...variants.reduce((acc, e) => (acc[e] = Boolean, acc), {}),
   ...directions.reduce((acc, e) => (acc[e] = Boolean, acc), {})
 }
