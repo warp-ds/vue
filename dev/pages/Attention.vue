@@ -4,7 +4,6 @@ import { wAttention, wBox, wButton } from '#components'
 
 const tooltipTarget = ref(null)
 const tooltipResetTarget = ref(null)
-const calloutTarget = ref(null)
 const popoverTarget = ref(null)
 const dismissiblePopoverTarget = ref(null)
 const highlightTarget = ref(null)
@@ -101,7 +100,6 @@ const dismissibleHighlightShowing = ref(false)
             <w-box
               neutral
               as="h4"
-              ref="calloutTarget"
               aria-details="callout-bubbletext"
               tabindex="0"
             >
@@ -112,7 +110,6 @@ const dismissibleHighlightShowing = ref(false)
               right
               v-model="calloutShowing"
               class="ml-8"
-              :target-el="calloutTarget ? calloutTarget.$el : null"
             >
               <p id="callout-bubbletext">Hello Warp! This thing is new!</p>
             </w-attention>
