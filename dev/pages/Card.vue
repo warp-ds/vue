@@ -20,33 +20,33 @@ const radioModel = ref('')
           <img class="h-128 w-full object-cover" src="https://source.unsplash.com/random/400x400" />
           <w-badge variant="info" position="top-left">Ukens bolig</w-badge>
           <div class="p-16">
-            <p class="text-12 text-gray-300">DNB Eiendom</p>
+            <p class="text-12 s-text-subtle">DNB Eiendom</p>
             <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
-            <p class="text-14 text-gray-400 mb-4">Bøgata 25C, 0655 Oslo</p>
+            <p class="text-14 s-text-subtle mb-4">Bøgata 25C, 0655 Oslo</p>
             <p class="font-bold my-8">52 m<span style="font-size: 10px; vertical-align: super;">2</span> Totalpris: 4 869 039 kr</p>
-            <p class="text-14 text-gray-400 mb-0">Eier (Selveier) <span class="text-gray-200">•</span> Leilighet <span class="text-gray-200">•</span> 2 soverom</p>
+            <p class="text-14 s-text-subtle mb-0">Eier (Selveier) <span class="s-text-disabled">•</span> Leilighet <span class="s-text-disabled">•</span> 2 soverom</p>
           </div>
         </w-card>
         <w-card :selected="selected">
           <img class="h-128 w-full object-cover" src="https://source.unsplash.com/random/400x402" />
           <w-badge variant="info" position="top-left">Ukens bolig</w-badge>
           <div class="p-16">
-            <p class="text-12 text-gray-300">DNB Eiendom</p>
+            <p class="text-12 s-text-subtle">DNB Eiendom</p>
             <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
-            <p class="text-14 text-gray-400 mb-4">Bøgata 25C, 0655 Oslo</p>
+            <p class="text-14 s-text-subtle mb-4">Bøgata 25C, 0655 Oslo</p>
             <p class="font-bold my-8">52 m<span style="font-size: 10px; vertical-align: super;">2</span> Totalpris: 4 869 039 kr</p>
-            <p class="text-14 text-gray-400 mb-0">Eier (Selveier) <span class="text-gray-200">•</span> Leilighet <span class="text-gray-200">•</span> 2 soverom</p>
+            <p class="text-14 s-text-subtle mb-0">Eier (Selveier) <span class="s-text-disabled">•</span> Leilighet <span class="s-text-disabled">•</span> 2 soverom</p>
           </div>
         </w-card>
         <w-card :selected="selected">
           <img class="h-128 w-full object-cover" src="https://source.unsplash.com/random/400x404" />
           <w-badge variant="info" position="top-left">Ukens bolig</w-badge>
           <div class="p-16">
-            <p class="text-12 text-gray-300">DNB Eiendom</p>
+            <p class="text-12 s-text-subtle">DNB Eiendom</p>
             <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
-            <p class="text-14 text-gray-400 mb-4">Bøgata 25C, 0655 Oslo</p>
+            <p class="text-14 s-text-subtle mb-4">Bøgata 25C, 0655 Oslo</p>
             <p class="font-bold my-8">52 m<span style="font-size: 10px; vertical-align: super;">2</span> Totalpris: 4 869 039 kr</p>
-            <p class="text-14 text-gray-400 mb-0">Eier (Selveier) <span class="text-gray-200">•</span> Leilighet <span class="text-gray-200">•</span> 2 soverom</p>
+            <p class="text-14 s-text-subtle mb-0">Eier (Selveier) <span class="s-text-disabled">•</span> Leilighet <span class="s-text-disabled">•</span> 2 soverom</p>
           </div>
         
         </w-card>
@@ -80,9 +80,9 @@ const radioModel = ref('')
           <img class="h-144 w-full object-cover" src="https://source.unsplash.com/random/600x600" />
           <w-badge variant="info" position="top-left">Ukens bolig</w-badge>
           <div class="p-16">
-            <p class="text-12 text-gray-300">DNB Eiendom</p>
+            <p class="text-12 s-text-subtle">DNB Eiendom</p>
             <p><w-clickable @click="selected = !selected" class="text-left">Stilfull og gjennomgående 3-roms m/balkong. Oppusset i 2019. Inkl. bl.a. vv/fyring.</w-clickable></p>
-            <p class="text-14 text-gray-400 mb-0">Eier (Selveier) <span class="text-gray-200">•</span> Leilighet <span class="text-gray-200">•</span> 2 soverom</p>
+            <p class="text-14 s-text-subtle mb-0">Eier (Selveier) <span class="s-text-disabled">•</span> Leilighet <span class="s-text-disabled">•</span> 2 soverom</p>
           </div>
         </w-card>
       </div>
