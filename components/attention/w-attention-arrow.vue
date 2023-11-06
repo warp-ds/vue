@@ -1,6 +1,6 @@
 <script setup>
   import { computed } from 'vue'
-  import { props as attentionProps, opposites, rotation } from './attentionUtil.js'
+  import { props as attentionProps, opposites, rotation, getVariantClasses } from './attentionUtil.js'
   import { attention as ccAttention } from '@warp-ds/css/component-classes'
   
   const props = defineProps({
@@ -16,13 +16,11 @@
 
   const arrowDirection = computed(() => opposites[props.direction])
 
-  const arrowClasses = computed(() => ({
-    [ccAttention.arrowBase]: true,
-    [ccAttention[arrowDirectionClassname.value]]: true,  
-    [ccAttention.arrowTooltip]: props.tooltip,
-    [ccAttention.arrowCallout]: props.callout,
-    [ccAttention.arrowPopover]: props.popover
-}));
+  const arrowClasses = computed(() => [
+    ccAttention.arrowBase,
+    ccAttention[arrowDirectionClassname.value],
+    getVariantClasses(props).arrow
+  ]);
 
   const arrowStyle = computed(() => ({
     // border alignment is off by a fraction of a pixel, this fixes it

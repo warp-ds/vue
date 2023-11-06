@@ -1,1 +1,1 @@
-/*eslint-disable*/export const messages=JSON.parse("{\"forms.field.label.optional\":\"(valinnainen)\",\"forms.affix.searchIconSvgTitle\":\"Suurennuslasi\",\"forms.validation.mandatoryField\":\"Pakollinen\"}");
+/*eslint-disable*/export const messages=JSON.parse("{\"forms.field.label.optional\":\"(valinnainen)\",\"forms.validation.mandatoryField\":\"Pakollinen\"}");
