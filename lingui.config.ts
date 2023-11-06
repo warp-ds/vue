@@ -24,10 +24,6 @@ const config: LinguiConfig = {
       include: ['<rootDir>/components/modal/**/*.{js,vue}'],
     },
     {
-      path: '<rootDir>/components/pill/locales/{locale}/messages',
-      include: ['<rootDir>/components/pill/**/*.{js,vue}'],
-    },
-    {
       path: '<rootDir>/components/attention/locales/{locale}/messages',
       include: ['<rootDir>/components/attention/**/*.{js,vue}'],
     },
