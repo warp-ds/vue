@@ -1,3 +1,23 @@
+# [1.2.0](https://github.com/warp-ds/vue/compare/v1.1.1...v1.2.0) (2023-11-06)
+
+
+### Bug Fixes
+
+* a11y fixes for steps ([#95](https://github.com/warp-ds/vue/issues/95)) ([194650a](https://github.com/warp-ds/vue/commit/194650a4dba84f40edbd9017da9c9b9356d34b63))
+* a11y for expandable ([#98](https://github.com/warp-ds/vue/issues/98)) ([61769b5](https://github.com/warp-ds/vue/commit/61769b528e8f0cc3f50a39b7943584e155779fd5))
+* a11y issues attention ([#85](https://github.com/warp-ds/vue/issues/85)) ([37b6165](https://github.com/warp-ds/vue/commit/37b6165ad1e9b7dfc71f75772fdaff2de84b5409))
+* Add role property to Box component ([#92](https://github.com/warp-ds/vue/issues/92)) ([6e1fa01](https://github.com/warp-ds/vue/commit/6e1fa01423b174f2b0c2fe6acbea4a62d934bba5))
+* adjust further attention a11y ([#101](https://github.com/warp-ds/vue/issues/101)) ([0cd3fa2](https://github.com/warp-ds/vue/commit/0cd3fa248f88736c56cb886764839646f36f5d84))
+* changed css for expandable ([#97](https://github.com/warp-ds/vue/issues/97)) ([533016e](https://github.com/warp-ds/vue/commit/533016eaa38e6758b4599d6a13cc3981f7f7b903))
+* crowdin sync build ([#94](https://github.com/warp-ds/vue/issues/94)) ([520203c](https://github.com/warp-ds/vue/commit/520203c974f18559ea8fbc18634c8912fe379585))
+* remove target from non-interactive elements ([#102](https://github.com/warp-ds/vue/issues/102)) ([6e8267f](https://github.com/warp-ds/vue/commit/6e8267fc73e90052a1638589b89800eb4f471880))
+
+
+### Features
+
+* **attention:** add close button ([#104](https://github.com/warp-ds/vue/issues/104)) ([081bf50](https://github.com/warp-ds/vue/commit/081bf502462c35a19688366e1ab62781375afd18))
+* **attention:** add highlight variant ([#96](https://github.com/warp-ds/vue/issues/96)) ([b4d1a73](https://github.com/warp-ds/vue/commit/b4d1a73a7d4ac648537714c9a73280b3c8a6d086))
+
 # [1.2.0-next.4](https://github.com/warp-ds/vue/compare/v1.2.0-next.3...v1.2.0-next.4) (2023-11-02)
 
 
