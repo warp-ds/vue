@@ -25,6 +25,7 @@ const props = defineProps({
   label: String,
   labelledBy: String,
   disabled: Boolean,
+  preventAcceleration: Boolean,
   ...modelProps(),
 });
 
