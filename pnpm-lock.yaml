@@ -8,8 +8,8 @@ dependencies:
     specifier: ^4.3.0
     version: 4.3.0
   '@warp-ds/core':
-    specifier: ^1.0.1
-    version: 1.0.1
+    specifier: ^1.0.2
+    version: 1.0.2
   '@warp-ds/css':
     specifier: ^1.3.0
     version: 1.3.0
@@ -2105,8 +2105,8 @@ packages:
       vue-component-type-helpers: 1.8.4
     dev: true
 
-  /@warp-ds/core@1.0.1:
-    resolution: {integrity: sha512-cge4mlt2kGHlow5kxogvbOp897sx+NdQWbLoMrw5MsO1Ux4+VvP9vwhDRs8LdXRIY0iAxcq6ujRtpV8Mg4tW/Q==}
+  /@warp-ds/core@1.0.2:
+    resolution: {integrity: sha512-1ww8X7xM7PBs3nyfNcUa0W+Ay1ymbOHORSyheeHVelD+6UjLS+iezLA7JH51z74top1imy4AM29kxIrCvNgKbw==}
     dependencies:
       '@floating-ui/dom': 0.5.4
     dev: false
