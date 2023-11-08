@@ -6,6 +6,7 @@ const smallNumber = ref(3);
 const largeNumber = ref(300);
 const extremeNumber = ref(300000);
 const slowNumber = ref(30);
+const disabledNumber = ref(30);
 </script>
 
 <template>
@@ -41,6 +42,14 @@ const slowNumber = ref(30);
       <div class="flex gap-16">
         <w-textfield type="number" min="0" max="1000" step="1" inputmode="numeric" v-model.number="slowNumber" />
         <w-slider v-model="slowNumber" :aria-valuetext="slowNumber" :min="0" :max="1000" :step="1" prevent-acceleration label="Slider without keydown acceleration" />
+      </div>
+    </token>
+
+    <h3>Disabled slider</h3>
+    <token :state="disabledNumber">
+      <div class="flex gap-16">
+        <w-textfield disabled type="number" min="0" max="1000" step="1" inputmode="numeric" v-model.number="disabledNumber" />
+        <w-slider disabled v-model="disabledNumber" :aria-valuetext="disabledNumber" :min="0" :max="1000" :step="1" prevent-acceleration label="Disabled slider" />
       </div>
     </token>
   </div>
