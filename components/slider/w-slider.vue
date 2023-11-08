@@ -113,6 +113,7 @@ const aria = computed(() => ({
   'aria-valuemax': props.max,
   'aria-valuenow': v.value,
   'aria-valuetext': attrs['aria-valuetext'],
+  'aria-disabled': props.disabled,
 }));
 const trackClasses = computed(() => [
   ccSlider.track,
