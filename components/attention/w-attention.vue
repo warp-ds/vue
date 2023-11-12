@@ -2,7 +2,7 @@
 import { watch, computed, ref, onMounted, nextTick } from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import { computePosition, flip, offset, shift, arrow } from '@floating-ui/dom'
-import { IconClose16 } from "@warp-ds/icons/vue";
+import IconClose16 from "@warp-ds/icons/vue/close-16";
 
 import { absentProp } from '#util'
 import {
