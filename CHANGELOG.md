@@ -1,3 +1,10 @@
+## [1.2.1-next.1](https://github.com/warp-ds/vue/compare/v1.2.0...v1.2.1-next.1) (2023-11-13)
+
+
+### Bug Fixes
+
+* use new icons export to drop bundle size ([#110](https://github.com/warp-ds/vue/issues/110)) ([9d95858](https://github.com/warp-ds/vue/commit/9d95858ee60fc691b4493c67f6f6cddd3bd035a5))
+
 # [1.2.0](https://github.com/warp-ds/vue/compare/v1.1.1...v1.2.0) (2023-11-06)
 
 
