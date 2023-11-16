@@ -1,20 +1,17 @@
 <script setup>
-import { ref } from 'vue'
-import { wTextfield, wAffix } from '#components'
+import { ref } from 'vue';
+import { wTextfield, wAffix } from '#components';
 
 const inputModel = ref('');
-
 const placeholderModel = ref('');
+const numericInputModel = ref('');
 
 const handleClear = (el) => {
   inputModel.value = ''
   el.focus()
-}
+};
 
-// const inputModel = ref('')
-const numericInputModel = ref('')
-
-const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScale: 8, delimiter: ' ' }
+const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScale: 8, delimiter: ' ' };
 </script>
 
 <template>
@@ -39,13 +36,10 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
       </w-textfield>
     </token>
 
-    <!-- TODO tabbing through the input and suffix is off for now. We do not have support for adding multiple slots as of now. So both
-    suffix and prefix are treated as one slot in this example, making button(suffix) render before input in DOM and "destroy" the tabbing order.
-    So the support for multiple slots need to be added here -->
     <token :state="inputModel">
-      <w-textfield #prefix #suffix v-model="inputModel" label="I have a prefix" inputmode="numeric">
-        <w-affix prefix label="+47" />
-        <w-affix suffix clear />
+      <w-textfield v-model="inputModel" label="I have a prefix and a suffix" inputmode="numeric" input-wrapper-class="[&]:pl-4!">
+        <template #prefix><w-affix prefix label="+47" /></template>
+        <template #suffix><w-affix suffix clear /></template>
       </w-textfield>
     </token>
 
@@ -74,7 +68,7 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="numericInputModel">
-      <w-textfield placeholder="I am placeholder"  v-model.number="numericInputModel" optional number type="text" inputmode="numeric" :mask="moneyMask" label="A masked (money) input" />
+      <w-textfield placeholder="I am placeholder" v-model.number="numericInputModel" optional number type="text" inputmode="numeric" :mask="moneyMask" label="A masked (money) input" />
     </token>
   </div>
 </template>

@@ -7,7 +7,8 @@ import {
   expandable as ccExpandable,
   box as ccBox,
 } from '@warp-ds/css/component-classes'
-import { IconChevronDown16, IconChevronUp16 } from '@warp-ds/icons/vue'
+import IconChevronDown16 from '@warp-ds/icons/vue/chevron-down-16'
+import IconChevronUp16 from '@warp-ds/icons/vue/chevron-up-16'
 
 const props = defineProps({
   title: String,

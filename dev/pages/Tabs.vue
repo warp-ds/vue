@@ -1,8 +1,7 @@
 <script setup>
 import { wTabs, wTab, wTabPanel } from '#components';
 import { ref, h } from 'vue';
-import { IconProductStarred24 } from "@warp-ds/icons/vue";
-
+import IconProductStarred24 from "@warp-ds/icons/vue/product-starred-24";
 
 const Stars = {
   name: 'stars-svg',

@@ -3,12 +3,10 @@ import { computed } from "vue";
 import { wExpandTransition } from "#generics";
 import { createModel, modelProps } from "create-v-model";
 import { alert as ccAlert } from "@warp-ds/css/component-classes";
-import {
-  IconAlertError16,
-  IconAlertSuccess16,
-  IconAlertWarning16,
-  IconAlertInfo16,
-} from "@warp-ds/icons/vue";
+import IconAlertError16 from "@warp-ds/icons/vue/alert-error-16";
+import IconAlertSuccess16 from "@warp-ds/icons/vue/alert-success-16";
+import IconAlertWarning16 from "@warp-ds/icons/vue/alert-warning-16";
+import IconAlertInfo16 from "@warp-ds/icons/vue/alert-info-16";
 
 const props = defineProps({
   title: String,
