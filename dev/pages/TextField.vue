@@ -37,7 +37,7 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
-      <w-textfield v-model="inputModel" label="I have a prefix and a suffix" inputmode="numeric" input-wrapper-class="[&]:pl-4!">
+      <w-textfield v-model="inputModel" label="I have a prefix and a suffix" inputmode="numeric">
         <template #prefix><w-affix prefix label="+47" /></template>
         <template #suffix><w-affix suffix clear /></template>
       </w-textfield>
