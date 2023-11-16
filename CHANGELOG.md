@@ -1,3 +1,10 @@
+## [1.2.1-next.2](https://github.com/warp-ds/vue/compare/v1.2.1-next.1...v1.2.1-next.2) (2023-11-16)
+
+
+### Bug Fixes
+
+* Misc a11y fixes for Slider ([#108](https://github.com/warp-ds/vue/issues/108)) ([3716178](https://github.com/warp-ds/vue/commit/371617868f24def93d49ffc4a7eb01b48276c134))
+
 ## [1.2.1-next.1](https://github.com/warp-ds/vue/compare/v1.2.0...v1.2.1-next.1) (2023-11-13)
 
 
