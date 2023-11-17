@@ -20,7 +20,7 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
 
     <token :state="inputModel">
       <w-textfield v-model="inputModel" class="mb-16" #suffix="{ inputElement }" label="A required input with a clear button" hint="A hint" required>
-        <w-affix suffix clear @click="handleClear(inputElement)" />
+        <w-affix suffix clear aria-label="Clear text" @click="handleClear(inputElement)" />
       </w-textfield>
     </token>
 
@@ -32,14 +32,14 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
 
     <token :state="inputModel">
       <w-textfield placeholder="I am placeholder"  #prefix v-model="inputModel" label="I have a search icon">
-        <w-affix search />
+        <w-affix search aria-label="Search" />
       </w-textfield>
     </token>
 
     <token :state="inputModel">
       <w-textfield v-model="inputModel" label="I have a prefix and a suffix" inputmode="numeric">
         <template #prefix><w-affix prefix label="+47" /></template>
-        <template #suffix><w-affix suffix clear /></template>
+        <template #suffix><w-affix suffix clear aria-label="Clear text"/></template>
       </w-textfield>
     </token>
 
@@ -57,7 +57,7 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
 
     <token :state="inputModel">
       <w-textfield #suffix v-model="inputModel" label="I have a search suffix">
-        <w-affix suffix search />
+        <w-affix suffix search aria-label="Search"/>
       </w-textfield>
     </token>
 
