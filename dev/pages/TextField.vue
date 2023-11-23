@@ -38,7 +38,7 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
 
     <token :state="inputModel">
       <w-textfield placeholder="I am placeholder"  #prefix v-model="inputModel" label="I have a search icon">
-        <w-affix search aria-label="Search" />
+        <w-affix search prefix aria-label="Search" />
       </w-textfield>
     </token>
 
@@ -68,7 +68,7 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
-      <w-textfield readOnly value="I'm read only" v-model="placeholderModel" label="I am read only">
+      <w-textfield #suffix readOnly value="I'm read only" v-model="placeholderModel" label="I am read only">
         <w-affix suffix label="NOK" />
       </w-textfield>
     </token>
