@@ -31,6 +31,12 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
     </token>
 
     <token :state="inputModel">
+      <w-textfield class="[--w-prefix-width:90px]" placeholder="I am placeholder" type="tel" #prefix v-model="inputModel" label="I have a prefix" inputmode="numeric">
+        <w-affix prefix label="Long prefix" />
+      </w-textfield>
+    </token>
+
+    <token :state="inputModel">
       <w-textfield placeholder="I am placeholder"  #prefix v-model="inputModel" label="I have a search icon">
         <w-affix search aria-label="Search" />
       </w-textfield>

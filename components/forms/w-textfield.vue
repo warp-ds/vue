@@ -77,6 +77,12 @@ const inputClasses = computed(() => ({
   </w-field>
 </template>
 
+<style scoped>
+  div+input, button+input {
+    padding-left:var(--w-prefix-width, 40px);
+  }
+</style>
+
 <script>
 const inputTypeValidator = (value) => ['text', 'search', 'email', 'password', 'url', 'tel', 'number'].includes(value);
 export default { name: 'wTextfield', inheritAttrs: false };
