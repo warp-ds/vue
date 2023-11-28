@@ -1,3 +1,10 @@
+## [1.2.1-next.3](https://github.com/warp-ds/vue/compare/v1.2.1-next.2...v1.2.1-next.3) (2023-11-28)
+
+
+### Bug Fixes
+
+* **textfield:** allow styling input's left padding if prefix is wider than 40px ([#115](https://github.com/warp-ds/vue/issues/115)) ([0799864](https://github.com/warp-ds/vue/commit/0799864895a8909c9aa80b21519a47a429a473db))
+
 ## [1.2.1-next.2](https://github.com/warp-ds/vue/compare/v1.2.1-next.1...v1.2.1-next.2) (2023-11-16)
 
 
