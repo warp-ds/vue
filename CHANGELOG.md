@@ -1,3 +1,10 @@
+## [1.2.1-next.4](https://github.com/warp-ds/vue/compare/v1.2.1-next.3...v1.2.1-next.4) (2023-11-28)
+
+
+### Bug Fixes
+
+* Update warp-ds/css dependency to v1.4.2 ([#116](https://github.com/warp-ds/vue/issues/116)) ([cea8639](https://github.com/warp-ds/vue/commit/cea8639c06b75099212e7d0b6e7f9355ed255aed))
+
 ## [1.2.1-next.3](https://github.com/warp-ds/vue/compare/v1.2.1-next.2...v1.2.1-next.3) (2023-11-28)
 
 
