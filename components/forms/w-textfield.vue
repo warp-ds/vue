@@ -51,6 +51,7 @@ const inputClasses = computed(() => ({
         ]"
         :autocomplete="autocomplete"
         :disabled="disabled"
+        :placeholder="placeholder"
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
         @blur="triggerValidation">
@@ -68,6 +69,7 @@ const inputClasses = computed(() => ({
         ]"
         :autocomplete="autocomplete"
         :disabled="disabled"
+        :placeholder="placeholder"
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
         @blur="triggerValidation"
