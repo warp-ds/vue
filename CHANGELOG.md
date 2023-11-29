@@ -1,3 +1,13 @@
+## [1.2.1](https://github.com/warp-ds/vue/compare/v1.2.0...v1.2.1) (2023-11-29)
+
+
+### Bug Fixes
+
+* Misc a11y fixes for Slider ([#108](https://github.com/warp-ds/vue/issues/108)) ([3716178](https://github.com/warp-ds/vue/commit/371617868f24def93d49ffc4a7eb01b48276c134))
+* **textfield:** allow styling input's left padding if prefix is wider than 40px ([#115](https://github.com/warp-ds/vue/issues/115)) ([0799864](https://github.com/warp-ds/vue/commit/0799864895a8909c9aa80b21519a47a429a473db))
+* Update warp-ds/css dependency to v1.4.2 ([#116](https://github.com/warp-ds/vue/issues/116)) ([cea8639](https://github.com/warp-ds/vue/commit/cea8639c06b75099212e7d0b6e7f9355ed255aed))
+* use new icons export to drop bundle size ([#110](https://github.com/warp-ds/vue/issues/110)) ([9d95858](https://github.com/warp-ds/vue/commit/9d95858ee60fc691b4493c67f6f6cddd3bd035a5))
+
 ## [1.2.1-next.4](https://github.com/warp-ds/vue/compare/v1.2.1-next.3...v1.2.1-next.4) (2023-11-28)
 
 
