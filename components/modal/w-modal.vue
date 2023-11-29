@@ -9,7 +9,8 @@ import { i18n } from '@lingui/core';
 import { messages as enMessages} from './locales/en/messages.mjs';
 import { messages as nbMessages} from './locales/nb/messages.mjs';
 import { messages as fiMessages} from './locales/fi/messages.mjs';
-import { IconClose16, IconTableSortDown16 } from "@warp-ds/icons/vue";
+import IconClose16 from '@warp-ds/icons/vue/close-16';
+import IconTableSortDown16 from '@warp-ds/icons/vue/table-sort-down-16';
 
 activateI18n(enMessages, nbMessages, fiMessages);
 
@@ -103,7 +104,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
 </script>
 
 <template>
-  <transition 
+  <transition
     name="fade"
     leave-active-class="transition-opacity-200 ease-in-out"
     enter-active-class="transition-opacity-200 ease-in-out"
@@ -111,7 +112,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
     leave-to-class="opacity-0"
     >
     <div :class="[ccModal.backdrop, ccModal.transparentBg]" v-if="showModal" @click.self="emitDismiss" ref="backdropEl" data-test="backdrop">
-      <transition 
+      <transition
         name="slide"
         enter-from-class="translate-y-full"
         leave-to-class="translate-y-full sm:translate-y-2/4"
@@ -120,7 +121,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
         >
         <div v-if="showContent" :class="ccModal.modal" tabindex="-1" aria-modal="true" aria-labelledby="w-modal-title" role="dialog" ref="modalEl">
           <div :class="[ccModal.title, headerClasses]">
-            <transition-group 
+            <transition-group
               enter-from-class="opacity-0 backface-hidden"
               leave-to-class="opacity-0 backface-hidden"
               leave-active-class="absolute"

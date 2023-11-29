@@ -1,4 +1,8 @@
 <script setup>
+defineOptions({
+  name: 'wSlider'
+});
+
 import {
   computed,
   ref,
@@ -25,6 +29,7 @@ const props = defineProps({
   label: String,
   labelledBy: String,
   disabled: Boolean,
+  preventAcceleration: Boolean,
   ...modelProps(),
 });
 
@@ -42,8 +47,7 @@ const sliderPressed = ref(false);
 const v = createModel({ props, emit });
 const position = ref(v.value);
 
-// step is a computed so we can check if props.step is set or not
-// and only do getShiftedChange when set
+// step is a computed, so we can check if props.step is set or not and only do getShiftedChange when set
 const step = computed(() => props.step || 1);
 
 const sliderState = {
@@ -109,6 +113,7 @@ const aria = computed(() => ({
   'aria-valuemax': props.max,
   'aria-valuenow': v.value,
   'aria-valuetext': attrs['aria-valuetext'],
+  'aria-disabled': props.disabled,
 }));
 const trackClasses = computed(() => [
   ccSlider.track,
@@ -124,30 +129,28 @@ const activeTrackClasses = computed(() => [
 ]);
 const thumbClasses = computed(() => [
   ccSlider.thumb,
-  {
-    [ccSlider.thumbDisabled]: props.disabled,
-    [ccSlider.thumbEnabled]: !props.disabled,
-  },
+  props.disabled ? ccSlider.thumbDisabled : ccSlider.thumbEnabled,
 ]);
 
 watch(position, () => {
   // prevents shiftedChange when modelValue was set externally
-  if (position.value === props.modelValue) return;
-  const n = props.step ? getShiftedChange(position.value) : position.value;
-  if (v.value === n) return;
-  v.value = n;
+  if (position.value !== props.modelValue) {
+    const n = props.step ? getShiftedChange(position.value) : position.value;
+    if (v.value !== n) v.value = n;
+  }
 });
 
-const clamp = (v, { min, max }) =>
-  Number.isFinite(parseFloat(v)) ? Math.min(Math.max(v, min), max) : min;
+const clamp = (v, { min, max }) => Number.isFinite(parseFloat(v)) ? Math.min(Math.max(v, min), max) : min;
+
 watch(
   () => props.modelValue,
   () => {
     // if the slider gets bad values, it shouldn't break the page by placing the thumb at an insane left/right value
-    if (props.modelValue > props.max || props.modelValue < props.min)
+    if (props.modelValue > props.max || props.modelValue < props.min) {
       position.value = clamp(props.modelValue, props);
-    else if (sliderPressed.value || position.value === props.modelValue) return;
-    else position.value = props.modelValue;
+    } else if (!sliderPressed.value && position.value !== props.modelValue) {
+      position.value = props.modelValue;
+    }
   },
   { immediate: true }
 );
@@ -177,7 +180,3 @@ watch(
     ></div>
   </div>
 </template>
-
-<script>
-export default { name: 'wSlider' };
-</script>

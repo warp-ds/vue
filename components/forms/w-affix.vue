@@ -1,7 +1,8 @@
 <script setup>
 import { suffix, prefix } from "@warp-ds/css/component-classes";
 import { computed } from "vue";
-import { IconClose16, IconSearch16 } from "@warp-ds/icons/vue";
+import IconClose16 from '@warp-ds/icons/vue/close-16'
+import IconSearch16 from "@warp-ds/icons/vue/search-16";
 
 const props = defineProps({
   prefix: Boolean,

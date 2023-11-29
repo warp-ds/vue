@@ -9,8 +9,8 @@
 <script>
 import { onMounted } from 'vue'
 import { suffix as c } from '@warp-ds/css/component-classes'
-import { IconClose16, IconSearch16 } from "@warp-ds/icons/vue";
-
+import IconClose16 from '@warp-ds/icons/vue/close-16'
+import IconSearch16 from "@warp-ds/icons/vue/search-16"
 
 export default {
   name: 'wSuffix',
