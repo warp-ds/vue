@@ -32,6 +32,10 @@ const inputClasses = computed(() => ({
   [ccInput.suffix]: slots.suffix,
   [ccInput.prefix]: slots.prefix,
 }));
+
+const inputWithPrefixStyle = computed(() => (
+  slots.prefix ? 'padding-left: var(--w-prefix-width, 40px);' : undefined
+))
 </script>
 
 <template>
@@ -71,18 +75,13 @@ const inputClasses = computed(() => ({
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
         @blur="triggerValidation"
+        :style="inputWithPrefixStyle"
         >
       <slot name="suffix" :inputElement="inputEl" />
     </div>
   </w-field>
 </template>
 
-<!-- we style input with prefix here because we cannot use arbitrary values with commas in UnoCSS like pl-[var(--w-prefix-width, 40px)] -->
-<style scoped>
-  div+input, button+input {
-    padding-left:var(--w-prefix-width, 40px);
-  }
-</style>
 
 <script>
 const inputTypeValidator = (value) => ['text', 'search', 'email', 'password', 'url', 'tel', 'number'].includes(value);
