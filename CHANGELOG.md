@@ -1,3 +1,10 @@
+## [1.2.2-next.2](https://github.com/warp-ds/vue/compare/v1.2.2-next.1...v1.2.2-next.2) (2023-11-30)
+
+
+### Bug Fixes
+
+* **textfield:** use inline style when updating input's left padding ([#118](https://github.com/warp-ds/vue/issues/118)) ([db4ba9b](https://github.com/warp-ds/vue/commit/db4ba9b5889e4d669938b382c73d08fca1b824b6))
+
 ## [1.2.2-next.1](https://github.com/warp-ds/vue/compare/v1.2.1...v1.2.2-next.1) (2023-11-29)
 
 
