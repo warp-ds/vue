@@ -11,7 +11,7 @@ const props = defineProps({
 const outerClasses = computed(() => ({
   [ccCard.card]: true,
   [ccCard.cardShadow]: !props.flat,
-  [ccCard.cardSelected]: props.selected,
+  [props.selected ? ccCard.cardSelected : ccCard.cardUnselected]: !props.flat,
   [ccCard.cardFlat]: props.flat,
   [props.selected ? ccCard.cardFlatSelected : ccCard.cardFlatUnselected]: props.flat
 }))
