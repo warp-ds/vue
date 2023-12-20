@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/warp-ds/vue/compare/v1.2.2...v1.2.3) (2023-12-20)
+
+
+### Bug Fixes
+
+* **card:** set default background on unselected non-flat card ([#124](https://github.com/warp-ds/vue/issues/124)) ([14d4e19](https://github.com/warp-ds/vue/commit/14d4e19478a8f4892b21b5678c8ff9314abb5cae))
+
 ## [1.2.3-next.1](https://github.com/warp-ds/vue/compare/v1.2.2...v1.2.3-next.1) (2023-12-20)
 
 
