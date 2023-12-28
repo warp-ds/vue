@@ -44,7 +44,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
     if (e.key === 'Escape') emitDismiss()
   }
   const titleLeftClasses = computed(() => ([transitions, titleShouldTransition.value ? 'duration-300' : 'duration-1', ccModal.titleButton, ccModal.titleButtonLeft]));
-  const titleCenterClasses = computed(() => ([transitions, titleShouldTransition.value ? 'duration-300' : 'duration-0', props.left ? ccModal.transitionTitleCenter : ccModal.transitionTitleColSpan]));
+  const titleCenterClasses = computed(() => ([transitions, titleShouldTransition.value ? 'duration-300' : 'duration-0', props.left ? [ccModal.transitionTitleMaxWidth, ccModal.transitionTitleCenter, ccModal.transitionTitleColSpan] : [ccModal.transitionTitleMaxWidth, ccModal.transitionTitleColSpan]]));
   const titleRightClasses = computed(() => ([transitions, titleShouldTransition.value ? 'duration-300' : 'duration-0', ccModal.titleButton, ccModal.titleButtonRight]));
 
   // when the content area reflows the title area transitions because of v-move in the transition-group
