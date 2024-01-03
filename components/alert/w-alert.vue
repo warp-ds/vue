@@ -1,7 +1,6 @@
 <script setup>
 import { computed } from "vue";
 import { wExpandTransition } from "#generics";
-import { createModel, modelProps } from "create-v-model";
 import { alert as ccAlert } from "@warp-ds/css/component-classes";
 import IconAlertError16 from "@warp-ds/icons/vue/alert-error-16";
 import IconAlertSuccess16 from "@warp-ds/icons/vue/alert-success-16";
@@ -18,13 +17,12 @@ const props = defineProps({
   positive: Boolean,
   warning: Boolean,
   info: Boolean,
-  ...modelProps(),
 });
 
 const possibleTypeProps = ["negative", "positive", "warning", "info"];
 
 const emit = defineEmits(["update:modelValue"]);
-const model = createModel({ props, emit });
+const model = defineModel()
 const alertColorType = computed(() => possibleTypeProps.find((e) => props[e]));
 const activeWrapperClassNames = computed(() => ccAlert[alertColorType.value]);
 const activeIconClassNames = computed(

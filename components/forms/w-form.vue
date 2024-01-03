@@ -1,7 +1,6 @@
 <script setup>
   import { watchEffect } from 'vue'
   import { absentProp } from '#util'
-  import { modelProps } from 'create-v-model'
   import { createValidationCollector } from './validation'
 
   const props = defineProps({
@@ -12,11 +11,15 @@
       type: null,
       default: absentProp
     },
-    ...modelProps({ modelDefault: absentProp }),
-    ...modelProps({ modelName: 'completed', modelDefault: absentProp }),
+    modelValue: {
+      default: absentProp
+    },
+    completed: {
+      default: absentProp
+    }
   })
 
-  const emit = defineEmits(['update:modelValue']);
+  const emit = defineEmits(['update:modelValue', 'update:completed']);
   const { allChildrenValid, completed, childrenShouldValidate } = createValidationCollector()
 
   if (props.modelValue !== absentProp) watchEffect(() => emit('update:modelValue', allChildrenValid.value))

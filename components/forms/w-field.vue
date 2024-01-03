@@ -16,7 +16,6 @@ import { computed } from 'vue';
 import { input as ccInput, label as ccLabel, helpText as ccHelpText} from '@warp-ds/css/component-classes';
 import { createValidation } from './validation';
 import { id } from '#util';
-import { modelProps } from 'create-v-model';
 import { i18n } from '@lingui/core';
 import { activateI18n } from '../util/i18n';
 import { messages as enMessages} from './locales/en/messages.mjs';
@@ -40,7 +39,6 @@ export const fieldProps = {
     type: Array,
     default: () => ([])
   },
-  ...modelProps(),
 }
 
 const valueOrUndefined = (test, value) => test ? value : undefined

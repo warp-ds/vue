@@ -1,16 +1,14 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { switchToggle as ccSwitch } from '@warp-ds/css/component-classes'
-import { createModel, modelProps } from 'create-v-model'
 import { id } from '#util'
 
 const p = defineProps({
   id,
   disabled: Boolean,
-  ...modelProps(),
 });
 
-const model = createModel({ props: p });
+const model = defineModel()
 const inputEl = ref(null);
 
 const switchClasses = computed(() => [

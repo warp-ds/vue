@@ -34,7 +34,6 @@
     "@warp-ds/css": "^1.6.1",
     "@warp-ds/icons": "1.3.0",
     "@warp-ds/uno": "^1.1.0",
-    "create-v-model": "^2.2.0",
     "dom-focus-lock": "^1.1.0",
     "element-collapse": "^1.1.0",
     "femtobounce": "^1.0.0",
@@ -51,7 +50,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@vitejs/plugin-vue": "^4.3.3",
-    "@vue/compiler-sfc": "^3.3.4",
+    "@vue/compiler-sfc": "^3.4.3",
     "@vue/test-utils": "^2.4.1",
     "cleave-lite": "^1.0.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -65,8 +64,8 @@
     "vite": "^4.4.9",
     "viteik": "^1.0.3",
     "vitest": "^0.34.3",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "vue": "^3.4.3",
+    "vue-router": "^4.2.5"
   },
   "publishConfig": {
     "access": "public"

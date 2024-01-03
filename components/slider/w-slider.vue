@@ -11,7 +11,6 @@ import {
   onMounted,
   onBeforeUnmount,
 } from 'vue';
-import { modelProps, createModel } from 'create-v-model';
 import { slider as ccSlider } from '@warp-ds/css/component-classes';
 import { useDimensions, createHandlers } from '@warp-ds/core/slider';
 
@@ -30,7 +29,6 @@ const props = defineProps({
   labelledBy: String,
   disabled: Boolean,
   preventAcceleration: Boolean,
-  ...modelProps(),
 });
 
 const emit = defineEmits(['focus', 'blur']);
@@ -44,7 +42,7 @@ onMounted(() => mountedHook(sliderLine.value, updateDimensions));
 onBeforeUnmount(unmountedHook);
 
 const sliderPressed = ref(false);
-const v = createModel({ props, emit });
+const v = defineModel()
 const position = ref(v.value);
 
 // step is a computed, so we can check if props.step is set or not and only do getShiftedChange when set
