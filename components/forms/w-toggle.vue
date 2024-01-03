@@ -23,7 +23,6 @@ import { computed } from 'vue';
 import { toggle as ccToggle } from '@warp-ds/css/component-classes';
 import { default as wField, fieldProps } from './w-field.vue';
 import { wToggleItem } from '#generics';
-import { createModel } from 'create-v-model';
 
 const props = defineProps({
   ...fieldProps,
@@ -40,8 +39,7 @@ const props = defineProps({
     validator: (v) => v.every(hasLabelAndValue)
   }
 });
-const emit = defineEmits(['update:modelValue']);
-const model = createModel({ props, emit });
+const model = defineModel()
 const type = computed(() => (props.radio || props.radioButton) ? 'radio' : 'checkbox');
 const role = computed(() => props.toggles.length > 1 ? ((props.radio || props.radioButton) ? 'radiogroup' : 'group') : undefined);
 const wrapperClasses = computed(() => ({

@@ -4,7 +4,6 @@ import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import { computePosition, flip, offset, shift, arrow } from '@floating-ui/dom'
 import IconClose16 from "@warp-ds/icons/vue/close-16";
 
-import { absentProp } from '#util'
 import {
   props as attentionProps,
   directions,
@@ -13,7 +12,6 @@ import {
 } from './attentionUtil.js'
 import { opposites } from '@warp-ds/core/attention'
 import wAttentionArrow from './w-attention-arrow.vue'
-import { createModel, modelProps } from 'create-v-model'
 import { i18n } from '@lingui/core'
 import { activateI18n } from '../util/i18n'
 import { messages as enMessages } from './locales/en/messages.mjs'
@@ -24,7 +22,6 @@ activateI18n(enMessages, nbMessages, fiMessages)
 
 const props = defineProps({
   ...attentionProps,
-  ...modelProps({ modelDefault: absentProp }),
   targetEl: Object,
   attentionClass: [Object, String],
   attentionEl: {
@@ -47,8 +44,7 @@ const wrapperClasses = computed(() => [
   getVariantClasses(props).wrapper
 ])
 
-const model =
-  props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
+const model = defineModel({ type: Boolean, default: true })
 const arrowEl = ref(null)
 const actualDirection = ref(directionName.value)
 

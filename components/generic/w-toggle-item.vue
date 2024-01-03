@@ -1,7 +1,6 @@
 <script setup>
 import { computed } from 'vue';
 import { id as uniqueId } from '#util';
-import { modelProps, createModel } from 'create-v-model';
 import { toggle as ccToggle } from '@warp-ds/css/component-classes';
 const p = defineProps({
   id: { ...uniqueId },
@@ -13,11 +12,9 @@ const p = defineProps({
   invalid: Boolean,
   radioButton: Boolean,
   labelClass: null,
-  ...modelProps()
 });
 
-const emit = defineEmits(['update:modelValue']);
-const model = createModel({ props: p, emit });
+const model = defineModel()
 
 const isRadio = computed(() => p.type === 'radio');
 const isCheckbox = computed(() => p.type === 'checkbox');
@@ -42,16 +39,16 @@ const inputClasses = {
 </script>
 
 <template>
-  <input 
-    :id="id" 
-    v-model="model" 
+  <input
+    :id="id"
+    v-model="model"
     :type="type"
     :radioButton="radioButton"
     :disabled="disabled"
     :invalid="invalid"
     :equalWidth="equalWidth"
-    v-bind="$attrs" 
-    :class="[inputClasses]" 
+    v-bind="$attrs"
+    :class="[inputClasses]"
   />
   <label v-if="label" :for="id" v-html="label" :class="labelClasses" />
   <label v-else :for="id" :class="labelClasses"><slot /></label>

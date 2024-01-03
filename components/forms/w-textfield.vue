@@ -1,7 +1,6 @@
 <script setup>
 import { ref, computed, useSlots } from 'vue';
 import { input as ccInput } from '@warp-ds/css/component-classes';
-import { createModel } from 'create-v-model';
 import { setupMask } from './w-input-mask.js';
 import { default as wField, fieldProps } from './w-field.vue';
 
@@ -19,9 +18,10 @@ const p = defineProps({
   },
   mask: Object,
 });
-const emit = defineEmits(['update:modelValue']);
 const slots = useSlots();
-const model = createModel({ props: p, emit });
+const model = defineModel()
+// even though defineModel gives us this for free we need to manually set this up for mask handling
+const emit = defineEmits(['update:modelValue'])
 const inputEl = ref(null);
 if (p.mask) setupMask({ props: p, emit, inputEl });
 const inputClasses = computed(() => ({
@@ -42,7 +42,7 @@ const inputWithPrefixStyle = computed(() => (
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
       <div :class="[ccInput.wrapper, inputWrapperClass]">
       <slot name="prefix" :inputElement="inputEl" />
-      <input 
+      <input
         v-if="mask"
         :id="id"
         ref="inputEl"
@@ -59,7 +59,7 @@ const inputWithPrefixStyle = computed(() => (
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
         @blur="triggerValidation">
-      <input 
+      <input
         v-else
         :id="id"
         ref="inputEl"

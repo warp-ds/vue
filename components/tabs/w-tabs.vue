@@ -11,13 +11,9 @@ import {
   useSlots,
   watchEffect,
 } from 'vue';
-import { modelProps, createModel } from 'create-v-model';
 import debounce from 'femtobounce';
 import { useKeydownHandler } from './util';
 
-const props = defineProps({
-  ...modelProps(),
-});
 
 const slots = useSlots();
 
@@ -26,7 +22,7 @@ const useGetActiveTab = (tabContainer) => () =>
 const getChildren = (slot) =>
   slot[0].type === Fragment ? slot[0].children : slot;
 
-const activeTab = createModel({ props });
+const activeTab = defineModel()
 const tabContainer = ref(null);
 const wunderbar = ref(null);
 const tabs = ref([]);

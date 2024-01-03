@@ -1,7 +1,5 @@
 <script setup>
 import { ref, computed, watch, nextTick, useSlots } from 'vue'
-import { modelProps, createModel } from 'create-v-model'
-import { absentProp } from '#util'
 import { wExpandTransition as expandTransition } from '#generics'
 import {
   expandable as ccExpandable,
@@ -20,13 +18,11 @@ const props = defineProps({
   chevron: { type: Boolean, default: true },
   as: { type: String, default: 'div' },
   animated: Boolean,
-  ...modelProps({ modelDefault: absentProp }),
 })
 const emit = defineEmits(['expand', 'collapse'])
 const slots = useSlots()
 
-const expanded =
-  props.modelValue === absentProp ? ref(false) : createModel({ props, emit })
+const expanded = defineModel({ type: Boolean, default: false })
 const contentComponent = computed(() =>
   props.animated ? expandTransition : 'div'
 )
