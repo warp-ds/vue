@@ -51,7 +51,7 @@ const removeFilterSrText = i18n._({
     </button>
     <button v-if="p.canClose" type="button" :class="closeClasses" @click="$emit('close')">
       <span v-if="!p.suggestion" :class="ccPill.a11y">{{ p.closeSRLabel || removeFilterSrText }}</span>
-      <icon-close-16 class='w-12 h-12'/>
+      <icon-close-16 />
     </button>
   </div>
 </template>
