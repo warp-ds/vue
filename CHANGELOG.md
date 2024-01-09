@@ -1,3 +1,10 @@
+## [1.2.4-next.1](https://github.com/warp-ds/vue/compare/v1.2.3...v1.2.4-next.1) (2024-01-09)
+
+
+### Bug Fixes
+
+* replace letter x with icon close ([#129](https://github.com/warp-ds/vue/issues/129)) ([56763e5](https://github.com/warp-ds/vue/commit/56763e5c754d04ad250347e1e76a3137a764f7f2))
+
 ## [1.2.3](https://github.com/warp-ds/vue/compare/v1.2.2...v1.2.3) (2023-12-20)
 
 
