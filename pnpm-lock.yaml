@@ -92,8 +92,8 @@ devDependencies:
     specifier: ^7.0.0
     version: 7.0.0
   happy-dom:
-    specifier: ^12.10.3
-    version: 12.10.3
+    specifier: ^13.0.0
+    version: 13.1.4
   semantic-release:
     specifier: ^21.1.1
     version: 21.1.1
@@ -111,7 +111,7 @@ devDependencies:
     version: 1.0.3(@eik/rollup-plugin@4.0.60)
   vitest:
     specifier: ^1.2.1
-    version: 1.2.1(@types/node@20.4.2)(happy-dom@12.10.3)
+    version: 1.2.1(@types/node@20.4.2)(happy-dom@13.1.4)
   vue:
     specifier: ^3.4.14
     version: 3.4.14(typescript@5.1.6)
@@ -3733,8 +3733,8 @@ packages:
       uglify-js: 3.17.4
     dev: true
 
-  /happy-dom@12.10.3:
-    resolution: {integrity: sha512-JzUXOh0wdNGY54oKng5hliuBkq/+aT1V3YpTM+lrN/GoLQTANZsMaIvmHiHe612rauHvPJnDZkZ+5GZR++1Abg==}
+  /happy-dom@13.1.4:
+    resolution: {integrity: sha512-f8STa4iuJcpXn7YjgqBEemzinyPAdjlHMxlCNbIERdRIjJO9Z9Cj3XW5LuiEhsURFfl0AOWqj0hQitme4gq+Gg==}
     dependencies:
       css.escape: 1.5.1
       entities: 4.5.0
@@ -6353,7 +6353,7 @@ packages:
       '@eik/rollup-plugin': 4.0.60
     dev: true
 
-  /vitest@1.2.1(@types/node@20.4.2)(happy-dom@12.10.3):
+  /vitest@1.2.1(@types/node@20.4.2)(happy-dom@13.1.4):
     resolution: {integrity: sha512-TRph8N8rnSDa5M2wKWJCMnztCZS9cDcgVTQ6tsTFTG/odHJ4l5yNVqvbeDJYJRZ6is3uxaEpFs8LL6QM+YFSdA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -6389,7 +6389,7 @@ packages:
       chai: 4.4.1
       debug: 4.3.4
       execa: 8.0.1
-      happy-dom: 12.10.3
+      happy-dom: 13.1.4
       local-pkg: 0.5.0
       magic-string: 0.30.5
       pathe: 1.1.2
