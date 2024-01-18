@@ -29,7 +29,7 @@ describe('tabs', () => {
       setup: () => ({ model })
     }
     const wrapper = mount(TabFixture)
-    assert.equal(wrapper.text(), 'Foo Bar OMG')
+    assert.equal(wrapper.text(), 'Foo BarOMG')
     const buttons = wrapper.findAll('button')
     assert.equal(buttons.length, 2)
     assert.ok(buttons.some(button => button.attributes('aria-selected') === 'true'))
