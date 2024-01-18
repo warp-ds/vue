@@ -62,7 +62,7 @@
     "semantic-release": "^21.1.1",
     "shikiji": "^0.9.0",
     "unocss": "^0.58.0",
-    "vite": "^4.5.1",
+    "vite": "^5.0.0",
     "viteik": "^1.0.3",
     "vitest": "^1.2.1",
     "vue": "^3.4.14",
