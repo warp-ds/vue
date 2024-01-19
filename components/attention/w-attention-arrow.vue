@@ -9,8 +9,15 @@
   })
 
   const arrowDirectionClassname = computed(() => {
-    const direction = arrowDirection.value?.charAt(0).toUpperCase() + arrowDirection.value?.slice(1);
-
+    let direction;
+    if (/-/.test(arrowDirection.value)) {
+      direction = arrowDirection.value
+        .split('-')
+        .map((d) => d.charAt(0).toUpperCase() + d.slice(1))
+        .join('')
+    } else {
+    direction = arrowDirection.value?.charAt(0).toUpperCase() + arrowDirection.value?.slice(1);
+    }
     return `arrowDirection${direction}`;
   })
 

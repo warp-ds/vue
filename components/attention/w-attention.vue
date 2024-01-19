@@ -1,15 +1,22 @@
 <script setup>
 import { watch, computed, ref, onMounted, nextTick } from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
-import { computePosition, flip, offset, shift, arrow } from '@floating-ui/dom'
-import IconClose16 from "@warp-ds/icons/vue/close-16";
+import {
+  computePosition,
+  flip,
+  offset,
+  shift,
+  arrow,
+  autoUpdate,
+} from '@floating-ui/dom'
+import IconClose16 from '@warp-ds/icons/vue/close-16'
 
 import { absentProp } from '#util'
 import {
   props as attentionProps,
   directions,
   computeCalloutArrow,
-  getVariantClasses
+  getVariantClasses,
 } from './attentionUtil.js'
 import { opposites } from '@warp-ds/core/attention'
 import wAttentionArrow from './w-attention-arrow.vue'
@@ -39,12 +46,12 @@ const directionName = computed(() => directions.find((e) => props[e]))
 
 const attentionClasses = computed(() => ({
   [props.attentionClass]: true,
-  [ccAttention.notCallout]: !props.callout
+  [ccAttention.notCallout]: !props.callout,
 }))
 
 const wrapperClasses = computed(() => [
   ccAttention.base,
-  getVariantClasses(props).wrapper
+  getVariantClasses(props).wrapper,
 ])
 
 const model =
@@ -59,60 +66,79 @@ const recompute = async () => {
     return computeCalloutArrow({ directionName, arrowEl, actualDirection })
   if (!props.attentionEl.value) return
 
-  const position = await computePosition(
-    props.targetEl,
-    props.attentionEl.value,
-    {
-      placement: directionName.value,
-      middleware: [
-        flip(),
-        offset(8),
-        shift({ padding: 16 }),
-        arrow({ element: props.noArrow ? undefined : arrowEl.value.$el }),
-      ],
-    }
-  )
+  const cleanup = async () => {
+    const position = await computePosition(
+      props.targetEl,
+      props.attentionEl.value,
+      {
+        placement: directionName.value,
+        middleware: [
+          flip(),
+          offset(8),
+          shift({ padding: 16 }),
+          arrow({ element: props.noArrow ? undefined : arrowEl.value.$el }),
+        ],
+      }
+    )
 
-  actualDirection.value = position.placement
-  Object.assign(props.attentionEl.value.style, {
-    left: '0',
-    top: '0',
-    transform: `translate3d(${Math.round(position.x)}px, ${Math.round(
-      position.y
-    )}px, 0)`,
-  })
-  let { x, y } = position.middlewareData.arrow
-  arrowEl.value.$el.style.left = x ? x + 'px' : null
-  arrowEl.value.$el.style.top = y ? y + 'px' : null
+    actualDirection.value = position.placement
+    Object.assign(props.attentionEl.value?.style, {
+      left: `${position.x}px`,
+      topop: `${position.y}px`,
+    })
+    if (position.middlewareData.arrow) {
+      let { x, y } = position.middlewareData.arrow
+
+      Object.assign(arrowEl.value.$el?.style || {}, {
+        left: x ? `${x}px` : '',
+        // TODO: temporary fix, for some reason left-start and right-start positions the arrowEL slightly too far from the attentionEl
+        top: y ? `${y - 4}px` : '',
+      })
+    }
+  }
+  autoUpdate(referenceEl, floatingEl, cleanup)
 }
 
-const ariaClose = i18n._({ id: 'attention.aria.close', message: 'Close', comment: 'Aria label for the close button in attention' });
+const ariaClose = i18n._({
+  id: 'attention.aria.close',
+  message: 'Close',
+  comment: 'Aria label for the close button in attention',
+})
 
 // TODO: See if we can move this function to the core repo:
 const pointingAtDirection = computed(() => {
   switch (opposites[actualDirection.value]) {
+    case 'top-start':
     case 'top':
+    case 'top-end':
       return i18n._({
         id: 'attention.aria.pointingUp',
         message: 'pointing up',
         comment:
           'Default screenreader message for top direction in the attention component',
       })
+    case 'right-start':
     case 'right':
+    case 'right-end':
       return i18n._({
         id: 'attention.aria.pointingRight',
         message: 'pointing right',
         comment:
           'Default screenreader message for right direction in the attention component',
       })
+    case 'bottom-start':
     case 'bottom':
+    case 'bottom-end':
       return i18n._({
         id: 'attention.aria.pointingDown',
         message: 'pointing down',
         comment:
           'Default screenreader message for bottom direction in the attention component',
       })
+    case 'left-start':
     case 'left':
+    case 'left-end':
+    case 'test':
       return i18n._({
         id: 'attention.aria.pointingLeft',
         message: 'pointing left',
@@ -168,7 +194,24 @@ const defaultAriaLabel = computed(() => {
 })
 
 onMounted(async () => {
-  watch(() => [props.top, props.bottom, props.left, props.right], recompute)
+  watch(
+    () => [
+      props['top-start'],
+      props.top,
+      props['top-end'],
+      props['bottom-start'],
+      props.bottom,
+      props['bottom-end'],
+      props['left-start'],
+      props.left,
+      props['left-end'],
+      props['right-start'],
+      props.right,
+      props['right-end'],
+      props.test
+    ],
+    recompute
+  )
   watch(model, recompute, { immediate: props.callout })
 })
 </script>
@@ -192,7 +235,13 @@ onMounted(async () => {
       <div :class="ccAttention.content">
         <slot />
       </div>
-      <button v-if="canClose" :aria-label="ariaClose" @click="$emit('dismiss')" @keydown.esc="$emit('dismiss')" :class="ccAttention.closeBtn">
+      <button
+        v-if="canClose"
+        :aria-label="ariaClose"
+        @click="$emit('dismiss')"
+        @keydown.esc="$emit('dismiss')"
+        :class="ccAttention.closeBtn"
+      >
         <icon-close-16 />
       </button>
     </div>
