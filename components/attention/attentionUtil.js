@@ -13,18 +13,18 @@ const LEFTSTART = "left-start";
 const LEFT = "left";
 const LEFTEND = "left-end";
 
-type Directions =   | 'top'
-| 'top-start'
-| 'top-end'
-| 'right'
-| 'right-start'
-| 'right-end'
-| 'bottom'
-| 'bottom-start'
-| 'bottom-end'
-| 'left'
-| 'left-start'
-| 'left-end';
+// type Directions =   | 'top'
+// | 'top-start'
+// | 'top-end'
+// | 'right'
+// | 'right-start'
+// | 'right-end'
+// | 'bottom'
+// | 'bottom-start'
+// | 'bottom-end'
+// | 'left'
+// | 'left-start'
+// | 'left-end';
 
 export const opposites = {
   [TOPSTART]: BOTTOMSTART,
@@ -40,7 +40,7 @@ export const opposites = {
   [RIGHT]: LEFT,
   [RIGHTEND]: LEFTEND,
 }
-export const directions: Directions[] = [TOPSTART, TOP, TOPEND, BOTTOMSTART, BOTTOM, BOTTOMEND, LEFTSTART, LEFT, LEFTEND, RIGHTSTART, RIGHT, RIGHTEND]
+export const directions = [TOPSTART, TOP, TOPEND, BOTTOMSTART, BOTTOM, BOTTOMEND, LEFTSTART, LEFT, LEFTEND, RIGHTSTART, RIGHT, RIGHTEND]
 
 const TOOLTIP = "tooltip"
 const POPOVER = "popover"
