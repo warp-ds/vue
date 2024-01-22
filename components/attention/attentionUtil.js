@@ -13,19 +13,6 @@ const LEFTSTART = "left-start";
 const LEFT = "left";
 const LEFTEND = "left-end";
 
-// type Directions =   | 'top'
-// | 'top-start'
-// | 'top-end'
-// | 'right'
-// | 'right-start'
-// | 'right-end'
-// | 'bottom'
-// | 'bottom-start'
-// | 'bottom-end'
-// | 'left'
-// | 'left-start'
-// | 'left-end';
-
 export const opposites = {
   [TOPSTART]: BOTTOMSTART,
   [TOP]: BOTTOM,
@@ -40,7 +27,7 @@ export const opposites = {
   [RIGHT]: LEFT,
   [RIGHTEND]: LEFTEND,
 }
-export const directions = [TOPSTART, TOP, TOPEND, BOTTOMSTART, BOTTOM, BOTTOMEND, LEFTSTART, LEFT, LEFTEND, RIGHTSTART, RIGHT, RIGHTEND]
+export const directions = ["topStart", "top", "topEnd", "rightStart", "right", "rightEnd", "bottomStart", "bottom", "bottomEnd", "leftStart", "left", "leftEnd"]
 
 const TOOLTIP = "tooltip"
 const POPOVER = "popover"

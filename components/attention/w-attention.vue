@@ -42,7 +42,8 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['update:modelValue', 'dismiss'])
-const directionName = computed(() => directions.find((e) => props[e]))
+// directions are in camelCase but floating-ui's placement accepts only kebab-case, so we have to convert directions into kebab-case:
+const directionName = computed(() => directions.find((e) => props[e]).replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase())
 
 const attentionClasses = computed(() => ({
   [props.attentionClass]: true,
@@ -54,49 +55,49 @@ const wrapperClasses = computed(() => [
   getVariantClasses(props).wrapper,
 ])
 
-const model =
-  props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
+const model = props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
 const arrowEl = ref(null)
 const actualDirection = ref(directionName.value)
 
 const recompute = async () => {
-  if (!model.value) return
+  if (!model.value)return
   await nextTick()
   if (props.callout)
-    return computeCalloutArrow({ directionName, arrowEl, actualDirection })
-  if (!props.attentionEl.value) return
+  return computeCalloutArrow({ directionName, arrowEl, actualDirection })
+if (!props.attentionEl.value)return
 
-  const cleanup = async () => {
-    const position = await computePosition(
-      props.targetEl,
-      props.attentionEl.value,
-      {
-        placement: directionName.value,
-        middleware: [
-          flip(),
-          offset(8),
-          shift({ padding: 16 }),
-          arrow({ element: props.noArrow ? undefined : arrowEl.value.$el }),
-        ],
-      }
+const update = async () => {
+  const position = await computePosition(
+    props.targetEl,
+    props.attentionEl.value,
+    {
+      placement: directionName.value,
+      middleware: [
+        offset(8),
+        flip(),
+        shift({ padding: 16 }),
+        !props.noArrow && arrow({ element: arrowEl.value.$el }),
+      ],
+    }
     )
-
+    
     actualDirection.value = position.placement
     Object.assign(props.attentionEl.value?.style, {
       left: `${position.x}px`,
-      topop: `${position.y}px`,
+      top: `${position.y}px`,
     })
+
     if (position.middlewareData.arrow) {
-      let { x, y } = position.middlewareData.arrow
+      const { x, y } = position.middlewareData.arrow
 
       Object.assign(arrowEl.value.$el?.style || {}, {
         left: x ? `${x}px` : '',
         // TODO: temporary fix, for some reason left-start and right-start positions the arrowEL slightly too far from the attentionEl
-        top: y ? `${y - 4}px` : '',
+        top: y ? position.placement.includes("-start") ? `${y - 4}px` : `${y}px` : '',
       })
     }
   }
-  autoUpdate(referenceEl, floatingEl, cleanup)
+  autoUpdate(props.targetEl, props.attentionEl.value, update)
 }
 
 const ariaClose = i18n._({
@@ -138,7 +139,6 @@ const pointingAtDirection = computed(() => {
     case 'left-start':
     case 'left':
     case 'left-end':
-    case 'test':
       return i18n._({
         id: 'attention.aria.pointingLeft',
         message: 'pointing left',
@@ -196,19 +196,18 @@ const defaultAriaLabel = computed(() => {
 onMounted(async () => {
   watch(
     () => [
-      props['top-start'],
+      props.topStart,
       props.top,
-      props['top-end'],
-      props['bottom-start'],
+      props.topEnd,
+      props.bottomStart,
       props.bottom,
-      props['bottom-end'],
-      props['left-start'],
+      props.bottomEnd,
+      props.leftStart,
       props.left,
-      props['left-end'],
-      props['right-start'],
+      props.leftEnd,
+      props.rightStart,
       props.right,
-      props['right-end'],
-      props.test
+      props.rightEnd,
     ],
     recompute
   )
@@ -217,7 +216,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div :class="attentionClasses" ref="attentionRef" v-show="model">
+  <div :class="attentionClasses" :ref="attentionEl" v-show="model">
     <div
       :role="props.role === '' ? undefined : props.tooltip ? 'tooltip' : 'img'"
       :aria-label="
