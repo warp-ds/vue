@@ -66,38 +66,32 @@ const recompute = async () => {
   return computeCalloutArrow({ directionName, arrowEl, actualDirection })
 if (!props.attentionEl.value)return
 
-const update = async () => {
-  const position = await computePosition(
-    props.targetEl,
-    props.attentionEl.value,
-    {
+autoUpdate(props.targetEl, props.attentionEl.value, () => {
+  computePosition(props.targetEl, props.attentionEl.value, {
       placement: directionName.value,
       middleware: [
         offset(8),
         flip(),
         shift({ padding: 16 }),
-        !props.noArrow && arrow({ element: arrowEl.value.$el }),
-      ],
-    }
-    )
-    
-    actualDirection.value = position.placement
-    Object.assign(props.attentionEl.value?.style, {
-      left: `${position.x}px`,
-      top: `${position.y}px`,
-    })
-
-    if (position.middlewareData.arrow) {
-      const { x, y } = position.middlewareData.arrow
-
-      Object.assign(arrowEl.value.$el?.style || {}, {
-        left: x ? `${x}px` : '',
-        // TODO: temporary fix, for some reason left-start and right-start positions the arrowEL slightly too far from the attentionEl
-        top: y ? position.placement.includes("-start") ? `${y - 4}px` : `${y}px` : '',
+        !props.noArrow && arrow({ element: arrowEl.value.$el })]
+    }).then(({ x, y, middlewareData, placement}) => {
+      actualDirection.value = placement
+      console.log("actualDirection.value: ", actualDirection.value);
+      Object.assign(props.attentionEl.value?.style, {
+        left: `${x}px`,
+        top: `${y}px`,
       })
-    }
-  }
-  autoUpdate(props.targetEl, props.attentionEl.value, update)
+  
+      if (middlewareData.arrow) {
+        const { x, y } = middlewareData.arrow
+        Object.assign(arrowEl.value.$el?.style || {}, {
+          left: x ? `${x}px` : '',
+          // TODO: temporary fix, for some reason left-start and right-start positions the arrowEL slightly too far from the attentionEl
+          top: y ? placement.includes("-start") ? `${y - 4}px` : `${y}px` : '',
+        });
+      }
+    });    
+  });
 }
 
 const ariaClose = i18n._({
