@@ -1,5 +1,5 @@
 <script setup>
-import { watch, computed, ref, onMounted, nextTick } from 'vue'
+import { watch, computed, ref, onMounted, nextTick, onUnmounted } from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import {
   computePosition,
@@ -66,33 +66,33 @@ const recompute = async () => {
   return computeCalloutArrow({ directionName, arrowEl, actualDirection })
 if (!props.attentionEl.value)return
 
-autoUpdate(props.targetEl, props.attentionEl.value, () => {
-  computePosition(props.targetEl, props.attentionEl.value, {
-      placement: directionName.value,
-      middleware: [
-        offset(8),
-        flip(),
-        shift({ padding: 16 }),
-        !props.noArrow && arrow({ element: arrowEl.value.$el })]
-    }).then(({ x, y, middlewareData, placement}) => {
-      actualDirection.value = placement
-      console.log("actualDirection.value: ", actualDirection.value);
-      Object.assign(props.attentionEl.value?.style, {
-        left: `${x}px`,
-        top: `${y}px`,
-      })
-  
-      if (middlewareData.arrow) {
-        const { x, y } = middlewareData.arrow
-        Object.assign(arrowEl.value.$el?.style || {}, {
-          left: x ? `${x}px` : '',
-          // TODO: temporary fix, for some reason left-start and right-start positions the arrowEL slightly too far from the attentionEl
-          top: y ? placement.includes("-start") ? `${y - 4}px` : `${y}px` : '',
-        });
-      }
-    });    
-  });
+    computePosition(props.targetEl, props.attentionEl.value, {
+        placement: directionName.value,
+        middleware: [
+          offset(8),
+          flip(),
+          shift({ padding: 16 }),
+          !props.noArrow && arrow({ element: arrowEl.value.$el })]
+      }).then(({ x, y, middlewareData, placement}) => {
+        actualDirection.value = placement
+        console.log("actualDirection.value: ", actualDirection.value);
+        Object.assign(props.attentionEl.value?.style, {
+          left: `${x}px`,
+          top: `${y}px`,
+        })
+    
+        if (middlewareData.arrow) {
+          const { x, y } = middlewareData.arrow
+          Object.assign(arrowEl.value.$el?.style || {}, {
+            left: x ? `${x}px` : '',
+            // TODO: temporary fix, for some reason left-start and right-start positions the arrowEL slightly too far from the attentionEl
+            top: y ? placement.includes("-start") ? `${y - 4}px` : `${y}px` : '',
+          });
+        }
+      });    
 }
+
+const cleanup = () => autoUpdate(props.targetEl, props.attentionEl.value, recompute)
 
 const ariaClose = i18n._({
   id: 'attention.aria.close',
@@ -206,6 +206,12 @@ onMounted(async () => {
     recompute
   )
   watch(model, recompute, { immediate: props.callout })
+})
+
+onUnmounted( async () => {
+  if (model.value && props.targetEl && props.attentionEl) {
+    cleanup
+  }
 })
 </script>
 
