@@ -1,5 +1,5 @@
 <script setup>
-import { watch, computed, ref, onMounted, nextTick, onUnmounted } from 'vue'
+import { watch, computed, ref, nextTick } from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import {
   computePosition,
@@ -34,9 +34,6 @@ const props = defineProps({
   ...modelProps({ modelDefault: absentProp }),
   targetEl: Object,
   attentionClass: [Object, String],
-  attentionEl: {
-    default: () => ref(null),
-  },
   role: String,
   ariaLabel: String,
 })
@@ -56,6 +53,7 @@ const wrapperClasses = computed(() => [
 ])
 
 const model = props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
+const attentionEl = ref(null);
 const arrowEl = ref(null)
 const actualDirection = ref(directionName.value)
 
@@ -64,9 +62,8 @@ const recompute = async () => {
   await nextTick()
   if (props.callout)
   return computeCalloutArrow({ directionName, arrowEl, actualDirection })
-if (!props.attentionEl.value)return
-
-    computePosition(props.targetEl, props.attentionEl.value, {
+if (!attentionEl.value)return
+  computePosition(props.targetEl, attentionEl.value, {
         placement: directionName.value,
         middleware: [
           offset(8),
@@ -76,7 +73,7 @@ if (!props.attentionEl.value)return
       }).then(({ x, y, middlewareData, placement}) => {
         actualDirection.value = placement
         console.log("actualDirection.value: ", actualDirection.value);
-        Object.assign(props.attentionEl.value?.style, {
+        Object.assign(attentionEl.value?.style, {
           left: `${x}px`,
           top: `${y}px`,
         })
@@ -90,10 +87,8 @@ if (!props.attentionEl.value)return
           });
         }
       });    
-}
-
-const cleanup = () => autoUpdate(props.targetEl, props.attentionEl.value, recompute)
-
+} 
+  
 const ariaClose = i18n._({
   id: 'attention.aria.close',
   message: 'Close',
@@ -187,7 +182,8 @@ const defaultAriaLabel = computed(() => {
   }`
 })
 
-onMounted(async () => {
+let cleanup;
+
   watch(
     () => [
       props.topStart,
@@ -204,19 +200,23 @@ onMounted(async () => {
       props.rightEnd,
     ],
     recompute
-  )
-  watch(model, recompute, { immediate: props.callout })
-})
+  );
 
-onUnmounted( async () => {
-  if (model.value && props.targetEl && props.attentionEl) {
-    cleanup
+watch(() => [props.targetEl, model.value], ([target, m]) =>  {
+  console.log('watch targetEl', target, m)
+  if (!cleanup && target && m) {
+    console.log('autoupdate', props.targetEl, attentionEl.value);
+    cleanup = autoUpdate(props.targetEl, attentionEl.value, recompute);
+  } else if (cleanup) {
+    console.log('cleanup', target, m)
+    cleanup();
+    cleanup = null;
   }
-})
+}, { immediate: true });
 </script>
 
 <template>
-  <div :class="attentionClasses" :ref="attentionEl" v-show="model">
+  <div :class="attentionClasses" ref="attentionEl" v-show="model">
     <div
       :role="props.role === '' ? undefined : props.tooltip ? 'tooltip' : 'img'"
       :aria-label="
