@@ -14,7 +14,6 @@ import IconClose16 from '@warp-ds/icons/vue/close-16'
 import { absentProp } from '#util'
 import {
   props as attentionProps,
-  directions,
   computeCalloutArrow,
   getVariantClasses,
 } from './attentionUtil.js'
@@ -36,12 +35,14 @@ const props = defineProps({
   attentionClass: [Object, String],
   role: String,
   ariaLabel: String,
+  placement: {
+    validator(value, props) {
+      return ['top-start', 'top', 'top-end', 'right-start', 'right', 'right-end', 'bottom-start', 'bottom', 'bottom-end', 'left-start', 'left', 'left-end'].includes(value)
+    }
+  }
 })
 
 const emit = defineEmits(['update:modelValue', 'dismiss'])
-// directions are in camelCase but floating-ui's placement accepts only kebab-case, so we have to convert directions into kebab-case:
-const directionName = computed(() => directions.find((e) => props[e]).replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase())
-
 const attentionClasses = computed(() => ({
   [props.attentionClass]: true,
   [ccAttention.notCallout]: !props.callout,
@@ -55,16 +56,16 @@ const wrapperClasses = computed(() => [
 const model = props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
 const attentionEl = ref(null);
 const arrowEl = ref(null)
-const actualDirection = ref(directionName.value)
+const actualDirection = ref(props.placement)
 
 const recompute = async () => {
   if (!model.value)return
   await nextTick()
   if (props.callout)
-  return computeCalloutArrow({ directionName, arrowEl, actualDirection })
+  return computeCalloutArrow({ placement:props.placement, arrowEl, actualDirection })
 if (!attentionEl.value)return
   computePosition(props.targetEl, attentionEl.value, {
-        placement: directionName.value,
+        placement: props.placement,
         middleware: [
           offset(8),
           flip(),
@@ -72,7 +73,6 @@ if (!attentionEl.value)return
           !props.noArrow && arrow({ element: arrowEl.value.$el })]
       }).then(({ x, y, middlewareData, placement}) => {
         actualDirection.value = placement
-        console.log("actualDirection.value: ", actualDirection.value);
         Object.assign(attentionEl.value?.style, {
           left: `${x}px`,
           top: `${y}px`,
@@ -81,9 +81,9 @@ if (!attentionEl.value)return
         if (middlewareData.arrow) {
           const { x, y } = middlewareData.arrow
           Object.assign(arrowEl.value.$el?.style || {}, {
-            left: x ? `${x}px` : '',
+            left: x ? placement.includes("-start") ? `${x - 12}px` : `${x}px` : '',
             // TODO: temporary fix, for some reason left-start and right-start positions the arrowEL slightly too far from the attentionEl
-            top: y ? placement.includes("-start") ? `${y - 4}px` : `${y}px` : '',
+            top: y ? placement.includes("-start") ? `${y - 12}px` : `${y}px` : '',
           });
         }
       });    
@@ -184,31 +184,12 @@ const defaultAriaLabel = computed(() => {
 
 let cleanup;
 
-  watch(
-    () => [
-      props.topStart,
-      props.top,
-      props.topEnd,
-      props.bottomStart,
-      props.bottom,
-      props.bottomEnd,
-      props.leftStart,
-      props.left,
-      props.leftEnd,
-      props.rightStart,
-      props.right,
-      props.rightEnd,
-    ],
-    recompute
-  );
+  watch(() => [props.placement], recompute);
 
 watch(() => [props.targetEl, model.value], ([target, m]) =>  {
-  console.log('watch targetEl', target, m)
   if (!cleanup && target && m) {
-    console.log('autoupdate', props.targetEl, attentionEl.value);
     cleanup = autoUpdate(props.targetEl, attentionEl.value, recompute);
   } else if (cleanup) {
-    console.log('cleanup', target, m)
     cleanup();
     cleanup = null;
   }

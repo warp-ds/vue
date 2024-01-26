@@ -48,7 +48,7 @@ const dismissibleHighlightShowing = ref(false)
           </w-box>
           <w-attention
             tooltip
-            bottom
+            placement="bottom"
             :target-el="tooltipTarget ? tooltipTarget.$el : null"
             v-model="tooltipShowing"
             @focus="tooltipShowing = true"
@@ -81,7 +81,7 @@ const dismissibleHighlightShowing = ref(false)
           </w-box>
           <w-attention
             tooltip
-            bottom
+            placement="bottom"
             role=""
             ariaLabel=""
             :target-el="tooltipResetTarget ? tooltipResetTarget.$el : null"
@@ -107,7 +107,7 @@ const dismissibleHighlightShowing = ref(false)
             </w-box>
             <w-attention
               callout
-              right
+              placement="right"
               v-model="calloutShowing"
               class="ml-8"
             >
@@ -128,7 +128,7 @@ const dismissibleHighlightShowing = ref(false)
           </w-button>
           <w-attention
             popover
-            bottom
+            placement="bottom"
             :target-el="popoverTarget ? popoverTarget.$el : null"
             v-model="popoverShowing"
           >
@@ -147,7 +147,7 @@ const dismissibleHighlightShowing = ref(false)
           <w-attention
             id="dismissiblePopoverAttentionExample"
             popover
-            bottom
+            placement="bottom"
             canClose
             @dismiss="dismissiblePopoverShowing = false"
             :target-el="dismissiblePopoverTarget ? dismissiblePopoverTarget.$el : null"
@@ -168,7 +168,7 @@ const dismissibleHighlightShowing = ref(false)
           <w-attention
             id="highlightAttentionExample"
             highlight
-            bottom
+            placement='left-start'
             :target-el="highlightTarget ? highlightTarget.$el : null"
             v-model="highlightShowing"
           >
@@ -189,7 +189,7 @@ const dismissibleHighlightShowing = ref(false)
           <w-attention
             id="dismissibleHighlightAttentionExample"
             highlight
-            bottom
+            placement="bottom"
             canClose
             @dismiss="dismissibleHighlightShowing = false"
             :target-el="dismissibleHighlightTarget ? dismissibleHighlightTarget.$el : null"
