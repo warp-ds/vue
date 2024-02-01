@@ -24,7 +24,7 @@
     "postsite": "cd dev/dist && cp index.html 200.html && cp index.html 404.html",
     "site": "vite build dev --config ./vite.config.js",
     "storybook": "storybook dev -p 6006",
-    "test": "vitest run",
+    "test": "vitest run --coverage",
     "watch": "vitest watch"
   },
   "keywords": [],
@@ -64,6 +64,7 @@
     "@storybook/vue3": "^7.6.10",
     "@storybook/vue3-vite": "^7.6.10",
     "@vitejs/plugin-vue": "^5.0.0",
+    "@vitest/coverage-v8": "^1.2.2",
     "@vue/compiler-sfc": "^3.4.14",
     "@vue/test-utils": "^2.4.1",
     "cleave-lite": "^1.0.0",
