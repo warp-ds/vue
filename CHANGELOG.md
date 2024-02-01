@@ -1,3 +1,10 @@
+## [1.2.4-next.2](https://github.com/warp-ds/vue/compare/v1.2.4-next.1...v1.2.4-next.2) (2024-02-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency scroll-doctor to v2 ([#134](https://github.com/warp-ds/vue/issues/134)) ([7e7e919](https://github.com/warp-ds/vue/commit/7e7e919b03ca60bb39b281e879a08b5cfe184190))
+
 ## [1.2.4-next.1](https://github.com/warp-ds/vue/compare/v1.2.3...v1.2.4-next.1) (2024-01-09)
 
 
