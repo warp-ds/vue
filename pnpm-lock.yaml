@@ -36,8 +36,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0
   scroll-doctor:
-    specifier: ^1.0.1
-    version: 1.0.1
+    specifier: ^2.0.0
+    version: 2.0.0
 
 devDependencies:
   '@eik/cli':
@@ -11809,8 +11809,8 @@ packages:
       loose-envify: 1.4.0
     dev: true
 
-  /scroll-doctor@1.0.1:
-    resolution: {integrity: sha512-+9t0VawVYL2XligaxF609EWERjPjZn/jfcJK0glsE/tfsipubbWULksHtZQjuZ1LXF7rnqO7EJOihoRyVgqppg==}
+  /scroll-doctor@2.0.0:
+    resolution: {integrity: sha512-lBLUBKAFMLUdQoEAF7qhUAUCg+87OXH1rlIrYVhiyegdIA8/7pDWWjCkNlstLtFmMdtcJQtP5SunbumlpkBvrQ==}
     dev: false
 
   /semantic-release@23.0.0(typescript@5.1.6):

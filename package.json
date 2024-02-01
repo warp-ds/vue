@@ -40,7 +40,7 @@
     "dom-focus-lock": "^1.1.0",
     "element-collapse": "^1.1.0",
     "femtobounce": "^1.0.0",
-    "scroll-doctor": "^1.0.1"
+    "scroll-doctor": "^2.0.0"
   },
   "devDependencies": {
     "@eik/cli": "^2.0.22",
