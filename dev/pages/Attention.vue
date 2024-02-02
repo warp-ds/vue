@@ -169,6 +169,7 @@ const dismissibleHighlightShowing = ref(false)
             id="highlightAttentionExample"
             highlight
             placement='left-start'
+            fallbackDirection='start'
             :target-el="highlightTarget ? highlightTarget.$el : null"
             v-model="highlightShowing"
           >

@@ -1,10 +1,11 @@
 <script setup>
 import {
   computed,
-  // nextTick,
+  nextTick,
   ref,
   reactive,
-  watchEffect } from 'vue'
+  watchEffect, 
+watch} from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import {
   computePosition,
@@ -40,6 +41,7 @@ const props = defineProps({
   role: String,
   ariaLabel: String,
   placement: {
+    type: String,
     validator(value) {
       return [
         'top-start',
@@ -54,7 +56,18 @@ const props = defineProps({
         'left-start',
         'left',
         'left-end'].includes(value)
-    }
+    },
+    default: 'bottom'
+  },
+  fallbackDirection: {
+    type: String,
+    validator(value) {
+      return [
+        'none',
+        'start',
+        'end'].includes(value)
+    },
+    default: 'none'
   }
 })
 
@@ -80,19 +93,22 @@ const attentionState = reactive({
   actualDirection: actualDirection.value,
   directionName: computed(() => props.placement),
   arrowEl: arrowEl.value,
-  // waitForDOM: await nextTick()
+  // waitForDOM: nextTick
 })
 
-const updatePosition = () => {
+const updatePosition = async () => {
+  if (!attentionEl.value) return
+  await nextTick()
   computePosition(props.targetEl, attentionEl.value, {
         placement: props.placement,
         middleware: [
           offset(8),
-          flip({ fallbackAxisSideDirection: 'start' | 'end' }),
+          flip({ fallbackAxisSideDirection: props.fallbackDirection, fallbackStrategy: 'initialPlacement' }),
           shift({ padding: 16 }),
           !props.noArrow && arrow({ element: arrowEl.value.$el })]
       }).then(({ x, y, middlewareData, placement}) => {
         actualDirection.value = placement
+        console.log("actualDirection.value: ", actualDirection.value);
         Object.assign(attentionEl.value?.style, {
           left: `${x}px`,
           top: `${y}px`,
@@ -206,7 +222,7 @@ let cleanup;
 
   watchEffect(() => [props.placement], recompute(attentionState, updatePosition));
 
-watchEffect(() => [props.targetEl, model.value], ([target, m]) =>  {
+watch(() => [props.targetEl, model.value], ([target, m]) =>  {
   if (!cleanup && target && m) {
     cleanup = autoUpdate(props.targetEl, attentionEl.value, updatePosition);
   } else if (cleanup) {
