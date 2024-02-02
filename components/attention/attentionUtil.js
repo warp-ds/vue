@@ -66,13 +66,3 @@ export const props = {
   canClose: Boolean,
   ...variants.reduce((acc, e) => (acc[e] = Boolean, acc), {}),
 }
-
-const middlePosition = 'calc(50% - 7px)'
-const isDirectionVertical = (name) => [TOPSTART, TOP, TOPEND, BOTTOMSTART, BOTTOM, BOTTOMEND].includes(name)
-
-export const computeCalloutArrow = ({ placement, arrowEl, actualDirection }) => {
-  actualDirection.value = placement.value
-  const directionIsVertical = isDirectionVertical(placement.value)
-  arrowEl.value.$el.style.left = directionIsVertical ? middlePosition : null
-  arrowEl.value.$el.style.top = !directionIsVertical ? middlePosition : null
-}

@@ -1,5 +1,10 @@
 <script setup>
-import { watch, computed, ref, nextTick } from 'vue'
+import {
+  computed,
+  // nextTick,
+  ref,
+  reactive,
+  watchEffect } from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import {
   computePosition,
@@ -14,10 +19,9 @@ import IconClose16 from '@warp-ds/icons/vue/close-16'
 import { absentProp } from '#util'
 import {
   props as attentionProps,
-  computeCalloutArrow,
   getVariantClasses,
 } from './attentionUtil.js'
-import { opposites } from '@warp-ds/core/attention'
+import { opposites, useRecompute as recompute } from '@warp-ds/core/attention'
 import wAttentionArrow from './w-attention-arrow.vue'
 import { createModel, modelProps } from 'create-v-model'
 import { i18n } from '@lingui/core'
@@ -36,8 +40,20 @@ const props = defineProps({
   role: String,
   ariaLabel: String,
   placement: {
-    validator(value, props) {
-      return ['top-start', 'top', 'top-end', 'right-start', 'right', 'right-end', 'bottom-start', 'bottom', 'bottom-end', 'left-start', 'left', 'left-end'].includes(value)
+    validator(value) {
+      return [
+        'top-start',
+        'top',
+        'top-end',
+        'right-start',
+        'right',
+        'right-end',
+        'bottom-start',
+        'bottom',
+        'bottom-end',
+        'left-start',
+        'left',
+        'left-end'].includes(value)
     }
   }
 })
@@ -58,17 +74,21 @@ const attentionEl = ref(null);
 const arrowEl = ref(null)
 const actualDirection = ref(props.placement)
 
-const recompute = async () => {
-  if (!model.value)return
-  await nextTick()
-  if (props.callout)
-  return computeCalloutArrow({ placement:props.placement, arrowEl, actualDirection })
-if (!attentionEl.value)return
+const attentionState = reactive({
+  isShowing: model.value,
+  isCallout: props.callout,
+  actualDirection: actualDirection.value,
+  directionName: computed(() => props.placement),
+  arrowEl: arrowEl.value,
+  // waitForDOM: await nextTick()
+})
+
+const updatePosition = () => {
   computePosition(props.targetEl, attentionEl.value, {
         placement: props.placement,
         middleware: [
           offset(8),
-          flip(),
+          flip({ fallbackAxisSideDirection: 'start' | 'end' }),
           shift({ padding: 16 }),
           !props.noArrow && arrow({ element: arrowEl.value.$el })]
       }).then(({ x, y, middlewareData, placement}) => {
@@ -86,7 +106,7 @@ if (!attentionEl.value)return
             top: y ? placement.includes("-start") ? `${y - 12}px` : `${y}px` : '',
           });
         }
-      });    
+      }); 
 } 
   
 const ariaClose = i18n._({
@@ -184,11 +204,11 @@ const defaultAriaLabel = computed(() => {
 
 let cleanup;
 
-  watch(() => [props.placement], recompute);
+  watchEffect(() => [props.placement], recompute(attentionState, updatePosition));
 
-watch(() => [props.targetEl, model.value], ([target, m]) =>  {
+watchEffect(() => [props.targetEl, model.value], ([target, m]) =>  {
   if (!cleanup && target && m) {
-    cleanup = autoUpdate(props.targetEl, attentionEl.value, recompute);
+    cleanup = autoUpdate(props.targetEl, attentionEl.value, updatePosition);
   } else if (cleanup) {
     cleanup();
     cleanup = null;
