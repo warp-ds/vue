@@ -3,18 +3,9 @@ import {
   computed,
   nextTick,
   ref,
-  reactive,
-  watchEffect, 
-watch} from 'vue'
+watch,
+watchEffect} from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
-import {
-  computePosition,
-  flip,
-  offset,
-  shift,
-  arrow,
-  autoUpdate,
-} from '@floating-ui/dom'
 import IconClose16 from '@warp-ds/icons/vue/close-16'
 
 import { absentProp } from '#util'
@@ -22,7 +13,7 @@ import {
   props as attentionProps,
   getVariantClasses,
 } from './attentionUtil.js'
-import { opposites, useRecompute as recompute } from '@warp-ds/core/attention'
+import { opposites, autoUpdatePosition, computeCalloutArrow } from '@warp-ds/core/attention'
 import wAttentionArrow from './w-attention-arrow.vue'
 import { createModel, modelProps } from 'create-v-model'
 import { i18n } from '@lingui/core'
@@ -87,44 +78,24 @@ const attentionEl = ref(null);
 const arrowEl = ref(null)
 const actualDirection = ref(props.placement)
 
-const attentionState = reactive({
+const attentionState = computed(() => ({
   isShowing: model.value,
   isCallout: props.callout,
-  actualDirection: actualDirection.value,
-  directionName: computed(() => props.placement),
-  arrowEl: arrowEl.value,
-  // waitForDOM: nextTick
-})
+  get actualDirection() {
+    return actualDirection.value
+  },
+  set actualDirection(v) {
+    actualDirection.value = v
+  },
+  directionName: props.placement,
+  arrowEl: arrowEl.value.$el,
+  attentionEl: attentionEl.value,
+  fallbackDirection: props.fallbackDirection,
+  targetEl: props.targetEl,
+  noArrow: props.noArrow,
+  waitForDOM: nextTick
+}));
 
-const updatePosition = async () => {
-  if (!attentionEl.value) return
-  await nextTick()
-  computePosition(props.targetEl, attentionEl.value, {
-        placement: props.placement,
-        middleware: [
-          offset(8),
-          flip({ fallbackAxisSideDirection: props.fallbackDirection, fallbackStrategy: 'initialPlacement' }),
-          shift({ padding: 16 }),
-          !props.noArrow && arrow({ element: arrowEl.value.$el })]
-      }).then(({ x, y, middlewareData, placement}) => {
-        actualDirection.value = placement
-        console.log("actualDirection.value: ", actualDirection.value);
-        Object.assign(attentionEl.value?.style, {
-          left: `${x}px`,
-          top: `${y}px`,
-        })
-    
-        if (middlewareData.arrow) {
-          const { x, y } = middlewareData.arrow
-          Object.assign(arrowEl.value.$el?.style || {}, {
-            left: x ? placement.includes("-start") ? `${x - 12}px` : `${x}px` : '',
-            // TODO: temporary fix, for some reason left-start and right-start positions the arrowEL slightly too far from the attentionEl
-            top: y ? placement.includes("-start") ? `${y - 12}px` : `${y}px` : '',
-          });
-        }
-      }); 
-} 
-  
 const ariaClose = i18n._({
   id: 'attention.aria.close',
   message: 'Close',
@@ -220,16 +191,17 @@ const defaultAriaLabel = computed(() => {
 
 let cleanup;
 
-  watchEffect(() => [props.placement], recompute(attentionState, updatePosition));
+watchEffect(() => [props.callout], computeCalloutArrow(actualDirection.value, props.placement, arrowEl.value));
 
 watch(() => [props.targetEl, model.value], ([target, m]) =>  {
   if (!cleanup && target && m) {
-    cleanup = autoUpdate(props.targetEl, attentionEl.value, updatePosition);
+    cleanup = autoUpdatePosition(attentionState.value);
   } else if (cleanup) {
     cleanup();
     cleanup = null;
   }
 }, { immediate: true });
+
 </script>
 
 <template>
