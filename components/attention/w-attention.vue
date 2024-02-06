@@ -1,10 +1,5 @@
 <script setup>
-import {
-  computed,
-  nextTick,
-  ref,
-watch,
-watchEffect} from 'vue'
+import { computed, nextTick, ref, watch, watchEffect} from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import IconClose16 from '@warp-ds/icons/vue/close-16'
 
