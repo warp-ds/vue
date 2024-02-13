@@ -1,6 +1,6 @@
 <script setup>
   import { computed } from 'vue'
-  import { opposites, rotation } from '@warp-ds/core/attention'
+  import { opposites } from '@warp-ds/core/attention'
   import { props as attentionProps, getVariantClasses } from './attentionUtil.js'
   import { attention as ccAttention } from '@warp-ds/css/component-classes'
   
@@ -29,16 +29,10 @@
     ccAttention[arrowDirectionClassname.value],
     getVariantClasses(props).arrow
   ]);
-
-  const arrowStyle = computed(() => ({
-    // border alignment is off by a fraction of a pixel, this fixes it
-    [`margin-${arrowDirection.value}`]: '-0.5px',
-    transform: `rotate(${rotation[arrowDirection.value]}deg)`,
-  }))
 </script>
 
 <template>
-  <div :class="arrowClasses" :style="arrowStyle" />
+  <div :class="arrowClasses"/>
 </template>
 
 <script>
