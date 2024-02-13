@@ -10,7 +10,7 @@ import { messages as enMessages} from './locales/en/messages.mjs';
 import { messages as nbMessages} from './locales/nb/messages.mjs';
 import { messages as fiMessages} from './locales/fi/messages.mjs';
 import IconClose16 from '@warp-ds/icons/vue/close-16';
-import IconTableSortDown16 from '@warp-ds/icons/vue/table-sort-down-16';
+import IconArrowLeft16 from '@warp-ds/icons/vue/arrow-left-16';
 
 activateI18n(enMessages, nbMessages, fiMessages);
 
@@ -128,7 +128,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
               >
               <button v-if="left" :aria-label="ariaBack" @click="$emit('left')" :class="titleLeftClasses" key="left" v-bind="left">
                 <slot name="left">
-                    <icon-table-sort-down-16 :class="[ccModal.titleButtonIcon, ccModal.titleButtonIconRotated]" />
+                    <icon-arrow-left-16 :class="ccModal.titleButtonIcon" />
                 </slot>
               </button>
               <div :class="titleCenterClasses" key="title" v-bind="titleAttrs">
