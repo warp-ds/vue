@@ -8,7 +8,7 @@ import {
   props as attentionProps,
   getVariantClasses,
 } from './attentionUtil.js'
-import { opposites, autoUpdatePosition, computeCalloutArrow } from '@warp-ds/core/attention'
+import { opposites, autoUpdatePosition, useRecompute as recompute } from '@warp-ds/core/attention'
 import wAttentionArrow from './w-attention-arrow.vue'
 import { createModel, modelProps } from 'create-v-model'
 import { i18n } from '@lingui/core'
@@ -53,7 +53,7 @@ const props = defineProps({
         'start',
         'end'].includes(value)
     },
-    default: 'none'
+    default: 'start'
   }
 })
 
@@ -186,7 +186,7 @@ const defaultAriaLabel = computed(() => {
 
 let cleanup;
 
-watchEffect(() => [props.callout], computeCalloutArrow(actualDirection.value, props.placement, arrowEl.value));
+watchEffect(() => [props.callout], recompute(attentionState));
 
 watch(() => [props.targetEl, model.value], ([target, m]) =>  {
   if (!cleanup && target && m) {
