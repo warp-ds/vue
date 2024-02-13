@@ -45,16 +45,6 @@ const props = defineProps({
     },
     default: 'bottom'
   },
-  fallbackDirection: {
-    type: String,
-    validator(value) {
-      return [
-        'none',
-        'start',
-        'end'].includes(value)
-    },
-    default: 'start'
-  }
 })
 
 const emit = defineEmits(['update:modelValue', 'dismiss'])
@@ -83,9 +73,8 @@ const attentionState = computed(() => ({
     actualDirection.value = v
   },
   directionName: props.placement,
-  arrowEl: arrowEl.value.$el,
+  arrowEl: arrowEl.value?.$el,
   attentionEl: attentionEl.value,
-  fallbackDirection: props.fallbackDirection,
   targetEl: props.targetEl,
   noArrow: props.noArrow,
   waitForDOM: nextTick
