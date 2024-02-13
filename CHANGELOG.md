@@ -1,3 +1,10 @@
+## [1.2.4-next.3](https://github.com/warp-ds/vue/compare/v1.2.4-next.2...v1.2.4-next.3) (2024-02-13)
+
+
+### Bug Fixes
+
+* rename deleted icons after @warp-ds/icons update to 2.0.0 ([#136](https://github.com/warp-ds/vue/issues/136)) ([e9ad066](https://github.com/warp-ds/vue/commit/e9ad0667ec6b4b5acbbac52329bba3b7c3fe52e7))
+
 ## [1.2.4-next.2](https://github.com/warp-ds/vue/compare/v1.2.4-next.1...v1.2.4-next.2) (2024-02-01)
 
 
