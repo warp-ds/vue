@@ -16,7 +16,7 @@ describe('attention', () => {
       slots: { default: defaultSlot } })
     assert.include(wrapper.text(), 'Hello Warp')
     const html = wrapper.get('[data-test="wrapper"]')
-    assert.include(html.classes().join(' '), 'i-bg-$color-callout-background')
+    assert.include(html.classes().join(' '), 'bg-[--w-color-callout-background]')
   })
   test('highlight', () => {
     const defaultSlot = '<h5>Hello Warp</h5>'
@@ -25,7 +25,7 @@ describe('attention', () => {
       slots: { default: defaultSlot } })
     assert.include(wrapper.text(), 'Hello Warp')
     const html = wrapper.get('[data-test="wrapper"]')
-    assert.include(html.classes().join(' '), 'i-bg-$color-callout-background')
+    assert.include(html.classes().join(' '), 'bg-[--w-color-callout-background]')
     assert.include(html.classes().join(' '), 'drop-shadow-m')
   })
   test('show/hide callout', async () => {
