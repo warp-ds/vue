@@ -1,5 +1,5 @@
 <script setup>
-import { computed, nextTick, ref, watch, watchEffect} from 'vue'
+import { watch, watchEffect, computed, ref, onMounted, nextTick } from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import IconClose16 from '@warp-ds/icons/vue/close-16'
 
@@ -175,7 +175,9 @@ const defaultAriaLabel = computed(() => {
 
 let cleanup;
 
-watchEffect(() => [props.callout], recompute(attentionState));
+onMounted(async () => {
+  watchEffect(model, recompute(attentionState.value), { immediate: props.callout })
+})
 
 watch(() => [props.targetEl, model.value], ([target, m]) =>  {
   if (!cleanup && target && m) {
