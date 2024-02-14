@@ -1,3 +1,10 @@
+## [1.2.4-next.4](https://github.com/warp-ds/vue/compare/v1.2.4-next.3...v1.2.4-next.4) (2024-02-14)
+
+
+### Bug Fixes
+
+* Remove redundant component css class from Modal ([#137](https://github.com/warp-ds/vue/issues/137)) ([3d783f9](https://github.com/warp-ds/vue/commit/3d783f92d9b0cb9b14b6f0b206771a41974d4eb7))
+
 ## [1.2.4-next.3](https://github.com/warp-ds/vue/compare/v1.2.4-next.2...v1.2.4-next.3) (2024-02-13)
 
 
