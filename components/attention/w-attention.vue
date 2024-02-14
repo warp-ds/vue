@@ -187,7 +187,6 @@ watch(() => [props.targetEl, model.value], ([target, m]) =>  {
     cleanup = null;
   }
 }, { immediate: true });
-
 </script>
 
 <template>
