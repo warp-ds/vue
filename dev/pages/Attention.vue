@@ -1,11 +1,15 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { wAttention, wBox, wButton } from '#components'
+import IconInfo16 from "@warp-ds/icons/vue/info-16";
+
+
 
 const tooltipTarget = ref(null)
 const tooltipResetTarget = ref(null)
 const popoverTarget = ref(null)
 const dismissiblePopoverTarget = ref(null)
+const popoverIconTarget = ref(null)
 const highlightTarget = ref(null)
 const dismissibleHighlightTarget = ref(null)
 
@@ -14,8 +18,12 @@ const tooltipResetShowing = ref(false)
 const calloutShowing = ref(true)
 const popoverShowing = ref(false)
 const dismissiblePopoverShowing = ref(false)
+const popoverIconTargetShowing = ref(false)
 const highlightShowing = ref(false)
 const dismissibleHighlightShowing = ref(false)
+
+const isMobile = computed(() => window.matchMedia('(max-width: 767px)').matches)
+
 </script>
 
 <template>
@@ -156,6 +164,33 @@ const dismissibleHighlightShowing = ref(false)
             <p id="dismissiblePopoverContent">I'm a dismissible popover</p>
           </w-attention>
         </div>
+        <div>
+          <h2>Popover with icon as target element</h2>
+          <w-button
+            :aria-expanded="popoverIconTargetShowing"
+            aria-controls="popover-icon-target-example"
+            type="button"
+            utility
+            quiet
+            ref="popoverIconTarget"
+            @click="() => (popoverIconTargetShowing = !popoverIconTargetShowing)"
+          >
+            <icon-info16/>
+          </w-button>
+          <div class="relative">
+            <w-attention
+              popover
+              placement="bottom-start"
+              :distance="-4"
+              :skidding="isMobile ? -25 : -80"
+              :target-el="popoverIconTarget ? popoverIconTarget.$el : null"
+              v-model="popoverIconTargetShowing"
+            >
+              <p>Hello Warp!</p>
+            </w-attention>
+          </div>
+        </div>
+
         <div>
           <h2>Highlight</h2>
           <w-button

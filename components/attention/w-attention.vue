@@ -45,6 +45,14 @@ const props = defineProps({
     },
     default: 'bottom'
   },
+  distance: {
+    type: Number,
+    default: 8
+  },
+  skidding: {
+    type: Number,
+    default: 0
+  }
 })
 
 const emit = defineEmits(['update:modelValue', 'dismiss'])
@@ -77,6 +85,8 @@ const attentionState = computed(() => ({
   attentionEl: attentionEl.value,
   targetEl: props.targetEl,
   noArrow: props.noArrow,
+  distance: props.distance,
+  skidding: props.skidding,
   waitForDOM: nextTick
 }));
 
