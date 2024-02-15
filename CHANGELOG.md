@@ -1,3 +1,10 @@
+## [1.2.4-next.5](https://github.com/warp-ds/vue/compare/v1.2.4-next.4...v1.2.4-next.5) (2024-02-15)
+
+
+### Bug Fixes
+
+* Slider active track disabled state fix ([#139](https://github.com/warp-ds/vue/issues/139)) ([a756c4c](https://github.com/warp-ds/vue/commit/a756c4c3e68b0e39a4eadaba50ed21f8fe091035))
+
 ## [1.2.4-next.4](https://github.com/warp-ds/vue/compare/v1.2.4-next.3...v1.2.4-next.4) (2024-02-14)
 
 
