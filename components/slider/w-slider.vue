@@ -121,12 +121,10 @@ const trackClasses = computed(() => [
     [ccSlider.trackDisabled]: props.disabled,
   },
 ]);
-const activeTrackClasses = computed(() => [
-  ccSlider.activeTrack,
-  {
-    [ccSlider.activeTrackDisabled]: props.disabled,
-  },
-]);
+const activeTrackClasses = computed(() => ({
+  [ccSlider.activeTrack]: !props.disabled,
+  [ccSlider.activeTrackDisabled]: props.disabled,
+}));
 const thumbClasses = computed(() => [
   ccSlider.thumb,
   props.disabled ? ccSlider.thumbDisabled : ccSlider.thumbEnabled,

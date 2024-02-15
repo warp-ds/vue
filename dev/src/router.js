@@ -18,7 +18,7 @@ import Switch from '../pages/Switch.vue'
 import Tabs from '../pages/Tabs.vue'
 import Tag from '../pages/Tag.vue'
 import Textarea from '../pages/Textarea.vue'
-import Textfield from '../pages/Textfield.vue'
+import Textfield from '../pages/TextField.vue'
 import Toggle from '../pages/Toggle.vue'
 // import Forms from '../pages/Forms.vue'
 
