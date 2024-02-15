@@ -72,7 +72,12 @@ const arrowEl = ref(null)
 const actualDirection = ref(props.placement)
 
 const attentionState = computed(() => ({
-  isShowing: model.value,
+  get isShowing() {
+    return model.value
+  },
+  set isShowing(v) {
+    model.value = v
+  },
   isCallout: props.callout,
   get actualDirection() {
     return actualDirection.value
