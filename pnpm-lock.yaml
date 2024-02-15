@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@floating-ui/dom':
     specifier: ^1.5.4
@@ -11,8 +15,8 @@ dependencies:
     specifier: ^1.0.2
     version: 1.0.2
   '@warp-ds/css':
-    specifier: 1.8.1
-    version: 1.8.1
+    specifier: 1.8.3
+    version: 1.8.3
   '@warp-ds/icons':
     specifier: 2.0.0
     version: 2.0.0
@@ -80,22 +84,22 @@ devDependencies:
     version: 7.6.10(react-dom@18.2.0)(react@18.2.0)
   '@storybook/builder-vite':
     specifier: ^7.6.10
-    version: 7.6.10(vite@5.0.12)
+    version: 7.6.10(typescript@5.1.6)(vite@5.0.12)
   '@storybook/cli':
     specifier: ^7.6.10
     version: 7.6.10
   '@storybook/test':
     specifier: ^7.6.10
-    version: 7.6.10(vitest@1.2.1)
+    version: 7.6.10(jest@29.7.0)(vitest@1.2.1)
   '@storybook/test-runner':
     specifier: ^0.16.0
-    version: 0.16.0
+    version: 0.16.0(@types/node@20.4.2)(ts-node@10.9.1)
   '@storybook/vue3':
     specifier: ^7.6.10
     version: 7.6.10(vue@3.4.14)
   '@storybook/vue3-vite':
     specifier: ^7.6.10
-    version: 7.6.10(vite@5.0.12)(vue@3.4.14)
+    version: 7.6.10(typescript@5.1.6)(vite@5.0.12)(vue@3.4.14)
   '@vitejs/plugin-vue':
     specifier: ^5.0.0
     version: 5.0.3(vite@5.0.12)(vue@3.4.14)
@@ -113,7 +117,7 @@ devDependencies:
     version: 1.0.0
   cz-conventional-changelog:
     specifier: ^3.3.0
-    version: 3.3.0
+    version: 3.3.0(@swc/core@1.3.105)
   drnm:
     specifier: ^0.9.0
     version: 0.9.0
@@ -137,7 +141,7 @@ devDependencies:
     version: 18.2.0(react@18.2.0)
   semantic-release:
     specifier: ^23.0.0
-    version: 23.0.0
+    version: 23.0.0(typescript@5.1.6)
   shikiji:
     specifier: ^0.9.0
     version: 0.9.19
@@ -146,19 +150,19 @@ devDependencies:
     version: 7.6.10
   unocss:
     specifier: 0.58.5
-    version: 0.58.5(vite@5.0.12)
+    version: 0.58.5(postcss@8.4.33)(vite@5.0.12)
   vite:
     specifier: 5.0.12
-    version: 5.0.12
+    version: 5.0.12(@types/node@20.4.2)
   viteik:
     specifier: ^1.0.3
     version: 1.0.3(@eik/rollup-plugin@4.0.62)
   vitest:
     specifier: ^1.2.1
-    version: 1.2.1(happy-dom@13.1.4)
+    version: 1.2.1(@types/node@20.4.2)(happy-dom@13.1.4)
   vue:
     specifier: ^3.4.14
-    version: 3.4.14
+    version: 3.4.14(typescript@5.1.6)
   vue-router:
     specifier: ^4.2.5
     version: 4.2.5(vue@3.4.14)
@@ -2533,7 +2537,7 @@ packages:
     dev: true
     optional: true
 
-  /@commitlint/load@17.5.0:
+  /@commitlint/load@17.5.0(@swc/core@1.3.105):
     resolution: {integrity: sha512-l+4W8Sx4CD5rYFsrhHH8HP01/8jEP7kKf33Xlx2Uk2out/UKoKPYMOIRcDH5ppT8UXLMV+x6Wm5osdRKKgaD1Q==}
     engines: {node: '>=v14'}
     requiresBuild: true
@@ -2550,7 +2554,7 @@ packages:
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1(@types/node@20.4.2)(typescript@5.1.6)
+      ts-node: 10.9.1(@swc/core@1.3.105)(@types/node@20.4.2)(typescript@5.1.6)
       typescript: 5.1.6
     transitivePeerDependencies:
       - '@swc/core'
@@ -2588,7 +2592,6 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
-    optional: true
 
   /@discoveryjs/json-ext@0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -2629,7 +2632,7 @@ packages:
     resolution: {integrity: sha512-h9z1jyz0ueOwNfAPnwjJk3JGCMdm/3TFqGiGi3KqLgx3fhHgKOLmZa9fqGgX0E8arCgN2YavJwHiBCsIKTqEdQ==}
     dependencies:
       ajv: 8.12.0
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1(ajv@8.12.0)
       glob: 8.1.0
       is-glob: 4.0.3
       mime-types: 2.1.35
@@ -3376,7 +3379,7 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /@jest/core@29.7.0:
+  /@jest/core@29.7.0(ts-node@10.9.1):
     resolution: {integrity: sha512-n7aeXWKMnGtDA48y8TLWJPJmLmmZ642Ceo78cYWEpiD7FzDgmNDV/GCVRorPABdXLJZ/9wzzgZAlHjXjxDHGsg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
@@ -3397,7 +3400,7 @@ packages:
       exit: 0.1.2
       graceful-fs: 4.2.11
       jest-changed-files: 29.7.0
-      jest-config: 29.7.0(@types/node@20.4.2)
+      jest-config: 29.7.0(@types/node@20.4.2)(ts-node@10.9.1)
       jest-haste-map: 29.7.0
       jest-message-util: 29.7.0
       jest-regex-util: 29.6.3
@@ -3634,7 +3637,6 @@ packages:
     engines: {node: '>=6.0.0'}
     requiresBuild: true
     dev: true
-    optional: true
 
   /@jridgewell/set-array@1.1.2:
     resolution: {integrity: sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==}
@@ -3662,7 +3664,6 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
-    optional: true
 
   /@juggle/resize-observer@3.4.0:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
@@ -4623,7 +4624,7 @@ packages:
       aggregate-error: 3.1.0
       fs-extra: 11.1.1
       lodash: 4.17.21
-      semantic-release: 23.0.0
+      semantic-release: 23.0.0(typescript@5.1.6)
     dev: true
 
   /@semantic-release/commit-analyzer@11.1.0(semantic-release@23.0.0):
@@ -4639,7 +4640,7 @@ packages:
       import-from-esm: 1.3.3
       lodash-es: 4.17.21
       micromatch: 4.0.5
-      semantic-release: 23.0.0
+      semantic-release: 23.0.0(typescript@5.1.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4668,7 +4669,7 @@ packages:
       lodash: 4.17.21
       micromatch: 4.0.5
       p-reduce: 2.1.0
-      semantic-release: 23.0.0
+      semantic-release: 23.0.0(typescript@5.1.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4694,7 +4695,7 @@ packages:
       lodash-es: 4.17.21
       mime: 3.0.0
       p-filter: 3.0.0
-      semantic-release: 23.0.0
+      semantic-release: 23.0.0(typescript@5.1.6)
       url-join: 5.0.0
     transitivePeerDependencies:
       - encoding
@@ -4718,7 +4719,7 @@ packages:
       rc: 1.2.8
       read-pkg: 9.0.1
       registry-auth-token: 5.0.2
-      semantic-release: 23.0.0
+      semantic-release: 23.0.0(typescript@5.1.6)
       semver: 7.6.0
       tempy: 3.1.0
     dev: true
@@ -4739,7 +4740,7 @@ packages:
       into-stream: 7.0.0
       lodash-es: 4.17.21
       read-pkg-up: 11.0.0
-      semantic-release: 23.0.0
+      semantic-release: 23.0.0(typescript@5.1.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4992,7 +4993,7 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/builder-vite@7.6.10(vite@5.0.12):
+  /@storybook/builder-vite@7.6.10(typescript@5.1.6)(vite@5.0.12):
     resolution: {integrity: sha512-qxe19axiNJVdIKj943e1ucAmADwU42fTGgMSdBzzrvfH3pSOmx2057aIxRzd8YtBRnj327eeqpgCHYIDTunMYQ==}
     peerDependencies:
       '@preact/preset-vite': '*'
@@ -5023,7 +5024,8 @@ packages:
       fs-extra: 11.1.1
       magic-string: 0.30.5
       rollup: 3.29.4
-      vite: 5.0.12
+      typescript: 5.1.6
+      vite: 5.0.12(@types/node@20.4.2)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -5397,7 +5399,7 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/test-runner@0.16.0:
+  /@storybook/test-runner@0.16.0(@types/node@20.4.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-LDmNbKFoEDW/VS9o6KR8e1r5MnbCc5ZojUfi5yqLdq80gFD7BvilgKgV0lUh/xWHryzoy+Ids5LYgrPJZmU2dQ==}
     engines: {node: ^16.10.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -5417,7 +5419,7 @@ packages:
       commander: 9.5.0
       expect-playwright: 0.8.0
       glob: 10.3.10
-      jest: 29.7.0
+      jest: 29.7.0(@types/node@20.4.2)(ts-node@10.9.1)
       jest-circus: 29.7.0
       jest-environment-node: 29.7.0
       jest-junit: 16.0.0
@@ -5441,7 +5443,7 @@ packages:
       - ts-node
     dev: true
 
-  /@storybook/test@7.6.10(vitest@1.2.1):
+  /@storybook/test@7.6.10(jest@29.7.0)(vitest@1.2.1):
     resolution: {integrity: sha512-dn/T+HcWOBlVh3c74BHurp++BaqBoQgNbSIaXlYDpJoZ+DzNIoEQVsWFYm5gCbtKK27iFd4n52RiQI3f6Vblqw==}
     dependencies:
       '@storybook/client-logger': 7.6.10
@@ -5449,7 +5451,7 @@ packages:
       '@storybook/instrumenter': 7.6.10
       '@storybook/preview-api': 7.6.10
       '@testing-library/dom': 9.3.4
-      '@testing-library/jest-dom': 6.2.1(vitest@1.2.1)
+      '@testing-library/jest-dom': 6.2.1(jest@29.7.0)(vitest@1.2.1)
       '@testing-library/user-event': 14.3.0(@testing-library/dom@9.3.4)
       '@types/chai': 4.3.11
       '@vitest/expect': 0.34.7
@@ -5487,18 +5489,18 @@ packages:
       file-system-cache: 2.3.0
     dev: true
 
-  /@storybook/vue3-vite@7.6.10(vite@5.0.12)(vue@3.4.14):
+  /@storybook/vue3-vite@7.6.10(typescript@5.1.6)(vite@5.0.12)(vue@3.4.14):
     resolution: {integrity: sha512-5f0Rh4PTVEeAI86ybihfN+rHGXXLNiRsoGKinpJSb7hkfsq/L7u3sVCXJwH/qsG+rUJlZyHs3kfa4/Kgyyi3Mg==}
     engines: {node: ^14.18 || >=16}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
     dependencies:
-      '@storybook/builder-vite': 7.6.10(vite@5.0.12)
+      '@storybook/builder-vite': 7.6.10(typescript@5.1.6)(vite@5.0.12)
       '@storybook/core-server': 7.6.10
       '@storybook/vue3': 7.6.10(vue@3.4.14)
       '@vitejs/plugin-vue': 4.6.2(vite@5.0.12)(vue@3.4.14)
       magic-string: 0.30.5
-      vite: 5.0.12
+      vite: 5.0.12(@types/node@20.4.2)
       vue-docgen-api: 4.75.1(vue@3.4.14)
     transitivePeerDependencies:
       - '@preact/preset-vite'
@@ -5526,7 +5528,7 @@ packages:
       lodash: 4.17.21
       ts-dedent: 2.2.0
       type-fest: 2.19.0
-      vue: 3.4.14
+      vue: 3.4.14(typescript@5.1.6)
       vue-component-type-helpers: 1.8.27
     transitivePeerDependencies:
       - encoding
@@ -5681,7 +5683,7 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/jest-dom@6.2.1(vitest@1.2.1):
+  /@testing-library/jest-dom@6.2.1(jest@29.7.0)(vitest@1.2.1):
     resolution: {integrity: sha512-Nuy/uFFDe9h/2jwoUuMKgoxvgkUv4S9jI9bARj6dGUKJ3euRhg8JFi5sciYbrayoxkadEOZednRT9+vo6LvvxQ==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
     peerDependencies:
@@ -5708,9 +5710,10 @@ packages:
       chalk: 3.0.0
       css.escape: 1.5.1
       dom-accessibility-api: 0.6.3
+      jest: 29.7.0(@types/node@20.4.2)(ts-node@10.9.1)
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 1.2.1(happy-dom@13.1.4)
+      vitest: 1.2.1(@types/node@20.4.2)(happy-dom@13.1.4)
     dev: true
 
   /@testing-library/user-event@14.3.0(@testing-library/dom@9.3.4):
@@ -5726,25 +5729,21 @@ packages:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
     requiresBuild: true
     dev: true
-    optional: true
 
   /@tsconfig/node12@1.0.11:
     resolution: {integrity: sha512-cqefuRsh12pWyGsIoBKJA9luFu3mRxCA+ORZvA4ktLSzIuCUtWVxGIuXigEwO5/ywWFMZ2QEGKWvkZG1zDMTag==}
     requiresBuild: true
     dev: true
-    optional: true
 
   /@tsconfig/node14@1.0.3:
     resolution: {integrity: sha512-ysT8mhdixWK6Hw3i1V2AeRqZ5WfXg1G43mqoYlM2nc6388Fq5jcXyr5mRsqViLx/GJYdoL0bfXD8nmF+Zn/Iow==}
     requiresBuild: true
     dev: true
-    optional: true
 
   /@tsconfig/node16@1.0.4:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     requiresBuild: true
     dev: true
-    optional: true
 
   /@types/aria-query@5.0.4:
     resolution: {integrity: sha512-rfT93uj5s0PRL7EzccGMs3brplhcrghnDoV26NqKhCAS1hVo+WdNsPvE/yb6ilfr5hi2MEk6d5EWJTKdxg8jVw==}
@@ -6007,7 +6006,7 @@ packages:
       '@unocss/core': 0.58.5
       '@unocss/reset': 0.58.5
       '@unocss/vite': 0.58.5(vite@5.0.12)
-      vite: 5.0.12
+      vite: 5.0.12(@types/node@20.4.2)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -6059,9 +6058,11 @@ packages:
       sirv: 2.0.4
     dev: true
 
-  /@unocss/postcss@0.58.5:
+  /@unocss/postcss@0.58.5(postcss@8.4.33):
     resolution: {integrity: sha512-m4L2YRdYfT6CV306Kl2VwEwbqa/92EpW4GE2Kqak1RuJyFJXBnWEEMJV4Uy6B1jWKLlCEWkuVUW33JUg7X6BxQ==}
     engines: {node: '>=14'}
+    peerDependencies:
+      postcss: ^8.4.21
     dependencies:
       '@unocss/config': 0.58.5
       '@unocss/core': 0.58.5
@@ -6199,7 +6200,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.2
       magic-string: 0.30.7
-      vite: 5.0.12
+      vite: 5.0.12(@types/node@20.4.2)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -6211,8 +6212,8 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.0.12
-      vue: 3.4.14
+      vite: 5.0.12(@types/node@20.4.2)
+      vue: 3.4.14(typescript@5.1.6)
     dev: true
 
   /@vitejs/plugin-vue@5.0.3(vite@5.0.12)(vue@3.4.14):
@@ -6222,8 +6223,8 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.0.12
-      vue: 3.4.14
+      vite: 5.0.12(@types/node@20.4.2)
+      vue: 3.4.14(typescript@5.1.6)
     dev: true
 
   /@vitest/coverage-v8@1.2.2(vitest@1.2.1):
@@ -6244,7 +6245,7 @@ packages:
       std-env: 3.7.0
       test-exclude: 6.0.0
       v8-to-istanbul: 9.2.0
-      vitest: 1.2.1(happy-dom@13.1.4)
+      vitest: 1.2.1(@types/node@20.4.2)(happy-dom@13.1.4)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6380,7 +6381,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.4.14
       '@vue/shared': 3.4.14
-      vue: 3.4.14
+      vue: 3.4.14(typescript@5.1.6)
     dev: true
 
   /@vue/shared@3.4.14:
@@ -6397,7 +6398,7 @@ packages:
         optional: true
     dependencies:
       js-beautify: 1.14.9
-      vue: 3.4.14
+      vue: 3.4.14(typescript@5.1.6)
       vue-component-type-helpers: 1.8.27
     dev: true
 
@@ -6407,10 +6408,10 @@ packages:
       '@floating-ui/dom': 0.5.4
     dev: false
 
-  /@warp-ds/css@1.8.1:
-    resolution: {integrity: sha512-NoI3ZycFEMdKTp1noZmJ8IFhBJzFIeTYzG/2x8VrDJ83t244DayfKxyMl0c6sEGRsakvMUJOEBe6LlH8vwpNMw==}
+  /@warp-ds/css@1.8.3:
+    resolution: {integrity: sha512-SFG9gmnMv0POtCb9HHp73Gq6Y7eZeoWZDdXhB8tBY71nMRLp45a7tvu5q28OEGIlNF44PGLmRoF2YHbfq+jThg==}
     dependencies:
-      '@warp-ds/tokenizer': 0.0.3
+      '@warp-ds/tokenizer': 0.0.4
       '@warp-ds/uno': 1.8.1
     dev: false
 
@@ -6420,8 +6421,8 @@ packages:
       '@lingui/core': 4.7.0
     dev: false
 
-  /@warp-ds/tokenizer@0.0.3:
-    resolution: {integrity: sha512-7e1/gquOPcSIUNbk6GutvvGJwneWQ2bmTvxnwi+qyuSF+h4yQvuy2XncS8EtNjb3e+xDkVA7B+9wNM9Am6A47w==}
+  /@warp-ds/tokenizer@0.0.4:
+    resolution: {integrity: sha512-D4qIUQdY0Tp23OpeR6P9T5QXpsr9crN/FusHWN+975Yk5WoWZOMAf7SVyvgFKV0uq5s70I3qlZqjT51khMwPNQ==}
     dependencies:
       glob: 10.3.10
       yaml: 2.3.4
@@ -6492,7 +6493,6 @@ packages:
     engines: {node: '>=0.4.0'}
     requiresBuild: true
     dev: true
-    optional: true
 
   /acorn-walk@8.3.2:
     resolution: {integrity: sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==}
@@ -6511,7 +6511,6 @@ packages:
     hasBin: true
     requiresBuild: true
     dev: true
-    optional: true
 
   /acorn@8.11.3:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
@@ -6562,8 +6561,10 @@ packages:
       indent-string: 5.0.0
     dev: true
 
-  /ajv-formats@2.1.1:
+  /ajv-formats@2.1.1(ajv@8.12.0):
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
+    peerDependencies:
+      ajv: ^8.0.0
     peerDependenciesMeta:
       ajv:
         optional: true
@@ -6673,7 +6674,6 @@ packages:
     resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==}
     requiresBuild: true
     dev: true
-    optional: true
 
   /argparse@1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
@@ -7480,13 +7480,13 @@ packages:
     engines: {node: ^12.20.0 || >=14}
     dev: true
 
-  /commitizen@4.3.0:
+  /commitizen@4.3.0(@swc/core@1.3.105):
     resolution: {integrity: sha512-H0iNtClNEhT0fotHvGV3E9tDejDeS04sN1veIebsKYGMuGscFaswRoYJKmT3eW85eIJAs0F28bG2+a/9wCOfPw==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
       cachedir: 2.3.0
-      cz-conventional-changelog: 3.3.0
+      cz-conventional-changelog: 3.3.0(@swc/core@1.3.105)
       dedent: 0.7.0
       detect-indent: 6.1.0
       find-node-modules: 2.1.3
@@ -7682,7 +7682,7 @@ packages:
     dependencies:
       '@types/node': 20.4.2
       cosmiconfig: 8.2.0
-      ts-node: 10.9.1(@types/node@20.4.2)(typescript@5.1.6)
+      ts-node: 10.9.1(@swc/core@1.3.105)(@types/node@20.4.2)(typescript@5.1.6)
       typescript: 5.1.6
     dev: true
     optional: true
@@ -7708,7 +7708,7 @@ packages:
       path-type: 4.0.0
     dev: true
 
-  /cosmiconfig@9.0.0:
+  /cosmiconfig@9.0.0(typescript@5.1.6):
     resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -7721,9 +7721,10 @@ packages:
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
+      typescript: 5.1.6
     dev: true
 
-  /create-jest@29.7.0:
+  /create-jest@29.7.0(@types/node@20.4.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-Adz2bdH0Vq3F53KEMJOoftQFutWCukm6J24wbPWRO4k1kMY7gS7ds/uoJkNuV8wDCtWWnuwGcJwpWcih+zEW1Q==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -7732,7 +7733,7 @@ packages:
       chalk: 4.1.2
       exit: 0.1.2
       graceful-fs: 4.2.11
-      jest-config: 29.7.0
+      jest-config: 29.7.0(@types/node@20.4.2)(ts-node@10.9.1)
       jest-util: 29.7.0
       prompts: 2.4.2
     transitivePeerDependencies:
@@ -7746,7 +7747,6 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     requiresBuild: true
     dev: true
-    optional: true
 
   /create-v-model@2.2.0:
     resolution: {integrity: sha512-YaNLZ5Z7pCYfu/IwtthkK0mSOjXABkXts00ZpHTmk/lbn5DXdbkaaYpejJaBEhxP86puF5MgrYXfmwDJNEU+wg==}
@@ -7796,18 +7796,18 @@ packages:
       fs-exists-sync: 0.1.0
     dev: true
 
-  /cz-conventional-changelog@3.3.0:
+  /cz-conventional-changelog@3.3.0(@swc/core@1.3.105):
     resolution: {integrity: sha512-U466fIzU5U22eES5lTNiNbZ+d8dfcHcssH4o7QsdWaCcRs/feIPCxKYSWkYBNs5mny7MvEfwpTLWjvbm94hecw==}
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.3.0
+      commitizen: 4.3.0(@swc/core@1.3.105)
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.3
     optionalDependencies:
-      '@commitlint/load': 17.5.0
+      '@commitlint/load': 17.5.0(@swc/core@1.3.105)
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -8045,7 +8045,6 @@ packages:
     engines: {node: '>=0.3.1'}
     requiresBuild: true
     dev: true
-    optional: true
 
   /diffable-html@4.1.0:
     resolution: {integrity: sha512-++kyNek+YBLH8cLXS+iTj/Hiy2s5qkRJEJ8kgu/WHbFrVY2vz9xPFUT+fii2zGF0m1CaojDlQJjkfrCt7YWM1g==}
@@ -10096,7 +10095,7 @@ packages:
       - supports-color
     dev: true
 
-  /jest-cli@29.7.0:
+  /jest-cli@29.7.0(@types/node@20.4.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-OVVobw2IubN/GSYsxETi+gOe7Ka59EFMR/twOU3Jb2GnKKeMGJB5SGUUrEz3SFVmJASUdZUzy83sLNNQ2gZslg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -10106,14 +10105,14 @@ packages:
       node-notifier:
         optional: true
     dependencies:
-      '@jest/core': 29.7.0
+      '@jest/core': 29.7.0(ts-node@10.9.1)
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
       chalk: 4.1.2
-      create-jest: 29.7.0
+      create-jest: 29.7.0(@types/node@20.4.2)(ts-node@10.9.1)
       exit: 0.1.2
       import-local: 3.1.0
-      jest-config: 29.7.0
+      jest-config: 29.7.0(@types/node@20.4.2)(ts-node@10.9.1)
       jest-util: 29.7.0
       jest-validate: 29.7.0
       yargs: 17.7.2
@@ -10124,46 +10123,7 @@ packages:
       - ts-node
     dev: true
 
-  /jest-config@29.7.0:
-    resolution: {integrity: sha512-uXbpfeQ7R6TZBqI3/TxCU4q4ttk3u0PJeC+E0zbfSoSjq6bJ7buBPxzQPL0ifrkY4DNu4JUdk0ImlBUYi840eQ==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    peerDependencies:
-      '@types/node': '*'
-      ts-node: '>=9.0.0'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      ts-node:
-        optional: true
-    dependencies:
-      '@babel/core': 7.23.9
-      '@jest/test-sequencer': 29.7.0
-      '@jest/types': 29.6.3
-      babel-jest: 29.7.0(@babel/core@7.23.9)
-      chalk: 4.1.2
-      ci-info: 3.9.0
-      deepmerge: 4.3.1
-      glob: 7.2.3
-      graceful-fs: 4.2.11
-      jest-circus: 29.7.0
-      jest-environment-node: 29.7.0
-      jest-get-type: 29.6.3
-      jest-regex-util: 29.6.3
-      jest-resolve: 29.7.0
-      jest-runner: 29.7.0
-      jest-util: 29.7.0
-      jest-validate: 29.7.0
-      micromatch: 4.0.5
-      parse-json: 5.2.0
-      pretty-format: 29.7.0
-      slash: 3.0.0
-      strip-json-comments: 3.1.1
-    transitivePeerDependencies:
-      - babel-plugin-macros
-      - supports-color
-    dev: true
-
-  /jest-config@29.7.0(@types/node@20.4.2):
+  /jest-config@29.7.0(@types/node@20.4.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-uXbpfeQ7R6TZBqI3/TxCU4q4ttk3u0PJeC+E0zbfSoSjq6bJ7buBPxzQPL0ifrkY4DNu4JUdk0ImlBUYi840eQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     peerDependencies:
@@ -10198,6 +10158,7 @@ packages:
       pretty-format: 29.7.0
       slash: 3.0.0
       strip-json-comments: 3.1.1
+      ts-node: 10.9.1(@swc/core@1.3.105)(@types/node@20.4.2)(typescript@5.1.6)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
@@ -10341,7 +10302,7 @@ packages:
       jest-runner: ^29.3.1
     dependencies:
       expect-playwright: 0.8.0
-      jest: 29.7.0
+      jest: 29.7.0(@types/node@20.4.2)(ts-node@10.9.1)
       jest-circus: 29.7.0
       jest-environment-node: 29.7.0
       jest-process-manager: 0.4.0
@@ -10552,7 +10513,7 @@ packages:
     dependencies:
       ansi-escapes: 6.2.0
       chalk: 5.3.0
-      jest: 29.7.0
+      jest: 29.7.0(@types/node@20.4.2)(ts-node@10.9.1)
       jest-regex-util: 29.6.3
       jest-watcher: 29.7.0
       slash: 5.1.0
@@ -10584,7 +10545,7 @@ packages:
       supports-color: 8.1.1
     dev: true
 
-  /jest@29.7.0:
+  /jest@29.7.0(@types/node@20.4.2)(ts-node@10.9.1):
     resolution: {integrity: sha512-NIy3oAFp9shda19hy4HK0HRTWKtPJmGdnvywu01nOqNC2vZg+Z+fvJDxpMQA88eb2I9EcafcdjYgsDthnYTvGw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -10594,10 +10555,10 @@ packages:
       node-notifier:
         optional: true
     dependencies:
-      '@jest/core': 29.7.0
+      '@jest/core': 29.7.0(ts-node@10.9.1)
       '@jest/types': 29.6.3
       import-local: 3.1.0
-      jest-cli: 29.7.0
+      jest-cli: 29.7.0(@types/node@20.4.2)(ts-node@10.9.1)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -11034,7 +10995,6 @@ packages:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
     requiresBuild: true
     dev: true
-    optional: true
 
   /makeerror@1.0.12:
     resolution: {integrity: sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==}
@@ -12802,7 +12762,7 @@ packages:
     resolution: {integrity: sha512-lBLUBKAFMLUdQoEAF7qhUAUCg+87OXH1rlIrYVhiyegdIA8/7pDWWjCkNlstLtFmMdtcJQtP5SunbumlpkBvrQ==}
     dev: false
 
-  /semantic-release@23.0.0:
+  /semantic-release@23.0.0(typescript@5.1.6):
     resolution: {integrity: sha512-Jz7jEWO2igTtske112gC4PPE2whCMVrsgxUPG3/SZI7VE357suIUZFlJd1Yu0g2I6RPc2HxNEfUg7KhmDTjwqg==}
     engines: {node: '>=20.8.1'}
     hasBin: true
@@ -12813,7 +12773,7 @@ packages:
       '@semantic-release/npm': 11.0.2(semantic-release@23.0.0)
       '@semantic-release/release-notes-generator': 12.1.0(semantic-release@23.0.0)
       aggregate-error: 5.0.0
-      cosmiconfig: 9.0.0
+      cosmiconfig: 9.0.0(typescript@5.1.6)
       debug: 4.3.4
       env-ci: 11.0.0
       execa: 8.0.1
@@ -13563,7 +13523,7 @@ packages:
     resolution: {integrity: sha512-vDWbsl26LIcPGmDpoVzjEP6+hvHZkBkLW7JpvwbCv/5IYPJlsbzCVXY3wsCeAxAUeTclNOUZxnLdGh3VBD/J6w==}
     dev: true
 
-  /ts-node@10.9.1(@types/node@20.4.2)(typescript@5.1.6):
+  /ts-node@10.9.1(@swc/core@1.3.105)(@types/node@20.4.2)(typescript@5.1.6):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     requiresBuild: true
@@ -13579,6 +13539,7 @@ packages:
         optional: true
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
+      '@swc/core': 1.3.105
       '@tsconfig/node10': 1.0.9
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
@@ -13594,7 +13555,6 @@ packages:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
-    optional: true
 
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
@@ -13677,7 +13637,6 @@ packages:
     hasBin: true
     requiresBuild: true
     dev: true
-    optional: true
 
   /ufo@1.3.2:
     resolution: {integrity: sha512-o+ORpgGwaYQXgqGDwd+hkS4PuZ3QnmqMMxRuajK/a38L6fTpcE5GPIfrf+L/KemFzfUpeUQc1rRS1iDBozvnFA==}
@@ -13791,7 +13750,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unocss@0.58.5(vite@5.0.12):
+  /unocss@0.58.5(postcss@8.4.33)(vite@5.0.12):
     resolution: {integrity: sha512-0g4P6jLgRRNnhscxw7nQ9RHGrKJ1UPPiHPet+YT3TXUcmy4mTiYgo9+kGQf5bjyrzsELJ10cT6Qz2y6g9Tls4g==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -13807,7 +13766,7 @@ packages:
       '@unocss/cli': 0.58.5
       '@unocss/core': 0.58.5
       '@unocss/extractor-arbitrary-variants': 0.58.5
-      '@unocss/postcss': 0.58.5
+      '@unocss/postcss': 0.58.5(postcss@8.4.33)
       '@unocss/preset-attributify': 0.58.5
       '@unocss/preset-icons': 0.58.5
       '@unocss/preset-mini': 0.58.5
@@ -13823,8 +13782,9 @@ packages:
       '@unocss/transformer-directives': 0.58.5
       '@unocss/transformer-variant-group': 0.58.5
       '@unocss/vite': 0.58.5(vite@5.0.12)
-      vite: 5.0.12
+      vite: 5.0.12(@types/node@20.4.2)
     transitivePeerDependencies:
+      - postcss
       - rollup
       - supports-color
     dev: true
@@ -13947,7 +13907,6 @@ packages:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
     requiresBuild: true
     dev: true
-    optional: true
 
   /v8-to-istanbul@9.2.0:
     resolution: {integrity: sha512-/EH/sDgxU2eGxajKdwLCDmQ4FWq+kpi3uCmBGpw1xJtnAxEjlD8j8PEiGWpCIMIs3ciNAgH0d3TTJiUkYzyZjA==}
@@ -13986,7 +13945,7 @@ packages:
       replace-ext: 0.0.1
     dev: true
 
-  /vite-node@1.2.1:
+  /vite-node@1.2.1(@types/node@20.4.2):
     resolution: {integrity: sha512-fNzHmQUSOY+y30naohBvSW7pPn/xn3Ib/uqm+5wAJQJiqQsU0NBR78XdRJb04l4bOFKjpTWld0XAfkKlrDbySg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -13995,7 +13954,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.0.12
+      vite: 5.0.12(@types/node@20.4.2)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -14007,7 +13966,7 @@ packages:
       - terser
     dev: true
 
-  /vite@5.0.12:
+  /vite@5.0.12(@types/node@20.4.2):
     resolution: {integrity: sha512-4hsnEkG3q0N4Tzf1+t6NdN9dg/L3BM+q8SWgbSPnJvrgH2kgdyzfVJwbR1ic69/4uMJJ/3dqDZZE5/WwqW8U1w==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -14035,6 +13994,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.4.2
       esbuild: 0.19.11
       postcss: 8.4.33
       rollup: 4.9.5
@@ -14050,7 +14010,7 @@ packages:
       '@eik/rollup-plugin': 4.0.62
     dev: true
 
-  /vitest@1.2.1(happy-dom@13.1.4):
+  /vitest@1.2.1(@types/node@20.4.2)(happy-dom@13.1.4):
     resolution: {integrity: sha512-TRph8N8rnSDa5M2wKWJCMnztCZS9cDcgVTQ6tsTFTG/odHJ4l5yNVqvbeDJYJRZ6is3uxaEpFs8LL6QM+YFSdA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -14075,6 +14035,7 @@ packages:
       jsdom:
         optional: true
     dependencies:
+      '@types/node': 20.4.2
       '@vitest/expect': 1.2.1
       '@vitest/runner': 1.2.1
       '@vitest/snapshot': 1.2.1
@@ -14094,8 +14055,8 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.6.0
       tinypool: 0.8.1
-      vite: 5.0.12
-      vite-node: 1.2.1
+      vite: 5.0.12(@types/node@20.4.2)
+      vite-node: 1.2.1(@types/node@20.4.2)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
@@ -14131,7 +14092,7 @@ packages:
       pug: 3.0.2
       recast: 0.23.4
       ts-map: 1.0.3
-      vue: 3.4.14
+      vue: 3.4.14(typescript@5.1.6)
       vue-inbrowser-compiler-independent-utils: 4.71.1(vue@3.4.14)
     dev: true
 
@@ -14140,7 +14101,7 @@ packages:
     peerDependencies:
       vue: '>=2'
     dependencies:
-      vue: 3.4.14
+      vue: 3.4.14(typescript@5.1.6)
     dev: true
 
   /vue-router@4.2.5(vue@3.4.14):
@@ -14149,10 +14110,10 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.5.0
-      vue: 3.4.14
+      vue: 3.4.14(typescript@5.1.6)
     dev: true
 
-  /vue@3.4.14:
+  /vue@3.4.14(typescript@5.1.6):
     resolution: {integrity: sha512-Rop5Al/ZcBbBz+KjPZaZDgHDX0kUP4duEzDbm+1o91uxYUNmJrZSBuegsNIJvUGy+epLevNRNhLjm08VKTgGyw==}
     peerDependencies:
       typescript: '*'
@@ -14165,6 +14126,7 @@ packages:
       '@vue/runtime-dom': 3.4.14
       '@vue/server-renderer': 3.4.14(vue@3.4.14)
       '@vue/shared': 3.4.14
+      typescript: 5.1.6
     dev: true
 
   /wait-on@7.2.0:
@@ -14517,7 +14479,6 @@ packages:
     engines: {node: '>=6'}
     requiresBuild: true
     dev: true
-    optional: true
 
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
@@ -14528,7 +14489,3 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
