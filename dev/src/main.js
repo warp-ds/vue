@@ -3,7 +3,7 @@ import App from './App.vue';
 import Cleave from 'cleave-lite';
 import { router } from './router'
 import { getHighlighterCore } from 'shikiji/core'
-import { getWasmInlined } from 'shikiji/wasm'
+import getWasmInlined from 'shikiji/wasm'
 import vitesseLight from 'shikiji/themes/vitesse-light.mjs'
 import Control from './Control.vue'
 import Controls from './Controls.vue'
