@@ -1,3 +1,10 @@
+## [1.2.4-next.6](https://github.com/warp-ds/vue/compare/v1.2.4-next.5...v1.2.4-next.6) (2024-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies (non-major) ([#132](https://github.com/warp-ds/vue/issues/132)) ([c2b2131](https://github.com/warp-ds/vue/commit/c2b213162c9fc4dbc4d0bbceb9559d8ba6b64081))
+
 ## [1.2.4-next.5](https://github.com/warp-ds/vue/compare/v1.2.4-next.4...v1.2.4-next.5) (2024-02-15)
 
 
