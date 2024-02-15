@@ -38,6 +38,9 @@ pnpm add @warp-ds/vue
 For information on the components available in the package and how to use them,
 see the [Warp Design System documentation](https://warp-ds.github.io/tech-docs/).
 
+### Storybook
+
+Storybook can be started by running `pnpm storybook`. 
 
 ## Releases
 

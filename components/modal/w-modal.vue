@@ -10,7 +10,7 @@ import { messages as enMessages} from './locales/en/messages.mjs';
 import { messages as nbMessages} from './locales/nb/messages.mjs';
 import { messages as fiMessages} from './locales/fi/messages.mjs';
 import IconClose16 from '@warp-ds/icons/vue/close-16';
-import IconTableSortDown16 from '@warp-ds/icons/vue/table-sort-down-16';
+import IconArrowLeft16 from '@warp-ds/icons/vue/arrow-left-16';
 
 activateI18n(enMessages, nbMessages, fiMessages);
 
@@ -111,7 +111,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
     enter-from-class="opacity-0"
     leave-to-class="opacity-0"
     >
-    <div :class="[ccModal.backdrop, ccModal.transparentBg]" v-if="showModal" @click.self="emitDismiss" ref="backdropEl" data-test="backdrop">
+    <div v-if="showModal" ref="backdropEl" :class="ccModal.backdrop" @click.self="emitDismiss" data-test="backdrop">
       <transition
         name="slide"
         enter-from-class="translate-y-full"
@@ -128,7 +128,7 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
               >
               <button v-if="left" :aria-label="ariaBack" @click="$emit('left')" :class="titleLeftClasses" key="left" v-bind="left">
                 <slot name="left">
-                    <icon-table-sort-down-16 :class="[ccModal.titleButtonIcon, ccModal.titleButtonIconRotated]" />
+                    <icon-arrow-left-16 :class="ccModal.titleButtonIcon" />
                 </slot>
               </button>
               <div :class="titleCenterClasses" key="title" v-bind="titleAttrs">
@@ -142,10 +142,10 @@ const emit = defineEmits(['dismiss', 'left', 'right', 'shown', 'hidden']);
               </button>
             </transition-group>
           </div>
-          <div :class="[ccModal.content, contentClasses]" v-if="$slots.default" ref="contentEl" :id="contentId">
+          <div v-if="$slots.default" :class="[ccModal.content, contentClasses]" ref="contentEl" :id="contentId">
             <slot />
           </div>
-          <div :class="ccModal.footer" v-if="$slots.footer">
+          <div v-if="$slots.footer" :class="ccModal.footer">
             <slot name="footer" />
           </div>
         </div>

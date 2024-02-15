@@ -1,3 +1,24 @@
+## [1.2.4-next.4](https://github.com/warp-ds/vue/compare/v1.2.4-next.3...v1.2.4-next.4) (2024-02-14)
+
+
+### Bug Fixes
+
+* Remove redundant component css class from Modal ([#137](https://github.com/warp-ds/vue/issues/137)) ([3d783f9](https://github.com/warp-ds/vue/commit/3d783f92d9b0cb9b14b6f0b206771a41974d4eb7))
+
+## [1.2.4-next.3](https://github.com/warp-ds/vue/compare/v1.2.4-next.2...v1.2.4-next.3) (2024-02-13)
+
+
+### Bug Fixes
+
+* rename deleted icons after @warp-ds/icons update to 2.0.0 ([#136](https://github.com/warp-ds/vue/issues/136)) ([e9ad066](https://github.com/warp-ds/vue/commit/e9ad0667ec6b4b5acbbac52329bba3b7c3fe52e7))
+
+## [1.2.4-next.2](https://github.com/warp-ds/vue/compare/v1.2.4-next.1...v1.2.4-next.2) (2024-02-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency scroll-doctor to v2 ([#134](https://github.com/warp-ds/vue/issues/134)) ([7e7e919](https://github.com/warp-ds/vue/commit/7e7e919b03ca60bb39b281e879a08b5cfe184190))
+
 ## [1.2.4-next.1](https://github.com/warp-ds/vue/compare/v1.2.3...v1.2.4-next.1) (2024-01-09)
 
 

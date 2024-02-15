@@ -18,7 +18,7 @@ describe('breadcrumbs', () => {
     assert.include(wrapper.text(), 'Foo/Bar/Baz');
     assert.include(
       wrapper.html(),
-      'class="select-none i-text-$color-breadcrumbs-icon"'
+      'class="select-none s-icon"'
     );
     assert.ok(html.attributes()['aria-labelledby']);
   });
