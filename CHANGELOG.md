@@ -1,3 +1,29 @@
+## [1.2.4](https://github.com/warp-ds/vue/compare/v1.2.3...v1.2.4) (2024-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies (non-major) ([#132](https://github.com/warp-ds/vue/issues/132)) ([c2b2131](https://github.com/warp-ds/vue/commit/c2b213162c9fc4dbc4d0bbceb9559d8ba6b64081))
+* **deps:** update dependency scroll-doctor to v2 ([#134](https://github.com/warp-ds/vue/issues/134)) ([7e7e919](https://github.com/warp-ds/vue/commit/7e7e919b03ca60bb39b281e879a08b5cfe184190))
+* Remove redundant component css class from Modal ([#137](https://github.com/warp-ds/vue/issues/137)) ([3d783f9](https://github.com/warp-ds/vue/commit/3d783f92d9b0cb9b14b6f0b206771a41974d4eb7))
+* rename deleted icons after @warp-ds/icons update to 2.0.0 ([#136](https://github.com/warp-ds/vue/issues/136)) ([e9ad066](https://github.com/warp-ds/vue/commit/e9ad0667ec6b4b5acbbac52329bba3b7c3fe52e7))
+* replace letter x with icon close ([#129](https://github.com/warp-ds/vue/issues/129)) ([56763e5](https://github.com/warp-ds/vue/commit/56763e5c754d04ad250347e1e76a3137a764f7f2))
+* Slider active track disabled state fix ([#139](https://github.com/warp-ds/vue/issues/139)) ([a756c4c](https://github.com/warp-ds/vue/commit/a756c4c3e68b0e39a4eadaba50ed21f8fe091035))
+
+## [1.2.4-next.6](https://github.com/warp-ds/vue/compare/v1.2.4-next.5...v1.2.4-next.6) (2024-02-15)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies (non-major) ([#132](https://github.com/warp-ds/vue/issues/132)) ([c2b2131](https://github.com/warp-ds/vue/commit/c2b213162c9fc4dbc4d0bbceb9559d8ba6b64081))
+
+## [1.2.4-next.5](https://github.com/warp-ds/vue/compare/v1.2.4-next.4...v1.2.4-next.5) (2024-02-15)
+
+
+### Bug Fixes
+
+* Slider active track disabled state fix ([#139](https://github.com/warp-ds/vue/issues/139)) ([a756c4c](https://github.com/warp-ds/vue/commit/a756c4c3e68b0e39a4eadaba50ed21f8fe091035))
+
 ## [1.2.4-next.4](https://github.com/warp-ds/vue/compare/v1.2.4-next.3...v1.2.4-next.4) (2024-02-14)
 
 
