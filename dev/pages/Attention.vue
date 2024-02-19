@@ -91,7 +91,7 @@ const isMobile = computed(() => window.matchMedia('(max-width: 767px)').matches)
             tooltip
             placement="bottom"
             role=""
-            ariaLabel=""
+            aria-label=""
             :target-el="tooltipResetTarget ? tooltipResetTarget.$el : null"
             v-model="tooltipResetShowing"
             @focus="tooltipResetShowing = true"
@@ -156,7 +156,7 @@ const isMobile = computed(() => window.matchMedia('(max-width: 767px)').matches)
             id="dismissiblePopoverAttentionExample"
             popover
             placement="bottom"
-            canClose
+            can-close
             @dismiss="dismissiblePopoverShowing = false"
             :target-el="dismissiblePopoverTarget ? dismissiblePopoverTarget.$el : null"
             v-model="dismissiblePopoverShowing"
@@ -225,7 +225,7 @@ const isMobile = computed(() => window.matchMedia('(max-width: 767px)').matches)
             id="dismissibleHighlightAttentionExample"
             highlight
             placement="bottom"
-            canClose
+            can-close
             @dismiss="dismissibleHighlightShowing = false"
             :target-el="dismissibleHighlightTarget ? dismissibleHighlightTarget.$el : null"
             v-model="dismissibleHighlightShowing"
