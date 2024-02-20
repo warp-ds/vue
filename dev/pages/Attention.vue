@@ -177,18 +177,16 @@ const isMobile = computed(() => window.matchMedia('(max-width: 767px)').matches)
           >
             <icon-info16/>
           </w-button>
-          <div class="relative">
             <w-attention
               popover
               placement="bottom-start"
               :distance="-4"
-              :skidding="isMobile ? -25 : -80"
+              :skidding="isMobile ? -25 : -82"
               :target-el="popoverIconTarget ? popoverIconTarget.$el : null"
               v-model="popoverIconTargetShowing"
             >
               <p>Hello Warp!</p>
             </w-attention>
-          </div>
         </div>
 
         <div>
