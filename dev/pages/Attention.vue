@@ -22,8 +22,6 @@ const popoverIconTargetShowing = ref(false)
 const highlightShowing = ref(false)
 const dismissibleHighlightShowing = ref(false)
 
-const isMobile = computed(() => window.matchMedia('(max-width: 767px)').matches)
-
 </script>
 
 <template>
@@ -137,6 +135,7 @@ const isMobile = computed(() => window.matchMedia('(max-width: 767px)').matches)
           <w-attention
             popover
             placement="bottom"
+            flip
             :target-el="popoverTarget ? popoverTarget.$el : null"
             v-model="popoverShowing"
           >
@@ -179,9 +178,9 @@ const isMobile = computed(() => window.matchMedia('(max-width: 767px)').matches)
           </w-button>
             <w-attention
               popover
-              placement="bottom-start"
-              :distance="-4"
-              :skidding="isMobile ? -25 : -82"
+              placement="right-end"
+              :distance="-5"
+              :skidding="25"
               :target-el="popoverIconTarget ? popoverIconTarget.$el : null"
               v-model="popoverIconTargetShowing"
             >
@@ -201,7 +200,8 @@ const isMobile = computed(() => window.matchMedia('(max-width: 767px)').matches)
           <w-attention
             id="highlightAttentionExample"
             highlight
-            placement='left-start'
+            placement='left'
+            flip
             :target-el="highlightTarget ? highlightTarget.$el : null"
             v-model="highlightShowing"
           >

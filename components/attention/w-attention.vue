@@ -52,7 +52,30 @@ const props = defineProps({
   skidding: {
     type: Number,
     default: 0
-  }
+  },
+  flip: {
+    type: Boolean,
+    default: false
+  },
+  fallbackPlacements: {
+    type: String,
+    validator(value) {
+      return [
+        'top-start',
+        'top',
+        'top-end',
+        'right-start',
+        'right',
+        'right-end',
+        'bottom-start',
+        'bottom',
+        'bottom-end',
+        'left-start',
+        'left',
+        'left-end'].includes(value)
+    },
+    default: undefined
+  },
 })
 
 const emit = defineEmits(['update:modelValue', 'dismiss'])
@@ -75,9 +98,6 @@ const attentionState = computed(() => ({
   get isShowing() {
     return model.value
   },
-  set isShowing(v) {
-    model.value = v
-  },
   isCallout: props.callout,
   get actualDirection() {
     return actualDirection.value
@@ -92,6 +112,8 @@ const attentionState = computed(() => ({
   noArrow: props.noArrow,
   distance: props.distance,
   skidding: props.skidding,
+  flip: props.flip,
+  fallbackPlacements: props.fallbackPlacements,
   waitForDOM: nextTick
 }));
 
@@ -195,8 +217,12 @@ onMounted(async () => {
 })
 
 watch(() => [props.targetEl, model.value], ([target, m]) =>  {
-  if (!cleanup && target && m) {
+ if (!cleanup && target && m) {
+  if (props.flip){
     cleanup = autoUpdatePosition(attentionState.value);
+  } else {
+    recompute(attentionState.value)
+  }
   } else if (cleanup) {
     cleanup();
     cleanup = null;
