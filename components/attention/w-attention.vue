@@ -1,5 +1,5 @@
 <script setup>
-import { watch, watchEffect, computed, ref, onMounted, nextTick } from 'vue'
+import { watch, watchEffect, computed, ref, onMounted, nextTick , onUnmounted} from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
 import IconClose16 from '@warp-ds/icons/vue/close-16'
 
@@ -216,8 +216,8 @@ onMounted(async () => {
   watchEffect(model, recompute(attentionState.value), { immediate: props.callout })
 })
 
-watch(() => [props.targetEl, model.value, props.flip], ([target, m, flip]) =>  {
- if (!cleanup && target && m) {
+watch(() => [props.targetEl, model.value, props.flip, attentionEl.value], ([target, m, flip, att]) =>  {
+ if (!cleanup && m && target && att) {
   if (flip){
     cleanup = autoUpdatePosition(attentionState.value);
   } else {
@@ -228,6 +228,16 @@ watch(() => [props.targetEl, model.value, props.flip], ([target, m, flip]) =>  {
     cleanup = null;
   }
 }, { immediate: true });
+
+
+onUnmounted(async () => {
+  if (cleanup) {
+    cleanup();
+    cleanup = null
+  }
+})
+
+
 </script>
 
 <template>
