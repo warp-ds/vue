@@ -58,9 +58,10 @@ const props = defineProps({
     default: false
   },
   fallbackPlacements: {
-    type: String,
-    validator(value) {
-      return [
+    type: Array,
+    default: undefined,
+    validator(values) {
+      const acceptedValues = [
         'top-start',
         'top',
         'top-end',
@@ -72,9 +73,9 @@ const props = defineProps({
         'bottom-end',
         'left-start',
         'left',
-        'left-end'].includes(value)
-    },
-    default: undefined
+        'left-end'];
+      return values.every((value) => acceptedValues.includes(value));
+    }
   },
 })
 
