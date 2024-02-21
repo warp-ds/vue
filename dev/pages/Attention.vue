@@ -223,6 +223,7 @@ const dismissibleHighlightShowing = ref(false)
             id="dismissibleHighlightAttentionExample"
             highlight
             placement="bottom"
+            flip
             can-close
             @dismiss="dismissibleHighlightShowing = false"
             :target-el="dismissibleHighlightTarget ? dismissibleHighlightTarget.$el : null"
