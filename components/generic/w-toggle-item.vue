@@ -33,7 +33,7 @@ const labelClasses = computed(() => (p.labelClass || {
   [ccToggle.checkboxInvalid]: isCheckbox.value && p.invalid,
   [`${ccToggle.checkbox} ${ccToggle.labelCheckboxColors} ${ccToggle.icon} ${p.disabled ? '' : ccToggle.checkboxChecked}`]: isCheckbox.value,
   [ccToggle.radioButtonsLabel]: p.radioButton,
-  [ccToggle.radioButtonsLabelSmall]: p.small,
+  [ccToggle.radioButtonsLabelSmall]: p.small && p.radioButton,
 }));
 const inputClasses = {
   [ccToggle.input]: true,
