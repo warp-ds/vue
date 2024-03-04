@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { wAttention, wBox, wButton } from '#components'
 import IconInfo16 from "@warp-ds/icons/vue/info-16";
 
