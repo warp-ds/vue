@@ -14,6 +14,10 @@ const toggles = [
   { label: 'Two', value: 2, 'data-test': 'toggle:2' },
 ]
 
+const indeterminateToggle = [
+  { label: 'One', value: 1, 'data-test': 'toggle:1' },
+]
+
 const variants = reactive({ active: 'Checkbox' })
 const variantControls = [
   { name: 'Checkbox', radio },
@@ -39,7 +43,9 @@ watch(() => variants.active, changeToggleModel)
 <template>
   <div>
     <component-title title="Toggle" />
-
+    <demo-controls>
+      <demo-control label="Variants" :controls="variantControls" :state="variants" />
+    </demo-controls>
     <token :state="[variants, toggleModel]">
       <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" v-model="toggleModel" label="A very toggly label" :toggles="toggles" />
     </token>
@@ -50,13 +56,17 @@ watch(() => variants.active, changeToggleModel)
       <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" invalid v-model="invalidToggleModel" label="A very INVALID toggly label" :toggles="toggles" />
     </token>
     <div>
-    <token :state="[variants, toggleModel]">
-      <w-toggle radio-button :equal-width="isJustified" v-model="multiToggleModel" label="A very toggly label" :toggles="toggles" />
-      <w-button class="mt-16" small utility @click="isJustified = !isJustified">{{ isJustified ? 'Unjustify' : 'Justify' }}</w-button>
+      <token :state="[variants, toggleModel]">
+        <w-toggle radio-button :equal-width="isJustified" v-model="multiToggleModel" label="A very toggly label" :toggles="toggles" />
+        <w-button class="mt-16" small utility @click="isJustified = !isJustified">{{ isJustified ? 'Unjustify' : 'Justify' }}</w-button>
+      </token>
+    </div>
+
+    <token>
+      <w-toggle indeterminate checkbox label="An indeterminate label" :toggles="indeterminateToggle" />
     </token>
-  </div>
-    <demo-controls>
-      <demo-control label="Variants" :controls="variantControls" :state="variants" />
-    </demo-controls>
+    <token>
+      <w-toggle indeterminate disabled checkbox label="An indeterminate and disabled label" :toggles="indeterminateToggle" />
+    </token>
   </div>
 </template>

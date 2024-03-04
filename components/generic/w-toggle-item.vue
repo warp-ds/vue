@@ -9,6 +9,7 @@ const p = defineProps({
   type: String,
   class: String,
   disabled: Boolean,
+  indeterminate: Boolean,
   equalWidth: Boolean,
   invalid: Boolean,
   radioButton: Boolean,
@@ -49,9 +50,10 @@ const inputClasses = {
     :radioButton="radioButton"
     :disabled="disabled"
     :invalid="invalid"
+    :indeterminate="indeterminate"
     :equalWidth="equalWidth"
     v-bind="$attrs" 
-    :class="[inputClasses]" 
+    :class="[inputClasses]"
   />
   <label v-if="label" :for="id" v-html="label" :class="labelClasses" />
   <label v-else :for="id" :class="labelClasses"><slot /></label>

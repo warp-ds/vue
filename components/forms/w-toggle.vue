@@ -4,6 +4,7 @@
       <div :class="groupClasses" v-for="(toggle, i) in toggles">
         <w-toggle-item
           v-model="model"
+          :indeterminate="indeterminate"
           :type="type"
           :radioButton="radioButton"
           :disabled="disabled"
@@ -34,6 +35,7 @@ const props = defineProps({
   small: Boolean,
   disabled: Boolean,
   invalid: Boolean,
+  indeterminate: Boolean,
   toggles: {
     type: Array,
     required: true,
