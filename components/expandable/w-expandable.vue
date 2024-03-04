@@ -1,14 +1,18 @@
 <script setup>
-import { ref, computed, watch, nextTick, useSlots } from 'vue'
-import { modelProps, createModel } from 'create-v-model'
-import { absentProp } from '#util'
-import { wExpandTransition as expandTransition } from '#generics'
+import { ref, computed, watch, nextTick, useSlots } from 'vue';
+import { modelProps, createModel } from 'create-v-model';
+import { absentProp } from '#util';
+import { wExpandTransition as expandTransition } from '#generics';
 import {
   expandable as ccExpandable,
   box as ccBox,
-} from '@warp-ds/css/component-classes'
-import IconChevronDown16 from '@warp-ds/icons/vue/chevron-down-16'
-import IconChevronUp16 from '@warp-ds/icons/vue/chevron-up-16'
+} from '@warp-ds/css/component-classes';
+import IconChevronDown16 from '@warp-ds/icons/vue/chevron-down-16';
+import IconChevronUp16 from '@warp-ds/icons/vue/chevron-up-16';
+
+defineOptions({
+  name: 'wExpandable',
+});
 
 const props = defineProps({
   title: String,
@@ -21,17 +25,17 @@ const props = defineProps({
   as: { type: String, default: 'div' },
   animated: Boolean,
   ...modelProps({ modelDefault: absentProp }),
-})
-const emit = defineEmits(['expand', 'collapse'])
-const slots = useSlots()
+});
+const emit = defineEmits(['expand', 'collapse']);
+const slots = useSlots();
 
-const expanded =
-  props.modelValue === absentProp ? ref(false) : createModel({ props, emit })
+const expanded = props.modelValue === absentProp ? ref(false) : createModel({ props, emit });
 const contentComponent = computed(() =>
   props.animated ? expandTransition : 'div'
-)
-const showChevronUp = ref(expanded.value)
-// wExpandTransition emits its own events and we just bubble them, but for a normal DOM element we need to create them
+);
+const showChevronUp = ref(expanded.value);
+
+// wExpandTransition emits its own events, and we just bubble them, but for a normal DOM element we need to create them
 if (!props.animated) {
   watch(expanded, async (isExpanded) => {
     await nextTick()
@@ -44,44 +48,43 @@ watch(expanded, (state) => {
   setTimeout(() => {
     showChevronUp.value = state
   }, 200)
-})
+});
 
-const hasTitle = computed(() => props.title || slots.title)
+const hasTitle = computed(() => props.title || slots.title);
 
 const wrapperClasses = computed(() => ({
   [ccExpandable.expandable]: true,
-  [ccExpandable.expandableBox]: props.box || props.info,
+  [ccExpandable.expandableBox]: props.box,
+  [ccExpandable.expandableInfo]: props.info,
   [ccExpandable.expandableBleed]: props.bleed,
-}))
+}));
 
 const buttonClasses = computed(() => ({
   [props.buttonClass || '']: true,
   [ccExpandable.button]: true,
   [ccExpandable.buttonBox]: props.box || props.info,
-}))
+}));
 
-const chevronClasses = computed(() => ({
-  [ccExpandable.chevron]: true,
-  [props.box || props.info
-    ? ccExpandable.chevronBox
-    : ccExpandable.chevronNonBox]: true,
-}))
+const chevronClasses = computed(() => [
+  ccExpandable.chevron,
+  props.box || props.info ? ccExpandable.chevronBox : ccExpandable.chevronNonBox
+]);
 
 const chevronUpClasses = computed(() => ({
   [ccExpandable.chevronTransform]: true,
   [ccExpandable.chevronCollapse]: !expanded.value && showChevronUp.value,
-}))
+}));
 
 const chevronDownClasses = computed(() => ({
   [ccExpandable.chevronTransform]: true,
   [ccExpandable.chevronExpand]: expanded.value && !showChevronUp.value,
-}))
+}));
 
 const contentClasses = computed(() => ({
   [props.contentClass || '']: true,
   [ccBox.box]: props.box || props.info,
   [ccExpandable.paddingTop]: hasTitle.value && (props.box || props.info),
-}))
+}));
 </script>
 
 <template>
@@ -94,13 +97,11 @@ const contentClasses = computed(() => ({
       @click="expanded = !expanded"
     >
       <slot name="title" :expanded="expanded" />
-      <span :class="ccExpandable.expandableTitle" v-if="title">{{
-        title
-      }}</span>
-      <div :class="chevronClasses" v-if="chevron">
+      <span :class="ccExpandable.expandableTitle" v-if="title">{{ title }}</span>
+      <span :class="chevronClasses" v-if="chevron">
         <icon-chevron-up-16 v-if="showChevronUp" :class="chevronUpClasses"/>
         <icon-chevron-down-16 v-else :class="chevronDownClasses" />
-      </div>
+      </span>
     </button>
     <component
       :is="contentComponent"
@@ -115,7 +116,3 @@ const contentClasses = computed(() => ({
     </component>
   </component>
 </template>
-
-<script>
-export default { name: 'wExpandable' }
-</script>
