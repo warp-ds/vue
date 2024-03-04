@@ -15,7 +15,7 @@ const toggles = [
 ]
 
 const indeterminateToggle = [
-  { label: 'One', value: 1, 'data-test': 'toggle:1' },
+  { label: 'One', value: 1, 'data-test-indeterminate': 'toggle:1' },
 ]
 
 const variants = reactive({ active: 'Checkbox' })
