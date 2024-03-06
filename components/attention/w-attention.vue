@@ -8,7 +8,7 @@ import {
   props as attentionProps,
   getVariantClasses,
 } from './attentionUtil.js'
-import { opposites, autoUpdatePosition, useRecompute as recompute } from '@warp-ds/core/attention'
+import { opposites, directions, autoUpdatePosition, useRecompute as recompute } from '@warp-ds/core/attention'
 import wAttentionArrow from './w-attention-arrow.vue'
 import { createModel, modelProps } from 'create-v-model'
 import { i18n } from '@lingui/core'
@@ -29,19 +29,7 @@ const props = defineProps({
   placement: {
     type: String,
     validator(value) {
-      return [
-        'top-start',
-        'top',
-        'top-end',
-        'right-start',
-        'right',
-        'right-end',
-        'bottom-start',
-        'bottom',
-        'bottom-end',
-        'left-start',
-        'left',
-        'left-end'].includes(value)
+      return directions.includes(value)
     },
     default: 'bottom'
   },
@@ -61,20 +49,7 @@ const props = defineProps({
     type: Array,
     default: undefined,
     validator(values) {
-      const acceptedValues = [
-        'top-start',
-        'top',
-        'top-end',
-        'right-start',
-        'right',
-        'right-end',
-        'bottom-start',
-        'bottom',
-        'bottom-end',
-        'left-start',
-        'left',
-        'left-end'];
-      return values.every((value) => acceptedValues.includes(value));
+      return values.every((value) => directions.includes(value));
     }
   },
 })
