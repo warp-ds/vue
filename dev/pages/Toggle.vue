@@ -6,6 +6,8 @@ import { wToggle, wButton } from '#components'
 const toggleModel = ref([])
 const invalidToggleModel = ref([1])
 const disabledToggleModel = ref([2])
+const indeterminateToggleModel = ref()
+const indeterminateInvalidToggleModel = ref()
 const isJustified = ref(false)
 const multiToggleModel = ref('')
 
@@ -15,7 +17,7 @@ const toggles = [
 ]
 
 const indeterminateToggle = [
-  { label: 'One', value: 1, 'data-test-indeterminate': 'toggle:1' },
+  { label: 'All selected', value: 1, 'data-test-indeterminate': 'toggle:1' },
 ]
 
 const variants = reactive({ active: 'Checkbox' })
@@ -63,7 +65,10 @@ watch(() => variants.active, changeToggleModel)
     </div>
 
     <token>
-      <w-toggle indeterminate checkbox label="An indeterminate label" :toggles="indeterminateToggle" />
+      <w-toggle :indeterminate="!indeterminateToggleModel" v-model="indeterminateToggleModel" checkbox label="An indeterminate label" :toggles="indeterminateToggle" />
+    </token>
+    <token>
+      <w-toggle :indeterminate="!indeterminateInvalidToggleModel" invalid v-model="indeterminateInvalidToggleModel" checkbox label="An indeterminate label" :toggles="indeterminateToggle" />
     </token>
     <token>
       <w-toggle indeterminate disabled checkbox label="An indeterminate and disabled label" :toggles="indeterminateToggle" />
