@@ -1,3 +1,10 @@
+## [1.2.5-next.2](https://github.com/warp-ds/vue/compare/v1.2.5-next.1...v1.2.5-next.2) (2024-03-07)
+
+
+### Bug Fixes
+
+* **toggle:** fix styling in different states ([#144](https://github.com/warp-ds/vue/issues/144)) ([d65b8c4](https://github.com/warp-ds/vue/commit/d65b8c42b039f1f204cb1df31800d5eae71c9db4))
+
 ## [1.2.5-next.1](https://github.com/warp-ds/vue/compare/v1.2.4...v1.2.5-next.1) (2024-03-07)
 
 
