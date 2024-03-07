@@ -12,6 +12,7 @@ const p = defineProps({
   equalWidth: Boolean,
   invalid: Boolean,
   radioButton: Boolean,
+  small: Boolean,
   labelClass: null,
   ...modelProps()
 });
@@ -32,7 +33,7 @@ const labelClasses = computed(() => (p.labelClass || {
   [ccToggle.checkboxInvalid]: isCheckbox.value && p.invalid,
   [`${ccToggle.checkbox} ${ccToggle.labelCheckboxColors} ${ccToggle.icon} ${p.disabled ? '' : ccToggle.checkboxChecked}`]: isCheckbox.value,
   [ccToggle.radioButtonsLabel]: p.radioButton,
-  [ccToggle.radioButtonsLabelSmall]: p.small,
+  [ccToggle.radioButtonsLabelSmall]: p.small && p.radioButton,
 }));
 const inputClasses = {
   [ccToggle.input]: true,
@@ -42,16 +43,16 @@ const inputClasses = {
 </script>
 
 <template>
-  <input 
-    :id="id" 
-    v-model="model" 
+  <input
+    :id="id"
+    v-model="model"
     :type="type"
     :radioButton="radioButton"
     :disabled="disabled"
     :invalid="invalid"
     :equalWidth="equalWidth"
-    v-bind="$attrs" 
-    :class="[inputClasses]" 
+    v-bind="$attrs"
+    :class="[inputClasses]"
   />
   <label v-if="label" :for="id" v-html="label" :class="labelClasses" />
   <label v-else :for="id" :class="labelClasses"><slot /></label>
