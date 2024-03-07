@@ -6,6 +6,8 @@ import { wToggle, wButton } from '#components'
 const toggleModel = ref([])
 const invalidToggleModel = ref([1])
 const disabledToggleModel = ref([2])
+const indeterminateToggleModel = ref()
+const indeterminateInvalidToggleModel = ref()
 const isJustified = ref(false)
 const multiToggleModelSmall = ref([])
 const multiToggleModel = ref([])
@@ -13,6 +15,10 @@ const multiToggleModel = ref([])
 const toggles = [
   { label: 'One', value: 1, 'data-test': 'toggle:1' },
   { label: 'Two', value: 2, 'data-test': 'toggle:2' },
+]
+
+const indeterminateToggle = [
+  { label: 'All selected', value: 1, 'data-test-indeterminate': 'toggle:1' },
 ]
 
 const variants = reactive({ active: 'Checkbox' })
@@ -40,7 +46,9 @@ watch(() => variants.active, changeToggleModel)
 <template>
   <div>
     <component-title title="Toggle" />
-
+    <demo-controls>
+      <demo-control label="Variants" :controls="variantControls" :state="variants" />
+    </demo-controls>
     <token :state="[variants, toggleModel]">
       <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" v-model="toggleModel" label="A very toggly label" :toggles="toggles" />
     </token>
@@ -51,14 +59,21 @@ watch(() => variants.active, changeToggleModel)
       <w-toggle :radio="active('Radio')" :checkbox="active('Checkbox')" invalid v-model="invalidToggleModel" label="A very INVALID toggly label" :toggles="toggles" />
     </token>
     <div>
-    <token :state="[variants, toggleModel]">
-      <w-button aria-controls="radio-button-group" class="mt-16" small utility @click="isJustified = !isJustified">{{ isJustified ? 'Unjustify radio button group' : 'Justify radio button group' }}</w-button>
-      <w-toggle id="radio-button-group-small" small radio-button :equal-width="isJustified" v-model="multiToggleModelSmall" label="A very toggly SMALL label" :toggles="toggles" />
-      <w-toggle id="radio-button-group" radio-button :equal-width="isJustified" v-model="multiToggleModel" label="A very toggly label" :toggles="toggles" />
+      <token :state="[variants, toggleModel]">
+        <w-button aria-controls="radio-button-group" class="mt-16" small utility @click="isJustified = !isJustified">{{ isJustified ? 'Unjustify radio button group' : 'Justify radio button group' }}</w-button>
+        <w-toggle id="radio-button-group-small" small radio-button :equal-width="isJustified" v-model="multiToggleModelSmall" label="A very toggly SMALL label" :toggles="toggles" />
+        <w-toggle id="radio-button-group" radio-button :equal-width="isJustified" v-model="multiToggleModel" label="A very toggly label" :toggles="toggles" />
+      </token>
+    </div>
+
+    <token>
+      <w-toggle :indeterminate="!indeterminateToggleModel" v-model="indeterminateToggleModel" checkbox label="An indeterminate label" :toggles="indeterminateToggle" />
     </token>
-  </div>
-    <demo-controls>
-      <demo-control label="Variants" :controls="variantControls" :state="variants" />
-    </demo-controls>
+    <token>
+      <w-toggle :indeterminate="!indeterminateInvalidToggleModel" invalid v-model="indeterminateInvalidToggleModel" checkbox label="An indeterminate label" :toggles="indeterminateToggle" />
+    </token>
+    <token>
+      <w-toggle indeterminate disabled checkbox label="An indeterminate and disabled label" :toggles="indeterminateToggle" />
+    </token>
   </div>
 </template>
