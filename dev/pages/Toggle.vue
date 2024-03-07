@@ -9,7 +9,8 @@ const disabledToggleModel = ref([2])
 const indeterminateToggleModel = ref()
 const indeterminateInvalidToggleModel = ref()
 const isJustified = ref(false)
-const multiToggleModel = ref('')
+const multiToggleModelSmall = ref([])
+const multiToggleModel = ref([])
 
 const toggles = [
   { label: 'One', value: 1, 'data-test': 'toggle:1' },
@@ -59,8 +60,9 @@ watch(() => variants.active, changeToggleModel)
     </token>
     <div>
       <token :state="[variants, toggleModel]">
-        <w-toggle radio-button :equal-width="isJustified" v-model="multiToggleModel" label="A very toggly label" :toggles="toggles" />
-        <w-button class="mt-16" small utility @click="isJustified = !isJustified">{{ isJustified ? 'Unjustify' : 'Justify' }}</w-button>
+        <w-button aria-controls="radio-button-group" class="mt-16" small utility @click="isJustified = !isJustified">{{ isJustified ? 'Unjustify radio button group' : 'Justify radio button group' }}</w-button>
+        <w-toggle id="radio-button-group-small" small radio-button :equal-width="isJustified" v-model="multiToggleModelSmall" label="A very toggly SMALL label" :toggles="toggles" />
+        <w-toggle id="radio-button-group" radio-button :equal-width="isJustified" v-model="multiToggleModel" label="A very toggly label" :toggles="toggles" />
       </token>
     </div>
 

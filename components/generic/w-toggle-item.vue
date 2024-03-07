@@ -13,6 +13,7 @@ const p = defineProps({
   equalWidth: Boolean,
   invalid: Boolean,
   radioButton: Boolean,
+  small: Boolean,
   labelClass: null,
   ...modelProps()
 });
@@ -46,9 +47,9 @@ const inputClasses = {
 </script>
 
 <template>
-  <input 
-    :id="id" 
-    v-model="model" 
+  <input
+    :id="id"
+    v-model="model"
     :type="type"
     :radioButton="radioButton"
     :disabled="disabled"

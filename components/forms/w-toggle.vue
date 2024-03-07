@@ -10,6 +10,7 @@
           :disabled="disabled"
           :invalid="invalid"
           :equalWidth="equalWidth"
+          :small="small"
           :name="id + ':toggles'"
           :key="id + i + type"
           v-bind="toggle"

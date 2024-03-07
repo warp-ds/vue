@@ -1,3 +1,10 @@
+## [1.2.5-next.1](https://github.com/warp-ds/vue/compare/v1.2.4...v1.2.5-next.1) (2024-03-07)
+
+
+### Bug Fixes
+
+* small prop missing on toggles ([#142](https://github.com/warp-ds/vue/issues/142)) ([5a7931b](https://github.com/warp-ds/vue/commit/5a7931b4b1f857e4562957ffd03efed9601459b8))
+
 ## [1.2.4](https://github.com/warp-ds/vue/compare/v1.2.3...v1.2.4) (2024-02-15)
 
 
