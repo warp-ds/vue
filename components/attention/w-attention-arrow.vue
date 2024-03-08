@@ -1,6 +1,6 @@
 <script setup>
   import { computed } from 'vue'
-  import { opposites } from '@warp-ds/core/attention'
+  import { opposites, arrowDirectionClassname } from '@warp-ds/core/attention'
   import { props as attentionProps, getVariantClasses } from './attentionUtil.js'
   import { attention as ccAttention } from '@warp-ds/css/component-classes'
   
@@ -8,25 +8,11 @@
     ...attentionProps,
     direction: String
   })
-
-  const arrowDirectionClassname = computed(() => {
-    let direction;
-    if (/-/.test(arrowDirection.value)) {
-      direction = arrowDirection.value
-        .split('-')
-        .map((d) => d.charAt(0).toUpperCase() + d.slice(1))
-        .join('')
-    } else {
-    direction = arrowDirection.value?.charAt(0).toUpperCase() + arrowDirection.value?.slice(1);
-    }
-    return `arrowDirection${direction}`;
-  })
-
   const arrowDirection = computed(() => opposites[props.direction])
 
   const arrowClasses = computed(() => [
     ccAttention.arrowBase,
-    ccAttention[arrowDirectionClassname.value],
+    ccAttention[`arrowDirection${arrowDirectionClassname(arrowDirection.value)}`],
     getVariantClasses(props).arrow
   ]);
 </script>
