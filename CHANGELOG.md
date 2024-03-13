@@ -1,3 +1,10 @@
+## [1.2.6-next.1](https://github.com/warp-ds/vue/compare/v1.2.5...v1.2.6-next.1) (2024-03-13)
+
+
+### Bug Fixes
+
+* add missing aria attribute to w-textarea and w-select ([#146](https://github.com/warp-ds/vue/issues/146)) ([191be0f](https://github.com/warp-ds/vue/commit/191be0f2f58829755d0301b35e50864f5f3a1699))
+
 ## [1.2.5](https://github.com/warp-ds/vue/compare/v1.2.4...v1.2.5) (2024-03-07)
 
 
