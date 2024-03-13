@@ -31,7 +31,7 @@ const chevronClasses = computed(() => ({
 </script>
 
 <template>
-  <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, hasValidationErrors }">
+  <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
     <div :class="wrapperClasses">
       <div :class="selectWrapperClasses">
         <select
@@ -43,7 +43,7 @@ const chevronClasses = computed(() => ({
           ]"
           :disabled="disabled"
           :readOnly="readOnly"
-          v-bind="{ ...$attrs, class: '' }" v-model="model" :id="id" @blur="triggerValidation">
+          v-bind="{ ...aria, ...$attrs, class: '' }" v-model="model" :id="id" @blur="triggerValidation">
           <slot />
         </select>
         <div :class="chevronClasses">
