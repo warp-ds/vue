@@ -1,3 +1,32 @@
+## [1.2.6-next.1](https://github.com/warp-ds/vue/compare/v1.2.5...v1.2.6-next.1) (2024-03-13)
+
+
+### Bug Fixes
+
+* add missing aria attribute to w-textarea and w-select ([#146](https://github.com/warp-ds/vue/issues/146)) ([191be0f](https://github.com/warp-ds/vue/commit/191be0f2f58829755d0301b35e50864f5f3a1699))
+
+## [1.2.5](https://github.com/warp-ds/vue/compare/v1.2.4...v1.2.5) (2024-03-07)
+
+
+### Bug Fixes
+
+* small prop missing on toggles ([#142](https://github.com/warp-ds/vue/issues/142)) ([5a7931b](https://github.com/warp-ds/vue/commit/5a7931b4b1f857e4562957ffd03efed9601459b8))
+* **toggle:** fix styling in different states ([#144](https://github.com/warp-ds/vue/issues/144)) ([d65b8c4](https://github.com/warp-ds/vue/commit/d65b8c42b039f1f204cb1df31800d5eae71c9db4))
+
+## [1.2.5-next.2](https://github.com/warp-ds/vue/compare/v1.2.5-next.1...v1.2.5-next.2) (2024-03-07)
+
+
+### Bug Fixes
+
+* **toggle:** fix styling in different states ([#144](https://github.com/warp-ds/vue/issues/144)) ([d65b8c4](https://github.com/warp-ds/vue/commit/d65b8c42b039f1f204cb1df31800d5eae71c9db4))
+
+## [1.2.5-next.1](https://github.com/warp-ds/vue/compare/v1.2.4...v1.2.5-next.1) (2024-03-07)
+
+
+### Bug Fixes
+
+* small prop missing on toggles ([#142](https://github.com/warp-ds/vue/issues/142)) ([5a7931b](https://github.com/warp-ds/vue/commit/5a7931b4b1f857e4562957ffd03efed9601459b8))
+
 ## [1.2.4](https://github.com/warp-ds/vue/compare/v1.2.3...v1.2.4) (2024-02-15)
 
 

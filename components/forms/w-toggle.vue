@@ -4,11 +4,13 @@
       <div :class="groupClasses" v-for="(toggle, i) in toggles">
         <w-toggle-item
           v-model="model"
+          :indeterminate="indeterminate"
           :type="type"
           :radioButton="radioButton"
           :disabled="disabled"
           :invalid="invalid"
           :equalWidth="equalWidth"
+          :small="small"
           :name="id + ':toggles'"
           :key="id + i + type"
           v-bind="toggle"
@@ -34,6 +36,7 @@ const props = defineProps({
   small: Boolean,
   disabled: Boolean,
   invalid: Boolean,
+  indeterminate: Boolean,
   toggles: {
     type: Array,
     required: true,
@@ -46,8 +49,8 @@ const type = computed(() => (props.radio || props.radioButton) ? 'radio' : 'chec
 const role = computed(() => props.toggles.length > 1 ? ((props.radio || props.radioButton) ? 'radiogroup' : 'group') : undefined);
 const wrapperClasses = computed(() => ({
   [ccToggle.wrapper]: true,
-  [`${ccToggle.radioButtons} ${ccToggle.focusableWithin}`]: props.radioButton,
-  [ccToggle.radioButtonsJustified]: props.equalWidth,
+  [ccToggle.wrapperRadioButtons]: props.radioButton && !props.equalWidth,
+  [ccToggle.wrapperRadioButtonsJustified]: props.radioButton && props.equalWidth,
 }));
 
 const groupClasses = computed(() => ({

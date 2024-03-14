@@ -9,9 +9,11 @@ const p = defineProps({
   type: String,
   class: String,
   disabled: Boolean,
+  indeterminate: Boolean,
   equalWidth: Boolean,
   invalid: Boolean,
   radioButton: Boolean,
+  small: Boolean,
   labelClass: null,
   ...modelProps()
 });
@@ -23,16 +25,19 @@ const isRadio = computed(() => p.type === 'radio');
 const isCheckbox = computed(() => p.type === 'checkbox');
 const labelClasses = computed(() => (p.labelClass || {
   [ccToggle.label]: !p.radioButton,
-  [`${ccToggle.labelDisabled} ${isCheckbox.value ? ccToggle.checkboxDisabled : ccToggle.radioDisabled}`] : p.disabled,
-  [ccToggle.focusable]: !p.radioButton,
-  [ccToggle.noContent]: !p.radioButton,
-  [ccToggle.labelRadioColors] : isRadio.value && !p.radioButton,
-  [`${ccToggle.radio} ${p.disabled ? '' : ccToggle.radioChecked}`]: isRadio.value,
-  [ccToggle.radioInvalid]: isRadio.value && p.invalid,
-  [ccToggle.checkboxInvalid]: isCheckbox.value && p.invalid,
-  [`${ccToggle.checkbox} ${ccToggle.labelCheckboxColors} ${ccToggle.icon} ${p.disabled ? '' : ccToggle.checkboxChecked}`]: isCheckbox.value,
+  [ccToggle.labelBefore]: !p.radioButton && !p.indeterminate,
+  [ccToggle.checkbox]: isCheckbox.value && !p.indeterminate && !p.invalid && !p.disabled ,
+  [ccToggle.checkboxInvalid]: isCheckbox.value && !p.indeterminate && p.invalid && !p.disabled,
+  [ccToggle.checkboxDisabled] : isCheckbox.value && !p.indeterminate && !p.invalid && p.disabled ,
+  [ccToggle.indeterminate]: isCheckbox.value && p.indeterminate && !p.invalid && !p.disabled,
+  [ccToggle.indeterminateInvalid]: isCheckbox.value && p.indeterminate && p.invalid && !p.disabled,
+  [ccToggle.indeterminateDisabled]: isCheckbox.value && p.indeterminate && !p.invalid && p.disabled,
+  [ccToggle.radio]: isRadio.value && !p.invalid && !p.disabled && !p.radioButton,
+  [ccToggle.radioInvalid]: isRadio.value && p.invalid && !p.disabled && !p.radioButton,
+  [ccToggle.radioDisabled] : isRadio.value && !p.invalid && p.disabled && !p.radioButton,
   [ccToggle.radioButtonsLabel]: p.radioButton,
-  [ccToggle.radioButtonsLabelSmall]: p.small,
+  [ccToggle.radioButtonsRegular]: p.radioButton && !p.small,
+  [ccToggle.radioButtonsSmall]: p.radioButton && p.small,
 }));
 const inputClasses = {
   [ccToggle.input]: true,
@@ -42,16 +47,17 @@ const inputClasses = {
 </script>
 
 <template>
-  <input 
-    :id="id" 
-    v-model="model" 
+  <input
+    :id="id"
+    v-model="model"
     :type="type"
     :radioButton="radioButton"
     :disabled="disabled"
     :invalid="invalid"
+    :indeterminate="indeterminate"
     :equalWidth="equalWidth"
     v-bind="$attrs" 
-    :class="[inputClasses]" 
+    :class="[inputClasses]"
   />
   <label v-if="label" :for="id" v-html="label" :class="labelClasses" />
   <label v-else :for="id" :class="labelClasses"><slot /></label>
