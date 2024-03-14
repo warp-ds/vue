@@ -179,8 +179,8 @@ const dismissibleHighlightShowing = ref(false)
             <w-attention
               popover
               placement="right-end"
-              :distance="-5"
-              :skidding="25"
+              :distance="-6"
+              :skidding="5"
               :target-el="popoverIconTarget ? popoverIconTarget.$el : null"
               v-model="popoverIconTargetShowing"
             >
