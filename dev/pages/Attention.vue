@@ -180,7 +180,7 @@ const dismissibleHighlightShowing = ref(false)
               popover
               placement="right-end"
               :distance="-6"
-              :skidding="5"
+              :skidding="15"
               :target-el="popoverIconTarget ? popoverIconTarget.$el : null"
               v-model="popoverIconTargetShowing"
             >
