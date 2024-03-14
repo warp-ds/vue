@@ -12,6 +12,7 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: \n"
 "Plural-Forms: \n"
+"X-Crowdin-SourceKey: msgstr\n"
 
 #. Empty circle
 #. js-lingui-explicit-id
@@ -30,3 +31,4 @@ msgstr "Step indicator active circle"
 #: components/steps/w-step.vue:24
 msgid "steps.aria.completed"
 msgstr "Step indicator completed circle"
+
