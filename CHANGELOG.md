@@ -1,3 +1,10 @@
+## [1.2.6-next.2](https://github.com/warp-ds/vue/compare/v1.2.6-next.1...v1.2.6-next.2) (2024-03-15)
+
+
+### Bug Fixes
+
+* **w-field:** ensure default error text is translated on time ([#148](https://github.com/warp-ds/vue/issues/148)) ([36dcf1c](https://github.com/warp-ds/vue/commit/36dcf1cedb6beb864da3a4891f93f81f0b5a942f))
+
 ## [1.2.6-next.1](https://github.com/warp-ds/vue/compare/v1.2.5...v1.2.6-next.1) (2024-03-13)
 
 
