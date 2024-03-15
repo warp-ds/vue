@@ -192,13 +192,9 @@ onMounted(async () => {
   watchEffect(model, recompute(attentionState.value), { immediate: props.callout })
 })
 
-watch(() => [props.targetEl, model.value, props.flip, attentionEl.value], ([target, m, flip, att]) =>  {
+watch(() => [props.targetEl, model.value, attentionEl.value], ([target, m, att]) =>  {
  if (!cleanup && m && target && att) {
-  if (flip) {
     cleanup = autoUpdatePosition(attentionState.value);
-  } else {
-    recompute(attentionState.value)
-  }
   } else if (cleanup) {
     cleanup();
     cleanup = null;
