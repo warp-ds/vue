@@ -47,7 +47,6 @@ const props = defineProps({
   },
   fallbackPlacements: {
     type: Array,
-    default: undefined,
     validator(values) {
       return values.every((value) => directions.includes(value));
     }
