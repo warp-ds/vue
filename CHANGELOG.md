@@ -1,3 +1,10 @@
+## [1.2.6-next.3](https://github.com/warp-ds/vue/compare/v1.2.6-next.2...v1.2.6-next.3) (2024-03-20)
+
+
+### Bug Fixes
+
+* **w-field:** use correct colors in label and hint/error text ([#150](https://github.com/warp-ds/vue/issues/150)) ([fa3a621](https://github.com/warp-ds/vue/commit/fa3a621b8ade3278bcca593e1e72639670c3a02e))
+
 ## [1.2.6-next.2](https://github.com/warp-ds/vue/compare/v1.2.6-next.1...v1.2.6-next.2) (2024-03-15)
 
 
