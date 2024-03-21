@@ -1,12 +1,12 @@
 <template>
   <component :is="as" :class="{[ccInput.wrapper]: true, [$attrs.class || '']: true}" :role="role" v-bind="wrapperAria">
-    <component :is="labelType" v-if="label" :class="{[ccLabel.label]: true, [ccLabel.labelInvalid]: hasErrorMessage}" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="ccLabel.optional">{{ optionalHelperText }}</span></component>
-    <slot :triggerValidation="triggerValidation" :labelFor="id" :labelId="labelId" :aria="aria" :hasValidationErrors="hasValidationErrors" />
+    <component :is="labelType" v-if="label" :class="ccLabel.label" :id="labelId" :for="labelFor" :role="valueOrUndefined(labelLevel, 'heading')" :aria-level="valueOrUndefined(labelLevel, labelLevel)">{{ label }}<span v-if="optional" :class="ccLabel.optional">{{ optionalHelperText }}</span></component>
+    <slot :triggerValidation="triggerValidation" :labelFor="id" :labelId="labelId" :aria="aria" :hasValidationErrors="isInvalid" />
     <slot name="control" :form="collector" />
-    <div :class="{[ccHelpText.helpText]: true, [ccHelpText.helpTextInvalid]: hasErrorMessage}" v-if="hint || hasErrorMessage">
+    <div :class="{[ccHelpText.helpText]: true, [ccHelpText.helpTextColor]: !isInvalid, [ccHelpText.helpTextColorInvalid]: isInvalid}" v-if="hint || isInvalid">
       <span :id="hintId" v-if="hint" v-html="hint" />
-      <span v-if="hint && hasErrorMessage">, </span>
-      <span :id="errorId" v-if="hasErrorMessage">{{ validationMsg }}</span>
+      <span v-if="hint && isInvalid">, </span>
+      <span :id="errorId" v-if="isInvalid">{{ errorMessage }}</span>
     </div>
   </component>
 </template>
@@ -59,25 +59,31 @@ export default {
   },
   setup(props, { slots }) {
 
-    const { triggerValidation, valid, validationMsg, hasErrorMessage, collector } = createValidation(props)
+    const { triggerValidation, validationMsg, hasErrorMessage, collector } = createValidation(props)
 
+    const isInvalid = computed(() => !!hasErrorMessage.value || props.invalid)
     const isFieldset = computed(() => props.as === 'fieldset')
     const labelType = computed(() => isFieldset.value ? 'legend' : 'label')
     const labelFor = computed(() => isFieldset.value ? undefined : props.id)
     const labelId = computed(() => (props.label || slots.label) && (props.id + ':label'))
-    const hintId = computed(() => props.id + ':hint')
-    const errorId = computed(() => valueOrUndefined(hasErrorMessage.value, props.id + ':error'))
+    const hintId = computed(() => valueOrUndefined(props.hint, props.id + ':hint'))
+    const errorId = computed(() => valueOrUndefined(isInvalid.value, props.id + ':error'))
     const aria = computed(() => ({
       'aria-labelledby': labelId.value,
-      'aria-describedby': valueOrUndefined(props.hint, hintId.value),
+      'aria-describedby': hintId.value,
       'aria-errormessage': errorId.value,
-      'aria-invalid': !valid.value || props.invalid || undefined,
+      'aria-invalid': isInvalid.value || undefined,
       'aria-required': props.required && true
     }))
     const wrapperAria = computed(() => valueOrUndefined(isFieldset.value, aria.value))
     const optionalHelperText = i18n._({ id: 'forms.field.label.optional', message: '(optional)', comment: 'Shown after label when marked as optional'});
-    const hasValidationErrors = computed(() => !!hasErrorMessage.value);
-    return { triggerValidation, validationMsg, hasErrorMessage, labelType, labelFor, labelId, hintId, errorId, aria, wrapperAria, collector, valueOrUndefined, ccInput, ccLabel, ccHelpText, hasValidationErrors, optionalHelperText }
+    const errorMessage = validationMsg.value || i18n._({
+      id:'forms.validation.mandatoryField', 
+      message: 'Mandatory field',
+      comment: 'Text visible below input field if validation fails'
+    })
+
+    return { triggerValidation, errorMessage, labelType, labelFor, labelId, hintId, errorId, aria, wrapperAria, collector, valueOrUndefined, ccInput, ccLabel, ccHelpText, isInvalid, optionalHelperText }
   }
 }
 </script>
