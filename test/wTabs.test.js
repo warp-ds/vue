@@ -1,15 +1,15 @@
-import { describe, test, assert } from 'vitest'
-import { mount } from '@vue/test-utils'
-import { wTabs, wTab, wTabPanel } from '#components'
-import { ref } from 'vue'
+import { describe, test, assert } from 'vitest';
+import { mount } from '@vue/test-utils';
+import { wTabs, wTab, wTabPanel } from '#components';
+import { ref } from 'vue';
 
 describe('tabs', () => {
-  [wTabs, wTab, wTabPanel].forEach(comp => {
-    assert.ok(comp.name)
-  })
+  [wTabs, wTab, wTabPanel].forEach((comp) => {
+    assert.ok(comp.name);
+  });
 
   test('renders', async () => {
-    const model = ref('foo')
+    const model = ref('foo');
     const TabFixture = {
       template: `
         <w-tabs v-model="model">
@@ -26,15 +26,15 @@ describe('tabs', () => {
         </div>
       `,
       components: { wTabs, wTab, wTabPanel },
-      setup: () => ({ model })
-    }
-    const wrapper = mount(TabFixture)
-    assert.equal(wrapper.text(), 'Foo BarOMG')
-    const buttons = wrapper.findAll('button')
-    assert.equal(buttons.length, 2)
-    assert.ok(buttons.some(button => button.attributes('aria-selected') === 'true'))
-    assert.ok(buttons.some(button => button.attributes('aria-selected') === 'false'))
-    assert.ok(buttons.some(button => button.attributes('tabindex') === '0'))
-    assert.ok(buttons.some(button => button.attributes('tabindex') === '-1'))
-  })
-})
+      setup: () => ({ model }),
+    };
+    const wrapper = mount(TabFixture);
+    assert.equal(wrapper.text(), 'Foo BarOMG');
+    const buttons = wrapper.findAll('button');
+    assert.equal(buttons.length, 2);
+    assert.ok(buttons.some((button) => button.attributes('aria-selected') === 'true'));
+    assert.ok(buttons.some((button) => button.attributes('aria-selected') === 'false'));
+    assert.ok(buttons.some((button) => button.attributes('tabindex') === '0'));
+    assert.ok(buttons.some((button) => button.attributes('tabindex') === '-1'));
+  });
+});

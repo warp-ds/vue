@@ -1,10 +1,10 @@
-import { describe, test, assert } from 'vitest'
-import { mount } from '@vue/test-utils'
-import { wButtonGroup, wButtonGroupItem, wClickable } from '#components'
+import { describe, test, assert } from 'vitest';
+import { mount } from '@vue/test-utils';
+import { wButtonGroup, wButtonGroupItem, wClickable } from '#components';
 
 describe('button group', () => {
-  assert.ok(wButtonGroup.name)
-  assert.ok(wButtonGroupItem.name)
+  assert.ok(wButtonGroup.name);
+  assert.ok(wButtonGroupItem.name);
 
   test('works', () => {
     const ButtonGroupFixture = {
@@ -18,13 +18,13 @@ describe('button group', () => {
           </w-button-group-item>
         </w-button-group>
       `,
-      components: { wButtonGroup, wButtonGroupItem, wClickable }
-    }
-    const wrapper = mount(ButtonGroupFixture)
-    const anchor = wrapper.get('a')
-    assert.include(anchor.attributes().href, '#/foo')
-    assert.equal(anchor.text(), 'Foo')
-    const groupItem = wrapper.getComponent(wButtonGroupItem)
-    assert.include(groupItem.classes(), 'border-[--w-color-buttongroup-utility-border]') // providing the outlined prop succeeded
-  })
-})
+      components: { wButtonGroup, wButtonGroupItem, wClickable },
+    };
+    const wrapper = mount(ButtonGroupFixture);
+    const anchor = wrapper.get('a');
+    assert.include(anchor.attributes().href, '#/foo');
+    assert.equal(anchor.text(), 'Foo');
+    const groupItem = wrapper.getComponent(wButtonGroupItem);
+    assert.include(groupItem.classes(), 'border-[--w-color-buttongroup-utility-border]'); // providing the outlined prop succeeded
+  });
+});

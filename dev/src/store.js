@@ -1,3 +1,3 @@
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-export const modalShowing = ref(false)
+export const modalShowing = ref(false);
