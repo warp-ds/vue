@@ -1,3 +1,12 @@
+## [1.2.6](https://github.com/warp-ds/vue/compare/v1.2.5...v1.2.6) (2024-03-21)
+
+
+### Bug Fixes
+
+* add missing aria attribute to w-textarea and w-select ([#146](https://github.com/warp-ds/vue/issues/146)) ([191be0f](https://github.com/warp-ds/vue/commit/191be0f2f58829755d0301b35e50864f5f3a1699))
+* **w-field:** ensure default error text is translated on time ([#148](https://github.com/warp-ds/vue/issues/148)) ([36dcf1c](https://github.com/warp-ds/vue/commit/36dcf1cedb6beb864da3a4891f93f81f0b5a942f))
+* **w-field:** use correct colors in label and hint/error text ([#150](https://github.com/warp-ds/vue/issues/150)) ([fa3a621](https://github.com/warp-ds/vue/commit/fa3a621b8ade3278bcca593e1e72639670c3a02e))
+
 ## [1.2.6-next.3](https://github.com/warp-ds/vue/compare/v1.2.6-next.2...v1.2.6-next.3) (2024-03-20)
 
 
