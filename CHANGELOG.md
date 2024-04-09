@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/warp-ds/vue/compare/v1.2.6...v1.2.7) (2024-04-09)
+
+
+### Bug Fixes
+
+* Fix issues with validation messages for input fields ([#155](https://github.com/warp-ds/vue/issues/155)) ([9a26bfa](https://github.com/warp-ds/vue/commit/9a26bfad079d5c2d79fbffe1485798768e3f59dd))
+
 ## [1.2.7-next.1](https://github.com/warp-ds/vue/compare/v1.2.6...v1.2.7-next.1) (2024-04-09)
 
 
