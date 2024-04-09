@@ -26,7 +26,7 @@
     "storybook": "storybook dev -p 6006",
     "test": "vitest run --coverage",
     "watch": "vitest watch",
-    "lint:fix": "eslint . --fix --ignore-path .gitignore",
+    "lint": "eslint . --fix --ignore-path .gitignore",
     "lint:check": "eslint . --ignore-path .gitignore"
   },
   "keywords": [],
