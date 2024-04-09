@@ -1,5 +1,5 @@
-import wBadge from './w-badge.vue'
-import { installer } from '#util'
+import wBadge from './w-badge.vue';
+import { installer } from '#util';
 
-export const Badge = { install: installer([wBadge]) }
-export { wBadge }
+export const Badge = { install: installer([wBadge]) };
+export { wBadge };

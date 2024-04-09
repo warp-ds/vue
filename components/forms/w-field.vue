@@ -5,7 +5,7 @@
     <slot name="control" :form="collector" />
     <div :class="{[ccHelpText.helpText]: true, [ccHelpText.helpTextColor]: !isInvalid, [ccHelpText.helpTextColorInvalid]: isInvalid}" v-if="hint || isInvalid">
       <span :id="hintId" v-if="hint" v-html="hint" />
-      <span v-if="hint && isInvalid">, </span>
+      <span v-if="hint && isInvalid && errorMessage">, </span>
       <span :id="errorId" v-if="isInvalid">{{ errorMessage }}</span>
     </div>
   </component>
@@ -77,11 +77,11 @@ export default {
     }))
     const wrapperAria = computed(() => valueOrUndefined(isFieldset.value, aria.value))
     const optionalHelperText = i18n._({ id: 'forms.field.label.optional', message: '(optional)', comment: 'Shown after label when marked as optional'});
-    const errorMessage = validationMsg.value || i18n._({
+    const errorMessage = computed(() => validationMsg.value || (props.optional ? '' : i18n._({
       id:'forms.validation.mandatoryField', 
       message: 'Mandatory field',
       comment: 'Text visible below input field if validation fails'
-    })
+    })));
 
     return { triggerValidation, errorMessage, labelType, labelFor, labelId, hintId, errorId, aria, wrapperAria, collector, valueOrUndefined, ccInput, ccLabel, ccHelpText, isInvalid, optionalHelperText }
   }

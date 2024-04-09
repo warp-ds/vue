@@ -5,8 +5,8 @@ export const sidebarConfig = [
     links: [
       { to: 'button', title: 'Button' },
       { to: 'button-group', title: 'Button Group' },
-      { to: 'pill', title: 'Pill' }
-    ]
+      { to: 'pill', title: 'Pill' },
+    ],
   },
   {
     title: 'Communication',
@@ -17,8 +17,8 @@ export const sidebarConfig = [
       { to: 'badge', title: 'Badge' },
       { to: 'breadcrumbs', title: 'Breadcrumbs' },
       { to: 'modal', title: 'Modal' },
-      { to: 'steps', title: 'Steps' }
-  ]
+      { to: 'steps', title: 'Steps' },
+    ],
   },
   {
     title: 'Forms',
@@ -29,8 +29,8 @@ export const sidebarConfig = [
       { to: 'switch', title: 'Switch' },
       { to: 'textfield', title: 'Text Field' },
       { to: 'textarea', title: 'Textarea' },
-      { to: 'toggle', title: 'Toggle' }
-    ]
+      { to: 'toggle', title: 'Toggle' },
+    ],
   },
   {
     title: 'Layout',
@@ -39,7 +39,7 @@ export const sidebarConfig = [
       { to: 'box', title: 'Box' },
       { to: 'card', title: 'Card' },
       { to: 'expandable', title: 'Expandable' },
-      { to: 'tabs', title: 'Tabs' }
-    ]
-  }
-]
+      { to: 'tabs', title: 'Tabs' },
+    ],
+  },
+];

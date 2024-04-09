@@ -6,20 +6,13 @@ describe('breadcrumbs', () => {
   assert.ok(wBreadcrumbs.name);
 
   test('normal', () => {
-    const defaultSlot = [
-      `<a href="#/foo">Foo</a>`,
-      `<a href="#/bar">Bar</a>`,
-      `<span aria-current="page">Baz</span>`,
-    ];
+    const defaultSlot = [`<a href="#/foo">Foo</a>`, `<a href="#/bar">Bar</a>`, `<span aria-current="page">Baz</span>`];
     const wrapper = mount(wBreadcrumbs, {
       slots: { default: defaultSlot },
     });
     const html = wrapper.get('nav');
     assert.include(wrapper.text(), 'Foo/Bar/Baz');
-    assert.include(
-      wrapper.html(),
-      'class="select-none s-icon"'
-    );
+    assert.include(wrapper.html(), 'class="select-none s-icon"');
     assert.ok(html.attributes()['aria-labelledby']);
   });
   test('v-for', () => {

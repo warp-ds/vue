@@ -1,5 +1,5 @@
-import wPill from './w-pill.vue'
-import { installer } from '#util'
+import wPill from './w-pill.vue';
+import { installer } from '#util';
 
-export const Pill = { install: installer([wPill]) }
-export { wPill }
+export const Pill = { install: installer([wPill]) };
+export { wPill };
