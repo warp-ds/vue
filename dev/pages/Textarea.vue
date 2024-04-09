@@ -21,7 +21,7 @@ const model = ref('')
     </token>
 
     <token :state="model" >
-      <w-textarea v-model="model" required label="A required textarea" hint="A hint" />
+      <w-textarea v-model="model" invalid required label="A required textarea" hint="A hint" />
     </token>
   </div>
 </template>

@@ -73,6 +73,12 @@ const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScal
       </w-textfield>
     </token>
 
+    <token :state="inputModel">
+      <w-textfield label="I am invalid" #suffix invalid required v-model="inputModel">
+        <w-affix suffix clear aria-label="Clear text" @click="handleClear" />
+      </w-textfield>
+    </token>
+
     <token :state="numericInputModel">
       <w-textfield placeholder="I am placeholder" v-model.number="numericInputModel" optional number type="text" inputmode="numeric" :mask="moneyMask" label="A masked (money) input" />
     </token>
