@@ -1,3 +1,10 @@
+## [1.2.8-next.1](https://github.com/warp-ds/vue/compare/v1.2.7...v1.2.8-next.1) (2024-04-16)
+
+
+### Bug Fixes
+
+* Styling fixes for Card component ([#157](https://github.com/warp-ds/vue/issues/157)) ([646fcc4](https://github.com/warp-ds/vue/commit/646fcc4d756900c1c06dd67a62bb7b4415392441))
+
 ## [1.2.7](https://github.com/warp-ds/vue/compare/v1.2.6...v1.2.7) (2024-04-09)
 
 
