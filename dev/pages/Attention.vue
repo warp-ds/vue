@@ -1,15 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 import { wAttention, wBox, wButton } from '#components'
-import IconInfo16 from "@warp-ds/icons/vue/info-16";
-
-
 
 const tooltipTarget = ref(null)
 const tooltipResetTarget = ref(null)
 const popoverTarget = ref(null)
 const dismissiblePopoverTarget = ref(null)
-const popoverIconTarget = ref(null)
 const highlightTarget = ref(null)
 const dismissibleHighlightTarget = ref(null)
 
@@ -18,10 +14,8 @@ const tooltipResetShowing = ref(false)
 const calloutShowing = ref(true)
 const popoverShowing = ref(false)
 const dismissiblePopoverShowing = ref(false)
-const popoverIconTargetShowing = ref(false)
 const highlightShowing = ref(false)
 const dismissibleHighlightShowing = ref(false)
-
 </script>
 
 <template>
@@ -54,7 +48,7 @@ const dismissibleHighlightShowing = ref(false)
           </w-box>
           <w-attention
             tooltip
-            placement="bottom"
+            bottom
             :target-el="tooltipTarget ? tooltipTarget.$el : null"
             v-model="tooltipShowing"
             @focus="tooltipShowing = true"
@@ -87,9 +81,9 @@ const dismissibleHighlightShowing = ref(false)
           </w-box>
           <w-attention
             tooltip
-            placement="bottom"
+            bottom
             role=""
-            aria-label=""
+            ariaLabel=""
             :target-el="tooltipResetTarget ? tooltipResetTarget.$el : null"
             v-model="tooltipResetShowing"
             @focus="tooltipResetShowing = true"
@@ -113,7 +107,7 @@ const dismissibleHighlightShowing = ref(false)
             </w-box>
             <w-attention
               callout
-              placement="right"
+              right
               v-model="calloutShowing"
               class="ml-8"
             >
@@ -134,8 +128,7 @@ const dismissibleHighlightShowing = ref(false)
           </w-button>
           <w-attention
             popover
-            placement="bottom"
-            flip
+            bottom
             :target-el="popoverTarget ? popoverTarget.$el : null"
             v-model="popoverShowing"
           >
@@ -154,8 +147,8 @@ const dismissibleHighlightShowing = ref(false)
           <w-attention
             id="dismissiblePopoverAttentionExample"
             popover
-            placement="bottom"
-            can-close
+            bottom
+            canClose
             @dismiss="dismissiblePopoverShowing = false"
             :target-el="dismissiblePopoverTarget ? dismissiblePopoverTarget.$el : null"
             v-model="dismissiblePopoverShowing"
@@ -163,31 +156,6 @@ const dismissibleHighlightShowing = ref(false)
             <p id="dismissiblePopoverContent">I'm a dismissible popover</p>
           </w-attention>
         </div>
-        <div>
-          <h2>Popover with icon as target element</h2>
-          <w-button
-            :aria-expanded="popoverIconTargetShowing"
-            aria-controls="popover-icon-target-example"
-            type="button"
-            utility
-            quiet
-            ref="popoverIconTarget"
-            @click="() => (popoverIconTargetShowing = !popoverIconTargetShowing)"
-          >
-            <icon-info16/>
-          </w-button>
-            <w-attention
-              popover
-              placement="right-end"
-              :distance="-6"
-              :skidding="15"
-              :target-el="popoverIconTarget ? popoverIconTarget.$el : null"
-              v-model="popoverIconTargetShowing"
-            >
-              <p>Hello Warp!</p>
-            </w-attention>
-        </div>
-
         <div>
           <h2>Highlight</h2>
           <w-button
@@ -200,9 +168,7 @@ const dismissibleHighlightShowing = ref(false)
           <w-attention
             id="highlightAttentionExample"
             highlight
-            placement='left'
-            flip
-            :fallback-placements="['right', 'bottom', 'top']"
+            bottom
             :target-el="highlightTarget ? highlightTarget.$el : null"
             v-model="highlightShowing"
           >
@@ -223,9 +189,8 @@ const dismissibleHighlightShowing = ref(false)
           <w-attention
             id="dismissibleHighlightAttentionExample"
             highlight
-            placement="bottom"
-            flip
-            can-close
+            bottom
+            canClose
             @dismiss="dismissibleHighlightShowing = false"
             :target-el="dismissibleHighlightTarget ? dismissibleHighlightTarget.$el : null"
             v-model="dismissibleHighlightShowing"

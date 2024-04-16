@@ -1,14 +1,17 @@
 <script setup>
-import { watch, watchEffect, computed, ref, onMounted, nextTick , onUnmounted} from 'vue'
+import { watch, computed, ref, onMounted, nextTick } from 'vue'
 import { attention as ccAttention } from '@warp-ds/css/component-classes'
-import IconClose16 from '@warp-ds/icons/vue/close-16'
+import { computePosition, flip, offset, shift, arrow } from '@floating-ui/dom'
+import IconClose16 from "@warp-ds/icons/vue/close-16";
 
 import { absentProp } from '#util'
 import {
   props as attentionProps,
-  getVariantClasses,
+  directions,
+  computeCalloutArrow,
+  getVariantClasses
 } from './attentionUtil.js'
-import { opposites, directions, autoUpdatePosition, useRecompute as recompute } from '@warp-ds/core/attention'
+import { opposites } from '@warp-ds/core/attention'
 import wAttentionArrow from './w-attention-arrow.vue'
 import { createModel, modelProps } from 'create-v-model'
 import { i18n } from '@lingui/core'
@@ -24,113 +27,92 @@ const props = defineProps({
   ...modelProps({ modelDefault: absentProp }),
   targetEl: Object,
   attentionClass: [Object, String],
+  attentionEl: {
+    default: () => ref(null),
+  },
   role: String,
   ariaLabel: String,
-  placement: {
-    type: String,
-    validator(value) {
-      return directions.includes(value)
-    },
-    default: 'bottom'
-  },
-  distance: {
-    type: Number,
-    default: 8
-  },
-  skidding: {
-    type: Number,
-    default: 0
-  },
-  flip: {
-    type: Boolean,
-    default: false
-  },
-  fallbackPlacements: {
-    type: Array,
-    validator(values) {
-      return values.every((value) => directions.includes(value));
-    }
-  },
 })
 
 const emit = defineEmits(['update:modelValue', 'dismiss'])
+const directionName = computed(() => directions.find((e) => props[e]))
+
 const attentionClasses = computed(() => ({
   [props.attentionClass]: true,
-  [ccAttention.notCallout]: !props.callout,
+  [ccAttention.notCallout]: !props.callout
 }))
 
 const wrapperClasses = computed(() => [
   ccAttention.base,
-  getVariantClasses(props).wrapper,
+  getVariantClasses(props).wrapper
 ])
 
-const model = props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
-const attentionEl = ref(null);
+const model =
+  props.modelValue === absentProp ? ref(true) : createModel({ props, emit })
 const arrowEl = ref(null)
-const actualDirection = ref(props.placement)
+const actualDirection = ref(directionName.value)
 
-const attentionState = computed(() => ({
-  get isShowing() {
-    return model.value
-  },
-  isCallout: props.callout,
-  get actualDirection() {
-    return actualDirection.value
-  },
-  set actualDirection(v) {
-    actualDirection.value = v
-  },
-  directionName: props.placement,
-  arrowEl: arrowEl.value?.$el,
-  attentionEl: attentionEl.value,
-  targetEl: props.targetEl,
-  noArrow: props.noArrow,
-  distance: props.distance,
-  skidding: props.skidding,
-  flip: props.flip,
-  fallbackPlacements: props.fallbackPlacements,
-  waitForDOM: nextTick
-}));
+const recompute = async () => {
+  if (!model.value) return
+  await nextTick()
+  if (props.callout)
+    return computeCalloutArrow({ directionName, arrowEl, actualDirection })
+  if (!props.attentionEl.value) return
 
-const ariaClose = i18n._({
-  id: 'attention.aria.close',
-  message: 'Close',
-  comment: 'Aria label for the close button in attention',
-})
+  const position = await computePosition(
+    props.targetEl,
+    props.attentionEl.value,
+    {
+      placement: directionName.value,
+      middleware: [
+        flip(),
+        offset(8),
+        shift({ padding: 16 }),
+        arrow({ element: props.noArrow ? undefined : arrowEl.value.$el }),
+      ],
+    }
+  )
+
+  actualDirection.value = position.placement
+  Object.assign(props.attentionEl.value.style, {
+    left: '0',
+    top: '0',
+    transform: `translate3d(${Math.round(position.x)}px, ${Math.round(
+      position.y
+    )}px, 0)`,
+  })
+  let { x, y } = position.middlewareData.arrow
+  arrowEl.value.$el.style.left = x ? x + 'px' : null
+  arrowEl.value.$el.style.top = y ? y + 'px' : null
+}
+
+const ariaClose = i18n._({ id: 'attention.aria.close', message: 'Close', comment: 'Aria label for the close button in attention' });
 
 // TODO: See if we can move this function to the core repo:
 const pointingAtDirection = computed(() => {
   switch (opposites[actualDirection.value]) {
-    case 'top-start':
     case 'top':
-    case 'top-end':
       return i18n._({
         id: 'attention.aria.pointingUp',
         message: 'pointing up',
         comment:
           'Default screenreader message for top direction in the attention component',
       })
-    case 'right-start':
     case 'right':
-    case 'right-end':
       return i18n._({
         id: 'attention.aria.pointingRight',
         message: 'pointing right',
         comment:
           'Default screenreader message for right direction in the attention component',
       })
-    case 'bottom-start':
     case 'bottom':
-    case 'bottom-end':
       return i18n._({
         id: 'attention.aria.pointingDown',
         message: 'pointing down',
         comment:
           'Default screenreader message for bottom direction in the attention component',
       })
-    case 'left-start':
     case 'left':
-    case 'left-end':
       return i18n._({
         id: 'attention.aria.pointingLeft',
         message: 'pointing left',
@@ -185,34 +167,14 @@ const defaultAriaLabel = computed(() => {
   }`
 })
 
-let cleanup;
-
 onMounted(async () => {
-  watchEffect(model, recompute(attentionState.value), { immediate: props.callout })
+  watch(() => [props.top, props.bottom, props.left, props.right], recompute)
+  watch(model, recompute, { immediate: props.callout })
 })
-
-watch(() => [props.targetEl, model.value, attentionEl.value], ([target, m, att]) =>  {
- if (!cleanup && m && target && att) {
-    cleanup = autoUpdatePosition(attentionState.value);
-  } else if (cleanup) {
-    cleanup();
-    cleanup = null;
-  }
-}, { immediate: true });
-
-
-onUnmounted(async () => {
-  if (cleanup) {
-    cleanup();
-    cleanup = null
-  }
-})
-
-
 </script>
 
 <template>
-  <div :class="attentionClasses" ref="attentionEl" v-show="model">
+  <div :class="attentionClasses" ref="attentionRef" v-show="model">
     <div
       :role="props.role === '' ? undefined : props.tooltip ? 'tooltip' : 'img'"
       :aria-label="
@@ -230,13 +192,7 @@ onUnmounted(async () => {
       <div :class="ccAttention.content">
         <slot />
       </div>
-      <button
-        v-if="canClose"
-        :aria-label="ariaClose"
-        @click="$emit('dismiss')"
-        @keydown.esc="$emit('dismiss')"
-        :class="ccAttention.closeBtn"
-      >
+      <button v-if="canClose" :aria-label="ariaClose" @click="$emit('dismiss')" @keydown.esc="$emit('dismiss')" :class="ccAttention.closeBtn">
         <icon-close-16 />
       </button>
     </div>
