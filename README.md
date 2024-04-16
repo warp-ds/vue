@@ -62,7 +62,6 @@ pnpm lingui extract --clean
 
 This command should no longer be necessary to run once the bug in Crowdin is fixed.
 
-
 ## License
 
 @warp-ds/vue is available under the [Apache-2.0 software license](https://github.com/warp-ds/vue/blob/main/LICENSE).
