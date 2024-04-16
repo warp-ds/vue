@@ -1,7 +1,7 @@
 {
   "name": "@warp-ds/vue",
   "repository": "git@github.com:warp-ds/vue.git",
-  "version": "1.2.6",
+  "version": "1.2.8-next.1",
   "description": "Warp components for Vue 3",
   "type": "module",
   "exports": {
@@ -25,16 +25,18 @@
     "site": "vite build dev --config ./vite.config.js",
     "storybook": "storybook dev -p 6006",
     "test": "vitest run --coverage",
-    "watch": "vitest watch"
+    "watch": "vitest watch",
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "lint:check": "eslint . --ignore-path .gitignore"
   },
   "keywords": [],
   "license": "Apache-2.0",
   "dependencies": {
     "@lingui/core": "^4.7.0",
     "@warp-ds/core": "^1.0.2",
-    "@warp-ds/css": "1.9.1",
+    "@warp-ds/css": "1.9.3",
     "@warp-ds/icons": "2.0.0",
-    "@warp-ds/uno": "1.9.0",
+    "@warp-ds/uno": "1.10.2",
     "create-v-model": "^2.2.0",
     "dom-focus-lock": "^1.1.0",
     "element-collapse": "^1.1.0",
@@ -66,13 +68,18 @@
     "@vitest/coverage-v8": "^1.2.2",
     "@vue/compiler-sfc": "^3.4.14",
     "@vue/test-utils": "2.4.4",
+    "@warp-ds/eslint-config": "1.0.4",
     "cleave-lite": "^1.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "drnm": "^0.9.0",
     "esbuild": "0.20.0",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-prettier": "5.1.3",
     "fuse.js": "^7.0.0",
     "happy-dom": "13.3.8",
     "playwright": "1.41.2",
+    "prettier": "3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "semantic-release": "^23.0.0",
@@ -91,6 +98,9 @@
   "files": [
     "dist/"
   ],
+  "eslintConfig": {
+    "extends": "@warp-ds"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
