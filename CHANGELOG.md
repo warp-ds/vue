@@ -1,3 +1,15 @@
+# [2.0.0-next.1](https://github.com/warp-ds/vue/compare/v1.2.8-next.1...v2.0.0-next.1) (2024-04-16)
+
+
+### Features
+
+* test release ([#160](https://github.com/warp-ds/vue/issues/160)) ([85bf2d6](https://github.com/warp-ds/vue/commit/85bf2d6ff3d726184b69ae98067ab66c03debd6c)), closes [#2](https://github.com/warp-ds/vue/issues/2)
+
+
+### BREAKING CHANGES
+
+* The attention component
+
 ## [1.2.8-next.1](https://github.com/warp-ds/vue/compare/v1.2.7...v1.2.8-next.1) (2024-04-16)
 
 

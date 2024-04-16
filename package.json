@@ -1,7 +1,7 @@
 {
   "name": "@warp-ds/vue",
   "repository": "git@github.com:warp-ds/vue.git",
-  "version": "1.2.8-next.1",
+  "version": "2.0.0-next.1",
   "description": "Warp components for Vue 3",
   "type": "module",
   "exports": {
