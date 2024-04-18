@@ -54,7 +54,7 @@ const dismissibleHighlightShowing = ref(false)
           </w-box>
           <w-attention
             tooltip
-            placement="bottom"
+            placement="top"
             :target-el="tooltipTarget ? tooltipTarget.$el : null"
             v-model="tooltipShowing"
             @focus="tooltipShowing = true"
@@ -134,8 +134,7 @@ const dismissibleHighlightShowing = ref(false)
           </w-button>
           <w-attention
             popover
-            placement="bottom"
-            flip
+            placement="right"
             :target-el="popoverTarget ? popoverTarget.$el : null"
             v-model="popoverShowing"
           >
