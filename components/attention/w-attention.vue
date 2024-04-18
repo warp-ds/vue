@@ -45,6 +45,10 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
+  crossAxis: {
+    type: Boolean,
+    default: false
+  },
   fallbackPlacements: {
     type: Array,
     validator(values) {
@@ -89,6 +93,7 @@ const attentionState = computed(() => ({
   distance: props.distance,
   skidding: props.skidding,
   flip: props.flip,
+  crossAxis: props.crossAxis,
   fallbackPlacements: props.fallbackPlacements,
   waitForDOM: nextTick
 }));

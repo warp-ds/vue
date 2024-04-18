@@ -201,6 +201,7 @@ const dismissibleHighlightShowing = ref(false)
             highlight
             placement='left'
             flip
+            cross-axis
             :fallback-placements="['right', 'bottom', 'top']"
             :target-el="highlightTarget ? highlightTarget.$el : null"
             v-model="highlightShowing"
