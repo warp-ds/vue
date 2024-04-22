@@ -24,7 +24,7 @@ describe('attention', () => {
   test('highlight', () => {
     const defaultSlot = '<h5>Hello Warp</h5>';
     const wrapper = mount(wAttention, {
-      props: { highlight: true, modelValue: true },
+      props: { highlight: true, modelValue: true, targetEl:'<w-button ref="highlightTarget" @click="highlightShowing = !highlightShowing">Click me</w-button>' },
       slots: { default: defaultSlot },
     });
     assert.include(wrapper.text(), 'Hello Warp');
