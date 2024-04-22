@@ -6,7 +6,25 @@
   "type": "module",
   "exports": {
     ".": "./dist/warp-vue.js",
-    "./docs": "./dist/docs/warp-vue.js"
+    "./docs": "./dist/docs/warp-vue.js",
+    "./alert": "./dist/alert.js",
+    "./attention": "./dist/attention.js",
+    "./badge": "./dist/badge.js",
+    "./box": "./dist/box.js",
+    "./breadcrumbs": "./dist/breadcrumbs.js",
+    "./button-group": "./dist/button-group.js",
+    "./button": "./dist/button.js",
+    "./card": "./dist/card.js",
+    "./expandable": "./dist/expandable.js",
+    "./forms": "./dist/forms.js",
+    "./generic": "./dist/generic.js",
+    "./modal": "./dist/modal.js",
+    "./pill": "./dist/pill.js",
+    "./slider": "./dist/slider.js",
+    "./steps": "./dist/steps.js",
+    "./switch": "./dist/switch.js",
+    "./tabs": "./dist/tabs.js",
+    "./tag": "./dist/tag.js"
   },
   "imports": {
     "#util": "./components/util/index.js",
