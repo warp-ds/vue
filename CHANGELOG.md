@@ -1,3 +1,10 @@
+# [2.0.0-next.2](https://github.com/warp-ds/vue/compare/v2.0.0-next.1...v2.0.0-next.2) (2024-04-22)
+
+
+### Features
+
+* Individual imports ([#162](https://github.com/warp-ds/vue/issues/162)) ([42c72d5](https://github.com/warp-ds/vue/commit/42c72d5bb15319c32c9661ca2ef581311d655bd4))
+
 # [2.0.0-next.1](https://github.com/warp-ds/vue/compare/v1.2.8-next.1...v2.0.0-next.1) (2024-04-16)
 
 
