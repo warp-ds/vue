@@ -40,9 +40,8 @@ function getBuildOpts(env) {
   if (env.mode === 'lib') {
     return defineConfig({
       build: {
-        rollupOptions: {
-          external: ['vue'],
-          input: {
+        lib: {
+          entry: {
             tag: 'components/tag/index.js',
             tabs: 'components/tabs/index.js',
             switch: 'components/switch/index.js',
@@ -63,10 +62,16 @@ function getBuildOpts(env) {
             alert: 'components/alert/index.js',
             'warp-vue': './index.js',
           },
+          formats: ['es'],
+        },
+        rollupOptions: {
+          external: ['vue'],
           output: {
             format: 'es',
-            dir: 'dist',
+            dir: 'dist/',
             entryFileNames: '[name].js',
+            assetFileNames: 'assets/[name].[ext]',
+            chunkFileNames: '[name].js',
           },
         },
       },
