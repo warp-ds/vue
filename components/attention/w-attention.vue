@@ -78,7 +78,6 @@ const attentionState = computed(() => ({
     return model.value
   },
   isCallout: props.callout,
-  isTooltip: props.tooltip,
   get actualDirection() {
     return actualDirection.value
   },
