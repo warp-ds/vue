@@ -155,6 +155,7 @@ const dismissibleHighlightShowing = ref(false)
             popover
             placement="bottom"
             can-close
+            flip
             @dismiss="dismissiblePopoverShowing = false"
             :target-el="dismissiblePopoverTarget ? dismissiblePopoverTarget.$el : null"
             v-model="dismissiblePopoverShowing"

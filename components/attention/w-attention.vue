@@ -218,7 +218,7 @@ onUnmounted(async () => {
 </script>
 
 <template>
-  <div :class="attentionClasses" ref="attentionEl" v-show="model">
+  <div :class="attentionClasses" ref="attentionEl" v-show="model" v-if="props.callout || (props.targetEl !== undefined && !props.callout)">
     <div
       :role="props.role === '' ? undefined : props.tooltip ? 'tooltip' : 'img'"
       :aria-label="
