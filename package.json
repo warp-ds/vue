@@ -44,8 +44,8 @@
     "storybook": "storybook dev -p 6006",
     "test": "vitest run --coverage",
     "watch": "vitest watch",
-    "lint": "eslint . --fix --ignore-path .gitignore dist/*",
-    "lint:check": "eslint . --ignore-path .gitignore dist/*"
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "lint:check": "eslint . --ignore-path .gitignore"
   },
   "keywords": [],
   "license": "Apache-2.0",
