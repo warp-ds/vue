@@ -9,8 +9,8 @@ dependencies:
     specifier: ^4.7.0
     version: 4.7.0
   '@warp-ds/core':
-    specifier: ^1.1.0
-    version: 1.1.0(@floating-ui/dom@1.6.3)
+    specifier: ^1.1.1
+    version: 1.1.1(@floating-ui/dom@1.6.3)
   '@warp-ds/css':
     specifier: 1.9.3
     version: 1.9.3
@@ -4797,7 +4797,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.19(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.13
+      vue-component-type-helpers: 2.0.14
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -5657,8 +5657,8 @@ packages:
       vue-component-type-helpers: 1.8.27
     dev: true
 
-  /@warp-ds/core@1.1.0(@floating-ui/dom@1.6.3):
-    resolution: {integrity: sha512-ZMpeE/ZWLBJkHL6CtR02JIRGm7RM1iwhVal1Vo9wC2HU2JqGOMBG9T0vCK7FNqjZXTgw7TPgVqJpbkLnTD3KTg==}
+  /@warp-ds/core@1.1.1(@floating-ui/dom@1.6.3):
+    resolution: {integrity: sha512-JL7Zzi8djG9NOpZMebn4zuP7zAu8C5nAnplvJuMnWrExg3Kw+ZP9wnJWJJ+wNPASPbqHxshVHbNTBStGGTCeqw==}
     peerDependencies:
       '@floating-ui/dom': 1.6.3
     dependencies:
@@ -13524,8 +13524,8 @@ packages:
     resolution: {integrity: sha512-0vOfAtI67UjeO1G6UiX5Kd76CqaQ67wrRZiOe7UAb9Jm6GzlUr/fC7CV90XfwapJRjpCMaZFhv1V0ajWRmE9Dg==}
     dev: true
 
-  /vue-component-type-helpers@2.0.13:
-    resolution: {integrity: sha512-xNO5B7DstNWETnoYflLkVgh8dK8h2ZDgxY1M2O0zrqGeBNq5yAZ8a10yCS9+HnixouNGYNX+ggU9MQQq86HTpg==}
+  /vue-component-type-helpers@2.0.14:
+    resolution: {integrity: sha512-DInfgOyXlMyliyqAAD9frK28tTfch0+tMi4qoWJcZlRxUf+NFAtraJBnAsKLep+FOyLMiajkhfyEb3xLK08i7w==}
     dev: true
 
   /vue-docgen-api@4.75.1(vue@3.4.19):
