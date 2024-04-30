@@ -1,3 +1,10 @@
+# [2.0.0-next.3](https://github.com/warp-ds/vue/compare/v2.0.0-next.2...v2.0.0-next.3) (2024-04-30)
+
+
+### Features
+
+* add more functionality to attention component ([#161](https://github.com/warp-ds/vue/issues/161)) ([a8ed8ab](https://github.com/warp-ds/vue/commit/a8ed8ab2ed01bd44b3bdb35d510e29b785a0d2d0))
+
 # [2.0.0-next.2](https://github.com/warp-ds/vue/compare/v2.0.0-next.1...v2.0.0-next.2) (2024-04-22)
 
 
