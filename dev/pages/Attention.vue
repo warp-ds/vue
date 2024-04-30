@@ -54,7 +54,7 @@ const dismissibleHighlightShowing = ref(false)
           </w-box>
           <w-attention
             tooltip
-            placement="bottom"
+            placement="top"
             :target-el="tooltipTarget ? tooltipTarget.$el : null"
             v-model="tooltipShowing"
             @focus="tooltipShowing = true"
@@ -134,8 +134,7 @@ const dismissibleHighlightShowing = ref(false)
           </w-button>
           <w-attention
             popover
-            placement="bottom"
-            flip
+            placement="right"
             :target-el="popoverTarget ? popoverTarget.$el : null"
             v-model="popoverShowing"
           >
@@ -156,6 +155,7 @@ const dismissibleHighlightShowing = ref(false)
             popover
             placement="bottom"
             can-close
+            flip
             @dismiss="dismissiblePopoverShowing = false"
             :target-el="dismissiblePopoverTarget ? dismissiblePopoverTarget.$el : null"
             v-model="dismissiblePopoverShowing"
@@ -202,6 +202,7 @@ const dismissibleHighlightShowing = ref(false)
             highlight
             placement='left'
             flip
+            cross-axis
             :fallback-placements="['right', 'bottom', 'top']"
             :target-el="highlightTarget ? highlightTarget.$el : null"
             v-model="highlightShowing"

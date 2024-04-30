@@ -45,6 +45,10 @@ const props = defineProps({
     type: Boolean,
     default: false
   },
+  crossAxis: {
+    type: Boolean,
+    default: false
+  },
   fallbackPlacements: {
     type: Array,
     validator(values) {
@@ -88,6 +92,7 @@ const attentionState = computed(() => ({
   distance: props.distance,
   skidding: props.skidding,
   flip: props.flip,
+  crossAxis: props.crossAxis,
   fallbackPlacements: props.fallbackPlacements,
   waitForDOM: nextTick
 }));
@@ -212,7 +217,7 @@ onUnmounted(async () => {
 </script>
 
 <template>
-  <div :class="attentionClasses" ref="attentionEl" v-show="model">
+  <div :class="attentionClasses" ref="attentionEl" v-show="model" v-if="props.callout || (props.targetEl !== undefined && !props.callout)">
     <div
       :role="props.role === '' ? undefined : props.tooltip ? 'tooltip' : 'img'"
       :aria-label="
