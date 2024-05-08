@@ -1,0 +1,11 @@
+{
+  "parser": "vue-eslint-parser",
+  "plugins": [
+    "vue"
+  ],
+  "extends": [
+    "@warp-ds",
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
+  ]
+}
