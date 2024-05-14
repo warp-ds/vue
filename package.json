@@ -128,6 +128,5 @@
     "server": "https://assets.finn.no",
     "files": "./dist",
     "import-map": "https://assets.finn.no/map/finn/v2"
-  },
-  "packageManager": "pnpm@9.1.1"
+  }
 }
