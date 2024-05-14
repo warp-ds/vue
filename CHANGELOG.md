@@ -1,3 +1,10 @@
+# [2.0.0-next.4](https://github.com/warp-ds/vue/compare/v2.0.0-next.3...v2.0.0-next.4) (2024-05-14)
+
+
+### Bug Fixes
+
+* **textfield/textarea:** clean up classes  ([#163](https://github.com/warp-ds/vue/issues/163)) ([2babe15](https://github.com/warp-ds/vue/commit/2babe1537ac826d1f00681a7912f91106f9b7667))
+
 # [2.0.0-next.3](https://github.com/warp-ds/vue/compare/v2.0.0-next.2...v2.0.0-next.3) (2024-04-30)
 
 
