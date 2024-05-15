@@ -1,3 +1,43 @@
+# [2.0.0-next.4](https://github.com/warp-ds/vue/compare/v2.0.0-next.3...v2.0.0-next.4) (2024-05-14)
+
+
+### Bug Fixes
+
+* **textfield/textarea:** clean up classes  ([#163](https://github.com/warp-ds/vue/issues/163)) ([2babe15](https://github.com/warp-ds/vue/commit/2babe1537ac826d1f00681a7912f91106f9b7667))
+
+# [2.0.0-next.3](https://github.com/warp-ds/vue/compare/v2.0.0-next.2...v2.0.0-next.3) (2024-04-30)
+
+
+### Features
+
+* add more functionality to attention component ([#161](https://github.com/warp-ds/vue/issues/161)) ([a8ed8ab](https://github.com/warp-ds/vue/commit/a8ed8ab2ed01bd44b3bdb35d510e29b785a0d2d0))
+
+# [2.0.0-next.2](https://github.com/warp-ds/vue/compare/v2.0.0-next.1...v2.0.0-next.2) (2024-04-22)
+
+
+### Features
+
+* Individual imports ([#162](https://github.com/warp-ds/vue/issues/162)) ([42c72d5](https://github.com/warp-ds/vue/commit/42c72d5bb15319c32c9661ca2ef581311d655bd4))
+
+# [2.0.0-next.1](https://github.com/warp-ds/vue/compare/v1.2.8-next.1...v2.0.0-next.1) (2024-04-16)
+
+
+### Features
+
+* test release ([#160](https://github.com/warp-ds/vue/issues/160)) ([85bf2d6](https://github.com/warp-ds/vue/commit/85bf2d6ff3d726184b69ae98067ab66c03debd6c)), closes [#2](https://github.com/warp-ds/vue/issues/2)
+
+
+### BREAKING CHANGES
+
+* The attention component
+
+## [1.2.8-next.1](https://github.com/warp-ds/vue/compare/v1.2.7...v1.2.8-next.1) (2024-04-16)
+
+
+### Bug Fixes
+
+* Styling fixes for Card component ([#157](https://github.com/warp-ds/vue/issues/157)) ([646fcc4](https://github.com/warp-ds/vue/commit/646fcc4d756900c1c06dd67a62bb7b4415392441))
+
 ## [1.2.7](https://github.com/warp-ds/vue/compare/v1.2.6...v1.2.7) (2024-04-09)
 
 

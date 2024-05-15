@@ -47,7 +47,6 @@ Storybook can be started by running `pnpm storybook`.
 This project is continuously published to [NPM](https://www.npmjs.com/package/@warp-ds/vue) and [Eik](https://assets.finn.no/pkg/@warp-ds/vue) using a `next` tag (e.g. `1.1.0-next.1`).
 Anyone needing to use the latest changes of this package can point to the `next` version while waiting for the stable release.
 
-
 ## Changelog
 
 Detailed changes for each release can be found in the [CHANGELOG](CHANGELOG.md) file.
@@ -61,7 +60,6 @@ pnpm lingui extract --clean
 ```
 
 This command should no longer be necessary to run once the bug in Crowdin is fixed.
-
 
 ## License
 
