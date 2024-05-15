@@ -5,7 +5,6 @@
   ],
   "extends": [
     "@warp-ds",
-    "plugin:vue/recommended",
     "plugin:prettier/recommended"
   ]
 }
