@@ -1,7 +1,7 @@
 <template>
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
     <div :class="[ccInput.wrapper]">
-      <textarea         
+      <textarea
         :class="{
           [`${ccInput.base} ${ccInput.textArea}`]: true,
           [ccInput.placeholder]: !!p.placeholder,
@@ -12,6 +12,9 @@
         }"
         :disabled="disabled"
         :readOnly="readOnly"
+        v-bind="{ ...aria, ...$attrs, class: '' }"
+        v-model="model"
+        :id="id"
         @blur="triggerValidation" />
     </div>
   </w-field>
@@ -29,5 +32,5 @@ const model = createModel({ props: p, emit });
 </script>
 
 <script>
-export default { name: 'WTextarea', inheritAttrs: false };
+export default { name: 'wTextarea', inheritAttrs: false };
 </script>
