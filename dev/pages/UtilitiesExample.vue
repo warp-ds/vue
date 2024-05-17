@@ -9,5 +9,4 @@
   <p class="mb-32">This component provides the UI of a toggle, but will not accept clicks or other interaction.</p>
 </template>
 
-<script setup>
-</script>
+<script setup></script>

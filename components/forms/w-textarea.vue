@@ -1,25 +1,29 @@
 <template>
-  <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
+  <w-field v-slot="{ triggerValidation, aria, hasValidationErrors }" v-bind="{ ...$attrs, ...$props }">
     <div :class="wrapperClass">
-      <textarea         
+      <textarea
+        v-bind="{ ...aria, ...$attrs, class: '' }"
+        :id="id"
+        v-model="model"
         :class="[
           inputClasses,
           {
             [ccInput.invalid]: hasValidationErrors,
-          }
+          },
         ]"
         :disabled="disabled"
         :readOnly="readOnly"
-        v-bind="{ ...aria, ...$attrs, class: '' }" v-model="model" :id="id" @blur="triggerValidation" 
-      />
+        @blur="triggerValidation" />
     </div>
   </w-field>
 </template>
 
 <script setup>
 import { computed } from 'vue';
+
 import { input as ccInput } from '@warp-ds/css/component-classes';
 import { createModel } from 'create-v-model';
+
 import { default as wField, fieldProps } from './w-field.vue';
 
 const p = defineProps(fieldProps);
@@ -36,5 +40,5 @@ const inputClasses = computed(() => ({
 </script>
 
 <script>
-export default { name: 'wTextarea', inheritAttrs: false };
+export default { name: 'WTextarea', inheritAttrs: false };
 </script>

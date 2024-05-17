@@ -5,10 +5,12 @@
 </template>
 
 <script>
-import { id as key } from '#util'
+// eslint-disable-next-line vue/no-reserved-props
+import { id as key } from '#util';
 
 export default {
-  name: 'wWillExpand',
-  props: { key }
-}
+  name: 'WWillExpand',
+  // eslint-disable-next-line vue/no-reserved-props
+  props: { key },
+};
 </script>

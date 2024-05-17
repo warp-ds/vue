@@ -1,7 +1,8 @@
-import wAlert from '../w-alert.vue';
 import { ref } from 'vue';
 
 import { within, expect } from '@storybook/test';
+
+import wAlert from '../w-alert.vue';
 
 const showAlert = ref(true);
 

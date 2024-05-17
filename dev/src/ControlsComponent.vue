@@ -1,5 +1,5 @@
 <script setup>
-defineProps({ x: Boolean, y: Boolean })
+defineProps({ x: Boolean, y: Boolean });
 </script>
 
 <template>

@@ -31,7 +31,16 @@ export const createValidationCollector = () => {
 
   watch(childrenShouldValidate, () => validationElements.value.forEach((e) => (e.shouldValidate = childrenShouldValidate.value)));
 
-  const collectionAttrs = { registerValidation, unregisterValidation, validationElements, childrenShouldValidate, allChildrenValid, valid: allChildrenValid, completed, validate };
+  const collectionAttrs = {
+    registerValidation,
+    unregisterValidation,
+    validationElements,
+    childrenShouldValidate,
+    allChildrenValid,
+    valid: allChildrenValid,
+    completed,
+    validate,
+  };
   provide(collectionKey, reactive(collectionAttrs));
   return collectionAttrs;
 };

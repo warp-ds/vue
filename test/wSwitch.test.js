@@ -1,7 +1,9 @@
-import { describe, test, assert } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { wSwitch } from '#components';
 import { ref, nextTick } from 'vue';
+
+import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
+import { wSwitch } from '#components';
 
 describe('switch', () => {
   assert.ok(wSwitch.name);

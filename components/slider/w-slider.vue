@@ -1,19 +1,13 @@
 <script setup>
-defineOptions({
-  name: 'wSlider'
-});
+import { computed, ref, useAttrs, watch, onMounted, onBeforeUnmount } from 'vue';
 
-import {
-  computed,
-  ref,
-  useAttrs,
-  watch,
-  onMounted,
-  onBeforeUnmount,
-} from 'vue';
-import { modelProps, createModel } from 'create-v-model';
-import { slider as ccSlider } from '@warp-ds/css/component-classes';
 import { useDimensions, createHandlers } from '@warp-ds/core/slider';
+import { slider as ccSlider } from '@warp-ds/css/component-classes';
+import { modelProps, createModel } from 'create-v-model';
+
+defineOptions({
+  name: 'WSlider',
+});
 
 const attrs = useAttrs();
 const props = defineProps({
@@ -86,16 +80,8 @@ const sliderState = {
   },
 };
 
-const {
-  handleKeyDown,
-  handleFocus,
-  handleBlur,
-  handleMouseDown,
-  handleClick,
-  getThumbPosition,
-  getThumbTransform,
-  getShiftedChange,
-} = createHandlers({ props, sliderState });
+const { handleKeyDown, handleFocus, handleBlur, handleMouseDown, handleClick, getThumbPosition, getThumbTransform, getShiftedChange } =
+  createHandlers({ props, sliderState });
 
 const thumbPosition = computed(getThumbPosition);
 const transformValue = computed(getThumbTransform);
@@ -125,10 +111,7 @@ const activeTrackClasses = computed(() => ({
   [ccSlider.activeTrack]: !props.disabled,
   [ccSlider.activeTrackDisabled]: props.disabled,
 }));
-const thumbClasses = computed(() => [
-  ccSlider.thumb,
-  props.disabled ? ccSlider.thumbDisabled : ccSlider.thumbEnabled,
-]);
+const thumbClasses = computed(() => [ccSlider.thumb, props.disabled ? ccSlider.thumbDisabled : ccSlider.thumbEnabled]);
 
 watch(position, () => {
   // prevents shiftedChange when modelValue was set externally
@@ -138,7 +121,7 @@ watch(position, () => {
   }
 });
 
-const clamp = (v, { min, max }) => Number.isFinite(parseFloat(v)) ? Math.min(Math.max(v, min), max) : min;
+const clamp = (v, { min, max }) => (Number.isFinite(parseFloat(v)) ? Math.min(Math.max(v, min), max) : min);
 
 watch(
   () => props.modelValue,
@@ -150,21 +133,16 @@ watch(
       position.value = props.modelValue;
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
 <template>
   <div :class="ccSlider.wrapper">
-    <div :class="trackClasses" ref="sliderLine" @click="handleClick" />
+    <div ref="sliderLine" :class="trackClasses" @click="handleClick" />
+    <div :class="activeTrackClasses" :style="sliderActiveStyle" data-test="slider-active" @click="handleClick" />
     <div
-      :class="activeTrackClasses"
-      :style="sliderActiveStyle"
-      @click="handleClick"
-      data-test="slider-active"
-    />
-    <div
-      :class="thumbClasses"
       ref="thumb"
+      :class="thumbClasses"
       role="slider"
       tabindex="0"
       v-bind="aria"
@@ -174,7 +152,6 @@ watch(
       @touchstart="handleMouseDown"
       @blur="handleBlur"
       @focus="handleFocus"
-      @keydown="handleKeyDown"
-    ></div>
+      @keydown="handleKeyDown"></div>
   </div>
 </template>

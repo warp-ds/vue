@@ -1,11 +1,12 @@
 <script setup>
-import { ribbon as ccRibbon } from '@warp-ds/css/component-classes'
-import { computed, onMounted } from 'vue'
+import { computed, onMounted } from 'vue';
+
+import { ribbon as ccRibbon } from '@warp-ds/css/component-classes';
 
 const props = defineProps({
   primary: {
     type: Boolean,
-    required: true
+    required: true,
   },
   topLeft: Boolean,
   topRight: Boolean,
@@ -17,7 +18,7 @@ const props = defineProps({
   error: Boolean,
   disabled: Boolean,
   sponsored: Boolean,
-  neutral: Boolean
+  neutral: Boolean,
 });
 
 const baseClasses = computed(() => ({
@@ -30,11 +31,11 @@ const baseClasses = computed(() => ({
   [ccRibbon.error]: props.error,
   [ccRibbon.disabled]: props.disabled,
   [ccRibbon.sponsored]: props.sponsored,
-  [ccRibbon.neutral]: props.neutral
-}))
+  [ccRibbon.neutral]: props.neutral,
+}));
 
 onMounted(() => {
-  console.warn('w-tag is deprecated and will be removed in a future version, please switch to w-badge')
+  console.warn('w-tag is deprecated and will be removed in a future version, please switch to w-badge');
 });
 </script>
 
@@ -45,7 +46,5 @@ onMounted(() => {
 </template>
 
 <script>
-export default { name: 'wTag' }
+export default { name: 'WTag' };
 </script>
-
-

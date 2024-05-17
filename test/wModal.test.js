@@ -1,7 +1,9 @@
-import { describe, test, assert } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { wModal } from '#components';
 import { ref, nextTick } from 'vue';
+
+import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
+import { wModal } from '#components';
 
 describe('modal', () => {
   assert.ok(wModal.name);

@@ -1,10 +1,11 @@
 <script setup>
-import { wButton } from '#components'
-import { checkbox, radio, useIsActive, buildCheckboxState } from '#dev-util'
-import { reactive } from 'vue'
+import { reactive } from 'vue';
 
-const variants = reactive({ active: 'Primary' })
-const active = useIsActive(variants)
+import { wButton } from '#components';
+import { checkbox, radio, useIsActive, buildCheckboxState } from '#dev-util';
+
+const variants = reactive({ active: 'Primary' });
+const active = useIsActive(variants);
 const variantControls = [
   { name: 'Primary', radio },
   { name: 'Secondary', radio },
@@ -12,15 +13,15 @@ const variantControls = [
   { name: 'Link', radio },
   { name: 'Utility', radio },
   { name: 'Pill', radio },
-]
+];
 
 const modifierControls = [
   { name: 'Quiet', checkbox },
   { name: 'Small', checkbox },
   { name: 'Loading', checkbox },
-  { name: 'FullWidth', checkbox }
-]
-const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
+  { name: 'FullWidth', checkbox },
+];
+const modifiers = reactive(buildCheckboxState({ controls: modifierControls }));
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 <script setup>
-import { tab as ccTab } from '@warp-ds/css/component-classes';
 import { inject, computed, onBeforeUnmount } from 'vue';
+
+import { tab as ccTab } from '@warp-ds/css/component-classes';
 
 const props = defineProps({
   label: String,
@@ -41,15 +42,14 @@ const contentClasses = computed(() => ({
 
 <template>
   <button
-    :class="tabClasses"
-    @click="setActive"
-    role="tab"
     :id="`warp-tab-${name}`"
+    :class="tabClasses"
+    role="tab"
     :aria-selected="isActive"
     :aria-controls="isActive ? `warp-tabpanel-${name}` : undefined"
     :tabindex="isActive ? 0 : -1"
-    @keydown="controller.onKeydown"
-  >
+    @click="setActive"
+    @keydown="controller.onKeydown">
     <span v-if="$slots.default" :class="iconClasses">
       <slot />
     </span>
@@ -61,5 +61,5 @@ const contentClasses = computed(() => ({
 </template>
 
 <script>
-export default { name: 'wTab' };
+export default { name: 'WTab' };
 </script>

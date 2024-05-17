@@ -1,7 +1,9 @@
-import { describe, test, assert, afterEach } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { wAttention } from '#components';
 import { ref, nextTick } from 'vue';
+
+import { mount } from '@vue/test-utils';
+import { describe, test, assert, afterEach } from 'vitest';
+
+import { wAttention } from '#components';
 
 // I don't know if the workaround with attachTo breaks anything, so I'm making sure to clean up here
 afterEach(() => {

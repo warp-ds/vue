@@ -1,8 +1,10 @@
 <script setup>
-import { suffix, prefix } from "@warp-ds/css/component-classes";
-import { computed } from "vue";
-import IconClose16 from '@warp-ds/icons/vue/close-16'
-import IconSearch16 from "@warp-ds/icons/vue/search-16";
+import { computed } from 'vue';
+
+// eslint-disable-next-line vue/no-dupe-keys
+import { suffix, prefix } from '@warp-ds/css/component-classes';
+import IconClose16 from '@warp-ds/icons/vue/close-16';
+import IconSearch16 from '@warp-ds/icons/vue/search-16';
 
 const props = defineProps({
   prefix: Boolean,
@@ -16,9 +18,7 @@ const classBase = computed(() => (props.prefix ? prefix : suffix));
 
 const wrapperClass = computed(() => ({
   [classBase.value.wrapper]: true,
-  [props.label
-    ? classBase.value.wrapperWithLabel
-    : classBase.value.wrapperWithIcon]: true,
+  [props.label ? classBase.value.wrapperWithLabel : classBase.value.wrapperWithIcon]: true,
 }));
 
 const labelClass = computed(() => classBase.value.label);
@@ -28,10 +28,10 @@ const labelClass = computed(() => classBase.value.label);
   <component :is="label ? 'div' : 'button'" :class="wrapperClass">
     <icon-close-16 v-if="clear" />
     <icon-search-16 v-else-if="search" />
-    <span :class="labelClass" v-else-if="label">{{ label }}</span>
+    <span v-else-if="label" :class="labelClass">{{ label }}</span>
   </component>
 </template>
 
 <script>
-export default { name: "wAffix" };
+export default { name: 'WAffix' };
 </script>

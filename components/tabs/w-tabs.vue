@@ -1,18 +1,10 @@
 <script setup>
+import { provide, computed, ref, watch, nextTick, onMounted, Fragment, useSlots, watchEffect } from 'vue';
+
 import { gridLayout, tabs as ccTabs } from '@warp-ds/css/component-classes';
-import {
-  provide,
-  computed,
-  ref,
-  watch,
-  nextTick,
-  onMounted,
-  Fragment,
-  useSlots,
-  watchEffect,
-} from 'vue';
 import { modelProps, createModel } from 'create-v-model';
 import debounce from 'femtobounce';
+
 import { useKeydownHandler } from './util';
 
 const props = defineProps({
@@ -21,10 +13,8 @@ const props = defineProps({
 
 const slots = useSlots();
 
-const useGetActiveTab = (tabContainer) => () =>
-  tabContainer.value?.querySelector('.active-tab');
-const getChildren = (slot) =>
-  slot[0].type === Fragment ? slot[0].children : slot;
+const useGetActiveTab = (tabContainer) => () => tabContainer.value?.querySelector('.active-tab');
+const getChildren = (slot) => (slot[0].type === Fragment ? slot[0].children : slot);
 
 const activeTab = createModel({ props });
 const tabContainer = ref(null);
@@ -37,9 +27,7 @@ const unregisterTab = (tab) => {
 };
 const gridsClassname = computed(() => gridLayout[`cols${tabs.value.length}`]);
 // SSR doesn't complete the tab-registry lifecycle before render, so we just count children and use that when numberOfTabs is 0
-const slotFallback = computed(
-  () => gridLayout[`cols${getChildren(slots.default()).length}`]
-);
+const slotFallback = computed(() => gridLayout[`cols${getChildren(slots.default()).length}`]);
 const getActiveTab = useGetActiveTab(tabContainer);
 const focusActive = () => getActiveTab()?.focus();
 
@@ -75,17 +63,13 @@ onMounted(() => {
 
 <template>
   <nav :class="ccTabs.wrapperUnderlined">
-    <div
-      :class="[ccTabs.tabContainer, gridsClassname || slotFallback]"
-      ref="tabContainer"
-      role="tablist"
-    >
+    <div ref="tabContainer" :class="[ccTabs.tabContainer, gridsClassname || slotFallback]" role="tablist">
       <slot />
-      <span :class="ccTabs.wunderbar" ref="wunderbar" />
+      <span ref="wunderbar" :class="ccTabs.wunderbar" />
     </div>
   </nav>
 </template>
 
 <script>
-export default { name: 'wTabs' };
+export default { name: 'WTabs' };
 </script>

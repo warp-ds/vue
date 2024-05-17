@@ -1,20 +1,21 @@
 <script setup>
-import { deadToggle as ccDeadToggle } from '@warp-ds/css/component-classes';
-import wToggleItem from './w-toggle-item.vue';
 import { computed } from 'vue';
+
+import { deadToggle as ccDeadToggle } from '@warp-ds/css/component-classes';
+
+import wToggleItem from './w-toggle-item.vue';
 
 const props = defineProps({
   radio: Boolean,
   checkbox: Boolean,
-})
-const type = computed(() => props.radio ? 'radio' : 'checkbox');
+});
+const type = computed(() => (props.radio ? 'radio' : 'checkbox'));
 
 const labelClasses = computed(() => ({
-    [ccDeadToggle.labelRadio]: props.radio,
-    [ccDeadToggle.labelCheckbox]: props.checkbox,
-    [ccDeadToggle.labelVue]: true,
-  }));
-
+  [ccDeadToggle.labelRadio]: props.radio,
+  [ccDeadToggle.labelCheckbox]: props.checkbox,
+  [ccDeadToggle.labelVue]: true,
+}));
 </script>
 
 <template>
@@ -24,5 +25,5 @@ const labelClasses = computed(() => ({
 </template>
 
 <script>
-export default { name: 'wDeadToggle' };
+export default { name: 'WDeadToggle' };
 </script>

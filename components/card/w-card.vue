@@ -1,29 +1,27 @@
 <script setup>
-import { card as ccCard } from '@warp-ds/css/component-classes';
 import { computed } from 'vue';
 
+import { card as ccCard } from '@warp-ds/css/component-classes';
+
 defineOptions({
-  name: 'wCard',
+  name: 'WCard',
 });
 
 const props = defineProps({
   as: { type: String, default: 'div' },
   selected: Boolean,
-  flat: Boolean
-})
+  flat: Boolean,
+});
 
 const containerClasses = computed(() => ({
   [ccCard.card]: true,
   [ccCard.cardShadow]: !props.flat,
   [ccCard.cardSelected]: !props.flat && props.selected,
   [ccCard.cardFlat]: props.flat,
-  [props.selected ? ccCard.cardFlatSelected : ccCard.cardFlatUnselected]: props.flat
+  [props.selected ? ccCard.cardFlatSelected : ccCard.cardFlatUnselected]: props.flat,
 }));
 
-const outlineClasses = computed(() => [
-  ccCard.cardOutline,
-  props.selected ? ccCard.cardOutlineSelected : ccCard.cardOutlineUnselected,
-]);
+const outlineClasses = computed(() => [ccCard.cardOutline, props.selected ? ccCard.cardOutlineSelected : ccCard.cardOutlineUnselected]);
 </script>
 
 <template>

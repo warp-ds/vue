@@ -1,21 +1,23 @@
 <script setup>
 import { ref, computed, useSlots } from 'vue';
+
 import { input as ccInput } from '@warp-ds/css/component-classes';
 import { createModel } from 'create-v-model';
-import { setupMask } from './w-input-mask.js';
+
 import { default as wField, fieldProps } from './w-field.vue';
+import { setupMask } from './w-input-mask.js';
 
 const p = defineProps({
   ...fieldProps,
   type: {
     type: String,
     default: 'text',
-    validator: inputTypeValidator
+    validator: inputTypeValidator,
   },
   inputWrapperClass: String,
   autocomplete: {
     type: String,
-    default: 'off'
+    default: 'off',
   },
   mask: Object,
 });
@@ -33,16 +35,14 @@ const inputClasses = computed(() => ({
   [ccInput.prefix]: slots.prefix,
 }));
 
-const inputWithPrefixStyle = computed(() => (
-  slots.prefix ? 'padding-left: var(--w-prefix-width, 40px);' : undefined
-))
+const inputWithPrefixStyle = computed(() => (slots.prefix ? 'padding-left: var(--w-prefix-width, 40px);' : undefined));
 </script>
 
 <template>
-  <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
-      <div :class="[ccInput.wrapper, inputWrapperClass]">
-      <slot name="prefix" :inputElement="inputEl" />
-      <input 
+  <w-field v-slot="{ triggerValidation, aria, hasValidationErrors }" v-bind="{ ...$attrs, ...$props }">
+    <div :class="[ccInput.wrapper, inputWrapperClass]">
+      <slot name="prefix" :input-element="inputEl" />
+      <input
         v-if="mask"
         :id="id"
         ref="inputEl"
@@ -51,15 +51,15 @@ const inputWithPrefixStyle = computed(() => (
           inputClasses,
           {
             [ccInput.invalid]: hasValidationErrors,
-          }
+          },
         ]"
         :autocomplete="autocomplete"
         :disabled="disabled"
         :placeholder="placeholder"
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
-        @blur="triggerValidation">
-      <input 
+        @blur="triggerValidation" />
+      <input
         v-else
         :id="id"
         ref="inputEl"
@@ -69,23 +69,21 @@ const inputWithPrefixStyle = computed(() => (
           inputClasses,
           {
             [ccInput.invalid]: hasValidationErrors,
-          }
+          },
         ]"
         :autocomplete="autocomplete"
         :disabled="disabled"
         :placeholder="placeholder"
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
-        @blur="triggerValidation"
         :style="inputWithPrefixStyle"
-        >
-      <slot name="suffix" :inputElement="inputEl" />
+        @blur="triggerValidation" />
+      <slot name="suffix" :input-element="inputEl" />
     </div>
   </w-field>
 </template>
 
-
 <script>
 const inputTypeValidator = (value) => ['text', 'search', 'email', 'password', 'url', 'tel', 'number'].includes(value);
-export default { name: 'wTextfield', inheritAttrs: false };
+export default { name: 'WTextfield', inheritAttrs: false };
 </script>

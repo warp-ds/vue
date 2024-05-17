@@ -1,7 +1,9 @@
-import { describe, test, assert } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { wExpandable } from '#components';
 import { nextTick } from 'vue';
+
+import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
+import { wExpandable } from '#components';
 
 describe('expandable', () => {
   assert.ok(wExpandable.name);
