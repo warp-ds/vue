@@ -1,7 +1,7 @@
 <template>
   <w-field v-slot="{ triggerValidation }" as="fieldset" v-bind="{ ...$attrs, ...$props }" :role="role">
     <div :class="wrapperClasses">
-      <div v-for="(toggle, i) in toggles" :key="id + i + type" :class="groupClasses">
+      <div v-for="(toggle, i) in toggles" :key="`toggle-${i}`" :class="groupClasses">
         <w-toggle-item
           v-model="model"
           :indeterminate="indeterminate"
