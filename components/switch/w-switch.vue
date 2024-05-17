@@ -55,6 +55,6 @@ const simulateClick = () => inputEl.value.click();
 
 <script>
 export default {
-  name: 'WSwitch',
+  name: 'wSwitch',
 };
 </script>

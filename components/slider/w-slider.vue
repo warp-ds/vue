@@ -6,7 +6,7 @@ import { slider as ccSlider } from '@warp-ds/css/component-classes';
 import { modelProps, createModel } from 'create-v-model';
 
 defineOptions({
-  name: 'WSlider',
+  name: 'wSlider',
 });
 
 const attrs = useAttrs();

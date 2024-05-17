@@ -4,7 +4,7 @@ import { computed } from 'vue';
 import { box as ccBox } from '@warp-ds/css/component-classes';
 
 defineOptions({
-  name: 'WBox',
+  name: 'wBox',
 });
 
 const props = defineProps({

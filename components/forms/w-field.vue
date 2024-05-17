@@ -61,7 +61,7 @@ export const fieldProps = {
 const valueOrUndefined = (test, value) => (test ? value : undefined);
 
 export default {
-  name: 'WField',
+  name: 'wField',
   inheritAttrs: false,
   props: {
     ...fieldProps,

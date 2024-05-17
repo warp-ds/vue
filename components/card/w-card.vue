@@ -4,7 +4,7 @@ import { computed } from 'vue';
 import { card as ccCard } from '@warp-ds/css/component-classes';
 
 defineOptions({
-  name: 'WCard',
+  name: 'wCard',
 });
 
 const props = defineProps({

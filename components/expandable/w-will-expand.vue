@@ -9,7 +9,7 @@
 import { id as key } from '#util';
 
 export default {
-  name: 'WWillExpand',
+  name: 'wWillExpand',
   // eslint-disable-next-line vue/no-reserved-props
   props: { key },
 };

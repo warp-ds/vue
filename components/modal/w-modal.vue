@@ -180,6 +180,6 @@ onBeforeUnmount(handleShow);
 
 <script>
 export default {
-  name: 'WModal',
+  name: 'wModal',
 };
 </script>

@@ -16,7 +16,7 @@ import IconClose16 from '@warp-ds/icons/vue/close-16';
 import IconSearch16 from '@warp-ds/icons/vue/search-16';
 
 export default {
-  name: 'WSuffix',
+  name: 'wSuffix',
   props: {
     clear: Boolean,
     search: Boolean,

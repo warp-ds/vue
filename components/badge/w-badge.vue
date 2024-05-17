@@ -4,7 +4,7 @@ import { computed } from 'vue';
 import { badge as ccBadge } from '@warp-ds/css/component-classes';
 
 defineOptions({
-  name: 'WBadge',
+  name: 'wBadge',
 });
 
 const props = defineProps({

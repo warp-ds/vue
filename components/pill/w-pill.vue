@@ -58,7 +58,7 @@ const removeFilterSrText = i18n._({
 
 <script>
 export default {
-  name: 'WPill',
+  name: 'wPill',
   inheritAttrs: false,
 };
 </script>
