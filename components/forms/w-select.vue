@@ -59,5 +59,5 @@ const chevronClasses = computed(() => ({
 </template>
 
 <script>
-export default { name: 'WSelect', inheritAttrs: false };
+export default { name: 'wSelect', inheritAttrs: false };
 </script>

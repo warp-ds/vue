@@ -68,5 +68,5 @@ const inputClasses = {
 </template>
 
 <script>
-export default { name: 'WToggleItem' };
+export default { name: 'wToggleItem' };
 </script>

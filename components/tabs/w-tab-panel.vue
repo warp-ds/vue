@@ -15,5 +15,5 @@ const props = defineProps({
 </template>
 
 <script>
-export default { name: 'WTabPanel' };
+export default { name: 'wTabPanel' };
 </script>

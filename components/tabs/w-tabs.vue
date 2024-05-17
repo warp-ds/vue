@@ -71,5 +71,5 @@ onMounted(() => {
 </template>
 
 <script>
-export default { name: 'WTabs' };
+export default { name: 'wTabs' };
 </script>

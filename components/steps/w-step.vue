@@ -118,5 +118,5 @@ const contentClasses = computed(() => [
 </template>
 
 <script>
-export default { name: 'WStep' };
+export default { name: 'wStep' };
 </script>

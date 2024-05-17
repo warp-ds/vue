@@ -62,6 +62,6 @@ const groupClasses = computed(() => ({
 </script>
 
 <script>
-export default { name: 'WToggle', inheritAttrs: false };
+export default { name: 'wToggle', inheritAttrs: false };
 const hasLabelAndValue = (e) => 'value' in e && 'label' in e;
 </script>

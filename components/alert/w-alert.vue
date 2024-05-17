@@ -58,5 +58,5 @@ const iconComponent = computed(() =>
 </template>
 
 <script>
-export default { name: 'WAlert' };
+export default { name: 'wAlert' };
 </script>

@@ -100,5 +100,5 @@ const saneDefaults = computed(() => ({
 </script>
 
 <script>
-export default { name: 'WButton' };
+export default { name: 'wButton' };
 </script>

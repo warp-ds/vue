@@ -46,5 +46,5 @@ onMounted(() => {
 </template>
 
 <script>
-export default { name: 'WTag' };
+export default { name: 'wTag' };
 </script>

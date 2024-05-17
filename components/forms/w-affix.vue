@@ -33,5 +33,5 @@ const labelClass = computed(() => classBase.value.label);
 </template>
 
 <script>
-export default { name: 'WAffix' };
+export default { name: 'wAffix' };
 </script>

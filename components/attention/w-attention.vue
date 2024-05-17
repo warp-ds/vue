@@ -228,5 +228,5 @@ onUnmounted(async () => {
 </template>
 
 <script>
-export default { name: 'WAttention' };
+export default { name: 'wAttention' };
 </script>

@@ -25,5 +25,5 @@ const labelClasses = computed(() => ({
 </template>
 
 <script>
-export default { name: 'WDeadToggle' };
+export default { name: 'wDeadToggle' };
 </script>

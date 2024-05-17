@@ -37,5 +37,5 @@ const buttonOrLinkClasses = computed(() => ({
 </template>
 
 <script>
-export default { name: 'WClickable' };
+export default { name: 'wClickable' };
 </script>

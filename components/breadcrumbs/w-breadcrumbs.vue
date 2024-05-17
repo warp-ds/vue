@@ -48,5 +48,5 @@ const Breadcrumbify = (_, context) => {
 
 <script>
 export const wBreadcrumbSeparator = h('span', { class: ccBreadcrumbs.separator }, '/');
-export default { name: 'WBreadcrumbs' };
+export default { name: 'wBreadcrumbs' };
 </script>

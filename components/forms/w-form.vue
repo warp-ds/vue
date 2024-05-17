@@ -34,5 +34,5 @@ if (props.shouldValidate !== absentProp) watchEffect(() => (childrenShouldValida
 </template>
 
 <script>
-export default { name: 'WForm' };
+export default { name: 'wForm' };
 </script>

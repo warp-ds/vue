@@ -28,5 +28,5 @@ const classes = computed(() => [
 </template>
 
 <script>
-export default { name: 'WButtonGroup' };
+export default { name: 'wButtonGroup' };
 </script>

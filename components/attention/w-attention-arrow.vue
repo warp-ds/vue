@@ -24,5 +24,5 @@ const arrowClasses = computed(() => [
 </template>
 
 <script>
-export default { name: 'WAttentionArrow' };
+export default { name: 'wAttentionArrow' };
 </script>

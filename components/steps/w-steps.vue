@@ -32,5 +32,5 @@ watchEffect(() => {
 </template>
 
 <script>
-export default { name: 'WSteps' };
+export default { name: 'wSteps' };
 </script>

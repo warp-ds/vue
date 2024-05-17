@@ -61,5 +61,5 @@ const contentClasses = computed(() => ({
 </template>
 
 <script>
-export default { name: 'WTab' };
+export default { name: 'wTab' };
 </script>

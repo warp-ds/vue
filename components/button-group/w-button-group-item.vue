@@ -31,5 +31,5 @@ const wrapperClass = computed(() => [
 </template>
 
 <script>
-export default { name: 'WButtonGroupItem' };
+export default { name: 'wButtonGroupItem' };
 </script>

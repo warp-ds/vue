@@ -99,5 +99,5 @@ const contentClasses = computed(() => ({
 </template>
 
 <script>
-export default { name: 'WExpandable' };
+export default { name: 'wExpandable' };
 </script>
