@@ -1,6 +1,5 @@
 <script setup>
-import { ref, computed, useSlots } from 'vue';
-
+import { ref, useSlots } from 'vue';
 import { input as ccInput } from '@warp-ds/css/component-classes';
 import { createModel } from 'create-v-model';
 
@@ -26,16 +25,7 @@ const slots = useSlots();
 const model = createModel({ props: p, emit });
 const inputEl = ref(null);
 if (p.mask) setupMask({ props: p, emit, inputEl });
-const inputClasses = computed(() => ({
-  [ccInput.default]: true,
-  [ccInput.disabled]: p.disabled,
-  [ccInput.readOnly]: p.readOnly,
-  [ccInput.placeholder]: !!p.placeholder,
-  [ccInput.suffix]: slots.suffix,
-  [ccInput.prefix]: slots.prefix,
-}));
 
-const inputWithPrefixStyle = computed(() => (slots.prefix ? 'padding-left: var(--w-prefix-width, 40px);' : undefined));
 </script>
 
 <template>
@@ -47,12 +37,16 @@ const inputWithPrefixStyle = computed(() => (slots.prefix ? 'padding-left: var(-
         :id="id"
         ref="inputEl"
         :type="type"
-        :class="[
-          inputClasses,
-          {
-            [ccInput.invalid]: hasValidationErrors,
-          },
-        ]"
+        :class="{
+          [ccInput.base]: true,
+          [ccInput.default]: !hasValidationErrors && !p.disabled && !p.readOnly,
+          [ccInput.invalid]: hasValidationErrors && !p.disabled && !p.readOnly,
+          [ccInput.disabled]: !hasValidationErrors && p.disabled && !p.readOnly, 
+          [ccInput.readOnly]: !hasValidationErrors && !p.disabled && p.readOnly,
+          [ccInput.placeholder]: !!p.placeholder,
+          [ccInput.suffix]: slots.suffix,
+          [ccInput.prefix]: slots.prefix
+        }"
         :autocomplete="autocomplete"
         :disabled="disabled"
         :placeholder="placeholder"
@@ -65,20 +59,24 @@ const inputWithPrefixStyle = computed(() => (slots.prefix ? 'padding-left: var(-
         ref="inputEl"
         v-model="model"
         :type="type"
-        :class="[
-          inputClasses,
-          {
-            [ccInput.invalid]: hasValidationErrors,
-          },
-        ]"
+        :class="{
+          [ccInput.base]: true,
+          [ccInput.default]: !hasValidationErrors && !p.disabled && !p.readOnly,
+          [ccInput.invalid]: hasValidationErrors && !p.disabled && !p.readOnly,
+          [ccInput.disabled]: !hasValidationErrors && p.disabled && !p.readOnly,
+          [ccInput.readOnly]: !hasValidationErrors && !p.disabled && p.readOnly,
+          [ccInput.placeholder]: !!p.placeholder,
+          [ccInput.suffix]: slots.suffix,
+          [ccInput.prefix]: slots.prefix
+        }"
         :autocomplete="autocomplete"
         :disabled="disabled"
         :placeholder="placeholder"
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
-        :style="inputWithPrefixStyle"
-        @blur="triggerValidation" />
-      <slot name="suffix" :input-element="inputEl" />
+        @blur="triggerValidation"
+        >
+      <slot name="suffix" :inputElement="inputEl" />
     </div>
   </w-field>
 </template>
