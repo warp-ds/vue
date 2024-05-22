@@ -35,6 +35,11 @@ const Breadcrumbify = (_, context) => {
 };
 </script>
 
+<script>
+export const wBreadcrumbSeparator = h('span', { class: ccBreadcrumbs.separator }, '/');
+export default { name: 'wBreadcrumbs' };
+</script>
+
 <template>
   <nav aria-labelledby="breadCrumbLabel">
     <h2 id="breadCrumbLabel" :class="ccBreadcrumbs.a11y">{{ ariaLabel }}</h2>
@@ -45,8 +50,3 @@ const Breadcrumbify = (_, context) => {
     </div>
   </nav>
 </template>
-
-<script>
-export const wBreadcrumbSeparator = h('span', { class: ccBreadcrumbs.separator }, '/');
-export default { name: 'wBreadcrumbs' };
-</script>

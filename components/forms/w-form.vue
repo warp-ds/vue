@@ -27,12 +27,12 @@ if (props.completed !== absentProp) watchEffect(() => emit('update:completed', c
 if (props.shouldValidate !== absentProp) watchEffect(() => (childrenShouldValidate.value = props.shouldValidate));
 </script>
 
+<script>
+export default { name: 'wForm' };
+</script>
+
 <template>
   <component :is="as">
     <slot />
   </component>
 </template>
-
-<script>
-export default { name: 'wForm' };
-</script>

@@ -78,6 +78,10 @@ const contentClasses = computed(() => ({
 }));
 </script>
 
+<script>
+export default { name: 'wExpandable' };
+</script>
+
 <template>
   <component :is="as" :class="wrapperClasses">
     <button v-if="hasTitle" type="button" :aria-expanded="expanded" :class="buttonClasses" @click="expanded = !expanded">
@@ -97,7 +101,3 @@ const contentClasses = computed(() => ({
     </component>
   </component>
 </template>
-
-<script>
-export default { name: 'wExpandable' };
-</script>

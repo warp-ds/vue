@@ -43,6 +43,12 @@ const handleClasses = computed(() => [
 const simulateClick = () => inputEl.value.click();
 </script>
 
+<script>
+export default {
+  name: 'wSwitch',
+};
+</script>
+
 <template>
   <div :class="ccSwitch.switch">
     <input :id="p.id" ref="inputEl" v-model="model" type="checkbox" :class="ccSwitch.a11y" :disabled="p.disabled" />
@@ -52,9 +58,3 @@ const simulateClick = () => inputEl.value.click();
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'wSwitch',
-};
-</script>

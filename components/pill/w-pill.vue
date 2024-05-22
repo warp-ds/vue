@@ -43,6 +43,13 @@ const removeFilterSrText = i18n._({
 });
 </script>
 
+<script>
+export default {
+  name: 'wPill',
+  inheritAttrs: false,
+};
+</script>
+
 <template>
   <div :class="ccPill.pill">
     <button type="button" :class="labelClasses" v-bind="$attrs">
@@ -55,10 +62,3 @@ const removeFilterSrText = i18n._({
     </button>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'wPill',
-  inheritAttrs: false,
-};
-</script>

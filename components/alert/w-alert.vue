@@ -45,6 +45,10 @@ const iconComponent = computed(() =>
 );
 </script>
 
+<script>
+export default { name: 'wAlert' };
+</script>
+
 <template>
   <div :class="ccAlert.willChangeHeight">
     <!-- TODO: Investigate if "will-change-height" is needed and compare the use of it with the other component repos -->
@@ -63,7 +67,3 @@ const iconComponent = computed(() =>
     </w-expand-transition>
   </div>
 </template>
-
-<script>
-export default { name: 'wAlert' };
-</script>

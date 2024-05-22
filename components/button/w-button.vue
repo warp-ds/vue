@@ -92,13 +92,13 @@ const saneDefaults = computed(() => ({
 }));
 </script>
 
+<script>
+export default { name: 'wButton' };
+</script>
+
 <template>
   <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClass" v-bind="saneDefaults">
     <slot>{{ label }}</slot>
     <span v-if="loading" role="progressbar" aria-valuenow="0" :aria-valuetext="ariaValueText" :class="ccButton.a11y" />
   </component>
 </template>
-
-<script>
-export default { name: 'wButton' };
-</script>

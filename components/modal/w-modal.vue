@@ -131,6 +131,12 @@ watch(() => props.modelValue, handleShow, { immediate: true });
 onBeforeUnmount(handleShow);
 </script>
 
+<script>
+export default {
+  name: 'wModal',
+};
+</script>
+
 <template>
   <transition
     name="fade"
@@ -185,9 +191,3 @@ onBeforeUnmount(handleShow);
     </div>
   </transition>
 </template>
-
-<script>
-export default {
-  name: 'wModal',
-};
-</script>

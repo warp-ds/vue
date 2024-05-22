@@ -51,6 +51,10 @@ const inputClasses = {
 };
 </script>
 
+<script>
+export default { name: 'wToggleItem' };
+</script>
+
 <template>
   <input
     :id="id"
@@ -66,7 +70,3 @@ const inputClasses = {
   <label v-if="label" :for="id" :class="labelClasses" v-html="label" />
   <label v-else :for="id" :class="labelClasses"><slot /></label>
 </template>
-
-<script>
-export default { name: 'wToggleItem' };
-</script>

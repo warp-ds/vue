@@ -22,13 +22,13 @@ const model = props.button
 const selected = props.button ? null : computed(() => (props.radio ? model.value === props.name : model.value));
 </script>
 
+<script>
+export default { inheritAttrs: false };
+</script>
+
 <template>
   <w-button-group-item :selected="selected">
     <w-clickable v-if="button" label v-bind="$attrs">{{ name }}</w-clickable>
     <w-clickable v-else label v-bind="$props" v-model="model" :value="name">{{ name }}</w-clickable>
   </w-button-group-item>
 </template>
-
-<script>
-export default { inheritAttrs: false };
-</script>

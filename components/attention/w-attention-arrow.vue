@@ -19,10 +19,10 @@ const arrowClasses = computed(() => [
 ]);
 </script>
 
-<template>
-  <div :class="arrowClasses" />
-</template>
-
 <script>
 export default { name: 'wAttentionArrow' };
 </script>
+
+<template>
+  <div :class="arrowClasses" />
+</template>

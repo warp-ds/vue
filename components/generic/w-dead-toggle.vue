@@ -18,12 +18,12 @@ const labelClasses = computed(() => ({
 }));
 </script>
 
+<script>
+export default { name: 'wDeadToggle' };
+</script>
+
 <template>
   <div :class="ccDeadToggle.wrapper" aria-hidden="true">
     <w-toggle-item :class="ccDeadToggle.inputVue" :label-class="labelClasses" :type="type" v-bind="$attrs" />
   </div>
 </template>
-
-<script>
-export default { name: 'wDeadToggle' };
-</script>

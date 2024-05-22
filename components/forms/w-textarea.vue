@@ -9,6 +9,10 @@ const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props: p, emit });
 </script>
 
+<script>
+export default { name: 'wTextarea', inheritAttrs: false };
+</script>
+
 <template>
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
     <div :class="[ccInput.wrapper]">
@@ -30,7 +34,3 @@ const model = createModel({ props: p, emit });
     </div>
   </w-field>
 </template>
-
-<script>
-export default { name: 'wTextarea', inheritAttrs: false };
-</script>

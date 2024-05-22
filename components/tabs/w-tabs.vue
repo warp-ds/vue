@@ -61,6 +61,10 @@ onMounted(() => {
 });
 </script>
 
+<script>
+export default { name: 'wTabs' };
+</script>
+
 <template>
   <nav :class="ccTabs.wrapperUnderlined">
     <div ref="tabContainer" :class="[ccTabs.tabContainer, gridsClassname || slotFallback]" role="tablist">
@@ -69,7 +73,3 @@ onMounted(() => {
     </div>
   </nav>
 </template>
-
-<script>
-export default { name: 'wTabs' };
-</script>

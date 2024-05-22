@@ -22,12 +22,12 @@ const classes = computed(() => [
 ]);
 </script>
 
+<script>
+export default { name: 'wButtonGroup' };
+</script>
+
 <template>
   <div :class="classes">
     <slot />
   </div>
 </template>
-
-<script>
-export default { name: 'wButtonGroup' };
-</script>

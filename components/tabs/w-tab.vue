@@ -40,6 +40,10 @@ const contentClasses = computed(() => ({
 }));
 </script>
 
+<script>
+export default { name: 'wTab' };
+</script>
+
 <template>
   <button
     :id="`warp-tab-${name}`"
@@ -59,7 +63,3 @@ const contentClasses = computed(() => ({
     </span>
   </button>
 </template>
-
-<script>
-export default { name: 'wTab' };
-</script>

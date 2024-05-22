@@ -204,6 +204,10 @@ onUnmounted(async () => {
 });
 </script>
 
+<script>
+export default { name: 'wAttention' };
+</script>
+
 <template>
   <div v-show="model" v-if="props.callout || (props.targetEl !== undefined && !props.callout)" ref="attentionEl" :class="attentionClasses">
     <div
@@ -226,7 +230,3 @@ onUnmounted(async () => {
     </div>
   </div>
 </template>
-
-<script>
-export default { name: 'wAttention' };
-</script>

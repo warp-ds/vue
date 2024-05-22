@@ -104,6 +104,10 @@ const contentClasses = computed(() => [
 ]);
 </script>
 
+<script>
+export default { name: 'wStep' };
+</script>
+
 <template>
   <li :class="stepClasses">
     <div v-if="!vertical" :class="horizontalClasses" />
@@ -116,7 +120,3 @@ const contentClasses = computed(() => [
     </div>
   </li>
 </template>
-
-<script>
-export default { name: 'wStep' };
-</script>

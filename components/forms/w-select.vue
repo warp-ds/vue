@@ -31,6 +31,10 @@ const chevronClasses = computed(() => ({
 }));
 </script>
 
+<script>
+export default { name: 'wSelect', inheritAttrs: false };
+</script>
+
 <template>
   <w-field v-slot="{ triggerValidation, aria, hasValidationErrors }" v-bind="{ ...$attrs, ...$props }">
     <div :class="wrapperClasses">
@@ -57,7 +61,3 @@ const chevronClasses = computed(() => ({
     </div>
   </w-field>
 </template>
-
-<script>
-export default { name: 'wSelect', inheritAttrs: false };
-</script>

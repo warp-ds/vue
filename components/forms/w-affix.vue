@@ -23,6 +23,10 @@ const wrapperClass = computed(() => [
 const labelClass = computed(() => classBase.value.label);
 </script>
 
+<script>
+export default { name: 'wAffix' };
+</script>
+
 <template>
   <component :is="label ? 'div' : 'button'" :class="wrapperClass">
     <icon-close-16 v-if="clear" />
@@ -30,7 +34,3 @@ const labelClass = computed(() => classBase.value.label);
     <span v-else-if="label" :class="labelClass">{{ label }}</span>
   </component>
 </template>
-
-<script>
-export default { name: 'wAffix' };
-</script>

@@ -21,6 +21,10 @@ const buttonOrLinkClasses = computed(() => ({
 }));
 </script>
 
+<script>
+export default { name: 'wClickable' };
+</script>
+
 <template>
   <w-toggle-item v-if="radio || checkbox" :class="ccClickable.toggle" :type="type" :label-class="labelClasses" v-bind="$attrs">
     <slot />
@@ -35,7 +39,3 @@ const buttonOrLinkClasses = computed(() => ({
     <slot />
   </component>
 </template>
-
-<script>
-export default { name: 'wClickable' };
-</script>

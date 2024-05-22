@@ -40,6 +40,11 @@ const groupClasses = computed(() => ({
 }));
 </script>
 
+<script>
+export default { name: 'wToggle', inheritAttrs: false };
+const hasLabelAndValue = (e) => 'value' in e && 'label' in e;
+</script>
+
 <template>
   <w-field v-slot="{ triggerValidation }" as="fieldset" v-bind="{ ...$attrs, ...$props }" :role="role">
     <div :class="wrapperClasses">
@@ -60,8 +65,3 @@ const groupClasses = computed(() => ({
     </div>
   </w-field>
 </template>
-
-<script>
-export default { name: 'wToggle', inheritAttrs: false };
-const hasLabelAndValue = (e) => 'value' in e && 'label' in e;
-</script>

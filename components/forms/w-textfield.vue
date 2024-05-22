@@ -28,6 +28,11 @@ const inputEl = ref(null);
 if (p.mask) setupMask({ props: p, emit, inputEl });
 </script>
 
+<script>
+const inputTypeValidator = (value) => ['text', 'search', 'email', 'password', 'url', 'tel', 'number'].includes(value);
+export default { name: 'wTextfield', inheritAttrs: false };
+</script>
+
 <template>
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
     <div :class="[ccInput.wrapper, inputWrapperClass]">
@@ -79,8 +84,3 @@ if (p.mask) setupMask({ props: p, emit, inputEl });
     </div>
   </w-field>
 </template>
-
-<script>
-const inputTypeValidator = (value) => ['text', 'search', 'email', 'password', 'url', 'tel', 'number'].includes(value);
-export default { name: 'wTextfield', inheritAttrs: false };
-</script>

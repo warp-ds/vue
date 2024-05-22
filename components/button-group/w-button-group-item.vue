@@ -24,12 +24,12 @@ const wrapperClass = computed(() => [
 ]);
 </script>
 
+<script>
+export default { name: 'wButtonGroupItem' };
+</script>
+
 <template>
   <div :class="wrapperClass">
     <slot />
   </div>
 </template>
-
-<script>
-export default { name: 'wButtonGroupItem' };
-</script>

@@ -39,12 +39,12 @@ onMounted(() => {
 });
 </script>
 
+<script>
+export default { name: 'wTag' };
+</script>
+
 <template>
   <div :class="baseClasses">
     <slot />
   </div>
 </template>
-
-<script>
-export default { name: 'wTag' };
-</script>
