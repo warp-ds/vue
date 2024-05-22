@@ -14,7 +14,11 @@
     <slot name="control" :form="collector" />
     <div
       v-if="hint || isInvalid"
-      :class="{ [ccHelpText.helpText]: true, [ccHelpText.helpTextColor]: !isInvalid, [ccHelpText.helpTextColorInvalid]: isInvalid }">
+      :class="{
+        [ccHelpText.helpText]: true,
+        [ccHelpText.helpTextColor]: !isInvalid,
+        [ccHelpText.helpTextColorInvalid]: isInvalid,
+      }">
       <span v-if="hint" :id="hintId" v-html="hint" />
       <span v-if="hint && isInvalid && errorMessage">, </span>
       <span v-if="isInvalid" :id="errorId">{{ errorMessage }}</span>

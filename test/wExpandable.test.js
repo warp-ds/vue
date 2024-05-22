@@ -10,7 +10,10 @@ describe('expandable', () => {
 
   test('can mount expanded', () => {
     const defaultSlot = '<h1>Hello Warp</h1>';
-    const wrapper = mount(wExpandable, { props: { modelValue: true }, slots: { default: defaultSlot } });
+    const wrapper = mount(wExpandable, {
+      props: { modelValue: true },
+      slots: { default: defaultSlot },
+    });
     assert.equal(wrapper.text(), 'Hello Warp');
   });
   test('has a title area - prop', () => {

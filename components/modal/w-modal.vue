@@ -18,8 +18,16 @@ import { id } from '#util';
 
 activateI18n(enMessages, nbMessages, fiMessages);
 
-const ariaBack = i18n._({ id: 'modal.aria.back', message: 'Back', comment: 'Aria label for the back button in modal' });
-const ariaClose = i18n._({ id: 'modal.aria.close', message: 'Close test', comment: 'Aria label for the close button in modal' });
+const ariaBack = i18n._({
+  id: 'modal.aria.back',
+  message: 'Back',
+  comment: 'Aria label for the back button in modal',
+});
+const ariaClose = i18n._({
+  id: 'modal.aria.close',
+  message: 'Close test',
+  comment: 'Aria label for the close button in modal',
+});
 
 const transitions = 'transform-gpu transition-transform';
 const windowExists = typeof window !== 'undefined';

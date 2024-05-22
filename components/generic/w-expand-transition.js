@@ -12,6 +12,18 @@ export default {
     const transition = props.group ? TransitionGroup : Transition;
     const onAfterEnter = () => emit('expand');
     const onAfterLeave = () => emit('collapse');
-    return () => h(transition, { css: false, onEnter: expand, onAfterEnter, onLeave: collapse, onAfterLeave, tag: props.tag }, slots);
+    return () =>
+      h(
+        transition,
+        {
+          css: false,
+          onEnter: expand,
+          onAfterEnter,
+          onLeave: collapse,
+          onAfterLeave,
+          tag: props.tag,
+        },
+        slots,
+      );
   },
 };

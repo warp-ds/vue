@@ -12,7 +12,12 @@ const handleClear = (el) => {
   el.focus();
 };
 
-const moneyMask = { numeral: true, numeralPositiveOnly: true, numeralIntegerScale: 8, delimiter: ' ' };
+const moneyMask = {
+  numeral: true,
+  numeralPositiveOnly: true,
+  numeralIntegerScale: 8,
+  delimiter: ' ',
+};
 </script>
 
 <template>

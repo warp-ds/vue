@@ -116,14 +116,18 @@ const radioModel = ref('');
         <w-card flat class="py-4 px-12 flex items-center" :selected="foo === 'foo'">
           <w-dead-toggle v-model="foo" radio value="foo" />
           <div class="ml-12">
-            <h4 class="mb-0"><w-clickable v-model="foo" radio value="foo">Purchase foo</w-clickable></h4>
+            <h4 class="mb-0">
+              <w-clickable v-model="foo" radio value="foo">Purchase foo</w-clickable>
+            </h4>
             <p class="mb-0 text-14">470 kr/mnd</p>
           </div>
         </w-card>
         <w-card flat class="py-8 px-12 flex items-center" :selected="foo === 'bar'">
           <w-dead-toggle v-model="foo" radio value="bar" />
           <div class="ml-12">
-            <h4 class="mb-0"><w-clickable v-model="foo" radio value="bar">Purchase bar</w-clickable></h4>
+            <h4 class="mb-0">
+              <w-clickable v-model="foo" radio value="bar">Purchase bar</w-clickable>
+            </h4>
             <p class="mb-0 text-14">520 kr/mnd</p>
           </div>
         </w-card>

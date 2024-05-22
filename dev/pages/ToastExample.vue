@@ -2,8 +2,8 @@
   <div>
     <setup title="Toast" comp-name="fToast, makeToast, useToaster" />
     <p class="border-l-8 bg-red-50 border-red-700 p-16 rounded-4 my-16 text-12">
-      The toaster is a singleton that should be installed app-wide as shown above, <code>fToast</code> should only be imported manually for
-      broadcast messages.
+      The toaster is a singleton that should be installed app-wide as shown above,
+      <code>fToast</code> should only be imported manually for broadcast messages.
     </p>
 
     <section-header label="Example" />
@@ -75,14 +75,14 @@
 
     <h4 class="mt-64 mb-16">Programmatic toasting</h4>
     <p class="border-l-8 bg-red-50 border-red-700 p-16 rounded-4 mb-16 text-12">
-      If you know you'll be in a multi-app environment, it's better to use <code>makeToast</code> via either
-      <code>window.fToast.makeToast</code> or <code>useToaster().makeToast</code>.
+      If you know you'll be in a multi-app environment, it's better to use
+      <code>makeToast</code> via either <code>window.fToast.makeToast</code> or <code>useToaster().makeToast</code>.
     </p>
 
     <h5>Making toast</h5>
     <p class="text-12 mb-16">
-      The most common usecase is showing a one-off toast that expires after some time. <code>makeToast</code> also returns a Toast
-      <code>ref</code> with the properties described below.
+      The most common usecase is showing a one-off toast that expires after some time.
+      <code>makeToast</code> also returns a Toast <code>ref</code> with the properties described below.
     </p>
     <show-token :token="makeToastToken" />
 

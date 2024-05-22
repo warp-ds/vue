@@ -9,6 +9,8 @@ import wToggle from './w-toggle.vue';
 
 import { installer } from '#util';
 
-export const Forms = { install: installer([wField, wTextfield, wSelect, wTextarea, wToggle, wForm, wSuffix, wAffix]) };
+export const Forms = {
+  install: installer([wField, wTextfield, wSelect, wTextarea, wToggle, wForm, wSuffix, wAffix]),
+};
 export * from './validation';
 export { wTextfield, wSelect, wTextarea, wToggle, wField, wForm, wSuffix, wAffix };

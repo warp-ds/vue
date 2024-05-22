@@ -1,8 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 
-// eslint-disable-next-line vue/no-dupe-keys
-import { suffix, prefix } from '@warp-ds/css/component-classes';
+import { suffix as ccSuffix, prefix as ccPrefix } from '@warp-ds/css/component-classes';
 import IconClose16 from '@warp-ds/icons/vue/close-16';
 import IconSearch16 from '@warp-ds/icons/vue/search-16';
 
@@ -14,12 +13,12 @@ const props = defineProps({
   label: String,
 });
 
-const classBase = computed(() => (props.prefix ? prefix : suffix));
+const classBase = computed(() => (props.prefix ? ccPrefix : ccSuffix));
 
-const wrapperClass = computed(() => ({
-  [classBase.value.wrapper]: true,
-  [props.label ? classBase.value.wrapperWithLabel : classBase.value.wrapperWithIcon]: true,
-}));
+const wrapperClass = computed(() => [
+  classBase.value.wrapper,
+  props.label ? classBase.value.wrapperWithLabel : classBase.value.wrapperWithIcon,
+]);
 
 const labelClass = computed(() => classBase.value.label);
 </script>

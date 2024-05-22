@@ -77,5 +77,14 @@ export const createValidation = (props) => {
     onBeforeUnmount(() => collector.unregisterValidation(validationData));
   }
 
-  return { triggerValidation, shouldValidate, validation, valid, validationMsg, showValidation, hasErrorMessage, collector };
+  return {
+    triggerValidation,
+    shouldValidate,
+    validation,
+    valid,
+    validationMsg,
+    showValidation,
+    hasErrorMessage,
+    collector,
+  };
 };
