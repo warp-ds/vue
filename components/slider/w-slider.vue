@@ -136,6 +136,7 @@ watch(
   { immediate: true },
 );
 </script>
+
 <template>
   <div :class="ccSlider.wrapper">
     <div ref="sliderLine" :class="trackClasses" @click="handleClick" />

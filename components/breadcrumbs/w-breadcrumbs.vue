@@ -1,14 +1,3 @@
-<template>
-  <nav aria-labelledby="breadCrumbLabel">
-    <h2 id="breadCrumbLabel" :class="ccBreadcrumbs.a11y">{{ ariaLabel }}</h2>
-    <div :class="ccBreadcrumbs.wrapper">
-      <breadcrumbify>
-        <slot />
-      </breadcrumbify>
-    </div>
-  </nav>
-</template>
-
 <script setup>
 import { h, Fragment } from 'vue';
 
@@ -45,6 +34,17 @@ const Breadcrumbify = (_, context) => {
   return interleave(styledElements, wBreadcrumbSeparator);
 };
 </script>
+
+<template>
+  <nav aria-labelledby="breadCrumbLabel">
+    <h2 id="breadCrumbLabel" :class="ccBreadcrumbs.a11y">{{ ariaLabel }}</h2>
+    <div :class="ccBreadcrumbs.wrapper">
+      <breadcrumbify>
+        <slot />
+      </breadcrumbify>
+    </div>
+  </nav>
+</template>
 
 <script>
 export const wBreadcrumbSeparator = h('span', { class: ccBreadcrumbs.separator }, '/');

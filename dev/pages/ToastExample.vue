@@ -1,3 +1,59 @@
+<script>
+import { ref, computed } from 'vue';
+
+// eslint-disable-next-line no-unused-vars
+import { wToggle } from '@fabric-ds/vue-forms';
+// eslint-disable-next-line no-unused-vars
+import { fToast, makeToast } from '@fabric-ds/vue-toast';
+
+const sleep = (n) => new Promise((r) => setTimeout(r, n));
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const activeExample = ref('positive');
+// eslint-disable-next-line no-unused-vars
+const exampleToasts = [
+  { label: 'Positive', value: 'positive' },
+  { label: 'Warning', value: 'warning' },
+  { label: 'Negative', value: 'negative' },
+  { label: 'Neutral', value: 'neutral' },
+];
+const toastOptions = computed(() => {
+  switch (activeExample.value) {
+    case 'positive':
+      return { positive: true };
+    case 'negative':
+      return { negative: true };
+    case 'warning':
+      return { warning: true };
+    case 'neutral':
+      return { neutral: true };
+    default:
+      return { positive: true };
+  }
+});
+// eslint-disable-next-line no-unused-vars
+const make = async () => {
+  const duration = getRandomInt(2000, 4000);
+  const toast = makeToast({ text: `Hi! I'm an example toast!`, duration, ...toastOptions.value });
+  if (duration > 3750) {
+    await sleep(duration / 2);
+    toast.value.positive = false;
+    toast.value.warning = false;
+    toast.value.neutral = false;
+    toast.value.negative = true;
+    toast.value.text = `Whoa, things went bad. I'm outta here!`;
+  }
+};
+// eslint-disable-next-line no-unused-vars
+const token = `<w-toast positive text="This is a toast" />`;
+// eslint-disable-next-line no-unused-vars
+const makeToastToken = `makeToast({ positive: true, text: 'Hello' })`;
+</script>
+
 <template>
   <div>
     <setup title="Toast" comp-name="fToast, makeToast, useToaster" />
@@ -117,59 +173,3 @@
     </docs-table>
   </div>
 </template>
-
-<script>
-import { ref, computed } from 'vue';
-
-// eslint-disable-next-line no-unused-vars
-import { wToggle } from '@fabric-ds/vue-forms';
-// eslint-disable-next-line no-unused-vars
-import { fToast, makeToast } from '@fabric-ds/vue-toast';
-
-const sleep = (n) => new Promise((r) => setTimeout(r, n));
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-const activeExample = ref('positive');
-// eslint-disable-next-line no-unused-vars
-const exampleToasts = [
-  { label: 'Positive', value: 'positive' },
-  { label: 'Warning', value: 'warning' },
-  { label: 'Negative', value: 'negative' },
-  { label: 'Neutral', value: 'neutral' },
-];
-const toastOptions = computed(() => {
-  switch (activeExample.value) {
-    case 'positive':
-      return { positive: true };
-    case 'negative':
-      return { negative: true };
-    case 'warning':
-      return { warning: true };
-    case 'neutral':
-      return { neutral: true };
-    default:
-      return { positive: true };
-  }
-});
-// eslint-disable-next-line no-unused-vars
-const make = async () => {
-  const duration = getRandomInt(2000, 4000);
-  const toast = makeToast({ text: `Hi! I'm an example toast!`, duration, ...toastOptions.value });
-  if (duration > 3750) {
-    await sleep(duration / 2);
-    toast.value.positive = false;
-    toast.value.warning = false;
-    toast.value.neutral = false;
-    toast.value.negative = true;
-    toast.value.text = `Whoa, things went bad. I'm outta here!`;
-  }
-};
-// eslint-disable-next-line no-unused-vars
-const token = `<w-toast positive text="This is a toast" />`;
-// eslint-disable-next-line no-unused-vars
-const makeToastToken = `makeToast({ positive: true, text: 'Hello' })`;
-</script>

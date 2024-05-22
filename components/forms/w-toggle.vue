@@ -1,24 +1,3 @@
-<template>
-  <w-field v-slot="{ triggerValidation }" as="fieldset" v-bind="{ ...$attrs, ...$props }" :role="role">
-    <div :class="wrapperClasses">
-      <div v-for="(toggle, i) in toggles" :key="`toggle-${i}`" :class="groupClasses">
-        <w-toggle-item
-          v-model="model"
-          :indeterminate="indeterminate"
-          :type="type"
-          :radio-button="radioButton"
-          :disabled="disabled"
-          :invalid="invalid"
-          :equal-width="equalWidth"
-          :small="small"
-          :name="id + ':toggles'"
-          v-bind="toggle"
-          @blur="triggerValidation" />
-      </div>
-    </div>
-  </w-field>
-</template>
-
 <script setup>
 import { computed } from 'vue';
 
@@ -60,6 +39,27 @@ const groupClasses = computed(() => ({
   [ccToggle.radioButtonsGroupJustified]: props.equalWidth,
 }));
 </script>
+
+<template>
+  <w-field v-slot="{ triggerValidation }" as="fieldset" v-bind="{ ...$attrs, ...$props }" :role="role">
+    <div :class="wrapperClasses">
+      <div v-for="(toggle, i) in toggles" :key="`toggle-${i}`" :class="groupClasses">
+        <w-toggle-item
+          v-model="model"
+          :indeterminate="indeterminate"
+          :type="type"
+          :radio-button="radioButton"
+          :disabled="disabled"
+          :invalid="invalid"
+          :equal-width="equalWidth"
+          :small="small"
+          :name="id + ':toggles'"
+          v-bind="toggle"
+          @blur="triggerValidation" />
+      </div>
+    </div>
+  </w-field>
+</template>
 
 <script>
 export default { name: 'wToggle', inheritAttrs: false };

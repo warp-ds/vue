@@ -21,6 +21,7 @@ const classes = computed(() => [
   props.outlined ? '' : nonOutlinedClass.value,
 ]);
 </script>
+
 <template>
   <div :class="classes">
     <slot />

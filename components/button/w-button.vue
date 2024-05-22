@@ -1,10 +1,3 @@
-<template>
-  <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClass" v-bind="saneDefaults">
-    <slot>{{ label }}</slot>
-    <span v-if="loading" role="progressbar" aria-valuenow="0" :aria-valuetext="ariaValueText" :class="ccButton.a11y" />
-  </component>
-</template>
-
 <script setup>
 import { computed, useAttrs } from 'vue';
 
@@ -98,6 +91,13 @@ const saneDefaults = computed(() => ({
   rel: attrs.target === '_blank' ? attrs.rel || 'noopener' : undefined,
 }));
 </script>
+
+<template>
+  <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClass" v-bind="saneDefaults">
+    <slot>{{ label }}</slot>
+    <span v-if="loading" role="progressbar" aria-valuenow="0" :aria-valuetext="ariaValueText" :class="ccButton.a11y" />
+  </component>
+</template>
 
 <script>
 export default { name: 'wButton' };

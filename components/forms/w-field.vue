@@ -1,31 +1,3 @@
-<template>
-  <component :is="as" :class="{ [ccInput.wrapper]: true, [$attrs.class || '']: true }" :role="role" v-bind="wrapperAria">
-    <component
-      :is="labelType"
-      v-if="label"
-      :id="labelId"
-      :class="ccLabel.label"
-      :for="labelFor"
-      :role="valueOrUndefined(labelLevel, 'heading')"
-      :aria-level="valueOrUndefined(labelLevel, labelLevel)"
-      >{{ label }}<span v-if="optional" :class="ccLabel.optional">{{ optionalHelperText }}</span></component
-    >
-    <slot :trigger-validation="triggerValidation" :label-for="id" :label-id="labelId" :aria="aria" :has-validation-errors="isInvalid" />
-    <slot name="control" :form="collector" />
-    <div
-      v-if="hint || isInvalid"
-      :class="{
-        [ccHelpText.helpText]: true,
-        [ccHelpText.helpTextColor]: !isInvalid,
-        [ccHelpText.helpTextColorInvalid]: isInvalid,
-      }">
-      <span v-if="hint" :id="hintId" v-html="hint" />
-      <span v-if="hint && isInvalid && errorMessage">, </span>
-      <span v-if="isInvalid" :id="errorId">{{ errorMessage }}</span>
-    </div>
-  </component>
-</template>
-
 <script>
 import { computed } from 'vue';
 
@@ -132,3 +104,31 @@ export default {
   },
 };
 </script>
+
+<template>
+  <component :is="as" :class="{ [ccInput.wrapper]: true, [$attrs.class || '']: true }" :role="role" v-bind="wrapperAria">
+    <component
+      :is="labelType"
+      v-if="label"
+      :id="labelId"
+      :class="ccLabel.label"
+      :for="labelFor"
+      :role="valueOrUndefined(labelLevel, 'heading')"
+      :aria-level="valueOrUndefined(labelLevel, labelLevel)"
+      >{{ label }}<span v-if="optional" :class="ccLabel.optional">{{ optionalHelperText }}</span></component
+    >
+    <slot :trigger-validation="triggerValidation" :label-for="id" :label-id="labelId" :aria="aria" :has-validation-errors="isInvalid" />
+    <slot name="control" :form="collector" />
+    <div
+      v-if="hint || isInvalid"
+      :class="{
+        [ccHelpText.helpText]: true,
+        [ccHelpText.helpTextColor]: !isInvalid,
+        [ccHelpText.helpTextColorInvalid]: isInvalid,
+      }">
+      <span v-if="hint" :id="hintId" v-html="hint" />
+      <span v-if="hint && isInvalid && errorMessage">, </span>
+      <span v-if="isInvalid" :id="errorId">{{ errorMessage }}</span>
+    </div>
+  </component>
+</template>
