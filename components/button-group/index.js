@@ -1,5 +1,6 @@
-import wButtonGroup from './w-button-group.vue';
 import wButtonGroupItem from './w-button-group-item.vue';
+import wButtonGroup from './w-button-group.vue';
+
 import { wClickable } from '#generics';
 import { installer } from '#util';
 

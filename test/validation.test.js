@@ -1,7 +1,9 @@
-import { describe, test, assert } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { createValidationCollector, createValidation, defaultInvalid } from '#components';
 import { reactive, nextTick } from 'vue';
+
+import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
+import { createValidationCollector, createValidation, defaultInvalid } from '#components';
 
 const invalidHint = 'invalid';
 const lessThanTen = (v) => v < 10 || { valid: false, hint: invalidHint };

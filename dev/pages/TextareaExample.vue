@@ -1,8 +1,9 @@
 <script setup>
-import { ref } from 'vue'
-import { wTextarea } from '#components'
+import { ref } from 'vue';
 
-const model = ref('')
+import { wTextarea } from '#components';
+
+const model = ref('');
 </script>
 
 <template>
@@ -13,14 +14,14 @@ const model = ref('')
       <w-textarea v-model="model" label="Such area, much text" />
     </token>
     <token :state="model">
-      <w-textarea disabled v-model="model" label="Disabled textarea" />
+      <w-textarea v-model="model" disabled label="Disabled textarea" />
     </token>
 
     <token :state="model">
-      <w-textarea readOnly v-model="model" label="Such area, much text" />
+      <w-textarea v-model="model" read-only label="Such area, much text" />
     </token>
 
-    <token :state="model" >
+    <token :state="model">
       <w-textarea v-model="model" invalid required label="A required textarea" hint="A hint" />
     </token>
   </div>

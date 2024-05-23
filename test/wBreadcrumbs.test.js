@@ -1,5 +1,6 @@
-import { describe, test, assert } from 'vitest';
 import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
 import { wBreadcrumbs } from '#components';
 
 describe('breadcrumbs', () => {

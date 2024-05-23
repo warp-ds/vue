@@ -1,27 +1,34 @@
 <script setup>
-  import { watchEffect } from 'vue'
-  import { absentProp } from '#util'
-  import { modelProps } from 'create-v-model'
-  import { createValidationCollector } from './validation'
+import { watchEffect } from 'vue';
 
-  const props = defineProps({
-    as: {
-      default: 'form'
-    },
-    shouldValidate: {
-      type: null,
-      default: absentProp
-    },
-    ...modelProps({ modelDefault: absentProp }),
-    ...modelProps({ modelName: 'completed', modelDefault: absentProp }),
-  })
+import { modelProps } from 'create-v-model';
 
-  const emit = defineEmits(['update:modelValue']);
-  const { allChildrenValid, completed, childrenShouldValidate } = createValidationCollector()
+import { createValidationCollector } from './validation';
 
-  if (props.modelValue !== absentProp) watchEffect(() => emit('update:modelValue', allChildrenValid.value))
-  if (props.completed !== absentProp) watchEffect(() => emit('update:completed', completed.value))
-  if (props.shouldValidate !== absentProp) watchEffect(() => childrenShouldValidate.value = props.shouldValidate)
+import { absentProp } from '#util';
+
+const props = defineProps({
+  as: {
+    default: 'form',
+  },
+  shouldValidate: {
+    type: null,
+    default: absentProp,
+  },
+  ...modelProps({ modelDefault: absentProp }),
+  ...modelProps({ modelName: 'completed', modelDefault: absentProp }),
+});
+
+const emit = defineEmits(['update:modelValue']);
+const { allChildrenValid, completed, childrenShouldValidate } = createValidationCollector();
+
+if (props.modelValue !== absentProp) watchEffect(() => emit('update:modelValue', allChildrenValid.value));
+if (props.completed !== absentProp) watchEffect(() => emit('update:completed', completed.value));
+if (props.shouldValidate !== absentProp) watchEffect(() => (childrenShouldValidate.value = props.shouldValidate));
+</script>
+
+<script>
+export default { name: 'wForm' };
 </script>
 
 <template>
@@ -29,8 +36,3 @@
     <slot />
   </component>
 </template>
-
-<script>
-export default { name: 'wForm' };
-</script>
-

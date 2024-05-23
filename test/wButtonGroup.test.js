@@ -1,5 +1,6 @@
-import { describe, test, assert } from 'vitest';
 import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
 import { wButtonGroup, wButtonGroupItem, wClickable } from '#components';
 
 describe('button group', () => {

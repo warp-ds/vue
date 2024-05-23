@@ -1,5 +1,6 @@
 <script setup>
 import { inject, computed } from 'vue';
+
 import { buttonGroupItem as ccButtonGroupItem } from '@warp-ds/css/component-classes';
 
 const props = defineProps({ selected: Boolean });
@@ -9,10 +10,12 @@ const vertical = inject('vertical', false);
 const outlinedClass = computed(() => [
   ccButtonGroupItem.outlined,
   vertical.value ? ccButtonGroupItem.outlinedVertical : ccButtonGroupItem.outlinedHorizontal,
-  props.selected ? ccButtonGroupItem.outlinedSelected : ''
+  props.selected ? ccButtonGroupItem.outlinedSelected : '',
 ]);
 
-const outlineResetClass = computed(() => [vertical.value ? ccButtonGroupItem.outlinedVerticalResets : ccButtonGroupItem.outlinedHorizontalResets])
+const outlineResetClass = computed(() => [
+  vertical.value ? ccButtonGroupItem.outlinedVerticalResets : ccButtonGroupItem.outlinedHorizontalResets,
+]);
 
 const wrapperClass = computed(() => [
   ccButtonGroupItem.wrapper,
@@ -21,12 +24,12 @@ const wrapperClass = computed(() => [
 ]);
 </script>
 
+<script>
+export default { name: 'wButtonGroupItem' };
+</script>
+
 <template>
   <div :class="wrapperClass">
     <slot />
   </div>
 </template>
-
-<script>
-export default { name: 'wButtonGroupItem' }
-</script>

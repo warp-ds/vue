@@ -1,23 +1,22 @@
 <script setup>
-import { ref, reactive } from 'vue'
-import { checkbox, buildCheckboxState } from '#dev-util'
-import { wStep, wSteps } from '#components'
+import { ref, reactive } from 'vue';
+
+import { wStep, wSteps } from '#components';
+import { checkbox, buildCheckboxState } from '#dev-util';
 
 const modifierControls = [
   { name: 'Horizontal', checkbox },
   { name: 'Right', checkbox },
-]
-const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
+];
+const modifiers = reactive(buildCheckboxState({ controls: modifierControls }));
 
-const current = ref(1)
+const current = ref(1);
 const cycle = () => {
-  if (current.value < 4) current.value += 1
-  else current.value = 1
-}
+  if (current.value < 4) current.value += 1;
+  else current.value = 1;
+};
 
-const stepControl = [
-  { onClick: cycle, name: 'Go!', button: true }
-]
+const stepControl = [{ onClick: cycle, name: 'Go!', button: true }];
 </script>
 
 <template>

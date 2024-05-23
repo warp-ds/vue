@@ -1,10 +1,11 @@
-import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import { classes } from '@warp-ds/css/component-classes/classes';
 import { presetWarp } from '@warp-ds/uno';
 import uno from 'unocss/vite';
-import { MinifyWarpLib } from './.minifier-plugin.js';
+import { defineConfig } from 'vite';
 import VitEik from 'viteik';
-import { classes } from '@warp-ds/css/component-classes/classes';
+
+import { MinifyWarpLib } from './.minifier-plugin.js';
 
 export default defineConfig((env) => ({
   plugins: [
@@ -24,7 +25,15 @@ export default defineConfig((env) => ({
     coverage: {
       cleanOnRerun: true,
       reporter: ['text'],
-      exclude: ['**.json', 'dev/**', 'storybook-static/**', '.storybook/**', 'components/**/stories', '.minifier-plugin.js', 'lingui.config.ts'],
+      exclude: [
+        '**.json',
+        'dev/**',
+        'storybook-static/**',
+        '.storybook/**',
+        'components/**/stories',
+        '.minifier-plugin.js',
+        'lingui.config.ts',
+      ],
     },
   },
   ...getBuildOpts(env),

@@ -1,7 +1,8 @@
-import { describe, test, assert } from 'vitest';
 import { mount } from '@vue/test-utils';
-import { wBox } from '#components';
 import { box as boxClasses } from '@warp-ds/css/component-classes';
+import { describe, test, assert } from 'vitest';
+
+import { wBox } from '#components';
 
 describe('box', () => {
   assert.ok(wBox.name);

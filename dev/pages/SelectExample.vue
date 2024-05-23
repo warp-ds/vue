@@ -1,8 +1,9 @@
 <script setup>
-import { ref } from 'vue'
-import { wSelect } from '#components'
+import { ref } from 'vue';
 
-const selectModel = ref('')
+import { wSelect } from '#components';
+
+const selectModel = ref('');
 </script>
 
 <template>
@@ -17,21 +18,21 @@ const selectModel = ref('')
       </w-select>
     </token>
     <token :state="selectModel">
-      <w-select optional v-model="selectModel" label="A useful and informative label">
+      <w-select v-model="selectModel" optional label="A useful and informative label">
         <option disabled selected value="">Pick something</option>
         <option value="foo">Foo</option>
         <option value="bar">Bar</option>
       </w-select>
     </token>
     <token :state="selectModel">
-      <w-select disabled v-model="selectModel" label="Disabled select">
+      <w-select v-model="selectModel" disabled label="Disabled select">
         <option disabled selected value="">Pick something</option>
         <option value="foo">Foo</option>
         <option value="bar">Bar</option>
       </w-select>
     </token>
     <token :state="selectModel">
-      <w-select required invalid v-model="selectModel" label="Invalid">
+      <w-select v-model="selectModel" required invalid label="Invalid">
         <option disabled selected value="">Pick something</option>
         <option value="foo">Foo</option>
         <option value="bar">Bar</option>

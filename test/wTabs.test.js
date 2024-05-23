@@ -1,7 +1,9 @@
-import { describe, test, assert } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { wTabs, wTab, wTabPanel } from '#components';
 import { ref } from 'vue';
+
+import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
+import { wTabs, wTab, wTabPanel } from '#components';
 
 describe('tabs', () => {
   [wTabs, wTab, wTabPanel].forEach((comp) => {

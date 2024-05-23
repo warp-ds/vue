@@ -1,4 +1,5 @@
 import { describe, test, assert } from 'vitest';
+
 import { id, absentProp, installer } from '#util';
 
 describe('utilities', () => {
