@@ -1,3 +1,10 @@
+## [2.0.1-next.1](https://github.com/warp-ds/vue/compare/v2.0.0...v2.0.1-next.1) (2024-05-23)
+
+
+### Bug Fixes
+
+* add support for formatting vue files ([#167](https://github.com/warp-ds/vue/issues/167)) ([347ab79](https://github.com/warp-ds/vue/commit/347ab790963154017d2b508453b56b8c4c53e088))
+
 # [2.0.0](https://github.com/warp-ds/vue/compare/v1.2.7...v2.0.0) (2024-05-15)
 
 
