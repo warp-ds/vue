@@ -1,3 +1,10 @@
+## [2.0.1-next.2](https://github.com/warp-ds/vue/compare/v2.0.1-next.1...v2.0.1-next.2) (2024-05-23)
+
+
+### Bug Fixes
+
+* revert renaming key in w-toggle ([#168](https://github.com/warp-ds/vue/issues/168)) ([286ed74](https://github.com/warp-ds/vue/commit/286ed7430dd47cf13a4b49fb93e774d2b5973a10))
+
 ## [2.0.1-next.1](https://github.com/warp-ds/vue/compare/v2.0.0...v2.0.1-next.1) (2024-05-23)
 
 
