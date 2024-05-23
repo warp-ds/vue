@@ -21,11 +21,7 @@ const containerClasses = computed(() => ({
   [props.selected ? ccCard.cardFlatSelected : ccCard.cardFlatUnselected]: props.flat,
 }));
 
-// eslint-disable-next-line
-const outlineClasses = computed(() => [
-  ccCard.cardOutline,
-  props.selected ? ccCard.cardOutlineSelected : ccCard.cardOutlineUnselected,
-]);
+const outlineClasses = computed(() => [ccCard.cardOutline, props.selected ? ccCard.cardOutlineSelected : ccCard.cardOutlineUnselected]);
 </script>
 
 <template>

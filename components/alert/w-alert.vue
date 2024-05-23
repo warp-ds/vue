@@ -33,16 +33,19 @@ const activeIconClassNames = computed(() => ccAlert[`${alertColorType.value}Icon
 const wrapperClass = computed(() => [ccAlert.alert, activeWrapperClassNames.value]);
 const iconClass = computed(() => [ccAlert.icon, activeIconClassNames.value]);
 
-// prettier-ignore
-const iconComponent = computed(() =>
-  props.negative
-    ? IconError16
-    : props.positive
-    ? IconSuccess16
-    : props.warning
-    ? IconWarning16
-    : IconInfo16
-);
+const iconComponent = computed(() => {
+  let icon;
+  if (props.negative) {
+    icon = IconError16;
+  } else if (props.positive) {
+    icon = IconSuccess16;
+  } else if (props.warning) {
+    icon = IconWarning16;
+  } else {
+    icon = IconInfo16;
+  }
+  return icon;
+});
 </script>
 
 <script>
