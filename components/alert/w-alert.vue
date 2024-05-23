@@ -10,6 +10,10 @@ import { createModel, modelProps } from 'create-v-model';
 
 import { wExpandTransition } from '#generics';
 
+defineOptions({
+  name: 'wAlert',
+});
+
 const props = defineProps({
   title: String,
   role: {
@@ -46,10 +50,6 @@ const iconComponent = computed(() => {
   }
   return icon;
 });
-</script>
-
-<script>
-export default { name: 'wAlert' };
 </script>
 
 <template>

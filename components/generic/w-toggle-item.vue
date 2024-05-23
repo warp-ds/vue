@@ -6,6 +6,10 @@ import { modelProps, createModel } from 'create-v-model';
 
 import { id as uniqueId } from '#util';
 
+defineOptions({
+  name: 'wToggleItem',
+});
+
 const p = defineProps({
   id: { ...uniqueId },
   label: String,
@@ -49,10 +53,6 @@ const inputClasses = {
   [ccToggle.input]: true,
   [p.class || ccToggle.a11y]: true,
 };
-</script>
-
-<script>
-export default { name: 'wToggleItem' };
 </script>
 
 <template>

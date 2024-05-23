@@ -8,3 +8,4 @@ export const installer = (components) => (app) =>
     if (app.component(c.name)) return; // we already registered the component - e.g. wClickable
     app.component(c.name, c);
   });
+export const hasLabelAndValue = (e) => 'value' in e && 'label' in e;

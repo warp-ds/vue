@@ -1,16 +1,21 @@
-<script>
-// eslint-disable-next-line vue/no-reserved-props
-import { id as key } from '#util';
+<script setup>
+import { id as uniqueKey } from '#util';
 
-export default {
+defineOptions({
   name: 'wWillExpand',
+});
+
+const props = defineProps({
   // eslint-disable-next-line vue/no-reserved-props
-  props: { key },
-};
+  key: {
+    type: String,
+    default: uniqueKey,
+  },
+});
 </script>
 
 <template>
-  <div :key="key">
+  <div :key="props.key">
     <slot />
   </div>
 </template>

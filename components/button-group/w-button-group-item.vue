@@ -3,6 +3,10 @@ import { inject, computed } from 'vue';
 
 import { buttonGroupItem as ccButtonGroupItem } from '@warp-ds/css/component-classes';
 
+defineOptions({
+  name: 'wButtonGroupItem',
+});
+
 const props = defineProps({ selected: Boolean });
 const outlined = inject('outlined', false);
 const vertical = inject('vertical', false);
@@ -22,10 +26,6 @@ const wrapperClass = computed(() => [
   outlined.value ? outlinedClass.value : outlineResetClass.value,
   props.selected ? ccButtonGroupItem.selected : '',
 ]);
-</script>
-
-<script>
-export default { name: 'wButtonGroupItem' };
 </script>
 
 <template>

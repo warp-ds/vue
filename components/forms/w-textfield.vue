@@ -4,7 +4,9 @@ import { ref, useSlots } from 'vue';
 import { input as ccInput } from '@warp-ds/css/component-classes';
 import { createModel } from 'create-v-model';
 
-import { default as wField, fieldProps } from './w-field.vue';
+import { fieldProps } from '../util/fieldProps';
+
+import { default as wField } from './w-field.vue';
 import { setupMask } from './w-input-mask.js';
 
 const p = defineProps({

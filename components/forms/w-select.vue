@@ -5,7 +5,9 @@ import { select as ccSelect } from '@warp-ds/css/component-classes';
 import IconChevronDown16 from '@warp-ds/icons/vue/chevron-down-16';
 import { createModel } from 'create-v-model';
 
-import { default as wField, fieldProps } from './w-field.vue';
+import { fieldProps } from '../util/fieldProps';
+
+import { default as wField } from './w-field.vue';
 
 const p = defineProps(fieldProps);
 const emit = defineEmits(['update:modelValue']);

@@ -5,6 +5,10 @@ import { suffix as ccSuffix, prefix as ccPrefix } from '@warp-ds/css/component-c
 import IconClose16 from '@warp-ds/icons/vue/close-16';
 import IconSearch16 from '@warp-ds/icons/vue/search-16';
 
+defineOptions({
+  name: 'wAffix',
+});
+
 const props = defineProps({
   prefix: Boolean,
   suffix: Boolean,
@@ -21,10 +25,6 @@ const wrapperClass = computed(() => [
 ]);
 
 const labelClass = computed(() => classBase.value.label);
-</script>
-
-<script>
-export default { name: 'wAffix' };
 </script>
 
 <template>

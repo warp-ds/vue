@@ -2,15 +2,18 @@
 import { input as ccInput } from '@warp-ds/css/component-classes';
 import { createModel } from 'create-v-model';
 
-import { default as wField, fieldProps } from './w-field.vue';
+import { fieldProps } from '../util/fieldProps';
+
+import { default as wField } from './w-field.vue';
+
+defineOptions({
+  name: 'wTextarea',
+  inheritAttrs: false,
+});
 
 const p = defineProps(fieldProps);
 const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props: p, emit });
-</script>
-
-<script>
-export default { name: 'wTextarea', inheritAttrs: false };
 </script>
 
 <template>

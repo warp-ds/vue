@@ -9,6 +9,10 @@ import { modelProps, createModel } from 'create-v-model';
 import { wExpandTransition as expandTransition } from '#generics';
 import { absentProp } from '#util';
 
+defineOptions({
+  name: 'wExpandable',
+});
+
 const props = defineProps({
   title: String,
   box: Boolean,
@@ -76,10 +80,6 @@ const contentClasses = computed(() => ({
   [ccBox.box]: props.box || props.info,
   [ccExpandable.paddingTop]: hasTitle.value && (props.box || props.info),
 }));
-</script>
-
-<script>
-export default { name: 'wExpandable' };
 </script>
 
 <template>

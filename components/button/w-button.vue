@@ -12,15 +12,10 @@ import { messages as nbMessages } from './locales/nb/messages.mjs';
 
 activateI18n(enMessages, nbMessages, fiMessages);
 
-const ariaValueText = i18n._({
-  id: 'button.aria.loading',
-  message: 'Loading...',
-  comment: 'Screenreader message for buttons that are loading',
+defineOptions({
+  name: 'wButton',
 });
 
-const buttonVariants = ['primary', 'secondary', 'negative', 'utility', 'pill', 'link'];
-
-const attrs = useAttrs();
 const props = defineProps({
   primary: Boolean,
   secondary: Boolean,
@@ -35,6 +30,16 @@ const props = defineProps({
   label: String,
   fullWidth: Boolean,
 });
+
+const attrs = useAttrs();
+
+const ariaValueText = i18n._({
+  id: 'button.aria.loading',
+  message: 'Loading...',
+  comment: 'Screenreader message for buttons that are loading',
+});
+
+const buttonVariants = ['primary', 'secondary', 'negative', 'utility', 'pill', 'link'];
 
 const defaultVariant = props.secondary || !buttonVariants.find((b) => !!props[b]);
 
@@ -90,10 +95,6 @@ const saneDefaults = computed(() => ({
   type: props.href ? undefined : attrs.type || 'button',
   rel: attrs.target === '_blank' ? attrs.rel || 'noopener' : undefined,
 }));
-</script>
-
-<script>
-export default { name: 'wButton' };
 </script>
 
 <template>

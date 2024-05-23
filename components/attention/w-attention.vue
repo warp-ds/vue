@@ -19,6 +19,10 @@ import { absentProp } from '#util';
 
 activateI18n(enMessages, nbMessages, fiMessages);
 
+defineOptions({
+  name: 'wAttention',
+});
+
 const props = defineProps({
   ...attentionProps,
   ...modelProps({ modelDefault: absentProp }),
@@ -202,10 +206,6 @@ onUnmounted(async () => {
     cleanup = null;
   }
 });
-</script>
-
-<script>
-export default { name: 'wAttention' };
 </script>
 
 <template>

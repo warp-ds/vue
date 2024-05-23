@@ -4,9 +4,17 @@ import { computed } from 'vue';
 import { toggle as ccToggle } from '@warp-ds/css/component-classes';
 import { createModel } from 'create-v-model';
 
-import { default as wField, fieldProps } from './w-field.vue';
+import { fieldProps } from '../util/fieldProps';
+
+import { default as wField } from './w-field.vue';
 
 import { wToggleItem } from '#generics';
+import { hasLabelAndValue } from '#util';
+
+defineOptions({
+  name: 'wToggle',
+  inheritAttrs: false,
+});
 
 const props = defineProps({
   ...fieldProps,
@@ -24,10 +32,14 @@ const props = defineProps({
     validator: (v) => v.every(hasLabelAndValue),
   },
 });
+
 const emit = defineEmits(['update:modelValue']);
+
 const model = createModel({ props, emit });
+
 const type = computed(() => (props.radio || props.radioButton ? 'radio' : 'checkbox'));
 const role = computed(() => (props.toggles.length > 1 ? (props.radio || props.radioButton ? 'radiogroup' : 'group') : undefined));
+
 const wrapperClasses = computed(() => ({
   [ccToggle.wrapper]: true,
   [ccToggle.wrapperRadioButtons]: props.radioButton && !props.equalWidth,
@@ -38,11 +50,6 @@ const groupClasses = computed(() => ({
   [ccToggle.radioButtonsGroup]: true,
   [ccToggle.radioButtonsGroupJustified]: props.equalWidth,
 }));
-</script>
-
-<script>
-export default { name: 'wToggle', inheritAttrs: false };
-const hasLabelAndValue = (e) => 'value' in e && 'label' in e;
 </script>
 
 <template>

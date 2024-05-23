@@ -7,6 +7,10 @@ import { createValidationCollector } from './validation';
 
 import { absentProp } from '#util';
 
+defineOptions({
+  name: 'wForm',
+});
+
 const props = defineProps({
   as: {
     default: 'form',
@@ -25,10 +29,6 @@ const { allChildrenValid, completed, childrenShouldValidate } = createValidation
 if (props.modelValue !== absentProp) watchEffect(() => emit('update:modelValue', allChildrenValid.value));
 if (props.completed !== absentProp) watchEffect(() => emit('update:completed', completed.value));
 if (props.shouldValidate !== absentProp) watchEffect(() => (childrenShouldValidate.value = props.shouldValidate));
-</script>
-
-<script>
-export default { name: 'wForm' };
 </script>
 
 <template>

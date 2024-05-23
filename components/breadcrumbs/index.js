@@ -1,4 +1,5 @@
-import wBreadcrumbs, { wBreadcrumbSeparator } from './w-breadcrumbs.vue';
+import { wBreadcrumbSeparator } from './breadcrumbSeparator';
+import wBreadcrumbs from './w-breadcrumbs.vue';
 
 import { installer } from '#util';
 

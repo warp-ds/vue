@@ -6,6 +6,10 @@ import { attention as ccAttention } from '@warp-ds/css/component-classes';
 
 import { props as attentionProps, getVariantClasses } from './attentionUtil.js';
 
+defineOptions({
+  name: 'wAttentionArrow',
+});
+
 const props = defineProps({
   ...attentionProps,
   direction: String,
@@ -17,10 +21,6 @@ const arrowClasses = computed(() => [
   ccAttention[`arrowDirection${arrowDirectionClassname(arrowDirection.value)}`],
   getVariantClasses(props).arrow,
 ]);
-</script>
-
-<script>
-export default { name: 'wAttentionArrow' };
 </script>
 
 <template>
