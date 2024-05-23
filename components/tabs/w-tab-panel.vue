@@ -1,5 +1,9 @@
 <script setup>
-// eslint-disable-next-line no-unused-vars
+
+defineOptions({
+  name: 'wTabPanel',
+});
+
 const props = defineProps({
   name: {
     type: String,
@@ -8,12 +12,8 @@ const props = defineProps({
 });
 </script>
 
-<script>
-export default { name: 'wTabPanel' };
-</script>
-
 <template>
-  <div :id="`warp-tabpanel-${name}`" tabindex="-1" role="tabpanel" :aria-labelledby="`warp-tab-${name}`">
+  <div :id="`warp-tabpanel-${props.name}`" tabindex="-1" role="tabpanel" :aria-labelledby="`warp-tab-${props.name}`">
     <slot />
   </div>
 </template>

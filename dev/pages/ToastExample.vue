@@ -1,9 +1,7 @@
-<script>
+<script setup>
 import { ref, computed } from 'vue';
 
-// eslint-disable-next-line no-unused-vars
 import { wToggle } from '@fabric-ds/vue-forms';
-// eslint-disable-next-line no-unused-vars
 import { fToast, makeToast } from '@fabric-ds/vue-toast';
 
 const sleep = (n) => new Promise((r) => setTimeout(r, n));
@@ -14,7 +12,6 @@ function getRandomInt(min, max) {
 }
 
 const activeExample = ref('positive');
-// eslint-disable-next-line no-unused-vars
 const exampleToasts = [
   { label: 'Positive', value: 'positive' },
   { label: 'Warning', value: 'warning' },
@@ -35,7 +32,6 @@ const toastOptions = computed(() => {
       return { positive: true };
   }
 });
-// eslint-disable-next-line no-unused-vars
 const make = async () => {
   const duration = getRandomInt(2000, 4000);
   const toast = makeToast({ text: `Hi! I'm an example toast!`, duration, ...toastOptions.value });
@@ -48,18 +44,18 @@ const make = async () => {
     toast.value.text = `Whoa, things went bad. I'm outta here!`;
   }
 };
-// eslint-disable-next-line no-unused-vars
 const token = `<w-toast positive text="This is a toast" />`;
-// eslint-disable-next-line no-unused-vars
 const makeToastToken = `makeToast({ positive: true, text: 'Hello' })`;
+
+const fToastName = fToast;
 </script>
 
 <template>
   <div>
-    <setup title="Toast" comp-name="fToast, makeToast, useToaster" />
+    <setup title="Toast" :comp-name="`${fToastName}, makeToast, useToaster`" />
     <p class="border-l-8 bg-red-50 border-red-700 p-16 rounded-4 my-16 text-12">
       The toaster is a singleton that should be installed app-wide as shown above,
-      <code>fToast</code> should only be imported manually for broadcast messages.
+      <code>{{ fToastName }}</code> should only be imported manually for broadcast messages.
     </p>
 
     <section-header label="Example" />

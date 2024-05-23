@@ -4,11 +4,13 @@ import { computed, ref } from 'vue';
 import { switchToggle as ccSwitch } from '@warp-ds/css/component-classes';
 import { createModel, modelProps } from 'create-v-model';
 
-// eslint-disable-next-line vue/no-dupe-keys
-import { id } from '#util';
+import { id as uniqueId } from '#util';
 
 const p = defineProps({
-  id,
+  id: {
+    type: String,
+    default: uniqueId,
+  },
   disabled: Boolean,
   ...modelProps(),
 });
