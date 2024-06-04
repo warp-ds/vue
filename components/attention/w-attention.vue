@@ -1,5 +1,5 @@
 <script setup>
-import { watch, watchEffect, computed, ref, onMounted, nextTick, onUnmounted } from 'vue';
+import { watch, computed, ref, onMounted, nextTick, onUnmounted } from 'vue';
 
 import { i18n } from '@lingui/core';
 import { opposites, directions, autoUpdatePosition, useRecompute as recompute } from '@warp-ds/core/attention';
@@ -69,6 +69,7 @@ const model = props.modelValue === absentProp ? ref(true) : createModel({ props,
 const attentionEl = ref(null);
 const arrowEl = ref(null);
 const actualDirection = ref(props.placement);
+const targetElRef = ref(props.targetEl || null);
 
 const attentionState = computed(() => ({
   get isShowing() {
@@ -84,7 +85,7 @@ const attentionState = computed(() => ({
   directionName: props.placement,
   arrowEl: arrowEl.value?.$el,
   attentionEl: attentionEl.value,
-  targetEl: props.targetEl,
+  targetEl: targetElRef.value,
   noArrow: props.noArrow,
   distance: props.distance,
   skidding: props.skidding,
@@ -179,12 +180,24 @@ const defaultAriaLabel = computed(() => {
 
 let cleanup;
 
-onMounted(async () => {
-  watchEffect(model, recompute(attentionState.value), { immediate: props.callout });
+onMounted(() => {
+  recompute(attentionState.value);
 });
 
 watch(
-  () => [props.targetEl, model.value, attentionEl.value],
+  () => [props.callout, props.targetEl],
+  ([callout, target]) => {
+    if (callout && target === undefined) {
+      targetElRef.value = document.createElement('div');
+    } else {
+      targetElRef.value = props.targetEl;
+    }
+  },
+  { immediate: true },
+);
+
+watch(
+  () => [targetElRef.value, model.value, attentionEl.value],
   ([target, m, att]) => {
     if (!cleanup && m && target && att) {
       cleanup = autoUpdatePosition(attentionState.value);
