@@ -181,20 +181,20 @@ const defaultAriaLabel = computed(() => {
 let cleanup;
 
 onMounted(() => {
+  // This watcher will only run in the client environment
+  watch(
+    () => [props.callout, props.targetEl],
+    ([callout, target]) => {
+      if (callout && target === undefined) {
+        targetElRef.value = document.createElement('div');
+      } else {
+        targetElRef.value = props.targetEl;
+      }
+    },
+    { immediate: true },
+  );
   recompute(attentionState.value);
 });
-
-watch(
-  () => [props.callout, props.targetEl],
-  ([callout, target]) => {
-    if (callout && target === undefined) {
-      targetElRef.value = document.createElement('div');
-    } else {
-      targetElRef.value = props.targetEl;
-    }
-  },
-  { immediate: true },
-);
 
 watch(
   () => [targetElRef.value, model.value, attentionEl.value],
