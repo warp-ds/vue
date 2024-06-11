@@ -182,6 +182,9 @@ let cleanup;
 
 onMounted(() => {
   // This watcher will only run in the client environment
+  // props.targetEl can be undefined if props.callout is true.
+  // However, the autoUpdatePosition() from @warp-ds/core, uses Floating-ui's computePosition(). Floating-ui's computePosition() requires a defined targetEl to be able to compute the attentionEl's position and the attentionEl's arrow position.
+  // When props.callout is true, we only need computePosition() to calculate the callout's arrow position. So, we create a default targetEl for callout that we can pass to the autoUpdatePosition(), in order to avoid Floating-ui from throwing an error.
   watch(
     () => [props.callout, props.targetEl],
     ([callout, target]) => {
