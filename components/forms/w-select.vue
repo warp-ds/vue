@@ -19,12 +19,6 @@ const selectWrapperClasses = computed(() => ({
   [ccSelect.selectWrapper]: true,
 }));
 
-const selectClasses = computed(() => ({
-  [ccSelect.default]: true,
-  [ccSelect.disabled]: p.disabled,
-  [ccSelect.readOnly]: p.readOnly,
-}));
-
 const chevronClasses = computed(() => ({
   [ccSelect.chevron]: true,
   [ccSelect.chevronDisabled]: p.disabled,
@@ -43,12 +37,13 @@ export default { name: 'wSelect', inheritAttrs: false };
           v-bind="{ ...aria, ...$attrs, class: '' }"
           :id="id"
           v-model="model"
-          :class="[
-            selectClasses,
-            {
-              [ccSelect.invalid]: hasValidationErrors,
-            },
-          ]"
+          :class="{
+            [ccSelect.base]: true,
+            [ccSelect.default]: !hasValidationErrors && !p.disabled && !p.readOnly,
+            [ccSelect.disabled]: p.disabled,
+            [ccSelect.invalid]: hasValidationErrors,
+            [ccSelect.readOnly]: p.readOnly,
+          }"
           :disabled="disabled"
           :readOnly="readOnly"
           @blur="triggerValidation">
