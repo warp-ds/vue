@@ -1,5 +1,5 @@
 <script setup>
-import { watch, watchEffect, computed, ref, onMounted, nextTick, onUnmounted } from 'vue';
+import { watch, computed, ref, onMounted, nextTick, onUnmounted } from 'vue';
 
 import { i18n } from '@lingui/core';
 import { opposites, directions, autoUpdatePosition, useRecompute as recompute } from '@warp-ds/core/attention';
@@ -69,6 +69,7 @@ const model = props.modelValue === absentProp ? ref(true) : createModel({ props,
 const attentionEl = ref(null);
 const arrowEl = ref(null);
 const actualDirection = ref(props.placement);
+const targetElRef = ref(props.targetEl || null);
 
 const attentionState = computed(() => ({
   get isShowing() {
@@ -84,7 +85,7 @@ const attentionState = computed(() => ({
   directionName: props.placement,
   arrowEl: arrowEl.value?.$el,
   attentionEl: attentionEl.value,
-  targetEl: props.targetEl,
+  targetEl: targetElRef.value,
   noArrow: props.noArrow,
   distance: props.distance,
   skidding: props.skidding,
@@ -179,12 +180,27 @@ const defaultAriaLabel = computed(() => {
 
 let cleanup;
 
-onMounted(async () => {
-  watchEffect(model, recompute(attentionState.value), { immediate: props.callout });
+onMounted(() => {
+  // This watcher will only run in the client environment
+  // props.targetEl can be undefined if props.callout is true.
+  // However, the autoUpdatePosition() from @warp-ds/core, uses Floating-ui's computePosition(). Floating-ui's computePosition() requires a defined targetEl to be able to compute the attentionEl's position and the attentionEl's arrow position.
+  // When props.callout is true, we only need computePosition() to calculate the callout's arrow position. So, we create a default targetEl for callout that we can pass to the autoUpdatePosition(), in order to avoid Floating-ui from throwing an error.
+  watch(
+    () => [props.callout, props.targetEl],
+    ([callout, target]) => {
+      if (callout && target === undefined) {
+        targetElRef.value = document.createElement('div');
+      } else {
+        targetElRef.value = props.targetEl;
+      }
+    },
+    { immediate: true },
+  );
+  recompute(attentionState.value);
 });
 
 watch(
-  () => [props.targetEl, model.value, attentionEl.value],
+  () => [targetElRef.value, model.value, attentionEl.value],
   ([target, m, att]) => {
     if (!cleanup && m && target && att) {
       cleanup = autoUpdatePosition(attentionState.value);

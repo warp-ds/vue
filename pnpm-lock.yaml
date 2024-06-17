@@ -12,8 +12,8 @@ importers:
         specifier: ^4.7.0
         version: 4.7.0
       '@warp-ds/core':
-        specifier: ^1.1.1
-        version: 1.1.1(@floating-ui/dom@1.6.3)
+        specifier: ^1.1.2
+        version: 1.1.2(@floating-ui/dom@1.6.3)
       '@warp-ds/css':
         specifier: 1.9.6
         version: 1.9.6
@@ -2810,8 +2810,8 @@ packages:
       '@vue/server-renderer':
         optional: true
 
-  '@warp-ds/core@1.1.1':
-    resolution: {integrity: sha512-JL7Zzi8djG9NOpZMebn4zuP7zAu8C5nAnplvJuMnWrExg3Kw+ZP9wnJWJJ+wNPASPbqHxshVHbNTBStGGTCeqw==}
+  '@warp-ds/core@1.1.2':
+    resolution: {integrity: sha512-Y5m3cqbtB1qlp9/OYBmO7N6CE9x8l57HUHyynBWXFQDqcfxKZxjCcU4TCleQFpAlKXgqqdQ7CL8MZqIuG5F38g==}
     peerDependencies:
       '@floating-ui/dom': 1.6.3
 
@@ -7262,8 +7262,8 @@ packages:
   vue-component-type-helpers@1.8.27:
     resolution: {integrity: sha512-0vOfAtI67UjeO1G6UiX5Kd76CqaQ67wrRZiOe7UAb9Jm6GzlUr/fC7CV90XfwapJRjpCMaZFhv1V0ajWRmE9Dg==}
 
-  vue-component-type-helpers@2.0.19:
-    resolution: {integrity: sha512-cN3f1aTxxKo4lzNeQAkVopswuImUrb5Iurll9Gaw5cqpnbTAxtEMM1mgi6ou4X79OCyqYv1U1mzBHJkzmiK82w==}
+  vue-component-type-helpers@2.0.21:
+    resolution: {integrity: sha512-3NaicyZ7N4B6cft4bfb7dOnPbE9CjLcx+6wZWAg5zwszfO4qXRh+U52dN5r5ZZfc6iMaxKCEcoH9CmxxoFZHLg==}
 
   vue-docgen-api@4.75.1:
     resolution: {integrity: sha512-MECZ3uExz+ssmhD/2XrFoQQs93y17IVO1KDYTp8nr6i9GNrk67AAto6QAtilW1H/pTDPMkQxJ7w/25ZIqVtfAA==}
@@ -10297,7 +10297,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.19(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.19
+      vue-component-type-helpers: 2.0.21
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -10839,7 +10839,7 @@ snapshots:
     optionalDependencies:
       '@vue/server-renderer': 3.4.19(vue@3.4.19(typescript@5.4.5))
 
-  '@warp-ds/core@1.1.1(@floating-ui/dom@1.6.3)':
+  '@warp-ds/core@1.1.2(@floating-ui/dom@1.6.3)':
     dependencies:
       '@floating-ui/dom': 1.6.3
 
@@ -12087,7 +12087,7 @@ snapshots:
 
   es-shim-unscopables@1.0.2:
     dependencies:
-      hasown: 2.0.1
+      hasown: 2.0.2
 
   es-to-primitive@1.2.1:
     dependencies:
@@ -12252,7 +12252,7 @@ snapshots:
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
       eslint-module-utils: 2.8.1(eslint-import-resolver-node@0.3.9)(eslint@8.57.0)
-      hasown: 2.0.1
+      hasown: 2.0.2
       is-core-module: 2.13.1
       is-glob: 4.0.3
       minimatch: 3.1.2
@@ -15935,7 +15935,7 @@ snapshots:
 
   vue-component-type-helpers@1.8.27: {}
 
-  vue-component-type-helpers@2.0.19: {}
+  vue-component-type-helpers@2.0.21: {}
 
   vue-docgen-api@4.75.1(vue@3.4.19(typescript@5.4.5)):
     dependencies:
