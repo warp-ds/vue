@@ -21,7 +21,7 @@ const props = defineProps({
         return true;
       }
       return ['neutral', 'info', 'positive', 'warning', 'negative', 'disabled', 'price'].includes(value);
-    }
+    },
   },
   position: {
     type: String,
