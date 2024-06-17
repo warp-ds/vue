@@ -1,3 +1,10 @@
+## [2.0.1-next.3](https://github.com/warp-ds/vue/compare/v2.0.1-next.2...v2.0.1-next.3) (2024-06-17)
+
+
+### Bug Fixes
+
+* add default targetEl for callout ([#170](https://github.com/warp-ds/vue/issues/170)) ([957e4cb](https://github.com/warp-ds/vue/commit/957e4cb41bd98942bf8dea535e02b594061dbc01))
+
 ## [2.0.1-next.2](https://github.com/warp-ds/vue/compare/v2.0.1-next.1...v2.0.1-next.2) (2024-05-23)
 
 
