@@ -12,7 +12,6 @@ const badgeVariants = [
   { name: 'warning', radio },
   { name: 'negative', radio },
   { name: 'disabled', radio },
-  { name: 'notification', radio },
   { name: 'price', radio },
 ];
 const badgePositions = [
