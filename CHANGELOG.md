@@ -1,3 +1,10 @@
+## [2.0.1-next.4](https://github.com/warp-ds/vue/compare/v2.0.1-next.3...v2.0.1-next.4) (2024-06-18)
+
+
+### Bug Fixes
+
+* Deprecate the "notification" variant of Badge ([#172](https://github.com/warp-ds/vue/issues/172)) ([74bf5f2](https://github.com/warp-ds/vue/commit/74bf5f23d081ebd24a4711ae821027f390341513))
+
 ## [2.0.1-next.3](https://github.com/warp-ds/vue/compare/v2.0.1-next.2...v2.0.1-next.3) (2024-06-17)
 
 
