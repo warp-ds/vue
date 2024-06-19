@@ -22,6 +22,12 @@ const getSelectClasses = (hasValidationErrors) => [
     [ccSelect.readOnly]: p.readOnly,
   },
 ];
+
+const handleKeyDown = (event) => {
+    if (p.readOnly && (event.key === ' ' || event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
+      event.preventDefault();
+    }
+  };
 </script>
 
 <script>
@@ -38,7 +44,7 @@ export default { name: 'wSelect', inheritAttrs: false };
           v-model="model"
           :class="getSelectClasses(hasValidationErrors)"
           :disabled="disabled"
-          :readOnly="readOnly"
+          @keydown='handleKeyDown'
           @blur="triggerValidation">
           <slot />
         </select>
