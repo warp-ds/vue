@@ -38,5 +38,11 @@ const selectModel = ref('');
         <option value="bar">Bar</option>
       </w-select>
     </token>
+    <token :state="selectModel">
+      <w-select read-only v-model="selectModel" label="Read only select">
+        <option disabled selected value="">Foo</option>
+        <option value="bar">Bar</option>
+      </w-select>
+    </token>
   </div>
 </template>

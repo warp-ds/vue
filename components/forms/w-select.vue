@@ -11,24 +11,23 @@ const p = defineProps(fieldProps);
 const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props: p, emit });
 
-const wrapperClasses = computed(() => ({
-  [ccSelect.wrapper]: true,
-}));
+const chevronClasses = computed(() => [ccSelect.chevron, { [ccSelect.chevronDisabled]: p.disabled }]);
 
-const selectWrapperClasses = computed(() => ({
-  [ccSelect.selectWrapper]: true,
-}));
+const getSelectClasses = (hasValidationErrors) => [
+  ccSelect.base,
+  {
+    [ccSelect.default]: !hasValidationErrors && !p.disabled && !p.readOnly,
+    [ccSelect.disabled]: p.disabled,
+    [ccSelect.invalid]: hasValidationErrors,
+    [ccSelect.readOnly]: p.readOnly,
+  },
+];
 
-const selectClasses = computed(() => ({
-  [ccSelect.default]: true,
-  [ccSelect.disabled]: p.disabled,
-  [ccSelect.readOnly]: p.readOnly,
-}));
-
-const chevronClasses = computed(() => ({
-  [ccSelect.chevron]: true,
-  [ccSelect.chevronDisabled]: p.disabled,
-}));
+const handleKeyDown = (event) => {
+  if (p.readOnly && (event.key === ' ' || event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
+    event.preventDefault();
+  }
+};
 </script>
 
 <script>
@@ -37,20 +36,15 @@ export default { name: 'wSelect', inheritAttrs: false };
 
 <template>
   <w-field v-slot="{ triggerValidation, aria, hasValidationErrors }" v-bind="{ ...$attrs, ...$props }">
-    <div :class="wrapperClasses">
-      <div :class="selectWrapperClasses">
+    <div :class="ccSelect.wrapper">
+      <div :class="ccSelect.selectWrapper">
         <select
           v-bind="{ ...aria, ...$attrs, class: '' }"
           :id="id"
           v-model="model"
-          :class="[
-            selectClasses,
-            {
-              [ccSelect.invalid]: hasValidationErrors,
-            },
-          ]"
+          :class="getSelectClasses(hasValidationErrors)"
           :disabled="disabled"
-          :readOnly="readOnly"
+          @keydown="handleKeyDown"
           @blur="triggerValidation">
           <slot />
         </select>
