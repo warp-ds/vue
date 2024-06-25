@@ -1,7 +1,7 @@
 {
   "name": "@warp-ds/vue",
   "repository": "git@github.com:warp-ds/vue.git",
-  "version": "2.0.1-next.2",
+  "version": "2.0.1-next.4",
   "description": "Warp components for Vue 3",
   "type": "module",
   "exports": {
@@ -51,7 +51,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@lingui/core": "^4.7.0",
-    "@warp-ds/core": "^1.1.1",
+    "@warp-ds/core": "^1.1.2",
     "@warp-ds/css": "github:warp-ds/css#component-classes-cleanup",
     "@warp-ds/icons": "2.0.0",
     "@warp-ds/uno": "1.12.0",
