@@ -23,8 +23,7 @@
     "./slider": "./dist/slider.js",
     "./steps": "./dist/steps.js",
     "./switch": "./dist/switch.js",
-    "./tabs": "./dist/tabs.js",
-    "./tag": "./dist/tag.js"
+    "./tabs": "./dist/tabs.js"
   },
   "imports": {
     "#util": "./components/util/index.js",

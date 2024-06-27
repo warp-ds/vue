@@ -14,7 +14,6 @@ export * from './components/slider';
 export * from './components/steps';
 export * from './components/switch';
 export * from './components/tabs';
-export * from './components/tag';
 export * from './components/util';
 export * from './components/attention';
 export * from './components/alert';

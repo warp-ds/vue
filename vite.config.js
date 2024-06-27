@@ -51,7 +51,6 @@ function getBuildOpts(env) {
       build: {
         lib: {
           entry: {
-            tag: 'components/tag/index.js',
             tabs: 'components/tabs/index.js',
             switch: 'components/switch/index.js',
             steps: 'components/steps/index.js',
