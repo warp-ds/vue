@@ -12,7 +12,6 @@ const variants = [
 
 const options = [
   { name: 'Bleed', checkbox },
-  { name: 'Clickable', checkbox },
 ];
 
 const state = reactive(
@@ -29,9 +28,8 @@ const handleClick = () => alert('Hello Warp!');
     <component-title title="Box" />
 
     <token :state="[state]">
-      <w-box :bleed="state.Bleed" :bordered="state.Bordered" :info="state.Info" :neutral="state.Neutral" :clickable="state.Clickable">
-        <h3 v-if="!state.Clickable" class="h4">I am some content</h3>
-        <w-clickable v-else @click="handleClick"><h3 class="h4 mb-0">I am some clickable content</h3></w-clickable>
+      <w-box :bleed="state.Bleed" :bordered="state.Bordered" :info="state.Info" :neutral="state.Neutral">
+        <h3 class="h4">I am some content</h3>
       </w-box>
     </token>
 
