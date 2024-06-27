@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
 
-import { wBox, wClickable } from '#components';
+import { wBox } from '#components';
 import { checkbox, buildCheckboxState } from '#dev-util';
 
 const variants = [
@@ -10,9 +10,7 @@ const variants = [
   { name: 'Bordered', checkbox },
 ];
 
-const options = [
-  { name: 'Bleed', checkbox },
-];
+const options = [{ name: 'Bleed', checkbox }];
 
 const state = reactive(
   buildCheckboxState({
@@ -20,7 +18,6 @@ const state = reactive(
     active: 'Neutral',
   }),
 );
-const handleClick = () => alert('Hello Warp!');
 </script>
 
 <template>
