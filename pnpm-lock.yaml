@@ -15,8 +15,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@floating-ui/dom@1.6.3)
       '@warp-ds/css':
-        specifier: 1.9.6
-        version: 1.9.6
+        specifier: 2.0.0-next.2
+        version: 2.0.0-next.2
       '@warp-ds/icons':
         specifier: 2.0.0
         version: 2.0.0
@@ -2815,8 +2815,8 @@ packages:
     peerDependencies:
       '@floating-ui/dom': 1.6.3
 
-  '@warp-ds/css@1.9.6':
-    resolution: {integrity: sha512-h1weeukiNcbapcCz4JBt71qes8gaPXG/xdWvL3BVcje3MJ3bqIwyYaer4PKfYJRIzeKCg/EWVrzylsKplI5U6Q==}
+  '@warp-ds/css@2.0.0-next.2':
+    resolution: {integrity: sha512-pB9Xf5qgoMixTGmaOu365gJYlgXM2ICR3PJOah1jvlUH5tEx3vyIo0PMC/p08JrqeH7k+Ki9Sx3EbBpIEYPF7Q==}
 
   '@warp-ds/eslint-config@1.0.5':
     resolution: {integrity: sha512-cHakkN7BVpqwQxpEeDrl3V8/QDco/7UwHTWIFzN3C9t8RlfcT9Y1QTNfMzJQBiIux8oQNE6rom0AydmWLo8mRw==}
@@ -7262,8 +7262,8 @@ packages:
   vue-component-type-helpers@1.8.27:
     resolution: {integrity: sha512-0vOfAtI67UjeO1G6UiX5Kd76CqaQ67wrRZiOe7UAb9Jm6GzlUr/fC7CV90XfwapJRjpCMaZFhv1V0ajWRmE9Dg==}
 
-  vue-component-type-helpers@2.0.21:
-    resolution: {integrity: sha512-3NaicyZ7N4B6cft4bfb7dOnPbE9CjLcx+6wZWAg5zwszfO4qXRh+U52dN5r5ZZfc6iMaxKCEcoH9CmxxoFZHLg==}
+  vue-component-type-helpers@2.0.24:
+    resolution: {integrity: sha512-Jr5N8QVYEcbQuMN1LRgvg61758G8HTnzUlQsAFOxx6Y6X8kmhJ7C+jOvWsQruYxi3uHhhS6BghyRlyiwO99DBg==}
 
   vue-docgen-api@4.75.1:
     resolution: {integrity: sha512-MECZ3uExz+ssmhD/2XrFoQQs93y17IVO1KDYTp8nr6i9GNrk67AAto6QAtilW1H/pTDPMkQxJ7w/25ZIqVtfAA==}
@@ -10297,7 +10297,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.19(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.21
+      vue-component-type-helpers: 2.0.24
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -10843,7 +10843,7 @@ snapshots:
     dependencies:
       '@floating-ui/dom': 1.6.3
 
-  '@warp-ds/css@1.9.6':
+  '@warp-ds/css@2.0.0-next.2':
     dependencies:
       '@warp-ds/tokenizer': 0.0.4
       '@warp-ds/uno': 1.12.0
@@ -15935,7 +15935,7 @@ snapshots:
 
   vue-component-type-helpers@1.8.27: {}
 
-  vue-component-type-helpers@2.0.21: {}
+  vue-component-type-helpers@2.0.24: {}
 
   vue-docgen-api@4.75.1(vue@3.4.19(typescript@5.4.5)):
     dependencies:
