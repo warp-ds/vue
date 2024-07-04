@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
 
-import { wBox, wClickable } from '#components';
+import { wBox } from '#components';
 import { checkbox, buildCheckboxState } from '#dev-util';
 
 const variants = [
@@ -10,10 +10,7 @@ const variants = [
   { name: 'Bordered', checkbox },
 ];
 
-const options = [
-  { name: 'Bleed', checkbox },
-  { name: 'Clickable', checkbox },
-];
+const options = [{ name: 'Bleed', checkbox }];
 
 const state = reactive(
   buildCheckboxState({
@@ -21,7 +18,6 @@ const state = reactive(
     active: 'Neutral',
   }),
 );
-const handleClick = () => alert('Hello Warp!');
 </script>
 
 <template>
@@ -29,9 +25,8 @@ const handleClick = () => alert('Hello Warp!');
     <component-title title="Box" />
 
     <token :state="[state]">
-      <w-box :bleed="state.Bleed" :bordered="state.Bordered" :info="state.Info" :neutral="state.Neutral" :clickable="state.Clickable">
-        <h3 v-if="!state.Clickable" class="h4">I am some content</h3>
-        <w-clickable v-else @click="handleClick"><h3 class="h4 mb-0">I am some clickable content</h3></w-clickable>
+      <w-box :bleed="state.Bleed" :bordered="state.Bordered" :info="state.Info" :neutral="state.Neutral">
+        <h3 class="h4">I am some content</h3>
       </w-box>
     </token>
 

@@ -16,10 +16,6 @@ const props = defineProps({
     type: String,
     default: 'neutral',
     validator: (value) => {
-      if (value === 'notification') {
-        console.warn('Warp Badge: The "notification" variant is deprecated - Do not use!');
-        return true;
-      }
       return ['neutral', 'info', 'positive', 'warning', 'negative', 'disabled', 'price'].includes(value);
     },
   },

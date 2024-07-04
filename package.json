@@ -23,14 +23,16 @@
     "./slider": "./dist/slider.js",
     "./steps": "./dist/steps.js",
     "./switch": "./dist/switch.js",
-    "./tabs": "./dist/tabs.js",
-    "./tag": "./dist/tag.js"
+    "./tabs": "./dist/tabs.js"
   },
   "imports": {
     "#util": "./components/util/index.js",
     "#components": "./index.js",
     "#generics": "./components/generic/index.js",
     "#dev-util": "./dev/src/util.js"
+  },
+  "peerDependencies": {
+    "@warp-ds/css": "2.0.0-next.4"
   },
   "scripts": {
     "build-storybook": "storybook build",
@@ -52,9 +54,9 @@
   "dependencies": {
     "@lingui/core": "^4.7.0",
     "@warp-ds/core": "^1.1.2",
-    "@warp-ds/css": "1.9.6",
+    "@warp-ds/css": "2.0.0-next.4",
     "@warp-ds/icons": "2.0.0",
-    "@warp-ds/uno": "1.12.0",
+    "@warp-ds/uno": "2.x",
     "create-v-model": "^2.2.0",
     "dom-focus-lock": "^1.1.0",
     "element-collapse": "^1.1.0",
@@ -90,7 +92,6 @@
     "cz-conventional-changelog": "^3.3.0",
     "drnm": "^0.9.0",
     "esbuild": "0.20.0",
-    "eslint": "8.57.0",
     "eslint-plugin-vue": "9.25.0",
     "fuse.js": "^7.0.0",
     "happy-dom": "13.3.8",
@@ -101,7 +102,7 @@
     "semantic-release": "^23.0.0",
     "shikiji": "0.10.2",
     "storybook": "7.6.15",
-    "unocss": "0.58.5",
+    "unocss": "0.x",
     "vite": "5.1.2",
     "viteik": "^1.0.3",
     "vitest": "1.2.2",
