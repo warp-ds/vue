@@ -1,3 +1,10 @@
+# [2.1.0-next.1](https://github.com/warp-ds/vue/compare/v2.0.1...v2.1.0-next.1) (2024-07-04)
+
+
+### Features
+
+* remove deprecated classes ([#173](https://github.com/warp-ds/vue/issues/173)) ([bd5f481](https://github.com/warp-ds/vue/commit/bd5f481b4ae9220a12cdca0b002e19422576c690))
+
 ## [2.0.1](https://github.com/warp-ds/vue/compare/v2.0.0...v2.0.1) (2024-07-04)
 
 
