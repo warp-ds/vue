@@ -1,3 +1,13 @@
+## [2.0.1](https://github.com/warp-ds/vue/compare/v2.0.0...v2.0.1) (2024-07-04)
+
+
+### Bug Fixes
+
+* add default targetEl for callout ([#170](https://github.com/warp-ds/vue/issues/170)) ([957e4cb](https://github.com/warp-ds/vue/commit/957e4cb41bd98942bf8dea535e02b594061dbc01))
+* add support for formatting vue files ([#167](https://github.com/warp-ds/vue/issues/167)) ([347ab79](https://github.com/warp-ds/vue/commit/347ab790963154017d2b508453b56b8c4c53e088))
+* Deprecate the "notification" variant of Badge ([#172](https://github.com/warp-ds/vue/issues/172)) ([74bf5f2](https://github.com/warp-ds/vue/commit/74bf5f23d081ebd24a4711ae821027f390341513))
+* revert renaming key in w-toggle ([#168](https://github.com/warp-ds/vue/issues/168)) ([286ed74](https://github.com/warp-ds/vue/commit/286ed7430dd47cf13a4b49fb93e774d2b5973a10))
+
 ## [2.0.1-next.4](https://github.com/warp-ds/vue/compare/v2.0.1-next.3...v2.0.1-next.4) (2024-06-18)
 
 
