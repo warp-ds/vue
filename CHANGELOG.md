@@ -1,3 +1,10 @@
+# [2.1.0-next.2](https://github.com/warp-ds/vue/compare/v2.1.0-next.1...v2.1.0-next.2) (2024-07-04)
+
+
+### Bug Fixes
+
+* support danish locale ([#177](https://github.com/warp-ds/vue/issues/177)) ([e1e3589](https://github.com/warp-ds/vue/commit/e1e35890fafd344acb6ce2ebc963e4107b3f6025))
+
 # [2.1.0-next.1](https://github.com/warp-ds/vue/compare/v2.0.1...v2.1.0-next.1) (2024-07-04)
 
 
