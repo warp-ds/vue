@@ -1,14 +1,19 @@
-import { describe, test, assert } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { wExpandable } from '#components';
 import { nextTick } from 'vue';
+
+import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
+import { wExpandable } from '#components';
 
 describe('expandable', () => {
   assert.ok(wExpandable.name);
 
   test('can mount expanded', () => {
     const defaultSlot = '<h1>Hello Warp</h1>';
-    const wrapper = mount(wExpandable, { props: { modelValue: true }, slots: { default: defaultSlot } });
+    const wrapper = mount(wExpandable, {
+      props: { modelValue: true },
+      slots: { default: defaultSlot },
+    });
     assert.equal(wrapper.text(), 'Hello Warp');
   });
   test('has a title area - prop', () => {

@@ -1,13 +1,15 @@
 <script setup>
 import { computed, inject } from 'vue';
-import { i18n } from '@lingui/core';
-import { activateI18n } from '../util/i18n';
-import { step as ccStep } from '@warp-ds/css/component-classes';
-import IconCheck16 from "@warp-ds/icons/vue/check-16";
-import { messages as enMessages} from './locales/en/messages.mjs';
-import { messages as nbMessages} from './locales/nb/messages.mjs';
-import { messages as fiMessages} from './locales/fi/messages.mjs';
 
+import { i18n } from '@lingui/core';
+import { step as ccStep } from '@warp-ds/css/component-classes';
+import IconCheck16 from '@warp-ds/icons/vue/check-16';
+
+import { activateI18n } from '../util/i18n';
+
+import { messages as enMessages } from './locales/en/messages.mjs';
+import { messages as fiMessages } from './locales/fi/messages.mjs';
+import { messages as nbMessages } from './locales/nb/messages.mjs';
 
 activateI18n(enMessages, nbMessages, fiMessages);
 
@@ -22,31 +24,31 @@ const props = defineProps({
 const availableAriaLabels = {
   complete: i18n._(
     /*i18n*/ {
-      id: "steps.aria.completed",
-      message: "Step indicator completed circle",
-      comment: "Completed circle",
-    }
+      id: 'steps.aria.completed',
+      message: 'Step indicator completed circle',
+      comment: 'Completed circle',
+    },
   ),
   active: i18n._(
     /*i18n*/ {
-      id: "steps.aria.active",
-      message: "Step indicator active circle",
-      comment: "Active circle",
-    }
+      id: 'steps.aria.active',
+      message: 'Step indicator active circle',
+      comment: 'Active circle',
+    },
   ),
   default: i18n._(
     /*i18n*/ {
-      id: "steps.aria.emptyCircle",
-      message: "Empty circle",
-      comment: "Empty circle",
-    }
-  )
-}
+      id: 'steps.aria.emptyCircle',
+      message: 'Empty circle',
+      comment: 'Empty circle',
+    },
+  ),
+};
 
 const getAriaLabel = (props) => {
-  const ariaLabel = Object.keys(availableAriaLabels).find(a => props[a]);
+  const ariaLabel = Object.keys(availableAriaLabels).find((a) => props[a]);
   return ariaLabel ? availableAriaLabels[ariaLabel] : availableAriaLabels.default;
-}
+};
 
 const stepClasses = computed(() => [
   ccStep.step,
@@ -102,6 +104,10 @@ const contentClasses = computed(() => [
 ]);
 </script>
 
+<script>
+export default { name: 'wStep' };
+</script>
+
 <template>
   <li :class="stepClasses">
     <div v-if="!vertical" :class="horizontalClasses" />
@@ -114,7 +120,3 @@ const contentClasses = computed(() => [
     </div>
   </li>
 </template>
-
-<script>
-export default { name: 'wStep' };
-</script>

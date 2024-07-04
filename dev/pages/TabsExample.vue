@@ -1,12 +1,13 @@
 <script setup>
-import { wTabs, wTab, wTabPanel } from '#components';
 import { ref, h } from 'vue';
-import IconProductStarred24 from "@warp-ds/icons/vue/product-starred-24";
+
+import IconProductStarred24 from '@warp-ds/icons/vue/product-starred-24';
+
+import { wTabs, wTab, wTabPanel } from '#components';
 
 const Stars = {
   name: 'stars-svg',
-  render: () =>
-    h(IconProductStarred24),
+  render: () => h(IconProductStarred24),
 };
 
 const model = ref('one');
@@ -28,15 +29,15 @@ const model = ref('one');
         </w-tab>
       </w-tabs>
       <div>
-        <w-tab-panel name="one" v-if="model === 'one'">
+        <w-tab-panel v-if="model === 'one'" name="one">
           <p class="mb-0">First tab content</p>
         </w-tab-panel>
-        <w-tab-panel name="two" v-if="model === 'two'">
+        <w-tab-panel v-if="model === 'two'" name="two">
           <p class="mb-0">Second tab content</p>
         </w-tab-panel>
-        <w-tab-panel name="three" v-if="model === 'three'">
+        <w-tab-panel v-if="model === 'three'" name="three">
           <p class="mb-0">Third tab content</p>
-          </w-tab-panel>
+        </w-tab-panel>
       </div>
     </token>
   </div>

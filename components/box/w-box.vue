@@ -1,10 +1,11 @@
 <script setup>
+import { computed } from 'vue';
+
+import { box as ccBox } from '@warp-ds/css/component-classes';
+
 defineOptions({
   name: 'wBox',
 });
-
-import { box as ccBox } from '@warp-ds/css/component-classes';
-import { computed } from 'vue';
 
 const props = defineProps({
   as: { type: String, default: 'div' },
@@ -29,11 +30,11 @@ const boxClasses = computed(() => [
     [ccBox.bordered]: props.bordered,
     [ccBox.infoClickable]: props.clickable && props.info,
     [ccBox.neutralClickable]: props.clickable && props.neutral,
-    [ccBox.borderedClickable]: props.clickable && props.bordered
-  }
+    [ccBox.borderedClickable]: props.clickable && props.bordered,
+  },
 ]);
 
-const optOutRoleWithDefault = computed(() => props.role === '' ? null : props.role ?? 'region');
+const optOutRoleWithDefault = computed(() => (props.role === '' ? null : props.role ?? 'region'));
 </script>
 
 <template>

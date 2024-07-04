@@ -1,25 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../pages/Home.vue';
-import Alert from '../pages/Alert.vue';
-import Attention from '../pages/Attention.vue';
-import Badge from '../pages/Badge.vue';
-import Box from '../pages/Box.vue';
-import Breadcrumbs from '../pages/Breadcrumbs.vue';
-import Button from '../pages/Button.vue';
-import ButtonGroup from '../pages/ButtonGroup.vue';
-import Card from '../pages/Card.vue';
-import Expandable from '../pages/Expandable.vue';
-import Modal from '../pages/Modal.vue';
-import Pill from '../pages/Pill.vue';
-import Select from '../pages/Select.vue';
-import Slider from '../pages/Slider.vue';
-import Steps from '../pages/Steps.vue';
-import Switch from '../pages/Switch.vue';
-import Tabs from '../pages/Tabs.vue';
-import Tag from '../pages/Tag.vue';
-import Textarea from '../pages/Textarea.vue';
-import Textfield from '../pages/TextField.vue';
-import Toggle from '../pages/Toggle.vue';
+
+import Alert from '../pages/AlertExample.vue';
+import Attention from '../pages/AttentionExample.vue';
+import Badge from '../pages/BadgeExample.vue';
+import Box from '../pages/BoxExample.vue';
+import Breadcrumbs from '../pages/BreadcrumbsExample.vue';
+import Button from '../pages/ButtonExample.vue';
+import ButtonGroup from '../pages/ButtonGroupExample.vue';
+import Card from '../pages/CardExample.vue';
+import Expandable from '../pages/ExpandableExample.vue';
+import Home from '../pages/HomeTitle.vue';
+import Modal from '../pages/ModalExample.vue';
+import Pill from '../pages/PillExample.vue';
+import Select from '../pages/SelectExample.vue';
+import Slider from '../pages/SliderExample.vue';
+import Steps from '../pages/StepsExample.vue';
+import Switch from '../pages/SwitchExample.vue';
+import Tabs from '../pages/TabsExample.vue';
+import Tag from '../pages/TagExample.vue';
+import Textarea from '../pages/TextareaExample.vue';
+import Textfield from '../pages/TextFieldExample.vue';
+import Toggle from '../pages/ToggleExample.vue';
 // import Forms from '../pages/Forms.vue'
 
 export const routes = [

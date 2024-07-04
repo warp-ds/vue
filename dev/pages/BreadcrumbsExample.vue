@@ -1,5 +1,5 @@
 <script setup>
-  import { wBreadcrumbs } from '#components'
+import { wBreadcrumbs } from '#components';
 </script>
 
 <template>

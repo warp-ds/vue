@@ -1,17 +1,18 @@
 <script setup>
-import { wExpandable } from '#components'
-import { ref } from 'vue'
+import { ref } from 'vue';
+
+import { wExpandable } from '#components';
 
 const props = defineProps({
   title: String,
-  startOpen: Boolean
-})
+  startOpen: Boolean,
+});
 
-const expanded = ref(props.startOpen)
+const expanded = ref(props.startOpen);
 </script>
 
 <template>
-  <w-expandable box animated class="not-rounded" v-model="expanded">
+  <w-expandable v-model="expanded" box animated class="not-rounded">
     <template #title>
       <h5 class="mb-0">{{ title }}</h5>
     </template>

@@ -1,7 +1,9 @@
-import { describe, test, assert } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { wModal } from '#components';
 import { ref, nextTick } from 'vue';
+
+import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
+import { wModal } from '#components';
 
 describe('modal', () => {
   assert.ok(wModal.name);
@@ -35,14 +37,20 @@ describe('modal', () => {
   });
   test('has a title', async () => {
     const defaultSlot = '<h1>Hello Warp</h1>';
-    const wrapper = mount(wModal, { props: { modelValue: true, title: 'OMG' }, slots: { default: defaultSlot } });
+    const wrapper = mount(wModal, {
+      props: { modelValue: true, title: 'OMG' },
+      slots: { default: defaultSlot },
+    });
     await nextTick(); // have to wait for the modal to mount/animate
     assert.include(wrapper.text(), 'OMG');
   });
   test('has a footer', async () => {
     const defaultSlot = '<h1>Hello Warp</h1>';
     const footerSlot = '<h1>Goodbye Warp</h1>';
-    const wrapper = mount(wModal, { props: { modelValue: true }, slots: { default: defaultSlot, footer: footerSlot } });
+    const wrapper = mount(wModal, {
+      props: { modelValue: true },
+      slots: { default: defaultSlot, footer: footerSlot },
+    });
     await nextTick(); // have to wait for the modal to mount/animate
     assert.include(wrapper.text(), 'Hello Warp');
     assert.include(wrapper.text(), 'Goodbye Warp');
@@ -58,7 +66,10 @@ describe('modal', () => {
   });
   test('has sane defaults for left and right', async () => {
     const defaultSlot = '<h1>Hello Warp</h1>';
-    const wrapper = mount(wModal, { props: { modelValue: true, left: true, right: true }, slots: { default: defaultSlot } });
+    const wrapper = mount(wModal, {
+      props: { modelValue: true, left: true, right: true },
+      slots: { default: defaultSlot },
+    });
     await nextTick();
     const left = wrapper.find('button[aria-label="Back"]');
     assert.ok(left.exists());

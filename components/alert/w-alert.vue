@@ -1,18 +1,20 @@
 <script setup>
-import { computed } from "vue";
-import { wExpandTransition } from "#generics";
-import { createModel, modelProps } from "create-v-model";
-import { alert as ccAlert } from "@warp-ds/css/component-classes";
-import IconError16 from "@warp-ds/icons/vue/error-16";
-import IconSuccess16 from "@warp-ds/icons/vue/success-16";
-import IconWarning16 from "@warp-ds/icons/vue/warning-16";
-import IconInfo16 from "@warp-ds/icons/vue/info-16";
+import { computed } from 'vue';
+
+import { alert as ccAlert } from '@warp-ds/css/component-classes';
+import IconError16 from '@warp-ds/icons/vue/error-16';
+import IconInfo16 from '@warp-ds/icons/vue/info-16';
+import IconSuccess16 from '@warp-ds/icons/vue/success-16';
+import IconWarning16 from '@warp-ds/icons/vue/warning-16';
+import { createModel, modelProps } from 'create-v-model';
+
+import { wExpandTransition } from '#generics';
 
 const props = defineProps({
   title: String,
   role: {
     type: String,
-    default: "alert",
+    default: 'alert',
   },
   negative: Boolean,
   positive: Boolean,
@@ -21,30 +23,33 @@ const props = defineProps({
   ...modelProps(),
 });
 
-const possibleTypeProps = ["negative", "positive", "warning", "info"];
+const possibleTypeProps = ['negative', 'positive', 'warning', 'info'];
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props, emit });
 const alertColorType = computed(() => possibleTypeProps.find((e) => props[e]));
 const activeWrapperClassNames = computed(() => ccAlert[alertColorType.value]);
-const activeIconClassNames = computed(
-  () => ccAlert[`${alertColorType.value}Icon`]
-);
-const wrapperClass = computed(() => [
-  ccAlert.alert,
-  activeWrapperClassNames.value,
-]);
+const activeIconClassNames = computed(() => ccAlert[`${alertColorType.value}Icon`]);
+const wrapperClass = computed(() => [ccAlert.alert, activeWrapperClassNames.value]);
 const iconClass = computed(() => [ccAlert.icon, activeIconClassNames.value]);
 
-const iconComponent = computed(() =>
-  props.negative
-    ? IconError16
-    : props.positive
-    ? IconSuccess16
-    : props.warning
-    ? IconWarning16
-    : IconInfo16
-);
+const iconComponent = computed(() => {
+  let icon;
+  if (props.negative) {
+    icon = IconError16;
+  } else if (props.positive) {
+    icon = IconSuccess16;
+  } else if (props.warning) {
+    icon = IconWarning16;
+  } else {
+    icon = IconInfo16;
+  }
+  return icon;
+});
+</script>
+
+<script>
+export default { name: 'wAlert' };
 </script>
 
 <template>
@@ -57,7 +62,7 @@ const iconComponent = computed(() =>
             <component :is="iconComponent" />
           </div>
           <div :class="ccAlert.textWrapper" data-test="content">
-            <h3 :class="ccAlert.title" v-if="title">{{ title }}</h3>
+            <h3 v-if="title" :class="ccAlert.title">{{ title }}</h3>
             <slot />
           </div>
         </div>
@@ -65,7 +70,3 @@ const iconComponent = computed(() =>
     </w-expand-transition>
   </div>
 </template>
-
-<script>
-export default { name: "wAlert" };
-</script>

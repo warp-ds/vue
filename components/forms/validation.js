@@ -31,7 +31,16 @@ export const createValidationCollector = () => {
 
   watch(childrenShouldValidate, () => validationElements.value.forEach((e) => (e.shouldValidate = childrenShouldValidate.value)));
 
-  const collectionAttrs = { registerValidation, unregisterValidation, validationElements, childrenShouldValidate, allChildrenValid, valid: allChildrenValid, completed, validate };
+  const collectionAttrs = {
+    registerValidation,
+    unregisterValidation,
+    validationElements,
+    childrenShouldValidate,
+    allChildrenValid,
+    valid: allChildrenValid,
+    completed,
+    validate,
+  };
   provide(collectionKey, reactive(collectionAttrs));
   return collectionAttrs;
 };
@@ -68,5 +77,14 @@ export const createValidation = (props) => {
     onBeforeUnmount(() => collector.unregisterValidation(validationData));
   }
 
-  return { triggerValidation, shouldValidate, validation, valid, validationMsg, showValidation, hasErrorMessage, collector };
+  return {
+    triggerValidation,
+    shouldValidate,
+    validation,
+    valid,
+    validationMsg,
+    showValidation,
+    hasErrorMessage,
+    collector,
+  };
 };

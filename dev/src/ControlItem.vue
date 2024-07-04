@@ -1,25 +1,29 @@
-<script>
-export default { inheritAttrs: false }
-</script>
-
 <script setup>
-import { wButtonGroupItem, wClickable } from '#components'
-import { computed } from 'vue'
+import { computed } from 'vue';
+
+import { wButtonGroupItem, wClickable } from '#components';
 
 const props = defineProps({
   state: null,
   name: String,
   radio: Boolean,
   checkbox: Boolean,
-  button: Boolean
-})
+  button: Boolean,
+});
 
-const stateLocation = computed(() => props.radio ? 'active' : props.name)
-const model = props.button ? null : computed({
-  get: () => props.state[stateLocation.value],
-  set: v => props.state[stateLocation.value] = v
-})
-const selected = props.button ? null : computed(() => props.radio ? model.value === props.name : model.value)
+const stateLocation = computed(() => (props.radio ? 'active' : props.name));
+const model = props.button
+  ? null
+  : computed({
+      get: () => props.state[stateLocation.value],
+      // eslint-disable-next-line vue/no-mutating-props
+      set: (v) => (props.state[stateLocation.value] = v),
+    });
+const selected = props.button ? null : computed(() => (props.radio ? model.value === props.name : model.value));
+</script>
+
+<script>
+export default { inheritAttrs: false };
 </script>
 
 <template>

@@ -1,7 +1,8 @@
-import { describe, test, assert } from 'vitest';
 import { mount } from '@vue/test-utils';
-import { wCard } from '#components';
 import { card as cardClasses } from '@warp-ds/css/component-classes';
+import { describe, test, assert } from 'vitest';
+
+import { wCard } from '#components';
 
 describe('card', () => {
   assert.ok(wCard.name);

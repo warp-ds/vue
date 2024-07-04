@@ -1,13 +1,14 @@
 <script setup>
-import { reactive } from 'vue'
-import { checkbox, buildCheckboxState } from '#dev-util'
-import { wPill } from '#components'
+import { reactive } from 'vue';
+
+import { wPill } from '#components';
+import { checkbox, buildCheckboxState } from '#dev-util';
 
 const modifierControls = [
   { name: 'Suggestion', checkbox },
   { name: 'Closeable', checkbox },
-]
-const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
+];
+const modifiers = reactive(buildCheckboxState({ controls: modifierControls }));
 </script>
 
 <template>

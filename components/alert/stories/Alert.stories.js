@@ -1,7 +1,8 @@
-import wAlert from '../w-alert.vue';
 import { ref } from 'vue';
 
 import { within, expect } from '@storybook/test';
+
+import wAlert from '../w-alert.vue';
 
 const showAlert = ref(true);
 
@@ -19,7 +20,10 @@ export const MainStory = Template.bind({});
 MainStory.args = { info: true, title: 'I am a title' };
 
 export const NegativeAlertTask = Template.bind({});
-NegativeAlertTask.args = { negative: true, title: 'This is "negative" variant of the alert component' };
+NegativeAlertTask.args = {
+  negative: true,
+  title: 'This is "negative" variant of the alert component',
+};
 NegativeAlertTask.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   await expect(canvas.getByRole('alert')).toBeInTheDocument();

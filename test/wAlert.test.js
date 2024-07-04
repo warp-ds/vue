@@ -1,7 +1,9 @@
-import { describe, test, assert } from 'vitest';
-import { mount } from '@vue/test-utils';
-import { wAlert } from '#components';
 import { ref, nextTick } from 'vue';
+
+import { mount } from '@vue/test-utils';
+import { describe, test, assert } from 'vitest';
+
+import { wAlert } from '#components';
 
 describe('alert', () => {
   assert.ok(wAlert.name);
@@ -19,7 +21,10 @@ describe('alert', () => {
     assert.equal(titleHtml.text(), title);
     assert.include(html.html(), defaultSlot);
     assert.include(wrapper.html(), '<svg ');
-    assert.include(wrapperHtml.classes().join(' '), 'flex p-16 border border-l-4 rounded-4 s-text s-border-positive-subtle s-border-l-positive s-bg-positive-subtle');
+    assert.include(
+      wrapperHtml.classes().join(' '),
+      'flex p-16 border border-l-4 rounded-4 s-text s-border-positive-subtle s-border-l-positive s-bg-positive-subtle',
+    );
   });
   test('show/hide', async () => {
     const model = ref(false);

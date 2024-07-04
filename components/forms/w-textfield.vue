@@ -1,21 +1,23 @@
 <script setup>
 import { ref, useSlots } from 'vue';
+
 import { input as ccInput } from '@warp-ds/css/component-classes';
 import { createModel } from 'create-v-model';
-import { setupMask } from './w-input-mask.js';
+
 import { default as wField, fieldProps } from './w-field.vue';
+import { setupMask } from './w-input-mask.js';
 
 const p = defineProps({
   ...fieldProps,
   type: {
     type: String,
     default: 'text',
-    validator: inputTypeValidator
+    validator: inputTypeValidator,
   },
   inputWrapperClass: String,
   autocomplete: {
     type: String,
-    default: 'off'
+    default: 'off',
   },
   mask: Object,
 });
@@ -24,14 +26,18 @@ const slots = useSlots();
 const model = createModel({ props: p, emit });
 const inputEl = ref(null);
 if (p.mask) setupMask({ props: p, emit, inputEl });
+</script>
 
+<script>
+const inputTypeValidator = (value) => ['text', 'search', 'email', 'password', 'url', 'tel', 'number'].includes(value);
+export default { name: 'wTextfield', inheritAttrs: false };
 </script>
 
 <template>
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
-      <div :class="[ccInput.wrapper, inputWrapperClass]">
+    <div :class="[ccInput.wrapper, inputWrapperClass]">
       <slot name="prefix" :inputElement="inputEl" />
-      <input 
+      <input
         v-if="mask"
         :id="id"
         ref="inputEl"
@@ -40,19 +46,19 @@ if (p.mask) setupMask({ props: p, emit, inputEl });
           [ccInput.base]: true,
           [ccInput.default]: !hasValidationErrors && !p.disabled && !p.readOnly,
           [ccInput.invalid]: hasValidationErrors && !p.disabled && !p.readOnly,
-          [ccInput.disabled]: !hasValidationErrors && p.disabled && !p.readOnly, 
+          [ccInput.disabled]: !hasValidationErrors && p.disabled && !p.readOnly,
           [ccInput.readOnly]: !hasValidationErrors && !p.disabled && p.readOnly,
           [ccInput.placeholder]: !!p.placeholder,
           [ccInput.suffix]: slots.suffix,
-          [ccInput.prefix]: slots.prefix
+          [ccInput.prefix]: slots.prefix,
         }"
         :autocomplete="autocomplete"
         :disabled="disabled"
         :placeholder="placeholder"
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
-        @blur="triggerValidation">
-      <input 
+        @blur="triggerValidation" />
+      <input
         v-else
         :id="id"
         ref="inputEl"
@@ -66,22 +72,15 @@ if (p.mask) setupMask({ props: p, emit, inputEl });
           [ccInput.readOnly]: !hasValidationErrors && !p.disabled && p.readOnly,
           [ccInput.placeholder]: !!p.placeholder,
           [ccInput.suffix]: slots.suffix,
-          [ccInput.prefix]: slots.prefix
+          [ccInput.prefix]: slots.prefix,
         }"
         :autocomplete="autocomplete"
         :disabled="disabled"
         :placeholder="placeholder"
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"
-        @blur="triggerValidation"
-        >
+        @blur="triggerValidation" />
       <slot name="suffix" :inputElement="inputEl" />
     </div>
   </w-field>
 </template>
-
-
-<script>
-const inputTypeValidator = (value) => ['text', 'search', 'email', 'password', 'url', 'tel', 'number'].includes(value);
-export default { name: 'wTextfield', inheritAttrs: false };
-</script>

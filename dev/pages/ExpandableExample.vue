@@ -1,16 +1,17 @@
 <script setup>
-import { ref, reactive } from 'vue'
-import { checkbox, buildCheckboxState } from '#dev-util'
-import { wExpandable } from '#components'
+import { ref, reactive } from 'vue';
 
-const expanded = ref(false)
+import { wExpandable } from '#components';
+import { checkbox, buildCheckboxState } from '#dev-util';
+
+const expanded = ref(false);
 const modifierControls = [
   { name: 'Box', checkbox },
   { name: 'Bleed', checkbox },
   { name: 'Info', checkbox },
   { name: 'Animated', checkbox },
-]
-const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
+];
+const modifiers = reactive(buildCheckboxState({ controls: modifierControls }));
 </script>
 
 <template>
@@ -18,7 +19,13 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }))
     <component-title title="Expandable" />
 
     <token :state="[modifiers, expanded]">
-      <w-expandable :box="modifiers.Box" :bleed="modifiers.Bleed" :info="modifiers.Info" :animated="modifiers.Animated" :title="`Click to ${expanded ? 'collapse' : 'expand'}`" v-model="expanded">
+      <w-expandable
+        v-model="expanded"
+        :box="modifiers.Box"
+        :bleed="modifiers.Bleed"
+        :info="modifiers.Info"
+        :animated="modifiers.Animated"
+        :title="`Click to ${expanded ? 'collapse' : 'expand'}`">
         <h2>Hello Warp!</h2>
       </w-expandable>
     </token>
