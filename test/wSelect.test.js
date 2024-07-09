@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { describe, test, assert } from 'vitest';
+
 import { wSelect } from '#components';
 
 describe('select', () => {
