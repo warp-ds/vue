@@ -1,13 +1,11 @@
 import { mount } from '@vue/test-utils';
 import { describe, test, assert } from 'vitest';
-
 import { wSelect } from '#components';
 
 describe('select', () => {
   assert.ok(wSelect.name);
 
-  // NOTE: bug in happy-dom + test-utils
-  test.todo('renders', () => {
+  test('renders', () => {
     const wrapper = mount(wSelect, {
       props: { modelValue: 'foo' },
       slots: {
@@ -18,7 +16,9 @@ describe('select', () => {
       `,
       },
     });
-    const selectEl = wrapper.html();
-    assert.equal(selectEl.element.value, '');
+
+    const selectEl = wrapper.find('select');
+
+    assert.equal(selectEl.element.value, 'foo');
   });
 });
