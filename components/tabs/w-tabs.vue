@@ -42,6 +42,7 @@ const updateWunderbar = async () => {
   await nextTick();
   try {
     const activeEl = getActiveTab();
+    if (!tabContainer.value || !activeEl) return;
     const { left: parentLeft } = tabContainer.value.getBoundingClientRect();
     const { left, width } = activeEl.getBoundingClientRect();
     wunderbar.value.style.left = left - parentLeft + 'px';
