@@ -1,3 +1,10 @@
+# [2.1.0-next.3](https://github.com/warp-ds/vue/compare/v2.1.0-next.2...v2.1.0-next.3) (2024-07-11)
+
+
+### Bug Fixes
+
+* update dependencies ([#178](https://github.com/warp-ds/vue/issues/178)) ([be6a38f](https://github.com/warp-ds/vue/commit/be6a38f8165eb39e5d6ed75d74a03602a0d3eaa9))
+
 # [2.1.0-next.2](https://github.com/warp-ds/vue/compare/v2.1.0-next.1...v2.1.0-next.2) (2024-07-04)
 
 
