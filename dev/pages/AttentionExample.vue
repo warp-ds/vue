@@ -143,7 +143,7 @@ const dismissibleHighlightShowing = ref(false);
             popover
             placement="right-end"
             :distance="-6"
-            :skidding="15"
+            :skidding="7"
             :target-el="popoverIconTarget ? popoverIconTarget.$el : null">
             <p>Hello Warp!</p>
           </w-attention>
