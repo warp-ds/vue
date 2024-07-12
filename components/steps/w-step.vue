@@ -111,7 +111,7 @@ export default { name: 'wStep' };
   <li :class="stepClasses">
     <div v-if="!vertical" :class="horizontalClasses" />
     <div role="img" :aria-label="getAriaLabel(props)" :aria-current="active ? 'step' : undefined" :class="stepDotClasses">
-      <IconCheck16 v-if="complete" />
+      <icon-check-16 v-if="complete" />
     </div>
     <div :class="stepLineClasses" />
     <div :class="contentClasses">
