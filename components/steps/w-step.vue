@@ -54,45 +54,43 @@ const getAriaLabel = (props) => {
 const stepClasses = computed(() => [
   ccStep.step,
   {
-    [ccStep.stepVertical]: vertical.value,
-    [ccStep.stepVerticalLeft]: vertical.value && left.value,
-    [ccStep.stepVerticalRight]: vertical.value && !left.value,
-    [ccStep.stepHorizontal]: !vertical.value,
+    [ccStep.vertical]: vertical.value,
+    [ccStep.alignLeft]: vertical.value && left.value,
+    [ccStep.alignRight]: vertical.value && !left.value,
+    [ccStep.horizontal]: !vertical.value,
   },
 ]);
 
 const horizontalClasses = computed(() => [
   ccStep.stepLine,
-  ccStep.stepLineHorizontalLeft,
+  ccStep.lineHorizontalAlignLeft,
   {
-    [ccStep.stepLineHorizontal]: !vertical.value,
-    [ccStep.stepLineIncomplete]: !props.active && !props.complete,
-    [ccStep.stepLineComplete]: props.active || props.complete,
+    [ccStep.lineHorizontal]: !vertical.value,
+    [ccStep.lineIncomplete]: !props.active && !props.complete,
+    [ccStep.lineComplete]: props.active || props.complete,
   },
 ]);
 
 const stepDotClasses = computed(() => [
   ccStep.stepDot,
   {
-    [ccStep.stepDotVertical]: vertical.value,
-    [ccStep.stepDotVerticalLeft]: vertical.value && left.value,
-    [ccStep.stepDotVerticalRight]: vertical.value && !left.value,
-    [ccStep.stepDotHorizontal]: !vertical.value,
-    [ccStep.stepDotIncomplete]: !(props.active || props.complete),
-    [ccStep.stepDotActive]: props.active || props.complete,
+    [ccStep.dotAlignRight]: vertical.value && !left.value,
+    [ccStep.dotHorizontal]: !vertical.value,
+    [ccStep.dotIncomplete]: !(props.active || props.complete),
+    [ccStep.dotActive]: props.active || props.complete,
   },
 ]);
 
 const stepLineClasses = computed(() => [
   ccStep.stepLine,
-  ccStep.stepLineHorizontalRight,
+  ccStep.lineHorizontalAlignRight,
   {
-    [ccStep.stepLineVertical]: vertical.value,
-    [ccStep.stepLineVerticalLeft]: vertical.value && left.value,
-    [ccStep.stepLineVerticalRight]: vertical.value && !left.value,
-    [ccStep.stepLineHorizontal]: !vertical.value,
-    [ccStep.stepLineIncomplete]: !props.complete,
-    [ccStep.stepLineComplete]: props.complete,
+    [ccStep.lineVertical]: vertical.value,
+    [ccStep.lineAlignLeft]: vertical.value && left.value,
+    [ccStep.lineAlignRight]: vertical.value && !left.value,
+    [ccStep.lineHorizontal]: !vertical.value,
+    [ccStep.lineIncomplete]: !props.complete,
+    [ccStep.lineComplete]: props.complete,
   },
 ]);
 
@@ -113,7 +111,7 @@ export default { name: 'wStep' };
   <li :class="stepClasses">
     <div v-if="!vertical" :class="horizontalClasses" />
     <div role="img" :aria-label="getAriaLabel(props)" :aria-current="active ? 'step' : undefined" :class="stepDotClasses">
-      <icon-check-16 v-if="complete" />
+      <IconCheck16 v-if="complete" />
     </div>
     <div :class="stepLineClasses" />
     <div :class="contentClasses">
