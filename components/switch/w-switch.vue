@@ -50,7 +50,7 @@ export default {
 </script>
 
 <template>
-  <div :class="ccSwitch.switch">
+  <div>
     <input :id="p.id" ref="inputEl" v-model="model" type="checkbox" :class="ccSwitch.a11y" :disabled="p.disabled" />
     <div :class="switchClasses" @click="simulateClick">
       <div :class="trackClasses" />

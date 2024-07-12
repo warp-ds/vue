@@ -1,0 +1,1 @@
+/*eslint-disable*/export const messages=JSON.parse("{\"forms.field.label.optional\":\"(valgfrit)\",\"forms.validation.mandatoryField\":\"Skal udfyldes\"}");
