@@ -22,6 +22,10 @@ watchEffect(() => {
 });
 </script>
 
+<script>
+export default { name: 'wSteps' };
+</script>
+
 <template>
   <ul :class="stepsClasses">
     <slot />
