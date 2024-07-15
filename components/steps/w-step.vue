@@ -61,7 +61,7 @@ const stepClasses = computed(() => [
   },
 ]);
 
-const horizontalClasses = computed(() => [
+const lineHorizontalClasses = computed(() => [
   ccStep.stepLine,
   ccStep.lineHorizontalAlignLeft,
   {
@@ -71,8 +71,8 @@ const horizontalClasses = computed(() => [
   },
 ]);
 
-const stepDotClasses = computed(() => [
-  ccStep.stepDot,
+const dotClasses = computed(() => [
+  ccStep.dot,
   {
     [ccStep.dotAlignRight]: vertical.value && !left.value,
     [ccStep.dotHorizontal]: !vertical.value,
@@ -81,12 +81,11 @@ const stepDotClasses = computed(() => [
   },
 ]);
 
-const stepLineClasses = computed(() => [
-  ccStep.stepLine,
+const lineClasses = computed(() => [
+  ccStep.line,
   ccStep.lineHorizontalAlignRight,
   {
     [ccStep.lineVertical]: vertical.value,
-    [ccStep.lineAlignLeft]: vertical.value && left.value,
     [ccStep.lineAlignRight]: vertical.value && !left.value,
     [ccStep.lineHorizontal]: !vertical.value,
     [ccStep.lineIncomplete]: !props.complete,
@@ -109,11 +108,11 @@ export default { name: 'wStep' };
 
 <template>
   <li :class="stepClasses">
-    <div v-if="!vertical" :class="horizontalClasses" />
-    <div role="img" :aria-label="getAriaLabel(props)" :aria-current="active ? 'step' : undefined" :class="stepDotClasses">
+    <div v-if="!vertical" :class="lineHorizontalClasses" />
+    <div role="img" :aria-label="getAriaLabel(props)" :aria-current="active ? 'step' : undefined" :class="dotClasses">
       <icon-check-16 v-if="complete" />
     </div>
-    <div :class="stepLineClasses" />
+    <div :class="lineClasses" />
     <div :class="contentClasses">
       <slot />
     </div>
