@@ -59,15 +59,15 @@ const stepClasses = computed(() => [
 
 const lineHorizontalClasses = computed(() => [
   ccStep.line,
-  ccStep.lineHorizontalAlignLeft,
   ccStep.lineHorizontal,
+  ccStep.lineHorizontalAlignLeft,
   props.active || props.complete ? ccStep.lineComplete : ccStep.lineIncomplete,
 ]);
 
 const dotClasses = computed(() => [
   ccStep.dot,
-  props.active || props.complete ? ccStep.dotActive : ccStep.dotIncomplete,
   vertical.value ? (!left.value ? ccStep.dotAlignRight : '') : ccStep.dotHorizontal,
+  props.active || props.complete ? ccStep.dotActive : ccStep.dotIncomplete,
 ]);
 
 const lineClasses = computed(() => [
