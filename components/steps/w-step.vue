@@ -54,20 +54,20 @@ const getAriaLabel = (props) => {
 const stepClasses = computed(() => [
   ccStep.container,
   vertical.value ? ccStep.vertical : ccStep.horizontal,
-  vertical.value ? left.value ? ccStep.alignLeft : ccStep.alignRight : ''
+  vertical.value ? (left.value ? ccStep.alignLeft : ccStep.alignRight) : '',
 ]);
 
 const lineHorizontalClasses = computed(() => [
   ccStep.line,
   ccStep.lineHorizontalAlignLeft,
   ccStep.lineHorizontal,
-  props.active || props.complete ? ccStep.lineComplete : ccStep.lineIncomplete
+  props.active || props.complete ? ccStep.lineComplete : ccStep.lineIncomplete,
 ]);
 
 const dotClasses = computed(() => [
   ccStep.dot,
   props.active || props.complete ? ccStep.dotActive : ccStep.dotIncomplete,
-  vertical.value ? !left.value ? ccStep.dotAlignRight : '' : ccStep.dotHorizontal
+  vertical.value ? (!left.value ? ccStep.dotAlignRight : '') : ccStep.dotHorizontal,
 ]);
 
 const lineClasses = computed(() => [
@@ -78,10 +78,7 @@ const lineClasses = computed(() => [
   props.complete ? ccStep.lineComplete : ccStep.lineIncomplete,
 ]);
 
-const contentClasses = computed(() => [
-  ccStep.content,
-  vertical.value ? ccStep.contentVertical : ccStep.contentHorizontal
-]);
+const contentClasses = computed(() => [ccStep.content, vertical.value ? ccStep.contentVertical : ccStep.contentHorizontal]);
 </script>
 
 <script>
