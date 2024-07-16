@@ -52,53 +52,35 @@ const getAriaLabel = (props) => {
 };
 
 const stepClasses = computed(() => [
-  ccStep.step,
-  {
-    [ccStep.vertical]: vertical.value,
-    [ccStep.alignLeft]: vertical.value && left.value,
-    [ccStep.alignRight]: vertical.value && !left.value,
-    [ccStep.horizontal]: !vertical.value,
-  },
+  ccStep.container,
+  vertical.value ? ccStep.vertical : ccStep.horizontal,
+  vertical.value ? left.value ? ccStep.alignLeft : ccStep.alignRight : ''
 ]);
 
 const lineHorizontalClasses = computed(() => [
-  ccStep.stepLine,
+  ccStep.line,
   ccStep.lineHorizontalAlignLeft,
-  {
-    [ccStep.lineHorizontal]: !vertical.value,
-    [ccStep.lineIncomplete]: !props.active && !props.complete,
-    [ccStep.lineComplete]: props.active || props.complete,
-  },
+  ccStep.lineHorizontal,
+  props.active || props.complete ? ccStep.lineComplete : ccStep.lineIncomplete
 ]);
 
 const dotClasses = computed(() => [
   ccStep.dot,
-  {
-    [ccStep.dotAlignRight]: vertical.value && !left.value,
-    [ccStep.dotHorizontal]: !vertical.value,
-    [ccStep.dotIncomplete]: !(props.active || props.complete),
-    [ccStep.dotActive]: props.active || props.complete,
-  },
+  props.active || props.complete ? ccStep.dotActive : ccStep.dotIncomplete,
+  vertical.value ? !left.value ? ccStep.dotAlignRight : '' : ccStep.dotHorizontal
 ]);
 
 const lineClasses = computed(() => [
   ccStep.line,
   ccStep.lineHorizontalAlignRight,
-  {
-    [ccStep.lineVertical]: vertical.value,
-    [ccStep.lineAlignRight]: vertical.value && !left.value,
-    [ccStep.lineHorizontal]: !vertical.value,
-    [ccStep.lineIncomplete]: !props.complete,
-    [ccStep.lineComplete]: props.complete,
-  },
+  vertical.value ? ccStep.lineVertical : ccStep.lineHorizontal,
+  vertical.value && !left.value ? ccStep.lineAlignRight : '',
+  props.complete ? ccStep.lineComplete : ccStep.lineIncomplete,
 ]);
 
 const contentClasses = computed(() => [
   ccStep.content,
-  {
-    [ccStep.contentVertical]: vertical.value,
-    [ccStep.contentHorizontal]: !vertical.value,
-  },
+  vertical.value ? ccStep.contentVertical : ccStep.contentHorizontal
 ]);
 </script>
 
