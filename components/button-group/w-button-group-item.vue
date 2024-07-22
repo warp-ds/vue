@@ -10,7 +10,7 @@ const vertical = inject('vertical', false);
 const outlinedClass = computed(() => [
   ccButtonGroupItem.outlined,
   vertical.value ? ccButtonGroupItem.outlinedVertical : ccButtonGroupItem.outlinedHorizontal,
-  props.selected ? ccButtonGroupItem.outlinedSelected : '',
+  props.selected ? ccButtonGroupItem.outlinedSelected : ccButtonGroupItem.outlinedUnselected,
 ]);
 
 const outlineResetClass = computed(() => [
@@ -20,7 +20,7 @@ const outlineResetClass = computed(() => [
 const wrapperClass = computed(() => [
   ccButtonGroupItem.wrapper,
   outlined.value ? outlinedClass.value : outlineResetClass.value,
-  props.selected ? ccButtonGroupItem.selected : '',
+  props.selected ? ccButtonGroupItem.selected : ccButtonGroupItem.unSelected,
 ]);
 </script>
 
