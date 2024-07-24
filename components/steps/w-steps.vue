@@ -14,10 +14,7 @@ const left = ref(!props.right);
 provide('steps-vertical', vertical);
 provide('steps-left', left);
 
-const stepsClasses = computed(() => ({
-  [ccSteps.steps]: true,
-  [ccSteps.stepsHorizontal]: props.horizontal,
-}));
+const stepsClasses = computed(() => [ccSteps.container, { [ccSteps.horizontal]: props.horizontal }]);
 
 watchEffect(() => {
   vertical.value = !props.horizontal;
