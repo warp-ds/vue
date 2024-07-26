@@ -47,13 +47,13 @@ const wrapperClasses = computed(() => [
 
 const buttonClasses = computed(() => [props.buttonClass, ccExpandable.button, props.box && ccExpandable.buttonBox]);
 
-const chevronClasses = computed(() => [ccExpandable.chevron, props.box ? ccExpandable.chevronBox : ccExpandable.chevronNonBox]);
+const chevronClasses = computed(() => [ccExpandable.chevron, !props.box && ccExpandable.chevronNonBox]);
 
 const chevronUpClasses = computed(() => [ccExpandable.chevronTransform, !expanded.value && ccExpandable.chevronCollapse]);
 
 const chevronDownClasses = computed(() => [ccExpandable.chevronTransform, expanded.value && ccExpandable.chevronExpand]);
 
-const contentClasses = computed(() => [props.contentClass, props.box && ccBox.box, hasTitle.value && props.box && ccExpandable.paddingTop]);
+const contentClasses = computed(() => [props.contentClass, props.box && ccBox.box, props.box && hasTitle.value && ccExpandable.paddingTop]);
 </script>
 
 <script>
