@@ -53,7 +53,11 @@ const chevronUpClasses = computed(() => [ccExpandable.chevronTransform, !expande
 
 const chevronDownClasses = computed(() => [ccExpandable.chevronTransform, expanded.value && ccExpandable.chevronExpand]);
 
-const contentClasses = computed(() => [props.contentClass, props.box && ccBox.box, props.box && hasTitle.value && ccExpandable.paddingTop]);
+const contentClasses = computed(() => [
+  props.contentClass,
+  props.box && ccBox.box,
+  (props.box || props.info) && hasTitle.value && ccExpandable.paddingTop,
+]);
 </script>
 
 <script>
