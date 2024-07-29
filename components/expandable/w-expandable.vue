@@ -67,7 +67,7 @@ export default { name: 'wExpandable' };
 <template>
   <component :is="as" :class="wrapperClasses">
     <button v-if="hasTitle" type="button" :aria-expanded="expanded" :class="buttonClasses" @click="expanded = !expanded">
-      <div :class=ccExpandable.title>
+      <div :class="ccExpandable.title">
         <slot name="title" :expanded="expanded" />
         <span v-if="title" :class="ccExpandable.titleType">{{ title }}</span>
         <div v-if="chevron" :class="chevronClasses">
