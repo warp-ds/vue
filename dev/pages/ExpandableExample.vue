@@ -8,7 +8,6 @@ const expanded = ref(false);
 const modifierControls = [
   { name: 'Box', checkbox },
   { name: 'Bleed', checkbox },
-  { name: 'Info', checkbox },
   { name: 'Animated', checkbox },
 ];
 const modifiers = reactive(buildCheckboxState({ controls: modifierControls }));
@@ -23,7 +22,6 @@ const modifiers = reactive(buildCheckboxState({ controls: modifierControls }));
         v-model="expanded"
         :box="modifiers.Box"
         :bleed="modifiers.Bleed"
-        :info="modifiers.Info"
         :animated="modifiers.Animated"
         :title="`Click to ${expanded ? 'collapse' : 'expand'}`">
         <h2>Hello Warp!</h2>
