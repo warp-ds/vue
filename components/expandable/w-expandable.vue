@@ -13,7 +13,6 @@ const props = defineProps({
   title: String,
   box: Boolean,
   bleed: Boolean,
-  info: Boolean,
   buttonClass: String,
   contentClass: String,
   chevron: { type: Boolean, default: true },
@@ -21,6 +20,7 @@ const props = defineProps({
   animated: Boolean,
   ...modelProps({ modelDefault: absentProp }),
 });
+
 const emit = defineEmits(['expand', 'collapse']);
 const slots = useSlots();
 
@@ -42,40 +42,33 @@ watch(expanded, (state) => {
   }, 200);
 });
 
-const hasTitle = computed(() => props.title || slots.title);
+const hasTitle = computed(() => props.title || !!slots.title);
 
-const wrapperClasses = computed(() => ({
-  [ccExpandable.expandable]: true,
-  [ccExpandable.expandableBox]: props.box || props.info,
-  [ccExpandable.expandableBleed]: props.bleed,
-}));
+const wrapperClasses = computed(() => [
+  ccExpandable.expandable,
+  props.box && ccExpandable.expandableBox,
+  props.bleed && ccExpandable.expandableBleed,
+]);
 
-const buttonClasses = computed(() => ({
-  [props.buttonClass || '']: true,
-  [ccExpandable.button]: true,
-  [ccExpandable.buttonBox]: props.box || props.info,
-}));
+const buttonClasses = computed(() => [props.buttonClass, ccExpandable.button, props.box && ccExpandable.buttonBox]);
 
-const chevronClasses = computed(() => ({
-  [ccExpandable.chevron]: true,
-  [props.box || props.info ? ccExpandable.chevronBox : ccExpandable.chevronNonBox]: true,
-}));
+const chevronClasses = computed(() => [ccExpandable.chevron, !props.box && ccExpandable.chevronNonBox]);
 
-const chevronUpClasses = computed(() => ({
-  [ccExpandable.chevronTransform]: true,
-  [ccExpandable.chevronCollapse]: !expanded.value && showChevronUp.value,
-}));
+const chevronUpClasses = computed(() => [
+  ccExpandable.chevronTransform,
+  !expanded.value && showChevronUp.value && ccExpandable.chevronCollapse,
+]);
 
-const chevronDownClasses = computed(() => ({
-  [ccExpandable.chevronTransform]: true,
-  [ccExpandable.chevronExpand]: expanded.value && !showChevronUp.value,
-}));
+const chevronDownClasses = computed(() => [
+  ccExpandable.chevronTransform,
+  expanded.value && !showChevronUp.value && ccExpandable.chevronExpand,
+]);
 
-const contentClasses = computed(() => ({
-  [props.contentClass || '']: true,
-  [ccBox.box]: props.box || props.info,
-  [ccExpandable.paddingTop]: hasTitle.value && (props.box || props.info),
-}));
+const contentClasses = computed(() => [
+  props.contentClass,
+  props.box && ccBox.box,
+  props.box && hasTitle.value && ccExpandable.contentWithTitle,
+]);
 </script>
 
 <script>
@@ -85,11 +78,13 @@ export default { name: 'wExpandable' };
 <template>
   <component :is="as" :class="wrapperClasses">
     <button v-if="hasTitle" type="button" :aria-expanded="expanded" :class="buttonClasses" @click="expanded = !expanded">
-      <slot name="title" :expanded="expanded" />
-      <span v-if="title" :class="ccExpandable.expandableTitle">{{ title }}</span>
-      <div v-if="chevron" :class="chevronClasses">
-        <icon-chevron-up-16 v-if="showChevronUp" :class="chevronUpClasses" />
-        <icon-chevron-down-16 v-else :class="chevronDownClasses" />
+      <div :class="ccExpandable.title">
+        <slot name="title" :expanded="expanded" />
+        <span v-if="title" :class="ccExpandable.titleType">{{ title }}</span>
+        <div v-if="chevron" :class="chevronClasses">
+          <icon-chevron-up-16 v-if="showChevronUp" :class="chevronUpClasses" />
+          <icon-chevron-down-16 v-else :class="chevronDownClasses" />
+        </div>
       </div>
     </button>
     <component :is="contentComponent" @expand="emit('expand')" @collapse="emit('collapse')">
