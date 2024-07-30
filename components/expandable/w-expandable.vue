@@ -26,8 +26,8 @@ const slots = useSlots();
 
 const expanded = props.modelValue === absentProp ? ref(false) : createModel({ props, emit });
 const contentComponent = computed(() => (props.animated ? expandTransition : 'div'));
-const showChevronUp = ref(expanded.value)
-
+const showChevronUp = ref(expanded.value);
+// wExpandTransition emits its own events and we just bubble them, but for a normal DOM element we need to create them
 if (!props.animated) {
   watch(expanded, async (isExpanded) => {
     await nextTick();
@@ -54,9 +54,15 @@ const buttonClasses = computed(() => [props.buttonClass, ccExpandable.button, pr
 
 const chevronClasses = computed(() => [ccExpandable.chevron, !props.box && ccExpandable.chevronNonBox]);
 
-const chevronUpClasses = computed(() => [ccExpandable.chevronTransform, (!expanded.value && showChevronUp.value) && ccExpandable.chevronCollapse]);
+const chevronUpClasses = computed(() => [
+  ccExpandable.chevronTransform,
+  !expanded.value && showChevronUp.value && ccExpandable.chevronCollapse,
+]);
 
-const chevronDownClasses = computed(() => [ccExpandable.chevronTransform, (expanded.value && !showChevronUp.value) && ccExpandable.chevronExpand]);
+const chevronDownClasses = computed(() => [
+  ccExpandable.chevronTransform,
+  expanded.value && !showChevronUp.value && ccExpandable.chevronExpand,
+]);
 
 const contentClasses = computed(() => [
   props.contentClass,
