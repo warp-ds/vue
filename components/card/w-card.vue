@@ -13,18 +13,15 @@ const props = defineProps({
   flat: Boolean,
 });
 
-let backgroundClass;
-if (props.selected) {
-  backgroundClass = props.flat ? ccCard.cardFlatSelected : ccCard.cardSelected
-} else {
-  backgroundClass = props.flat ? ccCard.cardFlatUnselected : ccCard.cardShadowBackground
-}
+const backgroundClass = computed(() => {
+  if (props.selected) {
+    return props.flat ? ccCard.cardFlatSelected : ccCard.cardSelected;
+  } else {
+    return props.flat ? ccCard.cardFlatUnselected : ccCard.cardShadowBackground;
+  }
+});
 
-const containerClasses = computed(() => [
-  ccCard.card,
-  props.flat ? ccCard.cardFlat : ccCard.cardShadow,
-  backgroundClass
-]);
+const containerClasses = computed(() => [ccCard.card, props.flat ? ccCard.cardFlat : ccCard.cardShadow, backgroundClass.value]);
 
 const outlineClasses = computed(() => [ccCard.cardOutline, props.selected ? ccCard.cardOutlineSelected : ccCard.cardOutlineUnselected]);
 </script>
@@ -32,6 +29,6 @@ const outlineClasses = computed(() => [ccCard.cardOutline, props.selected ? ccCa
 <template>
   <component :is="as" :class="containerClasses">
     <div v-if="!flat" :class="outlineClasses" />
-    <slot /> 
+    <slot />
   </component>
 </template>
