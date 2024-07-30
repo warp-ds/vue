@@ -26,14 +26,21 @@ const slots = useSlots();
 
 const expanded = props.modelValue === absentProp ? ref(false) : createModel({ props, emit });
 const contentComponent = computed(() => (props.animated ? expandTransition : 'div'));
+const showChevronUp = ref(expanded.value)
 
 if (!props.animated) {
   watch(expanded, async (isExpanded) => {
     await nextTick();
     emit(isExpanded ? 'expand' : 'collapse');
-    expanded.value = isExpanded;
   });
 }
+
+// We need a slight delay for the animation since it has a transition-duration of 150ms:
+watch(expanded, (state) => {
+  setTimeout(() => {
+    showChevronUp.value = state;
+  }, 200);
+});
 
 const hasTitle = computed(() => props.title || !!slots.title);
 
@@ -47,9 +54,9 @@ const buttonClasses = computed(() => [props.buttonClass, ccExpandable.button, pr
 
 const chevronClasses = computed(() => [ccExpandable.chevron, !props.box && ccExpandable.chevronNonBox]);
 
-const chevronUpClasses = computed(() => [ccExpandable.chevronTransform, !expanded.value && ccExpandable.chevronCollapse]);
+const chevronUpClasses = computed(() => [ccExpandable.chevronTransform, (!expanded.value && showChevronUp.value) && ccExpandable.chevronCollapse]);
 
-const chevronDownClasses = computed(() => [ccExpandable.chevronTransform, expanded.value && ccExpandable.chevronExpand]);
+const chevronDownClasses = computed(() => [ccExpandable.chevronTransform, (expanded.value && !showChevronUp.value) && ccExpandable.chevronExpand]);
 
 const contentClasses = computed(() => [
   props.contentClass,
@@ -69,7 +76,7 @@ export default { name: 'wExpandable' };
         <slot name="title" :expanded="expanded" />
         <span v-if="title" :class="ccExpandable.titleType">{{ title }}</span>
         <div v-if="chevron" :class="chevronClasses">
-          <icon-chevron-up-16 v-if="expanded" :class="chevronUpClasses" />
+          <icon-chevron-up-16 v-if="showChevronUp" :class="chevronUpClasses" />
           <icon-chevron-down-16 v-else :class="chevronDownClasses" />
         </div>
       </div>
