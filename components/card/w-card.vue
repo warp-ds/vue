@@ -13,17 +13,13 @@ const props = defineProps({
   flat: Boolean,
 });
 
-const backgroundClass = computed(() => {
-  if (props.selected) {
-    return props.flat ? ccCard.cardFlatSelected : ccCard.cardSelected;
-  } else {
-    return props.flat ? ccCard.cardFlatUnselected : ccCard.cardShadowBackground;
-  }
-});
+const containerClasses = computed(() => [
+  ccCard.base,
+  props.flat ? ccCard.flat : ccCard.shadow,
+  props.selected ? (props.flat ? ccCard.flatSelected : ccCard.selected) : props.flat && ccCard.flatUnselected,
+]);
 
-const containerClasses = computed(() => [ccCard.card, props.flat ? ccCard.cardFlat : ccCard.cardShadow, backgroundClass.value]);
-
-const outlineClasses = computed(() => [ccCard.cardOutline, props.selected ? ccCard.cardOutlineSelected : ccCard.cardOutlineUnselected]);
+const outlineClasses = computed(() => [ccCard.outline, props.selected ? ccCard.outlineSelected : ccCard.outlineUnselected]);
 </script>
 
 <template>
