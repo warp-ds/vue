@@ -16,7 +16,8 @@ const props = defineProps({
 const containerClasses = computed(() => [
   ccCard.base,
   props.flat ? ccCard.flat : ccCard.shadow,
-  props.selected ? (props.flat ? ccCard.flatSelected : ccCard.selected) : props.flat && ccCard.flatUnselected,
+  props.selected && !props.flat && ccCard.selected,
+  props.selected && props.flat ? ccCard.flatSelected : ccCard.flatUnselected,
 ]);
 
 const outlineClasses = computed(() => [ccCard.outline, props.selected ? ccCard.outlineSelected : ccCard.outlineUnselected]);
