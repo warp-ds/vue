@@ -64,6 +64,8 @@ const chevronDownClasses = computed(() => [
   expanded.value && !showChevronUp.value && ccExpandable.chevronExpand,
 ]);
 
+const expansionClasses = computed(() => [ccExpandable.expansion, !expanded && ccExpandable.expansionNotExpanded]);
+
 const contentClasses = computed(() => [
   props.contentClass,
   props.box && ccBox.base,
@@ -87,7 +89,7 @@ export default { name: 'wExpandable' };
         </div>
       </div>
     </button>
-    <component :is="contentComponent" @expand="emit('expand')" @collapse="emit('collapse')">
+    <component :is="contentComponent" @expand="emit('expand')" @collapse="emit('collapse')" :class="!props.animated && expansionClasses">
       <div v-if="expanded">
         <div :class="contentClasses">
           <slot />
