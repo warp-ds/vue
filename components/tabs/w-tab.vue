@@ -23,9 +23,9 @@ onBeforeUnmount(() => {
 });
 
 const tabClasses = computed(() => ({
-  [ccTab.tab]: true,
-  [ccTab.tabInactive]: !isActive.value,
-  [ccTab.tabActive]: isActive.value,
+  [ccTab.base]: true,
+  [ccTab.inactive]: !isActive.value,
+  [ccTab.active]: isActive.value,
   ['active-tab']: isActive.value,
 }));
 </script>

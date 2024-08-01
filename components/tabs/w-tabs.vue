@@ -13,12 +13,12 @@ const props = defineProps({
 
 const slots = useSlots();
 
-const useGetActiveTab = (tabContainer) => () => tabContainer.value?.querySelector('.active-tab');
+const useGetActiveTab = (container) => () => container.value?.querySelector('.active-tab');
 const getChildren = (slot) => (slot[0].type === Fragment ? slot[0].children : slot);
 
 const activeTab = createModel({ props });
-const tabContainer = ref(null);
-const wunderbar = ref(null);
+const tabsRef = ref(null);
+const selectionIndicatorRef = ref(null);
 const tabs = ref([]);
 const registerTab = (tab) => tabs.value.push(tab);
 const unregisterTab = (tab) => {
@@ -28,7 +28,7 @@ const unregisterTab = (tab) => {
 const gridsClassname = computed(() => gridLayout[`cols${tabs.value.length}`]);
 // SSR doesn't complete the tab-registry lifecycle before render, so we just count children and use that when numberOfTabs is 0
 const slotFallback = computed(() => gridLayout[`cols${getChildren(slots.default()).length}`]);
-const getActiveTab = useGetActiveTab(tabContainer);
+const getActiveTab = useGetActiveTab(tabsRef);
 const focusActive = () => getActiveTab()?.focus();
 
 provide('activeTab', activeTab);
@@ -38,26 +38,26 @@ provide('tab-controller', {
   onKeydown: useKeydownHandler({ tabs, activeTab, focusActive }),
 });
 
-const updateWunderbar = async () => {
+const updateSelectionIndicator = async () => {
   await nextTick();
   try {
     const activeEl = getActiveTab();
-    const { left: parentLeft } = tabContainer.value.getBoundingClientRect();
+    const { left: parentLeft } = tabsRef.value.getBoundingClientRect();
     const { left, width } = activeEl.getBoundingClientRect();
-    wunderbar.value.style.left = left - parentLeft + 'px';
-    wunderbar.value.style.width = width + 'px';
+    selectionIndicatorRef.value.style.left = left - parentLeft + 'px';
+    selectionIndicatorRef.value.style.width = width + 'px';
   } catch (err) {
     console.warn('Problem updating tabs', err);
   }
 };
 
 onMounted(() => {
-  watch(activeTab, updateWunderbar, { immediate: true });
+  watch(activeTab, updateSelectionIndicator, { immediate: true });
   watchEffect(() => {
-    updateWunderbar();
+    updateSelectionIndicator();
   });
-  const resizeHandler = new ResizeObserver(debounce(updateWunderbar, 100));
-  resizeHandler.observe(tabContainer.value);
+  const resizeHandler = new ResizeObserver(debounce(updateSelectionIndicator, 100));
+  resizeHandler.observe(tabsRef.value);
 });
 </script>
 
@@ -66,10 +66,10 @@ export default { name: 'wTabs' };
 </script>
 
 <template>
-  <nav :class="ccTabs.wrapperUnderlined">
-    <div ref="tabContainer" :class="[ccTabs.tabContainer, gridsClassname || slotFallback]" role="tablist">
+  <nav :class="ccTabs.wrapper">
+    <div ref="tabsRef" :class="[ccTabs.container, gridsClassname || slotFallback]" role="tablist">
       <slot />
-      <span ref="wunderbar" :class="ccTabs.wunderbar" />
+      <span ref="selectionIndicatorRef" :class="ccTabs.selectionIndicator" />
     </div>
   </nav>
 </template>

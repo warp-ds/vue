@@ -20,7 +20,7 @@ const props = defineProps({
 });
 
 const boxClasses = computed(() => [
-  ccBox.box,
+  ccBox.base,
   {
     [ccBox.bleed]: props.bleed,
     [ccBox.info]: props.info,

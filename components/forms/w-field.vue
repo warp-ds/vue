@@ -112,7 +112,7 @@ export default {
       :is="labelType"
       v-if="label"
       :id="labelId"
-      :class="ccLabel.label"
+      :class="ccLabel.base"
       :for="labelFor"
       :role="valueOrUndefined(labelLevel, 'heading')"
       :aria-level="valueOrUndefined(labelLevel, labelLevel)"
@@ -123,9 +123,9 @@ export default {
     <div
       v-if="hint || isInvalid"
       :class="{
-        [ccHelpText.helpText]: true,
-        [ccHelpText.helpTextColor]: !isInvalid,
-        [ccHelpText.helpTextColorInvalid]: isInvalid,
+        [ccHelpText.base]: true,
+        [ccHelpText.color]: !isInvalid,
+        [ccHelpText.colorInvalid]: isInvalid,
       }">
       <span v-if="hint" :id="hintId" v-html="hint" />
       <span v-if="hint && isInvalid && errorMessage">, </span>
