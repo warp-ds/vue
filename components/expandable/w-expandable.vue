@@ -44,11 +44,7 @@ watch(expanded, (state) => {
 
 const hasTitle = computed(() => props.title || !!slots.title);
 
-const wrapperClasses = computed(() => [
-  ccExpandable.wrapper,
-  props.box && ccExpandable.box,
-  props.bleed && ccExpandable.bleed,
-]);
+const wrapperClasses = computed(() => [ccExpandable.wrapper, props.box && ccExpandable.box, props.bleed && ccExpandable.bleed]);
 
 const buttonClasses = computed(() => [props.buttonClass, ccExpandable.button, props.box && ccExpandable.buttonBox]);
 
