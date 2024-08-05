@@ -39,53 +39,61 @@ const props = defineProps({
 
 const defaultVariant = props.secondary || !buttonVariants.find((b) => !!props[b]);
 
-const buttonClass = computed(() => ({
-  [ccButton.secondary]: defaultVariant && !props.small && !props.quiet && !props.loading,
-  [ccButton.secondarySmall]: defaultVariant && props.small && !props.quiet && !props.loading,
-  [ccButton.secondarySmallLoading]: defaultVariant && props.small && !props.quiet && props.loading,
-  [ccButton.secondarySmallQuiet]: defaultVariant && props.small && props.quiet && !props.loading,
-  [ccButton.secondarySmallQuietLoading]: defaultVariant && props.small && props.quiet && props.loading,
-  [ccButton.secondaryQuiet]: defaultVariant && !props.small && props.quiet && !props.loading,
-  [ccButton.secondaryQuietLoading]: defaultVariant && !props.small && props.quiet && props.loading,
-  [ccButton.secondaryLoading]: defaultVariant && !props.small && !props.quiet && props.loading,
+const primaryClasses = computed(() => [
+  props.primary && !props.small && !props.quiet && !props.loading && ccButton.primary,
+  props.primary && props.small && !props.quiet && !props.loading && ccButton.primarySmall,
+  props.primary && props.small && props.quiet && !props.loading && ccButton.primarySmallQuiet,
+  props.primary && props.small && props.loading && (props.quiet ? ccButton.primarySmallQuietLoading : ccButton.primarySmallLoading),
+  props.primary && !props.small && props.quiet && !props.loading && ccButton.primaryQuiet,
+  props.primary && !props.small && props.loading && (props.quiet ? ccButton.primaryQuietLoading : ccButton.primaryLoading),
+]);
 
-  [ccButton.primary]: props.primary && !props.small && !props.quiet && !props.loading,
-  [ccButton.primarySmall]: props.primary && props.small && !props.quiet && !props.loading,
-  [ccButton.primarySmallQuiet]: props.primary && props.small && props.quiet && !props.loading,
-  [ccButton.primarySmallLoading]: props.primary && props.small && !props.quiet && props.loading,
-  [ccButton.primarySmallQuietLoading]: props.primary && props.small && props.quiet && props.loading,
-  [ccButton.primaryQuiet]: props.primary && !props.small && props.quiet && !props.loading,
-  [ccButton.primaryQuietLoading]: props.primary && !props.small && props.quiet && props.loading,
-  [ccButton.primaryLoading]: props.primary && !props.small && !props.quiet && props.loading,
+const secondaryClasses = computed(() => [
+  defaultVariant && !props.small && !props.quiet && !props.loading && ccButton.secondary,
+  defaultVariant && props.small && !props.quiet && !props.loading && ccButton.secondarySmall,
+  defaultVariant && props.small && props.quiet && !props.loading && ccButton.secondarySmallQuiet,
+  defaultVariant && props.small && props.loading && (props.quiet ? ccButton.secondarySmallQuietLoading : ccButton.secondarySmallLoading),
+  defaultVariant && !props.small && props.quiet && !props.loading && ccButton.secondaryQuiet,
+  defaultVariant && !props.small && props.loading && (props.quiet ? ccButton.secondaryQuietLoading : ccButton.secondaryLoading),
+]);
 
-  [ccButton.utility]: props.utility && !props.small && !props.quiet && !props.loading,
-  [ccButton.utilitySmall]: props.utility && props.small && !props.quiet && !props.loading,
-  [ccButton.utilitySmallQuiet]: props.utility && props.small && props.quiet && !props.loading,
-  [ccButton.utilitySmallLoading]: props.utility && props.small && !props.quiet && props.loading,
-  [ccButton.utilitySmallQuietLoading]: props.utility && props.small && props.quiet && props.loading,
-  [ccButton.utilityQuiet]: props.utility && !props.small && props.quiet && !props.loading,
-  [ccButton.utilityQuietLoading]: props.utility && !props.small && props.quiet && props.loading,
-  [ccButton.utilityLoading]: props.utility && !props.small && !props.quiet && props.loading,
+const utilityClasses = computed(() => [
+  props.utility && !props.small && !props.quiet && !props.loading && ccButton.utility,
+  props.utility && props.small && !props.quiet && !props.loading && ccButton.utilitySmall,
+  props.utility && props.small && props.quiet && !props.loading && ccButton.utilitySmallQuiet,
+  props.utility && props.small && props.loading && (props.quiet ? ccButton.utilitySmallQuietLoading : ccButton.utilitySmallLoading),
+  props.utility && !props.small && props.quiet && !props.loading && ccButton.utilityQuiet,
+  props.utility && !props.small && props.loading && (props.quiet ? ccButton.utilityQuietLoading : ccButton.utilityLoading),
+]);
 
-  [ccButton.negative]: props.negative && !props.small && !props.quiet && !props.loading,
-  [ccButton.negativeSmall]: props.negative && props.small && !props.quiet && !props.loading,
-  [ccButton.negativeSmallQuiet]: props.negative && props.small && props.quiet && !props.loading,
-  [ccButton.negativeSmallLoading]: props.negative && props.small && !props.quiet && props.loading,
-  [ccButton.negativeSmallQuietLoading]: props.negative && props.small && props.quiet && props.loading,
-  [ccButton.negativeQuiet]: props.negative && !props.small && props.quiet && !props.loading,
-  [ccButton.negativeQuietLoading]: props.negative && !props.small && props.quiet && props.loading,
-  [ccButton.negativeLoading]: props.negative && !props.small && !props.quiet && props.loading,
+const negativeClasses = computed(() => [
+  props.negative && !props.small && !props.quiet && !props.loading && ccButton.negative,
+  props.negative && props.small && !props.quiet && !props.loading && ccButton.negativeSmall,
+  props.negative && props.small && props.quiet && !props.loading && ccButton.negativeSmallQuiet,
+  props.negative && props.small && props.loading && (props.quiet ? ccButton.negativeSmallQuietLoading : ccButton.negativeSmallLoading),
+  props.negative && !props.small && props.quiet && !props.loading && ccButton.negativeQuiet,
+  props.negative && !props.small && props.loading && (props.quiet ? ccButton.negativeQuietLoading : ccButton.negativeLoading),
+]);
 
-  [ccButton.pill]: props.pill && !props.small && !props.loading,
-  [ccButton.pillSmall]: props.pill && props.small && !props.loading,
-  [ccButton.pillLoading]: props.pill && !props.small && props.loading,
-  [ccButton.pillSmallLoading]: props.pill && props.small && props.loading,
-  [ccButton.link]: props.link && !props.small,
-  [ccButton.linkSmall]: props.link && props.small,
-  [ccButton.linkAsButton]: !!props.href,
-  [ccButton.fullWidth]: props.fullWidth,
-  [ccButton.contentWidth]: !props.fullWidth,
-}));
+const pillClasses = computed(() => [
+  props.pill && !props.loading && (!props.small ? ccButton.pill : ccButton.pillSmall),
+  props.pill && props.loading && (!props.small ? ccButton.pillLoading : ccButton.pillSmallLoading),
+]);
+
+const linkClasses = computed(() => [
+  props.link && (props.small ? ccButton.linkSmall : ccButton.link),
+  !!props.href && ccButton.linkAsButton,
+]);
+
+const buttonClasses = computed(() => [
+  ...primaryClasses.value,
+  ...secondaryClasses.value,
+  ...utilityClasses.value,
+  ...negativeClasses.value,
+  ...pillClasses.value,
+  ...linkClasses.value,
+  props.fullWidth ? ccButton.fullWidth : ccButton.contentWidth,
+]);
 
 const saneDefaults = computed(() => ({
   type: props.href ? undefined : attrs.type || 'button',
@@ -98,7 +106,7 @@ export default { name: 'wButton' };
 </script>
 
 <template>
-  <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClass" v-bind="saneDefaults">
+  <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClasses" v-bind="saneDefaults">
     <slot>{{ label }}</slot>
     <span v-if="loading" role="progressbar" aria-valuenow="0" :aria-valuetext="ariaValueText" :class="ccButton.a11y" />
   </component>

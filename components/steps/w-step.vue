@@ -23,27 +23,21 @@ const props = defineProps({
 });
 
 const availableAriaLabels = {
-  complete: i18n._(
-    /*i18n*/ {
-      id: 'steps.aria.completed',
-      message: 'Step indicator completed circle',
-      comment: 'Completed circle',
-    },
-  ),
-  active: i18n._(
-    /*i18n*/ {
-      id: 'steps.aria.active',
-      message: 'Step indicator active circle',
-      comment: 'Active circle',
-    },
-  ),
-  default: i18n._(
-    /*i18n*/ {
-      id: 'steps.aria.emptyCircle',
-      message: 'Empty circle',
-      comment: 'Empty circle',
-    },
-  ),
+  complete: i18n._({
+    id: 'steps.aria.completed',
+    message: 'Step indicator completed circle',
+    comment: 'Completed circle',
+  }),
+  active: i18n._({
+    id: 'steps.aria.active',
+    message: 'Step indicator active circle',
+    comment: 'Active circle',
+  }),
+  default: i18n._({
+    id: 'steps.aria.emptyCircle',
+    message: 'Empty circle',
+    comment: 'Empty circle',
+  }),
 };
 
 const getAriaLabel = (props) => {
