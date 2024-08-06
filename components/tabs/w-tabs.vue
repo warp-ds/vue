@@ -69,7 +69,7 @@ export default { name: 'wTabs' };
   <nav :class="ccTabs.wrapper">
     <div ref="tabsRef" :class="[ccTabs.container, gridsClassname || slotFallback]" role="tablist">
       <slot />
-      <span ref="selectionIndicatorRef" :class="ccTabs.selectionIndicator" />
+      <span ref="selectionIndicatorRef" data-testid="selection-indicator" :class="ccTabs.selectionIndicator" />
     </div>
   </nav>
 </template>
