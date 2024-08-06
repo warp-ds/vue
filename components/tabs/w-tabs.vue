@@ -69,7 +69,7 @@ export default { name: 'wTabs' };
   <nav :class="ccTabs.wrapperUnderlined">
     <div ref="tabContainer" :class="[ccTabs.tabContainer, gridsClassname || slotFallback]" role="tablist">
       <slot />
-      <span ref="wunderbar" :class="ccTabs.wunderbar" />
+      <span ref="wunderbar" data-testid="wunderbar" :class="ccTabs.wunderbar" />
     </div>
   </nav>
 </template>
