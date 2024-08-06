@@ -85,7 +85,7 @@ const linkClasses = computed(() => [
   !!props.href && ccButton.linkAsButton,
 ]);
 
-const buttonClasses = computed(() => [
+const classes = computed(() => [
   ...primaryClasses.value,
   ...secondaryClasses.value,
   ...utilityClasses.value,
@@ -106,7 +106,7 @@ export default { name: 'wButton' };
 </script>
 
 <template>
-  <component :is="href ? 'a' : 'button'" :href="href" :class="buttonClasses" v-bind="saneDefaults">
+  <component :is="href ? 'a' : 'button'" :href="href" :class="classes" v-bind="saneDefaults">
     <slot>{{ label }}</slot>
     <span v-if="loading" role="progressbar" aria-valuenow="0" :aria-valuetext="ariaValueText" :class="ccButton.a11y" />
   </component>
