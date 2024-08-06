@@ -16,7 +16,7 @@ const p = defineProps({
 const model = createModel({ props: p });
 const inputEl = ref(null);
 
-const switchClasses = computed(() => [ccSwitch.label, p.disabled && ccSwitch.labelDisabled]);
+const switchClasses = computed(() => [ccSwitch.base, p.disabled && ccSwitch.disabled]);
 
 const trackClasses = computed(() => [
   ccSwitch.track,
