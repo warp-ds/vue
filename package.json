@@ -84,6 +84,8 @@
     "@storybook/test-runner": "^0.16.0",
     "@storybook/vue3": "7.6.15",
     "@storybook/vue3-vite": "7.6.15",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/vue": "^8.1.0",
     "@vitejs/plugin-vue": "^5.0.0",
     "@vitest/coverage-v8": "^1.2.2",
     "@vue/test-utils": "2.4.4",
