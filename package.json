@@ -1,12 +1,11 @@
 {
   "name": "@warp-ds/vue",
   "repository": "git@github.com:warp-ds/vue.git",
-  "version": "2.1.0-next.2",
+  "version": "2.1.0-next.3",
   "description": "Warp components for Vue 3",
   "type": "module",
   "exports": {
     ".": "./dist/warp-vue.js",
-    "./docs": "./dist/docs/warp-vue.js",
     "./alert": "./dist/alert.js",
     "./attention": "./dist/attention.js",
     "./badge": "./dist/badge.js",
@@ -15,6 +14,7 @@
     "./button-group": "./dist/button-group.js",
     "./button": "./dist/button.js",
     "./card": "./dist/card.js",
+    "./docs": "./dist/docs/warp-vue.js",
     "./expandable": "./dist/expandable.js",
     "./forms": "./dist/forms.js",
     "./generic": "./dist/generic.js",
@@ -26,10 +26,10 @@
     "./tabs": "./dist/tabs.js"
   },
   "imports": {
-    "#util": "./components/util/index.js",
     "#components": "./index.js",
+    "#dev-util": "./dev/src/util.js",
     "#generics": "./components/generic/index.js",
-    "#dev-util": "./dev/src/util.js"
+    "#util": "./components/util/index.js"
   },
   "peerDependencies": {
     "@warp-ds/css": "2.0.0-next.4"
@@ -52,15 +52,15 @@
   "keywords": [],
   "license": "Apache-2.0",
   "dependencies": {
-    "@lingui/core": "^4.7.0",
-    "@warp-ds/core": "^1.1.2",
+    "@lingui/core": "4.11.2",
+    "@warp-ds/core": "1.1.5",
     "@warp-ds/css": "2.0.0-next.4",
-    "@warp-ds/icons": "2.0.0",
+    "@warp-ds/icons": "2.0.2",
     "@warp-ds/uno": "2.x",
-    "create-v-model": "^2.2.0",
-    "dom-focus-lock": "^1.1.0",
-    "element-collapse": "^1.1.0",
-    "femtobounce": "^1.0.0",
+    "create-v-model": "2.2.0",
+    "dom-focus-lock": "1.1.0",
+    "element-collapse": "1.1.0",
+    "femtobounce": "1.0.0",
     "scroll-doctor": "2.0.2"
   },
   "devDependencies": {
@@ -90,27 +90,25 @@
     "@vitest/coverage-v8": "2.0.2",
     "@vue/test-utils": "2.4.6",
     "@warp-ds/eslint-config": "1.0.5",
-    "cleave-lite": "^1.0.0",
-    "cz-conventional-changelog": "^3.3.0",
-    "drnm": "^0.9.0",
-    "esbuild": "0.20.0",
-    "eslint-plugin-vue": "9.25.0",
-    "fuse.js": "^7.0.0",
-    "happy-dom": "13.3.8",
-    "playwright": "1.41.2",
-    "prettier": "3.2.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "semantic-release": "^23.0.0",
+    "cleave-lite": "1.0.0",
+    "cz-conventional-changelog": "3.3.0",
+    "drnm": "0.9.0",
+    "esbuild": "0.23.0",
+    "eslint-plugin-vue": "9.27.0",
+    "fuse.js": "7.0.0",
+    "happy-dom": "14.12.3",
+    "playwright": "1.45.1",
+    "prettier": "3.3.2",
+    "semantic-release": "24.0.0",
     "shikiji": "0.10.2",
-    "storybook": "7.6.15",
+    "storybook": "8.2.1",
     "unocss": "0.x",
-    "vite": "5.1.2",
-    "viteik": "^1.0.3",
-    "vitest": "1.2.2",
-    "vue": "3.4.19",
-    "vue-eslint-parser": "9.4.2",
-    "vue-router": "^4.2.5"
+    "vite": "5.3.3",
+    "viteik": "1.0.3",
+    "vitest": "2.0.2",
+    "vue": "3.4.31",
+    "vue-eslint-parser": "9.4.3",
+    "vue-router": "4.4.0"
   },
   "publishConfig": {
     "access": "public"
@@ -124,8 +122,8 @@
     }
   },
   "eik": {
-    "server": "https://assets.finn.no",
     "files": "./dist",
-    "import-map": "https://assets.finn.no/map/finn/v2"
+    "import-map": "https://assets.finn.no/map/finn/v2",
+    "server": "https://assets.finn.no"
   }
 }
