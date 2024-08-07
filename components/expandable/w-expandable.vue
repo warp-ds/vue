@@ -44,11 +44,7 @@ watch(expanded, (state) => {
 
 const hasTitle = computed(() => props.title || !!slots.title);
 
-const wrapperClasses = computed(() => [
-  ccExpandable.expandable,
-  props.box && ccExpandable.expandableBox,
-  props.bleed && ccExpandable.expandableBleed,
-]);
+const wrapperClasses = computed(() => [ccExpandable.wrapper, props.box && ccExpandable.box, props.bleed && ccExpandable.bleed]);
 
 const buttonClasses = computed(() => [props.buttonClass, ccExpandable.button, props.box && ccExpandable.buttonBox]);
 
@@ -68,7 +64,7 @@ const expansionClasses = computed(() => [ccExpandable.expansion, !expanded && cc
 
 const contentClasses = computed(() => [
   props.contentClass,
-  props.box && ccBox.box,
+  props.box && ccBox.base,
   props.box && hasTitle.value && ccExpandable.contentWithTitle,
 ]);
 </script>

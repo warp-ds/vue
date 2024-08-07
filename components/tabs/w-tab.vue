@@ -21,13 +21,7 @@ controller.registerTab(props.name);
 onBeforeUnmount(() => {
   controller?.unregisterTab?.(props.name);
 });
-
-const tabClasses = computed(() => ({
-  [ccTab.tab]: true,
-  [ccTab.tabInactive]: !isActive.value,
-  [ccTab.tabActive]: isActive.value,
-  ['active-tab']: isActive.value,
-}));
+const tabClasses = computed(() => [ccTab.base, isActive.value ? `active-tab ${ccTab.active}` : ccTab.inactive]);
 </script>
 
 <script>

@@ -11,16 +11,14 @@ const p = defineProps(fieldProps);
 const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props: p, emit });
 
-const chevronClasses = computed(() => [ccSelect.chevron, { [ccSelect.chevronDisabled]: p.disabled }]);
+const chevronClasses = computed(() => [ccSelect.chevron, p.disabled && ccSelect.chevronDisabled]);
 
 const getSelectClasses = (hasValidationErrors) => [
   ccSelect.base,
-  {
-    [ccSelect.default]: !hasValidationErrors && !p.disabled && !p.readOnly,
-    [ccSelect.disabled]: p.disabled,
-    [ccSelect.invalid]: hasValidationErrors,
-    [ccSelect.readOnly]: p.readOnly,
-  },
+  !hasValidationErrors && !p.disabled && !p.readOnly && ccSelect.default,
+  p.disabled && ccSelect.disabled,
+  hasValidationErrors && ccSelect.invalid,
+  p.readOnly && ccSelect.readOnly,
 ];
 
 const handleKeyDown = (event) => {
