@@ -83,12 +83,12 @@ const pillClasses = computed(() => [
 const linkClasses = computed(() => [props.small ? ccButton.linkSmall : ccButton.link, !!props.href && ccButton.linkAsButton]);
 
 const classes = computed(() => [
-  ...(props.primary ? primaryClasses.value : []),
-  ...(defaultVariant ? secondaryClasses.value : []),
-  ...(props.utility ? utilityClasses.value : []),
-  ...(props.negative ? negativeClasses.value : []),
-  ...(props.pill ? pillClasses.value : []),
-  ...(props.link ? linkClasses.value : []),
+  props.primary && primaryClasses.value,
+  defaultVariant && secondaryClasses.value,
+  props.utility && utilityClasses.value,
+  props.negative && negativeClasses.value,
+  props.pill && pillClasses.value,
+  props.link && linkClasses.value,
   props.fullWidth ? ccButton.fullWidth : ccButton.contentWidth,
 ]);
 
