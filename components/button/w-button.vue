@@ -80,7 +80,7 @@ const pillClasses = computed(() => [
   props.loading && (!props.small ? ccButton.pillLoading : ccButton.pillSmallLoading),
 ]);
 
-const linkClasses = computed(() => [props.small ? ccButton.linkSmall : ccButton.link, !!props.href && ccButton.linkAsButton]);
+const linkClasses = computed(() => [props.small ? ccButton.linkSmall : ccButton.link]);
 
 const classes = computed(() => [
   props.primary && primaryClasses.value,
@@ -89,6 +89,7 @@ const classes = computed(() => [
   props.negative && negativeClasses.value,
   props.pill && pillClasses.value,
   props.link && linkClasses.value,
+  props.href && ccButton.linkAsButton,
   props.fullWidth ? ccButton.fullWidth : ccButton.contentWidth,
 ]);
 
