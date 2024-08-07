@@ -21,7 +21,7 @@ const switchClasses = computed(() => [ccSwitch.base, p.disabled && ccSwitch.disa
 const trackClasses = computed(() => [
   ccSwitch.track,
   p.disabled && ccSwitch.trackDisabled,
-  model.value && !p.disabled ? ccSwitch.trackActive : ccSwitch.trackInactive,
+  !p.disabled && (model.value ? ccSwitch.trackActive : ccSwitch.trackInactive),
 ]);
 
 const handleClasses = computed(() => [
