@@ -20,7 +20,7 @@ const outlineResetClass = computed(() => [
 const wrapperClass = computed(() => [
   ccButtonGroupItem.wrapper,
   outlined.value ? outlinedClass.value : outlineResetClass.value,
-  props.selected ? ccButtonGroupItem.selected : ccButtonGroupItem.unSelected,
+  props.selected ? ccButtonGroupItem.selected : ccButtonGroupItem.unselected,
 ]);
 </script>
 
