@@ -46,7 +46,7 @@ const getAriaLabel = (props) => {
 };
 
 const stepClasses = computed(() => [
-  ccStep.container,
+  ccStep.base,
   vertical.value ? ccStep.vertical : ccStep.horizontal,
   vertical.value ? (left.value ? ccStep.alignLeft : ccStep.alignRight) : '',
 ]);
