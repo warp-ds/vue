@@ -1,3 +1,10 @@
+# [3.0.0-next.3](https://github.com/warp-ds/vue/compare/v3.0.0-next.2...v3.0.0-next.3) (2024-08-13)
+
+
+### Bug Fixes
+
+* revert c00a864a90e73c78668cc33716146cf692e5b8e0 ([c6b9b97](https://github.com/warp-ds/vue/commit/c6b9b97ba7d8a22070b578b7c6978feff135cff7))
+
 # [2.1.0-next.3](https://github.com/warp-ds/vue/compare/v2.1.0-next.2...v2.1.0-next.3) (2024-07-11)
 
 
