@@ -16,9 +16,9 @@ const nonOutlinedClass = computed(() => [props.vertical ? ccButtonGroup.nonOutli
 
 const classes = computed(() => [
   ccButtonGroup.wrapper,
-  props.raised && ccButtonGroup.raised,
-  props.vertical && ccButtonGroup.vertical,
-  !props.outlined && nonOutlinedClass.value,
+  props.raised ? ccButtonGroup.raised : '',
+  props.vertical ? ccButtonGroup.vertical : '',
+  props.outlined ? '' : nonOutlinedClass.value,
 ]);
 </script>
 

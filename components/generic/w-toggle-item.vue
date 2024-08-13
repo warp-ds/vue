@@ -26,26 +26,29 @@ const model = createModel({ props: p, emit });
 
 const isRadio = computed(() => p.type === 'radio');
 const isCheckbox = computed(() => p.type === 'checkbox');
-const labelClasses = computed(() => {
-  return (
-    p.labelClass || [
-      p.radioButton ? ccToggle.radioButtonsLabel : ccToggle.label,
-      p.radioButton && (p.small ? ccToggle.radioButtonsSmall : ccToggle.radioButtonsRegular),
-      !p.radioButton && !p.indeterminate && ccToggle.labelBefore,
-      isCheckbox.value && !p.indeterminate && !p.invalid && !p.disabled && ccToggle.checkbox,
-      isCheckbox.value && !p.indeterminate && p.invalid && !p.disabled && ccToggle.checkboxInvalid,
-      isCheckbox.value && !p.indeterminate && !p.invalid && p.disabled && ccToggle.checkboxDisabled,
-      isCheckbox.value && p.indeterminate && !p.invalid && !p.disabled && ccToggle.indeterminate,
-      isCheckbox.value && p.indeterminate && p.invalid && !p.disabled && ccToggle.indeterminateInvalid,
-      isCheckbox.value && p.indeterminate && !p.invalid && p.disabled && ccToggle.indeterminateDisabled,
-      isRadio.value && !p.invalid && !p.disabled && ccToggle.radio,
-      isRadio.value && p.invalid && !p.disabled && ccToggle.radioInvalid,
-      isRadio.value && !p.invalid && p.disabled && ccToggle.radioDisabled,
-    ]
-  );
-});
-
-const inputClasses = computed(() => [ccToggle.input, p.class || ccToggle.a11y]);
+const labelClasses = computed(
+  () =>
+    p.labelClass || {
+      [ccToggle.label]: !p.radioButton,
+      [ccToggle.labelBefore]: !p.radioButton && !p.indeterminate,
+      [ccToggle.checkbox]: isCheckbox.value && !p.indeterminate && !p.invalid && !p.disabled,
+      [ccToggle.checkboxInvalid]: isCheckbox.value && !p.indeterminate && p.invalid && !p.disabled,
+      [ccToggle.checkboxDisabled]: isCheckbox.value && !p.indeterminate && !p.invalid && p.disabled,
+      [ccToggle.indeterminate]: isCheckbox.value && p.indeterminate && !p.invalid && !p.disabled,
+      [ccToggle.indeterminateInvalid]: isCheckbox.value && p.indeterminate && p.invalid && !p.disabled,
+      [ccToggle.indeterminateDisabled]: isCheckbox.value && p.indeterminate && !p.invalid && p.disabled,
+      [ccToggle.radio]: isRadio.value && !p.invalid && !p.disabled && !p.radioButton,
+      [ccToggle.radioInvalid]: isRadio.value && p.invalid && !p.disabled && !p.radioButton,
+      [ccToggle.radioDisabled]: isRadio.value && !p.invalid && p.disabled && !p.radioButton,
+      [ccToggle.radioButtonsLabel]: p.radioButton,
+      [ccToggle.radioButtonsRegular]: p.radioButton && !p.small,
+      [ccToggle.radioButtonsSmall]: p.radioButton && p.small,
+    },
+);
+const inputClasses = {
+  [ccToggle.input]: true,
+  [p.class || ccToggle.a11y]: true,
+};
 </script>
 
 <script>

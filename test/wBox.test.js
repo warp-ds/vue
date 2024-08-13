@@ -12,7 +12,7 @@ describe('box', () => {
     const wrapper = mount(wBox, { slots: { default: defaultSlot } });
     const html = wrapper.get('div');
     assert.equal(wrapper.text(), 'Hello Warp');
-    assert.deepEqual(html.classes(), boxClasses.base.split(' '));
+    assert.deepEqual(html.classes(), boxClasses.box.split(' '));
   });
   test('boxes any DOM element', () => {
     const defaultSlot = '<h1>Hello Warp</h1>';

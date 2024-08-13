@@ -59,7 +59,10 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue', 'dismiss']);
-const attentionClasses = computed(() => [props.attentionClass, !props.callout && ccAttention.notCallout]);
+const attentionClasses = computed(() => ({
+  [props.attentionClass]: true,
+  [ccAttention.notCallout]: !props.callout,
+}));
 
 const wrapperClasses = computed(() => [ccAttention.base, getVariantClasses(props).wrapper]);
 

@@ -16,12 +16,13 @@ msgstr ""
 
 #. Shown after label when marked as optional
 #. js-lingui-explicit-id
-#: components/forms/w-field.vue:72
+#: components/forms/w-field.vue:78
 msgid "forms.field.label.optional"
 msgstr "(optional)"
 
 #. Text visible below input field if validation fails
 #. js-lingui-explicit-id
-#: components/forms/w-field.vue:82
+#: components/forms/validation.js:7
 msgid "forms.validation.mandatoryField"
 msgstr "Mandatory field"
+

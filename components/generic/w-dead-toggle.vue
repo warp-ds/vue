@@ -11,11 +11,11 @@ const props = defineProps({
 });
 const type = computed(() => (props.radio ? 'radio' : 'checkbox'));
 
-const labelClasses = computed(() => [
-  ccDeadToggle.labelVue,
-  props.radio && ccDeadToggle.labelRadio,
-  props.checkbox && ccDeadToggle.labelCheckbox,
-]);
+const labelClasses = computed(() => ({
+  [ccDeadToggle.labelRadio]: props.radio,
+  [ccDeadToggle.labelCheckbox]: props.checkbox,
+  [ccDeadToggle.labelVue]: true,
+}));
 </script>
 
 <script>

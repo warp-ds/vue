@@ -68,19 +68,19 @@ describe('Tabs component', () => {
     expect(screen.getByRole('tab', { name: 'Tab 3' })).toBeInTheDocument();
   });
 
-  it('renders the selectionIndicator', () => {
-    expect(screen.getByTestId('selection-indicator')).toBeInTheDocument();
+  it('renders the wunderbar', () => {
+    expect(screen.getByTestId('wunderbar')).toBeInTheDocument();
   });
 
-  it('updates the selectionIndicator position on resize', () => {
-    const selectionIndicator = screen.getByTestId('selection-indicator');
-    expect(selectionIndicator.style.left).toBe('0px');
-    expect(selectionIndicator.style.width).toBe('0px');
+  it('updates the wunderbar position on resize', () => {
+    const wunderbar = screen.getByTestId('wunderbar');
+    expect(wunderbar.style.left).toBe('0px');
+    expect(wunderbar.style.width).toBe('0px');
     global.innerWidth = 800;
     global.dispatchEvent(new Event('resize'));
     waitFor(() => {
-      expect(selectionIndicator.style.left).not.toBe('');
-      expect(selectionIndicator.style.width).not.toBe('');
+      expect(wunderbar.style.left).not.toBe('');
+      expect(wunderbar.style.width).not.toBe('');
     });
   });
 
@@ -141,7 +141,7 @@ describe('Tab component', () => {
   it('renders correctly', () => {
     expect(screen.getByText(label)).toBeInTheDocument();
     expect(screen.getByText(label).closest('button')).toHaveClass(
-      'grid items-center font-bold gap-8 focusable antialias p-16 pb-8 border-b-4 bg-transparent border-transparent hover:s-text-link hover:s-border-primary active-tab s-text-link',
+      'grid items-center font-bold gap-8 focusable antialias p-16 pb-8 border-b-4 bg-transparent s-text-subtle border-transparent hover:s-text-link hover:s-border-primary s-text-link',
     );
     expect(screen.getByText(label).closest('button')).toHaveAttribute('role', 'tab');
     expect(screen.getByText(label).closest('button')).toHaveAttribute('aria-selected', 'true');
@@ -150,8 +150,8 @@ describe('Tab component', () => {
   it('renders with icon and label', () => {
     expect(screen.getByText(label)).toBeInTheDocument();
     expect(screen.getByText('Icon')).toBeInTheDocument();
-    expect(screen.getByText('Icon').closest('span')).toHaveClass('mx-auto');
-    expect(screen.getByText(label).closest('span')).toHaveClass('content-underlined');
+    expect(screen.getByText('Icon').closest('span')).toHaveClass('mx-auto hover:s-text-link s-text-link');
+    expect(screen.getByText(label).closest('span')).toHaveClass('content-underlined s-text-link');
   });
 
   it('renders with children and no label', () => {

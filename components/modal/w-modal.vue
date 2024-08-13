@@ -155,7 +155,7 @@ export default {
         <div
           v-if="showContent"
           ref="modalEl"
-          :class="ccModal.base"
+          :class="ccModal.modal"
           tabindex="-1"
           aria-modal="true"
           aria-labelledby="w-modal-title"

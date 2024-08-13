@@ -12,8 +12,13 @@ const props = defineProps({
   checkbox: Boolean,
 });
 const type = computed(() => (props.radio ? 'radio' : 'checkbox'));
-const labelClasses = computed(() => [props.label && ccClickable.label]);
-const buttonOrLinkClasses = computed(() => [ccClickable.buttonOrLink, props.label && ccClickable.label]);
+const labelClasses = computed(() => ({
+  [ccClickable.label]: props.label,
+}));
+const buttonOrLinkClasses = computed(() => ({
+  [ccClickable.buttonOrLink]: true,
+  [ccClickable.label]: props.label,
+}));
 </script>
 
 <script>

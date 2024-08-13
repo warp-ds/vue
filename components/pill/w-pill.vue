@@ -52,7 +52,7 @@ export default {
 </script>
 
 <template>
-  <div :class="ccPill.wrapper">
+  <div :class="ccPill.pill">
     <button type="button" :class="labelClasses" v-bind="$attrs">
       <span v-if="!p.suggestion" :class="ccPill.a11y">{{ p.openSRLabel || openFilterSrText }} </span>
       <span>{{ label }}</span>

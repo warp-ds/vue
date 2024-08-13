@@ -16,6 +16,7 @@ msgstr ""
 
 #. Screenreader message for buttons that are loading
 #. js-lingui-explicit-id
-#: components/button/w-button.vue:16
+#: components/button/w-button.vue:12
 msgid "button.aria.loading"
 msgstr "Loading..."
+

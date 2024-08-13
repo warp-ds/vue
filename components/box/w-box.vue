@@ -20,11 +20,13 @@ const props = defineProps({
 });
 
 const boxClasses = computed(() => [
-  ccBox.base,
-  props.bleed && ccBox.bleed,
-  props.info && ccBox.info,
-  props.neutral && ccBox.neutral,
-  props.bordered && ccBox.bordered,
+  ccBox.box,
+  {
+    [ccBox.bleed]: props.bleed,
+    [ccBox.info]: props.info,
+    [ccBox.neutral]: props.neutral,
+    [ccBox.bordered]: props.bordered,
+  },
 ]);
 
 const optOutRoleWithDefault = computed(() => (props.role === '' ? null : props.role ?? 'region'));

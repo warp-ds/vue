@@ -30,7 +30,7 @@ const model = createModel({ props, emit });
 const alertColorType = computed(() => possibleTypeProps.find((e) => props[e]));
 const activeWrapperClassNames = computed(() => ccAlert[alertColorType.value]);
 const activeIconClassNames = computed(() => ccAlert[`${alertColorType.value}Icon`]);
-const wrapperClass = computed(() => [ccAlert.wrapper, activeWrapperClassNames.value]);
+const wrapperClass = computed(() => [ccAlert.alert, activeWrapperClassNames.value]);
 const iconClass = computed(() => [ccAlert.icon, activeIconClassNames.value]);
 
 const iconComponent = computed(() => {

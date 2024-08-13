@@ -16,18 +16,28 @@ const p = defineProps({
 const model = createModel({ props: p });
 const inputEl = ref(null);
 
-const switchClasses = computed(() => [ccSwitch.base, p.disabled && ccSwitch.disabled]);
+const switchClasses = computed(() => [
+  ccSwitch.label,
+  {
+    [ccSwitch.labelDisabled]: p.disabled,
+  },
+]);
 
 const trackClasses = computed(() => [
   ccSwitch.track,
-  p.disabled && ccSwitch.trackDisabled,
-  !p.disabled && (model.value ? ccSwitch.trackActive : ccSwitch.trackInactive),
+  {
+    [ccSwitch.trackActive]: model.value && !p.disabled,
+    [ccSwitch.trackInactive]: !model.value && !p.disabled,
+    [ccSwitch.trackDisabled]: p.disabled,
+  },
 ]);
 
 const handleClasses = computed(() => [
   ccSwitch.handle,
   p.disabled ? ccSwitch.handleDisabled : ccSwitch.handleNotDisabled,
-  model.value && ccSwitch.handleSelected,
+  {
+    [ccSwitch.handleSelected]: model.value,
+  },
 ]);
 
 const simulateClick = () => inputEl.value.click();

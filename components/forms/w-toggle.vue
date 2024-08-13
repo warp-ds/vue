@@ -28,12 +28,16 @@ const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props, emit });
 const type = computed(() => (props.radio || props.radioButton ? 'radio' : 'checkbox'));
 const role = computed(() => (props.toggles.length > 1 ? (props.radio || props.radioButton ? 'radiogroup' : 'group') : undefined));
-const wrapperClasses = computed(() => [
-  ccToggle.wrapper,
-  props.radioButton && (props.equalWidth ? ccToggle.wrapperRadioButtonsJustified : ccToggle.wrapperRadioButtons),
-]);
+const wrapperClasses = computed(() => ({
+  [ccToggle.wrapper]: true,
+  [ccToggle.wrapperRadioButtons]: props.radioButton && !props.equalWidth,
+  [ccToggle.wrapperRadioButtonsJustified]: props.radioButton && props.equalWidth,
+}));
 
-const groupClasses = computed(() => [ccToggle.radioButtonsGroup, props.equalWidth && ccToggle.radioButtonsGroupJustified]);
+const groupClasses = computed(() => ({
+  [ccToggle.radioButtonsGroup]: true,
+  [ccToggle.radioButtonsGroupJustified]: props.equalWidth,
+}));
 </script>
 
 <script>
