@@ -32,7 +32,7 @@
     "#util": "./components/util/index.js"
   },
   "peerDependencies": {
-    "@warp-ds/css": "2.0.0-next.4"
+    "@warp-ds/css": "2.0.0"
   },
   "scripts": {
     "build-storybook": "storybook build",
@@ -54,7 +54,7 @@
   "dependencies": {
     "@lingui/core": "4.11.2",
     "@warp-ds/core": "1.1.5",
-    "@warp-ds/css": "2.0.0-next.4",
+    "@warp-ds/css": "2.0.0",
     "@warp-ds/icons": "2.0.2",
     "@warp-ds/uno": "2.x",
     "create-v-model": "2.2.0",

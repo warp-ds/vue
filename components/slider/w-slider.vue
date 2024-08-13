@@ -32,17 +32,17 @@ const emit = defineEmits(['focus', 'blur']);
 const sliderLine = ref(null);
 const thumb = ref(null);
 const dimensions = ref({});
-const updateDimensions = (_v) => (dimensions.value = _v);
-const { mountedHook, unmountedHook } = useDimensions();
-onMounted(() => mountedHook(sliderLine.value, updateDimensions));
-onBeforeUnmount(unmountedHook);
-
 const sliderPressed = ref(false);
 const v = createModel({ props, emit });
 const position = ref(v.value);
 
 // step is a computed, so we can check if props.step is set or not and only do getShiftedChange when set
 const step = computed(() => props.step || 1);
+
+const updateDimensions = (_v) => (dimensions.value = _v);
+const { mountedHook, unmountedHook } = useDimensions();
+onMounted(() => mountedHook(sliderLine.value, updateDimensions));
+onBeforeUnmount(unmountedHook);
 
 const sliderState = {
   get position() {
@@ -85,13 +85,16 @@ const { handleKeyDown, handleFocus, handleBlur, handleMouseDown, handleClick, ge
 
 const thumbPosition = computed(getThumbPosition);
 const transformValue = computed(getThumbTransform);
+
 const thumbStyles = computed(() => ({
-  transform: 'translateX(' + transformValue.value + 'px)',
+  transform: `translateX(${transformValue.value}px)`,
 }));
+
 const sliderActiveStyle = computed(() => ({
   left: 0,
-  right: 100 - thumbPosition.value + '%',
+  right: `${100 - thumbPosition.value}%`,
 }));
+
 const aria = computed(() => ({
   'aria-label': props.label,
   'aria-labelledby': props.labelledBy,
@@ -101,17 +104,17 @@ const aria = computed(() => ({
   'aria-valuetext': attrs['aria-valuetext'],
   'aria-disabled': props.disabled,
 }));
-const trackClasses = computed(() => [
-  ccSlider.track,
-  {
-    [ccSlider.trackDisabled]: props.disabled,
-  },
+
+const trackClasses = computed(() => [ccSlider.track, props.disabled && ccSlider.trackDisabled]);
+
+const activeTrackClasses = computed(() => [
+  ccSlider.activeTrack,
+  props.disabled ? ccSlider.activeTrackDisabled : ccSlider.activeTrackEnabled,
 ]);
-const activeTrackClasses = computed(() => ({
-  [ccSlider.activeTrack]: !props.disabled,
-  [ccSlider.activeTrackDisabled]: props.disabled,
-}));
+
 const thumbClasses = computed(() => [ccSlider.thumb, props.disabled ? ccSlider.thumbDisabled : ccSlider.thumbEnabled]);
+
+const clamp = (v, { min, max }) => (Number.isFinite(parseFloat(v)) ? Math.min(Math.max(v, min), max) : min);
 
 watch(position, () => {
   // prevents shiftedChange when modelValue was set externally
@@ -121,16 +124,14 @@ watch(position, () => {
   }
 });
 
-const clamp = (v, { min, max }) => (Number.isFinite(parseFloat(v)) ? Math.min(Math.max(v, min), max) : min);
-
 watch(
   () => props.modelValue,
-  () => {
+  (newValue) => {
     // if the slider gets bad values, it shouldn't break the page by placing the thumb at an insane left/right value
-    if (props.modelValue > props.max || props.modelValue < props.min) {
-      position.value = clamp(props.modelValue, props);
-    } else if (!sliderPressed.value && position.value !== props.modelValue) {
-      position.value = props.modelValue;
+    if (newValue > props.max || newValue < props.min) {
+      position.value = clamp(newValue, props);
+    } else if (!sliderPressed.value && position.value !== newValue) {
+      position.value = newValue;
     }
   },
   { immediate: true },

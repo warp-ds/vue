@@ -15,10 +15,10 @@ msgstr ""
 "X-Crowdin-Project-ID: 141\n"
 "X-Crowdin-Language: nb\n"
 "X-Crowdin-File-ID: 1358\n"
+"PO-Revision-Date: \n"
 
 #. Screenreader message for buttons that are loading
 #. js-lingui-explicit-id
-#: components/button/w-button.vue:12
+#: components/button/w-button.vue:16
 msgid "button.aria.loading"
 msgstr "Laster..."
-
