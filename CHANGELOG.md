@@ -1,3 +1,10 @@
+# [3.0.0-next.2](https://github.com/warp-ds/vue/compare/v3.0.0-next.1...v3.0.0-next.2) (2024-08-13)
+
+
+### Bug Fixes
+
+* **cc:** no classes styling the same CSS properties are set on one element ([#192](https://github.com/warp-ds/vue/issues/192)) ([26f0f67](https://github.com/warp-ds/vue/commit/26f0f676376ba10aec2ea15e49cf7f355446b070))
+
 # [2.1.0-next.3](https://github.com/warp-ds/vue/compare/v2.1.0-next.2...v2.1.0-next.3) (2024-07-11)
 
 
