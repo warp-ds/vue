@@ -19,9 +19,11 @@ export default defineConfig((env) => ({
   ],
   server: { host: '0.0.0.0', port: 3003 },
   test: {
+    globals: true,
     environment: 'happy-dom',
     include: ['./test/**'],
     exclude: ['**.json'],
+    setupFiles: ['./setup.js'],
     coverage: {
       cleanOnRerun: true,
       reporter: ['text'],
@@ -33,6 +35,7 @@ export default defineConfig((env) => ({
         'components/**/stories',
         '.minifier-plugin.js',
         'lingui.config.ts',
+        'components/**/locales',
       ],
     },
   },
@@ -51,7 +54,6 @@ function getBuildOpts(env) {
       build: {
         lib: {
           entry: {
-            tag: 'components/tag/index.js',
             tabs: 'components/tabs/index.js',
             switch: 'components/switch/index.js',
             steps: 'components/steps/index.js',

@@ -1,3 +1,37 @@
+# [2.1.0-next.4](https://github.com/warp-ds/vue/compare/v2.1.0-next.3...v2.1.0-next.4) (2024-08-14)
+
+
+### Bug Fixes
+
+* **cc:** no classes styling the same CSS properties are set on one element ([#192](https://github.com/warp-ds/vue/issues/192)) ([26f0f67](https://github.com/warp-ds/vue/commit/26f0f676376ba10aec2ea15e49cf7f355446b070))
+
+
+### BREAKING CHANGES
+
+* **expandable:** Info prop has been removed
+
+
+# [2.1.0-next.3](https://github.com/warp-ds/vue/compare/v2.1.0-next.2...v2.1.0-next.3) (2024-07-11)
+
+
+### Bug Fixes
+
+* update dependencies ([#178](https://github.com/warp-ds/vue/issues/178)) ([be6a38f](https://github.com/warp-ds/vue/commit/be6a38f8165eb39e5d6ed75d74a03602a0d3eaa9))
+
+# [2.1.0-next.2](https://github.com/warp-ds/vue/compare/v2.1.0-next.1...v2.1.0-next.2) (2024-07-04)
+
+
+### Bug Fixes
+
+* support danish locale ([#177](https://github.com/warp-ds/vue/issues/177)) ([e1e3589](https://github.com/warp-ds/vue/commit/e1e35890fafd344acb6ce2ebc963e4107b3f6025))
+
+# [2.1.0-next.1](https://github.com/warp-ds/vue/compare/v2.0.1...v2.1.0-next.1) (2024-07-04)
+
+
+### Features
+
+* remove deprecated classes ([#173](https://github.com/warp-ds/vue/issues/173)) ([bd5f481](https://github.com/warp-ds/vue/commit/bd5f481b4ae9220a12cdca0b002e19422576c690))
+
 ## [2.0.1](https://github.com/warp-ds/vue/compare/v2.0.0...v2.0.1) (2024-07-04)
 
 

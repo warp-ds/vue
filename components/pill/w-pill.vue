@@ -7,11 +7,12 @@ import IconClose16 from '@warp-ds/icons/vue/close-16';
 
 import { activateI18n } from '../util/i18n';
 
+import { messages as daMessages } from './locales/da/messages.mjs';
 import { messages as enMessages } from './locales/en/messages.mjs';
 import { messages as fiMessages } from './locales/fi/messages.mjs';
 import { messages as nbMessages } from './locales/nb/messages.mjs';
 
-activateI18n(enMessages, nbMessages, fiMessages);
+activateI18n(enMessages, nbMessages, fiMessages, daMessages);
 
 const p = defineProps({
   label: String,
@@ -51,7 +52,7 @@ export default {
 </script>
 
 <template>
-  <div :class="ccPill.pill">
+  <div :class="ccPill.wrapper">
     <button type="button" :class="labelClasses" v-bind="$attrs">
       <span v-if="!p.suggestion" :class="ccPill.a11y">{{ p.openSRLabel || openFilterSrText }} </span>
       <span>{{ label }}</span>

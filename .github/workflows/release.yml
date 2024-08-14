@@ -2,9 +2,9 @@ name: Release
 on:
   push:
     branches:
-      - main
+#      - main
       - beta
-      - next
+#      - next
 jobs:
   release:
     name: Release

@@ -7,6 +7,7 @@ import { modelProps } from 'create-v-model';
 
 import { activateI18n } from '../util/i18n';
 
+import { messages as daMessages } from './locales/da/messages.mjs';
 import { messages as enMessages } from './locales/en/messages.mjs';
 import { messages as fiMessages } from './locales/fi/messages.mjs';
 import { messages as nbMessages } from './locales/nb/messages.mjs';
@@ -14,7 +15,7 @@ import { createValidation } from './validation';
 
 import { id } from '#util';
 
-activateI18n(enMessages, nbMessages, fiMessages);
+activateI18n(enMessages, nbMessages, fiMessages, daMessages);
 
 export const fieldProps = {
   id,
@@ -66,6 +67,8 @@ export default {
       'aria-required': props.required && true,
     }));
     const wrapperAria = computed(() => valueOrUndefined(isFieldset.value, aria.value));
+    const helpTextClasses = computed(() => [ccHelpText.base, isInvalid.value ? ccHelpText.colorInvalid : ccHelpText.color]);
+
     const optionalHelperText = i18n._({
       id: 'forms.field.label.optional',
       message: '(optional)',
@@ -93,6 +96,7 @@ export default {
       errorId,
       aria,
       wrapperAria,
+      helpTextClasses,
       collector,
       valueOrUndefined,
       ccInput,
@@ -111,7 +115,7 @@ export default {
       :is="labelType"
       v-if="label"
       :id="labelId"
-      :class="ccLabel.label"
+      :class="ccLabel.base"
       :for="labelFor"
       :role="valueOrUndefined(labelLevel, 'heading')"
       :aria-level="valueOrUndefined(labelLevel, labelLevel)"
@@ -119,13 +123,7 @@ export default {
     >
     <slot :trigger-validation="triggerValidation" :label-for="id" :label-id="labelId" :aria="aria" :has-validation-errors="isInvalid" />
     <slot name="control" :form="collector" />
-    <div
-      v-if="hint || isInvalid"
-      :class="{
-        [ccHelpText.helpText]: true,
-        [ccHelpText.helpTextColor]: !isInvalid,
-        [ccHelpText.helpTextColorInvalid]: isInvalid,
-      }">
+    <div v-if="hint || isInvalid" :class="helpTextClasses">
       <span v-if="hint" :id="hintId" v-html="hint" />
       <span v-if="hint && isInvalid && errorMessage">, </span>
       <span v-if="isInvalid" :id="errorId">{{ errorMessage }}</span>

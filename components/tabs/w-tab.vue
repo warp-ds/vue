@@ -21,23 +21,7 @@ controller.registerTab(props.name);
 onBeforeUnmount(() => {
   controller?.unregisterTab?.(props.name);
 });
-
-const tabClasses = computed(() => ({
-  [ccTab.tab]: true,
-  ['active-tab']: isActive.value,
-  [ccTab.tabActive]: isActive.value,
-}));
-
-const iconClasses = computed(() => [
-  ccTab.icon,
-  ccTab.iconUnderlined,
-  isActive.value ? ccTab.iconUnderlinedActive : ccTab.iconUnderlinedInactive,
-]);
-
-const contentClasses = computed(() => ({
-  [ccTab.contentUnderlined]: true,
-  [ccTab.contentUnderlinedActive]: isActive.value,
-}));
+const tabClasses = computed(() => [ccTab.base, isActive.value ? `active-tab ${ccTab.active}` : ccTab.inactive]);
 </script>
 
 <script>
@@ -54,10 +38,10 @@ export default { name: 'wTab' };
     :tabindex="isActive ? 0 : -1"
     @click="setActive"
     @keydown="controller.onKeydown">
-    <span v-if="$slots.default" :class="iconClasses">
+    <span v-if="$slots.default" :class="ccTab.icon">
       <slot />
     </span>
-    <span :class="contentClasses">
+    <span :class="ccTab.contentUnderlined">
       {{ label }}
       <slot name="label" />
     </span>
