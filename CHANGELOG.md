@@ -1,3 +1,16 @@
+# [2.1.0-next.4](https://github.com/warp-ds/vue/compare/v2.1.0-next.3...v2.1.0-next.4) (2024-08-14)
+
+
+### Bug Fixes
+
+* **cc:** no classes styling the same CSS properties are set on one element ([#192](https://github.com/warp-ds/vue/issues/192)) ([26f0f67](https://github.com/warp-ds/vue/commit/26f0f676376ba10aec2ea15e49cf7f355446b070))
+
+
+### BREAKING CHANGES
+
+* **expandable:** Info prop has been removed
+
+
 # [2.1.0-next.3](https://github.com/warp-ds/vue/compare/v2.1.0-next.2...v2.1.0-next.3) (2024-07-11)
 
 
