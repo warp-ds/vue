@@ -1,3 +1,4 @@
+import rollupPluginReplace from '@rollup/plugin-replace';
 import vue from '@vitejs/plugin-vue';
 import { classes } from '@warp-ds/css/component-classes/classes';
 import { presetWarp } from '@warp-ds/uno';
@@ -13,6 +14,10 @@ export default defineConfig((env) => ({
     uno({
       presets: [presetWarp({ skipResets: true })],
       safelist: classes,
+    }),
+    rollupPluginReplace({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      preventAssignment: true,
     }),
     env.mode !== 'lib' && VitEik(),
     MinifyWarpLib(),
