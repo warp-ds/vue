@@ -1,3 +1,10 @@
+## [2.1.1-next.1](https://github.com/warp-ds/vue/compare/v2.1.0...v2.1.1-next.1) (2024-08-15)
+
+
+### Bug Fixes
+
+* Remove instances of process variable from build output ([#194](https://github.com/warp-ds/vue/issues/194)) ([b2c0ff9](https://github.com/warp-ds/vue/commit/b2c0ff93c2363913424a7580643c3304edba7bdb))
+
 # [2.1.0-next.4](https://github.com/warp-ds/vue/compare/v2.1.0-next.3...v2.1.0-next.4) (2024-08-14)
 
 

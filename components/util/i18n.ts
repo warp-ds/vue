@@ -20,7 +20,7 @@ function detectLocale(): SupportedLocale {
      * Server locale detection. This requires e.g LANG environment variable to be set on the server.
      */
     const serverLocale =
-      process.env.NMP_LANGUAGE ||
+      process?.env?.NMP_LANGUAGE ||
       Intl.DateTimeFormat().resolvedOptions().locale;
     return getSupportedLocale(serverLocale);
   }
