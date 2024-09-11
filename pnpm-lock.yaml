@@ -12,8 +12,8 @@ importers:
         specifier: 4.11.2
         version: 4.11.2
       '@warp-ds/core':
-        specifier: 1.1.5
-        version: 1.1.5(@floating-ui/dom@1.6.10)
+        specifier: 1.1.6
+        version: 1.1.6(@floating-ui/dom@1.6.10)
       '@warp-ds/css':
         specifier: 2.0.0
         version: 2.0.0(@warp-ds/uno@2.0.0(unocss@0.62.0(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.3(@types/node@22.2.0))))
@@ -2360,8 +2360,8 @@ packages:
   '@vue/test-utils@2.4.6':
     resolution: {integrity: sha512-FMxEjOpYNYiFe0GkaHsnJPXFHxQ6m4t8vI/ElPGpMWxZKpmRvQ33OIrvRXemy6yha03RxhOlQuy+gZMC3CQSow==}
 
-  '@warp-ds/core@1.1.5':
-    resolution: {integrity: sha512-rIM48g46USPV73S2nO8eY8u+w6eAWjMwjhpQ/R9cnMNuNTUQm9mn4JFs52BIge/a35UYdfxFPGIQH0qP0KrFFQ==}
+  '@warp-ds/core@1.1.6':
+    resolution: {integrity: sha512-Gp1QT2mQivAFIL5tdV4TaBrkJp1nzErjzN8rYeGKJw6FrlnzUk2pjsJYWGTkBqc9DvAzQMh1RgozRp6ylMtJWA==}
     peerDependencies:
       '@floating-ui/dom': 1.6.x
 
@@ -6363,6 +6363,9 @@ packages:
   vue-component-type-helpers@2.0.29:
     resolution: {integrity: sha512-58i+ZhUAUpwQ+9h5Hck0D+jr1qbYl4voRt5KffBx8qzELViQ4XdT/Tuo+mzq8u63teAG8K0lLaOiL5ofqW38rg==}
 
+  vue-component-type-helpers@2.1.6:
+    resolution: {integrity: sha512-ng11B8B/ZADUMMOsRbqv0arc442q7lifSubD0v8oDXIFoMg/mXwAPUunrroIDkY+mcD0dHKccdaznSVp8EoX3w==}
+
   vue-docgen-api@4.79.2:
     resolution: {integrity: sha512-n9ENAcs+40awPZMsas7STqjkZiVlIjxIKgiJr5rSohDP0/JCrD9VtlzNojafsA1MChm/hz2h3PDtUedx3lbgfA==}
     peerDependencies:
@@ -8662,7 +8665,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.31(typescript@5.5.4)
-      vue-component-type-helpers: 2.0.29
+      vue-component-type-helpers: 2.1.6
 
   '@swc/core-darwin-arm64@1.7.10':
     optional: true
@@ -9288,7 +9291,7 @@ snapshots:
       js-beautify: 1.15.1
       vue-component-type-helpers: 2.0.29
 
-  '@warp-ds/core@1.1.5(@floating-ui/dom@1.6.10)':
+  '@warp-ds/core@1.1.6(@floating-ui/dom@1.6.10)':
     dependencies:
       '@floating-ui/dom': 1.6.10
 
@@ -13870,6 +13873,8 @@ snapshots:
       typescript: 5.5.4
 
   vue-component-type-helpers@2.0.29: {}
+
+  vue-component-type-helpers@2.1.6: {}
 
   vue-docgen-api@4.79.2(vue@3.4.31(typescript@5.5.4)):
     dependencies:
