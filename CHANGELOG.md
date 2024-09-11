@@ -1,3 +1,10 @@
+## [2.1.2-next.1](https://github.com/warp-ds/vue/compare/v2.1.1...v2.1.2-next.1) (2024-09-11)
+
+
+### Bug Fixes
+
+* **attention:** update to latest version of @warp-ds/core to fix attention cross-axis misalignment ([#200](https://github.com/warp-ds/vue/issues/200)) ([694e8ca](https://github.com/warp-ds/vue/commit/694e8ca21030b5085522d4125bca59a4da3feb8d))
+
 ## [2.1.1](https://github.com/warp-ds/vue/compare/v2.1.0...v2.1.1) (2024-08-20)
 
 
