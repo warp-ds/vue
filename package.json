@@ -53,7 +53,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@lingui/core": "4.11.2",
-    "@warp-ds/core": "1.1.6",
+    "@warp-ds/core": "1.1.7",
     "@warp-ds/css": "2.0.0",
     "@warp-ds/icons": "2.1.0",
     "@warp-ds/uno": "2.x",
