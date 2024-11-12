@@ -28,6 +28,17 @@ const slots = useSlots();
 const model = createModel({ props: p, emit });
 const inputEl = ref(null);
 if (p.mask) setupMask({ props: p, emit, inputEl });
+
+const inputClasses = (hasValidationErrors) => [
+  ccInput.base,
+  !!p.placeholder && ccInput.placeholder,
+  !!slots.suffix && ccInput.suffix,
+  !!slots.prefix && ccInput.prefix,
+  !hasValidationErrors && !p.disabled && !p.readOnly && ccInput.default,
+  hasValidationErrors && !p.disabled && !p.readOnly && ccInput.invalid,
+  !hasValidationErrors && p.disabled && !p.readOnly && ccInput.disabled,
+  !hasValidationErrors && !p.disabled && p.readOnly && ccInput.readOnly,
+];
 </script>
 
 <script>
@@ -44,16 +55,7 @@ export default { name: 'wTextfield', inheritAttrs: false };
         :id="id"
         ref="inputEl"
         :type="type"
-        :class="{
-          [ccInput.base]: true,
-          [ccInput.default]: !hasValidationErrors && !p.disabled && !p.readOnly,
-          [ccInput.invalid]: hasValidationErrors && !p.disabled && !p.readOnly,
-          [ccInput.disabled]: !hasValidationErrors && p.disabled && !p.readOnly,
-          [ccInput.readOnly]: !hasValidationErrors && !p.disabled && p.readOnly,
-          [ccInput.placeholder]: !!p.placeholder,
-          [ccInput.suffix]: slots.suffix,
-          [ccInput.prefix]: slots.prefix,
-        }"
+        :class="inputClasses(hasValidationErrors)"
         :autocomplete="autocomplete"
         :disabled="disabled"
         :placeholder="placeholder"
@@ -66,16 +68,7 @@ export default { name: 'wTextfield', inheritAttrs: false };
         ref="inputEl"
         v-model="model"
         :type="type"
-        :class="{
-          [ccInput.base]: true,
-          [ccInput.default]: !hasValidationErrors && !p.disabled && !p.readOnly,
-          [ccInput.invalid]: hasValidationErrors && !p.disabled && !p.readOnly,
-          [ccInput.disabled]: !hasValidationErrors && p.disabled && !p.readOnly,
-          [ccInput.readOnly]: !hasValidationErrors && !p.disabled && p.readOnly,
-          [ccInput.placeholder]: !!p.placeholder,
-          [ccInput.suffix]: slots.suffix,
-          [ccInput.prefix]: slots.prefix,
-        }"
+        :class="inputClasses(hasValidationErrors)"
         :autocomplete="autocomplete"
         :disabled="disabled"
         :placeholder="placeholder"

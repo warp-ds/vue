@@ -7,12 +7,13 @@ import { input as ccInput, label as ccLabel, helpText as ccHelpText } from '@war
 import { fieldProps } from '../util/fieldProps';
 import { activateI18n } from '../util/i18n';
 
+import { messages as daMessages } from './locales/da/messages.mjs';
 import { messages as enMessages } from './locales/en/messages.mjs';
 import { messages as fiMessages } from './locales/fi/messages.mjs';
 import { messages as nbMessages } from './locales/nb/messages.mjs';
 import { createValidation } from './validation';
 
-activateI18n(enMessages, nbMessages, fiMessages);
+activateI18n(enMessages, nbMessages, fiMessages, daMessages);
 
 defineOptions({
   name: 'wField',
@@ -51,6 +52,8 @@ const aria = computed(() => ({
   'aria-required': props.required && true,
 }));
 const wrapperAria = computed(() => valueOrUndefined(isFieldset.value, aria.value));
+const helpTextClasses = computed(() => [ccHelpText.base, isInvalid.value ? ccHelpText.colorInvalid : ccHelpText.color]);
+
 const optionalHelperText = i18n._({
   id: 'forms.field.label.optional',
   message: '(optional)',
@@ -75,7 +78,7 @@ const errorMessage = computed(
       :is="labelType"
       v-if="props.label"
       :id="labelId"
-      :class="ccLabel.label"
+      :class="ccLabel.base"
       :for="labelFor"
       :role="valueOrUndefined(props.labelLevel, 'heading')"
       :aria-level="valueOrUndefined(props.labelLevel, props.labelLevel)">
@@ -89,13 +92,7 @@ const errorMessage = computed(
       :aria="aria"
       :has-validation-errors="isInvalid" />
     <slot name="control" :form="collector" />
-    <div
-      v-if="props.hint || isInvalid"
-      :class="{
-        [ccHelpText.helpText]: true,
-        [ccHelpText.helpTextColor]: !isInvalid,
-        [ccHelpText.helpTextColorInvalid]: isInvalid,
-      }">
+    <div v-if="props.hint || isInvalid" :class="helpTextClasses">
       <span v-if="props.hint" :id="hintId" v-html="props.hint" />
       <span v-if="props.hint && isInvalid && errorMessage">, </span>
       <span v-if="isInvalid" :id="errorId">{{ errorMessage }}</span>

@@ -85,7 +85,7 @@ const dismissibleHighlightShowing = ref(false);
           <h2>Callout</h2>
           <div class="flex items-center">
             <w-box neutral as="h4" aria-details="callout-bubbletext" tabindex="0"> I am a box full of info </w-box>
-            <w-attention v-model="calloutShowing" callout placement="right" class="ml-8">
+            <w-attention v-model="calloutShowing" callout placement="right">
               <p id="callout-bubbletext">Hello Warp! This thing is new!</p>
             </w-attention>
           </div>
@@ -142,8 +142,8 @@ const dismissibleHighlightShowing = ref(false);
             v-model="popoverIconTargetShowing"
             popover
             placement="right-end"
-            :distance="-6"
-            :skidding="15"
+            :distance="-12"
+            :skidding="7"
             :target-el="popoverIconTarget ? popoverIconTarget.$el : null">
             <p>Hello Warp!</p>
           </w-attention>

@@ -14,20 +14,23 @@ defineOptions({
 const p = defineProps(fieldProps);
 const emit = defineEmits(['update:modelValue']);
 const model = createModel({ props: p, emit });
+
+const textAreaClasses = (hasValidationErrors) => [
+  ccInput.base,
+  ccInput.textArea,
+  !!p.placeholder && ccInput.placeholder,
+  !hasValidationErrors && !p.disabled && !p.readOnly && ccInput.default,
+  hasValidationErrors && !p.disabled && !p.readOnly && ccInput.invalid,
+  !hasValidationErrors && p.disabled && !p.readOnly && ccInput.disabled,
+  !hasValidationErrors && !p.disabled && p.readOnly && ccInput.readOnly,
+];
 </script>
 
 <template>
   <w-field v-bind="{ ...$attrs, ...$props }" #default="{ triggerValidation, aria, hasValidationErrors }">
     <div :class="[ccInput.wrapper]">
       <textarea
-        :class="{
-          [`${ccInput.base} ${ccInput.textArea}`]: true,
-          [ccInput.placeholder]: !!p.placeholder,
-          [ccInput.default]: !hasValidationErrors && !p.disabled && !p.readOnly,
-          [ccInput.invalid]: hasValidationErrors && !p.disabled && !p.readOnly,
-          [ccInput.disabled]: !hasValidationErrors && p.disabled && !p.readOnly,
-          [ccInput.readOnly]: !hasValidationErrors && !p.disabled && p.readOnly,
-        }"
+        :class="textAreaClasses(hasValidationErrors)"
         :disabled="disabled"
         :readOnly="readOnly"
         v-bind="{ ...aria, ...$attrs, class: '' }"

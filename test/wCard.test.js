@@ -11,7 +11,7 @@ describe('card', () => {
     const defaultSlot = '<h1>Hello Warp</h1>';
     const wrapper = mount(wCard, { slots: { default: defaultSlot } });
     assert.equal(wrapper.text(), 'Hello Warp');
-    cardClasses.card.split(' ').forEach((c) => assert.include(wrapper.classes(), c));
+    cardClasses.base.split(' ').forEach((c) => assert.include(wrapper.classes(), c));
   });
   test('cards any DOM element', () => {
     const defaultSlot = '<h1>Hello Warp</h1>';

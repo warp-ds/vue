@@ -1,3 +1,89 @@
+## [2.1.2-next.2](https://github.com/warp-ds/vue/compare/v2.1.2-next.1...v2.1.2-next.2) (2024-10-07)
+
+
+### Bug Fixes
+
+* **attention:** bump to latest version of @warp-ds/core dependency ([#202](https://github.com/warp-ds/vue/issues/202)) ([4a00bd3](https://github.com/warp-ds/vue/commit/4a00bd387e2b034d68053a87679f7208a66bb4f7))
+
+## [2.1.2-next.1](https://github.com/warp-ds/vue/compare/v2.1.1...v2.1.2-next.1) (2024-09-11)
+
+
+### Bug Fixes
+
+* **attention:** update to latest version of @warp-ds/core to fix attention cross-axis misalignment ([#200](https://github.com/warp-ds/vue/issues/200)) ([694e8ca](https://github.com/warp-ds/vue/commit/694e8ca21030b5085522d4125bca59a4da3feb8d))
+
+## [2.1.1](https://github.com/warp-ds/vue/compare/v2.1.0...v2.1.1) (2024-08-20)
+
+
+### Bug Fixes
+
+* Remove instances of process variable from build output ([#194](https://github.com/warp-ds/vue/issues/194)) ([b2c0ff9](https://github.com/warp-ds/vue/commit/b2c0ff93c2363913424a7580643c3304edba7bdb))
+
+## [2.1.1-next.1](https://github.com/warp-ds/vue/compare/v2.1.0...v2.1.1-next.1) (2024-08-15)
+
+
+### Bug Fixes
+
+* Remove instances of process variable from build output ([#194](https://github.com/warp-ds/vue/issues/194)) ([b2c0ff9](https://github.com/warp-ds/vue/commit/b2c0ff93c2363913424a7580643c3304edba7bdb))
+
+# [2.1.0-next.4](https://github.com/warp-ds/vue/compare/v2.1.0-next.3...v2.1.0-next.4) (2024-08-14)
+
+
+### Bug Fixes
+
+* **cc:** no classes styling the same CSS properties are set on one element ([#192](https://github.com/warp-ds/vue/issues/192)) ([26f0f67](https://github.com/warp-ds/vue/commit/26f0f676376ba10aec2ea15e49cf7f355446b070))
+
+
+### BREAKING CHANGES
+
+* **expandable:** Info prop has been removed
+
+
+# [2.1.0-next.3](https://github.com/warp-ds/vue/compare/v2.1.0-next.2...v2.1.0-next.3) (2024-07-11)
+
+
+### Bug Fixes
+
+* update dependencies ([#178](https://github.com/warp-ds/vue/issues/178)) ([be6a38f](https://github.com/warp-ds/vue/commit/be6a38f8165eb39e5d6ed75d74a03602a0d3eaa9))
+
+# [2.1.0-next.2](https://github.com/warp-ds/vue/compare/v2.1.0-next.1...v2.1.0-next.2) (2024-07-04)
+
+
+### Bug Fixes
+
+* support danish locale ([#177](https://github.com/warp-ds/vue/issues/177)) ([e1e3589](https://github.com/warp-ds/vue/commit/e1e35890fafd344acb6ce2ebc963e4107b3f6025))
+
+# [2.1.0-next.1](https://github.com/warp-ds/vue/compare/v2.0.1...v2.1.0-next.1) (2024-07-04)
+
+
+### Features
+
+* remove deprecated classes ([#173](https://github.com/warp-ds/vue/issues/173)) ([bd5f481](https://github.com/warp-ds/vue/commit/bd5f481b4ae9220a12cdca0b002e19422576c690))
+
+## [2.0.1](https://github.com/warp-ds/vue/compare/v2.0.0...v2.0.1) (2024-07-04)
+
+
+### Bug Fixes
+
+* add default targetEl for callout ([#170](https://github.com/warp-ds/vue/issues/170)) ([957e4cb](https://github.com/warp-ds/vue/commit/957e4cb41bd98942bf8dea535e02b594061dbc01))
+* add support for formatting vue files ([#167](https://github.com/warp-ds/vue/issues/167)) ([347ab79](https://github.com/warp-ds/vue/commit/347ab790963154017d2b508453b56b8c4c53e088))
+* Deprecate the "notification" variant of Badge ([#172](https://github.com/warp-ds/vue/issues/172)) ([74bf5f2](https://github.com/warp-ds/vue/commit/74bf5f23d081ebd24a4711ae821027f390341513))
+* revert renaming key in w-toggle ([#168](https://github.com/warp-ds/vue/issues/168)) ([286ed74](https://github.com/warp-ds/vue/commit/286ed7430dd47cf13a4b49fb93e774d2b5973a10))
+
+## [2.0.1-next.4](https://github.com/warp-ds/vue/compare/v2.0.1-next.3...v2.0.1-next.4) (2024-06-18)
+
+
+### Bug Fixes
+
+* Deprecate the "notification" variant of Badge ([#172](https://github.com/warp-ds/vue/issues/172)) ([74bf5f2](https://github.com/warp-ds/vue/commit/74bf5f23d081ebd24a4711ae821027f390341513))
+
+## [2.0.1-next.3](https://github.com/warp-ds/vue/compare/v2.0.1-next.2...v2.0.1-next.3) (2024-06-17)
+
+
+### Bug Fixes
+
+* add default targetEl for callout ([#170](https://github.com/warp-ds/vue/issues/170)) ([957e4cb](https://github.com/warp-ds/vue/commit/957e4cb41bd98942bf8dea535e02b594061dbc01))
+
 ## [2.0.1-next.2](https://github.com/warp-ds/vue/compare/v2.0.1-next.1...v2.0.1-next.2) (2024-05-23)
 
 

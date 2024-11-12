@@ -15,7 +15,9 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'neutral',
-    validator: (value) => ['neutral', 'info', 'positive', 'warning', 'negative', 'disabled', 'notification', 'price'].includes(value),
+    validator: (value) => {
+      return ['neutral', 'info', 'positive', 'warning', 'negative', 'disabled', 'price'].includes(value);
+    },
   },
   position: {
     type: String,
@@ -26,13 +28,11 @@ const props = defineProps({
 const badgeClasses = computed(() => [
   ccBadge.base,
   ccBadge[props.variant],
-  {
-    [ccBadge.positionBase]: props.position,
-    [ccBadge.positionTL]: props.position === 'top-left',
-    [ccBadge.positionTR]: props.position === 'top-right',
-    [ccBadge.positionBR]: props.position === 'bottom-right',
-    [ccBadge.positionBL]: props.position === 'bottom-left',
-  },
+  !!props.position && ccBadge.positionBase,
+  props.position === 'top-left' && ccBadge.positionTL,
+  props.position === 'top-right' && ccBadge.positionTR,
+  props.position === 'bottom-right' && ccBadge.positionBR,
+  props.position === 'bottom-left' && ccBadge.positionBL,
 ]);
 </script>
 
