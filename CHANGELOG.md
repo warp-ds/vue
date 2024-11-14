@@ -1,3 +1,10 @@
+## [2.1.2-next.3](https://github.com/warp-ds/vue/compare/v2.1.2-next.2...v2.1.2-next.3) (2024-11-14)
+
+
+### Bug Fixes
+
+* **tab:** set border on selected tab to fix SSR ([#204](https://github.com/warp-ds/vue/issues/204)) ([a2e21c0](https://github.com/warp-ds/vue/commit/a2e21c0302e28612c034ac8a3ad8b0659ac8b938))
+
 ## [2.1.2-next.2](https://github.com/warp-ds/vue/compare/v2.1.2-next.1...v2.1.2-next.2) (2024-10-07)
 
 
