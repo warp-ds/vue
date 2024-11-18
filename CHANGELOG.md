@@ -1,3 +1,12 @@
+## [2.1.2](https://github.com/warp-ds/vue/compare/v2.1.1...v2.1.2) (2024-11-18)
+
+
+### Bug Fixes
+
+* **attention:** bump to latest version of @warp-ds/core dependency ([#202](https://github.com/warp-ds/vue/issues/202)) ([4a00bd3](https://github.com/warp-ds/vue/commit/4a00bd387e2b034d68053a87679f7208a66bb4f7))
+* **attention:** update to latest version of @warp-ds/core to fix attention cross-axis misalignment ([#200](https://github.com/warp-ds/vue/issues/200)) ([694e8ca](https://github.com/warp-ds/vue/commit/694e8ca21030b5085522d4125bca59a4da3feb8d))
+* **tab:** set border on selected tab to fix SSR ([#204](https://github.com/warp-ds/vue/issues/204)) ([a2e21c0](https://github.com/warp-ds/vue/commit/a2e21c0302e28612c034ac8a3ad8b0659ac8b938))
+
 ## [2.1.2-next.3](https://github.com/warp-ds/vue/compare/v2.1.2-next.2...v2.1.2-next.3) (2024-11-14)
 
 
