@@ -1,3 +1,10 @@
+## [2.1.3-next.1](https://github.com/warp-ds/vue/compare/v2.1.2...v2.1.3-next.1) (2024-11-18)
+
+
+### Bug Fixes
+
+* **packages:** set @warp-ds/css peer-dependency to 2.0.1 ([#206](https://github.com/warp-ds/vue/issues/206)) ([48244ef](https://github.com/warp-ds/vue/commit/48244efe16a1a89fed77c6746e6e2c881ddd8f36))
+
 ## [2.1.2](https://github.com/warp-ds/vue/compare/v2.1.1...v2.1.2) (2024-11-18)
 
 
