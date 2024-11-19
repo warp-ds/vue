@@ -31,15 +31,19 @@ const dismissibleHighlightShowing = ref(false);
       <div class="space-y-16">
         <div>
           <h2>Tooltip</h2>
-          <w-box
-            ref="tooltipTarget"
-            neutral
-            as="h4">
-            <button aria-describedby="tooltip-bubbletext" aria-expanded="true" type="button" @mouseenter="tooltipShowing = true"
-            @mouseleave="tooltipShowing = false"
-            @keydown.escape="tooltipShowing = false"
-            @focus="tooltipShowing = true"
-            @blur="tooltipShowing = false"class="bg-transparent">Hover over me</button>
+          <w-box ref="tooltipTarget" neutral as="h4">
+            <button
+              aria-describedby="tooltip-bubbletext"
+              aria-expanded="true"
+              type="button"
+              @mouseenter="tooltipShowing = true"
+              @mouseleave="tooltipShowing = false"
+              @keydown.escape="tooltipShowing = false"
+              @focus="tooltipShowing = true"
+              @blur="tooltipShowing = false"
+              class="bg-transparent">
+              Hover over me
+            </button>
           </w-box>
           <w-attention
             v-model="tooltipShowing"
@@ -53,15 +57,17 @@ const dismissibleHighlightShowing = ref(false);
         </div>
         <div>
           <h2>Tooltip with resetted role and aria-label attributes</h2>
-          <w-box
-            ref="tooltipResetTarget"
-            neutral
-            as="h4">
-            <button aria-describedby="tooltip-reset-bubbletext" aria-expanded="true" type="button" @mouseenter="tooltipResetShowing = true"
-            @mouseleave="tooltipResetShowing = false"
-            @keydown.escape="tooltipResetShowing = false"
-            @focus="tooltipResetShowing = true"
-            @blur="tooltipResetShowing = false"class="bg-transparent">
+          <w-box ref="tooltipResetTarget" neutral as="h4">
+            <button
+              aria-describedby="tooltip-reset-bubbletext"
+              aria-expanded="true"
+              type="button"
+              @mouseenter="tooltipResetShowing = true"
+              @mouseleave="tooltipResetShowing = false"
+              @keydown.escape="tooltipResetShowing = false"
+              @focus="tooltipResetShowing = true"
+              @blur="tooltipResetShowing = false"
+              class="bg-transparent">
               Hover over me
             </button>
           </w-box>
