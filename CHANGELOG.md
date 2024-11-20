@@ -1,3 +1,10 @@
+## [2.1.4-next.1](https://github.com/warp-ds/vue/compare/v2.1.3...v2.1.4-next.1) (2024-11-20)
+
+
+### Bug Fixes
+
+* **attention:** move role and aria-label to attention-arrow wrapper ([#208](https://github.com/warp-ds/vue/issues/208)) ([d10280f](https://github.com/warp-ds/vue/commit/d10280fe9bacebf3b632b856df3696240c203ca5))
+
 ## [2.1.3](https://github.com/warp-ds/vue/compare/v2.1.2...v2.1.3) (2024-11-18)
 
 
