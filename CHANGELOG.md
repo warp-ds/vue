@@ -1,3 +1,10 @@
+## [2.1.4-next.2](https://github.com/warp-ds/vue/compare/v2.1.4-next.1...v2.1.4-next.2) (2024-11-26)
+
+
+### Bug Fixes
+
+* **attention:** update to latest version of @warp-ds/core dependency ([#209](https://github.com/warp-ds/vue/issues/209)) ([9971de0](https://github.com/warp-ds/vue/commit/9971de0bdf99ca86f240e879bf9c7fca12d0b7a0))
+
 ## [2.1.4-next.1](https://github.com/warp-ds/vue/compare/v2.1.3...v2.1.4-next.1) (2024-11-20)
 
 
