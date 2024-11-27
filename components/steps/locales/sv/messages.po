@@ -5,32 +5,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: nb_NO\n"
+"Language: sv\n"
 "Project-Id-Version: 2853b3c41d7b7a59e7cd64c0153b540a\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
-"Language-Team: Norwegian Bokmal\n"
+"Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Crowdin-Project: 2853b3c41d7b7a59e7cd64c0153b540a\n"
 "X-Crowdin-Project-ID: 141\n"
-"X-Crowdin-Language: nb\n"
+"X-Crowdin-Language: sv\n"
 "X-Crowdin-File-ID: 12472\n"
 
 #. Empty circle
 #. js-lingui-explicit-id
 #: components/steps/w-step.vue:36
 msgid "steps.aria.emptyCircle"
-msgstr "Tom sirkel"
+msgstr "Tom cirkel"
 
 #. Active circle
 #. js-lingui-explicit-id
 #: components/steps/w-step.vue:31
 msgid "steps.aria.active"
-msgstr "Stegindikator aktiv sirkel"
+msgstr "Stegindikator aktiv cirkel"
 
 #. Completed circle
 #. js-lingui-explicit-id
 #: components/steps/w-step.vue:26
 msgid "steps.aria.completed"
-msgstr "Stegindikator hel sirkel"
+msgstr "Stegindikator fulländad cirkel"
 
