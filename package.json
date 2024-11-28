@@ -46,8 +46,8 @@
     "postsite": "cd dev/dist && cp index.html 200.html && cp index.html 404.html",
     "site": "vite build dev --config ./vite.config.js",
     "storybook": "storybook dev -p 6006",
-    "test": "vitest run --coverage",
-    "watch": "vitest watch"
+    "test": "lingui extract && vitest run --coverage",
+    "watch": "lingui extract && vitest watch"
   },
   "keywords": [],
   "license": "Apache-2.0",
