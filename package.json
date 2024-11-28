@@ -97,7 +97,7 @@
     "esbuild": "0.23.0",
     "eslint-plugin-vue": "9.27.0",
     "fuse.js": "7.0.0",
-    "happy-dom": "14.12.3",
+    "happy-dom": "15.11.7",
     "playwright": "1.45.1",
     "prettier": "3.3.2",
     "semantic-release": "24.0.0",
