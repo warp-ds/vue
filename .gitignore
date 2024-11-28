@@ -7,4 +7,4 @@ storybook-static/
 coverage/
 
 # # i18n related files
-src/components/*/locales/*/*.mjs
+components/*/locales/*/*.mjs
