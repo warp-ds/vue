@@ -15,16 +15,16 @@ msgstr ""
 "X-Crowdin-Project-ID: 141\n"
 "X-Crowdin-Language: nb\n"
 "X-Crowdin-File-ID: 1370\n"
-"PO-Revision-Date: \n"
 
 #. Fallback screenreader message for open filter
 #. js-lingui-explicit-id
-#: components/pill/w-pill.vue:35
+#: components/pill/w-pill.vue:34
 msgid "pill.aria.openFilter"
 msgstr "Åpne filter"
 
 #. Fallback screenreader message for removal of filter
 #. js-lingui-explicit-id
-#: components/pill/w-pill.vue:40
+#: components/pill/w-pill.vue:39
 msgid "pill.aria.removeFilter"
 msgstr "Fjern filter {label}"
+

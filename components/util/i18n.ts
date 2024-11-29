@@ -1,6 +1,6 @@
 import { Messages, i18n } from '@lingui/core';
 
-export const supportedLocales = ['en', 'nb', 'fi', 'da', 'sv'] as const;
+export const supportedLocales = ['en', 'nb', 'fi', 'da'] as const;
 type SupportedLocale = (typeof supportedLocales)[number];
 
 export const defaultLocale = 'en';
@@ -39,13 +39,11 @@ export const getMessages = (
   enMsg: Messages,
   nbMsg: Messages,
   fiMsg: Messages,
-  daMsg: Messages,
-  svMsg: Messages
+  daMsg: Messages
 ) => {
   if (locale === 'nb') return nbMsg;
   if (locale === 'fi') return fiMsg;
   if (locale === 'da') return daMsg;
-  if (locale === 'sv') return svMsg;
   // Default to English
   return enMsg;
 };
@@ -54,11 +52,10 @@ export const activateI18n = (
   enMessages: Messages,
   nbMessages: Messages,
   fiMessages: Messages,
-  daMessages: Messages,
-  svMessages: Messages
+  daMessages: Messages
 ) => {
   const locale = detectLocale();
-  const messages = getMessages(locale, enMessages, nbMessages, fiMessages, daMessages, svMessages);
+  const messages = getMessages(locale, enMessages, nbMessages, fiMessages, daMessages);
   i18n.load(locale, messages);
   i18n.activate(locale);
 };

@@ -5,6 +5,3 @@ dist/
 settings.json
 storybook-static/
 coverage/
-
-# # i18n related files
-components/*/locales/*/*.mjs
