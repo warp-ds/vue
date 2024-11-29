@@ -1,3 +1,11 @@
+# [2.2.0-next.1](https://github.com/warp-ds/vue/compare/v2.1.4-next.2...v2.2.0-next.1) (2024-11-29)
+
+
+### Features
+
+* **lingui:** add support for Swedish ('sv') translations ([#211](https://github.com/warp-ds/vue/issues/211)) ([a5ca8d4](https://github.com/warp-ds/vue/commit/a5ca8d46dd8167781d0551bf3e983d752c5099a3))
+* **lingui:** add swedish translations ([#213](https://github.com/warp-ds/vue/issues/213)) ([1c1262f](https://github.com/warp-ds/vue/commit/1c1262f45bbbfbec967b8602cc9c61bfcc25e14e)), closes [#211](https://github.com/warp-ds/vue/issues/211)
+
 ## [2.1.4-next.2](https://github.com/warp-ds/vue/compare/v2.1.4-next.1...v2.1.4-next.2) (2024-11-26)
 
 
