@@ -15,7 +15,6 @@ msgstr ""
 "X-Crowdin-Project-ID: 141\n"
 "X-Crowdin-Language: da\n"
 "X-Crowdin-File-ID: 1362\n"
-"PO-Revision-Date: \n"
 
 #. Shown after label when marked as optional
 #. js-lingui-explicit-id
@@ -28,3 +27,4 @@ msgstr "(valgfrit)"
 #: components/forms/w-field.vue:83
 msgid "forms.validation.mandatoryField"
 msgstr "Skal udfyldes"
+
