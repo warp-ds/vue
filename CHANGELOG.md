@@ -1,3 +1,10 @@
+# [2.2.0-next.2](https://github.com/warp-ds/vue/compare/v2.2.0-next.1...v2.2.0-next.2) (2024-12-02)
+
+
+### Bug Fixes
+
+* **lingui:** add lingui compile to postinstall script ([#217](https://github.com/warp-ds/vue/issues/217)) ([b1a77e5](https://github.com/warp-ds/vue/commit/b1a77e5aa0f93c0f9af66149701a06421d02fdab))
+
 # [2.2.0-next.1](https://github.com/warp-ds/vue/compare/v2.1.4-next.2...v2.2.0-next.1) (2024-11-29)
 
 
