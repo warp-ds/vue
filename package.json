@@ -36,18 +36,19 @@
   },
   "scripts": {
     "build-storybook": "storybook build",
-    "build": "lingui compile && vite build --mode lib && vite build --mode eik",
+    "build": "vite build --mode lib && vite build --mode eik",
     "commit": "cz",
     "dev": "vite dev dev --config ./vite.config.js",
     "lint:check": "eslint . --ext js,vue,cjs,mjs --ignore-path .gitignore",
     "lint": "eslint . --fix --ext js,vue,cjs,mjs --ignore-path .gitignore",
     "messages:compile": "lingui compile",
     "messages:extract": "lingui extract",
+    "postinstall": "lingui compile",
     "postsite": "cd dev/dist && cp index.html 200.html && cp index.html 404.html",
     "site": "vite build dev --config ./vite.config.js",
     "storybook": "storybook dev -p 6006",
-    "test": "lingui compile && vitest run --coverage",
-    "watch": "lingui compile && vitest watch"
+    "test": "vitest run --coverage",
+    "watch": "vitest watch"
   },
   "keywords": [],
   "license": "Apache-2.0",
