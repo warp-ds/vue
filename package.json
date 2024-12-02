@@ -56,7 +56,7 @@
     "@lingui/core": "4.11.2",
     "@warp-ds/core": "1.1.8",
     "@warp-ds/css": "2.0.1",
-    "@warp-ds/icons": "2.3.0",
+    "@warp-ds/icons": "2.4.0",
     "@warp-ds/uno": "2.x",
     "create-v-model": "2.2.0",
     "dom-focus-lock": "1.1.0",
