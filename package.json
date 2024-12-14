@@ -72,7 +72,7 @@
     "@lingui/conf": "4.11.2",
     "@lingui/extractor-vue": "4.11.2",
     "@lukeed/uuid": "2.0.1",
-    "@rollup/plugin-replace": "^5.0.7",
+    "@rollup/plugin-replace": "^6.0.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@storybook/addon-actions": "8.2.1",
