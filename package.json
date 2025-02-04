@@ -32,8 +32,8 @@
     "#util": "./components/util/index.js"
   },
   "peerDependencies": {
-    "@warp-ds/css": "2.0.1",
-    "@lingui/core": "5.x"
+        "@lingui/core": "5.x",
+        "@warp-ds/css": "2.0.1"
   },
   "scripts": {
     "build-storybook": "storybook build",
@@ -47,7 +47,7 @@
     "postsite": "cd dev/dist && cp index.html 200.html && cp index.html 404.html",
     "site": "vite build dev --config ./vite.config.js",
     "storybook": "storybook dev -p 6006",
-    "test": "vitest run --coverage",
+    "test": "lingui compile vitest run --coverage",
     "watch": "vitest watch"
   },
   "keywords": [],
