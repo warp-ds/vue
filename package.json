@@ -36,8 +36,8 @@
         "@warp-ds/css": "2.0.1"
   },
   "scripts": {
-    "build-storybook": "storybook build",
-    "build": "vite build --mode lib && vite build --mode eik",
+    "build-storybook": "lingui compile && storybook build",
+    "build": "lingui compile && vite build --mode lib && vite build --mode eik",
     "commit": "cz",
     "dev": "vite dev dev --config ./vite.config.js",
     "lint:check": "eslint . --ext js,vue,cjs,mjs --ignore-path .gitignore",
