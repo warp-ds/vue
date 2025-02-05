@@ -1,3 +1,10 @@
+# [2.2.0-next.3](https://github.com/warp-ds/vue/compare/v2.2.0-next.2...v2.2.0-next.3) (2025-02-05)
+
+
+### Features
+
+* **deps:** bump lingui v4 -> v5 ([#222](https://github.com/warp-ds/vue/issues/222)) ([9aee32f](https://github.com/warp-ds/vue/commit/9aee32f3c43bb258f710bec2d6a822f26c8f9a69))
+
 # [2.2.0-next.2](https://github.com/warp-ds/vue/compare/v2.2.0-next.1...v2.2.0-next.2) (2024-12-02)
 
 
