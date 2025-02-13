@@ -19,18 +19,18 @@ msgstr ""
 
 #. Empty circle
 #. js-lingui-explicit-id
-#: components/steps/w-step.vue:36
+#: components/steps/w-step.vue:37
 msgid "steps.aria.emptyCircle"
 msgstr "Tom sirkel"
 
 #. Active circle
 #. js-lingui-explicit-id
-#: components/steps/w-step.vue:31
+#: components/steps/w-step.vue:32
 msgid "steps.aria.active"
 msgstr "Stegindikator aktiv sirkel"
 
 #. Completed circle
 #. js-lingui-explicit-id
-#: components/steps/w-step.vue:26
+#: components/steps/w-step.vue:27
 msgid "steps.aria.completed"
 msgstr "Stegindikator hel sirkel"

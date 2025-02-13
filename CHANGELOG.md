@@ -1,3 +1,46 @@
+# [2.2.0-next.4](https://github.com/warp-ds/vue/compare/v2.2.0-next.3...v2.2.0-next.4) (2025-02-13)
+
+
+### Bug Fixes
+
+* upgrade some dependencies ([#224](https://github.com/warp-ds/vue/issues/224)) ([94a9b04](https://github.com/warp-ds/vue/commit/94a9b04e7cf9acb852102ac5a83ed0fc89dccb0e))
+
+# [2.2.0-next.3](https://github.com/warp-ds/vue/compare/v2.2.0-next.2...v2.2.0-next.3) (2025-02-05)
+
+
+### Features
+
+* **deps:** bump lingui v4 -> v5 ([#222](https://github.com/warp-ds/vue/issues/222)) ([9aee32f](https://github.com/warp-ds/vue/commit/9aee32f3c43bb258f710bec2d6a822f26c8f9a69))
+
+# [2.2.0-next.2](https://github.com/warp-ds/vue/compare/v2.2.0-next.1...v2.2.0-next.2) (2024-12-02)
+
+
+### Bug Fixes
+
+* **lingui:** add lingui compile to postinstall script ([#217](https://github.com/warp-ds/vue/issues/217)) ([b1a77e5](https://github.com/warp-ds/vue/commit/b1a77e5aa0f93c0f9af66149701a06421d02fdab))
+
+# [2.2.0-next.1](https://github.com/warp-ds/vue/compare/v2.1.4-next.2...v2.2.0-next.1) (2024-11-29)
+
+
+### Features
+
+* **lingui:** add support for Swedish ('sv') translations ([#211](https://github.com/warp-ds/vue/issues/211)) ([a5ca8d4](https://github.com/warp-ds/vue/commit/a5ca8d46dd8167781d0551bf3e983d752c5099a3))
+* **lingui:** add swedish translations ([#213](https://github.com/warp-ds/vue/issues/213)) ([1c1262f](https://github.com/warp-ds/vue/commit/1c1262f45bbbfbec967b8602cc9c61bfcc25e14e)), closes [#211](https://github.com/warp-ds/vue/issues/211)
+
+## [2.1.4-next.2](https://github.com/warp-ds/vue/compare/v2.1.4-next.1...v2.1.4-next.2) (2024-11-26)
+
+
+### Bug Fixes
+
+* **attention:** update to latest version of @warp-ds/core dependency ([#209](https://github.com/warp-ds/vue/issues/209)) ([9971de0](https://github.com/warp-ds/vue/commit/9971de0bdf99ca86f240e879bf9c7fca12d0b7a0))
+
+## [2.1.4-next.1](https://github.com/warp-ds/vue/compare/v2.1.3...v2.1.4-next.1) (2024-11-20)
+
+
+### Bug Fixes
+
+* **attention:** move role and aria-label to attention-arrow wrapper ([#208](https://github.com/warp-ds/vue/issues/208)) ([d10280f](https://github.com/warp-ds/vue/commit/d10280fe9bacebf3b632b856df3696240c203ca5))
+
 ## [2.1.3](https://github.com/warp-ds/vue/compare/v2.1.2...v2.1.3) (2024-11-18)
 
 

@@ -14,11 +14,12 @@ import { messages as daMessages } from './locales/da/messages.mjs';
 import { messages as enMessages } from './locales/en/messages.mjs';
 import { messages as fiMessages } from './locales/fi/messages.mjs';
 import { messages as nbMessages } from './locales/nb/messages.mjs';
+import { messages as svMessages } from './locales/sv/messages.mjs';
 import wAttentionArrow from './w-attention-arrow.vue';
 
 import { absentProp } from '#util';
 
-activateI18n(enMessages, nbMessages, fiMessages, daMessages);
+activateI18n(enMessages, nbMessages, fiMessages, daMessages, svMessages);
 
 const props = defineProps({
   ...attentionProps,
@@ -224,12 +225,12 @@ export default { name: 'wAttention' };
 
 <template>
   <div v-show="model" v-if="props.callout || (props.targetEl !== undefined && !props.callout)" ref="attentionEl" :class="attentionClasses">
-    <div
-      :role="props.role === '' ? undefined : props.tooltip ? 'tooltip' : 'img'"
-      :aria-label="props.ariaLabel === '' ? undefined : props.ariaLabel ?? defaultAriaLabel"
-      :class="wrapperClasses"
-      data-test="wrapper">
-      <w-attention-arrow v-if="!noArrow" v-bind="$props" ref="arrowEl" :direction="actualDirection" />
+    <div :class="wrapperClasses" data-test="wrapper">
+      <div
+        :role="props.role === '' ? undefined : props.tooltip ? 'tooltip' : 'img'"
+        :aria-label="props.ariaLabel === '' ? undefined : props.ariaLabel ?? defaultAriaLabel">
+        <w-attention-arrow v-if="!noArrow" v-bind="$props" ref="arrowEl" :direction="actualDirection" />
+      </div>
       <div :class="ccAttention.content">
         <slot />
       </div>

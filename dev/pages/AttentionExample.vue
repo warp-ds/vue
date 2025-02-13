@@ -35,7 +35,6 @@ const dismissibleHighlightShowing = ref(false);
             ref="tooltipTarget"
             neutral
             as="h4"
-            tabindex="0"
             @mouseenter="tooltipShowing = true"
             @mouseleave="tooltipShowing = false"
             @keydown.escape="tooltipShowing = false"
@@ -59,7 +58,6 @@ const dismissibleHighlightShowing = ref(false);
             ref="tooltipResetTarget"
             neutral
             as="h4"
-            tabindex="0"
             @mouseenter="tooltipResetShowing = true"
             @mouseleave="tooltipResetShowing = false"
             @keydown.escape="tooltipResetShowing = false"
@@ -84,7 +82,7 @@ const dismissibleHighlightShowing = ref(false);
         <div>
           <h2>Callout</h2>
           <div class="flex items-center">
-            <w-box neutral as="h4" aria-details="callout-bubbletext" tabindex="0"> I am a box full of info </w-box>
+            <w-box neutral as="h4" aria-details="callout-bubbletext"> I am a box full of info </w-box>
             <w-attention v-model="calloutShowing" callout placement="right">
               <p id="callout-bubbletext">Hello Warp! This thing is new!</p>
             </w-attention>
