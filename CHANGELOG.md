@@ -1,3 +1,10 @@
+# [2.2.0-next.4](https://github.com/warp-ds/vue/compare/v2.2.0-next.3...v2.2.0-next.4) (2025-02-13)
+
+
+### Bug Fixes
+
+* upgrade some dependencies ([#224](https://github.com/warp-ds/vue/issues/224)) ([94a9b04](https://github.com/warp-ds/vue/commit/94a9b04e7cf9acb852102ac5a83ed0fc89dccb0e))
+
 # [2.2.0-next.3](https://github.com/warp-ds/vue/compare/v2.2.0-next.2...v2.2.0-next.3) (2025-02-05)
 
 
