@@ -33,7 +33,7 @@
   },
   "peerDependencies": {
     "@lingui/core": "5.x",
-    "@warp-ds/css": "2.1.1"
+    "@warp-ds/css": "2.3.0"
   },
   "scripts": {
     "build-storybook": "lingui compile && storybook build",
