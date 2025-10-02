@@ -101,7 +101,7 @@
     "happy-dom": "14.12.3",
     "playwright": "1.45.1",
     "prettier": "3.3.2",
-    "semantic-release": "24.0.0",
+    "semantic-release": "24.2.9",
     "shikiji": "0.10.2",
     "storybook": "8.5.5",
     "unocss": "0.x",
