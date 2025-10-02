@@ -65,7 +65,7 @@
     "scroll-doctor": "2.0.2"
   },
   "devDependencies": {
-    "@eik/cli": "2.0.38",
+    "@eik/cli": "3.1.23",
     "@eik/rollup-plugin": "4.0.63",
     "@itsy/token": "2.0.0-next.0",
     "@lingui/cli": "5.2.0",
