@@ -1,3 +1,10 @@
+## [2.2.1-next.1](https://github.com/warp-ds/vue/compare/v2.2.0...v2.2.1-next.1) (2025-10-02)
+
+
+### Bug Fixes
+
+* warp-1091 bump css to use border-strong ([#229](https://github.com/warp-ds/vue/issues/229)) ([b0816c3](https://github.com/warp-ds/vue/commit/b0816c3e76755766fb8053949b1116c2950318d3))
+
 # [2.2.0](https://github.com/warp-ds/vue/compare/v2.1.3...v2.2.0) (2025-02-13)
 
 
