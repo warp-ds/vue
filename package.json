@@ -1,7 +1,7 @@
 {
   "name": "@warp-ds/vue",
   "repository": "git@github.com:warp-ds/vue.git",
-  "version": "2.2.0",
+  "version": "2.2.1-next.1",
   "description": "Warp components for Vue 3",
   "type": "module",
   "exports": {
@@ -33,7 +33,7 @@
   },
   "peerDependencies": {
     "@lingui/core": "5.x",
-    "@warp-ds/css": "2.1.1"
+    "@warp-ds/css": "2.3.0"
   },
   "scripts": {
     "build-storybook": "lingui compile && storybook build",
@@ -55,7 +55,7 @@
   "dependencies": {
     "@lingui/core": "5.2.0",
     "@warp-ds/core": "1.1.8",
-    "@warp-ds/css": "2.1.1",
+    "@warp-ds/css": "2.3.0",
     "@warp-ds/icons": "2.5.0",
     "@warp-ds/uno": "2.1.0",
     "create-v-model": "2.2.0",
