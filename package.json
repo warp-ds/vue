@@ -106,7 +106,7 @@
     "semantic-release": "24.0.0",
     "shikiji": "0.10.2",
     "storybook": "8.5.5",
-    "unocss": "0.x",
+    "unocss": "66.x",
     "vite": "5.3.3",
     "viteik": "1.0.3",
     "vitest": "2.0.2",
