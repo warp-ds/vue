@@ -99,7 +99,7 @@
     "esbuild": "0.23.0",
     "eslint-plugin-vue": "9.32.0",
     "fuse.js": "7.0.0",
-    "happy-dom": "14.12.3",
+    "happy-dom": "20.0.5",
     "husky": "^9.1.7",
     "playwright": "1.45.1",
     "prettier": "3.3.2",
