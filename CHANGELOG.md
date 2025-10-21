@@ -1,3 +1,10 @@
+# [2.3.0-next.1](https://github.com/warp-ds/vue/compare/v2.2.1...v2.3.0-next.1) (2025-10-20)
+
+
+### Features
+
+* **badge:** add sponsored variant and storybook ([9a1c3df](https://github.com/warp-ds/vue/commit/9a1c3dfbb6bae81813a7ae27a42fc6a0a7f50bea))
+
 ## [2.2.1](https://github.com/warp-ds/vue/compare/v2.2.0...v2.2.1) (2025-10-02)
 
 
