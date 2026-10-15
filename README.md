@@ -1,6 +1,6 @@
 # Warp-ds Vue
 
-This repository is no longer actively maintained. New users should insteady use [@warp-ds/elements](https://github.com/warp-ds/elements) web components in Vue.
+This repository is no longer actively maintained. New users should instead use [@warp-ds/elements](https://github.com/warp-ds/elements) web components in Vue.
 
 ## How to use
 
