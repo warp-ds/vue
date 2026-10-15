@@ -1,16 +1,6 @@
 # Warp-ds Vue
 
-Welcome to [@warp-ds/vue](https://github.com/warp-ds/vue),
-a collection of Vue3 components for building user interfaces based on the [Warp Design System](https://github.com/warp-ds/).
-This repository is maintained by the [Warp Core Team](https://github.com/orgs/warp-ds/teams/warp-core-team)
-and is home to the [@warp-ds/vue](https://www.npmjs.com/package/@warp-ds/vue) library.
-
-
-## How to contribute
-
-If you'd like to contribute to `@warp-ds/vue`,
-start by reviewing the [contributing guidelines](CONTRIBUTING.md).
-
+This repository is no longer actively maintained. New users should insteady use [@warp-ds/elements](https://github.com/warp-ds/elements) web components in Vue.
 
 ## How to use
 
